@@ -165,6 +165,22 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>MainWindow</name>
     <message>
+        <source>Highlight</source>
+        <translation>Resaltar</translation>
+    </message>
+    <message>
+        <source>Highlight Text</source>
+        <translation>Resaltar texto</translation>
+    </message>
+    <message>
+        <source>Note</source>
+        <translation>Nota</translation>
+    </message>
+    <message>
+        <source>Add Notes</source>
+        <translation>Añadir notas</translation>
+    </message>
+    <message>
         <source>Arrow</source>
         <translation>Flecha</translation>
     </message>
@@ -2929,6 +2945,10 @@ Do you want to continue?</source>
 <context>
     <name>UBMainMenu</name>
     <message>
+        <source>Hide or show the toolbar</source>
+        <translation>Ocultar o mostrar la barra</translation>
+    </message>
+    <message>
         <source>&amp;View</source>
         <translation>&amp;Ver</translation>
     </message>
@@ -3025,6 +3045,37 @@ Do you want to ignore these errors for this host?</source>
     </message>
 </context>
 <context>
+    <name>UBNoteDialog</name>
+    <message>
+        <source>Add note</source>
+        <translation>Añadir nota</translation>
+    </message>
+    <message>
+        <source>Edit note</source>
+        <translation>Editar nota</translation>
+    </message>
+    <message>
+        <source>Type the note here</source>
+        <translation>Escriba la nota aquí</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancelar</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Borrar</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Guardar</translation>
+    </message>
+    <message>
+        <source>Update</source>
+        <translation>Actualizar</translation>
+    </message>
+</context>
+<context>
     <name>UBOpenSankoreImporterWidget</name>
     <message>
         <source>Open-Sankore Documents Detected</source>
@@ -3049,6 +3100,20 @@ Do you want to ignore these errors for this host?</source>
     <message>
         <source>Open-Sankoré documents are present on your computer. It is possible to import them to OpenBoard by pressing the “Proceed” button to launch the importer application.</source>
         <translation type="vanished">Los documentos de Open-Sankoré de su computador.Es posible importarlos a OpenBoard pulsando en el botón &quot;Continuar&quot; de la aplicación importadora.</translation>
+    </message>
+</context>
+<context>
+    <name>UBPageIndicator</name>
+    <message>
+        <source>Type a page number and press Enter</source>
+        <translation>Escriba un número de página y presione Enter</translation>
+    </message>
+</context>
+<context>
+    <name>UBPagesSidebar</name>
+    <message>
+        <source>Hide or show the pages</source>
+        <translation>Ocultar o mostrar las páginas</translation>
     </message>
 </context>
 <context>
@@ -3269,6 +3334,14 @@ Ancho dinámico</translation>
 </context>
 <context>
     <name>UBShapeOptionsPanel</name>
+    <message>
+        <source>Text highlight</source>
+        <translation>Resaltado del texto</translation>
+    </message>
+    <message>
+        <source>Height</source>
+        <translation>Alto</translation>
+    </message>
     <message>
         <source>Rectangle</source>
         <translation>Rectángulo</translation>
@@ -3596,7 +3669,7 @@ Ancho dinámico</translation>
     </message>
 </context>
 <context>
-    <name>UBToolOptionsDock</name>
+    <name>UBToolOptionsBar</name>
     <message>
         <source>This tool has no options.</source>
         <translation>Esta herramienta no tiene opciones.</translation>
