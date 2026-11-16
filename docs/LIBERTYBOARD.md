@@ -6,7 +6,7 @@ LibertyBoard es un fork de OpenBoard con un puntero láser estilo Drawboard PDF 
 
 1. **Compilación para Windows, láser nuevo y orden de las barras.** *(hecha)*
 2. **Paneles de opciones estilo Drawboard y formas nuevas.** *(hecha)*
-3. Rediseño a ventana normal con menús (modo pizarra y modo documentos).
+3. **Rediseño a ventana normal con menús (modo pizarra y modo documentos).** *(hecha)*
 
 ## 1. Barras de herramientas
 
@@ -57,6 +57,15 @@ En modo escritorio son paneles emergentes; en modo pizarra, un panel fijo a la d
 - Mantener Shift dibuja cuadrados y círculos, y flechas en ángulos de 15 grados.
 - Los trazos Pro y Caligrafía dependen del lápiz: con mouse el Pro se ve como el Básico.
 - El color del lápiz y del rotulador reemplaza el color seleccionado de la barra inferior de la pizarra, y el grosor reemplaza el grosor seleccionado (fino, medio o grueso).
+
+## Cómo quedó la Etapa 3
+
+- El programa abre en una ventana maximizada, con la barra de tareas de Windows visible. El modo escritorio sigue cubriendo toda la pantalla.
+- Menú superior: **Ver** (Pizarra, Web, Documentos, Mostrar escritorio), **Documento** (solo en el modo Documentos) y **LibertyBoard** (tamaño de página, copiar y pegar, tutorial, preferencias, podcast, salir).
+- Modo pizarra: barra de herramientas a la izquierda, fila de íconos bajo el menú (Deshacer y Repetir; Páginas, Anterior y Siguiente; Fondos y Borrar) y panel de opciones fijo a la derecha, que cambia con la herramienta elegida. El doble clic sobre una herramienta sigue abriendo sus opciones junto al botón.
+- Modo Documentos: fila con Nuevo documento, Importar, Exportar, Abrir en la pizarra y Papelera; el resto en el menú Documento, con atajos: Ctrl+N, Ctrl+Mayús+N, Ctrl+I, F2, Ctrl+Mayús+D, Supr y Ctrl+O.
+- Sin pestañas laterales (miniaturas y biblioteca) ni teclado virtual.
+- La ventana y la barra vertical vienen así por defecto en la configuración de LibertyBoard (`RunInWindow=true`, `ToolBarOrientationVertical=true`).
 
 ## Compilación
 
