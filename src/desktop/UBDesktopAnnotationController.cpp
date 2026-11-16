@@ -29,6 +29,11 @@
 
 #include "UBDesktopAnnotationController.h"
 
+#include <QDateTime>
+#include <QDir>
+#include <QLabel>
+#include <QStandardPaths>
+
 #include "frameworks/UBPlatformUtils.h"
 
 #include "core/UBApplication.h"
@@ -117,6 +122,7 @@ UBDesktopAnnotationController::UBDesktopAnnotationController(QObject *parent, UB
     connect(mDesktopPalette, SIGNAL(uniboardClick()), this, SLOT(goToUniboard()));
     connect(mDesktopPalette, SIGNAL(customClick()), this, SLOT(customCapture()));
     connect(mDesktopPalette, SIGNAL(screenClick()), this, SLOT(screenCapture()));
+    connect(mDesktopPalette, &UBDesktopPalette::screenshotClick, this, &UBDesktopAnnotationController::saveScreenshot);
     connect(UBApplication::mainWindow->actionPointer, SIGNAL(triggered()), this, SLOT(onToolClicked()));
     connect(UBApplication::mainWindow->actionSelector, SIGNAL(triggered()), this, SLOT(onToolClicked()));
     connect(mDesktopPalette, SIGNAL(maximized()), this, SLOT(onDesktopPaletteMaximized()));
@@ -375,6 +381,57 @@ void UBDesktopAnnotationController::screenCapture()
 }
 
 
+void UBDesktopAnnotationController::saveScreenshot()
+{
+    // Without the palette, with the annotations. The palette is a child of
+    // the drawing window, so it is hidden rather than made transparent.
+    mDesktopPalette->hide();
+
+    if (mToolOptionsPopup)
+    {
+        mToolOptionsPopup->hide();
+    }
+
+    qApp->processEvents();
+
+    QTimer::singleShot(150, this, [this]() {
+        const QPixmap screenshot = getScreenPixmap();
+        mDesktopPalette->show();
+
+        const QString folder = QStandardPaths::writableLocation(QStandardPaths::PicturesLocation) + "/LibertyBoard";
+        QDir().mkpath(folder);
+        const QString filename = folder + "/" + tr("Screenshot") + " "
+                                 + QDateTime::currentDateTime().toString("yyyy-MM-dd HH-mm-ss") + ".png";
+
+        const bool saved = !screenshot.isNull() && screenshot.save(filename, "PNG");
+        showNotice(saved ? tr("Screenshot saved in %1").arg(QDir::toNativeSeparators(folder))
+                         : tr("The screenshot could not be saved."));
+    });
+}
+
+void UBDesktopAnnotationController::showNotice(const QString& text)
+{
+    // A short notice beside the palette, which disappears by itself.
+    auto notice = new QLabel(text, nullptr, Qt::ToolTip | Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint);
+    notice->setAttribute(Qt::WA_DeleteOnClose);
+    notice->setStyleSheet("QLabel { background: #323232; color: #f0f0f0; border: 1px solid #555555;"
+                          " border-radius: 6px; padding: 8px 12px; font-size: 13px; }");
+    notice->adjustSize();
+
+    const QRect palette(mDesktopPalette->mapToGlobal(QPoint(0, 0)), mDesktopPalette->size());
+    const QRect screen = mDesktopPalette->screen()->availableGeometry();
+    QPoint position(palette.right() + 12, palette.bottom() - notice->height());
+
+    if (position.x() + notice->width() > screen.right())
+    {
+        position.setX(palette.left() - 12 - notice->width());
+    }
+
+    notice->move(position);
+    notice->show();
+    QTimer::singleShot(3000, notice, &QLabel::close);
+}
+
 QPixmap UBDesktopAnnotationController::getScreenPixmap()
 {
     return UBApplication::displayManager->grab(ScreenRole::Control);
@@ -405,10 +462,8 @@ QList<QAction*> UBDesktopAnnotationController::toolActions() const
 {
     UBMainWindow* mainWindow = UBApplication::mainWindow;
 
-    return { mainWindow->actionPen, mainWindow->actionEraser, mainWindow->actionMarker,
-             mainWindow->actionPointer, mainWindow->actionSelector, mainWindow->actionArrowShape,
-             mainWindow->actionRectangle, mainWindow->actionEllipse, mainWindow->actionUnderline,
-             mainWindow->actionText };
+    Q_UNUSED(mainWindow)
+    return UBDesktopPalette::toolActions();
 }
 
 int UBDesktopAnnotationController::toolOf(QAction* action) const
@@ -426,6 +481,8 @@ int UBDesktopAnnotationController::toolOf(QAction* action) const
         { mainWindow->actionEllipse, UBStylusTool::Ellipse },
         { mainWindow->actionUnderline, UBStylusTool::Underline },
         { mainWindow->actionText, UBStylusTool::Text },
+        { mainWindow->actionHighlight, UBStylusTool::Highlight },
+        { mainWindow->actionNote, UBStylusTool::Note },
     };
 
     return tools.value(action, -1);

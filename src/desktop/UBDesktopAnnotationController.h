@@ -77,6 +77,7 @@ class UBDesktopAnnotationController : public QObject
         void goToUniboard();
         void customCapture();
         void screenCapture();
+        void saveScreenshot();
         void updateShowHideState(bool pEnabled);
 
         void close();
@@ -124,6 +125,8 @@ class UBDesktopAnnotationController : public QObject
         UBDesktopPalette *mDesktopPalette;
         //UBKeyboardPalette *mKeyboardPalette;
         UBToolOptionsPopup* mToolOptionsPopup{nullptr};
+
+        void showNotice(const QString& text);
 
         UBRightPalette* mRightPalette;
 

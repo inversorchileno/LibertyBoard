@@ -51,10 +51,14 @@ class UBDesktopPalette : public UBActionPalette
         void appear();
         QPoint buttonPos(QAction* action);
 
+        /** @brief The tools of the palette, in their order. */
+        static QList<QAction*> toolActions();
+
     signals:
         void uniboardClick();
         void customClick();
         void screenClick();
+        void screenshotClick();
 
 //#ifdef Q_OS_LINUX //TODO: check why this produces an error on linux if uncommented
         void refreshMask();
@@ -82,6 +86,7 @@ private:
         QAction *mMaximizeAction;
         QAction *mActionUniboard;
         QAction *mActionCustomSelect;
+        QAction* mScreenshotAction{nullptr};
         QAction* mActionTest;
         QMap<QAction*, QIcon> mIconsWithoutArrow;
 

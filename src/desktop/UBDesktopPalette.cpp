@@ -43,6 +43,17 @@
 
 #include "core/memcheck.h"
 
+QList<QAction*> UBDesktopPalette::toolActions()
+{
+    UBMainWindow* mainWindow = UBApplication::mainWindow;
+
+    // Drawing first, then the tools which click on the screen, then the shapes.
+    return { mainWindow->actionPen, mainWindow->actionEraser, mainWindow->actionMarker,
+             mainWindow->actionPointer, mainWindow->actionHighlight, mainWindow->actionSelector,
+             mainWindow->actionNote, mainWindow->actionUnderline, mainWindow->actionText,
+             mainWindow->actionArrowShape, mainWindow->actionRectangle, mainWindow->actionEllipse };
+}
+
 UBDesktopPalette::UBDesktopPalette(QWidget *parent, UBRightPalette* _rightPalette)
     : UBActionPalette(Qt::TopLeftCorner, parent)
     , mShowHideAction(NULL)
@@ -55,17 +66,14 @@ UBDesktopPalette::UBDesktopPalette(QWidget *parent, UBRightPalette* _rightPalett
     connect(mActionUniboard, SIGNAL(triggered()), this, SIGNAL(uniboardClick()));
     actions << mActionUniboard;
 
+    // Saves what is on the screen, with the annotations, in one click.
+    mScreenshotAction = new QAction(QIcon(":/images/stylusPalette/screenshot.svg"), tr("Save a screenshot"), this);
+    mScreenshotAction->setToolTip(tr("Save a screenshot with the annotations in the Pictures folder"));
+    connect(mScreenshotAction, &QAction::triggered, this, &UBDesktopPalette::screenshotClick);
 
-    actions << UBApplication::mainWindow->actionPen;
-    actions << UBApplication::mainWindow->actionEraser;
-    actions << UBApplication::mainWindow->actionMarker;
-    actions << UBApplication::mainWindow->actionPointer;
-    actions << UBApplication::mainWindow->actionSelector;
-    actions << UBApplication::mainWindow->actionArrowShape;
-    actions << UBApplication::mainWindow->actionRectangle;
-    actions << UBApplication::mainWindow->actionEllipse;
-    actions << UBApplication::mainWindow->actionUnderline;
-    actions << UBApplication::mainWindow->actionText;
+
+    actions << toolActions();
+    actions << mScreenshotAction;
 
     // The screen captures stay available through their shortcuts and the
     // controller, but they are not shown on the palette.
@@ -185,16 +193,8 @@ void UBDesktopPalette::maximizeMe()
     clearLayout();
 
     actions << mActionUniboard;
-    actions << UBApplication::mainWindow->actionPen;
-    actions << UBApplication::mainWindow->actionEraser;
-    actions << UBApplication::mainWindow->actionMarker;
-    actions << UBApplication::mainWindow->actionPointer;
-    actions << UBApplication::mainWindow->actionSelector;
-    actions << UBApplication::mainWindow->actionArrowShape;
-    actions << UBApplication::mainWindow->actionRectangle;
-    actions << UBApplication::mainWindow->actionEllipse;
-    actions << UBApplication::mainWindow->actionUnderline;
-    actions << UBApplication::mainWindow->actionText;
+    actions << toolActions();
+    actions << mScreenshotAction;
     actions << mShowHideAction;
 
     setActions(actions);
@@ -241,7 +241,8 @@ void UBDesktopPalette::showEvent(QShowEvent *event)
     const QList<QAction*> toolsWithOptions = {
         UBApplication::mainWindow->actionPointer, UBApplication::mainWindow->actionArrowShape,
         UBApplication::mainWindow->actionRectangle, UBApplication::mainWindow->actionEllipse,
-        UBApplication::mainWindow->actionUnderline, UBApplication::mainWindow->actionText
+        UBApplication::mainWindow->actionUnderline, UBApplication::mainWindow->actionText,
+        UBApplication::mainWindow->actionHighlight
     };
 
     for (QAction* action : toolsWithOptions)

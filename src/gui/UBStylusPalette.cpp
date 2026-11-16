@@ -52,24 +52,23 @@ UBStylusPalette::UBStylusPalette(QWidget *parent, Qt::Orientation orient)
 {
     QList<QAction*> actions;
 
+    // The order of the desktop palette, with the line among the shapes and
+    // the two hands at the end. Zooming is done in the zoom box.
     actions << UBApplication::mainWindow->actionPen;
     actions << UBApplication::mainWindow->actionEraser;
     actions << UBApplication::mainWindow->actionMarker;
     actions << UBApplication::mainWindow->actionPointer;
+    actions << UBApplication::mainWindow->actionHighlight;
     actions << UBApplication::mainWindow->actionSelector;
-    actions << UBApplication::mainWindow->actionPlay;
-
-    // Zooming is done in the zoom box at the bottom right of the board.
-    actions << UBApplication::mainWindow->actionHand;
-
-    actions << UBApplication::mainWindow->actionLine;
+    actions << UBApplication::mainWindow->actionNote;
+    actions << UBApplication::mainWindow->actionUnderline;
     actions << UBApplication::mainWindow->actionText;
+    actions << UBApplication::mainWindow->actionLine;
     actions << UBApplication::mainWindow->actionArrowShape;
     actions << UBApplication::mainWindow->actionRectangle;
     actions << UBApplication::mainWindow->actionEllipse;
-    actions << UBApplication::mainWindow->actionUnderline;
-    actions << UBApplication::mainWindow->actionHighlight;
-    actions << UBApplication::mainWindow->actionNote;
+    actions << UBApplication::mainWindow->actionPlay;
+    actions << UBApplication::mainWindow->actionHand;
 
     setActions(actions);
     setButtonIconSize(QSize(42, 42));
