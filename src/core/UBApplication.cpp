@@ -388,7 +388,7 @@ int UBApplication::exec(const QString& pFileToImport)
     mPreferencesController = new UBPreferencesController(mainWindow);
 
     connect(mainWindow->actionPreferences, SIGNAL(triggered()), mPreferencesController, SLOT(show()));
-    connect(mainWindow->actionCheckUpdate, SIGNAL(triggered()), applicationController, SLOT(checkUpdateRequest()));
+    // The update check of LibertyBoard is connected by UBMainMenu.
 
 
     toolBarPositionChanged(UBSettings::settings()->appToolBarPositionedAtTop->get());

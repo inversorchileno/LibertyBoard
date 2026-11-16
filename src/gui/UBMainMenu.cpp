@@ -22,13 +22,16 @@
 #include "UBMainMenu.h"
 
 #include <QActionGroup>
+#include <QDesktopServices>
 #include <QHBoxLayout>
 #include <QMenu>
 #include <QMenuBar>
 #include <QToolBar>
 #include <QToolButton>
 
+#include "board/UBBoardSaver.h"
 #include "core/UBApplication.h"
+#include "core/UBGitHubUpdater.h"
 #include "core/UBSettings.h"
 #include "core/UBSetting.h"
 #include "gui/UBMainWindow.h"
@@ -99,32 +102,67 @@ void UBMainMenu::createMenus()
     QMenuBar* menuBar = mMainWindow->menuBar();
     menuBar->setNativeMenuBar(false);
 
-    QMenu* viewMenu = menuBar->addMenu(tr("&View"));
-    viewMenu->addAction(mMainWindow->actionBoard);
-    viewMenu->addAction(mMainWindow->actionWeb);
-    viewMenu->addAction(mMainWindow->actionDocument);
-    viewMenu->addAction(mMainWindow->actionDesktop);
+    mSaver = new UBBoardSaver(this);
+    mUpdater = new UBGitHubUpdater(mMainWindow);
 
-    mDocumentMenu = menuBar->addMenu(tr("&Document"));
-    mDocumentMenu->addAction(mMainWindow->actionNewDocument);
-    mDocumentMenu->addAction(mMainWindow->actionNewFolder);
-    mDocumentMenu->addSeparator();
-    mDocumentMenu->addAction(mMainWindow->actionImport);
-    mDocumentMenu->addAction(mMainWindow->actionExport);
-    mDocumentMenu->addSeparator();
-    mDocumentMenu->addAction(mMainWindow->actionRename);
-    mDocumentMenu->addAction(mMainWindow->actionAddDocumentToFavorites);
-    mDocumentMenu->addAction(mMainWindow->actionDuplicate);
-    mDocumentMenu->addAction(mMainWindow->actionDelete);
-    mDocumentMenu->addSeparator();
-    mDocumentMenu->addAction(mMainWindow->actionOpen);
-    mDocumentMenu->addAction(mMainWindow->actionAddToWorkingDocument);
-    mDocumentMenu->addAction(mMainWindow->actionDocumentAdd);
-    mDocumentMenu->menuAction()->setVisible(false);
+    // Home: save, settings and quit.
+    QMenu* homeMenu = menuBar->addMenu(tr("&Home"));
 
-    QMenu* applicationMenu = createApplicationMenu(mMainWindow, menuBar);
-    applicationMenu->setTitle(QStringLiteral("&LibertyBoard"));
-    menuBar->addMenu(applicationMenu);
+    auto saveAction = new QAction(QIcon(":/images/toolbar/export.png"), tr("Save..."), mMainWindow);
+    saveAction->setShortcut(QKeySequence::Save);
+    saveAction->setToolTip(tr("Save as a PDF with the annotations, or the page as a PNG or JPEG picture"));
+    mMainWindow->addAction(saveAction);
+    connect(saveAction, &QAction::triggered, this, [this]() { mSaver->save(mMainWindow); });
+    homeMenu->addAction(saveAction);
+    homeMenu->addSeparator();
+    homeMenu->addAction(mMainWindow->actionPreferences);
+    homeMenu->addAction(mMainWindow->actionMultiScreen);
+    homeMenu->addSeparator();
+    homeMenu->addAction(mMainWindow->actionPodcast);
+    mMainWindow->actionPodcast->setText(tr("Podcast"));
+    homeMenu->addSeparator();
+    homeMenu->addAction(mMainWindow->actionQuit);
+
+    QMenu* modeMenu = menuBar->addMenu(tr("&Mode"));
+    modeMenu->addAction(mMainWindow->actionBoard);
+    modeMenu->addAction(mMainWindow->actionWeb);
+    modeMenu->addAction(mMainWindow->actionDocument);
+    modeMenu->addAction(mMainWindow->actionDesktop);
+
+    QMenu* editMenu = menuBar->addMenu(tr("&Edit"));
+    QActionGroup* pageSizeGroup = new QActionGroup(editMenu);
+    pageSizeGroup->addAction(mMainWindow->actionWidePageSize);
+    pageSizeGroup->addAction(mMainWindow->actionRegularPageSize);
+    pageSizeGroup->addAction(mMainWindow->actionCustomPageSize);
+
+    QMenu* pageSizeMenu = editMenu->addMenu(QIcon(":/images/toolbar/pageSize.png"), tr("Page Size"));
+    pageSizeMenu->addAction(mMainWindow->actionWidePageSize);
+    pageSizeMenu->addAction(mMainWindow->actionRegularPageSize);
+    pageSizeMenu->addAction(mMainWindow->actionCustomPageSize);
+    editMenu->addAction(mMainWindow->actionCut);
+    editMenu->addAction(mMainWindow->actionCopy);
+    editMenu->addAction(mMainWindow->actionPaste);
+    editMenu->addAction(mMainWindow->actionHideApplication);
+    editMenu->addAction(mMainWindow->actionSleep);
+
+    QMenu* aboutMenu = menuBar->addMenu(tr("&About"));
+    aboutMenu->addAction(mMainWindow->actionOpenTutorial);
+    aboutMenu->addAction(mMainWindow->actionHintsAndTips);
+    aboutMenu->addSeparator();
+
+    auto gitHubAction = new QAction(tr("LibertyBoard on GitHub"), mMainWindow);
+    connect(gitHubAction, &QAction::triggered, this, []() {
+        QDesktopServices::openUrl(QUrl("https://github.com/noteimportaaaa/LibertyBoard"));
+    });
+    aboutMenu->addAction(gitHubAction);
+
+    // Replaces the update check of OpenBoard by the one of LibertyBoard.
+    mMainWindow->actionCheckUpdate->disconnect();
+    mMainWindow->actionCheckUpdate->setText(tr("Update"));
+    mMainWindow->actionCheckUpdate->setToolTip(tr("Download and install the latest version from GitHub"));
+    mMainWindow->actionCheckUpdate->setVisible(true);
+    connect(mMainWindow->actionCheckUpdate, &QAction::triggered, mUpdater, &UBGitHubUpdater::checkForUpdate);
+    aboutMenu->addAction(mMainWindow->actionCheckUpdate);
 
     // The same dark gray as the tool palettes.
     menuBar->setStyleSheet(
@@ -225,7 +263,6 @@ void UBMainMenu::setToolBarsHidden(bool hidden)
 void UBMainMenu::onMainModeChanged(UBApplicationController::MainMode mode)
 {
     mMode = mode;
-    mDocumentMenu->menuAction()->setVisible(mode == UBApplicationController::Document);
 
     // The application controller shows the toolbar of each mode: keep it
     // hidden if the user hid it.

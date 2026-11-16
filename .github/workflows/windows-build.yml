@@ -5,6 +5,13 @@ on:
     branches: [ master ]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
+env:
+  # Compiled into LibertyBoard, which compares it with the latest release to offer updates.
+  LIBERTYBOARD_BUILD: ${{ github.run_number }}
+
 jobs:
   build:
     runs-on: windows-2022
@@ -103,3 +110,15 @@ jobs:
           name: LibertyBoard-windows
           path: LibertyBoard/build/win32/release/product
           retention-days: 30
+
+      - name: Publish the release used by the update menu
+        if: github.ref == 'refs/heads/master'
+        shell: pwsh
+        working-directory: LibertyBoard
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $zip = "LibertyBoard-windows.zip"
+          Compress-Archive -Path "build\win32\release\product\*" -DestinationPath $zip -Force
+          $tag = "build-$env:LIBERTYBOARD_BUILD"
+          gh release create $tag $zip --repo "${{ github.repository }}" --target "${{ github.sha }}" --title "LibertyBoard (build $env:LIBERTYBOARD_BUILD)" --notes "Windows build $env:LIBERTYBOARD_BUILD. Unzip and open LibertyBoard.exe, or use About > Update in LibertyBoard." --latest

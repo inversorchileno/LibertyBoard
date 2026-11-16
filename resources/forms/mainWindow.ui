@@ -2044,7 +2044,7 @@
     <string>Snap to grid and angle</string>
    </property>
    <property name="shortcut">
-    <string>Ctrl+S</string>
+    <string></string>
    </property>
   </action>
  </widget>

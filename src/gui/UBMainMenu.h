@@ -28,11 +28,13 @@
 class QMenu;
 class QToolBar;
 class QToolButton;
+class UBBoardSaver;
+class UBGitHubUpdater;
 class UBMainWindow;
 
 /**
- * @brief The menu bar of the main window, like most desktop programs: the
- * modes, the document actions and the application settings.
+ * @brief The menu bar of the main window, like most desktop programs: Home
+ * (save, settings, quit), Mode, Edit and About.
  *
  * The toolbars keep only the actions used most often; every other action
  * of a mode is in the menus, with its keyboard shortcut.
@@ -58,7 +60,8 @@ private:
     QToolBar* currentToolBar() const;
 
     UBMainWindow* mMainWindow{nullptr};
-    QMenu* mDocumentMenu{nullptr};
+    UBBoardSaver* mSaver{nullptr};
+    UBGitHubUpdater* mUpdater{nullptr};
     QToolButton* mToggleToolBarButton{nullptr};
     UBApplicationController::MainMode mMode{UBApplicationController::Board};
     bool mToolBarsHidden{false};

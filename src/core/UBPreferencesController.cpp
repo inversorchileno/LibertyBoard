@@ -29,6 +29,8 @@
 
 #include "UBPreferencesController.h"
 
+#include "core/UBGitHubUpdater.h"
+
 #include "UBSettings.h"
 #include "UBApplication.h"
 
@@ -153,7 +155,8 @@ void UBPreferencesController::wire()
 
     // main tab
     mPreferencesUI->mainTabWidget->setCurrentWidget(mPreferencesUI->displayTab);
-    mPreferencesUI->versionLabel->setText(tr("version: ") + UBApplication::applicationVersion());
+    mPreferencesUI->versionLabel->setText(tr("version: ") + UBApplication::applicationVersion()
+                                          + (UBGitHubUpdater::currentBuild() > 0 ? tr(" (build %1)").arg(UBGitHubUpdater::currentBuild()) : QString()));
 
     connect(mPreferencesUI->closeButton, SIGNAL(released()), this, SLOT(close()));
     connect(mPreferencesUI->defaultSettingsButton, SIGNAL(released()), this, SLOT(defaultSettings()));

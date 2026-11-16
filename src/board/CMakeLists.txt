@@ -3,6 +3,8 @@ target_sources(${PROJECT_NAME} PRIVATE
     UBBoardController.h
     UBBoardPaletteManager.cpp
     UBBoardPaletteManager.h
+    UBBoardSaver.cpp
+    UBBoardSaver.h
     UBBoardView.cpp
     UBBoardView.h
     UBDrawingController.cpp

@@ -5,6 +5,8 @@ target_sources(${PROJECT_NAME} PRIVATE
     UBApplication.h
     UBApplicationController.cpp
     UBApplicationController.h
+    UBGitHubUpdater.cpp
+    UBGitHubUpdater.h
     UBDisplayManager.cpp
     UBDisplayManager.h
     UBDocumentManager.cpp
