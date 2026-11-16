@@ -37,6 +37,14 @@ jobs:
         with:
           arch: x64
 
+      - name: Build QuaZip
+        shell: cmd
+        working-directory: OpenBoard-ThirdParty/quazip
+        run: |
+          qmake quazip.pro -spec win32-msvc "CONFIG+=release" "QT+=core5compat" || exit /b 1
+          nmake release || exit /b 1
+          if not exist lib\win32\release\quazip.lib exit /b 1
+
       - name: Build
         shell: cmd
         working-directory: LibertyBoard
