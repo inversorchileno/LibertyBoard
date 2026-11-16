@@ -1259,7 +1259,7 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location filename="../forms/mainWindow.ui" line="938"/>
         <source>Add to document</source>
-        <translation type="unfinished"></translation>
+        <translation>Añadir al documento</translation>
     </message>
     <message>
         <location filename="../forms/mainWindow.ui" line="1256"/>
@@ -1305,7 +1305,7 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location filename="../forms/mainWindow.ui" line="1939"/>
         <source>Favorite</source>
-        <translation type="unfinished"></translation>
+        <translation>Favorito</translation>
     </message>
 </context>
 <context>
@@ -2927,6 +2927,25 @@ Do you want to continue?</source>
     </message>
 </context>
 <context>
+    <name>UBMainMenu</name>
+    <message>
+        <source>&amp;View</source>
+        <translation>&amp;Ver</translation>
+    </message>
+    <message>
+        <source>&amp;Document</source>
+        <translation>&amp;Documento</translation>
+    </message>
+    <message>
+        <source>Page Size</source>
+        <translation>Tamaño de página</translation>
+    </message>
+    <message>
+        <source>Podcast</source>
+        <translation>Podcast</translation>
+    </message>
+</context>
+<context>
     <name>UBMainWindow</name>
     <message>
         <location filename="../../src/gui/UBMainWindow.cpp" line="205"/>
@@ -3574,6 +3593,13 @@ Ancho dinámico</translation>
         <location filename="../../src/gui/UBThumbnailTextItem.cpp" line="74"/>
         <source>Page %0</source>
         <translation>Página %0</translation>
+    </message>
+</context>
+<context>
+    <name>UBToolOptionsDock</name>
+    <message>
+        <source>This tool has no options.</source>
+        <translation>Esta herramienta no tiene opciones.</translation>
     </message>
 </context>
 <context>
