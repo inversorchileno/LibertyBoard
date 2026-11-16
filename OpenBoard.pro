@@ -1,4 +1,4 @@
-TARGET = "OpenBoard"
+TARGET = "LibertyBoard"
 TEMPLATE = app
 
 CONFIG += c++17

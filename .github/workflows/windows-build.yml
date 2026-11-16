@@ -52,14 +52,14 @@ jobs:
           qmake OpenBoard.pro -spec win32-msvc "CONFIG+=release" || exit /b 1
           lrelease OpenBoard.pro || exit /b 1
           nmake release-install || exit /b 1
-          if not exist build\win32\release\product\OpenBoard.exe exit /b 1
+          if not exist build\win32\release\product\LibertyBoard.exe exit /b 1
 
       - name: Collect runtime files
         shell: cmd
         working-directory: LibertyBoard
         run: |
           set PRODUCT=build\win32\release\product
-          windeployqt --release --compiler-runtime --no-system-d3d-compiler %PRODUCT%\OpenBoard.exe || exit /b 1
+          windeployqt --release --compiler-runtime --no-system-d3d-compiler %PRODUCT%\LibertyBoard.exe || exit /b 1
           xcopy /y /q ..\OpenBoard-ThirdParty\poppler\bin\*.dll %PRODUCT%\ || exit /b 1
           xcopy /y /q ..\OpenBoard-ThirdParty\openssl\openssl-3.0.15-win64\bin\*.dll %PRODUCT%\ || exit /b 1
           xcopy /y /q ..\OpenBoard-ThirdParty\zlib\1.2.11\bin\zlib.dll %PRODUCT%\ || exit /b 1
@@ -70,7 +70,6 @@ jobs:
           rem Qt's own dialogs, like the color dialog, in the language of the user
           xcopy /y /q "%QT_ROOT_DIR%\translations\qt_*.qm" %PRODUCT%\i18n\ || exit /b 1
           xcopy /y /q "%QT_ROOT_DIR%\translations\qtbase_*.qm" %PRODUCT%\i18n\ || exit /b 1
-          ren %PRODUCT%\OpenBoard.exe LibertyBoard.exe || exit /b 1
 
       - name: Add the C++ runtime
         shell: pwsh

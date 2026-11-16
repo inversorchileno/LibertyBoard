@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#e9eef5"/>
+    </linearGradient>
+    <linearGradient id="wing" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3a8fe0"/>
+      <stop offset="1" stop-color="#1d4f9a"/>
+    </linearGradient>
+    <linearGradient id="tablet" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffa53a"/>
+      <stop offset="1" stop-color="#f06a12"/>
+    </linearGradient>
+    <linearGradient id="pen" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#3f9be8"/>
+      <stop offset="1" stop-color="#1b5fb0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- rounded card -->
+  <rect x="16" y="16" width="480" height="480" rx="96" fill="url(#card)"/>
+
+  <!-- wings: feathers fanning up and out from the sides of the tablet -->
+  <g>
+    <path d="M0 0 C-18 -38 -14 -88 0 -110 C14 -88 18 -38 0 0 Z" transform="translate(196 286) rotate(-85)" fill="url(#wing)" stroke="#ffffff" stroke-width="3"/>
+    <path d="M0 0 C-20 -47 -16 -108 0 -135 C16 -108 20 -47 0 0 Z" transform="translate(196 286) rotate(-70)" fill="url(#wing)" stroke="#ffffff" stroke-width="3"/>
+    <path d="M0 0 C-22 -54 -18 -124 0 -155 C18 -124 22 -54 0 0 Z" transform="translate(196 286) rotate(-55)" fill="url(#wing)" stroke="#ffffff" stroke-width="3"/>
+    <path d="M0 0 C-23 -59 -18 -136 0 -170 C18 -136 23 -59 0 0 Z" transform="translate(196 286) rotate(-40)" fill="url(#wing)" stroke="#ffffff" stroke-width="3"/>
+    <path d="M0 0 C-24 -61 -19 -140 0 -175 C19 -140 24 -61 0 0 Z" transform="translate(196 286) rotate(-25)" fill="url(#wing)" stroke="#ffffff" stroke-width="3"/>
+  </g>
+  <g>
+    <path d="M0 0 C-18 -38 -14 -88 0 -110 C14 -88 18 -38 0 0 Z" transform="translate(316 286) rotate(85)" fill="url(#wing)" stroke="#ffffff" stroke-width="3"/>
+    <path d="M0 0 C-20 -47 -16 -108 0 -135 C16 -108 20 -47 0 0 Z" transform="translate(316 286) rotate(70)" fill="url(#wing)" stroke="#ffffff" stroke-width="3"/>
+    <path d="M0 0 C-22 -54 -18 -124 0 -155 C18 -124 22 -54 0 0 Z" transform="translate(316 286) rotate(55)" fill="url(#wing)" stroke="#ffffff" stroke-width="3"/>
+    <path d="M0 0 C-23 -59 -18 -136 0 -170 C18 -136 23 -59 0 0 Z" transform="translate(316 286) rotate(40)" fill="url(#wing)" stroke="#ffffff" stroke-width="3"/>
+    <path d="M0 0 C-24 -61 -19 -140 0 -175 C19 -140 24 -61 0 0 Z" transform="translate(316 286) rotate(25)" fill="url(#wing)" stroke="#ffffff" stroke-width="3"/>
+  </g>
+
+  <!-- tablet, slightly tilted -->
+  <g transform="rotate(-8 256 300)">
+    <rect x="146" y="206" width="220" height="176" rx="26" fill="url(#tablet)"/>
+    <rect x="166" y="226" width="180" height="136" rx="12" fill="#ffffff"/>
+    <!-- signature on the screen -->
+    <path d="M186 320 C200 280 214 276 216 300 C218 330 230 330 244 296 C252 278 262 278 262 300 C262 318 276 320 290 300 C300 288 312 290 326 304"
+          fill="none" stroke="#1d5fb5" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- pen, writing from the top right -->
+  <g transform="rotate(42 330 190)">
+    <rect x="312" y="62" width="40" height="190" rx="18" fill="url(#pen)"/>
+    <rect x="312" y="96" width="40" height="14" fill="#cfe4fa"/>
+    <path d="M314 250 L350 250 L332 292 Z" fill="#f2d3a8"/>
+    <path d="M326 278 L338 278 L332 292 Z" fill="#1b3f73"/>
+  </g>
+</svg>

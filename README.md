@@ -1,48 +1,36 @@
-![GitHub Repo stars](https://img.shields.io/github/stars/OpenBoard-org/openboard)
-![GitHub Repo forks](https://img.shields.io/github/forks/OpenBoard-org/openboard)
-# OpenBoard
-[![latest release](https://img.shields.io/github/v/release/OpenBoard-org/openboard.svg)]()
-[![Commits since last release](https://img.shields.io/github/commits-since/OpenBoard-org/openboard/v1.7.7/dev)]()
-[![Github Repo Contributors](https://img.shields.io/github/contributors/OpenBoard-org/openboard.svg)]()
-[![downloads v1.7.7](https://img.shields.io/github/downloads/OpenBoard-org/openboard/v1.7.7/total)]()
-[![Github All Releases](https://img.shields.io/github/downloads/OpenBoard-org/OpenBoard/total.svg)]()
+<p align="center">
+  <img src="docs/images/libertyboard-logo.png" alt="LibertyBoard" width="160">
+</p>
 
-OpenBoard is an open-source cross-platform interactive white board application designed primarily for use in schools. It was originally forked from Open-Sankoré, which was itself based on Uniboard.
+<h1 align="center">LibertyBoard</h1>
 
-### Installing
-1.7.7 installers are available for Windows, macOS and Debian on the [Downloads page](https://github.com/OpenBoard-org/OpenBoard/wiki/Downloads).
+<p align="center"><b>Pizarra digital y lector PDF para escribir con lápiz, presentar y anotar sobre cualquier cosa.</b></p>
 
-### Supported platforms 
+LibertyBoard es un programa para Windows pensado para quien trabaja con lápiz digital: abre un PDF y escribe encima, presenta con un puntero láser que se desvanece, o dibuja directamente sobre el escritorio mientras usas otros programas.
 
-| Version   | officially maintained platforms | branch |
-|------------|--------------------------------------------------------|----|
-| 1.7.7 (latest stable)     | Windows 10+, macOS 12+ (for both `x64_64` and `arm64`), Debian 12  | `master` |
-| 1.8.0 (active development)     | Windows 10+, macOS 12+ (for both `x64_64` and `arm64`), Debian 12 | `dev` |
+## Qué hace
 
-### Community-driven packages
-On Linux, Debian is the only officially maintained platform. For other platforms, you can thank the awesome community of OpenBoard that provides community-driven packages on a number of other distributions. Check on [this page](https://github.com/OpenBoard-org/OpenBoard/wiki/Downloads) to see if you find what you're looking for. If you actually want to provide support and to be referenced on this page, please open an issue with the relevant information, and we'll be glad to add your contribution.
+- **Lector y anotador de PDF.** Abre un PDF y queda listo en la página 1, con miniaturas de páginas a la izquierda y un indicador de página editable ("1 / 200").
+- **Puntero láser con desvanecimiento.** El trazo se borra solo después de un tiempo que tú eliges. También hay modo punto y efecto de brillo.
+- **Paneles de herramientas claros.** Cada herramienta (lápiz, rotulador, borrador, láser, formas) muestra sus opciones en la barra superior: color, grosor, opacidad, tipo de trazo y más.
+- **Formas.** Flecha, rectángulo, elipse y subrayado, con borde, relleno, línea punteada y puntas de flecha.
+- **Resaltador de texto** y **notas** que muestran su contenido al pasar el cursor.
+- **Modo escritorio.** Anota sobre cualquier programa abierto; la barra de herramientas se acopla al borde derecho, arriba o abajo.
+- **Ventana normal con menús**, como cualquier programa de escritorio.
 
-### Building from source
-If you didn't find any installer for your platform, or if you want to modify OpenBoard, you can find instructions on how to build OpenBoard from source on the [wiki](https://github.com/OpenBoard-org/OpenBoard/wiki/Build-OpenBoard-from-source).
+## Empezar
 
-### Qt support
-OpenBoard can be compiled with the latest open-source binaries of Qt 6. Support for Qt 5.15 was recently dropped, but you can still build OpenBoard with it, after addressing some minor compiling issues.
+1. Descarga la última versión desde la pestaña **Actions** de este repositorio (artefacto `LibertyBoard-windows`).
+2. Descomprime la carpeta y abre `LibertyBoard.exe`.
 
-### Contribute
-You can contribute to OpenBoard by helping on translations, creating new web widgets or improving existing ones, or by developing new features and submit them as pull requests.
+LibertyBoard guarda sus documentos y su configuración en su propia carpeta (`%LOCALAPPDATA%\LibertyBoard`). Empieza vacío: no lee ni copia nada de otros programas.
 
-#### Code and tests
-Before changing the code, whether you are a person or an AI agent, read [AGENTS.md](AGENTS.md): what matters most for OpenBoard's users and how the code is changed. The conventions are in [CODING_STYLE.md](CODING_STYLE.md), and [docs/quality](docs/quality/README.md) describes how changes are checked and how release candidates are tested. Testing a release candidate in your own setting and reporting what you find is a valuable contribution too.
+## Compilar desde el código
 
-#### Translations
-OpenBoard is available, thanks to the work of its community, in 35 languages. If you want to contribute to OpenBoard or its dedicated website by adding a new language or updating an existing one, your help will be greatly appreciated.
+La versión de Windows se compila automáticamente con GitHub Actions (`.github/workflows/windows-build.yml`) usando Qt 6 y MSVC. Las notas de diseño y lo acordado para cada etapa están en [docs/LIBERTYBOARD.md](docs/LIBERTYBOARD.md).
 
-If you don't know how to do it, you can ask for help here : [Discussions](https://github.com/OpenBoard-org/OpenBoard/discussions). Don't hesitate!
+## Licencia y origen
 
-#### Web Widgets
+LibertyBoard es una **versión modificada de [OpenBoard](https://github.com/OpenBoard-org/OpenBoard)**, que a su vez deriva de Open-Sankoré y Uniboard. Se distribuye bajo la **Licencia Pública General de GNU, versión 3 (GPLv3)**, igual que OpenBoard, con la misma excepción de enlace para OpenSSL. Ver [LICENSE](LICENSE) y [COPYRIGHT](COPYRIGHT).
 
-Web Widgets are websites that you can place and use directly on the board ! And to turn a website to an OpenBoard web widget is really simple !
-
-Download and install OpenBoard, then develop your web app in it. You'll even find a web inspector to help you debug your site.
-
-You'll find documentation on how to create a Web Widget from scratch or turn your already built website into an OpenBoard Web Widget [here](https://github.com/OpenBoard-org/OpenBoard/wiki/Creating-Web-Widgets).
+Los avisos de copyright originales se mantienen en los archivos de código. LibertyBoard no está afiliado ni respaldado por el proyecto OpenBoard ni por sus autores.

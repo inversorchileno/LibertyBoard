@@ -33,17 +33,17 @@ BEGIN
 
         BEGIN
 
-            VALUE "CompanyName",      "Open Education Foudation\000"
+            VALUE "CompanyName",      "LibertyBoard\000"
 
-            VALUE "FileDescription",  "OpenBoard\000"
+            VALUE "FileDescription",  "LibertyBoard - pizarra y lector PDF (version modificada de OpenBoard)\000"
 
             VALUE "FileVersion",      UBVERSION
 
-            VALUE "LegalCopyright",   "(c) Open Education Foundation 2013. All rights reserved\000"
+            VALUE "LegalCopyright",   "LibertyBoard, basado en OpenBoard (c) Open Education Foundation y colaboradores. GPLv3\000"
 
-            VALUE "OriginalFilename", "OpenBoard.exe\000"
+            VALUE "OriginalFilename", "LibertyBoard.exe\000"
 
-            VALUE "ProductName",      "OpenBoard\000"
+            VALUE "ProductName",      "LibertyBoard\000"
 
             VALUE "ProductVersion",   UBVERSION
 

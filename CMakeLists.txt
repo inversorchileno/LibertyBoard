@@ -32,8 +32,8 @@ include(cmake/Version.cmake)
 
 project(openboard
     VERSION ${VERSION_NUMBER}
-    DESCRIPTION "OpenBoard is an open source cross-platform interactive white board application designed primarily for use in schools. It was originally forked from Open-Sankoré, which was itself based on Uniboard."
-    HOMEPAGE_URL "https://www.openboard.org"
+    DESCRIPTION "LibertyBoard is a whiteboard and PDF annotation app. It is a modified version of OpenBoard (GPLv3), which was forked from Open-Sankore and Uniboard."
+    HOMEPAGE_URL "https://github.com/noteimportaaaa/LibertyBoard"
     LANGUAGES CXX
 )
 
@@ -63,8 +63,8 @@ set(OPENBOARD_ETC_DIR       resources/etc)
 set(OPENBOARD_LIBRARY_DIR   resources/library)
 set(OPENBOARD_STARTUP_HINTS resources/startupHints)
 
-set(OPENBOARD_ETC_FILE      ${OPENBOARD_ETC_DIR}/OpenBoard.config
-                            ${OPENBOARD_ETC_DIR}/OpenBoard.css
+set(OPENBOARD_ETC_FILE      ${OPENBOARD_ETC_DIR}/LibertyBoard.config
+                            ${OPENBOARD_ETC_DIR}/LibertyBoard.css
                             ${OPENBOARD_ETC_DIR}/widgets.md5sum)
 set(OPENBOARD_TEMPLATE_FILE ${OPENBOARD_ETC_DIR}/asyncAPI.js
                             ${OPENBOARD_ETC_DIR}/intranet-podcast-metadata.template
@@ -233,7 +233,7 @@ install(FILES     ${OPENBOARD_MIMEICON_FILE}    DESTINATION ${CMAKE_INSTALL_DATA
 include(InstallRequiredSystemLibraries)
 set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/LICENSE")
 set(CPACK_PACKAGE_VERSION "${VERSION}")
-set(CPACK_PACKAGE_CONTACT "The OpenBoard team")
+set(CPACK_PACKAGE_CONTACT "LibertyBoard")
 set(CPACK_STRIP_FILES TRUE)
 
 # Debian specific settings

@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>OpenBoard</string>
+   <string>LibertyBoard</string>
   </property>
   <property name="windowIcon">
    <iconset resource="../OpenBoard.qrc">
@@ -381,7 +381,7 @@
     <string>Quit</string>
    </property>
    <property name="toolTip">
-    <string>Quit OpenBoard</string>
+    <string>Quit LibertyBoard</string>
    </property>
    <property name="shortcutContext">
     <enum>Qt::WindowShortcut</enum>
@@ -697,10 +697,10 @@
      <normaloff>:/images/toolbar/menu.png</normaloff>:/images/toolbar/menu.png</iconset>
    </property>
    <property name="text">
-    <string>OpenBoard</string>
+    <string>LibertyBoard</string>
    </property>
    <property name="toolTip">
-    <string>OpenBoard</string>
+    <string>LibertyBoard</string>
    </property>
    <property name="font">
     <font>
@@ -1918,10 +1918,10 @@
      <normaloff>:/images/toolbar/hide.png</normaloff>:/images/toolbar/hide.png</iconset>
    </property>
    <property name="text">
-    <string>Hide OpenBoard</string>
+    <string>Hide LibertyBoard</string>
    </property>
    <property name="toolTip">
-    <string>Hide OpenBoard Application</string>
+    <string>Hide LibertyBoard Application</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+H</string>

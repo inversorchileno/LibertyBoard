@@ -1,12 +1,13 @@
 # LibertyBoard
 
-LibertyBoard es un fork de OpenBoard con un puntero láser estilo Drawboard PDF y una interfaz más tradicional, en ventana. Este archivo reúne lo acordado con el dueño del proyecto, para que cualquier sesión de trabajo nueva pueda retomarlo.
+LibertyBoard es una pizarra digital y lector PDF con puntero láser estilo Drawboard PDF y una interfaz tradicional, en ventana. Es una versión modificada de OpenBoard (GPLv3). Este archivo reúne lo acordado con el dueño del proyecto, para que cualquier sesión de trabajo nueva pueda retomarlo.
 
 ## Etapas
 
 1. **Compilación para Windows, láser nuevo y orden de las barras.** *(hecha)*
 2. **Paneles de opciones estilo Drawboard y formas nuevas.** *(hecha)*
 3. **Rediseño a ventana normal con menús (modo pizarra y modo documentos).** *(hecha)*
+4. **Identidad propia: nombre, logo, carpeta de datos y documentación.** *(hecha)*
 
 ## 1. Barras de herramientas
 
@@ -82,3 +83,11 @@ En modo escritorio son paneles emergentes; en modo pizarra, un panel fijo a la d
 ## Compilación
 
 GitHub Actions compila LibertyBoard para Windows en cada cambio de la rama `master` (`.github/workflows/windows-build.yml`). El resultado se descarga como artefacto `LibertyBoard-windows` desde la pestaña Actions.
+
+## Identidad de LibertyBoard
+
+- **Nombre.** El programa se llama LibertyBoard en todo lo visible: ventana, menús, mensajes, ayudas de inicio, traducciones e información del ejecutable de Windows (`LibertyBoard.exe`). El nombre interno de algunos archivos del código (`OpenBoard.pro`, `OpenBoard.qrc`, `OpenBoard_es.ts`) se mantiene para no romper la compilación ni facilitar traer mejoras de OpenBoard.
+- **Logo.** Tarjeta blanca con una tableta naranja con firma azul, un lápiz azul escribiendo y alas azules a los lados. El original vectorial está en `docs/images/libertyboard-logo.svg`; los iconos del programa (`resources/images/OpenBoard.png`, `bigOpenBoard.png`, `ch.openboard.OpenBoard.svg`, `resources/win/OpenBoard.ico`) se generan desde él.
+- **Carpeta propia.** El nombre de aplicación y de organización es LibertyBoard, así que los documentos y la configuración del usuario quedan en `%LOCALAPPDATA%\LibertyBoard` y el archivo de usuario se llama `LibertyBoardUser.config`. No se lee ni se copia nada de una instalación de OpenBoard: quien instala LibertyBoard parte de cero. La configuración de fábrica está en `resources/etc/LibertyBoard.config` y el estilo en `LibertyBoard.css`.
+- **Sin actualizaciones de OpenBoard.** La búsqueda de actualizaciones está apagada y los enlaces de inicio y tutorial apuntan al repositorio de LibertyBoard.
+- **Créditos.** La pestaña Acerca de muestra primero LibertyBoard y luego indica que es una versión modificada de OpenBoard, con sus créditos y la licencia GPLv3. Los encabezados de copyright de los archivos de código se mantienen tal cual, como exige la licencia.
