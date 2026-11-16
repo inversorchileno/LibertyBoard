@@ -84,6 +84,8 @@ UBDrawingController::UBDrawingController(QObject * parent)
         { UBApplication::mainWindow->actionRectangle, UBStylusTool::Rectangle },
         { UBApplication::mainWindow->actionEllipse, UBStylusTool::Ellipse },
         { UBApplication::mainWindow->actionUnderline, UBStylusTool::Underline },
+        { UBApplication::mainWindow->actionHighlight, UBStylusTool::Highlight },
+        { UBApplication::mainWindow->actionNote, UBStylusTool::Note },
     };
 
     for (const auto& shapeTool : shapeTools)
@@ -176,6 +178,10 @@ void UBDrawingController::setStylusTool(int tool)
             UBApplication::mainWindow->actionEllipse->setChecked(true);
         else if (mStylusTool == UBStylusTool::Underline)
             UBApplication::mainWindow->actionUnderline->setChecked(true);
+        else if (mStylusTool == UBStylusTool::Highlight)
+            UBApplication::mainWindow->actionHighlight->setChecked(true);
+        else if (mStylusTool == UBStylusTool::Note)
+            UBApplication::mainWindow->actionNote->setChecked(true);
 
 
         // workaround for #827

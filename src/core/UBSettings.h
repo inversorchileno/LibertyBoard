@@ -317,6 +317,7 @@ class UBSettings : public QObject
         ShapeSettings ellipseSettings;
         ShapeSettings arrowSettings;
         ShapeSettings underlineSettings;
+        ShapeSettings highlightSettings;
         ShapeSettings* shapeSettings(int tool);
 
         void setCurrentPenWidth(qreal width);
@@ -471,7 +472,7 @@ class UBSettings : public QObject
 
     private:
         void initShapeSettings(ShapeSettings& shape, const QString& domain, const QString& color, qreal width,
-                               int startEnding, int endEnding);
+                               int startEnding, int endEnding, qreal opacity = 1.0);
 
     public slots:
 

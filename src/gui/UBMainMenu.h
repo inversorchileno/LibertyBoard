@@ -26,6 +26,8 @@
 #include "core/UBApplicationController.h"
 
 class QMenu;
+class QToolBar;
+class QToolButton;
 class UBMainWindow;
 
 /**
@@ -50,8 +52,14 @@ public:
 private:
     void createMenus();
     void setupDocumentShortcuts();
-    void spreadBoardToolBar();
+    void arrangeBoardToolBar();
+    void createCornerButtons();
+    void setToolBarsHidden(bool hidden);
+    QToolBar* currentToolBar() const;
 
     UBMainWindow* mMainWindow{nullptr};
     QMenu* mDocumentMenu{nullptr};
+    QToolButton* mToggleToolBarButton{nullptr};
+    UBApplicationController::MainMode mMode{UBApplicationController::Board};
+    bool mToolBarsHidden{false};
 };

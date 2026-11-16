@@ -145,9 +145,8 @@ void UBBoardPaletteManager::setupDockPaletteWidgets()
     // Add the dock palettes
     mLeftPalette = new UBLeftPalette(mContainer);
 
-    // LEFT palette widgets
-    mLeftPalette->registerWidget(mpPageNavigWidget);
-    mLeftPalette->addTab(mpPageNavigWidget);
+    // The page navigator is shown in the pages sidebar of the board, not in
+    // the left palette.
 
     mLeftPalette->connectSignals();
     mLeftPalette->showTabWidget(0);
@@ -238,8 +237,11 @@ void UBBoardPaletteManager::setupPalettes()
 
 
     // Add the other palettes
-    mStylusPalette = new UBStylusPalette(mContainer, UBSettings::settings()->appToolBarOrientationVertical->get().toBool() ? Qt::Vertical : Qt::Horizontal);
+    const int stylusEdge = UBStylusPalette::edge();
+    const bool vertical = (stylusEdge == Qt::LeftEdge || stylusEdge == Qt::RightEdge);
+    mStylusPalette = new UBStylusPalette(mContainer, vertical ? Qt::Vertical : Qt::Horizontal);
     connect(mStylusPalette, SIGNAL(stylusToolDoubleClicked(int)), UBApplication::boardController, SLOT(stylusToolDoubleClicked(int)));
+    connect(mStylusPalette, &UBStylusPalette::edgeChosen, this, &UBBoardPaletteManager::placeStylusPalette);
     mStylusPalette->show(); // always show stylus palette at startup
 
     mZoomPalette = new UBZoomPalette(mContainer);
@@ -994,9 +996,39 @@ void UBBoardPaletteManager::showVirtualKeyboard(bool show)
         mKeyboardPalette->setVisible(show);
 }
 
+void UBBoardPaletteManager::placeStylusPalette(int edge)
+{
+    UBStylusPalette::setEdge(edge);
+
+    const bool vertical = (edge == Qt::LeftEdge || edge == Qt::RightEdge);
+
+    if (vertical != UBSettings::settings()->appToolBarOrientationVertical->get().toBool())
+    {
+        // Replaces the palette by one of the other orientation.
+        UBSettings::settings()->appToolBarOrientationVertical->set(vertical);
+    }
+    else
+    {
+        mStylusPalette->initPosition();
+    }
+}
+
 void UBBoardPaletteManager::changeStylusPaletteOrientation(QVariant var)
 {
     bool bVertical = var.toBool();
+    const int edge = UBStylusPalette::edge();
+
+    // When the orientation is chosen in the preferences, the palette moves
+    // to a border that suits it.
+    if (bVertical && edge != Qt::LeftEdge && edge != Qt::RightEdge)
+    {
+        UBStylusPalette::setEdge(Qt::RightEdge);
+    }
+    else if (!bVertical && edge != Qt::TopEdge && edge != Qt::BottomEdge)
+    {
+        UBStylusPalette::setEdge(Qt::BottomEdge);
+    }
+
     bool bVisible = mStylusPalette->isVisible();
 
     // Clean the old palette
@@ -1017,6 +1049,7 @@ void UBBoardPaletteManager::changeStylusPaletteOrientation(QVariant var)
     }
 
     connect(mStylusPalette, SIGNAL(stylusToolDoubleClicked(int)), UBApplication::boardController, SLOT(stylusToolDoubleClicked(int)));
+    connect(mStylusPalette, &UBStylusPalette::edgeChosen, this, &UBBoardPaletteManager::placeStylusPalette);
     mStylusPalette->setVisible(bVisible); // always show stylus palette at startup
 }
 

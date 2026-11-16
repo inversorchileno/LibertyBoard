@@ -27,6 +27,7 @@
 
 class QCheckBox;
 class QFontComboBox;
+class QLabel;
 class QToolButton;
 class QVBoxLayout;
 class UBColorSwatches;
@@ -53,6 +54,9 @@ public:
     /** @brief Shows the current values of the settings. */
     virtual void refresh() = 0;
 
+    /** @brief Lays the options out in one row, for the toolbar. */
+    void setHorizontal();
+
 protected:
     UBToolOptionsPanel(const QString& title, QWidget* parent);
 
@@ -60,6 +64,7 @@ protected:
     void addSection(const QString& title);
 
     QVBoxLayout* mLayout{nullptr};
+    QLabel* mTitle{nullptr};
 };
 
 class UBPenOptionsPanel : public UBToolOptionsPanel

@@ -69,6 +69,7 @@ class UBBoardPaletteManager : public QObject
         UBLeftPalette* leftPalette(){return mLeftPalette;}
         UBRightPalette* rightPalette(){return mRightPalette;}
         UBStylusPalette* stylusPalette(){return mStylusPalette;}
+        UBPageNavigationWidget* pageNavigationWidget(){return mpPageNavigWidget;}
         void showToolOptions(int tool);
         UBActionPalette *addItemPalette() {return mAddItemPalette;}
         UBFeaturesWidget *featuresWidget() { return mpFeaturesWidget; }
@@ -190,6 +191,7 @@ class UBBoardPaletteManager : public QObject
         void handButtonReleased();
 
         void changeStylusPaletteOrientation(QVariant var);
+        void placeStylusPalette(int edge);
 };
 
 #endif /* UBBOARDPALETTEMANAGER_H_ */

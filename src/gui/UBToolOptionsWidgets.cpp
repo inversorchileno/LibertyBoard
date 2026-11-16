@@ -220,6 +220,12 @@ qreal UBValueSlider::value() const
     return mValue;
 }
 
+void UBValueSlider::setCompact()
+{
+    mSlider->setMinimumWidth(90);
+    mSlider->setMaximumWidth(140);
+}
+
 int UBValueSlider::positionOf(qreal value) const
 {
     const int intervals = mMarks.size() - 1;
@@ -316,6 +322,17 @@ void UBSegmentedChoice::setChoice(int index)
 int UBSegmentedChoice::choice() const
 {
     return mGroup->checkedId();
+}
+
+void UBSegmentedChoice::setCompact()
+{
+    for (QAbstractButton* button : mGroup->buttons())
+    {
+        const QString label = button->text();
+        button->setToolTip(QString(label).replace(QChar('\n'), QStringLiteral(" - ")));
+        button->setText(label.section('\n', 0, 0));
+        button->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
+    }
 }
 
 static void drawEnding(QPainter& painter, int ending, const QPointF& tip, qreal direction)

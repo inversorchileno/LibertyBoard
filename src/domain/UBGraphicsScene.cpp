@@ -31,6 +31,8 @@
 #include "UBGraphicsLaserTrail.h"
 #include "UBGraphicsShapePreview.h"
 #include "UBShapeGeometry.h"
+#include "UBGraphicsNoteItem.h"
+#include "gui/UBNoteDialog.h"
 
 #include <cmath>
 
@@ -487,6 +489,11 @@ bool UBGraphicsScene::inputDevicePress(const QPointF& scenePos, const qreal& pre
             startLaserTrail(scenePos);
             accepted = true;
         }
+        else if (currentTool == UBStylusTool::Note) {
+            mNotePending = true;
+            mNotePosition = scenePos;
+            accepted = true;
+        }
         else if (isShapeTool(currentTool)) {
             mShapeTool = currentTool;
             mShapeStart = scenePos;
@@ -799,6 +806,15 @@ bool UBGraphicsScene::inputDeviceRelease(int tool, Qt::KeyboardModifiers modifie
         finishShape();
     }
 
+    if (mNotePending)
+    {
+        mNotePending = false;
+
+        // After the mouse event: the note dialog runs its own event loop.
+        const QPointF position = mNotePosition;
+        QTimer::singleShot(0, this, [this, position]() { addOrEditNote(position); });
+    }
+
     if (mRemovedItems.size() > 0 || mAddedItems.size() > 0)
     {
         if (mUndoRedoStackEnabled) { //should be deleted after scene own undo stack implemented
@@ -922,7 +938,8 @@ bool UBGraphicsScene::isShapeTool(int tool)
     return tool == UBStylusTool::Arrow
             || tool == UBStylusTool::Rectangle
             || tool == UBStylusTool::Ellipse
-            || tool == UBStylusTool::Underline;
+            || tool == UBStylusTool::Underline
+            || tool == UBStylusTool::Highlight;
 }
 
 UBShapeStyle UBGraphicsScene::shapeStyle(int tool) const
@@ -950,6 +967,34 @@ UBShapeStyle UBGraphicsScene::shapeStyle(int tool) const
     style.minimumHeadSize = 12 * screenToScene;
 
     return style;
+}
+
+void UBGraphicsScene::addOrEditNote(const QPointF& position)
+{
+    // A click on a note opens it.
+    const QList<QGraphicsItem*> itemsAtPosition = items(position);
+
+    for (QGraphicsItem* item : itemsAtPosition)
+    {
+        if (auto note = qgraphicsitem_cast<UBGraphicsNoteItem*>(item))
+        {
+            note->edit();
+            return;
+        }
+    }
+
+    UBNoteDialog dialog(QString(), true, UBApplication::mainWindow);
+
+    if (dialog.ask() != UBNoteDialog::Result::Saved)
+    {
+        return;
+    }
+
+    auto note = new UBGraphicsNoteItem(dialog.text());
+    note->setPos(position);
+    addItem(note);
+    setModified(true);
+    setDocumentUpdated();
 }
 
 void UBGraphicsScene::finishShape()

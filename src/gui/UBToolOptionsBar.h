@@ -24,22 +24,24 @@
 #include <QMap>
 #include <QWidget>
 
+class QHBoxLayout;
 class QLabel;
-class QVBoxLayout;
 class UBToolOptionsPanel;
 
 /**
- * @brief The fixed panel at the right of the board that always shows the
- * options of the selected tool, like the tool panel of Drawboard PDF.
+ * @brief Shows the options of the selected tool in one row of the board
+ * toolbar, so that they are always at hand without taking room on the board.
  */
-class UBToolOptionsDock : public QWidget
+class UBToolOptionsBar : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit UBToolOptionsDock(QWidget* parent = nullptr);
+    explicit UBToolOptionsBar(QWidget* parent = nullptr);
 
     void showTool(int tool);
+
+    QSize sizeHint() const override;
 
 protected:
     void showEvent(QShowEvent* event) override;
@@ -47,7 +49,8 @@ protected:
 private:
     void onStylusToolChanged(int tool);
 
-    QVBoxLayout* mContentLayout{nullptr};
+    QWidget* mContent{nullptr};
+    QHBoxLayout* mContentLayout{nullptr};
     QLabel* mNoOptions{nullptr};
     QMap<int, UBToolOptionsPanel*> mPanels;
     UBToolOptionsPanel* mCurrentPanel{nullptr};

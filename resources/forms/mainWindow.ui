@@ -1610,6 +1610,38 @@
     <string>Underline Text</string>
    </property>
   </action>
+  <action name="actionHighlight">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../OpenBoard.qrc">
+     <normaloff>:/images/stylusPalette/highlight.svg</normaloff>
+     <normalon>:/images/stylusPalette/highlightOn.svg</normalon>:/images/stylusPalette/highlight.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Highlight</string>
+   </property>
+   <property name="toolTip">
+    <string>Highlight Text</string>
+   </property>
+  </action>
+  <action name="actionNote">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../OpenBoard.qrc">
+     <normaloff>:/images/stylusPalette/note.svg</normaloff>
+     <normalon>:/images/stylusPalette/noteOn.svg</normalon>:/images/stylusPalette/note.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Note</string>
+   </property>
+   <property name="toolTip">
+    <string>Add Notes</string>
+   </property>
+  </action>
   <action name="actionText">
    <property name="checkable">
     <bool>true</bool>

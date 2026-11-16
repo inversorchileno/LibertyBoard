@@ -412,6 +412,7 @@ signals:
         void startLaserTrail(const QPointF& point);
         UBShapeStyle shapeStyle(int tool) const;
         void finishShape();
+        void addOrEditNote(const QPointF& position);
         qreal strokeWidth(int tool, qreal pressure, std::optional<QLineF> direction) const;
         QList<UBGraphicsPolygonItem*> polygonsOfSameStroke(UBGraphicsPolygonItem* polygon) const;
         void drawMarkerCircle(const QPointF& pEndPoint);
@@ -455,6 +456,8 @@ signals:
         int mShapeTool{-1};     // the shape being drawn, or -1
         QPointF mShapeStart;
         QPointF mShapeEnd;
+        bool mNotePending{false};
+        QPointF mNotePosition;
         QGraphicsEllipseItem* mMarkerCircle; // dotted circle around marker
         QGraphicsEllipseItem* mPenCircle; // dotted circle around pen
 

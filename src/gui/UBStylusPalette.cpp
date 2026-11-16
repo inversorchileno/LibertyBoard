@@ -39,6 +39,8 @@
 #include "core/UBShortcutManager.h"
 
 
+#include "board/UBBoardController.h"
+#include "board/UBBoardView.h"
 #include "board/UBDrawingController.h"
 
 
@@ -67,6 +69,8 @@ UBStylusPalette::UBStylusPalette(QWidget *parent, Qt::Orientation orient)
     actions << UBApplication::mainWindow->actionRectangle;
     actions << UBApplication::mainWindow->actionEllipse;
     actions << UBApplication::mainWindow->actionUnderline;
+    actions << UBApplication::mainWindow->actionHighlight;
+    actions << UBApplication::mainWindow->actionNote;
 
     setActions(actions);
     setButtonIconSize(QSize(42, 42));
@@ -93,23 +97,98 @@ void UBStylusPalette::initPosition()
 
     mCustomPosition = true;
 
+    const QRect area = boardArea();
     QPoint pos;
-    int parentWidth = pParentW->width();
-    int parentHeight = pParentW->height();
 
-    if(UBSettings::settings()->appToolBarOrientationVertical->get().toBool()){
-        int posX = border();
-        int posY = (parentHeight / 2) - (height() / 2);
-        pos.setX(posX);
-        pos.setY(posY);
+    switch (edge())
+    {
+        case Qt::LeftEdge:
+            pos = QPoint(area.left() + border(), area.center().y() - height() / 2);
+            break;
+        case Qt::TopEdge:
+            pos = QPoint(area.center().x() - width() / 2, area.top() + border());
+            break;
+        case Qt::BottomEdge:
+            pos = QPoint(area.center().x() - width() / 2, area.bottom() - border() - height());
+            break;
+        default:
+            pos = QPoint(area.right() - border() - width(), area.center().y() - height() / 2);
+            break;
     }
-    else {
-        int posX = (parentWidth / 2) - (width() / 2);
-        int posY = parentHeight - border() - height();
-        pos.setX(posX);
-        pos.setY(posY);
-    }
+
     moveInsideParent(pos);
+}
+
+QRect UBStylusPalette::boardArea() const
+{
+    // The board view, beside the pages sidebar, or the whole parent.
+    UBBoardView* view = UBApplication::boardController ? UBApplication::boardController->controlView() : nullptr;
+
+    if (view && view->parentWidget() == parentWidget())
+    {
+        return view->geometry();
+    }
+
+    return parentWidget()->rect();
+}
+
+int UBStylusPalette::edge()
+{
+    return UBSettings::settings()->value("Board/LibertyBoardStylusPaletteEdge", int(Qt::RightEdge)).toInt();
+}
+
+void UBStylusPalette::setEdge(int edge)
+{
+    UBSettings::settings()->setValue("Board/LibertyBoardStylusPaletteEdge", edge);
+}
+
+void UBStylusPalette::mouseReleaseEvent(QMouseEvent* event)
+{
+    const bool wasMoving = mIsMoving;
+
+    UBActionPalette::mouseReleaseEvent(event);
+
+    QWidget* parent = parentWidget();
+
+    if (!wasMoving || !parent)
+    {
+        return;
+    }
+
+    // Dropped close to a border: the palette is placed along that border,
+    // horizontal at the top and bottom, vertical at the left and right. The
+    // pointer tells which border, as a long palette may touch several.
+    const int snapDistance = 120;
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+    const QPoint pointer = parent->mapFromGlobal(event->globalPosition().toPoint());
+#else
+    const QPoint pointer = parent->mapFromGlobal(event->globalPos());
+#endif
+    const QRect area = boardArea();
+    const QList<QPair<int, int>> distances = {
+        { pointer.x() - area.left(), Qt::LeftEdge },
+        { area.right() - pointer.x(), Qt::RightEdge },
+        { pointer.y() - area.top(), Qt::TopEdge },
+        { area.bottom() - pointer.y(), Qt::BottomEdge },
+    };
+
+    int chosenEdge = 0;
+    int shortestDistance = snapDistance;
+
+    for (const auto& distance : distances)
+    {
+        if (distance.first < shortestDistance)
+        {
+            shortestDistance = distance.first;
+            chosenEdge = distance.second;
+        }
+    }
+
+    if (chosenEdge)
+    {
+        // Queued: the palette may be replaced by one of the other orientation.
+        QMetaObject::invokeMethod(this, [this, chosenEdge]() { emit edgeChosen(chosenEdge); }, Qt::QueuedConnection);
+    }
 }
 
 UBStylusPalette::~UBStylusPalette()

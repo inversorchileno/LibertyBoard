@@ -89,6 +89,7 @@ UBToolOptionsPanel* UBToolOptionsPanel::create(int tool, QWidget* parent)
         case UBStylusTool::Ellipse:
         case UBStylusTool::Arrow:
         case UBStylusTool::Underline:
+        case UBStylusTool::Highlight:
             return new UBShapeOptionsPanel(tool, parent);
         case UBStylusTool::Text:
             return new UBTextOptionsPanel(parent);
@@ -108,9 +109,38 @@ UBToolOptionsPanel::UBToolOptionsPanel(const QString& title, QWidget* parent)
     mLayout->setContentsMargins(14, 12, 14, 14);
     mLayout->setSpacing(8);
 
-    auto titleLabel = new QLabel(title, this);
-    titleLabel->setObjectName("title");
-    mLayout->addWidget(titleLabel);
+    mTitle = new QLabel(title, this);
+    mTitle->setObjectName("title");
+    mLayout->addWidget(mTitle);
+}
+
+void UBToolOptionsPanel::setHorizontal()
+{
+    mLayout->setDirection(QBoxLayout::LeftToRight);
+    mLayout->setContentsMargins(8, 2, 8, 2);
+    mLayout->setSpacing(10);
+    setMinimumWidth(0);
+    setStyleSheet(toolOptionsStyleSheet() + "UBToolOptionsPanel { background: transparent; }");
+
+    // The toolbar shows which tool is selected: no title and no preview.
+    mTitle->hide();
+
+    for (UBStrokePreview* preview : findChildren<UBStrokePreview*>())
+    {
+        preview->hide();
+    }
+
+    for (UBSegmentedChoice* choice : findChildren<UBSegmentedChoice*>())
+    {
+        choice->setCompact();
+    }
+
+    for (UBValueSlider* slider : findChildren<UBValueSlider*>())
+    {
+        slider->setCompact();
+    }
+
+    mLayout->addStretch();
 }
 
 void UBToolOptionsPanel::addRow(QWidget* widget)
@@ -387,6 +417,8 @@ static QString shapeTitle(int tool)
             return UBShapeOptionsPanel::tr("Ellipse");
         case UBStylusTool::Arrow:
             return UBShapeOptionsPanel::tr("Arrow");
+        case UBStylusTool::Highlight:
+            return UBShapeOptionsPanel::tr("Text highlight");
         default:
             return UBShapeOptionsPanel::tr("Underline");
     }
@@ -400,6 +432,7 @@ UBShapeOptionsPanel::UBShapeOptionsPanel(int tool, QWidget* parent)
     const bool closedShape = (tool == UBStylusTool::Rectangle || tool == UBStylusTool::Ellipse);
     const bool isArrow = (tool == UBStylusTool::Arrow);
     const bool isUnderline = (tool == UBStylusTool::Underline);
+    const bool isHighlight = (tool == UBStylusTool::Highlight);
 
     if (closedShape)
     {
@@ -407,7 +440,7 @@ UBShapeOptionsPanel::UBShapeOptionsPanel(int tool, QWidget* parent)
         addRow(mColorTarget);
     }
 
-    mStrokeColors = new UBColorSwatches(penColors(), false, this);
+    mStrokeColors = new UBColorSwatches(isHighlight ? markerColors() : penColors(), false, this);
     addRow(mStrokeColors);
 
     if (closedShape)
@@ -416,10 +449,19 @@ UBShapeOptionsPanel::UBShapeOptionsPanel(int tool, QWidget* parent)
         addRow(mFillColors);
     }
 
-    mWidth = new UBValueSlider({ 1, 2, 3, 6, 10, 50 }, tr(" pt"), 1, this);
+    if (isHighlight)
+    {
+        addSection(tr("Height"));
+        mWidth = new UBValueSlider({ 8, 12, 16, 20, 30, 40, 60 }, tr(" pt"), 0, this);
+    }
+    else
+    {
+        mWidth = new UBValueSlider({ 1, 2, 3, 6, 10, 50 }, tr(" pt"), 1, this);
+    }
+
     addRow(mWidth);
 
-    if (!isUnderline)
+    if (!isUnderline && !isHighlight)
     {
         addSection(isArrow ? tr("Line style") : tr("Border styles"));
         mDash = new UBPictureChoice(UBPictureChoice::Kind::Dash, 5, this);

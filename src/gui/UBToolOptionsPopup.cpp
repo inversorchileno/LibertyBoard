@@ -55,6 +55,7 @@ bool UBToolOptionsPopup::hasOptions(int tool)
         case UBStylusTool::Rectangle:
         case UBStylusTool::Ellipse:
         case UBStylusTool::Underline:
+        case UBStylusTool::Highlight:
             return true;
         default:
             return false;

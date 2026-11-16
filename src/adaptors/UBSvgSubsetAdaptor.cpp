@@ -43,6 +43,7 @@
 #include "domain/UBGraphicsMediaItem.h"
 #include "domain/UBGraphicsWidgetItem.h"
 #include "domain/UBGraphicsPDFItem.h"
+#include "domain/UBGraphicsNoteItem.h"
 #include "domain/UBGraphicsTextItem.h"
 #include "domain/UBGraphicsTextItemDelegate.h"
 #include "domain/UBGraphicsStroke.h"
@@ -783,6 +784,15 @@ void UBSvgSubsetAdaptor::UBSvgSubsetReader::processElement()
                 textItem->show();
             }
         }
+        else if (name == "note")
+        {
+            UBGraphicsNoteItem* note = noteItemFromSvg();
+
+            if (note)
+            {
+                mScene->addItem(note);
+            }
+        }
         else if (name == "curtain")
         {
             UBGraphicsCurtainItem* mask = curtainItemFromSvg();
@@ -1440,6 +1450,14 @@ bool UBSvgSubsetAdaptor::UBSvgSubsetWriter::persistScene(std::shared_ptr<UBDocum
         if (textItem && textItem->isVisible())
         {
             textItemToSvg(textItem);
+            continue;
+        }
+
+        // Is the item a note?
+        UBGraphicsNoteItem *noteItem = qgraphicsitem_cast<UBGraphicsNoteItem*> (item);
+        if (noteItem && noteItem->isVisible())
+        {
+            noteItemToSvg(noteItem);
             continue;
         }
 
@@ -3033,6 +3051,51 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::curtainItemToSvg(UBGraphicsCurtainIt
     mXmlWriter.writeEndElement();
 }
 
+
+void UBSvgSubsetAdaptor::UBSvgSubsetWriter::noteItemToSvg(UBGraphicsNoteItem* noteItem)
+{
+    /**
+     * sample
+     *
+      <ub:note x="250" y="150" ub:z-value="12">The text of the note</ub:note>
+     */
+
+    mXmlWriter.writeStartElement(UBSettings::uniboardDocumentNamespaceUri, "note");
+    mXmlWriter.writeAttribute("x", QString::number(noteItem->scenePos().x()));
+    mXmlWriter.writeAttribute("y", QString::number(noteItem->scenePos().y()));
+
+    QString zs;
+    zs.setNum(noteItem->zValue(), 'f'); // 'f' keeps precision
+    mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "z-value", zs);
+
+    mXmlWriter.writeCharacters(noteItem->text());
+    mXmlWriter.writeEndElement();
+}
+
+UBGraphicsNoteItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::noteItemFromSvg()
+{
+    const QPointF position(mXmlReader.attributes().value("x").toString().toDouble(),
+                           mXmlReader.attributes().value("y").toString().toDouble());
+    const auto z = mXmlReader.attributes().value(UBSettings::uniboardDocumentNamespaceUri, "z-value");
+
+    // Reads up to the end of the element.
+    const QString text = mXmlReader.readElementText();
+
+    if (text.isEmpty())
+    {
+        return nullptr;
+    }
+
+    auto note = new UBGraphicsNoteItem(text);
+    note->setPos(position);
+
+    if (!z.isNull())
+    {
+        note->setZValue(z.toString().toDouble());
+    }
+
+    return note;
+}
 
 UBGraphicsCurtainItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::curtainItemFromSvg()
 {

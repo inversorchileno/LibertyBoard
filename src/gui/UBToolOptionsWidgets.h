@@ -77,6 +77,9 @@ public:
     void setValue(qreal value);
     qreal value() const;
 
+    /** @brief A shorter slider, for the toolbar. */
+    void setCompact();
+
 signals:
     void valueChanged(qreal value);
 
@@ -108,6 +111,9 @@ public:
 
     void setChoice(int index);
     int choice() const;
+
+    /** @brief Shows only the first line of each label, with the whole label as tooltip. */
+    void setCompact();
 
 signals:
     void choiceChanged(int index);

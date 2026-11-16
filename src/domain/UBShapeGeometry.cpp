@@ -508,6 +508,17 @@ QList<UBShapePart> UBShapeGeometry::build(int tool, const QPointF& start, const 
         case UBStylusTool::Arrow:
             return buildArrow(start, end, style, strokeColor);
 
+        case UBStylusTool::Highlight:
+        {
+            // A horizontal band over a line of text, as tall as the width.
+            const qreal left = qMin(start.x(), end.x());
+            const qreal right = qMax(start.x(), end.x());
+            const qreal top = start.y() - style.width / 2;
+            const QRectF band(left, top, right - left, style.width);
+
+            return { UBShapePart{ QPolygonF(band), strokeColor } };
+        }
+
         case UBStylusTool::Underline:
         {
             // Always fully opaque and horizontal.

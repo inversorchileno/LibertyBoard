@@ -45,6 +45,16 @@ class UBStylusPalette : public UBActionPalette
 
         void initPosition();
 
+        /** @brief The border of the board where the palette is placed, a Qt::Edge. */
+        static int edge();
+        static void setEdge(int edge);
+
+    protected:
+        void mouseReleaseEvent(QMouseEvent* event) override;
+
+    private:
+        QRect boardArea() const;
+
     private slots:
 
         void stylusToolDoubleClicked();
@@ -54,6 +64,9 @@ class UBStylusPalette : public UBActionPalette
 
     signals:
         void stylusToolDoubleClicked(int tool);
+
+        /** @brief The palette was dropped close to a border of the board. */
+        void edgeChosen(int edge);
 };
 
 #endif /* UBSTYLUSPALLETTE_H_ */

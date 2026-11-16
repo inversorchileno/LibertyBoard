@@ -84,7 +84,8 @@
 #include "web/UBEmbedController.h"
 #include "web/UBEmbedParser.h"
 
-#include "gui/UBToolOptionsDock.h"
+#include "gui/UBPageNavigationWidget.h"
+#include "gui/UBPagesSidebar.h"
 
 #include "core/memcheck.h"
 
@@ -222,7 +223,6 @@ void UBBoardController::setupViews()
     mControlView->setTransformationAnchor(QGraphicsView::NoAnchor);
 
     mControlLayout->addWidget(mControlView);
-    mControlLayout->addWidget(new UBToolOptionsDock(mControlContainer));
     mControlContainer->setObjectName("ubBoardControlContainer");
     mMainWindow->addBoardWidget(mControlContainer);
 
@@ -236,6 +236,9 @@ void UBBoardController::setupViews()
     mDisplayView->setTransformationAnchor(QGraphicsView::NoAnchor);
 
     mPaletteManager = new UBBoardPaletteManager(mControlContainer, this);
+
+    // The page thumbnails, at the left of the board
+    mControlLayout->insertWidget(0, new UBPagesSidebar(mPaletteManager->pageNavigationWidget(), mControlContainer));
 
     mMessageWindow = new UBMessageWindow(mControlContainer);
     mMessageWindow->hide();

@@ -21,6 +21,8 @@ target_sources(${PROJECT_NAME} PRIVATE
     UBGraphicsMediaItem.h
     UBGraphicsMediaItemDelegate.cpp
     UBGraphicsMediaItemDelegate.h
+    UBGraphicsNoteItem.cpp
+    UBGraphicsNoteItem.h
     UBGraphicsPDFItem.cpp
     UBGraphicsPDFItem.h
     UBGraphicsPixmapItem.cpp

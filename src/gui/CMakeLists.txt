@@ -43,6 +43,12 @@ target_sources(${PROJECT_NAME} PRIVATE
     UBLeftPalette.h
     UBMainMenu.cpp
     UBMainMenu.h
+    UBNoteDialog.cpp
+    UBNoteDialog.h
+    UBPageIndicator.cpp
+    UBPageIndicator.h
+    UBPagesSidebar.cpp
+    UBPagesSidebar.h
     UBMagnifer.cpp
     UBMagnifer.h
     UBMainWindow.cpp
@@ -89,8 +95,8 @@ target_sources(${PROJECT_NAME} PRIVATE
     UBToolWidget.h
     UBToolOptionsPanel.cpp
     UBToolOptionsPanel.h
-    UBToolOptionsDock.cpp
-    UBToolOptionsDock.h
+    UBToolOptionsBar.cpp
+    UBToolOptionsBar.h
     UBToolOptionsPopup.cpp
     UBToolOptionsPopup.h
     UBToolOptionsWidgets.cpp

@@ -3242,6 +3242,10 @@ void UBDocumentController::importFile()
                     selectDocument(createdDocument, true, true, true);
                     pageSelectionChanged();
 
+                    // Open the imported file on its first page right away.
+                    mBoardController->setActiveDocumentScene(createdDocument, 0);
+                    UBApplication::applicationController->showBoard();
+
                 } else {
                     UBApplication::showMessage(tr("Failed to import file ... "));
                 }
