@@ -340,6 +340,7 @@ void UBDisplayManager::positionScreens()
         QWidget* controlWidget = widget(ScreenRole::Control);
 
         QRect geometry = screenGeometry(ScreenRole::Control);
+        bool startMaximized = false;
 
         if (UBSettings::settings()->appRunInWindow->get().toBool())
         {
@@ -362,10 +363,12 @@ void UBDisplayManager::positionScreens()
             }
             else
             {
-                // calculate an initial geometry for window mode
+                // calculate an initial geometry for window mode, then
+                // fill the screen without hiding the task bar
                 geometry.setSize(geometry.size() - QSize(150, 150));
                 geometry.translate(50, 50);
                 controlWidget->setProperty("isInitialized", true);
+                startMaximized = true;
             }
         }
 
@@ -385,6 +388,11 @@ void UBDisplayManager::positionScreens()
         controlWidget->move(geometry.topLeft());
         controlWidget->resize(geometry.size());
         UBPlatformUtils::showFullScreen(controlWidget);
+
+        if (startMaximized)
+        {
+            controlWidget->showMaximized();
+        }
     }
 
     if (widget(ScreenRole::Display) && hasDisplay() && mUseMultiScreen)

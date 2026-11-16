@@ -53,6 +53,7 @@ UBMainWindow::UBMainWindow(QWidget *parent, Qt::WindowFlags flags)
     , mpDownloadWidget(NULL)
 {
     Ui::MainWindow::setupUi(this);
+    setWindowTitle(QStringLiteral("LibertyBoard"));
 
     mpDownloadWidget = new UBDownloadWidget();
     mpDownloadWidget->setWindowModality(Qt::ApplicationModal);

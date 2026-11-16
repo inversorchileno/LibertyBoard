@@ -67,6 +67,8 @@
 #include "tools/UBToolsManager.h"
 
 #include "UBDisplayManager.h"
+#include "gui/UBMainMenu.h"
+
 #include "core/memcheck.h"
 
 QPointer<QUndoStack> UBApplication::undoStack;
@@ -369,6 +371,9 @@ int UBApplication::exec(const QString& pFileToImport)
     connect(applicationController, SIGNAL(desktopMode(bool)),
             boardController->paletteManager(), SLOT(slot_changeDesktopMode(bool)));
 
+    UBMainMenu* mainMenu = new UBMainMenu(mainWindow);
+    connect(applicationController, &UBApplicationController::mainModeChanged, mainMenu, &UBMainMenu::onMainModeChanged);
+
     connect(applicationController, SIGNAL(mainModeChanged(UBApplicationController::MainMode))
           , boardController,       SLOT(appMainModeChanged(UBApplicationController::MainMode)));
 
@@ -568,38 +573,7 @@ void UBApplication::decorateActionMenu(QAction* action)
         {
             tb->setObjectName("ubButtonMenu");
             tb->setPopupMode(QToolButton::InstantPopup);
-            QMenu* menu = new QMenu(mainWindow);
-
-            QActionGroup* pageSizeGroup = new QActionGroup(mainWindow);
-            pageSizeGroup->addAction(mainWindow->actionWidePageSize);
-            pageSizeGroup->addAction(mainWindow->actionRegularPageSize);
-            pageSizeGroup->addAction(mainWindow->actionCustomPageSize);
-
-            QMenu* documentSizeMenu = menu->addMenu(QIcon(":/images/toolbar/pageSize.png"),tr("Page Size"));
-            documentSizeMenu->addAction(mainWindow->actionWidePageSize);
-            documentSizeMenu->addAction(mainWindow->actionRegularPageSize);
-            documentSizeMenu->addAction(mainWindow->actionCustomPageSize);
-            menu->addAction(mainWindow->actionCut);
-            menu->addAction(mainWindow->actionCopy);
-            menu->addAction(mainWindow->actionPaste);
-            menu->addAction(mainWindow->actionHideApplication);
-            menu->addAction(mainWindow->actionSleep);
-
-            menu->addSeparator();
-            menu->addAction(mainWindow->actionOpenTutorial);
-            menu->addAction(mainWindow->actionHintsAndTips);
-            menu->addSeparator();
-            menu->addAction(mainWindow->actionPreferences);
-            menu->addAction(mainWindow->actionMultiScreen);
-            if (!UBSettings::settings()->appHideCheckForSoftwareUpdate->get().toBool())
-                menu->addAction(mainWindow->actionCheckUpdate);
-            menu->addSeparator();
-
-            menu->addAction(mainWindow->actionPodcast);
-            mainWindow->actionPodcast->setText(tr("Podcast"));
-
-            menu->addSeparator();
-            menu->addAction(mainWindow->actionQuit);
+            QMenu* menu = UBMainMenu::createApplicationMenu(mainWindow, mainWindow);
 
             tb->setMenu(menu);
         }

@@ -84,6 +84,8 @@
 #include "web/UBEmbedController.h"
 #include "web/UBEmbedParser.h"
 
+#include "gui/UBToolOptionsDock.h"
+
 #include "core/memcheck.h"
 
 UBBoardController::UBBoardController(UBMainWindow* mainWindow)
@@ -220,6 +222,7 @@ void UBBoardController::setupViews()
     mControlView->setTransformationAnchor(QGraphicsView::NoAnchor);
 
     mControlLayout->addWidget(mControlView);
+    mControlLayout->addWidget(new UBToolOptionsDock(mControlContainer));
     mControlContainer->setObjectName("ubBoardControlContainer");
     mMainWindow->addBoardWidget(mControlContainer);
 
@@ -361,7 +364,9 @@ void UBBoardController::setupToolbar()
             new UBToolbarButtonGroup(mMainWindow->boardToolBar, colorActions);
     colorChoice->setLabel(tr("Color"));
 
-    mMainWindow->boardToolBar->insertWidget(mMainWindow->actionBackgrounds, colorChoice);
+    // The colors, widths and eraser sizes are chosen in the tool options panel:
+    // these groups only keep the selected values in step and are not shown.
+    colorChoice->hide();
 
     connect(settings->appToolBarDisplayText, SIGNAL(changed(QVariant)), colorChoice, SLOT(displayText(QVariant)));
     connect(colorChoice, SIGNAL(activated(int)), this, SLOT(setColorIndex(int)));
@@ -396,7 +401,7 @@ void UBBoardController::setupToolbar()
     lineWidthChoice->setCurrentIndex(settings->penWidthIndex());
     lineWidthActions.at(settings->penWidthIndex())->setChecked(true);
 
-    mMainWindow->boardToolBar->insertWidget(mMainWindow->actionBackgrounds, lineWidthChoice);
+    lineWidthChoice->hide();
 
     //-----------------------------------------------------------//
     // Setup eraser width choice widget
@@ -409,7 +414,7 @@ void UBBoardController::setupToolbar()
     UBToolbarButtonGroup *eraserWidthChoice =
             new UBToolbarButtonGroup(mMainWindow->boardToolBar, eraserWidthActions);
 
-    mMainWindow->boardToolBar->insertWidget(mMainWindow->actionBackgrounds, eraserWidthChoice);
+    eraserWidthChoice->hide();
 
     connect(settings->appToolBarDisplayText, SIGNAL(changed(QVariant)), eraserWidthChoice, SLOT(displayText(QVariant)));
     connect(eraserWidthChoice, SIGNAL(activated(int)), UBDrawingController::drawingController(), SLOT(setEraserWidthIndex(int)));
@@ -418,11 +423,7 @@ void UBBoardController::setupToolbar()
     eraserWidthChoice->setCurrentIndex(settings->eraserWidthIndex());
     eraserWidthActions.at(settings->eraserWidthIndex())->setChecked(true);
 
-    mMainWindow->boardToolBar->insertSeparator(mMainWindow->actionBackgrounds);
-
     //-----------------------------------------------------------//
-
-    UBApplication::app()->insertSpaceToToolbarBeforeAction(mMainWindow->boardToolBar, mMainWindow->actionBoard);
 
     UBApplication::app()->decorateActionMenu(mMainWindow->actionMenu);
 

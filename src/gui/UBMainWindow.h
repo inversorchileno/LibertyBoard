@@ -53,6 +53,7 @@ class UBMainWindow : public QMainWindow, public Ui::MainWindow
         void addWebWidget(QWidget *pWidget);
         void switchToWebWidget();
 
+        QWidget* documentsWidget() const { return mDocumentsWidget; }
         void addDocumentsWidget(QWidget *pWidget);
         void switchToDocumentsWidget();
 

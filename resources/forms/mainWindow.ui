@@ -66,9 +66,6 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="actionStylus"/>
-   <addaction name="actionBackgrounds"/>
-   <addaction name="separator"/>
    <addaction name="actionUndo"/>
    <addaction name="actionRedo"/>
    <addaction name="separator"/>
@@ -76,13 +73,8 @@
    <addaction name="actionBack"/>
    <addaction name="actionForward"/>
    <addaction name="separator"/>
+   <addaction name="actionBackgrounds"/>
    <addaction name="actionErase"/>
-   <addaction name="separator"/>
-   <addaction name="actionBoard"/>
-   <addaction name="actionWeb"/>
-   <addaction name="actionDocument"/>
-   <addaction name="actionDesktop"/>
-   <addaction name="actionMenu"/>
   </widget>
   <widget class="QToolBar" name="webToolBar">
    <property name="font">
@@ -127,12 +119,6 @@
    <addaction name="separator"/>
    <addaction name="actionWebBigger"/>
    <addaction name="actionWebSmaller"/>
-   <addaction name="separator"/>
-   <addaction name="actionBoard"/>
-   <addaction name="actionWeb"/>
-   <addaction name="actionDocument"/>
-   <addaction name="actionDesktop"/>
-   <addaction name="actionMenu"/>
   </widget>
   <widget class="QToolBar" name="documentToolBar">
    <property name="font">
@@ -168,25 +154,12 @@
     <bool>true</bool>
    </attribute>
    <addaction name="actionNewDocument"/>
-   <addaction name="actionNewFolder"/>
-   <addaction name="separator"/>
    <addaction name="actionImport"/>
    <addaction name="actionExport"/>
-   <addaction name="actionRename"/>
-   <addaction name="actionAddDocumentToFavorites"/>
-   <addaction name="separator"/>
-   <addaction name="actionDuplicate"/>
-   <addaction name="actionDelete"/>
    <addaction name="separator"/>
    <addaction name="actionOpen"/>
-   <addaction name="actionAddToWorkingDocument"/>
-   <addaction name="actionDocumentAdd"/>
    <addaction name="separator"/>
-   <addaction name="actionBoard"/>
-   <addaction name="actionWeb"/>
-   <addaction name="actionDocument"/>
-   <addaction name="actionDesktop"/>
-   <addaction name="actionMenu"/>
+   <addaction name="actionDelete"/>
   </widget>
   <action name="actionStylus">
    <property name="checkable">

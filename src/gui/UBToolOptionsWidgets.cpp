@@ -497,6 +497,11 @@ void UBStrokePreview::paintEvent(QPaintEvent* event)
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing);
 
+    // A light card, so that dark colors show on the dark panel.
+    painter.setPen(Qt::NoPen);
+    painter.setBrush(QColor("#e9ebef"));
+    painter.drawRoundedRect(QRectF(rect()).adjusted(width() * 0.2, 2, -width() * 0.2, -2), 8, 8);
+
     const qreal left = width() * 0.3;
     const qreal right = width() * 0.7;
     const qreal middle = height() / 2.0;

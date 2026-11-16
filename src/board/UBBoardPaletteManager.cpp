@@ -684,8 +684,13 @@ void UBBoardPaletteManager::addItem(const QUrl& pUrl)
 
 void UBBoardPaletteManager::changeMode(eUBDockPaletteWidgetMode newMode, bool isInit)
 {
-    bool rightPaletteVisible = mRightPalette->switchMode(newMode);
-    bool leftPaletteVisible = mLeftPalette->switchMode(newMode);
+    mRightPalette->switchMode(newMode);
+    mLeftPalette->switchMode(newMode);
+
+    // LibertyBoard shows neither the page thumbnails nor the library on the
+    // sides: the tool options take the right side of the board.
+    const bool rightPaletteVisible = false;
+    const bool leftPaletteVisible = false;
 
     switch( newMode )
     {

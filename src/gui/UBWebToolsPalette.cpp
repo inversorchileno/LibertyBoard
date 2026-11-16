@@ -29,7 +29,6 @@
 
 #include <QtGui>
 
-#include "frameworks/UBPlatformUtils.h"
 
 #include "core/UBApplication.h"
 #include "core/UBSettings.h"
@@ -58,8 +57,6 @@ UBWebToolsPalette::UBWebToolsPalette(QWidget *parent)
 
     actions << UBApplication::mainWindow->actionWebShowHideOnDisplay;
 
-    if (UBPlatformUtils::hasVirtualKeyboard())
-        actions << UBApplication::mainWindow->actionVirtualKeyboard;
 
     setActions(actions);
     setButtonIconSize(QSize(42, 42));

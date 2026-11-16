@@ -2296,8 +2296,6 @@ void UBDocumentController::setupViews()
             adaptor->setAssociatedAction(currentExportAction);
         }
 
-        bool exportMenuAttached = false;
-
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
         foreach (QObject* menuWidget,  mMainWindow->actionExport->associatedObjects())
 #else
@@ -2312,14 +2310,11 @@ void UBDocumentController::setupViews()
                 tb->setPopupMode(QToolButton::InstantPopup);
 
                 tb->setMenu(exportMenu);
-                exportMenuAttached = true;
             }
         }
 
-        if (!exportMenuAttached)
-        {
-            delete exportMenu;
-        }
+        // The Document menu shows the export formats as a submenu.
+        mMainWindow->actionExport->setMenu(exportMenu);
 
 #ifdef Q_OS_OSX
         mMainWindow->actionDelete->setShortcut(QKeySequence(Qt::Key_Backspace));
