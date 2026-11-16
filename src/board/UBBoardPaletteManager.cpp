@@ -245,6 +245,7 @@ void UBBoardPaletteManager::setupPalettes()
     mStylusPalette->show(); // always show stylus palette at startup
 
     mZoomPalette = new UBZoomPalette(mContainer);
+    mZoomPalette->show();
 
     mStylusPalette->stackUnder(mZoomPalette);
 
@@ -527,13 +528,7 @@ void UBBoardPaletteManager::containerResized()
         mStylusPalette->initPosition();
     }
 
-    if(mZoomPalette)
-    {
-        mZoomPalette->move(userLeft + userWidth - mZoomPalette->width()
-                , userTop + userHeight /*- mPageNumberPalette->height()*/ - innerMargin - mZoomPalette->height());
-        mZoomPalette->adjustSizeAndPosition();
-        mZoomPalette->refreshPalette();
-    }
+    placeZoomPalette();
 
     if (isFirstResized && mKeyboardPalette && mKeyboardPalette->parent() == UBApplication::boardController->controlContainer())
     {
@@ -1011,6 +1006,23 @@ void UBBoardPaletteManager::placeStylusPalette(int edge)
     {
         mStylusPalette->initPosition();
     }
+
+    placeZoomPalette();
+}
+
+void UBBoardPaletteManager::placeZoomPalette()
+{
+    if (!mZoomPalette)
+    {
+        return;
+    }
+
+    const QRect area = mStylusPalette ? mStylusPalette->boardArea() : mContainer->rect();
+    const QRect avoid = (mStylusPalette && mStylusPalette->isVisible()) ? mStylusPalette->geometry() : QRect();
+
+    mZoomPalette->placeIn(area, avoid);
+    mZoomPalette->refreshPalette();
+    mZoomPalette->show();
 }
 
 void UBBoardPaletteManager::changeStylusPaletteOrientation(QVariant var)
@@ -1051,6 +1063,7 @@ void UBBoardPaletteManager::changeStylusPaletteOrientation(QVariant var)
     connect(mStylusPalette, SIGNAL(stylusToolDoubleClicked(int)), UBApplication::boardController, SLOT(stylusToolDoubleClicked(int)));
     connect(mStylusPalette, &UBStylusPalette::edgeChosen, this, &UBBoardPaletteManager::placeStylusPalette);
     mStylusPalette->setVisible(bVisible); // always show stylus palette at startup
+    placeZoomPalette();
 }
 
 

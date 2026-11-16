@@ -59,9 +59,8 @@ UBStylusPalette::UBStylusPalette(QWidget *parent, Qt::Orientation orient)
     actions << UBApplication::mainWindow->actionSelector;
     actions << UBApplication::mainWindow->actionPlay;
 
+    // Zooming is done in the zoom box at the bottom right of the board.
     actions << UBApplication::mainWindow->actionHand;
-    actions << UBApplication::mainWindow->actionZoomIn;
-    actions << UBApplication::mainWindow->actionZoomOut;
 
     actions << UBApplication::mainWindow->actionLine;
     actions << UBApplication::mainWindow->actionText;

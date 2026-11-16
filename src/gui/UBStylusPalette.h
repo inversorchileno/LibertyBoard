@@ -49,11 +49,11 @@ class UBStylusPalette : public UBActionPalette
         static int edge();
         static void setEdge(int edge);
 
+        /** @brief The board view, beside the pages sidebar, in the coordinates of the parent. */
+        QRect boardArea() const;
+
     protected:
         void mouseReleaseEvent(QMouseEvent* event) override;
-
-    private:
-        QRect boardArea() const;
 
     private slots:
 

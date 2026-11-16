@@ -25,40 +25,44 @@
  */
 
 
-
-
-#ifndef UBZOOMPALETTE_H_
-#define UBZOOMPALETTE_H_
+#pragma once
 
 #include "UBFloatingPalette.h"
 
-class QPushButton;
+class QLineEdit;
+class QToolButton;
 class UBBoardController;
 
+/**
+ * @brief A small fixed box at the bottom right of the board with zoom out,
+ * the zoom in percent, which the user can type, and zoom in.
+ */
 class UBZoomPalette : public UBFloatingPalette
 {
-    Q_OBJECT;
+    Q_OBJECT
 
-    public:
-        UBZoomPalette(QWidget *parent);
-        virtual ~UBZoomPalette();
+public:
+    explicit UBZoomPalette(QWidget* parent);
 
-    public slots:
-        void hide();
-        void refreshPalette();
+    /** @brief Puts the box at the bottom right of the area, left of what it must not cover. */
+    void placeIn(const QRect& area, const QRect& avoid);
 
-    private:
-        UBBoardController* mBoardController;
-        QPushButton *mCurrentZoomButton;
-        QPushButton *mHundredButton;
-        QPushButton *mShowAllButton;
+public slots:
+    void refreshPalette();
 
-        bool mIsExpanded;
+protected:
+    // The box stays where it is placed.
+    void mousePressEvent(QMouseEvent* event) override;
+    void mouseMoveEvent(QMouseEvent* event) override;
+    void mouseReleaseEvent(QMouseEvent* event) override;
 
-    private slots:
-        void showHideExtraButton();
-        void goHundred();
+private:
+    void zoomTo(qreal zoom);
+    void stepZoom(bool in);
+    void onPercentEdited();
 
+    UBBoardController* mBoardController{nullptr};
+    QToolButton* mZoomOutButton{nullptr};
+    QLineEdit* mPercent{nullptr};
+    QToolButton* mZoomInButton{nullptr};
 };
-
-#endif /* UBZOOMPALETTE_H_ */
