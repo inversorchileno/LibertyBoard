@@ -39,8 +39,14 @@ class UBBoardSaver : public QObject
 public:
     explicit UBBoardSaver(QObject* parent = nullptr);
 
-    /** @brief Asks where to save, then saves. */
-    void save(QWidget* dialogParent);
+    /** @brief Asks where to save, then saves. Returns false when the user cancels or saving fails. */
+    bool save(QWidget* dialogParent);
+
+    /**
+     * @brief Closes the document of the board, offering to save it first,
+     * and shows a new blank board as when LibertyBoard starts.
+     */
+    void closeDocument(QWidget* dialogParent);
 
 private:
     bool saveAsPdf(const QString& filename);

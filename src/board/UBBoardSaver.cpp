@@ -25,6 +25,7 @@
 #include <QFileDialog>
 #include <QFileInfo>
 #include <QImage>
+#include <QMessageBox>
 #include <QPainter>
 #include <QRegularExpression>
 #include <QStandardPaths>
@@ -33,6 +34,8 @@
 #include "board/UBBoardController.h"
 #include "core/UB.h"
 #include "core/UBApplication.h"
+#include "core/UBApplicationController.h"
+#include "core/UBPersistenceManager.h"
 #include "core/UBSettings.h"
 #include "document/UBDocumentProxy.h"
 #include "domain/UBGraphicsScene.h"
@@ -58,7 +61,7 @@ UBBoardSaver::UBBoardSaver(QObject* parent)
 {
 }
 
-void UBBoardSaver::save(QWidget* dialogParent)
+bool UBBoardSaver::save(QWidget* dialogParent)
 {
     UBBoardController* board = UBApplication::boardController;
     std::shared_ptr<UBDocumentProxy> document = board ? board->selectedDocument() : nullptr;
@@ -66,7 +69,7 @@ void UBBoardSaver::save(QWidget* dialogParent)
 
     if (!document || !scene)
     {
-        return;
+        return false;
     }
 
     // What the user wrote last must be in the document before it is exported.
@@ -97,7 +100,7 @@ void UBBoardSaver::save(QWidget* dialogParent)
 
     if (filename.isEmpty())
     {
-        return;
+        return false;
     }
 
     UBSettings::settings()->setValue(sLastFolderKey, QFileInfo(filename).absolutePath());
@@ -126,6 +129,48 @@ void UBBoardSaver::save(QWidget* dialogParent)
     {
         UBApplication::mainWindow->warning(tr("Save"), tr("The file could not be saved. Check that the folder can be written."));
     }
+
+    return saved;
+}
+
+void UBBoardSaver::closeDocument(QWidget* dialogParent)
+{
+    UBBoardController* board = UBApplication::boardController;
+    std::shared_ptr<UBGraphicsScene> scene = board ? board->activeScene() : nullptr;
+
+    if (!scene)
+    {
+        return;
+    }
+
+    const bool fromPdf = hasPdfPage(scene.get());
+
+    // A blank board without anything drawn has nothing to save.
+    if (fromPdf || !scene->isEmpty())
+    {
+        const QString question = fromPdf ? tr("Save the changes to the PDF before closing?")
+                                         : tr("Save the board as a picture before closing?");
+        const auto answer = QMessageBox::question(dialogParent, tr("Close document"), question,
+                                                  QMessageBox::Save | QMessageBox::Discard | QMessageBox::Cancel,
+                                                  QMessageBox::Save);
+
+        if (answer == QMessageBox::Cancel || (answer == QMessageBox::Save && !save(dialogParent)))
+        {
+            return;
+        }
+    }
+
+    // The document stays in the Documents mode; only the board starts again blank.
+    board->persistCurrentScene(false, true);
+    std::shared_ptr<UBDocumentProxy> blank = UBPersistenceManager::persistenceManager()->createNewDocument();
+
+    if (blank)
+    {
+        board->setActiveDocumentScene(blank);
+    }
+
+    UBApplication::applicationController->showBoard();
+    board->zoomRestore();
 }
 
 bool UBBoardSaver::saveAsPdf(const QString& filename)

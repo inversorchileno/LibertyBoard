@@ -199,7 +199,7 @@ UBPenOptionsPanel::UBPenOptionsPanel(QWidget* parent)
     mWidth = new UBValueSlider({ 1, 2, 3, 6, 10, 50 }, tr(" pt"), 1, this);
     addRow(mWidth);
 
-    addSection(tr("Appearance"));
+    addSection(tr("Color"));
     mColors = new UBColorSwatches(penColors(), false, this);
     addRow(mColors);
 
@@ -368,7 +368,7 @@ UBLaserOptionsPanel::UBLaserOptionsPanel(QWidget* parent)
     mWidth = new UBValueSlider({ 0.5, 1, 2, 4, 8, 16, 64 }, tr(" pt"), 1, this);
     addRow(mWidth);
 
-    addSection(tr("Appearance"));
+    addSection(tr("Color"));
     mColors = new UBColorSwatches(laserColors(), false, this);
     addRow(mColors);
 

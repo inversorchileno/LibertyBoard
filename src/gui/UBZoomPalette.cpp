@@ -67,6 +67,7 @@ UBZoomPalette::UBZoomPalette(QWidget* parent)
     mPercent = new QLineEdit(this);
     mPercent->setAlignment(Qt::AlignCenter);
     mPercent->setFixedWidth(64);
+    mPercent->setFocusPolicy(Qt::ClickFocus);
     mPercent->setToolTip(tr("Zoom in percent: type a value and press Enter"));
     layout->addWidget(mPercent);
 

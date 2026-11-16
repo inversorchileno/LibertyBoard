@@ -113,6 +113,10 @@ void UBMainMenu::createMenus()
     saveAction->setToolTip(tr("Save as a PDF with the annotations, or the page as a PNG or JPEG picture"));
     mMainWindow->addAction(saveAction);
     connect(saveAction, &QAction::triggered, this, [this]() { mSaver->save(mMainWindow); });
+    // Opens the Documents mode, where documents are opened and files imported.
+    auto openAction = new QAction(QIcon(":/images/toolbar/documents.png"), tr("Open/Import"), mMainWindow);
+    connect(openAction, &QAction::triggered, mMainWindow->actionDocument, &QAction::trigger);
+    homeMenu->addAction(openAction);
     homeMenu->addAction(saveAction);
     homeMenu->addSeparator();
     homeMenu->addAction(mMainWindow->actionPreferences);
@@ -126,7 +130,6 @@ void UBMainMenu::createMenus()
     QMenu* modeMenu = menuBar->addMenu(tr("&Mode"));
     modeMenu->addAction(mMainWindow->actionBoard);
     modeMenu->addAction(mMainWindow->actionWeb);
-    modeMenu->addAction(mMainWindow->actionDocument);
     modeMenu->addAction(mMainWindow->actionDesktop);
 
     QMenu* editMenu = menuBar->addMenu(tr("&Edit"));
@@ -144,6 +147,13 @@ void UBMainMenu::createMenus()
     editMenu->addAction(mMainWindow->actionPaste);
     editMenu->addAction(mMainWindow->actionHideApplication);
     editMenu->addAction(mMainWindow->actionSleep);
+    editMenu->addSeparator();
+
+    auto closeAction = new QAction(tr("Close document"), mMainWindow);
+    closeAction->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_F4));
+    mMainWindow->addAction(closeAction);
+    connect(closeAction, &QAction::triggered, this, [this]() { mSaver->closeDocument(mMainWindow); });
+    editMenu->addAction(closeAction);
 
     QMenu* aboutMenu = menuBar->addMenu(tr("&About"));
     aboutMenu->addAction(mMainWindow->actionOpenTutorial);
