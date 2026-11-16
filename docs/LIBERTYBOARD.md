@@ -4,8 +4,8 @@ LibertyBoard es un fork de OpenBoard con un puntero láser estilo Drawboard PDF 
 
 ## Etapas
 
-1. **Compilación para Windows, láser nuevo y orden de las barras.** *(en curso)*
-2. Paneles de opciones estilo Drawboard y formas nuevas.
+1. **Compilación para Windows, láser nuevo y orden de las barras.** *(hecha)*
+2. **Paneles de opciones estilo Drawboard y formas nuevas.** *(hecha)*
 3. Rediseño a ventana normal con menús (modo pizarra y modo documentos).
 
 ## 1. Barras de herramientas
@@ -46,6 +46,17 @@ En modo escritorio son paneles emergentes; en modo pizarra, un panel fijo a la d
 - Menú nuevo "Documento" con todas las acciones de la barra inferior izquierda: Nuevo documento, Nueva carpeta, Importar, Exportar, Cambiar nombre, Favorito, Duplicar, Papelera, Abrir en la pizarra, Añadir al documento y Añadir…, con atajos de teclado e íconos.
 - Fila de íconos con las acciones frecuentes: Nuevo documento, Importar, Exportar, Abrir en la pizarra y Papelera.
 - Se elimina el teclado virtual flotante en todo el programa.
+
+## Cómo quedó la Etapa 2
+
+- Las opciones de cada herramienta se abren en una ventanita estilo Drawboard:
+  - en modo escritorio, con la flechita del botón o manteniendo presionado el botón;
+  - en modo pizarra, con doble clic sobre la herramienta. En la Etapa 3 pasan al panel fijo de la derecha.
+- Los ajustes se guardan al cerrar el programa.
+- La flecha, el rectángulo, la elipse y el subrayado se guardan como trazos (polígonos), igual que el lápiz: se pueden mover, borrar y deshacer, y cualquier versión de OpenBoard abre los documentos. Una vez dibujados no se editan como forma (no se cambia su relleno después).
+- Mantener Shift dibuja cuadrados y círculos, y flechas en ángulos de 15 grados.
+- Los trazos Pro y Caligrafía dependen del lápiz: con mouse el Pro se ve como el Básico.
+- El color del lápiz y del rotulador reemplaza el color seleccionado de la barra inferior de la pizarra, y el grosor reemplaza el grosor seleccionado (fino, medio o grueso).
 
 ## Compilación
 
