@@ -1563,7 +1563,7 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="-555"/>
         <source>Color</source>
-        <translation type="unfinished">Color</translation>
+        <translation>Color</translation>
     </message>
     <message>
         <location line="+1282"/>
@@ -1592,9 +1592,9 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBoardSaver</name>
     <message>
-        <location filename="../../src/board/UBBoardSaver.cpp" line="+75"/>
+        <location filename="../../src/board/UBBoardSaver.cpp" line="+78"/>
         <source>PDF with annotations (*.pdf)</source>
-        <translation type="unfinished"></translation>
+        <translation>PDF con anotaciones (*.pdf)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1610,7 +1610,7 @@ Do you wish to override the security check and continue ?   </source>
         <location line="+18"/>
         <location line="+32"/>
         <source>Save</source>
-        <translation type="unfinished">Guardar</translation>
+        <translation>Guardar</translation>
     </message>
     <message>
         <location line="-4"/>
@@ -1621,6 +1621,21 @@ Do you wish to override the security check and continue ?   </source>
         <location line="+4"/>
         <source>The file could not be saved. Check that the folder can be written.</source>
         <translation>No se pudo guardar el archivo. Revisa que la carpeta permita escribir.</translation>
+    </message>
+    <message>
+        <location line="+21"/>
+        <source>Save the changes to the PDF before closing?</source>
+        <translation>¿Guardar los cambios del PDF antes de cerrar?</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Save the board as a picture before closing?</source>
+        <translation>¿Guardar la pizarra como imagen antes de cerrar?</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Close document</source>
+        <translation>Cerrar documento</translation>
     </message>
 </context>
 <context>
@@ -1633,7 +1648,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+1811"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+1914"/>
         <source>Is it for Board or Widget ?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1690,9 +1705,37 @@ Do you wish to override the security check and continue ?   </source>
     </message>
 </context>
 <context>
+    <name>UBDesktopAnnotationController</name>
+    <message>
+        <location filename="../../src/desktop/UBDesktopAnnotationController.cpp" line="+403"/>
+        <source>Screenshot</source>
+        <translation>Captura de pantalla</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Screenshot saved in %1</source>
+        <translation>Captura de pantalla guardada en %1</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>The screenshot could not be saved.</source>
+        <translation>No se pudo guardar la captura de pantalla.</translation>
+    </message>
+</context>
+<context>
     <name>UBDesktopPalette</name>
     <message>
-        <location filename="../../src/desktop/UBDesktopPalette.cpp" line="+72"/>
+        <location filename="../../src/desktop/UBDesktopPalette.cpp" line="+70"/>
+        <source>Save a screenshot</source>
+        <translation>Guardar captura de pantalla</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Save a screenshot with the annotations in the Pictures folder</source>
+        <translation>Guardar una captura de pantalla con las anotaciones en la carpeta Imágenes</translation>
+    </message>
+    <message>
+        <location line="+9"/>
         <source>Capture Part of the Screen</source>
         <translation>Capturar parte de la pantalla</translation>
     </message>
@@ -1717,7 +1760,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Mostrar escritorio en la pantalla secundaria</translation>
     </message>
     <message>
-        <location line="-92"/>
+        <location line="-89"/>
         <source>Show LibertyBoard</source>
         <translation>Mostrar LibertyBoard</translation>
     </message>
@@ -1785,7 +1828,7 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="-1250"/>
         <source>LibertyBoard could not recover this file. Please delete it or contact your administrator for help</source>
-        <translation type="unfinished"></translation>
+        <translation>LibertyBoard no pudo recuperar este archivo. Bórrelo o pida ayuda a su administrador</translation>
     </message>
     <message>
         <location line="+8"/>
@@ -2058,7 +2101,7 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location filename="../../src/gui/UBDocumentNavigator.cpp" line="+139"/>
         <source>Generating thumbnails for board (%1/%2)</source>
-        <translation type="unfinished"></translation>
+        <translation>Generando miniaturas de la pizarra (%1/%2)</translation>
     </message>
     <message>
         <location line="+33"/>
@@ -2164,7 +2207,7 @@ Proporcionar un nuevo nombre creará un nuevo documento.</translation>
     <message>
         <location filename="../../src/gui/UBDocumentTreeWidget.cpp" line="+87"/>
         <source>%1 (copy)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 (copia)</translation>
     </message>
     <message>
         <location line="+183"/>
@@ -2418,7 +2461,7 @@ Do you want to continue?</source>
         <location line="-50"/>
         <location line="+14"/>
         <source>The original PDF imported in LibertyBoard seems not valid and could not be merged with your annotations. Please repair it and then reimport it in LibertyBoard. The current export will be done with detailed (heavy) images of the pages of the original PDF instead, to avoid complete export failure.</source>
-        <translation type="unfinished"></translation>
+        <translation>El PDF original importado en LibertyBoard no parece válido y no se pudo combinar con sus anotaciones. Repárelo y vuelva a importarlo en LibertyBoard. La exportación actual se hará con imágenes detalladas (pesadas) de las páginas del PDF original, para evitar que falle por completo.</translation>
     </message>
 </context>
 <context>
@@ -2624,10 +2667,10 @@ Do you want to continue?</source>
     <message>
         <location filename="../../src/core/UBGitHubUpdater.cpp" line="+81"/>
         <source>Looking for a new version...</source>
-        <translation type="unfinished"></translation>
+        <translation>Buscando una nueva versión...</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+17"/>
         <location line="+30"/>
         <location line="+5"/>
         <location line="+19"/>
@@ -2999,9 +3042,13 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation> pt</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Appearance</source>
-        <translation>Apariencia</translation>
+        <translation type="vanished">Apariencia</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Color</source>
+        <translation>Color</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -3117,7 +3164,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+226"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+236"/>
         <source>Hide or show the toolbar</source>
         <translation>Ocultar o mostrar la barra</translation>
     </message>
@@ -3130,19 +3177,19 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation type="vanished">&amp;Documento</translation>
     </message>
     <message>
-        <location line="-158"/>
-        <location line="+70"/>
+        <location line="-168"/>
+        <location line="+73"/>
         <source>Page Size</source>
         <translation>Tamaño de página</translation>
     </message>
     <message>
-        <location line="-46"/>
-        <location line="+30"/>
+        <location line="-49"/>
+        <location line="+34"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
     </message>
     <message>
-        <location line="-13"/>
+        <location line="-17"/>
         <source>&amp;Home</source>
         <translation>&amp;Inicio</translation>
     </message>
@@ -3157,17 +3204,27 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>Guardar como PDF con las anotaciones, o la página como imagen PNG o JPEG</translation>
     </message>
     <message>
+        <location line="+4"/>
+        <source>Open/Import</source>
+        <translation>Abrir/Importar</translation>
+    </message>
+    <message>
         <location line="+13"/>
         <source>&amp;Mode</source>
         <translation>&amp;Modo</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+5"/>
         <source>&amp;Edit</source>
         <translation>&amp;Edición</translation>
     </message>
     <message>
-        <location line="+16"/>
+        <location line="+17"/>
+        <source>Close document</source>
+        <translation>Cerrar documento</translation>
+    </message>
+    <message>
+        <location line="+6"/>
         <source>&amp;About</source>
         <translation>&amp;Acerca</translation>
     </message>
@@ -3386,8 +3443,12 @@ Ancho dinámico</translation>
     </message>
     <message>
         <location line="+3"/>
+        <source>Color</source>
+        <translation>Color</translation>
+    </message>
+    <message>
         <source>Appearance</source>
-        <translation>Apariencia</translation>
+        <translation type="vanished">Apariencia</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -3559,7 +3620,7 @@ Ancho dinámico</translation>
     <message>
         <location line="+1"/>
         <source> (build %1)</source>
-        <translation type="unfinished"></translation>
+        <translation> (compilación %1)</translation>
     </message>
     <message>
         <location line="+129"/>
@@ -3691,7 +3752,7 @@ Ancho dinámico</translation>
     <message>
         <location line="+12"/>
         <source>Podcast</source>
-        <translation type="unfinished">Podcast</translation>
+        <translation>Podcast</translation>
     </message>
     <message>
         <location line="+23"/>
@@ -4179,7 +4240,7 @@ Por favor, reinicie la aplicación para acceder a los documentos actualizados.</
         <translation>Alejar</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+9"/>
         <source>Zoom in percent: type a value and press Enter</source>
         <translation>Zoom en porcentaje: escribe un valor y presiona Enter</translation>
     </message>
