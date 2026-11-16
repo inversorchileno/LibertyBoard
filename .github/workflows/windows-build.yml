@@ -66,6 +66,14 @@ jobs:
           xcopy /y /q /s /i resources\startupHints %PRODUCT%\startupHints || exit /b 1
           ren %PRODUCT%\OpenBoard.exe LibertyBoard.exe || exit /b 1
 
+      - name: Add the C++ runtime
+        shell: pwsh
+        working-directory: LibertyBoard
+        run: |
+          $crt = Get-ChildItem "$env:VCToolsRedistDir\x64" -Directory -Filter "Microsoft.VC*.CRT" | Select-Object -First 1
+          if (-not $crt) { throw "C++ runtime not found" }
+          Copy-Item "$($crt.FullName)\*.dll" "build\win32\release\product\"
+
       - name: Upload LibertyBoard
         uses: actions/upload-artifact@v4
         with:
