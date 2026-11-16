@@ -67,6 +67,9 @@ jobs:
           del %PRODUCT%\poppler-cpp.dll || exit /b 1
           xcopy /y /q /s /i resources\customizations %PRODUCT%\customizations || exit /b 1
           xcopy /y /q /s /i resources\startupHints %PRODUCT%\startupHints || exit /b 1
+          rem Qt's own dialogs, like the color dialog, in the language of the user
+          xcopy /y /q "%QT_ROOT_DIR%\translations\qt_*.qm" %PRODUCT%\i18n\ || exit /b 1
+          xcopy /y /q "%QT_ROOT_DIR%\translations\qtbase_*.qm" %PRODUCT%\i18n\ || exit /b 1
           ren %PRODUCT%\OpenBoard.exe LibertyBoard.exe || exit /b 1
 
       - name: Add the C++ runtime
