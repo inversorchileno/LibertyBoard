@@ -67,6 +67,18 @@ En modo escritorio son paneles emergentes; en modo pizarra, un panel fijo a la d
 - Sin pestañas laterales (miniaturas y biblioteca) ni teclado virtual.
 - La ventana y la barra vertical vienen así por defecto en la configuración de LibertyBoard (`RunInWindow=true`, `ToolBarOrientationVertical=true`).
 
+## Ajustes después de la Etapa 3
+
+- Abre en modo escritorio, con la barra desplegada.
+- La barra de herramientas de la pizarra va por defecto a la derecha. Al soltarla junto al borde de arriba o de abajo se vuelve horizontal; junto a la izquierda o la derecha, vertical. LibertyBoard recuerda el borde.
+- La fila de íconos está arriba (con su propio ajuste, independiente de OpenBoard) y muestra las opciones de la herramienta elegida: ya no hay panel a la derecha. Páginas, Anterior, el contador de páginas, Siguiente, Fondos y Borrar quedan a la derecha.
+- En el menú, a la derecha: botón **Escritorio** y un triángulo que oculta o muestra la fila de íconos.
+- Contador de páginas «1 / 200»: se escribe un número y Enter lleva a esa página.
+- Barra lateral izquierda con las miniaturas de las páginas, que se oculta o muestra con un triángulo.
+- Al importar un archivo (por ejemplo un PDF) se abre de inmediato en la pizarra, en la hoja 1.
+- **Resaltar:** una banda horizontal semitransparente que se arrastra sobre una línea de texto, con colores, alto y opacidad. No detecta el texto del PDF: se arrastra a lo largo de la línea.
+- **Nota:** un clic pone un marcador con un texto. Al pasar el puntero se ve el texto; al hacer clic (con la herramienta Nota, Selección o Interactuar) se puede actualizar o borrar. Se guarda en el documento como `ub:note`; OpenBoard normal no lo muestra.
+
 ## Compilación
 
 GitHub Actions compila LibertyBoard para Windows en cada cambio de la rama `master` (`.github/workflows/windows-build.yml`). El resultado se descarga como artefacto `LibertyBoard-windows` desde la pestaña Actions.
