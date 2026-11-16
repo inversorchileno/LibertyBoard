@@ -48,6 +48,9 @@ public:
     void setCurrentColor(const QColor& color);
     QColor currentColor() const;
 
+    /** @brief Offers only the swatches, without the button for any other color. */
+    void hideOtherColorButton();
+
 signals:
     void colorChosen(const QColor& color);
 

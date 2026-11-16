@@ -3057,7 +3057,7 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::noteItemToSvg(UBGraphicsNoteItem* no
     /**
      * sample
      *
-      <ub:note x="250" y="150" ub:z-value="12">The text of the note</ub:note>
+      <ub:note x="250" y="150" ub:z-value="12" ub:color="#f5b400">The text of the note</ub:note>
      */
 
     mXmlWriter.writeStartElement(UBSettings::uniboardDocumentNamespaceUri, "note");
@@ -3067,6 +3067,7 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::noteItemToSvg(UBGraphicsNoteItem* no
     QString zs;
     zs.setNum(noteItem->zValue(), 'f'); // 'f' keeps precision
     mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "z-value", zs);
+    mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "color", noteItem->color().name());
 
     mXmlWriter.writeCharacters(noteItem->text());
     mXmlWriter.writeEndElement();
@@ -3077,6 +3078,7 @@ UBGraphicsNoteItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::noteItemFromSvg()
     const QPointF position(mXmlReader.attributes().value("x").toString().toDouble(),
                            mXmlReader.attributes().value("y").toString().toDouble());
     const auto z = mXmlReader.attributes().value(UBSettings::uniboardDocumentNamespaceUri, "z-value");
+    const QColor color(mXmlReader.attributes().value(UBSettings::uniboardDocumentNamespaceUri, "color").toString());
 
     // Reads up to the end of the element.
     const QString text = mXmlReader.readElementText();
@@ -3086,10 +3088,11 @@ UBGraphicsNoteItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::noteItemFromSvg()
         return nullptr;
     }
 
-    auto note = new UBGraphicsNoteItem(text);
+    auto note = new UBGraphicsNoteItem(text, color);
     note->setPos(position);
 
-    if (!z.isNull())
+    // Notes of the first versions were saved under the page: they get a new place.
+    if (!z.isNull() && z.toString().toDouble() > UBZLayerController::errorNum() + 1)
     {
         note->setZValue(z.toString().toDouble());
     }

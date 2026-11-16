@@ -32,6 +32,7 @@
 #include "core/UBApplication.h"
 #include "core/UBSetting.h"
 #include "core/UBSettings.h"
+#include "domain/UBGraphicsNoteItem.h"
 #include "domain/UBGraphicsTextItem.h"
 #include "gui/UBMainWindow.h"
 #include "gui/UBToolOptionsWidgets.h"
@@ -93,6 +94,8 @@ UBToolOptionsPanel* UBToolOptionsPanel::create(int tool, QWidget* parent)
             return new UBShapeOptionsPanel(tool, parent);
         case UBStylusTool::Text:
             return new UBTextOptionsPanel(parent);
+        case UBStylusTool::Note:
+            return new UBNoteOptionsPanel(parent);
         default:
             return nullptr;
     }
@@ -700,4 +703,27 @@ void UBTextOptionsPanel::refresh()
     mBold->setChecked(settings->isBoldFont());
     mItalic->setChecked(settings->isItalicFont());
     mColors->setCurrentColor(UBGraphicsTextItem::lastUsedTextColor);
+}
+
+// ---------------------------------------------------------------------------
+// Notes
+
+UBNoteOptionsPanel::UBNoteOptionsPanel(QWidget* parent)
+    : UBToolOptionsPanel(tr("Note"), parent)
+{
+    addSection(tr("Marker color"));
+    mColors = new UBColorSwatches(UBGraphicsNoteItem::colors(), false, this);
+    mColors->hideOtherColorButton();
+    addRow(mColors);
+
+    connect(mColors, &UBColorSwatches::colorChosen, this, [](const QColor& color) {
+        UBSettings::settings()->noteColor->set(color.name());
+    });
+
+    refresh();
+}
+
+void UBNoteOptionsPanel::refresh()
+{
+    mColors->setCurrentColor(QColor(UBSettings::settings()->noteColor->get().toString()));
 }

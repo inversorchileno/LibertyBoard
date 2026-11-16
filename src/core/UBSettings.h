@@ -296,6 +296,7 @@ class UBSettings : public QObject
         UBSetting* laserEffect;
         UBSetting* laserOpacity;
         UBSetting* laserColor;
+        UBSetting* noteColor;
         UBSetting* laserWidth;
         UBSetting* laserFadeDelay;
         UBSetting* laserFadeDuration;

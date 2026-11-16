@@ -242,7 +242,7 @@ void UBDesktopPalette::showEvent(QShowEvent *event)
         UBApplication::mainWindow->actionPointer, UBApplication::mainWindow->actionArrowShape,
         UBApplication::mainWindow->actionRectangle, UBApplication::mainWindow->actionEllipse,
         UBApplication::mainWindow->actionUnderline, UBApplication::mainWindow->actionText,
-        UBApplication::mainWindow->actionHighlight
+        UBApplication::mainWindow->actionHighlight, UBApplication::mainWindow->actionNote
     };
 
     for (QAction* action : toolsWithOptions)

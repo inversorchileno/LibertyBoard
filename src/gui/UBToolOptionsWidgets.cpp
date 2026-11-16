@@ -176,6 +176,11 @@ void UBColorSwatches::chooseOtherColor()
     }
 }
 
+void UBColorSwatches::hideOtherColorButton()
+{
+    mOtherColorButton->hide();
+}
+
 UBValueSlider::UBValueSlider(const QList<qreal>& marks, const QString& unit, int decimals, QWidget* parent)
     : QWidget(parent)
     , mMarks(marks)

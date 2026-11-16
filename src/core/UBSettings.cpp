@@ -296,6 +296,7 @@ void UBSettings::init()
     laserEffect = new UBSetting(this, "Laser", "Effect", int(UBLaserEffect::Standard));
     laserOpacity = new UBSetting(this, "Laser", "Opacity", 1.0);
     laserColor = new UBSetting(this, "Laser", "Color", QString("#ff2828"));
+    noteColor = new UBSetting(this, "Board", "LibertyBoardNoteColor", QString("#f5b400"));
     laserWidth = new UBSetting(this, "Laser", "Width", 8.0);
     laserFadeDelay = new UBSetting(this, "Laser", "FadeDelay", 0.1);
     laserFadeDuration = new UBSetting(this, "Laser", "FadeDuration", 1.0);

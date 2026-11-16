@@ -168,6 +168,19 @@ private:
     UBValueSlider* mOpacity{nullptr};
 };
 
+/** @brief The color of the next notes. */
+class UBNoteOptionsPanel : public UBToolOptionsPanel
+{
+    Q_OBJECT
+
+public:
+    explicit UBNoteOptionsPanel(QWidget* parent = nullptr);
+    void refresh() override;
+
+private:
+    UBColorSwatches* mColors{nullptr};
+};
+
 class UBTextOptionsPanel : public UBToolOptionsPanel
 {
     Q_OBJECT

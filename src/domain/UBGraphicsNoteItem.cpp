@@ -31,9 +31,12 @@
 #include "gui/UBMainWindow.h"
 #include "gui/UBNoteDialog.h"
 
-static constexpr qreal sRadius = 15;
+// The bookmark, in pixels on screen, with the clicked point at the middle of its top.
+static constexpr qreal sHalfWidth = 11;
+static constexpr qreal sHeight = 30;
+static constexpr qreal sNotch = 8;
 
-UBGraphicsNoteItem::UBGraphicsNoteItem(const QString& text, QGraphicsItem* parent)
+UBGraphicsNoteItem::UBGraphicsNoteItem(const QString& text, const QColor& color, QGraphicsItem* parent)
     : QGraphicsObject(parent)
 {
     setFlag(QGraphicsItem::ItemIgnoresTransformations, true);
@@ -41,7 +44,27 @@ UBGraphicsNoteItem::UBGraphicsNoteItem(const QString& text, QGraphicsItem* paren
     setAcceptHoverEvents(true);
     setCursor(Qt::PointingHandCursor);
     setData(UBGraphicsItemData::ItemLayerType, QVariant(UBItemLayerType::Object));
+    // Above the page and the strokes, so that the marker is always seen.
+    setData(UBGraphicsItemData::itemLayerType, QVariant(itemLayerType::DrawingItem));
     setText(text);
+    setColor(color.isValid() ? color : colors().first());
+}
+
+QList<QColor> UBGraphicsNoteItem::colors()
+{
+    return { QColor("#f5b400"), QColor("#e53935"), QColor("#fb8c00"), QColor("#43a047"),
+             QColor("#1e88e5"), QColor("#8e24aa"), QColor("#757575") };
+}
+
+QColor UBGraphicsNoteItem::color() const
+{
+    return mColor;
+}
+
+void UBGraphicsNoteItem::setColor(const QColor& color)
+{
+    mColor = color;
+    update();
 }
 
 QString UBGraphicsNoteItem::text() const
@@ -57,12 +80,13 @@ void UBGraphicsNoteItem::setText(const QString& text)
 
 void UBGraphicsNoteItem::edit()
 {
-    UBNoteDialog dialog(mText, false, UBApplication::mainWindow);
+    UBNoteDialog dialog(mText, mColor, false, UBApplication::mainWindow);
 
     switch (dialog.ask())
     {
         case UBNoteDialog::Result::Saved:
             setText(dialog.text());
+            setColor(dialog.color());
             markDocumentChanged();
             break;
 
@@ -79,7 +103,7 @@ void UBGraphicsNoteItem::edit()
 
 QRectF UBGraphicsNoteItem::boundingRect() const
 {
-    return QRectF(-sRadius - 1, -sRadius - 1, 2 * sRadius + 2, 2 * sRadius + 2);
+    return QRectF(-sHalfWidth - 2, -2, 2 * sHalfWidth + 4, sHeight + 4);
 }
 
 void UBGraphicsNoteItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget)
@@ -89,26 +113,39 @@ void UBGraphicsNoteItem::paint(QPainter* painter, const QStyleOptionGraphicsItem
 
     painter->setRenderHint(QPainter::Antialiasing);
 
-    // A teal disc with a white sticky note on it.
-    painter->setPen(QPen(QColor(255, 255, 255, 200), 1.5));
-    painter->setBrush(QColor("#1aa5a0"));
-    painter->drawEllipse(QPointF(0, 0), sRadius, sRadius);
+    // On screen the marker keeps its size in pixels. In a PDF or a picture
+    // it keeps its size relative to the page, as it looks on the board.
+    auto boardScene = dynamic_cast<UBGraphicsScene*>(scene());
 
-    QPainterPath sheet;
-    sheet.moveTo(-7, -7);
-    sheet.lineTo(7, -7);
-    sheet.lineTo(7, 3);
-    sheet.lineTo(3, 7);
-    sheet.lineTo(-7, 7);
-    sheet.closeSubpath();
+    if (boardScene && boardScene->renderingContext() != UBGraphicsScene::Screen && painter->device())
+    {
+        painter->save();
+        const qreal factor = painter->device()->width() / 600.0;
+        painter->scale(factor, factor);
+    }
 
-    painter->setPen(Qt::NoPen);
-    painter->setBrush(Qt::white);
-    painter->drawPath(sheet);
+    // A bookmark ribbon with a notch at the bottom.
+    QPainterPath ribbon;
+    ribbon.moveTo(-sHalfWidth, 0);
+    ribbon.lineTo(sHalfWidth, 0);
+    ribbon.lineTo(sHalfWidth, sHeight);
+    ribbon.lineTo(0, sHeight - sNotch);
+    ribbon.lineTo(-sHalfWidth, sHeight);
+    ribbon.closeSubpath();
 
-    painter->setPen(QPen(QColor("#1aa5a0"), 1.4));
-    painter->drawLine(QPointF(-4, -3), QPointF(4, -3));
-    painter->drawLine(QPointF(-4, 1), QPointF(2, 1));
+    painter->setPen(QPen(mColor.darker(160), 1.5, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+    painter->setBrush(mColor);
+    painter->drawPath(ribbon);
+
+    // Two lines of text, so that it reads as a note.
+    painter->setPen(QPen(QColor(255, 255, 255, 220), 1.6, Qt::SolidLine, Qt::RoundCap));
+    painter->drawLine(QPointF(-5, 7), QPointF(5, 7));
+    painter->drawLine(QPointF(-5, 12), QPointF(3, 12));
+
+    if (boardScene && boardScene->renderingContext() != UBGraphicsScene::Screen && painter->device())
+    {
+        painter->restore();
+    }
 }
 
 void UBGraphicsNoteItem::mousePressEvent(QGraphicsSceneMouseEvent* event)

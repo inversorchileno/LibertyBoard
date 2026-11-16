@@ -21,15 +21,18 @@
 
 #pragma once
 
+#include <QColor>
 #include <QGraphicsObject>
+#include <QList>
 
 #include "core/UB.h"
 
 /**
- * @brief A note on a page: a small marker that shows its text when the
+ * @brief A note on a page: a colored bookmark that shows its text when the
  * pointer is over it, and opens it for editing when clicked.
  *
- * The marker keeps the same size on screen whatever the zoom.
+ * The marker keeps the same size on screen whatever the zoom. Its color is
+ * one of seven, so that the user can give each color a meaning.
  */
 class UBGraphicsNoteItem : public QGraphicsObject
 {
@@ -38,12 +41,18 @@ class UBGraphicsNoteItem : public QGraphicsObject
 public:
     enum { Type = UBGraphicsItemType::NoteItemType };
 
-    explicit UBGraphicsNoteItem(const QString& text, QGraphicsItem* parent = nullptr);
+    explicit UBGraphicsNoteItem(const QString& text, const QColor& color = QColor(), QGraphicsItem* parent = nullptr);
+
+    /** @brief The seven colors of the notes. */
+    static QList<QColor> colors();
 
     int type() const override { return Type; }
 
     QString text() const;
     void setText(const QString& text);
+
+    QColor color() const;
+    void setColor(const QColor& color);
 
     /** @brief Opens the note: the user can change its text or delete it. */
     void edit();
@@ -59,5 +68,6 @@ private:
     void markDocumentChanged();
 
     QString mText;
+    QColor mColor;
     QPointF mPressPosition;
 };

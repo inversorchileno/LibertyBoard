@@ -21,9 +21,11 @@
 
 #pragma once
 
+#include <QColor>
 #include <QDialog>
 
 class QPlainTextEdit;
+class UBColorSwatches;
 class QPushButton;
 
 /**
@@ -42,15 +44,17 @@ public:
         Deleted
     };
 
-    UBNoteDialog(const QString& text, bool isNewNote, QWidget* parent = nullptr);
+    UBNoteDialog(const QString& text, const QColor& color, bool isNewNote, QWidget* parent = nullptr);
 
     /** @brief Shows the dialog and returns what the user chose. */
     Result ask();
 
     QString text() const;
+    QColor color() const;
 
 private:
     QPlainTextEdit* mText{nullptr};
+    UBColorSwatches* mColors{nullptr};
     QPushButton* mConfirm{nullptr};
     Result mResult{Result::Cancelled};
 };

@@ -983,14 +983,17 @@ void UBGraphicsScene::addOrEditNote(const QPointF& position)
         }
     }
 
-    UBNoteDialog dialog(QString(), true, UBApplication::mainWindow);
+    const QColor defaultColor(UBSettings::settings()->noteColor->get().toString());
+    UBNoteDialog dialog(QString(), defaultColor, true, UBApplication::mainWindow);
 
     if (dialog.ask() != UBNoteDialog::Result::Saved)
     {
         return;
     }
 
-    auto note = new UBGraphicsNoteItem(dialog.text());
+    // The color chosen for this note becomes the color of the next ones.
+    UBSettings::settings()->noteColor->set(dialog.color().name());
+    auto note = new UBGraphicsNoteItem(dialog.text(), dialog.color());
     note->setPos(position);
     addItem(note);
     setModified(true);

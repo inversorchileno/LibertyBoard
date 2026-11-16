@@ -21,6 +21,9 @@
 
 #include "UBNoteDialog.h"
 
+#include "domain/UBGraphicsNoteItem.h"
+#include "gui/UBToolOptionsWidgets.h"
+
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QPlainTextEdit>
@@ -28,7 +31,7 @@
 #include <QToolButton>
 #include <QVBoxLayout>
 
-UBNoteDialog::UBNoteDialog(const QString& text, bool isNewNote, QWidget* parent)
+UBNoteDialog::UBNoteDialog(const QString& text, const QColor& color, bool isNewNote, QWidget* parent)
     : QDialog(parent, Qt::Dialog | Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint)
 {
     setObjectName("noteDialog");
@@ -42,7 +45,9 @@ UBNoteDialog::UBNoteDialog(const QString& text, bool isNewNote, QWidget* parent)
         "QPushButton { color: #f0f0f0; background: transparent; border: none; padding: 8px 18px; font-size: 14px; font-weight: bold; }"
         "QPushButton#confirm { background: #5b6b8c; border-radius: 18px; }"
         "QPushButton#confirm:disabled { background: #3d4452; color: #8a90a0; }"
-        "QPushButton:hover { color: #ffffff; }");
+        "QPushButton:hover { color: #ffffff; }"
+        "QToolButton#swatch { border: 1px solid #3a404b; border-radius: 4px; padding: 0px; }"
+        "QToolButton#swatch:checked { border: 2px solid #f0f0f0; }");
 
     auto title = new QLabel(isNewNote ? tr("Add note") : tr("Edit note"), this);
 
@@ -59,6 +64,11 @@ UBNoteDialog::UBNoteDialog(const QString& text, bool isNewNote, QWidget* parent)
     mText->setPlaceholderText(tr("Type the note here"));
     mText->setFixedHeight(100);
 
+    // The color of the marker left on the page.
+    mColors = new UBColorSwatches(UBGraphicsNoteItem::colors(), false, this);
+    mColors->hideOtherColorButton();
+    mColors->setCurrentColor(color);
+
     auto secondary = new QPushButton(isNewNote ? tr("Cancel") : tr("Delete"), this);
     mConfirm = new QPushButton(isNewNote ? tr("Save") : tr("Update"), this);
     mConfirm->setObjectName("confirm");
@@ -74,6 +84,7 @@ UBNoteDialog::UBNoteDialog(const QString& text, bool isNewNote, QWidget* parent)
     layout->setSpacing(16);
     layout->addLayout(titleRow);
     layout->addWidget(mText);
+    layout->addWidget(mColors);
     layout->addLayout(buttons);
 
     const auto updateConfirm = [this]() {
@@ -104,4 +115,9 @@ UBNoteDialog::Result UBNoteDialog::ask()
 QString UBNoteDialog::text() const
 {
     return mText->toPlainText().trimmed();
+}
+
+QColor UBNoteDialog::color() const
+{
+    return mColors->currentColor();
 }
