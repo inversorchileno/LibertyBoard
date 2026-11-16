@@ -1442,7 +1442,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="vanished">Podcast</translation>
     </message>
     <message>
-        <location filename="../../src/core/UBApplication.cpp" line="+365"/>
+        <location filename="../../src/core/UBApplication.cpp" line="+380"/>
         <location line="+49"/>
         <location line="+214"/>
         <source>Cannot open your UBX file directly. Please import it in Documents mode instead</source>
@@ -1620,7 +1620,7 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="+4"/>
         <source>The file could not be saved. Check that the folder can be written.</source>
-        <translation>No s'ha pogut desar el fitxer. Comproveu que es pugui escriure a la carpeta.</translation>
+        <translation>No s&apos;ha pogut desar el fitxer. Comproveu que es pugui escriure a la carpeta.</translation>
     </message>
     <message>
         <location line="+21"/>
@@ -1712,7 +1712,7 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="+1"/>
         <source>The screenshot could not be saved.</source>
-        <translation>No s'ha pogut desar la captura de pantalla.</translation>
+        <translation>No s&apos;ha pogut desar la captura de pantalla.</translation>
     </message>
 </context>
 <context>
@@ -2174,7 +2174,7 @@ Providing a new name will create a new document.</source>
     <message>
         <location line="-40"/>
         <source>Copying page %1/%2</source>
-        <translation>S'està copiant la pàgina %1/%2</translation>
+        <translation>S&apos;està copiant la pàgina %1/%2</translation>
     </message>
 </context>
 <context>
@@ -2187,7 +2187,7 @@ Providing a new name will create a new document.</source>
     <message>
         <location line="+183"/>
         <source>Copying page %1/%2</source>
-        <translation>S'està copiant la pàgina %1/%2</translation>
+        <translation>S&apos;està copiant la pàgina %1/%2</translation>
     </message>
     <message numerus="yes">
         <location line="+41"/>
@@ -2271,7 +2271,7 @@ Do you want to continue?</source>
 <context>
     <name>UBEraserOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+252"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+255"/>
         <source>Eraser</source>
         <translation>Esborrador</translation>
     </message>
@@ -2642,7 +2642,7 @@ Do you want to continue?</source>
     <message>
         <location filename="../../src/core/UBGitHubUpdater.cpp" line="+81"/>
         <source>Looking for a new version...</source>
-        <translation>S'està cercant una nova versió...</translation>
+        <translation>S&apos;està cercant una nova versió...</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -2664,7 +2664,7 @@ Do you want to continue?</source>
     <message>
         <location line="+30"/>
         <source>You have the latest version of LibertyBoard.</source>
-        <translation>Teniu l'última versió de LibertyBoard.</translation>
+        <translation>Teniu l&apos;última versió de LibertyBoard.</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -2678,7 +2678,7 @@ Voleu baixar-la i instal·lar-la ara? LibertyBoard desa els documents, es tanca 
     <message>
         <location line="+17"/>
         <source>Downloading the new version...</source>
-        <translation>S'està baixant la nova versió...</translation>
+        <translation>S&apos;està baixant la nova versió...</translation>
     </message>
     <message>
         <location line="+0"/>
@@ -2688,22 +2688,22 @@ Voleu baixar-la i instal·lar-la ara? LibertyBoard desa els documents, es tanca 
     <message>
         <location line="+33"/>
         <source>The new version could not be downloaded. Try again later.</source>
-        <translation>No s'ha pogut baixar la nova versió. Torneu-ho a provar més tard.</translation>
+        <translation>No s&apos;ha pogut baixar la nova versió. Torneu-ho a provar més tard.</translation>
     </message>
     <message>
         <location line="+13"/>
         <source>The new version could not be saved on this computer.</source>
-        <translation>No s'ha pogut desar la nova versió en aquest ordinador.</translation>
+        <translation>No s&apos;ha pogut desar la nova versió en aquest ordinador.</translation>
     </message>
     <message>
         <location line="+21"/>
         <source>LibertyBoard cannot replace its own files in this folder. The download page opens: unzip the new version over the current one.</source>
-        <translation>LibertyBoard no pot substituir els seus fitxers en aquesta carpeta. S'obre la pàgina de baixada: descomprimiu la nova versió sobre l'actual.</translation>
+        <translation>LibertyBoard no pot substituir els seus fitxers en aquesta carpeta. S&apos;obre la pàgina de baixada: descomprimiu la nova versió sobre l&apos;actual.</translation>
     </message>
     <message>
         <location line="+45"/>
         <source>The installation could not be started.</source>
-        <translation>No s'ha pogut iniciar la instal·lació.</translation>
+        <translation>No s&apos;ha pogut iniciar la instal·lació.</translation>
     </message>
 </context>
 <context>
@@ -3039,7 +3039,7 @@ Voleu baixar-la i instal·lar-la ara? LibertyBoard desa els documents, es tanca 
     <message>
         <location line="+3"/>
         <source>Wait before fading</source>
-        <translation>Espera abans d'esvair-se</translation>
+        <translation>Espera abans d&apos;esvair-se</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -3050,7 +3050,7 @@ Voleu baixar-la i instal·lar-la ara? LibertyBoard desa els documents, es tanca 
     <message>
         <location line="-1"/>
         <source>Fading duration</source>
-        <translation>Durada de l'esvaïment</translation>
+        <translation>Durada de l&apos;esvaïment</translation>
     </message>
 </context>
 <context>
@@ -3124,24 +3124,24 @@ Voleu baixar-la i instal·lar-la ara? LibertyBoard desa els documents, es tanca 
     <message>
         <location line="+1"/>
         <source>Wait before fading</source>
-        <translation>Espera abans d'esvair-se</translation>
+        <translation>Espera abans d&apos;esvair-se</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Fading duration</source>
-        <translation>Durada de l'esvaïment</translation>
+        <translation>Durada de l&apos;esvaïment</translation>
     </message>
 </context>
 <context>
     <name>UBMainMenu</name>
     <message>
         <location filename="../../src/gui/UBMainMenu.cpp" line="+68"/>
-        <location line="+73"/>
+        <location line="+79"/>
         <source>Page Size</source>
         <translation>Mida de la pàgina</translation>
     </message>
     <message>
-        <location line="-49"/>
+        <location line="-55"/>
         <location line="+34"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -3167,7 +3167,7 @@ Voleu baixar-la i instal·lar-la ara? LibertyBoard desa els documents, es tanca 
         <translation>Obre/Importa</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+19"/>
         <source>&amp;Mode</source>
         <translation>&amp;Mode</translation>
     </message>
@@ -3177,12 +3177,12 @@ Voleu baixar-la i instal·lar-la ara? LibertyBoard desa els documents, es tanca 
         <translation>&amp;Edició</translation>
     </message>
     <message>
-        <location line="+17"/>
+        <location line="-12"/>
         <source>Close document</source>
         <translation>Tanca el document</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+28"/>
         <source>&amp;About</source>
         <translation>&amp;Quant a</translation>
     </message>
@@ -3199,12 +3199,12 @@ Voleu baixar-la i instal·lar-la ara? LibertyBoard desa els documents, es tanca 
     <message>
         <location line="+1"/>
         <source>Download and install the latest version from GitHub</source>
-        <translation>Baixa i instal·la l'última versió des de GitHub</translation>
+        <translation>Baixa i instal·la l&apos;última versió des de GitHub</translation>
     </message>
     <message>
         <location line="+64"/>
         <source>Hide or show the toolbar</source>
-        <translation>Amaga o mostra la barra d'eines</translation>
+        <translation>Amaga o mostra la barra d&apos;eines</translation>
     </message>
 </context>
 <context>
@@ -3299,7 +3299,7 @@ Voleu ignorar aquests errors per a aquest amfitrió?</translation>
 <context>
     <name>UBNoteDialog</name>
     <message>
-        <location filename="../../src/gui/UBNoteDialog.cpp" line="+47"/>
+        <location filename="../../src/gui/UBNoteDialog.cpp" line="+52"/>
         <source>Add note</source>
         <translation>Afegeix una nota</translation>
     </message>
@@ -3314,7 +3314,7 @@ Voleu ignorar aquests errors per a aquest amfitrió?</translation>
         <translation>Escriviu la nota aquí</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+8"/>
         <source>Cancel</source>
         <translation>Cancel·la</translation>
     </message>
@@ -3332,6 +3332,19 @@ Voleu ignorar aquests errors per a aquest amfitrió?</translation>
         <location line="+0"/>
         <source>Update</source>
         <translation>Actualitza</translation>
+    </message>
+</context>
+<context>
+    <name>UBNoteOptionsPanel</name>
+    <message>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+394"/>
+        <source>Note</source>
+        <translation>Nota</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Marker color</source>
+        <translation>Color del marcador</translation>
     </message>
 </context>
 <context>
@@ -3360,7 +3373,7 @@ Voleu ignorar aquests errors per a aquest amfitrió?</translation>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-128"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-524"/>
         <source>Pen</source>
         <translation>Bolígraf</translation>
     </message>
@@ -3553,7 +3566,22 @@ Amplada dinàmica</translation>
 <context>
     <name>UBPreferencesController</name>
     <message>
-        <location filename="../../src/core/UBPreferencesController.cpp" line="+158"/>
+        <location filename="../../src/core/UBPreferencesController.cpp" line="+127"/>
+        <source>Language</source>
+        <translation>Idioma</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Language of the system</source>
+        <translation>L'idioma del sistema</translation>
+    </message>
+    <message>
+        <location line="+40"/>
+        <source>The new language is used the next time LibertyBoard starts.</source>
+        <translation>El nou idioma s'utilitza la propera vegada que s'iniciï LibertyBoard.</translation>
+    </message>
+    <message>
+        <location line="+65"/>
         <source>version: </source>
         <translation>versió:</translation>
     </message>
@@ -3581,7 +3609,7 @@ Amplada dinàmica</translation>
 <context>
     <name>UBSettings</name>
     <message>
-        <location filename="../../src/core/UBSettings.cpp" line="+1124"/>
+        <location filename="../../src/core/UBSettings.cpp" line="+1125"/>
         <source>My Movies</source>
         <translation>Les meves pel·lícules</translation>
     </message>

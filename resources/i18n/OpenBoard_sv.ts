@@ -1442,7 +1442,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="vanished">Podcast</translation>
     </message>
     <message>
-        <location filename="../../src/core/UBApplication.cpp" line="+365"/>
+        <location filename="../../src/core/UBApplication.cpp" line="+380"/>
         <location line="+49"/>
         <location line="+214"/>
         <source>Cannot open your UBX file directly. Please import it in Documents mode instead</source>
@@ -2264,7 +2264,7 @@ Do you want to continue?</source>
 <context>
     <name>UBEraserOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+252"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+255"/>
         <source>Eraser</source>
         <translation>Sudd</translation>
     </message>
@@ -3129,12 +3129,12 @@ Ladda ner och installera nu? LibertyBoard sparar dina dokument, stängs och öpp
     <name>UBMainMenu</name>
     <message>
         <location filename="../../src/gui/UBMainMenu.cpp" line="+68"/>
-        <location line="+73"/>
+        <location line="+79"/>
         <source>Page Size</source>
         <translation>Sidstorlek</translation>
     </message>
     <message>
-        <location line="-49"/>
+        <location line="-55"/>
         <location line="+34"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -3160,7 +3160,7 @@ Ladda ner och installera nu? LibertyBoard sparar dina dokument, stängs och öpp
         <translation>Öppna/Importera</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+19"/>
         <source>&amp;Mode</source>
         <translation>&amp;Läge</translation>
     </message>
@@ -3170,12 +3170,12 @@ Ladda ner och installera nu? LibertyBoard sparar dina dokument, stängs och öpp
         <translation>&amp;Redigera</translation>
     </message>
     <message>
-        <location line="+17"/>
+        <location line="-12"/>
         <source>Close document</source>
         <translation>Stäng dokument</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+28"/>
         <source>&amp;About</source>
         <translation>&amp;Om</translation>
     </message>
@@ -3292,7 +3292,7 @@ Vill du ignorera felen för den här värden?</translation>
 <context>
     <name>UBNoteDialog</name>
     <message>
-        <location filename="../../src/gui/UBNoteDialog.cpp" line="+47"/>
+        <location filename="../../src/gui/UBNoteDialog.cpp" line="+52"/>
         <source>Add note</source>
         <translation>Lägg till anteckning</translation>
     </message>
@@ -3307,7 +3307,7 @@ Vill du ignorera felen för den här värden?</translation>
         <translation>Skriv anteckningen här</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+8"/>
         <source>Cancel</source>
         <translation>Avbryt</translation>
     </message>
@@ -3325,6 +3325,19 @@ Vill du ignorera felen för den här värden?</translation>
         <location line="+0"/>
         <source>Update</source>
         <translation>Uppdatera</translation>
+    </message>
+</context>
+<context>
+    <name>UBNoteOptionsPanel</name>
+    <message>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+394"/>
+        <source>Note</source>
+        <translation>Anteckning</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Marker color</source>
+        <translation>Markörens färg</translation>
     </message>
 </context>
 <context>
@@ -3353,7 +3366,7 @@ Vill du ignorera felen för den här värden?</translation>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-128"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-524"/>
         <source>Pen</source>
         <translation>Penna</translation>
     </message>
@@ -3546,7 +3559,22 @@ Dynamisk bredd</translation>
 <context>
     <name>UBPreferencesController</name>
     <message>
-        <location filename="../../src/core/UBPreferencesController.cpp" line="+158"/>
+        <location filename="../../src/core/UBPreferencesController.cpp" line="+127"/>
+        <source>Language</source>
+        <translation>Språk</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Language of the system</source>
+        <translation>Systemets språk</translation>
+    </message>
+    <message>
+        <location line="+40"/>
+        <source>The new language is used the next time LibertyBoard starts.</source>
+        <translation>Det nya språket används nästa gång LibertyBoard startar.</translation>
+    </message>
+    <message>
+        <location line="+65"/>
         <source>version: </source>
         <translation>version: </translation>
     </message>
@@ -3574,7 +3602,7 @@ Dynamisk bredd</translation>
 <context>
     <name>UBSettings</name>
     <message>
-        <location filename="../../src/core/UBSettings.cpp" line="+1124"/>
+        <location filename="../../src/core/UBSettings.cpp" line="+1125"/>
         <source>My Movies</source>
         <translation>Mina filmer</translation>
     </message>

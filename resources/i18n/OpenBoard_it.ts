@@ -1456,7 +1456,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="vanished">PodCast</translation>
     </message>
     <message>
-        <location filename="../../src/core/UBApplication.cpp" line="+365"/>
+        <location filename="../../src/core/UBApplication.cpp" line="+380"/>
         <location line="+49"/>
         <location line="+214"/>
         <source>Cannot open your UBX file directly. Please import it in Documents mode instead</source>
@@ -2336,7 +2336,7 @@ Vuoi continuare?</translation>
 <context>
     <name>UBEraserOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+252"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+255"/>
         <source>Eraser</source>
         <translation>Gomma</translation>
     </message>
@@ -2729,7 +2729,7 @@ Vuoi continuare?</translation>
     <message>
         <location line="+30"/>
         <source>You have the latest version of LibertyBoard.</source>
-        <translation>Hai l'ultima versione di LibertyBoard.</translation>
+        <translation>Hai l&apos;ultima versione di LibertyBoard.</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -2768,7 +2768,7 @@ Scaricarla e installarla ora? LibertyBoard salva i tuoi documenti, si chiude e s
     <message>
         <location line="+45"/>
         <source>The installation could not be started.</source>
-        <translation>Impossibile avviare l'installazione.</translation>
+        <translation>Impossibile avviare l&apos;installazione.</translation>
     </message>
 </context>
 <context>
@@ -3201,12 +3201,12 @@ Scaricarla e installarla ora? LibertyBoard salva i tuoi documenti, si chiude e s
     <name>UBMainMenu</name>
     <message>
         <location filename="../../src/gui/UBMainMenu.cpp" line="+68"/>
-        <location line="+73"/>
+        <location line="+79"/>
         <source>Page Size</source>
         <translation>Dimensione pagina</translation>
     </message>
     <message>
-        <location line="-49"/>
+        <location line="-55"/>
         <location line="+34"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -3232,7 +3232,7 @@ Scaricarla e installarla ora? LibertyBoard salva i tuoi documenti, si chiude e s
         <translation>Apri/Importa</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+19"/>
         <source>&amp;Mode</source>
         <translation>&amp;Modalità</translation>
     </message>
@@ -3242,12 +3242,12 @@ Scaricarla e installarla ora? LibertyBoard salva i tuoi documenti, si chiude e s
         <translation>&amp;Modifica</translation>
     </message>
     <message>
-        <location line="+17"/>
+        <location line="-12"/>
         <source>Close document</source>
         <translation>Chiudi documento</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+28"/>
         <source>&amp;About</source>
         <translation>&amp;Informazioni</translation>
     </message>
@@ -3264,7 +3264,7 @@ Scaricarla e installarla ora? LibertyBoard salva i tuoi documenti, si chiude e s
     <message>
         <location line="+1"/>
         <source>Download and install the latest version from GitHub</source>
-        <translation>Scarica e installa l'ultima versione da GitHub</translation>
+        <translation>Scarica e installa l&apos;ultima versione da GitHub</translation>
     </message>
     <message>
         <location line="+64"/>
@@ -3364,7 +3364,7 @@ Vuoi ignorare gli errori per questo host?</translation>
 <context>
     <name>UBNoteDialog</name>
     <message>
-        <location filename="../../src/gui/UBNoteDialog.cpp" line="+47"/>
+        <location filename="../../src/gui/UBNoteDialog.cpp" line="+52"/>
         <source>Add note</source>
         <translation>Aggiungi nota</translation>
     </message>
@@ -3379,7 +3379,7 @@ Vuoi ignorare gli errori per questo host?</translation>
         <translation>Scrivi qui la nota</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+8"/>
         <source>Cancel</source>
         <translation>Annulla</translation>
     </message>
@@ -3397,6 +3397,19 @@ Vuoi ignorare gli errori per questo host?</translation>
         <location line="+0"/>
         <source>Update</source>
         <translation>Aggiorna</translation>
+    </message>
+</context>
+<context>
+    <name>UBNoteOptionsPanel</name>
+    <message>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+394"/>
+        <source>Note</source>
+        <translation>Nota</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Marker color</source>
+        <translation>Colore del segnalibro</translation>
     </message>
 </context>
 <context>
@@ -3445,7 +3458,7 @@ Vuoi ignorare gli errori per questo host?</translation>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-128"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-524"/>
         <source>Pen</source>
         <translation>Penna</translation>
     </message>
@@ -3638,7 +3651,22 @@ Larghezza dinamica</translation>
 <context>
     <name>UBPreferencesController</name>
     <message>
-        <location filename="../../src/core/UBPreferencesController.cpp" line="+158"/>
+        <location filename="../../src/core/UBPreferencesController.cpp" line="+127"/>
+        <source>Language</source>
+        <translation>Lingua</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Language of the system</source>
+        <translation>Lingua del sistema</translation>
+    </message>
+    <message>
+        <location line="+40"/>
+        <source>The new language is used the next time LibertyBoard starts.</source>
+        <translation>La nuova lingua viene usata al prossimo avvio di LibertyBoard.</translation>
+    </message>
+    <message>
+        <location line="+65"/>
         <source>version: </source>
         <translation>versione:</translation>
     </message>
@@ -3666,7 +3694,7 @@ Larghezza dinamica</translation>
 <context>
     <name>UBSettings</name>
     <message>
-        <location filename="../../src/core/UBSettings.cpp" line="+1124"/>
+        <location filename="../../src/core/UBSettings.cpp" line="+1125"/>
         <source>My Movies</source>
         <translation>I miei film</translation>
     </message>

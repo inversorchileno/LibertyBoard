@@ -1457,7 +1457,7 @@ Voulez-vous continuer quand-même ?   </translation>
         <translation type="vanished">Capture Vidéo</translation>
     </message>
     <message>
-        <location filename="../../src/core/UBApplication.cpp" line="+365"/>
+        <location filename="../../src/core/UBApplication.cpp" line="+380"/>
         <location line="+49"/>
         <location line="+214"/>
         <source>Cannot open your UBX file directly. Please import it in Documents mode instead</source>
@@ -1635,7 +1635,7 @@ Voulez-vous continuer quand-même ?   </translation>
     <message>
         <location line="+4"/>
         <source>The file could not be saved. Check that the folder can be written.</source>
-        <translation>Le fichier n'a pas pu être enregistré. Vérifiez que le dossier est accessible en écriture.</translation>
+        <translation>Le fichier n&apos;a pas pu être enregistré. Vérifiez que le dossier est accessible en écriture.</translation>
     </message>
     <message>
         <location line="+21"/>
@@ -1724,17 +1724,17 @@ Voulez-vous continuer quand-même ?   </translation>
     <message>
         <location filename="../../src/desktop/UBDesktopAnnotationController.cpp" line="+403"/>
         <source>Screenshot</source>
-        <translation>Capture d'écran</translation>
+        <translation>Capture d&apos;écran</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>Screenshot saved in %1</source>
-        <translation>Capture d'écran enregistrée dans %1</translation>
+        <translation>Capture d&apos;écran enregistrée dans %1</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>The screenshot could not be saved.</source>
-        <translation>La capture d'écran n'a pas pu être enregistrée.</translation>
+        <translation>La capture d&apos;écran n&apos;a pas pu être enregistrée.</translation>
     </message>
 </context>
 <context>
@@ -1742,12 +1742,12 @@ Voulez-vous continuer quand-même ?   </translation>
     <message>
         <location filename="../../src/desktop/UBDesktopPalette.cpp" line="+70"/>
         <source>Save a screenshot</source>
-        <translation>Enregistrer une capture d'écran</translation>
+        <translation>Enregistrer une capture d&apos;écran</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Save a screenshot with the annotations in the Pictures folder</source>
-        <translation>Enregistrer une capture d'écran avec les annotations dans le dossier Images</translation>
+        <translation>Enregistrer une capture d&apos;écran avec les annotations dans le dossier Images</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -2346,7 +2346,7 @@ Voulez-vous continuer ?</translation>
 <context>
     <name>UBEraserOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+252"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+255"/>
         <source>Eraser</source>
         <translation>Gomme</translation>
     </message>
@@ -2719,7 +2719,7 @@ Voulez-vous continuer ?</translation>
     <message>
         <location filename="../../src/core/UBGitHubUpdater.cpp" line="+81"/>
         <source>Looking for a new version...</source>
-        <translation>Recherche d'une nouvelle version...</translation>
+        <translation>Recherche d&apos;une nouvelle version...</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -2736,7 +2736,7 @@ Voulez-vous continuer ?</translation>
     <message>
         <location line="-164"/>
         <source>LibertyBoard could not reach GitHub to look for a new version. Check the internet connection and try again.</source>
-        <translation>LibertyBoard n'a pas pu joindre GitHub pour chercher une nouvelle version. Vérifiez la connexion internet et réessayez.</translation>
+        <translation>LibertyBoard n&apos;a pas pu joindre GitHub pour chercher une nouvelle version. Vérifiez la connexion internet et réessayez.</translation>
     </message>
     <message>
         <location line="+30"/>
@@ -2750,7 +2750,7 @@ Voulez-vous continuer ?</translation>
 Download and install it now? LibertyBoard saves your documents, closes and opens again.</source>
         <translation>Une nouvelle version de LibertyBoard est disponible (version %1).
 
-La télécharger et l'installer maintenant ? LibertyBoard enregistre vos documents, se ferme et se rouvre.</translation>
+La télécharger et l&apos;installer maintenant ? LibertyBoard enregistre vos documents, se ferme et se rouvre.</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -2765,22 +2765,22 @@ La télécharger et l'installer maintenant ? LibertyBoard enregistre vos documen
     <message>
         <location line="+33"/>
         <source>The new version could not be downloaded. Try again later.</source>
-        <translation>La nouvelle version n'a pas pu être téléchargée. Réessayez plus tard.</translation>
+        <translation>La nouvelle version n&apos;a pas pu être téléchargée. Réessayez plus tard.</translation>
     </message>
     <message>
         <location line="+13"/>
         <source>The new version could not be saved on this computer.</source>
-        <translation>La nouvelle version n'a pas pu être enregistrée sur cet ordinateur.</translation>
+        <translation>La nouvelle version n&apos;a pas pu être enregistrée sur cet ordinateur.</translation>
     </message>
     <message>
         <location line="+21"/>
         <source>LibertyBoard cannot replace its own files in this folder. The download page opens: unzip the new version over the current one.</source>
-        <translation>LibertyBoard ne peut pas remplacer ses fichiers dans ce dossier. La page de téléchargement s'ouvre : décompressez la nouvelle version par-dessus l'actuelle.</translation>
+        <translation>LibertyBoard ne peut pas remplacer ses fichiers dans ce dossier. La page de téléchargement s&apos;ouvre : décompressez la nouvelle version par-dessus l&apos;actuelle.</translation>
     </message>
     <message>
         <location line="+45"/>
         <source>The installation could not be started.</source>
-        <translation>L'installation n'a pas pu être lancée.</translation>
+        <translation>L&apos;installation n&apos;a pas pu être lancée.</translation>
     </message>
 </context>
 <context>
@@ -3213,12 +3213,12 @@ La télécharger et l'installer maintenant ? LibertyBoard enregistre vos documen
     <name>UBMainMenu</name>
     <message>
         <location filename="../../src/gui/UBMainMenu.cpp" line="+68"/>
-        <location line="+73"/>
+        <location line="+79"/>
         <source>Page Size</source>
         <translation>Taille de la page</translation>
     </message>
     <message>
-        <location line="-49"/>
+        <location line="-55"/>
         <location line="+34"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -3244,7 +3244,7 @@ La télécharger et l'installer maintenant ? LibertyBoard enregistre vos documen
         <translation>Ouvrir/Importer</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+19"/>
         <source>&amp;Mode</source>
         <translation>&amp;Mode</translation>
     </message>
@@ -3254,12 +3254,12 @@ La télécharger et l'installer maintenant ? LibertyBoard enregistre vos documen
         <translation>&amp;Édition</translation>
     </message>
     <message>
-        <location line="+17"/>
+        <location line="-12"/>
         <source>Close document</source>
         <translation>Fermer le document</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+28"/>
         <source>&amp;About</source>
         <translation>À &amp;propos</translation>
     </message>
@@ -3281,7 +3281,7 @@ La télécharger et l'installer maintenant ? LibertyBoard enregistre vos documen
     <message>
         <location line="+64"/>
         <source>Hide or show the toolbar</source>
-        <translation>Masquer ou afficher la barre d'outils</translation>
+        <translation>Masquer ou afficher la barre d&apos;outils</translation>
     </message>
 </context>
 <context>
@@ -3376,7 +3376,7 @@ Voulez-vous ignorer les erreurs pour ce serveur ?</translation>
 <context>
     <name>UBNoteDialog</name>
     <message>
-        <location filename="../../src/gui/UBNoteDialog.cpp" line="+47"/>
+        <location filename="../../src/gui/UBNoteDialog.cpp" line="+52"/>
         <source>Add note</source>
         <translation>Ajouter une note</translation>
     </message>
@@ -3391,7 +3391,7 @@ Voulez-vous ignorer les erreurs pour ce serveur ?</translation>
         <translation>Saisissez la note ici</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+8"/>
         <source>Cancel</source>
         <translation>Annuler</translation>
     </message>
@@ -3409,6 +3409,19 @@ Voulez-vous ignorer les erreurs pour ce serveur ?</translation>
         <location line="+0"/>
         <source>Update</source>
         <translation>Mettre à jour</translation>
+    </message>
+</context>
+<context>
+    <name>UBNoteOptionsPanel</name>
+    <message>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+394"/>
+        <source>Note</source>
+        <translation>Note</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Marker color</source>
+        <translation>Couleur du marqueur</translation>
     </message>
 </context>
 <context>
@@ -3457,7 +3470,7 @@ Voulez-vous ignorer les erreurs pour ce serveur ?</translation>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-128"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-524"/>
         <source>Pen</source>
         <translation>Stylo</translation>
     </message>
@@ -3654,7 +3667,7 @@ Largeur dynamique</translation>
 <context>
     <name>UBPreferencesController</name>
     <message>
-        <location filename="../../src/core/UBPreferencesController.cpp" line="+288"/>
+        <location filename="../../src/core/UBPreferencesController.cpp" line="+366"/>
         <source>Marker is pressure sensitive</source>
         <translation>Stylet sensible à la pression</translation>
     </message>
@@ -3664,7 +3677,22 @@ Largeur dynamique</translation>
         <translation>version : </translation>
     </message>
     <message>
-        <location line="-42"/>
+        <location line="-109"/>
+        <source>Language</source>
+        <translation>Langue</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Language of the system</source>
+        <translation>Langue du système</translation>
+    </message>
+    <message>
+        <location line="+40"/>
+        <source>The new language is used the next time LibertyBoard starts.</source>
+        <translation>La nouvelle langue est utilisée au prochain démarrage de LibertyBoard.</translation>
+    </message>
+    <message>
+        <location line="+23"/>
         <source>Use all available displays</source>
         <translation>Utiliser tous les écrans disponibles</translation>
     </message>
@@ -3682,7 +3710,7 @@ Largeur dynamique</translation>
 <context>
     <name>UBSettings</name>
     <message>
-        <location filename="../../src/core/UBSettings.cpp" line="+1124"/>
+        <location filename="../../src/core/UBSettings.cpp" line="+1125"/>
         <source>My Movies</source>
         <translation>Mes films</translation>
     </message>
@@ -4055,7 +4083,7 @@ Largeur dynamique</translation>
     <message>
         <location filename="../../src/gui/UBToolOptionsBar.cpp" line="+53"/>
         <source>This tool has no options.</source>
-        <translation>Cet outil n'a pas d'options.</translation>
+        <translation>Cet outil n&apos;a pas d&apos;options.</translation>
     </message>
 </context>
 <context>

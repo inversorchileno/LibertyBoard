@@ -1442,7 +1442,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="vanished">Podcast</translation>
     </message>
     <message>
-        <location filename="../../src/core/UBApplication.cpp" line="+365"/>
+        <location filename="../../src/core/UBApplication.cpp" line="+380"/>
         <location line="+49"/>
         <location line="+214"/>
         <source>Cannot open your UBX file directly. Please import it in Documents mode instead</source>
@@ -2296,7 +2296,7 @@ Do you want to continue?</source>
 <context>
     <name>UBEraserOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+252"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+255"/>
         <source>Eraser</source>
         <translation>Goma</translation>
     </message>
@@ -3164,7 +3164,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+236"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+235"/>
         <source>Hide or show the toolbar</source>
         <translation>Ocultar o mostrar la barra</translation>
     </message>
@@ -3177,13 +3177,13 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation type="vanished">&amp;Documento</translation>
     </message>
     <message>
-        <location line="-168"/>
-        <location line="+73"/>
+        <location line="-167"/>
+        <location line="+79"/>
         <source>Page Size</source>
         <translation>Tamaño de página</translation>
     </message>
     <message>
-        <location line="-49"/>
+        <location line="-55"/>
         <location line="+34"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -3209,7 +3209,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>Abrir/Importar</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+19"/>
         <source>&amp;Mode</source>
         <translation>&amp;Modo</translation>
     </message>
@@ -3219,12 +3219,12 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>&amp;Edición</translation>
     </message>
     <message>
-        <location line="+17"/>
+        <location line="-12"/>
         <source>Close document</source>
         <translation>Cerrar documento</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+28"/>
         <source>&amp;About</source>
         <translation>&amp;Acerca</translation>
     </message>
@@ -3330,7 +3330,7 @@ Do you want to ignore these errors for this host?</source>
 <context>
     <name>UBNoteDialog</name>
     <message>
-        <location filename="../../src/gui/UBNoteDialog.cpp" line="+47"/>
+        <location filename="../../src/gui/UBNoteDialog.cpp" line="+52"/>
         <source>Add note</source>
         <translation>Añadir nota</translation>
     </message>
@@ -3345,7 +3345,7 @@ Do you want to ignore these errors for this host?</source>
         <translation>Escriba la nota aquí</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+8"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
@@ -3363,6 +3363,19 @@ Do you want to ignore these errors for this host?</source>
         <location line="+0"/>
         <source>Update</source>
         <translation>Actualizar</translation>
+    </message>
+</context>
+<context>
+    <name>UBNoteOptionsPanel</name>
+    <message>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+394"/>
+        <source>Note</source>
+        <translation>Nota</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Marker color</source>
+        <translation>Color del marcador</translation>
     </message>
 </context>
 <context>
@@ -3411,7 +3424,7 @@ Do you want to ignore these errors for this host?</source>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-128"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-524"/>
         <source>Pen</source>
         <translation>Bolígrafo</translation>
     </message>
@@ -3608,7 +3621,7 @@ Ancho dinámico</translation>
 <context>
     <name>UBPreferencesController</name>
     <message>
-        <location filename="../../src/core/UBPreferencesController.cpp" line="+301"/>
+        <location filename="../../src/core/UBPreferencesController.cpp" line="+379"/>
         <source>Laser pointer</source>
         <translation>Puntero láser</translation>
     </message>
@@ -3618,7 +3631,22 @@ Ancho dinámico</translation>
         <translation>versión:</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="-109"/>
+        <source>Language</source>
+        <translation>Idioma</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Language of the system</source>
+        <translation>Idioma del sistema</translation>
+    </message>
+    <message>
+        <location line="+40"/>
+        <source>The new language is used the next time LibertyBoard starts.</source>
+        <translation>El nuevo idioma se usa la próxima vez que se abra LibertyBoard.</translation>
+    </message>
+    <message>
+        <location line="+66"/>
         <source> (build %1)</source>
         <translation> (compilación %1)</translation>
     </message>
@@ -3636,7 +3664,7 @@ Ancho dinámico</translation>
 <context>
     <name>UBSettings</name>
     <message>
-        <location filename="../../src/core/UBSettings.cpp" line="+1124"/>
+        <location filename="../../src/core/UBSettings.cpp" line="+1125"/>
         <source>My Movies</source>
         <translation>Mis películas</translation>
     </message>

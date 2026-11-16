@@ -1430,7 +1430,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="vanished">Podcast</translation>
     </message>
     <message>
-        <location filename="../../src/core/UBApplication.cpp" line="+365"/>
+        <location filename="../../src/core/UBApplication.cpp" line="+380"/>
         <location line="+49"/>
         <location line="+214"/>
         <source>Cannot open your UBX file directly. Please import it in Documents mode instead</source>
@@ -2247,7 +2247,7 @@ Do you want to continue?</source>
 <context>
     <name>UBEraserOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+252"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+255"/>
         <source>Eraser</source>
         <translation>Wisser</translation>
     </message>
@@ -3112,12 +3112,12 @@ Nu downloaden en installeren? LibertyBoard bewaart je documenten, sluit af en op
     <name>UBMainMenu</name>
     <message>
         <location filename="../../src/gui/UBMainMenu.cpp" line="+68"/>
-        <location line="+73"/>
+        <location line="+79"/>
         <source>Page Size</source>
         <translation>Paginagrootte</translation>
     </message>
     <message>
-        <location line="-49"/>
+        <location line="-55"/>
         <location line="+34"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -3143,7 +3143,7 @@ Nu downloaden en installeren? LibertyBoard bewaart je documenten, sluit af en op
         <translation>Openen/Importeren</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+19"/>
         <source>&amp;Mode</source>
         <translation>&amp;Modus</translation>
     </message>
@@ -3153,12 +3153,12 @@ Nu downloaden en installeren? LibertyBoard bewaart je documenten, sluit af en op
         <translation>&amp;Bewerken</translation>
     </message>
     <message>
-        <location line="+17"/>
+        <location line="-12"/>
         <source>Close document</source>
         <translation>Document sluiten</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+28"/>
         <source>&amp;About</source>
         <translation>&amp;Over</translation>
     </message>
@@ -3269,7 +3269,7 @@ Do you want to ignore these errors for this host?</source>
 <context>
     <name>UBNoteDialog</name>
     <message>
-        <location filename="../../src/gui/UBNoteDialog.cpp" line="+47"/>
+        <location filename="../../src/gui/UBNoteDialog.cpp" line="+52"/>
         <source>Add note</source>
         <translation>Notitie toevoegen</translation>
     </message>
@@ -3284,7 +3284,7 @@ Do you want to ignore these errors for this host?</source>
         <translation>Typ hier de notitie</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+8"/>
         <source>Cancel</source>
         <translation>Annuleren</translation>
     </message>
@@ -3302,6 +3302,19 @@ Do you want to ignore these errors for this host?</source>
         <location line="+0"/>
         <source>Update</source>
         <translation>Update</translation>
+    </message>
+</context>
+<context>
+    <name>UBNoteOptionsPanel</name>
+    <message>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+394"/>
+        <source>Note</source>
+        <translation>Notitie</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Marker color</source>
+        <translation>Kleur van de markering</translation>
     </message>
 </context>
 <context>
@@ -3324,13 +3337,13 @@ Do you want to ignore these errors for this host?</source>
     <message>
         <location filename="../../src/gui/UBPagesSidebar.cpp" line="+48"/>
         <source>Hide or show the pages</source>
-        <translation>Pagina's verbergen of tonen</translation>
+        <translation>Pagina&apos;s verbergen of tonen</translation>
     </message>
 </context>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-128"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-524"/>
         <source>Pen</source>
         <translation>Pen</translation>
     </message>
@@ -3523,7 +3536,22 @@ Dynamische breedte</translation>
 <context>
     <name>UBPreferencesController</name>
     <message>
-        <location filename="../../src/core/UBPreferencesController.cpp" line="+158"/>
+        <location filename="../../src/core/UBPreferencesController.cpp" line="+127"/>
+        <source>Language</source>
+        <translation>Taal</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Language of the system</source>
+        <translation>Taal van het systeem</translation>
+    </message>
+    <message>
+        <location line="+40"/>
+        <source>The new language is used the next time LibertyBoard starts.</source>
+        <translation>De nieuwe taal wordt gebruikt bij de volgende start van LibertyBoard.</translation>
+    </message>
+    <message>
+        <location line="+65"/>
         <source>version: </source>
         <translation>versie:</translation>
     </message>
@@ -3551,7 +3579,7 @@ Dynamische breedte</translation>
 <context>
     <name>UBSettings</name>
     <message>
-        <location filename="../../src/core/UBSettings.cpp" line="+1124"/>
+        <location filename="../../src/core/UBSettings.cpp" line="+1125"/>
         <source>My Movies</source>
         <translation>Mijn films</translation>
     </message>

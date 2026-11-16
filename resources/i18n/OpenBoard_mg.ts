@@ -542,7 +542,7 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="+3"/>
         <source>Underline Text</source>
-        <translation>Hanisy tsipika ambanin'ny soratra</translation>
+        <translation>Hanisy tsipika ambanin&apos;ny soratra</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -1442,7 +1442,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="vanished">Podcast</translation>
     </message>
     <message>
-        <location filename="../../src/core/UBApplication.cpp" line="+365"/>
+        <location filename="../../src/core/UBApplication.cpp" line="+380"/>
         <location line="+49"/>
         <location line="+214"/>
         <source>Cannot open your UBX file directly. Please import it in Documents mode instead</source>
@@ -1599,12 +1599,12 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="+1"/>
         <source>PNG image of the current page (*.png)</source>
-        <translation>Sary PNG an'ny pejy ankehitriny (*.png)</translation>
+        <translation>Sary PNG an&apos;ny pejy ankehitriny (*.png)</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>JPEG image of the current page (*.jpg *.jpeg)</source>
-        <translation>Sary JPEG an'ny pejy ankehitriny (*.jpg *.jpeg)</translation>
+        <translation>Sary JPEG an&apos;ny pejy ankehitriny (*.jpg *.jpeg)</translation>
     </message>
     <message>
         <location line="+18"/>
@@ -1615,7 +1615,7 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="-4"/>
         <source>Saved to %1</source>
-        <translation>Voatahiry ao amin'ny %1</translation>
+        <translation>Voatahiry ao amin&apos;ny %1</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -1625,12 +1625,12 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="+21"/>
         <source>Save the changes to the PDF before closing?</source>
-        <translation>Tehirizina ve ny fanovana ny PDF alohan'ny hanakatonana?</translation>
+        <translation>Tehirizina ve ny fanovana ny PDF alohan&apos;ny hanakatonana?</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Save the board as a picture before closing?</source>
-        <translation>Tehirizina ho sary ve ny solaitrabe alohan'ny hanakatonana?</translation>
+        <translation>Tehirizina ho sary ve ny solaitrabe alohan&apos;ny hanakatonana?</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1702,17 +1702,17 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location filename="../../src/desktop/UBDesktopAnnotationController.cpp" line="+403"/>
         <source>Screenshot</source>
-        <translation>Sarin'efijery</translation>
+        <translation>Sarin&apos;efijery</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>Screenshot saved in %1</source>
-        <translation>Voatahiry ao amin'ny %1 ny sarin'efijery</translation>
+        <translation>Voatahiry ao amin&apos;ny %1 ny sarin&apos;efijery</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>The screenshot could not be saved.</source>
-        <translation>Tsy voatahiry ny sarin'efijery.</translation>
+        <translation>Tsy voatahiry ny sarin&apos;efijery.</translation>
     </message>
 </context>
 <context>
@@ -1720,12 +1720,12 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location filename="../../src/desktop/UBDesktopPalette.cpp" line="+70"/>
         <source>Save a screenshot</source>
-        <translation>Hitahiry sarin'efijery</translation>
+        <translation>Hitahiry sarin&apos;efijery</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Save a screenshot with the annotations in the Pictures folder</source>
-        <translation>Hitahiry sarin'efijery misy ny fanamarihana ao amin'ny lahatahiry Sary</translation>
+        <translation>Hitahiry sarin&apos;efijery misy ny fanamarihana ao amin&apos;ny lahatahiry Sary</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -2263,7 +2263,7 @@ Do you want to continue?</source>
 <context>
     <name>UBEraserOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+252"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+255"/>
         <source>Eraser</source>
         <translation>Fafotse</translation>
     </message>
@@ -2280,7 +2280,7 @@ Do you want to continue?</source>
     <message>
         <location line="+1"/>
         <source>Whole: erases every stroke the eraser touches. Partial: erases only where the eraser passes.</source>
-        <translation>Manontolo: mamafa ny tsipika rehetra kasihin'ny famafa. Ampahany: mamafa izay alehan'ny famafa ihany.</translation>
+        <translation>Manontolo: mamafa ny tsipika rehetra kasihin&apos;ny famafa. Ampahany: mamafa izay alehan&apos;ny famafa ihany.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2374,7 +2374,7 @@ Do you want to continue?</source>
     <message>
         <location line="+12"/>
         <source>Export to LibertyBoard Format</source>
-        <translation>Hamoaka amin'ny endrika LibertyBoard</translation>
+        <translation>Hamoaka amin&apos;ny endrika LibertyBoard</translation>
     </message>
 </context>
 <context>
@@ -2409,7 +2409,7 @@ Do you want to continue?</source>
     <message>
         <location line="+54"/>
         <source>Export to LibertyBoard UBX Format</source>
-        <translation>Hamoaka amin'ny endrika LibertyBoard UBX</translation>
+        <translation>Hamoaka amin&apos;ny endrika LibertyBoard UBX</translation>
     </message>
 </context>
 <context>
@@ -2651,21 +2651,21 @@ Do you want to continue?</source>
     <message>
         <location line="-164"/>
         <source>LibertyBoard could not reach GitHub to look for a new version. Check the internet connection and try again.</source>
-        <translation>Tsy tafiditra tao amin'ny GitHub ny LibertyBoard hitadiavana dikan-teny vaovao. Hamarino ny fifandraisana amin'ny aterineto ary andramo indray.</translation>
+        <translation>Tsy tafiditra tao amin&apos;ny GitHub ny LibertyBoard hitadiavana dikan-teny vaovao. Hamarino ny fifandraisana amin&apos;ny aterineto ary andramo indray.</translation>
     </message>
     <message>
         <location line="+30"/>
         <source>You have the latest version of LibertyBoard.</source>
-        <translation>Anananao ny dikan-teny farany amin'ny LibertyBoard.</translation>
+        <translation>Anananao ny dikan-teny farany amin&apos;ny LibertyBoard.</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>A new version of LibertyBoard is available (build %1).
 
 Download and install it now? LibertyBoard saves your documents, closes and opens again.</source>
-        <translation>Misy dikan-teny vaovao amin'ny LibertyBoard (dika %1).
+        <translation>Misy dikan-teny vaovao amin&apos;ny LibertyBoard (dika %1).
 
-Alaina sy apetraka izao ve? Hotehirizin'ny LibertyBoard ny antontan-taratasinao, hikatona izy ary hisokatra indray.</translation>
+Alaina sy apetraka izao ve? Hotehirizin&apos;ny LibertyBoard ny antontan-taratasinao, hikatona izy ary hisokatra indray.</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -2685,12 +2685,12 @@ Alaina sy apetraka izao ve? Hotehirizin'ny LibertyBoard ny antontan-taratasinao,
     <message>
         <location line="+13"/>
         <source>The new version could not be saved on this computer.</source>
-        <translation>Tsy voatahiry tamin'ity solosaina ity ny dikan-teny vaovao.</translation>
+        <translation>Tsy voatahiry tamin&apos;ity solosaina ity ny dikan-teny vaovao.</translation>
     </message>
     <message>
         <location line="+21"/>
         <source>LibertyBoard cannot replace its own files in this folder. The download page opens: unzip the new version over the current one.</source>
-        <translation>Tsy afaka manolo ny rakitra ao amin'ity lahatahiry ity ny LibertyBoard. Hisokatra ny pejy fakana: sokafy eo ambonin'ny ankehitriny ny dikan-teny vaovao.</translation>
+        <translation>Tsy afaka manolo ny rakitra ao amin&apos;ity lahatahiry ity ny LibertyBoard. Hisokatra ny pejy fakana: sokafy eo ambonin&apos;ny ankehitriny ny dikan-teny vaovao.</translation>
     </message>
     <message>
         <location line="+45"/>
@@ -3031,7 +3031,7 @@ Alaina sy apetraka izao ve? Hotehirizin'ny LibertyBoard ny antontan-taratasinao,
     <message>
         <location line="+3"/>
         <source>Wait before fading</source>
-        <translation>Fiandrasana alohan'ny hanjavonana</translation>
+        <translation>Fiandrasana alohan&apos;ny hanjavonana</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -3042,7 +3042,7 @@ Alaina sy apetraka izao ve? Hotehirizin'ny LibertyBoard ny antontan-taratasinao,
     <message>
         <location line="-1"/>
         <source>Fading duration</source>
-        <translation>Faharetan'ny fanjavonana</translation>
+        <translation>Faharetan&apos;ny fanjavonana</translation>
     </message>
 </context>
 <context>
@@ -3116,24 +3116,24 @@ Alaina sy apetraka izao ve? Hotehirizin'ny LibertyBoard ny antontan-taratasinao,
     <message>
         <location line="+1"/>
         <source>Wait before fading</source>
-        <translation>Fiandrasana alohan'ny hanjavonana</translation>
+        <translation>Fiandrasana alohan&apos;ny hanjavonana</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Fading duration</source>
-        <translation>Faharetan'ny fanjavonana</translation>
+        <translation>Faharetan&apos;ny fanjavonana</translation>
     </message>
 </context>
 <context>
     <name>UBMainMenu</name>
     <message>
         <location filename="../../src/gui/UBMainMenu.cpp" line="+68"/>
-        <location line="+73"/>
+        <location line="+79"/>
         <source>Page Size</source>
-        <translation>Haben'ny pejy</translation>
+        <translation>Haben&apos;ny pejy</translation>
     </message>
     <message>
-        <location line="-49"/>
+        <location line="-55"/>
         <location line="+34"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -3159,7 +3159,7 @@ Alaina sy apetraka izao ve? Hotehirizin'ny LibertyBoard ny antontan-taratasinao,
         <translation>Hanokatra/Hampiditra</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+19"/>
         <source>&amp;Mode</source>
         <translation>&amp;Fomba</translation>
     </message>
@@ -3169,19 +3169,19 @@ Alaina sy apetraka izao ve? Hotehirizin'ny LibertyBoard ny antontan-taratasinao,
         <translation>&amp;Hanova</translation>
     </message>
     <message>
-        <location line="+17"/>
+        <location line="-12"/>
         <source>Close document</source>
         <translation>Hanidy ny antontan-taratasy</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+28"/>
         <source>&amp;About</source>
         <translation>&amp;Mombamomba</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>LibertyBoard on GitHub</source>
-        <translation>LibertyBoard ao amin'ny GitHub</translation>
+        <translation>LibertyBoard ao amin&apos;ny GitHub</translation>
     </message>
     <message>
         <location line="+8"/>
@@ -3191,7 +3191,7 @@ Alaina sy apetraka izao ve? Hotehirizin'ny LibertyBoard ny antontan-taratasinao,
     <message>
         <location line="+1"/>
         <source>Download and install the latest version from GitHub</source>
-        <translation>Haka sy hametraka ny dikan-teny farany avy amin'ny GitHub</translation>
+        <translation>Haka sy hametraka ny dikan-teny farany avy amin&apos;ny GitHub</translation>
     </message>
     <message>
         <location line="+64"/>
@@ -3291,7 +3291,7 @@ Tena tsy te hiraharaha an&apos;ireo tsy mety ho an&apos;ilay milina ve ianao?</t
 <context>
     <name>UBNoteDialog</name>
     <message>
-        <location filename="../../src/gui/UBNoteDialog.cpp" line="+47"/>
+        <location filename="../../src/gui/UBNoteDialog.cpp" line="+52"/>
         <source>Add note</source>
         <translation>Hampiditra naoty iray</translation>
     </message>
@@ -3306,7 +3306,7 @@ Tena tsy te hiraharaha an&apos;ireo tsy mety ho an&apos;ilay milina ve ianao?</t
         <translation>Soraty eto ny naoty</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+8"/>
         <source>Cancel</source>
         <translation>Foanana</translation>
     </message>
@@ -3327,6 +3327,19 @@ Tena tsy te hiraharaha an&apos;ireo tsy mety ho an&apos;ilay milina ve ianao?</t
     </message>
 </context>
 <context>
+    <name>UBNoteOptionsPanel</name>
+    <message>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+394"/>
+        <source>Note</source>
+        <translation>Naoty</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Marker color</source>
+        <translation>Lokon'ny marika</translation>
+    </message>
+</context>
+<context>
     <name>UBOpenSankoreImporterWidget</name>
     <message>
         <source>Cancel</source>
@@ -3338,7 +3351,7 @@ Tena tsy te hiraharaha an&apos;ireo tsy mety ho an&apos;ilay milina ve ianao?</t
     <message>
         <location filename="../../src/gui/UBPageIndicator.cpp" line="+45"/>
         <source>Type a page number and press Enter</source>
-        <translation>Soraty ny laharan'ny pejy ary tsindrio Enter</translation>
+        <translation>Soraty ny laharan&apos;ny pejy ary tsindrio Enter</translation>
     </message>
 </context>
 <context>
@@ -3352,7 +3365,7 @@ Tena tsy te hiraharaha an&apos;ireo tsy mety ho an&apos;ilay milina ve ianao?</t
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-128"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-524"/>
         <source>Pen</source>
         <translation>Penina</translation>
     </message>
@@ -3545,7 +3558,22 @@ Sakany miova</translation>
 <context>
     <name>UBPreferencesController</name>
     <message>
-        <location filename="../../src/core/UBPreferencesController.cpp" line="+158"/>
+        <location filename="../../src/core/UBPreferencesController.cpp" line="+127"/>
+        <source>Language</source>
+        <translation>Fiteny</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Language of the system</source>
+        <translation>Fitenin'ny rafitra</translation>
+    </message>
+    <message>
+        <location line="+40"/>
+        <source>The new language is used the next time LibertyBoard starts.</source>
+        <translation>Ampiasaina amin'ny fanombohana manaraka ny LibertyBoard ny fiteny vaovao.</translation>
+    </message>
+    <message>
+        <location line="+65"/>
         <source>version: </source>
         <translation>kinova:</translation>
     </message>
@@ -3573,7 +3601,7 @@ Sakany miova</translation>
 <context>
     <name>UBSettings</name>
     <message>
-        <location filename="../../src/core/UBSettings.cpp" line="+1124"/>
+        <location filename="../../src/core/UBSettings.cpp" line="+1125"/>
         <source>My Movies</source>
         <translation>Ny sarimietsiko</translation>
     </message>
@@ -3644,7 +3672,7 @@ Sakany miova</translation>
     <message>
         <location line="+4"/>
         <source>Line end</source>
-        <translation>Fiafaran'ny tsipika</translation>
+        <translation>Fiafaran&apos;ny tsipika</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -4175,7 +4203,7 @@ Avereno alefa ny rindr&apos;asa ahafahana mampiasa ny rakitra novoazana azafady.
     <message>
         <location line="+9"/>
         <source>Zoom in percent: type a value and press Enter</source>
-        <translation>Zoom amin'ny isan-jato: soraty ny sanda ary tsindrio Enter</translation>
+        <translation>Zoom amin&apos;ny isan-jato: soraty ny sanda ary tsindrio Enter</translation>
     </message>
     <message>
         <location line="+5"/>

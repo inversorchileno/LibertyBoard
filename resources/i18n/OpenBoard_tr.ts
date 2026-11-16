@@ -1448,7 +1448,7 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
         <translation type="vanished">Ekran Kaydı</translation>
     </message>
     <message>
-        <location filename="../../src/core/UBApplication.cpp" line="+365"/>
+        <location filename="../../src/core/UBApplication.cpp" line="+380"/>
         <location line="+49"/>
         <location line="+214"/>
         <source>Cannot open your UBX file directly. Please import it in Documents mode instead</source>
@@ -1631,7 +1631,7 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
     <message>
         <location line="+21"/>
         <source>Save the changes to the PDF before closing?</source>
-        <translation>Kapatmadan önce PDF'deki değişiklikler kaydedilsin mi?</translation>
+        <translation>Kapatmadan önce PDF&apos;deki değişiklikler kaydedilsin mi?</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2284,7 +2284,7 @@ Do you want to continue?</source>
 <context>
     <name>UBEraserOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+252"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+255"/>
         <source>Eraser</source>
         <translation>Silgi</translation>
     </message>
@@ -2672,19 +2672,19 @@ Do you want to continue?</source>
     <message>
         <location line="-164"/>
         <source>LibertyBoard could not reach GitHub to look for a new version. Check the internet connection and try again.</source>
-        <translation>LibertyBoard yeni bir sürüm aramak için GitHub'a ulaşamadı. İnternet bağlantısını kontrol edip yeniden deneyin.</translation>
+        <translation>LibertyBoard yeni bir sürüm aramak için GitHub&apos;a ulaşamadı. İnternet bağlantısını kontrol edip yeniden deneyin.</translation>
     </message>
     <message>
         <location line="+30"/>
         <source>You have the latest version of LibertyBoard.</source>
-        <translation>LibertyBoard'un en son sürümüne sahipsiniz.</translation>
+        <translation>LibertyBoard&apos;un en son sürümüne sahipsiniz.</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>A new version of LibertyBoard is available (build %1).
 
 Download and install it now? LibertyBoard saves your documents, closes and opens again.</source>
-        <translation>LibertyBoard'un yeni bir sürümü var (derleme %1).
+        <translation>LibertyBoard&apos;un yeni bir sürümü var (derleme %1).
 
 Şimdi indirilip kurulsun mu? LibertyBoard belgelerinizi kaydeder, kapanır ve yeniden açılır.</translation>
     </message>
@@ -3149,12 +3149,12 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     <name>UBMainMenu</name>
     <message>
         <location filename="../../src/gui/UBMainMenu.cpp" line="+68"/>
-        <location line="+73"/>
+        <location line="+79"/>
         <source>Page Size</source>
         <translation>Sayfa boyutu</translation>
     </message>
     <message>
-        <location line="-49"/>
+        <location line="-55"/>
         <location line="+34"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -3180,7 +3180,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>Aç/İçe aktar</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+19"/>
         <source>&amp;Mode</source>
         <translation>&amp;Mod</translation>
     </message>
@@ -3190,19 +3190,19 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>&amp;Düzen</translation>
     </message>
     <message>
-        <location line="+17"/>
+        <location line="-12"/>
         <source>Close document</source>
         <translation>Belgeyi kapat</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+28"/>
         <source>&amp;About</source>
         <translation>&amp;Hakkında</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>LibertyBoard on GitHub</source>
-        <translation>GitHub'da LibertyBoard</translation>
+        <translation>GitHub&apos;da LibertyBoard</translation>
     </message>
     <message>
         <location line="+8"/>
@@ -3212,7 +3212,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     <message>
         <location line="+1"/>
         <source>Download and install the latest version from GitHub</source>
-        <translation>En son sürümü GitHub'dan indir ve kur</translation>
+        <translation>En son sürümü GitHub&apos;dan indir ve kur</translation>
     </message>
     <message>
         <location line="+64"/>
@@ -3311,7 +3311,7 @@ Bu ana bilgisayar için yukarıdaki hatalar yok sayılsın mı?</translation>
 <context>
     <name>UBNoteDialog</name>
     <message>
-        <location filename="../../src/gui/UBNoteDialog.cpp" line="+47"/>
+        <location filename="../../src/gui/UBNoteDialog.cpp" line="+52"/>
         <source>Add note</source>
         <translation>Bir not ekle</translation>
     </message>
@@ -3326,7 +3326,7 @@ Bu ana bilgisayar için yukarıdaki hatalar yok sayılsın mı?</translation>
         <translation>Notu buraya yazın</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+8"/>
         <source>Cancel</source>
         <translation>İptal</translation>
     </message>
@@ -3344,6 +3344,19 @@ Bu ana bilgisayar için yukarıdaki hatalar yok sayılsın mı?</translation>
         <location line="+0"/>
         <source>Update</source>
         <translation>Güncelle</translation>
+    </message>
+</context>
+<context>
+    <name>UBNoteOptionsPanel</name>
+    <message>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+394"/>
+        <source>Note</source>
+        <translation>Not</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Marker color</source>
+        <translation>İşaretçi rengi</translation>
     </message>
 </context>
 <context>
@@ -3379,7 +3392,7 @@ Bu ana bilgisayar için yukarıdaki hatalar yok sayılsın mı?</translation>
     <message>
         <location filename="../../src/gui/UBPageIndicator.cpp" line="+45"/>
         <source>Type a page number and press Enter</source>
-        <translation>Bir sayfa numarası yazıp Enter'a basın</translation>
+        <translation>Bir sayfa numarası yazıp Enter&apos;a basın</translation>
     </message>
 </context>
 <context>
@@ -3393,7 +3406,7 @@ Bu ana bilgisayar için yukarıdaki hatalar yok sayılsın mı?</translation>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-128"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-524"/>
         <source>Pen</source>
         <translation>Kalem</translation>
     </message>
@@ -3589,7 +3602,22 @@ Dinamik kalınlık</translation>
 <context>
     <name>UBPreferencesController</name>
     <message>
-        <location filename="../../src/core/UBPreferencesController.cpp" line="+158"/>
+        <location filename="../../src/core/UBPreferencesController.cpp" line="+127"/>
+        <source>Language</source>
+        <translation>Dil</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Language of the system</source>
+        <translation>Sistem dili</translation>
+    </message>
+    <message>
+        <location line="+40"/>
+        <source>The new language is used the next time LibertyBoard starts.</source>
+        <translation>Yeni dil, LibertyBoard bir sonraki açılışta kullanılır.</translation>
+    </message>
+    <message>
+        <location line="+65"/>
         <source>version: </source>
         <translation>sürüm: </translation>
     </message>
@@ -3617,7 +3645,7 @@ Dinamik kalınlık</translation>
 <context>
     <name>UBSettings</name>
     <message>
-        <location filename="../../src/core/UBSettings.cpp" line="+1124"/>
+        <location filename="../../src/core/UBSettings.cpp" line="+1125"/>
         <source>My Movies</source>
         <translation>Filimlerim</translation>
     </message>
@@ -4226,7 +4254,7 @@ Güncellenen belgelere erişmek için uygulamayı yeniden başlatın.</translati
     <message>
         <location line="+9"/>
         <source>Zoom in percent: type a value and press Enter</source>
-        <translation>Yüzde olarak yakınlaştırma: bir değer yazıp Enter'a basın</translation>
+        <translation>Yüzde olarak yakınlaştırma: bir değer yazıp Enter&apos;a basın</translation>
     </message>
     <message>
         <location line="+5"/>
