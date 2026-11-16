@@ -165,6 +165,38 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>MainWindow</name>
     <message>
+        <source>Arrow</source>
+        <translation>Flecha</translation>
+    </message>
+    <message>
+        <source>Draw Arrows</source>
+        <translation>Dibujar flechas</translation>
+    </message>
+    <message>
+        <source>Rectangle</source>
+        <translation>Rectángulo</translation>
+    </message>
+    <message>
+        <source>Draw Rectangles</source>
+        <translation>Dibujar rectángulos</translation>
+    </message>
+    <message>
+        <source>Ellipse</source>
+        <translation>Elipse</translation>
+    </message>
+    <message>
+        <source>Draw Ellipses</source>
+        <translation>Dibujar elipses</translation>
+    </message>
+    <message>
+        <source>Underline</source>
+        <translation>Subrayar</translation>
+    </message>
+    <message>
+        <source>Underline Text</source>
+        <translation>Subrayar texto</translation>
+    </message>
+    <message>
         <location filename="../forms/mainWindow.ui" line="43"/>
         <location filename="../forms/mainWindow.ui" line="657"/>
         <source>Board</source>
@@ -1587,6 +1619,21 @@ Do you wish to override the security check and continue ?   </source>
     </message>
 </context>
 <context>
+    <name>UBColorSwatches</name>
+    <message>
+        <source>No color</source>
+        <translation>Sin color</translation>
+    </message>
+    <message>
+        <source>Other color</source>
+        <translation>Otro color</translation>
+    </message>
+    <message>
+        <source>Choose a color</source>
+        <translation>Elegir un color</translation>
+    </message>
+</context>
+<context>
     <name>UBDesktopPalette</name>
     <message>
         <location filename="../../src/desktop/UBDesktopPalette.cpp" line="69"/>
@@ -2116,6 +2163,33 @@ Do you want to continue?</source>
         <source>Application name can`t contain any of the following characters:<byte value="xd"/>
 </source>
         <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UBEraserOptionsPanel</name>
+    <message>
+        <source>Eraser</source>
+        <translation>Goma</translation>
+    </message>
+    <message>
+        <source>Whole</source>
+        <translation>Completo</translation>
+    </message>
+    <message>
+        <source>Partial</source>
+        <translation>Parcial</translation>
+    </message>
+    <message>
+        <source>Whole: erases every stroke the eraser touches. Partial: erases only where the eraser passes.</source>
+        <translation>Completo: borra cada trazo que toca la goma. Parcial: borra solo por donde pasa la goma.</translation>
+    </message>
+    <message>
+        <source> pt</source>
+        <translation> pt</translation>
+    </message>
+    <message>
+        <source>Erase all annotations</source>
+        <translation>Borrar todas las anotaciones</translation>
     </message>
 </context>
 <context>
@@ -2743,6 +2817,53 @@ Do you want to continue?</source>
     </message>
 </context>
 <context>
+    <name>UBLaserOptionsPanel</name>
+    <message>
+        <source>Laser pointer</source>
+        <translation>Puntero láser</translation>
+    </message>
+    <message>
+        <source>Trail</source>
+        <translation>Estela</translation>
+    </message>
+    <message>
+        <source>Point</source>
+        <translation>Punto</translation>
+    </message>
+    <message>
+        <source> pt</source>
+        <translation> pt</translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation>Apariencia</translation>
+    </message>
+    <message>
+        <source>Standard</source>
+        <translation>Estándar</translation>
+    </message>
+    <message>
+        <source>White burn</source>
+        <translation>Brillo blanco</translation>
+    </message>
+    <message>
+        <source> %</source>
+        <translation> %</translation>
+    </message>
+    <message>
+        <source>Wait before fading</source>
+        <translation>Espera antes de desvanecer</translation>
+    </message>
+    <message>
+        <source> s</source>
+        <translation> s</translation>
+    </message>
+    <message>
+        <source>Fading duration</source>
+        <translation>Duración del desvanecimiento</translation>
+    </message>
+</context>
+<context>
     <name>UBLaserPreferencesPage</name>
     <message>
         <source>Red</source>
@@ -2824,6 +2945,25 @@ Do you want to continue?</source>
     </message>
 </context>
 <context>
+    <name>UBMarkerOptionsPanel</name>
+    <message>
+        <source>Marker</source>
+        <translation>Rotulador</translation>
+    </message>
+    <message>
+        <source> pt</source>
+        <translation> pt</translation>
+    </message>
+    <message>
+        <source>Advanced</source>
+        <translation>Avanzado</translation>
+    </message>
+    <message>
+        <source> %</source>
+        <translation> %</translation>
+    </message>
+</context>
+<context>
     <name>UBMessagesDialog</name>
     <message>
         <location filename="../../src/gui/UBMessagesDialog.cpp" line="60"/>
@@ -2890,6 +3030,43 @@ Do you want to ignore these errors for this host?</source>
     <message>
         <source>Open-Sankoré documents are present on your computer. It is possible to import them to OpenBoard by pressing the “Proceed” button to launch the importer application.</source>
         <translation type="vanished">Los documentos de Open-Sankoré de su computador.Es posible importarlos a OpenBoard pulsando en el botón &quot;Continuar&quot; de la aplicación importadora.</translation>
+    </message>
+</context>
+<context>
+    <name>UBPenOptionsPanel</name>
+    <message>
+        <source>Pen</source>
+        <translation>Bolígrafo</translation>
+    </message>
+    <message>
+        <source>Basic
+Fixed width</source>
+        <translation>Básico
+Ancho fijo</translation>
+    </message>
+    <message>
+        <source>Pro
+Variable width</source>
+        <translation>Pro
+Ancho variable</translation>
+    </message>
+    <message>
+        <source>Calligraphy
+Dynamic width</source>
+        <translation>Caligrafía
+Ancho dinámico</translation>
+    </message>
+    <message>
+        <source> pt</source>
+        <translation> pt</translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation>Apariencia</translation>
+    </message>
+    <message>
+        <source> %</source>
+        <translation> %</translation>
     </message>
 </context>
 <context>
@@ -3069,6 +3246,61 @@ Do you want to ignore these errors for this host?</source>
         <location filename="../../src/core/UBSettings.cpp" line="1024"/>
         <source>My Movies</source>
         <translation>Mis películas</translation>
+    </message>
+</context>
+<context>
+    <name>UBShapeOptionsPanel</name>
+    <message>
+        <source>Rectangle</source>
+        <translation>Rectángulo</translation>
+    </message>
+    <message>
+        <source>Ellipse</source>
+        <translation>Elipse</translation>
+    </message>
+    <message>
+        <source>Arrow</source>
+        <translation>Flecha</translation>
+    </message>
+    <message>
+        <source>Underline</source>
+        <translation>Subrayar</translation>
+    </message>
+    <message>
+        <source>Border</source>
+        <translation>Borde</translation>
+    </message>
+    <message>
+        <source>Fill</source>
+        <translation>Relleno</translation>
+    </message>
+    <message>
+        <source> pt</source>
+        <translation> pt</translation>
+    </message>
+    <message>
+        <source>Line style</source>
+        <translation>Estilo de línea</translation>
+    </message>
+    <message>
+        <source>Border styles</source>
+        <translation>Estilos de borde</translation>
+    </message>
+    <message>
+        <source>Line start</source>
+        <translation>Inicio de la línea</translation>
+    </message>
+    <message>
+        <source>Line end</source>
+        <translation>Fin de la línea</translation>
+    </message>
+    <message>
+        <source>Opacity</source>
+        <translation>Opacidad</translation>
+    </message>
+    <message>
+        <source> %</source>
+        <translation> %</translation>
     </message>
 </context>
 <context>
@@ -3281,6 +3513,37 @@ Do you want to ignore these errors for this host?</source>
     <message>
         <source></source>
         <translation></translation>
+    </message>
+</context>
+<context>
+    <name>UBTextOptionsPanel</name>
+    <message>
+        <source>Text</source>
+        <translation>Texto</translation>
+    </message>
+    <message>
+        <source> pt</source>
+        <translation> pt</translation>
+    </message>
+    <message>
+        <source>B</source>
+        <translation>N</translation>
+    </message>
+    <message>
+        <source>Bold</source>
+        <translation>Negrita</translation>
+    </message>
+    <message>
+        <source>I</source>
+        <translation>K</translation>
+    </message>
+    <message>
+        <source>Italic</source>
+        <translation>Cursiva</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Color</translation>
     </message>
 </context>
 <context>
