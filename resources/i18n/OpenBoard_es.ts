@@ -2743,6 +2743,69 @@ Do you want to continue?</source>
     </message>
 </context>
 <context>
+    <name>UBLaserPreferencesPage</name>
+    <message>
+        <source>Red</source>
+        <translation>Rojo</translation>
+    </message>
+    <message>
+        <source>Orange</source>
+        <translation>Naranja</translation>
+    </message>
+    <message>
+        <source>Magenta</source>
+        <translation>Magenta</translation>
+    </message>
+    <message>
+        <source>Green</source>
+        <translation>Verde</translation>
+    </message>
+    <message>
+        <source>Blue</source>
+        <translation>Azul</translation>
+    </message>
+    <message>
+        <source>Purple</source>
+        <translation>Morado</translation>
+    </message>
+    <message>
+        <source>Black</source>
+        <translation>Negro</translation>
+    </message>
+    <message>
+        <source>Dark green</source>
+        <translation>Verde oscuro</translation>
+    </message>
+    <message>
+        <source>Yellow</source>
+        <translation>Amarillo</translation>
+    </message>
+    <message>
+        <source> px</source>
+        <translation> px</translation>
+    </message>
+    <message>
+        <source> s</source>
+        <translation> s</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Color</translation>
+    </message>
+    <message>
+        <source>Width</source>
+        <translation>Grosor</translation>
+    </message>
+    <message>
+        <source>Wait before fading</source>
+        <translation>Espera antes de desvanecer</translation>
+    </message>
+    <message>
+        <source>Fading duration</source>
+        <translation>Duración del desvanecimiento</translation>
+    </message>
+</context>
+<context>
     <name>UBMainWindow</name>
     <message>
         <location filename="../../src/gui/UBMainWindow.cpp" line="205"/>
@@ -2980,6 +3043,10 @@ Do you want to ignore these errors for this host?</source>
 </context>
 <context>
     <name>UBPreferencesController</name>
+    <message>
+        <source>Laser pointer</source>
+        <translation>Puntero láser</translation>
+    </message>
     <message>
         <location filename="../../src/core/UBPreferencesController.cpp" line="155"/>
         <source>version: </source>
