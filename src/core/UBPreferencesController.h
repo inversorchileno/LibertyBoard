@@ -109,6 +109,7 @@ class UBPreferencesController : public QObject
 
     private slots:
         void adjustScreensPreferences();
+        void addLanguageChoice();
 
     private:
         static qreal sSliderRatio;

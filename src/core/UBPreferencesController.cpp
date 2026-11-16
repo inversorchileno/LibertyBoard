@@ -30,6 +30,13 @@
 #include "UBPreferencesController.h"
 
 #include "core/UBGitHubUpdater.h"
+#include "frameworks/UBPlatformUtils.h"
+
+#include <QComboBox>
+#include <QGroupBox>
+#include <QHBoxLayout>
+#include <QLabel>
+#include <QLocale>
 
 #include "UBSettings.h"
 #include "UBApplication.h"
@@ -88,7 +95,15 @@ UBPreferencesController::UBPreferencesController(QWidget *parent)
     mPreferencesWindow = new UBPreferencesDialog(this,parent, Qt::Dialog);
     mPreferencesUI = new Ui::preferencesDialog();  // deleted in destructor
     mPreferencesUI->setupUi(mPreferencesWindow);
+    addLanguageChoice();
     adjustScreensPreferences();
+
+    // Light background and black text, readable whatever the theme of the system.
+    mPreferencesWindow->setStyleSheet(
+        "QDialog, QTabWidget::pane, QScrollArea, QScrollArea > QWidget > QWidget { background: #f1f1f1; }"
+        "QLabel, QCheckBox, QRadioButton, QGroupBox { color: #111111; }"
+        "QGroupBox { font-weight: bold; }"
+        "QLabel:disabled, QCheckBox:disabled, QRadioButton:disabled, QGroupBox:disabled { color: #8a8a8a; }");
 
     connect(UBApplication::displayManager, &UBDisplayManager::availableScreenCountChanged, this, &UBPreferencesController::adjustScreensPreferences);
     wire();
@@ -104,6 +119,69 @@ UBPreferencesController::~UBPreferencesController()
     delete mPenProperties;
 
     delete mMarkerProperties;
+}
+
+void UBPreferencesController::addLanguageChoice()
+{
+    // First option of the Display tab, above the other settings.
+    auto group = new QGroupBox(tr("Language"), mPreferencesUI->displayTab);
+    auto layout = new QHBoxLayout(group);
+
+    auto languages = new QComboBox(group);
+    languages->addItem(tr("Language of the system"), QString());
+
+    QStringList codes = UBPlatformUtils::availableTranslations();
+    codes.removeDuplicates();
+    QList<QPair<QString, QString>> named;
+
+    for (const QString& code : std::as_const(codes))
+    {
+        QString name = QLocale(code).nativeLanguageName();
+
+        if (name.isEmpty())
+        {
+            name = code;
+        }
+
+        name[0] = name.at(0).toUpper();
+        named << qMakePair(QString("%1 (%2)").arg(name, code), code);
+    }
+
+    std::sort(named.begin(), named.end());
+
+    for (const auto& language : std::as_const(named))
+    {
+        languages->addItem(language.first, language.second);
+    }
+
+    const QString current = UBSettings::settings()->appPreferredLanguage->get().toString();
+    int currentIndex = 0;
+
+    for (int i = 1; i < languages->count() && !current.isEmpty(); ++i)
+    {
+        if (languages->itemData(i).toString() == current)
+        {
+            currentIndex = i;
+        }
+    }
+
+    languages->setCurrentIndex(currentIndex);
+    languages->setMinimumWidth(240);
+
+    auto hint = new QLabel(tr("The new language is used the next time LibertyBoard starts."), group);
+
+    layout->addWidget(languages);
+    layout->addWidget(hint, 1);
+
+    connect(languages, qOverload<int>(&QComboBox::activated), this, [languages](int index) {
+        UBSettings::settings()->appPreferredLanguage->set(languages->itemData(index).toString());
+    });
+
+    // The rest of the Display tab moves down under the language.
+    QGridLayout* tabLayout = mPreferencesUI->gridLayout_3;
+    tabLayout->removeWidget(mPreferencesUI->scrollArea);
+    tabLayout->addWidget(group, 0, 0);
+    tabLayout->addWidget(mPreferencesUI->scrollArea, 1, 0);
 }
 
 void UBPreferencesController::adjustScreensPreferences()

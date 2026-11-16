@@ -32,6 +32,8 @@
 #include <QtGui>
 #include <QtXml>
 #include <QFontDatabase>
+#include <QSettings>
+#include <QStyleHints>
 #include <QStyleFactory>
 
 #include "frameworks/UBPlatformUtils.h"
@@ -108,6 +110,12 @@ UBApplication::UBApplication(const QString &id, int &argc, char **argv) : Single
     setOrganizationName("LibertyBoard");
     setOrganizationDomain("github.com/noteimportaaaa");
     setApplicationName("LibertyBoard");
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 8, 0))
+    // The style sheets of LibertyBoard are made for a light theme: the dark
+    // mode of Windows would put dark text on dark backgrounds.
+    QGuiApplication::styleHints()->setColorScheme(Qt::ColorScheme::Light);
+#endif
 
 #ifdef Q_OS_OSX
     // With Qt 6.9 on macOS 15 (at least), icons aren't shown in menus. This forces their display.
@@ -220,6 +228,13 @@ void UBApplication::setupTranslators(QStringList args)
     QString forcedLanguage("");
     if(args.contains("-lang"))
         forcedLanguage=args.at(args.indexOf("-lang") + 1);
+    else
+    {
+        // The language chosen in the preferences. The settings object is
+        // not created yet, so its file is read directly.
+        const QString userConfig = UBSettings::userDataDirectory() + "/" + applicationName() + "User.config";
+        forcedLanguage = QSettings(userConfig, QSettings::IniFormat).value("App/PreferredLanguage").toString();
+    }
 // TODO claudio: this has been commented because some of the translation seem to be loaded at this time
 //               especially tools name. This is a workaround and we have to be able to load settings without
 //               impacting the translations
