@@ -33,6 +33,7 @@
 #include "UBApplication.h"
 
 #include "gui/UBCircleFrame.h"
+#include "gui/UBLaserPreferencesPage.h"
 
 #include "core/UBSetting.h"
 #include "core/UBApplicationController.h"
@@ -291,6 +292,11 @@ void UBPreferencesController::wire()
     connect(mMarkerProperties->pressureSensitiveCheckBox, SIGNAL(clicked(bool)), settings, SLOT(setMarkerPressureSensitive(bool)));
     connect(mMarkerProperties->opacitySlider, SIGNAL(valueChanged(int)), this, SLOT(opacitySliderChanged(int)));
 
+    // laser pointer
+    mLaserPage = new UBLaserPreferencesPage();
+    const int laserTabIndex = mPreferencesUI->mainTabWidget->indexOf(mPreferencesUI->markerTab) + 1;
+    mPreferencesUI->mainTabWidget->insertTab(laserTabIndex, mLaserPage, tr("Laser pointer"));
+
     // about tab
     connect(mPreferencesUI->checkSoftwareUpdateAtLaunchCheckBox, SIGNAL(clicked(bool)), settings->appEnableAutomaticSoftwareUpdates, SLOT(setBool(bool)));
 }
@@ -395,6 +401,10 @@ void UBPreferencesController::defaultSettings()
         mPreferencesUI->emptyTrashForOlderDocuments->setChecked(settings->emptyTrashForOlderDocuments->reset().toBool());
         mPreferencesUI->emptyTrashDaysValue->setValue(settings->emptyTrashDaysValue->reset().toInt());
 
+    }
+    else if (mPreferencesUI->mainTabWidget->currentWidget() == mLaserPage)
+    {
+        mLaserPage->resetToDefaults();
     }
     else if (mPreferencesUI->mainTabWidget->currentWidget() == mPreferencesUI->penTab)
     {

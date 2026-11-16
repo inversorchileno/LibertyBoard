@@ -37,6 +37,8 @@ target_sources(${PROJECT_NAME} PRIVATE
     UBIconButton.h
     UBKeyboardPalette.cpp
     UBKeyboardPalette.h
+    UBLaserPreferencesPage.cpp
+    UBLaserPreferencesPage.h
     UBLeftPalette.cpp
     UBLeftPalette.h
     UBMagnifer.cpp
