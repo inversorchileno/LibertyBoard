@@ -32,6 +32,7 @@
 #define CONTROLVIEW_OBJ_NAME "ControlView"
 
 #include <QtGui>
+#include <QElapsedTimer>
 #include <QGraphicsView>
 #include <QRubberBand>
 
@@ -123,6 +124,18 @@ protected:
     virtual void drawForeground(QPainter *painter, const QRectF &rect);
 
     virtual void scrollContentsBy(int dx, int dy);
+
+private:
+        /**
+         * @brief Turns the page when the wheel goes past its bottom or its
+         * top, so that a PDF is read from page to page by scrolling.
+         * Returns true when the wheel event was used for that.
+         */
+        bool turnPageWithWheel(QWheelEvent* wheelEvent);
+        void showPageEdge(bool top);
+
+        qreal mWheelPageTurn{0};
+        QElapsedTimer mLastPageTurn;
 
 private:
 

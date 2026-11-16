@@ -1685,6 +1685,104 @@ void UBBoardView::mouseDoubleClickEvent (QMouseEvent *event)
     mousePressEvent (event);
 }
 
+bool UBBoardView::turnPageWithWheel(QWheelEvent* wheelEvent)
+{
+    // Only on the board itself, not on the desktop or the second screen.
+    if (!mController || this != mController->controlView() || wheelEvent->modifiers() != Qt::NoModifier)
+    {
+        return false;
+    }
+
+    std::shared_ptr<UBDocumentProxy> document = mController->selectedDocument();
+    const int delta = wheelEvent->angleDelta().y();
+
+    if (!document || !scene() || delta == 0 || wheelEvent->angleDelta().x() != 0)
+    {
+        return false;
+    }
+
+    const bool down = (delta < 0);
+    const int index = mController->activeSceneIndex();
+    const bool hasNextPage = down ? (index < document->pageCount() - 1) : (index > 0);
+
+    const QRectF page = scene()->normalizedSceneRect();
+    const QRectF visible = mapToScene(viewport()->rect()).boundingRect();
+    const qreal tolerance = 2;
+    const bool atEdge = down ? (visible.bottom() >= page.bottom() - tolerance)
+                             : (visible.top() <= page.top() + tolerance);
+
+    if (!atEdge)
+    {
+        // Scrolling inside the page.
+        mWheelPageTurn = 0;
+        return false;
+    }
+
+    wheelEvent->accept();
+
+    if (!hasNextPage)
+    {
+        return true;
+    }
+
+    // One notch of the wheel turns the page, touchpads add up small steps,
+    // and a pause between turns keeps a fast wheel from skipping pages.
+    mWheelPageTurn += std::abs(delta);
+
+    if (mWheelPageTurn < 120 || (mLastPageTurn.isValid() && mLastPageTurn.elapsed() < 350))
+    {
+        return true;
+    }
+
+    mWheelPageTurn = 0;
+    mLastPageTurn.start();
+
+    // The next page keeps the zoom of this one, as in a PDF reader.
+    const qreal zoom = mController->currentZoom();
+
+    if (down)
+    {
+        mController->nextScene();
+    }
+    else
+    {
+        mController->previousScene();
+    }
+
+    // The new page is shown from its top when going down, from its bottom when going up.
+    QTimer::singleShot(0, this, [this, down, zoom]() {
+        const qreal current = mController->currentZoom();
+
+        if (current > 0 && qAbs(current - zoom) > 0.001)
+        {
+            mController->zoom(zoom / current, mapToScene(viewport()->rect().center()));
+        }
+
+        showPageEdge(down);
+    });
+    return true;
+}
+
+void UBBoardView::showPageEdge(bool top)
+{
+    if (!scene())
+    {
+        return;
+    }
+
+    const QRectF page = scene()->normalizedSceneRect();
+    const QRectF visible = mapToScene(viewport()->rect()).boundingRect();
+
+    if (visible.height() >= page.height())
+    {
+        return;
+    }
+
+    const qreal y = top ? page.top() + visible.height() / 2 : page.bottom() - visible.height() / 2;
+    centerOn(QPointF(visible.center().x(), y));
+    UBApplication::applicationController->adjustDisplayView();
+}
+
 void UBBoardView::wheelEvent (QWheelEvent *wheelEvent)
 {
     if (!isInteractive())
@@ -1738,6 +1836,11 @@ void UBBoardView::wheelEvent (QWheelEvent *wheelEvent)
 
             return;
         }
+    }
+
+    if (turnPageWithWheel(wheelEvent))
+    {
+        return;
     }
 
     // event not handled, send it to QAbstractScrollArea to scroll with wheel event
