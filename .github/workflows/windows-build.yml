@@ -63,6 +63,8 @@ jobs:
           xcopy /y /q ..\OpenBoard-ThirdParty\poppler\bin\*.dll %PRODUCT%\ || exit /b 1
           xcopy /y /q ..\OpenBoard-ThirdParty\openssl\openssl-3.0.15-win64\bin\*.dll %PRODUCT%\ || exit /b 1
           xcopy /y /q ..\OpenBoard-ThirdParty\zlib\1.2.11\bin\zlib.dll %PRODUCT%\ || exit /b 1
+          rem LibertyBoard uses the C API of poppler only, and poppler-cpp needs a library that is not shipped.
+          del %PRODUCT%\poppler-cpp.dll || exit /b 1
           xcopy /y /q /s /i resources\customizations %PRODUCT%\customizations || exit /b 1
           xcopy /y /q /s /i resources\startupHints %PRODUCT%\startupHints || exit /b 1
           ren %PRODUCT%\OpenBoard.exe LibertyBoard.exe || exit /b 1
