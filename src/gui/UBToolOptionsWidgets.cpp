@@ -145,7 +145,27 @@ void UBColorSwatches::selectSwatch(const QColor& color)
 void UBColorSwatches::chooseOtherColor()
 {
     const QColor initial = mCurrentColor.isValid() ? mCurrentColor : QColor(Qt::black);
-    const QColor color = QColorDialog::getColor(initial, nullptr, tr("Choose a color"));
+
+    // A popup keeps the mouse for itself: it must be closed first, or the
+    // dialog cannot be clicked.
+    QWidget* topLevel = window();
+
+    if (topLevel && (topLevel->windowFlags() & Qt::Popup) == Qt::Popup)
+    {
+        topLevel->hide();
+    }
+
+    // Kept above the desktop annotation layer, which stays on top of all windows.
+    QColorDialog dialog(initial);
+    dialog.setWindowTitle(tr("Choose a color"));
+    dialog.setWindowFlag(Qt::WindowStaysOnTopHint);
+
+    if (dialog.exec() != QDialog::Accepted)
+    {
+        return;
+    }
+
+    const QColor color = dialog.selectedColor();
 
     if (color.isValid())
     {
