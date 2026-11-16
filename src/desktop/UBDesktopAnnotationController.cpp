@@ -210,7 +210,9 @@ void UBDesktopAnnotationController::showWindow()
     {
         QRect desktopRect = UBApplication::displayManager->screenGeometry(ScreenRole::Desktop);
 
-        mDesktopPalette->move(5, desktopRect.top() + 150);
+        // Away from the border, where the palette would minimize itself.
+        mDesktopPalette->setCustomPosition(true);
+        mDesktopPalette->move(20, desktopRect.top() + 150);
 
         mWindowPositionInitialized = true;
         mDesktopPalette->maximizeMe();
