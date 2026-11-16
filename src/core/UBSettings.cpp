@@ -286,6 +286,11 @@ void UBSettings::init()
 
     boardUseHighResTabletEvent = new UBSetting(this, "Board", "UseHighResTabletEvent", true);
 
+    laserColor = new UBSetting(this, "Laser", "Color", QString("#ff2828"));
+    laserWidth = new UBSetting(this, "Laser", "Width", 8.0);
+    laserFadeDelay = new UBSetting(this, "Laser", "FadeDelay", 0.1);
+    laserFadeDuration = new UBSetting(this, "Laser", "FadeDuration", 1.0);
+
     boardInterpolatePenStrokes = new UBSetting(this, "Board", "InterpolatePenStrokes", true);
     boardSimplifyPenStrokes = new UBSetting(this, "Board", "SimplifyPenStrokes", true);
     boardSimplifyPenStrokesThresholdAngle = new UBSetting(this, "Board", "SimplifyPenStrokesThresholdAngle", 2);

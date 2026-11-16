@@ -288,6 +288,11 @@ class UBSettings : public QObject
 
         UBSetting* boardUseHighResTabletEvent;
 
+        UBSetting* laserColor;
+        UBSetting* laserWidth;
+        UBSetting* laserFadeDelay;
+        UBSetting* laserFadeDuration;
+
         UBSetting* boardInterpolatePenStrokes;
         UBSetting* boardSimplifyPenStrokes;
         UBSetting* boardSimplifyPenStrokesThresholdAngle;

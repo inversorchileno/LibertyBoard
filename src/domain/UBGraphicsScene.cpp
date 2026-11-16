@@ -28,6 +28,7 @@
 
 
 #include "UBGraphicsScene.h"
+#include "UBGraphicsLaserTrail.h"
 
 #include <QtGui>
 #include <QtSvg>
@@ -350,6 +351,7 @@ UBGraphicsScene::UBGraphicsScene(std::shared_ptr<UBDocumentProxy> document, bool
     setDocument(document);
     createEraiser();
     createPointer();
+    createLaserTrail();
     createMarkerCircle();
     createPenCircle();
 
@@ -484,7 +486,7 @@ bool UBGraphicsScene::inputDevicePress(const QPointF& scenePos, const qreal& pre
             accepted = true;
         }
         else if (currentTool == UBStylusTool::Pointer) {
-            drawPointer(scenePos, true);
+            startLaserTrail(scenePos);
             accepted = true;
         }
     }
@@ -677,7 +679,10 @@ bool UBGraphicsScene::inputDeviceMove(const QPointF& scenePos, const qreal& pres
         }
         else if (currentTool == UBStylusTool::Pointer)
         {
-            drawPointer(position);
+            if (mLaserTrail)
+            {
+                mLaserTrail->extendTrail(position);
+            }
         }
 
         accepted = true;
@@ -694,6 +699,11 @@ bool UBGraphicsScene::inputDeviceRelease(int tool, Qt::KeyboardModifiers modifie
     {
         mPointer->hide();
         accepted = true;
+    }
+
+    if (mLaserTrail)
+    {
+        mLaserTrail->finishTrail();
     }
 
     if (tool < 0)
@@ -854,6 +864,21 @@ void UBGraphicsScene::drawPointer(const QPointF &pPoint, bool isFirstDraw)
             mPointer->show();
         }
     }
+}
+
+void UBGraphicsScene::startLaserTrail(const QPointF& point)
+{
+    if (!mLaserTrail)
+    {
+        return;
+    }
+
+    // The width is set on screen, so it does not depend on the zoom.
+    qreal width = UBSettings::settings()->laserWidth->get().toDouble();
+    width /= UBApplication::boardController->systemScaleFactor();
+    width /= UBApplication::boardController->currentZoom();
+
+    mLaserTrail->startTrail(point, width);
 }
 
 void UBGraphicsScene::drawMarkerCircle(const QPointF &pPoint)
@@ -3198,6 +3223,17 @@ void UBGraphicsScene::createPointer()
 
     mTools << mPointer;
     UBGraphicsScene::addItem(mPointer);
+}
+
+void UBGraphicsScene::createLaserTrail()
+{
+    mLaserTrail = new UBGraphicsLaserTrail();  // mem : owned and destroyed by the scene
+
+    mLaserTrail->setData(UBGraphicsItemData::ItemLayerType, QVariant(UBItemLayerType::Tool));
+    mLaserTrail->setData(UBGraphicsItemData::itemLayerType, QVariant(itemLayerType::Pointer)); //Necessary to set if we want z value to be assigned correctly
+
+    mTools << mLaserTrail;
+    UBGraphicsScene::addItem(mLaserTrail);
 }
 
 void UBGraphicsScene::createMarkerCircle()

@@ -109,6 +109,8 @@ private:
     QGraphicsScene *mScene;
 };
 
+class UBGraphicsLaserTrail;
+
 class UBGraphicsScene: public UBCoreGraphicsScene, public UBItem, public std::enable_shared_from_this<UBGraphicsScene>
 {
     Q_OBJECT
@@ -402,6 +404,7 @@ signals:
         void redrawEraser(bool pressed);
         void hideEraser();
         void drawPointer(const QPointF& pEndPoint, bool isFirstDraw = false);
+        void startLaserTrail(const QPointF& point);
         void drawMarkerCircle(const QPointF& pEndPoint);
         void drawPenCircle(const QPointF& pEndPoint);
         void hideMarkerCircle();
@@ -426,6 +429,7 @@ signals:
         void updateBackground();
         void createEraiser();
         void createPointer();
+        void createLaserTrail();
         void createMarkerCircle();
         void createPenCircle();
         void updateEraserColor();
@@ -436,6 +440,7 @@ signals:
 
         QGraphicsEllipseItem* mEraser;
         QGraphicsEllipseItem* mPointer; // "laser" pointer
+        UBGraphicsLaserTrail* mLaserTrail{nullptr};
         QGraphicsEllipseItem* mMarkerCircle; // dotted circle around marker
         QGraphicsEllipseItem* mPenCircle; // dotted circle around pen
 

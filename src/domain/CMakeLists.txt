@@ -15,6 +15,8 @@ target_sources(${PROJECT_NAME} PRIVATE
     UBGraphicsItemUndoCommand.h
     UBGraphicsItemZLevelUndoCommand.cpp
     UBGraphicsItemZLevelUndoCommand.h
+    UBGraphicsLaserTrail.cpp
+    UBGraphicsLaserTrail.h
     UBGraphicsMediaItem.cpp
     UBGraphicsMediaItem.h
     UBGraphicsMediaItemDelegate.cpp
