@@ -140,6 +140,30 @@ void UBToolOptionsPanel::setHorizontal()
         slider->setCompact();
     }
 
+    if (stacksSlidersInToolbar())
+    {
+        // A section title just before a slider becomes its caption.
+        QLabel* section = nullptr;
+
+        for (int i = 0; i < mLayout->count(); ++i)
+        {
+            QWidget* widget = mLayout->itemAt(i)->widget();
+
+            if (auto slider = qobject_cast<UBValueSlider*>(widget))
+            {
+                slider->setStacked(section ? section->text() : QString());
+
+                if (section)
+                {
+                    section->hide();
+                }
+            }
+
+            auto label = qobject_cast<QLabel*>(widget);
+            section = (label && label->objectName() == "section") ? label : nullptr;
+        }
+    }
+
     mLayout->addStretch();
 }
 
@@ -168,6 +192,8 @@ UBPenOptionsPanel::UBPenOptionsPanel(QWidget* parent)
     addRow(mPreview);
 
     mStrokeType = new UBSegmentedChoice({ tr("Basic\nFixed width"), tr("Pro\nVariable width"), tr("Calligraphy\nDynamic width") }, this);
+    mStrokeType->setIcons({ optionIcon(UBOptionIcon::BasicStroke), optionIcon(UBOptionIcon::ProStroke),
+                            optionIcon(UBOptionIcon::CalligraphyStroke) });
     addRow(mStrokeType);
 
     mWidth = new UBValueSlider({ 1, 2, 3, 6, 10, 50 }, tr(" pt"), 1, this);
@@ -180,8 +206,9 @@ UBPenOptionsPanel::UBPenOptionsPanel(QWidget* parent)
     mOpacity = new UBValueSlider(opacityMarks(), tr(" %"), 0, this);
     addRow(mOpacity);
 
-    connect(mStrokeType, &UBSegmentedChoice::choiceChanged, this, [settings](int type) {
+    connect(mStrokeType, &UBSegmentedChoice::choiceChanged, this, [this, settings](int type) {
         settings->penStrokeType->set(type);
+        updatePreview();
     });
     connect(mWidth, &UBValueSlider::valueChanged, this, [this, settings](qreal width) {
         settings->setCurrentPenWidth(width);
@@ -214,6 +241,7 @@ void UBPenOptionsPanel::refresh()
 
 void UBPenOptionsPanel::updatePreview()
 {
+    mPreview->setStrokeType(mStrokeType->choice());
     mPreview->setStroke(mColors->currentColor(), mWidth->value(), mOpacity->value() / 100, false);
 }
 
@@ -334,6 +362,7 @@ UBLaserOptionsPanel::UBLaserOptionsPanel(QWidget* parent)
     addRow(mPreview);
 
     mMode = new UBSegmentedChoice({ tr("Trail"), tr("Point") }, this);
+    mMode->setIcons({ optionIcon(UBOptionIcon::LaserTrail), optionIcon(UBOptionIcon::LaserPoint) });
     addRow(mMode);
 
     mWidth = new UBValueSlider({ 0.5, 1, 2, 4, 8, 16, 64 }, tr(" pt"), 1, this);
@@ -344,6 +373,7 @@ UBLaserOptionsPanel::UBLaserOptionsPanel(QWidget* parent)
     addRow(mColors);
 
     mEffect = new UBSegmentedChoice({ tr("Standard"), tr("White burn") }, this);
+    mEffect->setIcons({ optionIcon(UBOptionIcon::LaserStandard), optionIcon(UBOptionIcon::LaserWhiteBurn) });
     addRow(mEffect);
 
     mOpacity = new UBValueSlider(opacityMarks(), tr(" %"), 0, this);
@@ -437,6 +467,7 @@ UBShapeOptionsPanel::UBShapeOptionsPanel(int tool, QWidget* parent)
     if (closedShape)
     {
         mColorTarget = new UBSegmentedChoice({ tr("Border"), tr("Fill") }, this);
+        mColorTarget->setIcons({ optionIcon(UBOptionIcon::Border), optionIcon(UBOptionIcon::Fill) }, Qt::ToolButtonTextBesideIcon);
         addRow(mColorTarget);
     }
 

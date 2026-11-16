@@ -26,7 +26,9 @@
 #include <QButtonGroup>
 #include <QColorDialog>
 #include <QComboBox>
+#include <QGridLayout>
 #include <QHBoxLayout>
+#include <QLabel>
 #include <QLineEdit>
 #include <QPainter>
 #include <QPainterPath>
@@ -226,6 +228,36 @@ void UBValueSlider::setCompact()
     mSlider->setMaximumWidth(140);
 }
 
+void UBValueSlider::setStacked(const QString& caption)
+{
+    delete layout();
+
+    auto grid = new QGridLayout(this);
+    grid->setContentsMargins(0, 0, 0, 0);
+    grid->setHorizontalSpacing(8);
+    grid->setVerticalSpacing(0);
+
+    if (!caption.isEmpty())
+    {
+        auto label = new QLabel(caption, this);
+        label->setObjectName("section");
+        grid->addWidget(label, 0, 0, Qt::AlignLeft | Qt::AlignVCenter);
+    }
+
+    grid->addWidget(mValueBox, 0, 1, Qt::AlignRight | Qt::AlignVCenter);
+    grid->addWidget(mSlider, 1, 0, 1, 2);
+    grid->setColumnStretch(0, 1);
+
+    mValueBox->setFixedHeight(22);
+    mSlider->setFixedHeight(20);
+
+    // As tall as the caption and the slider, centered in the toolbar.
+    setSizePolicy(sizePolicy().horizontalPolicy(), QSizePolicy::Fixed);
+    setFixedHeight(44);
+    mSlider->setMinimumWidth(130);
+    mSlider->setMaximumWidth(QWIDGETSIZE_MAX);
+}
+
 int UBValueSlider::positionOf(qreal value) const
 {
     const int intervals = mMarks.size() - 1;
@@ -324,6 +356,38 @@ int UBSegmentedChoice::choice() const
     return mGroup->checkedId();
 }
 
+void UBSegmentedChoice::setIcons(const QList<QIcon>& icons, Qt::ToolButtonStyle style)
+{
+    const QList<QAbstractButton*> buttons = mGroup->buttons();
+
+    for (int i = 0; i < buttons.size() && i < icons.size(); ++i)
+    {
+        auto button = static_cast<QToolButton*>(buttons.at(i));
+        button->setIcon(icons.at(i));
+        button->setIconSize(style == Qt::ToolButtonTextUnderIcon ? QSize(48, 28) : QSize(34, 20));
+        button->setToolButtonStyle(style);
+    }
+
+    equalizeWidths();
+}
+
+void UBSegmentedChoice::equalizeWidths()
+{
+    // Tiles of the same size, like in Drawboard PDF.
+    int widest = 0;
+
+    for (QAbstractButton* button : mGroup->buttons())
+    {
+        button->setMinimumWidth(0);
+        widest = qMax(widest, button->sizeHint().width());
+    }
+
+    for (QAbstractButton* button : mGroup->buttons())
+    {
+        button->setMinimumWidth(widest);
+    }
+}
+
 void UBSegmentedChoice::setCompact()
 {
     for (QAbstractButton* button : mGroup->buttons())
@@ -332,7 +396,175 @@ void UBSegmentedChoice::setCompact()
         button->setToolTip(QString(label).replace(QChar('\n'), QStringLiteral(" - ")));
         button->setText(label.section('\n', 0, 0));
         button->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
+
+        if (!button->icon().isNull())
+        {
+            // Small enough for the height of the toolbar.
+            auto toolButton = static_cast<QToolButton*>(button);
+            const bool under = (toolButton->toolButtonStyle() == Qt::ToolButtonTextUnderIcon);
+            toolButton->setIconSize(under ? QSize(34, 19) : QSize(28, 16));
+        }
     }
+
+    equalizeWidths();
+}
+
+/**
+ * Fills the outline of a stroke along the path, as wide as each kind of
+ * pen draws it: even for the basic pen, thin at both ends like a pen
+ * pressed harder in the middle for the pro pen, and depending on the
+ * direction like a slanted nib for the calligraphy pen.
+ */
+static void drawStroke(QPainter& painter, const QPainterPath& path, qreal width, int type, const QColor& color)
+{
+    const int samples = 64;
+    QList<QPointF> points;
+
+    for (int i = 0; i <= samples; ++i)
+    {
+        points << path.pointAtPercent(qreal(i) / samples);
+    }
+
+    QPolygonF left;
+    QPolygonF right;
+    QPainterPath outline;
+    outline.setFillRule(Qt::WindingFill);
+
+    for (int i = 0; i <= samples; ++i)
+    {
+        const QPointF before = points.at(qMax(0, i - 1));
+        const QPointF after = points.at(qMin(samples, i + 1));
+        QPointF direction = after - before;
+        const qreal length = std::hypot(direction.x(), direction.y());
+
+        if (length > 0)
+        {
+            direction /= length;
+        }
+
+        const qreal t = qreal(i) / samples;
+        qreal w = width;
+
+        if (type == UBPenStrokeType::Pro)
+        {
+            w = width * (0.2 + 0.8 * std::sin(M_PI * t));
+        }
+        else if (type == UBPenStrokeType::Calligraphy)
+        {
+            // A nib held at 45 degrees: thin along it, wide across it.
+            const qreal angle = std::atan2(direction.y(), direction.x());
+            w = width * (0.15 + 0.85 * std::abs(std::sin(angle - M_PI / 4)));
+        }
+
+        const QPointF normal(-direction.y() * w / 2, direction.x() * w / 2);
+        left << points.at(i) + normal;
+        right.prepend(points.at(i) - normal);
+
+        // A nib leaves square ends, the other pens round ones.
+        if ((i == 0 || i == samples) && type != UBPenStrokeType::Calligraphy)
+        {
+            outline.addEllipse(points.at(i), w / 2, w / 2);
+        }
+    }
+
+    outline.addPolygon(left + right);
+    painter.fillPath(outline, color);
+}
+
+static QPainterPath wavePath(const QRectF& box)
+{
+    const qreal middle = box.center().y();
+    const qreal amplitude = box.height() * 0.42;
+
+    QPainterPath wave;
+    wave.moveTo(box.left(), middle);
+    wave.cubicTo(box.left() + box.width() * 0.3, middle - 2 * amplitude,
+                 box.left() + box.width() * 0.7, middle + 2 * amplitude,
+                 box.right(), middle);
+    return wave;
+}
+
+QIcon optionIcon(UBOptionIcon kind)
+{
+    // Drawn at twice the size, sharp on high resolution screens.
+    const QSize size(48, 28);
+    const qreal ratio = 2;
+    QPixmap pixmap(size * ratio);
+    pixmap.setDevicePixelRatio(ratio);
+    pixmap.fill(Qt::transparent);
+
+    QPainter painter(&pixmap);
+    painter.setRenderHint(QPainter::Antialiasing);
+
+    const QColor red("#ff5468");
+    const QColor blue("#5b8def");
+    const QRectF wave(5, 4, 38, 20);
+
+    switch (kind)
+    {
+        case UBOptionIcon::BasicStroke:
+            drawStroke(painter, wavePath(wave), 3.5, UBPenStrokeType::Basic, red);
+            break;
+        case UBOptionIcon::ProStroke:
+            drawStroke(painter, wavePath(wave), 6.5, UBPenStrokeType::Pro, red);
+            break;
+        case UBOptionIcon::CalligraphyStroke:
+            drawStroke(painter, wavePath(wave), 7, UBPenStrokeType::Calligraphy, red);
+            break;
+        case UBOptionIcon::Border:
+            painter.setPen(QPen(blue, 2.5));
+            painter.setBrush(Qt::NoBrush);
+            painter.drawRect(QRectF(14, 4, 20, 20));
+            break;
+        case UBOptionIcon::Fill:
+            painter.setPen(Qt::NoPen);
+            painter.setBrush(blue);
+            painter.drawRect(QRectF(13, 3, 22, 22));
+            break;
+        case UBOptionIcon::LaserTrail:
+        {
+            // A trail which fades towards its start.
+            const QPainterPath path = wavePath(wave);
+            const int segments = 12;
+
+            for (int i = 0; i < segments; ++i)
+            {
+                QColor glow = red;
+                glow.setAlphaF(0.15 + 0.85 * (i + 1) / segments);
+                painter.setPen(QPen(glow, 3, Qt::SolidLine, Qt::RoundCap));
+                painter.drawLine(path.pointAtPercent(qreal(i) / segments), path.pointAtPercent(qreal(i + 1) / segments));
+            }
+            break;
+        }
+        case UBOptionIcon::LaserPoint:
+        {
+            QRadialGradient halo(QPointF(24, 14), 11);
+            halo.setColorAt(0, red);
+            halo.setColorAt(0.45, QColor(255, 84, 104, 150));
+            halo.setColorAt(1, Qt::transparent);
+            painter.setPen(Qt::NoPen);
+            painter.setBrush(halo);
+            painter.drawEllipse(QPointF(24, 14), 11, 11);
+            painter.setBrush(red);
+            painter.drawEllipse(QPointF(24, 14), 4, 4);
+            break;
+        }
+        case UBOptionIcon::LaserStandard:
+        case UBOptionIcon::LaserWhiteBurn:
+        {
+            const QPainterPath path = wavePath(wave);
+            QColor glow = red;
+            glow.setAlphaF(0.35);
+            painter.setPen(QPen(glow, 8, Qt::SolidLine, Qt::RoundCap));
+            painter.drawPath(path);
+            const QColor core = (kind == UBOptionIcon::LaserWhiteBurn) ? QColor(Qt::white) : red;
+            painter.setPen(QPen(core, 2.5, Qt::SolidLine, Qt::RoundCap));
+            painter.drawPath(path);
+            break;
+        }
+    }
+
+    return QIcon(pixmap);
 }
 
 static void drawEnding(QPainter& painter, int ending, const QPointF& tip, qreal direction)
@@ -507,6 +739,12 @@ void UBStrokePreview::setStroke(const QColor& color, qreal width, qreal opacity,
     update();
 }
 
+void UBStrokePreview::setStrokeType(int type)
+{
+    mStrokeType = type;
+    update();
+}
+
 void UBStrokePreview::paintEvent(QPaintEvent* event)
 {
     Q_UNUSED(event)
@@ -543,6 +781,15 @@ void UBStrokePreview::paintEvent(QPaintEvent* event)
     }
 
     color.setAlphaF(mOpacity);
-    painter.setPen(QPen(color, penWidth, Qt::SolidLine, Qt::RoundCap));
-    painter.drawPath(wave);
+
+    if (mStrokeType == UBPenStrokeType::Basic)
+    {
+        painter.setPen(QPen(color, penWidth, Qt::SolidLine, Qt::RoundCap));
+        painter.drawPath(wave);
+    }
+    else
+    {
+        // At least a few pixels wide, so that the change of width shows.
+        drawStroke(painter, wave, qMax(penWidth, 4.0), mStrokeType, color);
+    }
 }

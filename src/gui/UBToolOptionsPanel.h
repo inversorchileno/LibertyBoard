@@ -60,6 +60,9 @@ public:
 protected:
     UBToolOptionsPanel(const QString& title, QWidget* parent);
 
+    /** @brief True when the toolbar shows captions and values above the sliders, to save room. */
+    virtual bool stacksSlidersInToolbar() const { return false; }
+
     void addRow(QWidget* widget);
     void addSection(const QString& title);
 
@@ -123,6 +126,9 @@ class UBLaserOptionsPanel : public UBToolOptionsPanel
 public:
     explicit UBLaserOptionsPanel(QWidget* parent = nullptr);
     void refresh() override;
+
+protected:
+    bool stacksSlidersInToolbar() const override { return true; }
 
 private:
     void updatePreview();

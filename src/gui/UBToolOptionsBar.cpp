@@ -41,7 +41,7 @@ UBToolOptionsBar::UBToolOptionsBar(QWidget* parent)
     auto scrollArea = new QScrollArea(this);
     scrollArea->setWidgetResizable(true);
     scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    scrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+    scrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     scrollArea->setFrameShape(QFrame::NoFrame);
 
     auto content = new QWidget(scrollArea);

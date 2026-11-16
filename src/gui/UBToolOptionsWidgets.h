@@ -22,6 +22,7 @@
 #pragma once
 
 #include <QColor>
+#include <QIcon>
 #include <QList>
 #include <QStringList>
 #include <QWidget>
@@ -80,6 +81,12 @@ public:
     /** @brief A shorter slider, for the toolbar. */
     void setCompact();
 
+    /**
+     * @brief Puts the caption and the value above the slider, so that the
+     * slider takes less room in the toolbar.
+     */
+    void setStacked(const QString& caption);
+
 signals:
     void valueChanged(qreal value);
 
@@ -112,6 +119,9 @@ public:
     void setChoice(int index);
     int choice() const;
 
+    /** @brief Shows a drawing above the label of each button, like the tiles of Drawboard PDF. */
+    void setIcons(const QList<QIcon>& icons, Qt::ToolButtonStyle style = Qt::ToolButtonTextUnderIcon);
+
     /** @brief Shows only the first line of each label, with the whole label as tooltip. */
     void setCompact();
 
@@ -119,8 +129,26 @@ signals:
     void choiceChanged(int index);
 
 private:
+    void equalizeWidths();
+
     QButtonGroup* mGroup{nullptr};
 };
+
+/** @brief The drawings shown on the choices of the tool options. */
+enum class UBOptionIcon
+{
+    BasicStroke,
+    ProStroke,
+    CalligraphyStroke,
+    Border,
+    Fill,
+    LaserTrail,
+    LaserPoint,
+    LaserStandard,
+    LaserWhiteBurn
+};
+
+QIcon optionIcon(UBOptionIcon kind);
 
 /**
  * @brief A choice among small drawings, for line dashes and line endings.
@@ -162,6 +190,9 @@ public:
 
     void setStroke(const QColor& color, qreal width, qreal opacity, bool glow);
 
+    /** @brief Draws the stroke as a basic, pro or calligraphy pen does, see UBPenStrokeType. */
+    void setStrokeType(int type);
+
 protected:
     void paintEvent(QPaintEvent* event) override;
 
@@ -170,6 +201,7 @@ private:
     qreal mWidth{3};
     qreal mOpacity{1};
     bool mGlow{false};
+    int mStrokeType{0};
 };
 
 /** @brief The style sheet shared by the tool option panels. */
