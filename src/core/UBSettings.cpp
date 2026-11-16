@@ -265,7 +265,7 @@ void UBSettings::init()
     appIsInSoftwareUpdateProcess = new UBSetting(this, "App", "IsInSoftwareUpdateProcess", false);
     appLastSessionDocumentUUID = new UBSetting(this, "App", "LastSessionDocumentUUID", "");
     appLastSessionPageIndex = new UBSetting(this, "App", "LastSessionPageIndex", 0);
-    appUseMultiscreen = new UBSetting(this, "App", "UseMultiscreenMode", true);
+    appUseMultiscreen = new UBSetting(this, "App", "UseMultiscreenMode", false);
     appScreenList = new UBSetting(this, "App", "ScreenList", QVariant());
 
     appStartupHintsEnabled = new UBSetting(this,"App","EnableStartupHints",false);
