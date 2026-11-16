@@ -240,7 +240,9 @@ void UBSettings::init()
     documentSizes.insert(DocumentSizeRatio::Ratio4_3, QSize(1280, 960)); // 1.33
     documentSizes.insert(DocumentSizeRatio::Ratio16_9, QSize((960 / 9 * 16), 960)); // 1.77
 
-    appToolBarPositionedAtTop = new UBSetting(this, "App", "ToolBarPositionedAtTop", true);
+    // Its own key, so that the choice made in OpenBoard, which shares this
+    // configuration, does not move the LibertyBoard toolbar.
+    appToolBarPositionedAtTop = new UBSetting(this, "App", "LibertyBoardToolBarAtTop", true);
     appToolBarDisplayText = new UBSetting(this, "App", "ToolBarDisplayText", true);
     appEnableAutomaticSoftwareUpdates = new UBSetting(this, "App", "EnableAutomaticSoftwareUpdates", false);
     appSoftwareUpdateURL = new UBSetting(this, "App", "SoftwareUpdateURL", "http://www.openboard.ch/update.json");
@@ -302,6 +304,7 @@ void UBSettings::init()
     initShapeSettings(ellipseSettings, "Ellipse", "#2f54ff", 3.0, UBLineEnding::None, UBLineEnding::None);
     initShapeSettings(arrowSettings, "Arrow", "#14b85a", 3.0, UBLineEnding::None, UBLineEnding::OpenArrow);
     initShapeSettings(underlineSettings, "Underline", "#ff2828", 3.0, UBLineEnding::None, UBLineEnding::None);
+    initShapeSettings(highlightSettings, "Highlight", "#5ee0a0", 20.0, UBLineEnding::None, UBLineEnding::None, 0.5);
 
     boardInterpolatePenStrokes = new UBSetting(this, "Board", "InterpolatePenStrokes", true);
     boardSimplifyPenStrokes = new UBSetting(this, "Board", "SimplifyPenStrokes", true);
@@ -828,7 +831,7 @@ qreal UBSettings::currentEraserWidth()
 }
 
 void UBSettings::initShapeSettings(ShapeSettings& shape, const QString& domain, const QString& color, qreal width,
-                                   int startEnding, int endEnding)
+                                   int startEnding, int endEnding, qreal opacity)
 {
     shape.strokeColor = new UBSetting(this, domain, "StrokeColor", color);
     shape.fillColor = new UBSetting(this, domain, "FillColor", QString());
@@ -837,7 +840,7 @@ void UBSettings::initShapeSettings(ShapeSettings& shape, const QString& domain, 
     shape.borderStyle = new UBSetting(this, domain, "BorderStyle", int(UBBorderStyle::Straight));
     shape.startEnding = new UBSetting(this, domain, "StartEnding", startEnding);
     shape.endEnding = new UBSetting(this, domain, "EndEnding", endEnding);
-    shape.opacity = new UBSetting(this, domain, "Opacity", 1.0);
+    shape.opacity = new UBSetting(this, domain, "Opacity", opacity);
 }
 
 UBSettings::ShapeSettings* UBSettings::shapeSettings(int tool)
@@ -852,6 +855,8 @@ UBSettings::ShapeSettings* UBSettings::shapeSettings(int tool)
             return &arrowSettings;
         case UBStylusTool::Underline:
             return &underlineSettings;
+        case UBStylusTool::Highlight:
+            return &highlightSettings;
         default:
             return nullptr;
     }
