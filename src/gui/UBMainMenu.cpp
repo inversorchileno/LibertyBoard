@@ -125,6 +125,12 @@ void UBMainMenu::createMenus()
     homeMenu->addAction(mMainWindow->actionPodcast);
     mMainWindow->actionPodcast->setText(tr("Podcast"));
     homeMenu->addSeparator();
+
+    auto closeAction = new QAction(tr("Close document"), mMainWindow);
+    closeAction->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_F4));
+    mMainWindow->addAction(closeAction);
+    connect(closeAction, &QAction::triggered, this, [this]() { mSaver->closeDocument(mMainWindow); });
+    homeMenu->addAction(closeAction);
     homeMenu->addAction(mMainWindow->actionQuit);
 
     QMenu* modeMenu = menuBar->addMenu(tr("&Mode"));
@@ -147,13 +153,6 @@ void UBMainMenu::createMenus()
     editMenu->addAction(mMainWindow->actionPaste);
     editMenu->addAction(mMainWindow->actionHideApplication);
     editMenu->addAction(mMainWindow->actionSleep);
-    editMenu->addSeparator();
-
-    auto closeAction = new QAction(tr("Close document"), mMainWindow);
-    closeAction->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_F4));
-    mMainWindow->addAction(closeAction);
-    connect(closeAction, &QAction::triggered, this, [this]() { mSaver->closeDocument(mMainWindow); });
-    editMenu->addAction(closeAction);
 
     QMenu* aboutMenu = menuBar->addMenu(tr("&About"));
     aboutMenu->addAction(mMainWindow->actionOpenTutorial);
