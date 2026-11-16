@@ -1066,23 +1066,23 @@ Felülírja a biztonsági ellenőrzést, és folytatja?</translation>
         <location filename="../forms/mainWindow.ui" line="14"/>
         <location filename="../forms/mainWindow.ui" line="727"/>
         <location filename="../forms/mainWindow.ui" line="730"/>
-        <source>OpenBoard</source>
-        <translation>OpenBoard</translation>
+        <source>LibertyBoard</source>
+        <translation>LibertyBoard</translation>
     </message>
     <message>
         <location filename="../forms/mainWindow.ui" line="411"/>
-        <source>Quit OpenBoard</source>
-        <translation>Kilépés az OpenBoardból</translation>
+        <source>Quit LibertyBoard</source>
+        <translation>Kilépés az LibertyBoardból</translation>
     </message>
     <message>
         <location filename="../forms/mainWindow.ui" line="1852"/>
-        <source>Hide OpenBoard</source>
-        <translation>OpenBoard elrejtése</translation>
+        <source>Hide LibertyBoard</source>
+        <translation>LibertyBoard elrejtése</translation>
     </message>
     <message>
         <location filename="../forms/mainWindow.ui" line="1855"/>
-        <source>Hide OpenBoard Application</source>
-        <translation>OpenBoard alkalmazás elrejtése</translation>
+        <source>Hide LibertyBoard Application</source>
+        <translation>LibertyBoard alkalmazás elrejtése</translation>
     </message>
     <message>
         <location filename="../forms/mainWindow.ui" line="1871"/>
@@ -1621,8 +1621,8 @@ Felülírja a biztonsági ellenőrzést, és folytatja?</translation>
     </message>
     <message>
         <location filename="../../src/desktop/UBDesktopPalette.cpp" line="55"/>
-        <source>Show OpenBoard</source>
-        <translation>OpenBoard megjelenítése</translation>
+        <source>Show LibertyBoard</source>
+        <translation>LibertyBoard megjelenítése</translation>
     </message>
 </context>
 <context>
@@ -1727,7 +1727,7 @@ Felülírja a biztonsági ellenőrzést, és folytatja?</translation>
     </message>
     <message>
         <location filename="../../src/document/UBDocumentController.cpp" line="2078"/>
-        <source>OpenBoard could not recover this file. Please delete it or contact your administrator for help</source>
+        <source>LibertyBoard could not recover this file. Please delete it or contact your administrator for help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1812,8 +1812,8 @@ Felülírja a biztonsági ellenőrzést, és folytatja?</translation>
         <translation>Névtelen dokumentumok</translation>
     </message>
     <message>
-        <source>The document &apos;%1&apos; has been generated with a newer version of OpenBoard (%2). By opening it, you may lose some information. Do you want to proceed?</source>
-        <translation type="vanished">A(z) „%1” dokumentum az OpenBoard újabb verziójával (%2) készült. Megnyitásával néhány információ elveszhet. Szeretné folytatni?</translation>
+        <source>The document &apos;%1&apos; has been generated with a newer version of LibertyBoard (%2). By opening it, you may lose some information. Do you want to proceed?</source>
+        <translation type="vanished">A(z) „%1” dokumentum az LibertyBoard újabb verziójával (%2) készült. Megnyitásával néhány információ elveszhet. Szeretné folytatni?</translation>
     </message>
     <message>
         <source>Are you sure you want to remove all selected documents?</source>
@@ -2131,7 +2131,7 @@ Ennek a névnek a megtartása helyettesíti a dokumentumot.
     </message>
     <message>
         <location filename="../../src/document/UBDocumentVersionConverter.cpp" line="70"/>
-        <source>This document was created using OpenBoard 1.8, and its content has been reorganized. We strongly recommend updating OpenBoard to version 1.8.
+        <source>This document was created using OpenBoard 1.8, and its content has been reorganized. We strongly recommend updating LibertyBoard to version 1.8.
 
 If you wish to continue, the document will be converted to be compatible with version 1.7.7. This may take a few minutes. You will still be able to open it in OpenBoard 1.8, but it will then be converted again to the 1.8 format.
 
@@ -2273,8 +2273,8 @@ Do you want to continue?</source>
     </message>
     <message>
         <location filename="../../src/adaptors/UBExportDocument.cpp" line="116"/>
-        <source>Export to OpenBoard Format</source>
-        <translation>Exportálás OpenBoard formátumba</translation>
+        <source>Export to LibertyBoard Format</source>
+        <translation>Exportálás LibertyBoard formátumba</translation>
     </message>
 </context>
 <context>
@@ -2308,8 +2308,8 @@ Do you want to continue?</source>
     </message>
     <message>
         <location filename="../../src/adaptors/UBExportDocumentSetAdaptor.cpp" line="153"/>
-        <source>Export to OpenBoard UBX Format</source>
-        <translation>Exportálás OpenBoard UBX-formátumként</translation>
+        <source>Export to LibertyBoard UBX Format</source>
+        <translation>Exportálás LibertyBoard UBX-formátumként</translation>
     </message>
 </context>
 <context>
@@ -2327,8 +2327,8 @@ Do you want to continue?</source>
     <message>
         <location filename="../../src/adaptors/UBExportFullPDF.cpp" line="313"/>
         <location filename="../../src/adaptors/UBExportFullPDF.cpp" line="327"/>
-        <source>The original PDF imported in OpenBoard seems not valid and could not be merged with your annotations. Please repair it and then reimport it in OpenBoard. The current export will be done with detailed (heavy) images of the pages of the original PDF instead, to avoid complete export failure.</source>
-        <translation>Úgy tűnik, hogy az OpenBoardba importált eredeti PDF érvénytelen, és nem egyesíthető a megjegyzésekkel. Kérjük, javítsa meg, majd importálja újra az OpenBoardba. A teljes exportálási hiba elkerülése érdekében az aktuális exportálás az eredeti PDF oldalainak részletes (súlyos) képeivel történik.</translation>
+        <source>The original PDF imported in LibertyBoard seems not valid and could not be merged with your annotations. Please repair it and then reimport it in LibertyBoard. The current export will be done with detailed (heavy) images of the pages of the original PDF instead, to avoid complete export failure.</source>
+        <translation>Úgy tűnik, hogy az LibertyBoardba importált eredeti PDF érvénytelen, és nem egyesíthető a megjegyzésekkel. Kérjük, javítsa meg, majd importálja újra az LibertyBoardba. A teljes exportálási hiba elkerülése érdekében az aktuális exportálás az eredeti PDF oldalainak részletes (súlyos) képeivel történik.</translation>
     </message>
 </context>
 <context>
@@ -2745,8 +2745,8 @@ Do you want to continue?</source>
     </message>
     <message>
         <location filename="../../src/adaptors/UBImportDocument.cpp" line="73"/>
-        <source>OpenBoard (*.ubz)</source>
-        <translation>OpenBoard (*.ubz)</translation>
+        <source>LibertyBoard (*.ubz)</source>
+        <translation>LibertyBoard (*.ubz)</translation>
     </message>
 </context>
 <context>
@@ -2754,7 +2754,7 @@ Do you want to continue?</source>
     <message>
         <location filename="../../src/adaptors/UBImportDocumentSetAdaptor.cpp" line="71"/>
         <source>Openboard (set of documents) (*.ubx)</source>
-        <translation>OpenBoard (dokumentumkészlet) (*.ubx)</translation>
+        <translation>LibertyBoard (dokumentumkészlet) (*.ubx)</translation>
     </message>
 </context>
 <context>
@@ -2894,8 +2894,8 @@ Figyelmen kívül hagyja ezeket a hibákat ennél a hosztnál?</translation>
         <translation type="vanished">Ezen ablak megjelenítése a következő alkalommal</translation>
     </message>
     <message>
-        <source>You can always access the OpenBoard Document Importer through the Preferences panel in the About tab. Warning, if you have already imported your Open-Sankore datas, you might loose your current OpenBoard documents.</source>
-        <translation type="vanished">Mindig elérheti az OpenBoard Importálót a Tulajdonságok panelen a Rólunk fülön. Figyelem, ha már importálta az Open-Sankoré adatait, elveszítheti az aktuális OpenBoard dokuemntumait.</translation>
+        <source>You can always access the LibertyBoard Document Importer through the Preferences panel in the About tab. Warning, if you have already imported your Open-Sankore datas, you might loose your current LibertyBoard documents.</source>
+        <translation type="vanished">Mindig elérheti az LibertyBoard Importálót a Tulajdonságok panelen a Rólunk fülön. Figyelem, ha már importálta az Open-Sankoré adatait, elveszítheti az aktuális LibertyBoard dokuemntumait.</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -2906,8 +2906,8 @@ Figyelmen kívül hagyja ezeket a hibákat ennél a hosztnál?</translation>
         <translation type="vanished">Folytatás</translation>
     </message>
     <message>
-        <source>Open-Sankoré documents are present on your computer. It is possible to import them to OpenBoard by pressing the “Proceed” button to launch the importer application.</source>
-        <translation type="vanished">Open-Sankoré dokumentumok vannak a számítógépén. Importálásuk az OpenBoardba, a &quot;FOLYTATÁS&quot; gombra kattintva, az elinduló importáló alkalmazással lehetséges.</translation>
+        <source>Open-Sankoré documents are present on your computer. It is possible to import them to LibertyBoard by pressing the “Proceed” button to launch the importer application.</source>
+        <translation type="vanished">Open-Sankoré dokumentumok vannak a számítógépén. Importálásuk az LibertyBoardba, a &quot;FOLYTATÁS&quot; gombra kattintva, az elinduló importáló alkalmazással lehetséges.</translation>
     </message>
 </context>
 <context>
@@ -2942,8 +2942,8 @@ Figyelmen kívül hagyja ezeket a hibákat ennél a hosztnál?</translation>
     </message>
     <message>
         <location filename="../../src/core/UBPersistenceManager.cpp" line="1419"/>
-        <source>OpenBoard has lost access to the document repository &apos;%1&apos;. Unfortunately the application must shut down to avoid data corruption. Latest changes may be lost as well.</source>
-        <translation>Az OpenBoard elvesztette a hozzáférést a(z) „%1” dokumentumtárához. Sajnos az alkalmazást le kell állítani az adatvesztés elkerülése érdekében. A legújabb változások is elveszhetnek.</translation>
+        <source>LibertyBoard has lost access to the document repository &apos;%1&apos;. Unfortunately the application must shut down to avoid data corruption. Latest changes may be lost as well.</source>
+        <translation>Az LibertyBoard elvesztette a hozzáférést a(z) „%1” dokumentumtárához. Sajnos az alkalmazást le kell állítani az adatvesztés elkerülése érdekében. A legújabb változások is elveszhetnek.</translation>
     </message>
     <message>
         <location filename="../../src/core/UBPersistenceManager.cpp" line="1172"/>
@@ -3063,8 +3063,8 @@ Figyelmen kívül hagyja ezeket a hibákat ennél a hosztnál?</translation>
     </message>
     <message>
         <location filename="../../src/podcast/UBPodcastController.cpp" line="371"/>
-        <source>OpenBoard Cast</source>
-        <translation>OpenBoard cast</translation>
+        <source>LibertyBoard Cast</source>
+        <translation>LibertyBoard cast</translation>
     </message>
 </context>
 <context>
@@ -3770,8 +3770,8 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../forms/youTubePublishingDialog.ui" line="72"/>
-        <source>OpenBoard</source>
-        <translation>OpenBoard</translation>
+        <source>LibertyBoard</source>
+        <translation>LibertyBoard</translation>
     </message>
 </context>
 <context>
@@ -3859,8 +3859,8 @@ p, li { white-space: pre-wrap; }
     <name>documents</name>
     <message>
         <location filename="../forms/documents.ui" line="26"/>
-        <source>OpenBoard Documents</source>
-        <translation>OpenBoard Dokumentumok</translation>
+        <source>LibertyBoard Documents</source>
+        <translation>LibertyBoard Dokumentumok</translation>
     </message>
     <message>
         <location filename="../forms/documents.ui" line="90"/>

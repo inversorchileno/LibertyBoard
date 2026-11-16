@@ -1066,23 +1066,23 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
         <location filename="../forms/mainWindow.ui" line="14"/>
         <location filename="../forms/mainWindow.ui" line="727"/>
         <location filename="../forms/mainWindow.ui" line="730"/>
-        <source>OpenBoard</source>
-        <translation>OpenBoard</translation>
+        <source>LibertyBoard</source>
+        <translation>LibertyBoard</translation>
     </message>
     <message>
         <location filename="../forms/mainWindow.ui" line="411"/>
-        <source>Quit OpenBoard</source>
-        <translation>OpenBoardʼdan Çık</translation>
+        <source>Quit LibertyBoard</source>
+        <translation>LibertyBoardʼdan Çık</translation>
     </message>
     <message>
         <location filename="../forms/mainWindow.ui" line="1852"/>
-        <source>Hide OpenBoard</source>
-        <translation>OpenBoardʼu Gizle</translation>
+        <source>Hide LibertyBoard</source>
+        <translation>LibertyBoardʼu Gizle</translation>
     </message>
     <message>
         <location filename="../forms/mainWindow.ui" line="1855"/>
-        <source>Hide OpenBoard Application</source>
-        <translation>OpenBoard Uygulamasını Gizle</translation>
+        <source>Hide LibertyBoard Application</source>
+        <translation>LibertyBoard Uygulamasını Gizle</translation>
     </message>
     <message>
         <location filename="../forms/mainWindow.ui" line="1871"/>
@@ -1614,8 +1614,8 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
     </message>
     <message>
         <location filename="../../src/desktop/UBDesktopPalette.cpp" line="55"/>
-        <source>Show OpenBoard</source>
-        <translation>OpenBoardʼu Göster</translation>
+        <source>Show LibertyBoard</source>
+        <translation>LibertyBoardʼu Göster</translation>
     </message>
 </context>
 <context>
@@ -1680,7 +1680,7 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
     </message>
     <message>
         <location filename="../../src/document/UBDocumentController.cpp" line="2078"/>
-        <source>OpenBoard could not recover this file. Please delete it or contact your administrator for help</source>
+        <source>LibertyBoard could not recover this file. Please delete it or contact your administrator for help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1769,8 +1769,8 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
         </translation>
     </message>
     <message>
-        <source>The document &apos;%1&apos; has been generated with a newer version of OpenBoard (%2). By opening it, you may lose some information. Do you want to proceed?</source>
-        <translation type="vanished">&apos;%1&apos; belgesi, OpenBoard&apos;un (%2) daha yeni bir sürümüyle oluşturuldu. Açtığınızda bazı bilgileri kaybedebilirsiniz. Devam etmek istiyor musunuz?</translation>
+        <source>The document &apos;%1&apos; has been generated with a newer version of LibertyBoard (%2). By opening it, you may lose some information. Do you want to proceed?</source>
+        <translation type="vanished">&apos;%1&apos; belgesi, LibertyBoard&apos;un (%2) daha yeni bir sürümüyle oluşturuldu. Açtığınızda bazı bilgileri kaybedebilirsiniz. Devam etmek istiyor musunuz?</translation>
     </message>
     <message>
         <source>Title page</source>
@@ -2042,7 +2042,7 @@ Yeni bir ad sağlamak yeni belge oluşturur.</translation>
     </message>
     <message>
         <location filename="../../src/document/UBDocumentVersionConverter.cpp" line="70"/>
-        <source>This document was created using OpenBoard 1.8, and its content has been reorganized. We strongly recommend updating OpenBoard to version 1.8.
+        <source>This document was created using OpenBoard 1.8, and its content has been reorganized. We strongly recommend updating LibertyBoard to version 1.8.
 
 If you wish to continue, the document will be converted to be compatible with version 1.7.7. This may take a few minutes. You will still be able to open it in OpenBoard 1.8, but it will then be converted again to the 1.8 format.
 
@@ -2187,8 +2187,8 @@ Do you want to continue?</source>
     </message>
     <message>
         <location filename="../../src/adaptors/UBExportDocument.cpp" line="116"/>
-        <source>Export to OpenBoard Format</source>
-        <translation>OpenBoard Biçimine Dışa Aktar</translation>
+        <source>Export to LibertyBoard Format</source>
+        <translation>LibertyBoard Biçimine Dışa Aktar</translation>
     </message>
 </context>
 <context>
@@ -2222,8 +2222,8 @@ Do you want to continue?</source>
     </message>
     <message>
         <location filename="../../src/adaptors/UBExportDocumentSetAdaptor.cpp" line="153"/>
-        <source>Export to OpenBoard UBX Format</source>
-        <translation>OpenBoard UBX Biçimine Dışa Aktar</translation>
+        <source>Export to LibertyBoard UBX Format</source>
+        <translation>LibertyBoard UBX Biçimine Dışa Aktar</translation>
     </message>
 </context>
 <context>
@@ -2241,8 +2241,8 @@ Do you want to continue?</source>
     <message>
         <location filename="../../src/adaptors/UBExportFullPDF.cpp" line="313"/>
         <location filename="../../src/adaptors/UBExportFullPDF.cpp" line="327"/>
-        <source>The original PDF imported in OpenBoard seems not valid and could not be merged with your annotations. Please repair it and then reimport it in OpenBoard. The current export will be done with detailed (heavy) images of the pages of the original PDF instead, to avoid complete export failure.</source>
-        <translation>OpenBoard&apos;a içe aktarılan özgün PDF geçerli görünmüyor ve açıklamalarınızla birleştirilemedi. Lütfen belgeyi onarın ve ardından OpenBoard&apos;da yeniden içe aktarın. Geçerli dışa aktarma, tamamen dışa aktarma hatasını önlemek için özgün PDF&apos;nin sayfalarının ayrıntılı (ağır) resimleriyle yapılacak.</translation>
+        <source>The original PDF imported in LibertyBoard seems not valid and could not be merged with your annotations. Please repair it and then reimport it in LibertyBoard. The current export will be done with detailed (heavy) images of the pages of the original PDF instead, to avoid complete export failure.</source>
+        <translation>LibertyBoard&apos;a içe aktarılan özgün PDF geçerli görünmüyor ve açıklamalarınızla birleştirilemedi. Lütfen belgeyi onarın ve ardından LibertyBoard&apos;da yeniden içe aktarın. Geçerli dışa aktarma, tamamen dışa aktarma hatasını önlemek için özgün PDF&apos;nin sayfalarının ayrıntılı (ağır) resimleriyle yapılacak.</translation>
     </message>
 </context>
 <context>
@@ -2659,8 +2659,8 @@ Do you want to continue?</source>
     </message>
     <message>
         <location filename="../../src/adaptors/UBImportDocument.cpp" line="73"/>
-        <source>OpenBoard (*.ubz)</source>
-        <translation>OpenBoard (*.ubz)</translation>
+        <source>LibertyBoard (*.ubz)</source>
+        <translation>LibertyBoard (*.ubz)</translation>
     </message>
 </context>
 <context>
@@ -2807,17 +2807,17 @@ Bu ana bilgisayar için yukarıdaki hatalar yok sayılsın mı?</translation>
         <translation type="vanished">Open-Sankore Belgeleri Algılandı</translation>
     </message>
     <message>
-        <source>Open-Sankoré documents are present on your computer. It is possible to import them to OpenBoard by pressing the “Proceed” button to launch the importer application.</source>
+        <source>Open-Sankoré documents are present on your computer. It is possible to import them to LibertyBoard by pressing the “Proceed” button to launch the importer application.</source>
         <translatorcomment>İkinci cümle çok karışık olduğu için ikiye bölündü.</translatorcomment>
-        <translation type="vanished">Open-Sankore belgeleri bilgisayarınızda bulunuyor. Bunları OpenBoard&apos;a içe aktarmak mümkündür. İçe aktarma uygulamasını başlatmak için “Devam” düğmesine basınız.</translation>
+        <translation type="vanished">Open-Sankore belgeleri bilgisayarınızda bulunuyor. Bunları LibertyBoard&apos;a içe aktarmak mümkündür. İçe aktarma uygulamasını başlatmak için “Devam” düğmesine basınız.</translation>
     </message>
     <message>
         <source>Show this panel next time</source>
         <translation type="vanished">Bir dahaki sefere bu paneli göster</translation>
     </message>
     <message>
-        <source>You can always access the OpenBoard Document Importer through the Preferences panel in the About tab. Warning, if you have already imported your Open-Sankore datas, you might loose your current OpenBoard documents.</source>
-        <translation type="vanished">OpenBoard Belge İçe Aktarıcı&apos;ya her zaman Hakkında sekmesindeki Tercihler panelinden erişebilirsiniz. Uyarı, Open-Sankore verilerinizi zaten içe aktardıysanız, mevcut OpenBoard belgelerinizi kaybedebilirsiniz.</translation>
+        <source>You can always access the LibertyBoard Document Importer through the Preferences panel in the About tab. Warning, if you have already imported your Open-Sankore datas, you might loose your current LibertyBoard documents.</source>
+        <translation type="vanished">LibertyBoard Belge İçe Aktarıcı&apos;ya her zaman Hakkında sekmesindeki Tercihler panelinden erişebilirsiniz. Uyarı, Open-Sankore verilerinizi zaten içe aktardıysanız, mevcut LibertyBoard belgelerinizi kaybedebilirsiniz.</translation>
     </message>
     <message>
         <source>Proceed</source>
@@ -2848,8 +2848,8 @@ Bu ana bilgisayar için yukarıdaki hatalar yok sayılsın mı?</translation>
     </message>
     <message>
         <location filename="../../src/core/UBPersistenceManager.cpp" line="1419"/>
-        <source>OpenBoard has lost access to the document repository &apos;%1&apos;. Unfortunately the application must shut down to avoid data corruption. Latest changes may be lost as well.</source>
-        <translation>OpenBoard, &apos;%1&apos; belge deposuna erişimini kaybetti. Ne yazık ki, veri bozulmasını önlemek için uygulamanın kapatılması gerekiyor. Son değişiklikler de kaybolabilir.</translation>
+        <source>LibertyBoard has lost access to the document repository &apos;%1&apos;. Unfortunately the application must shut down to avoid data corruption. Latest changes may be lost as well.</source>
+        <translation>LibertyBoard, &apos;%1&apos; belge deposuna erişimini kaybetti. Ne yazık ki, veri bozulmasını önlemek için uygulamanın kapatılması gerekiyor. Son değişiklikler de kaybolabilir.</translation>
     </message>
     <message>
         <location filename="../../src/core/UBPersistenceManager.cpp" line="1172"/>
@@ -2972,8 +2972,8 @@ Bu ana bilgisayar için yukarıdaki hatalar yok sayılsın mı?</translation>
     </message>
     <message>
         <location filename="../../src/podcast/UBPodcastController.cpp" line="371"/>
-        <source>OpenBoard Cast</source>
-        <translation>OpenBoard Yayını</translation>
+        <source>LibertyBoard Cast</source>
+        <translation>LibertyBoard Yayını</translation>
     </message>
 </context>
 <context>
@@ -3679,8 +3679,8 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../forms/youTubePublishingDialog.ui" line="72"/>
-        <source>OpenBoard</source>
-        <translation>OpenBoard</translation>
+        <source>LibertyBoard</source>
+        <translation>LibertyBoard</translation>
     </message>
     <message>
         <location filename="../forms/youTubePublishingDialog.ui" line="156"/>
@@ -3773,8 +3773,8 @@ p, li { white-space: pre-wrap; }
     <name>documents</name>
     <message>
         <location filename="../forms/documents.ui" line="26"/>
-        <source>OpenBoard Documents</source>
-        <translation>OpenBoard Belgeleri</translation>
+        <source>LibertyBoard Documents</source>
+        <translation>LibertyBoard Belgeleri</translation>
     </message>
     <message>
         <location filename="../forms/documents.ui" line="90"/>

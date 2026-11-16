@@ -1060,23 +1060,23 @@ Do you wish to override the security check and continue ?   </source>
         <location filename="../forms/mainWindow.ui" line="14"/>
         <location filename="../forms/mainWindow.ui" line="727"/>
         <location filename="../forms/mainWindow.ui" line="730"/>
-        <source>OpenBoard</source>
-        <translation>OpenBoard</translation>
+        <source>LibertyBoard</source>
+        <translation>LibertyBoard</translation>
     </message>
     <message>
         <location filename="../forms/mainWindow.ui" line="411"/>
-        <source>Quit OpenBoard</source>
-        <translation>Sair do OpenBoard</translation>
+        <source>Quit LibertyBoard</source>
+        <translation>Sair do LibertyBoard</translation>
     </message>
     <message>
         <location filename="../forms/mainWindow.ui" line="1852"/>
-        <source>Hide OpenBoard</source>
-        <translation>Ocultar o OpenBoard</translation>
+        <source>Hide LibertyBoard</source>
+        <translation>Ocultar o LibertyBoard</translation>
     </message>
     <message>
         <location filename="../forms/mainWindow.ui" line="1855"/>
-        <source>Hide OpenBoard Application</source>
-        <translation>Ocultar a Aplicação OpenBoard</translation>
+        <source>Hide LibertyBoard Application</source>
+        <translation>Ocultar a Aplicação LibertyBoard</translation>
     </message>
     <message>
         <location filename="../forms/mainWindow.ui" line="1871"/>
@@ -1610,8 +1610,8 @@ Do you wish to override the security check and continue ?   </source>
     </message>
     <message>
         <location filename="../../src/desktop/UBDesktopPalette.cpp" line="55"/>
-        <source>Show OpenBoard</source>
-        <translation>Mostrar OpenBoard</translation>
+        <source>Show LibertyBoard</source>
+        <translation>Mostrar LibertyBoard</translation>
     </message>
 </context>
 <context>
@@ -1676,7 +1676,7 @@ Do you wish to override the security check and continue ?   </source>
     </message>
     <message>
         <location filename="../../src/document/UBDocumentController.cpp" line="2078"/>
-        <source>OpenBoard could not recover this file. Please delete it or contact your administrator for help</source>
+        <source>LibertyBoard could not recover this file. Please delete it or contact your administrator for help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1757,8 +1757,8 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Documentos sem nome</translation>
     </message>
     <message>
-        <source>The document &apos;%1&apos; has been generated with a newer version of OpenBoard (%2). By opening it, you may lose some information. Do you want to proceed?</source>
-        <translation type="vanished">O documento &apos;%1&apos; foi produzido com uma versão mais nova do OpenBoard (%2). Ao abri-lo, você poderá perder alguma informação. Gostaria de continuar?</translation>
+        <source>The document &apos;%1&apos; has been generated with a newer version of LibertyBoard (%2). By opening it, you may lose some information. Do you want to proceed?</source>
+        <translation type="vanished">O documento &apos;%1&apos; foi produzido com uma versão mais nova do LibertyBoard (%2). Ao abri-lo, você poderá perder alguma informação. Gostaria de continuar?</translation>
     </message>
     <message numerus="yes">
         <location filename="../../src/document/UBDocumentController.cpp" line="2613"/>
@@ -2030,7 +2030,7 @@ Providing a new name will create a new document.</source>
     </message>
     <message>
         <location filename="../../src/document/UBDocumentVersionConverter.cpp" line="70"/>
-        <source>This document was created using OpenBoard 1.8, and its content has been reorganized. We strongly recommend updating OpenBoard to version 1.8.
+        <source>This document was created using OpenBoard 1.8, and its content has been reorganized. We strongly recommend updating LibertyBoard to version 1.8.
 
 If you wish to continue, the document will be converted to be compatible with version 1.7.7. This may take a few minutes. You will still be able to open it in OpenBoard 1.8, but it will then be converted again to the 1.8 format.
 
@@ -2171,8 +2171,8 @@ Do you want to continue?</source>
     </message>
     <message>
         <location filename="../../src/adaptors/UBExportDocument.cpp" line="116"/>
-        <source>Export to OpenBoard Format</source>
-        <translation>Exportar para o formato OpenBoard</translation>
+        <source>Export to LibertyBoard Format</source>
+        <translation>Exportar para o formato LibertyBoard</translation>
     </message>
 </context>
 <context>
@@ -2206,7 +2206,7 @@ Do you want to continue?</source>
     </message>
     <message>
         <location filename="../../src/adaptors/UBExportDocumentSetAdaptor.cpp" line="153"/>
-        <source>Export to OpenBoard UBX Format</source>
+        <source>Export to LibertyBoard UBX Format</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2225,7 +2225,7 @@ Do you want to continue?</source>
     <message>
         <location filename="../../src/adaptors/UBExportFullPDF.cpp" line="313"/>
         <location filename="../../src/adaptors/UBExportFullPDF.cpp" line="327"/>
-        <source>The original PDF imported in OpenBoard seems not valid and could not be merged with your annotations. Please repair it and then reimport it in OpenBoard. The current export will be done with detailed (heavy) images of the pages of the original PDF instead, to avoid complete export failure.</source>
+        <source>The original PDF imported in LibertyBoard seems not valid and could not be merged with your annotations. Please repair it and then reimport it in LibertyBoard. The current export will be done with detailed (heavy) images of the pages of the original PDF instead, to avoid complete export failure.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2644,8 +2644,8 @@ Do you want to continue?</source>
     </message>
     <message>
         <location filename="../../src/adaptors/UBImportDocument.cpp" line="73"/>
-        <source>OpenBoard (*.ubz)</source>
-        <translation>OpenBoard (*.ubz)</translation>
+        <source>LibertyBoard (*.ubz)</source>
+        <translation>LibertyBoard (*.ubz)</translation>
     </message>
 </context>
 <context>
@@ -2793,8 +2793,8 @@ Quer ignorar estes erros, deste servidor?</translation>
         <translation type="vanished">Mostrar este painel da próxima vez</translation>
     </message>
     <message>
-        <source>You can always access the OpenBoard Document Importer through the Preferences panel in the About tab. Warning, if you have already imported your Open-Sankore datas, you might loose your current OpenBoard documents.</source>
-        <translation type="vanished">Você sempre poderá acessar o Importador de Documentos OpenBoard através do painel de Preferências na aba Sobre. Aviso, se você já importou seus dados do Open-Sankoré, você poderá perder seus atuais documentos do OpenBoard.</translation>
+        <source>You can always access the LibertyBoard Document Importer through the Preferences panel in the About tab. Warning, if you have already imported your Open-Sankore datas, you might loose your current LibertyBoard documents.</source>
+        <translation type="vanished">Você sempre poderá acessar o Importador de Documentos LibertyBoard através do painel de Preferências na aba Sobre. Aviso, se você já importou seus dados do Open-Sankoré, você poderá perder seus atuais documentos do LibertyBoard.</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -2805,8 +2805,8 @@ Quer ignorar estes erros, deste servidor?</translation>
         <translation type="vanished">Prosseguir</translation>
     </message>
     <message>
-        <source>Open-Sankoré documents are present on your computer. It is possible to import them to OpenBoard by pressing the “Proceed” button to launch the importer application.</source>
-        <translation type="vanished">Documentos do Open-Sankoré estão presentes em seu computador. É possível importá-los para o OpenBoard pressionando o botão &quot;Prosseguir&quot; para lançar a aplicação de importação.</translation>
+        <source>Open-Sankoré documents are present on your computer. It is possible to import them to LibertyBoard by pressing the “Proceed” button to launch the importer application.</source>
+        <translation type="vanished">Documentos do Open-Sankoré estão presentes em seu computador. É possível importá-los para o LibertyBoard pressionando o botão &quot;Prosseguir&quot; para lançar a aplicação de importação.</translation>
     </message>
 </context>
 <context>
@@ -2833,7 +2833,7 @@ Quer ignorar estes erros, deste servidor?</translation>
     </message>
     <message>
         <location filename="../../src/core/UBPersistenceManager.cpp" line="1419"/>
-        <source>OpenBoard has lost access to the document repository &apos;%1&apos;. Unfortunately the application must shut down to avoid data corruption. Latest changes may be lost as well.</source>
+        <source>LibertyBoard has lost access to the document repository &apos;%1&apos;. Unfortunately the application must shut down to avoid data corruption. Latest changes may be lost as well.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2954,8 +2954,8 @@ Quer ignorar estes erros, deste servidor?</translation>
     </message>
     <message>
         <location filename="../../src/podcast/UBPodcastController.cpp" line="371"/>
-        <source>OpenBoard Cast</source>
-        <translation>OpenBoard Cast</translation>
+        <source>LibertyBoard Cast</source>
+        <translation>LibertyBoard Cast</translation>
     </message>
 </context>
 <context>
@@ -3650,8 +3650,8 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../forms/youTubePublishingDialog.ui" line="72"/>
-        <source>OpenBoard</source>
-        <translation>OpenBoard</translation>
+        <source>LibertyBoard</source>
+        <translation>LibertyBoard</translation>
     </message>
 </context>
 <context>
@@ -3739,8 +3739,8 @@ p, li { white-space: pre-wrap; }
     <name>documents</name>
     <message>
         <location filename="../forms/documents.ui" line="26"/>
-        <source>OpenBoard Documents</source>
-        <translation>Documentos OpenBoard</translation>
+        <source>LibertyBoard Documents</source>
+        <translation>Documentos LibertyBoard</translation>
     </message>
     <message>
         <location filename="../forms/documents.ui" line="90"/>
