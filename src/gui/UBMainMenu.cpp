@@ -126,7 +126,7 @@ void UBMainMenu::createMenus()
     mMainWindow->actionPodcast->setText(tr("Podcast"));
     homeMenu->addSeparator();
 
-    auto closeAction = new QAction(tr("Close document"), mMainWindow);
+    auto closeAction = new QAction(QIcon(":/images/toolbar/closeDocument.svg"), tr("Close document"), mMainWindow);
     closeAction->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_F4));
     mMainWindow->addAction(closeAction);
     connect(closeAction, &QAction::triggered, this, [this]() { mSaver->closeDocument(mMainWindow); });
