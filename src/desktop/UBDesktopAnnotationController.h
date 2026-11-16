@@ -39,9 +39,7 @@
 class UBDesktopPalette;
 class UBBoardView;
 class UBGraphicsScene;
-class UBDesktopPenPalette;
-class UBDesktopMarkerPalette;
-class UBDesktopEraserPalette;
+class UBToolOptionsPopup;
 class UBActionPalette;
 class UBMainWindow;
 class UBRightPalette;
@@ -106,20 +104,9 @@ class UBDesktopAnnotationController : public QObject
 
     private slots:
         void updateColors();
-        void desktopPenActionToggled(bool checked);
-        void desktopMarkerActionToggled(bool checked);
-        void desktopEraserActionToggled(bool checked);
         void eraseDesktopAnnotations();
-        void penActionPressed();
-        void markerActionPressed();
-        void eraserActionPressed();
-        void penActionReleased();
-        void markerActionReleased();
-        void eraserActionReleased();
-        void selectorActionPressed();
-        void selectorActionReleased();
-        void pointerActionPressed();
-        void pointerActionReleased();
+        void toolButtonPressed();
+        void toolButtonReleased();
 
         void switchCursor(int tool);
         void onDesktopPaletteMaximized();
@@ -129,31 +116,24 @@ class UBDesktopAnnotationController : public QObject
         void onToolClicked();
 
     private:
-        void setAssociatedPalettePosition(UBActionPalette* palette, const QString& actionName);
-        void togglePropertyPalette(UBActionPalette* palette);
+        QList<QAction*> toolActions() const;
+        int toolOf(QAction* action) const;
+        void showToolOptions(QAction* action);
         void updateMask(bool bTransparent);
 
         UBDesktopPalette *mDesktopPalette;
         //UBKeyboardPalette *mKeyboardPalette;
-        UBDesktopPenPalette* mDesktopPenPalette;
-        UBDesktopMarkerPalette* mDesktopMarkerPalette;
-        UBDesktopEraserPalette* mDesktopEraserPalette;
+        UBToolOptionsPopup* mToolOptionsPopup{nullptr};
 
         UBRightPalette* mRightPalette;
 
-        QTime mPenHoldTimer;
-        QTime mMarkerHoldTimer;
-        QTime mEraserHoldTimer;
-        QTimer mHoldTimerPen;
-        QTimer mHoldTimerMarker;
-        QTimer mHoldTimerEraser;
+        QTime mPressTime;
+        QTimer mHoldTimer;
+        QAction* mPressedAction{nullptr};
 
         bool mWindowPositionInitialized;
         bool mIsFullyTransparent;
         bool mDesktopToolsPalettePositioned;
-        bool mPendingPenButtonPressed;
-        bool mPendingMarkerButtonPressed;
-        bool mPendingEraserButtonPressed;
         bool mbArrowClicked;
         bool mCustomCaptureClicked;
 

@@ -29,6 +29,8 @@
 #include <QTimer>
 #include <QVector>
 
+#include "core/UB.h"
+
 /**
  * @brief Draws the trail of the laser pointer and lets it fade out.
  *
@@ -57,6 +59,9 @@ private:
         QVector<QPointF> points;
         qreal width{0};
         QColor color;
+        qreal opacity{1};
+        bool pointOnly{false};
+        bool whiteBurn{false};
         qint64 finishedAt{-1};
         qint64 fadeDelay{0};
         qint64 fadeDuration{0};
@@ -65,6 +70,8 @@ private:
     void onFrame();
     qreal opacityOf(const Trail& trail, qint64 now) const;
     void updateBounds();
+    static qreal marginOf(const Trail& trail);
+    static QRectF boundsOf(const Trail& trail);
     static QPainterPath smoothPath(const QVector<QPointF>& points);
 
     QList<Trail> mTrails;

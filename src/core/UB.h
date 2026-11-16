@@ -74,7 +74,82 @@ struct UBStylusTool
         Pointer,
         Line,
         Text,
-        Capture
+        Capture,
+        Arrow,
+        Rectangle,
+        Ellipse,
+        Underline
+    };
+};
+
+struct UBPenStrokeType
+{
+    enum Enum
+    {
+        Basic = 0,      // constant width
+        Pro,            // width follows the pressure of the pen
+        Calligraphy     // width follows the direction of the stroke
+    };
+};
+
+struct UBEraserMode
+{
+    enum Enum
+    {
+        Partial = 0,    // erases where the eraser passes
+        Whole           // erases every stroke the eraser touches
+    };
+};
+
+struct UBLaserMode
+{
+    enum Enum
+    {
+        Trail = 0,
+        Point
+    };
+};
+
+struct UBLaserEffect
+{
+    enum Enum
+    {
+        Standard = 0,
+        WhiteBurn
+    };
+};
+
+struct UBLineDash
+{
+    enum Enum
+    {
+        Solid = 0,
+        Dotted,
+        ShortDash,
+        LongDash,
+        DashDot
+    };
+};
+
+struct UBBorderStyle
+{
+    enum Enum
+    {
+        Straight = 0,
+        Cloud
+    };
+};
+
+struct UBLineEnding
+{
+    enum Enum
+    {
+        None = 0,
+        OpenArrow,
+        ClosedArrow,
+        Circle,
+        Square,
+        Diamond
     };
 };
 

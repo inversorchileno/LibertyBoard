@@ -286,10 +286,22 @@ void UBSettings::init()
 
     boardUseHighResTabletEvent = new UBSetting(this, "Board", "UseHighResTabletEvent", true);
 
+    penStrokeType = new UBSetting(this, "Pen", "StrokeType", int(UBPenStrokeType::Basic));
+    penOpacity = new UBSetting(this, "Pen", "Opacity", 1.0);
+    eraserMode = new UBSetting(this, "Eraser", "Mode", int(UBEraserMode::Partial));
+
+    laserMode = new UBSetting(this, "Laser", "Mode", int(UBLaserMode::Trail));
+    laserEffect = new UBSetting(this, "Laser", "Effect", int(UBLaserEffect::Standard));
+    laserOpacity = new UBSetting(this, "Laser", "Opacity", 1.0);
     laserColor = new UBSetting(this, "Laser", "Color", QString("#ff2828"));
     laserWidth = new UBSetting(this, "Laser", "Width", 8.0);
     laserFadeDelay = new UBSetting(this, "Laser", "FadeDelay", 0.1);
     laserFadeDuration = new UBSetting(this, "Laser", "FadeDuration", 1.0);
+
+    initShapeSettings(rectangleSettings, "Rectangle", "#2f54ff", 3.0, UBLineEnding::None, UBLineEnding::None);
+    initShapeSettings(ellipseSettings, "Ellipse", "#2f54ff", 3.0, UBLineEnding::None, UBLineEnding::None);
+    initShapeSettings(arrowSettings, "Arrow", "#14b85a", 3.0, UBLineEnding::None, UBLineEnding::OpenArrow);
+    initShapeSettings(underlineSettings, "Underline", "#ff2828", 3.0, UBLineEnding::None, UBLineEnding::None);
 
     boardInterpolatePenStrokes = new UBSetting(this, "Board", "InterpolatePenStrokes", true);
     boardSimplifyPenStrokes = new UBSetting(this, "Board", "SimplifyPenStrokes", true);
@@ -813,6 +825,84 @@ qreal UBSettings::currentEraserWidth()
     }
 
     return width;
+}
+
+void UBSettings::initShapeSettings(ShapeSettings& shape, const QString& domain, const QString& color, qreal width,
+                                   int startEnding, int endEnding)
+{
+    shape.strokeColor = new UBSetting(this, domain, "StrokeColor", color);
+    shape.fillColor = new UBSetting(this, domain, "FillColor", QString());
+    shape.width = new UBSetting(this, domain, "Width", width);
+    shape.dash = new UBSetting(this, domain, "Dash", int(UBLineDash::Solid));
+    shape.borderStyle = new UBSetting(this, domain, "BorderStyle", int(UBBorderStyle::Straight));
+    shape.startEnding = new UBSetting(this, domain, "StartEnding", startEnding);
+    shape.endEnding = new UBSetting(this, domain, "EndEnding", endEnding);
+    shape.opacity = new UBSetting(this, domain, "Opacity", 1.0);
+}
+
+UBSettings::ShapeSettings* UBSettings::shapeSettings(int tool)
+{
+    switch (tool)
+    {
+        case UBStylusTool::Rectangle:
+            return &rectangleSettings;
+        case UBStylusTool::Ellipse:
+            return &ellipseSettings;
+        case UBStylusTool::Arrow:
+            return &arrowSettings;
+        case UBStylusTool::Underline:
+            return &underlineSettings;
+        default:
+            return nullptr;
+    }
+}
+
+void UBSettings::setCurrentPenWidth(qreal width)
+{
+    switch (penWidthIndex())
+    {
+        case UBWidth::Medium:
+            boardPenMediumWidth->set(width);
+            break;
+        case UBWidth::Strong:
+            boardPenStrongWidth->set(width);
+            break;
+        default:
+            boardPenFineWidth->set(width);
+            break;
+    }
+}
+
+void UBSettings::setCurrentMarkerWidth(qreal width)
+{
+    switch (markerWidthIndex())
+    {
+        case UBWidth::Medium:
+            boardMarkerMediumWidth->set(width);
+            break;
+        case UBWidth::Strong:
+            boardMarkerStrongWidth->set(width);
+            break;
+        default:
+            boardMarkerFineWidth->set(width);
+            break;
+    }
+}
+
+void UBSettings::setCurrentEraserWidth(qreal width)
+{
+    switch (eraserWidthIndex())
+    {
+        case UBWidth::Fine:
+            setEraserFineWidth(width);
+            break;
+        case UBWidth::Strong:
+            setEraserStrongWidth(width);
+            break;
+        default:
+            setEraserMediumWidth(width);
+            break;
+    }
 }
 
 bool UBSettings::isDarkBackground()

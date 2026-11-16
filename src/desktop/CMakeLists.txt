@@ -5,6 +5,4 @@ target_sources(${PROJECT_NAME} PRIVATE
     UBDesktopAnnotationController.h
     UBDesktopPalette.cpp
     UBDesktopPalette.h
-    UBDesktopPropertyPalette.cpp
-    UBDesktopPropertyPalette.h
 )

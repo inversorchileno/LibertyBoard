@@ -162,7 +162,11 @@ void UBShortcutManager::addMainActions(UBMainWindow *mainWindow)
                    mainWindow->actionPointer,
                    mainWindow->actionLine,
                    mainWindow->actionText,
-                   mainWindow->actionCapture
+                   mainWindow->actionCapture,
+                   mainWindow->actionArrowShape,
+                   mainWindow->actionRectangle,
+                   mainWindow->actionEllipse,
+                   mainWindow->actionUnderline
                }, mainWindow);
 
     if(UBPlatformUtils::hasVirtualKeyboard())

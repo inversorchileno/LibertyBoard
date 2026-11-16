@@ -54,6 +54,9 @@ void UBGraphicsLaserTrail::startTrail(const QPointF& point, qreal width)
     trail.color = QColor(settings->laserColor->get().toString());
     trail.fadeDelay = qRound64(settings->laserFadeDelay->get().toDouble() * 1000);
     trail.fadeDuration = qRound64(settings->laserFadeDuration->get().toDouble() * 1000);
+    trail.opacity = qBound(0.0, settings->laserOpacity->get().toDouble(), 1.0);
+    trail.pointOnly = settings->laserMode->get().toInt() == UBLaserMode::Point;
+    trail.whiteBurn = settings->laserEffect->get().toInt() == UBLaserEffect::WhiteBurn;
 
     if (!trail.color.isValid())
     {
@@ -84,9 +87,16 @@ void UBGraphicsLaserTrail::extendTrail(const QPointF& point)
         return;
     }
 
+    if (trail.pointOnly)
+    {
+        // Only the position of the pen is shown: the old point is erased.
+        update(boundsOf(trail));
+        trail.points.clear();
+    }
+
     trail.points << point;
 
-    const qreal margin = trail.width * sGlowWidthFactor / 2 + 2;
+    const qreal margin = marginOf(trail);
     const QRectF pointBounds(point.x() - margin, point.y() - margin, 2 * margin, 2 * margin);
 
     if (!mBounds.contains(pointBounds))
@@ -124,7 +134,7 @@ void UBGraphicsLaserTrail::paint(QPainter* painter, const QStyleOptionGraphicsIt
 
     for (const Trail& trail : std::as_const(mTrails))
     {
-        const qreal opacity = opacityOf(trail, now);
+        const qreal opacity = opacityOf(trail, now) * trail.opacity;
 
         if (opacity <= 0)
         {
@@ -142,21 +152,45 @@ void UBGraphicsLaserTrail::paint(QPainter* painter, const QStyleOptionGraphicsIt
             QColor color;
         };
 
-        const Layer layers[] = {
+        // A point is drawn wider than a trail so that it is easy to follow.
+        const qreal width = trail.pointOnly ? trail.width * 2 : trail.width;
+
+        const Layer standardLayers[] = {
             { sGlowWidthFactor, 0.15, trail.color },
             { 2.0, 0.35, trail.color },
             { 1.0, 1.0, trail.color },
             { 0.4, 0.85, trail.color.lighter(170) },
         };
 
-        for (const Layer& layer : layers)
-        {
+        // White burn: a white trail inside a wide colored halo.
+        const Layer whiteBurnLayers[] = {
+            { sGlowWidthFactor, 0.25, trail.color },
+            { 2.0, 0.6, trail.color },
+            { 1.0, 1.0, QColor(Qt::white) },
+        };
+
+        const auto drawLayer = [&](const Layer& layer) {
             QColor color = layer.color;
             color.setAlphaF(layer.alpha * opacity);
 
-            QPen pen(color, trail.width * layer.widthFactor, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin);
+            QPen pen(color, width * layer.widthFactor, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin);
             painter->setPen(pen);
             painter->drawPath(path);
+        };
+
+        if (trail.whiteBurn)
+        {
+            for (const Layer& layer : whiteBurnLayers)
+            {
+                drawLayer(layer);
+            }
+
+            continue;
+        }
+
+        for (const Layer& layer : standardLayers)
+        {
+            drawLayer(layer);
         }
     }
 }
@@ -211,16 +245,30 @@ void UBGraphicsLaserTrail::updateBounds()
 
     for (const Trail& trail : std::as_const(mTrails))
     {
-        const qreal margin = trail.width * sGlowWidthFactor / 2 + 2;
-
-        for (const QPointF& point : trail.points)
-        {
-            bounds = bounds.united(QRectF(point.x() - margin, point.y() - margin, 2 * margin, 2 * margin));
-        }
+        bounds = bounds.united(boundsOf(trail));
     }
 
     prepareGeometryChange();
     mBounds = bounds;
+}
+
+qreal UBGraphicsLaserTrail::marginOf(const Trail& trail)
+{
+    const qreal width = trail.pointOnly ? trail.width * 2 : trail.width;
+    return width * sGlowWidthFactor / 2 + 2;
+}
+
+QRectF UBGraphicsLaserTrail::boundsOf(const Trail& trail)
+{
+    const qreal margin = marginOf(trail);
+    QRectF bounds;
+
+    for (const QPointF& point : trail.points)
+    {
+        bounds = bounds.united(QRectF(point.x() - margin, point.y() - margin, 2 * margin, 2 * margin));
+    }
+
+    return bounds;
 }
 
 QPainterPath UBGraphicsLaserTrail::smoothPath(const QVector<QPointF>& points)

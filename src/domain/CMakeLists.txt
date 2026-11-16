@@ -27,6 +27,8 @@ target_sources(${PROJECT_NAME} PRIVATE
     UBGraphicsPixmapItem.h
     UBGraphicsPolygonItem.cpp
     UBGraphicsPolygonItem.h
+    UBGraphicsShapePreview.cpp
+    UBGraphicsShapePreview.h
     UBGraphicsScene.cpp
     UBGraphicsScene.h
     UBGraphicsStroke.cpp
@@ -53,6 +55,8 @@ target_sources(${PROJECT_NAME} PRIVATE
     UBResizableGraphicsItem.h
     UBSelectionFrame.cpp
     UBSelectionFrame.h
+    UBShapeGeometry.cpp
+    UBShapeGeometry.h
     UBUndoCommand.cpp
     UBUndoCommand.h
     UBWebEngineView.cpp

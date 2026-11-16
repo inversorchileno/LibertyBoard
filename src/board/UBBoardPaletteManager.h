@@ -55,6 +55,8 @@ class UBApplicationController;
 class UBStartupHintsPalette;
 class UBPageNavigationWidget;
 
+class UBToolOptionsPopup;
+
 class UBBoardPaletteManager : public QObject
 {
     Q_OBJECT
@@ -67,6 +69,7 @@ class UBBoardPaletteManager : public QObject
         UBLeftPalette* leftPalette(){return mLeftPalette;}
         UBRightPalette* rightPalette(){return mRightPalette;}
         UBStylusPalette* stylusPalette(){return mStylusPalette;}
+        void showToolOptions(int tool);
         UBActionPalette *addItemPalette() {return mAddItemPalette;}
         UBFeaturesWidget *featuresWidget() { return mpFeaturesWidget; }
         UBStartupHintsPalette *tipsPalette() { return mTipPalette; }
@@ -107,6 +110,7 @@ class UBBoardPaletteManager : public QObject
         UBBoardController *mBoardControler;
 
         UBStylusPalette *mStylusPalette;
+        UBToolOptionsPopup* mToolOptionsPopup{nullptr};
 
         UBZoomPalette *mZoomPalette;
 	UBStartupHintsPalette* mTipPalette;

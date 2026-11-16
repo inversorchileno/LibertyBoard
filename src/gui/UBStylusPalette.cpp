@@ -63,6 +63,10 @@ UBStylusPalette::UBStylusPalette(QWidget *parent, Qt::Orientation orient)
 
     actions << UBApplication::mainWindow->actionLine;
     actions << UBApplication::mainWindow->actionText;
+    actions << UBApplication::mainWindow->actionArrowShape;
+    actions << UBApplication::mainWindow->actionRectangle;
+    actions << UBApplication::mainWindow->actionEllipse;
+    actions << UBApplication::mainWindow->actionUnderline;
 
     setActions(actions);
     setButtonIconSize(QSize(42, 42));
@@ -118,7 +122,8 @@ UBStylusPalette::~UBStylusPalette()
 
 void UBStylusPalette::stylusToolDoubleClicked()
 {
-    emit stylusToolDoubleClicked(mActionGroup->checkedAction()->property("id").toInt());
+    // The first click of the double click selected the tool.
+    emit stylusToolDoubleClicked(UBDrawingController::drawingController()->stylusTool());
 }
 
 

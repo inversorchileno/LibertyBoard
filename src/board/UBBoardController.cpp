@@ -636,6 +636,10 @@ void UBBoardController::stylusToolDoubleClicked(int tool)
     {
         centerRestore();
     }
+    else
+    {
+        mPaletteManager->showToolOptions(tool);
+    }
 }
 
 

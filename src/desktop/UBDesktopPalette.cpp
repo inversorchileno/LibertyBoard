@@ -61,6 +61,11 @@ UBDesktopPalette::UBDesktopPalette(QWidget *parent, UBRightPalette* _rightPalett
     actions << UBApplication::mainWindow->actionMarker;
     actions << UBApplication::mainWindow->actionPointer;
     actions << UBApplication::mainWindow->actionSelector;
+    actions << UBApplication::mainWindow->actionArrowShape;
+    actions << UBApplication::mainWindow->actionRectangle;
+    actions << UBApplication::mainWindow->actionEllipse;
+    actions << UBApplication::mainWindow->actionUnderline;
+    actions << UBApplication::mainWindow->actionText;
 
     // The screen captures stay available through their shortcuts and the
     // controller, but they are not shown on the palette.
@@ -185,6 +190,11 @@ void UBDesktopPalette::maximizeMe()
     actions << UBApplication::mainWindow->actionMarker;
     actions << UBApplication::mainWindow->actionPointer;
     actions << UBApplication::mainWindow->actionSelector;
+    actions << UBApplication::mainWindow->actionArrowShape;
+    actions << UBApplication::mainWindow->actionRectangle;
+    actions << UBApplication::mainWindow->actionEllipse;
+    actions << UBApplication::mainWindow->actionUnderline;
+    actions << UBApplication::mainWindow->actionText;
     actions << mShowHideAction;
 
     setActions(actions);
@@ -198,9 +208,51 @@ void UBDesktopPalette::maximizeMe()
 #endif
 }
 
+/**
+ * \brief Adds the little arrow that opens the options of a tool, as on the pen icon.
+ */
+static QIcon iconWithOptionsArrow(const QIcon& icon)
+{
+    QIcon result;
+    const QSize size(42, 42);
+
+    for (QIcon::State state : { QIcon::Off, QIcon::On })
+    {
+        QPixmap pixmap = icon.pixmap(size, QIcon::Normal, state);
+
+        QPainter painter(&pixmap);
+        painter.setRenderHint(QPainter::Antialiasing);
+        painter.setPen(QPen(QColor(220, 220, 220), 1));
+        painter.setBrush(Qt::black);
+        painter.drawPolygon(QPolygonF({ QPointF(35, 30), QPointF(41, 35), QPointF(35, 40) }));
+        painter.end();
+
+        result.addPixmap(pixmap, QIcon::Normal, state);
+    }
+
+    return result;
+}
+
 void UBDesktopPalette::showEvent(QShowEvent *event)
 {
     Q_UNUSED(event);
+
+    // Tools without an arrow icon of their own
+    const QList<QAction*> toolsWithOptions = {
+        UBApplication::mainWindow->actionPointer, UBApplication::mainWindow->actionArrowShape,
+        UBApplication::mainWindow->actionRectangle, UBApplication::mainWindow->actionEllipse,
+        UBApplication::mainWindow->actionUnderline, UBApplication::mainWindow->actionText
+    };
+
+    for (QAction* action : toolsWithOptions)
+    {
+        if (!mIconsWithoutArrow.contains(action))
+        {
+            mIconsWithoutArrow.insert(action, action->icon());
+            action->setIcon(iconWithOptionsArrow(action->icon()));
+        }
+    }
+
     QIcon penIcon;
     QIcon markerIcon;
     QIcon eraserIcon;
@@ -220,6 +272,14 @@ void UBDesktopPalette::showEvent(QShowEvent *event)
 void UBDesktopPalette::hideEvent(QHideEvent *event)
 {
     Q_UNUSED(event);
+
+    for (auto it = mIconsWithoutArrow.constBegin(); it != mIconsWithoutArrow.constEnd(); ++it)
+    {
+        it.key()->setIcon(it.value());
+    }
+
+    mIconsWithoutArrow.clear();
+
     QIcon penIcon;
     QIcon markerIcon;
     QIcon eraserIcon;

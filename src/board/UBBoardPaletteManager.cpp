@@ -72,6 +72,8 @@
 #include "document/UBDocumentController.h"
 
 #include "core/UBPersistenceManager.h"
+#include "gui/UBToolOptionsPopup.h"
+
 #include "core/memcheck.h"
 
 inline constexpr int longpress_interval = 350;
@@ -1038,4 +1040,41 @@ void UBBoardPaletteManager::stopDownloads()
         mpDownloadWidget->setVisibleState(false);
         mRightPalette->removeTab(mpDownloadWidget);
     }
+}
+
+void UBBoardPaletteManager::showToolOptions(int tool)
+{
+    if (!mStylusPalette || !UBToolOptionsPopup::hasOptions(tool))
+    {
+        return;
+    }
+
+    if (!mToolOptionsPopup)
+    {
+        mToolOptionsPopup = new UBToolOptionsPopup(mContainer);
+    }
+
+    QRect anchor = mStylusPalette->geometry();
+    anchor.moveTopLeft(mStylusPalette->mapToGlobal(QPoint(0, 0)));
+
+    QAction* checkedAction = nullptr;
+
+    for (QAction* action : mStylusPalette->actions())
+    {
+        if (action->isChecked())
+        {
+            checkedAction = action;
+            break;
+        }
+    }
+
+    if (checkedAction)
+    {
+        if (UBActionPaletteButton* button = mStylusPalette->getButtonFromAction(checkedAction))
+        {
+            anchor = QRect(button->mapToGlobal(QPoint(0, 0)), button->size());
+        }
+    }
+
+    mToolOptionsPopup->showForTool(tool, anchor);
 }

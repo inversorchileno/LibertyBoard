@@ -14,6 +14,8 @@ HEADERS += src/domain/UBGraphicsScene.h \
     src/domain/UBResizableGraphicsItem.h \
     src/domain/UBGraphicsStroke.h \
     src/domain/UBGraphicsLaserTrail.h \
+    src/domain/UBGraphicsShapePreview.h \
+    src/domain/UBShapeGeometry.h \
     src/domain/UBGraphicsMediaItem.h \
     src/domain/UBGraphicsGroupContainerItem.h \
     src/domain/UBGraphicsGroupContainerItemDelegate.h \
@@ -44,6 +46,8 @@ SOURCES += src/domain/UBGraphicsScene.cpp \
     src/domain/UBResizableGraphicsItem.cpp \
     src/domain/UBGraphicsStroke.cpp \
     src/domain/UBGraphicsLaserTrail.cpp \
+    src/domain/UBGraphicsShapePreview.cpp \
+    src/domain/UBShapeGeometry.cpp \
     src/domain/UBGraphicsMediaItem.cpp \
     src/domain/UBGraphicsGroupContainerItem.cpp \
     src/domain/UBGraphicsGroupContainerItemDelegate.cpp \

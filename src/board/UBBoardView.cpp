@@ -1197,7 +1197,8 @@ void UBBoardView::mousePressEvent (QMouseEvent *event)
             break;
 
         default:
-            if (UBDrawingController::drawingController()->activeRuler() == nullptr) {
+            if (UBDrawingController::drawingController()->activeRuler() == nullptr
+                    && !UBGraphicsScene::isShapeTool(currentTool)) {
                 viewport()->setCursor (QCursor (Qt::BlankCursor));
             }
             if (scene () && !mTabletStylusIsPressed) {
@@ -2009,6 +2010,12 @@ void UBBoardView::setToolCursor (int tool)
         break;
     case UBStylusTool::Pointer:
         controlViewport->setCursor (UBResources::resources ()->pointerCursor);
+        break;
+    case UBStylusTool::Arrow:
+    case UBStylusTool::Rectangle:
+    case UBStylusTool::Ellipse:
+    case UBStylusTool::Underline:
+        controlViewport->setCursor (QCursor (Qt::CrossCursor));
         break;
     case UBStylusTool::Hand:
         controlViewport->setCursor (UBResources::resources ()->handCursor);

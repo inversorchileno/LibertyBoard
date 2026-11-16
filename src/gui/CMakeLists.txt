@@ -85,6 +85,12 @@ target_sources(${PROJECT_NAME} PRIVATE
     UBDocumentThumbnailsView.h
     UBToolWidget.cpp
     UBToolWidget.h
+    UBToolOptionsPanel.cpp
+    UBToolOptionsPanel.h
+    UBToolOptionsPopup.cpp
+    UBToolOptionsPopup.h
+    UBToolOptionsWidgets.cpp
+    UBToolOptionsWidgets.h
     UBToolbarButtonGroup.cpp
     UBToolbarButtonGroup.h
     UBUpdateDlg.cpp

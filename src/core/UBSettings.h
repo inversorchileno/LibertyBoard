@@ -288,10 +288,40 @@ class UBSettings : public QObject
 
         UBSetting* boardUseHighResTabletEvent;
 
+        UBSetting* penStrokeType;
+        UBSetting* penOpacity;
+        UBSetting* eraserMode;
+
+        UBSetting* laserMode;
+        UBSetting* laserEffect;
+        UBSetting* laserOpacity;
         UBSetting* laserColor;
         UBSetting* laserWidth;
         UBSetting* laserFadeDelay;
         UBSetting* laserFadeDuration;
+
+        /** @brief The settings of one shape tool: rectangle, ellipse, arrow or underline. */
+        struct ShapeSettings
+        {
+            UBSetting* strokeColor{nullptr};
+            UBSetting* fillColor{nullptr};      // empty: not filled
+            UBSetting* width{nullptr};
+            UBSetting* dash{nullptr};
+            UBSetting* borderStyle{nullptr};
+            UBSetting* startEnding{nullptr};
+            UBSetting* endEnding{nullptr};
+            UBSetting* opacity{nullptr};
+        };
+
+        ShapeSettings rectangleSettings;
+        ShapeSettings ellipseSettings;
+        ShapeSettings arrowSettings;
+        ShapeSettings underlineSettings;
+        ShapeSettings* shapeSettings(int tool);
+
+        void setCurrentPenWidth(qreal width);
+        void setCurrentMarkerWidth(qreal width);
+        void setCurrentEraserWidth(qreal width);
 
         UBSetting* boardInterpolatePenStrokes;
         UBSetting* boardSimplifyPenStrokes;
@@ -438,6 +468,10 @@ class UBSettings : public QObject
 
         UBSetting* magnifierDrawingMode;
         UBSetting* autoSaveInterval;
+
+    private:
+        void initShapeSettings(ShapeSettings& shape, const QString& domain, const QString& color, qreal width,
+                               int startEnding, int endEnding);
 
     public slots:
 

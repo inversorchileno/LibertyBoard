@@ -83,6 +83,7 @@ private:
         QAction *mActionUniboard;
         QAction *mActionCustomSelect;
         QAction* mActionTest;
+        QMap<QAction*, QIcon> mIconsWithoutArrow;
 
 
         UBRightPalette* rightPalette;

@@ -110,6 +110,8 @@ private:
 };
 
 class UBGraphicsLaserTrail;
+class UBGraphicsShapePreview;
+struct UBShapeStyle;
 
 class UBGraphicsScene: public UBCoreGraphicsScene, public UBItem, public std::enable_shared_from_this<UBGraphicsScene>
 {
@@ -144,6 +146,9 @@ class UBGraphicsScene: public UBCoreGraphicsScene, public UBItem, public std::en
         bool inputDevicePress(const QPointF& scenePos, const qreal& pressure = 1.0, Qt::KeyboardModifiers modifiers = Qt::NoModifier);
         bool inputDeviceMove(const QPointF& scenePos, const qreal& pressure = 1.0, Qt::KeyboardModifiers modifiers = Qt::NoModifier);
         bool inputDeviceRelease(int tool = -1, Qt::KeyboardModifiers modifiers = Qt::NoModifier);
+
+        /** @brief Returns true for the tools that draw a shape: arrow, rectangle, ellipse and underline. */
+        static bool isShapeTool(int tool);
 
         void leaveEvent (QEvent* event);
 
@@ -405,6 +410,10 @@ signals:
         void hideEraser();
         void drawPointer(const QPointF& pEndPoint, bool isFirstDraw = false);
         void startLaserTrail(const QPointF& point);
+        UBShapeStyle shapeStyle(int tool) const;
+        void finishShape();
+        qreal strokeWidth(int tool, qreal pressure, std::optional<QLineF> direction) const;
+        QList<UBGraphicsPolygonItem*> polygonsOfSameStroke(UBGraphicsPolygonItem* polygon) const;
         void drawMarkerCircle(const QPointF& pEndPoint);
         void drawPenCircle(const QPointF& pEndPoint);
         void hideMarkerCircle();
@@ -430,6 +439,7 @@ signals:
         void createEraiser();
         void createPointer();
         void createLaserTrail();
+        void createShapePreview();
         void createMarkerCircle();
         void createPenCircle();
         void updateEraserColor();
@@ -441,6 +451,10 @@ signals:
         QGraphicsEllipseItem* mEraser;
         QGraphicsEllipseItem* mPointer; // "laser" pointer
         UBGraphicsLaserTrail* mLaserTrail{nullptr};
+        UBGraphicsShapePreview* mShapePreview{nullptr};
+        int mShapeTool{-1};     // the shape being drawn, or -1
+        QPointF mShapeStart;
+        QPointF mShapeEnd;
         QGraphicsEllipseItem* mMarkerCircle; // dotted circle around marker
         QGraphicsEllipseItem* mPenCircle; // dotted circle around pen
 

@@ -29,6 +29,10 @@
 
 #include "UBGraphicsScene.h"
 #include "UBGraphicsLaserTrail.h"
+#include "UBGraphicsShapePreview.h"
+#include "UBShapeGeometry.h"
+
+#include <cmath>
 
 #include <QtGui>
 #include <QtSvg>
@@ -352,6 +356,7 @@ UBGraphicsScene::UBGraphicsScene(std::shared_ptr<UBDocumentProxy> document, bool
     createEraiser();
     createPointer();
     createLaserTrail();
+    createShapePreview();
     createMarkerCircle();
     createPenCircle();
 
@@ -438,14 +443,7 @@ bool UBGraphicsScene::inputDevicePress(const QPointF& scenePos, const qreal& pre
             // ---------------------------------------------------------------
             mCurrentStroke = new UBGraphicsStroke(shared_from_this());
 
-            if (currentTool != UBStylusTool::Line){
-                // Handle the pressure
-                width = UBDrawingController::drawingController()->currentToolWidth() * pressure;
-            }
-            else{
-                // Ignore pressure for the line tool
-                width = UBDrawingController::drawingController()->currentToolWidth();
-            }
+            width = strokeWidth(currentTool, pressure, std::nullopt);
 
             width /= UBApplication::boardController->systemScaleFactor();
             width /= UBApplication::boardController->currentZoom();
@@ -487,6 +485,12 @@ bool UBGraphicsScene::inputDevicePress(const QPointF& scenePos, const qreal& pre
         }
         else if (currentTool == UBStylusTool::Pointer) {
             startLaserTrail(scenePos);
+            accepted = true;
+        }
+        else if (isShapeTool(currentTool)) {
+            mShapeTool = currentTool;
+            mShapeStart = scenePos;
+            mShapeEnd = scenePos;
             accepted = true;
         }
     }
@@ -539,13 +543,7 @@ bool UBGraphicsScene::inputDeviceMove(const QPointF& scenePos, const qreal& pres
         {
             qreal width = 0;
 
-            if (currentTool != UBStylusTool::Line){
-                // Handle the pressure
-                width = dc->currentToolWidth() * qMax(pressure, 0.2);
-            }else{
-                // Ignore pressure for line tool
-                width = dc->currentToolWidth();
-            }
+            width = strokeWidth(currentTool, qMax(pressure, 0.2), QLineF(mPreviousPoint, scenePos));
 
             width /= UBApplication::boardController->systemScaleFactor();
             width /= UBApplication::boardController->currentZoom();
@@ -684,6 +682,17 @@ bool UBGraphicsScene::inputDeviceMove(const QPointF& scenePos, const qreal& pres
                 mLaserTrail->extendTrail(position);
             }
         }
+        else if (mShapeTool >= 0)
+        {
+            mShapeEnd = (modifiers & Qt::ShiftModifier)
+                    ? UBShapeGeometry::constrainedEnd(mShapeTool, mShapeStart, position)
+                    : position;
+
+            if (mShapePreview)
+            {
+                mShapePreview->setParts(UBShapeGeometry::build(mShapeTool, mShapeStart, mShapeEnd, shapeStyle(mShapeTool)));
+            }
+        }
 
         accepted = true;
     }
@@ -785,6 +794,11 @@ bool UBGraphicsScene::inputDeviceRelease(int tool, Qt::KeyboardModifiers modifie
         }
     }
 
+    if (mShapeTool >= 0)
+    {
+        finishShape();
+    }
+
     if (mRemovedItems.size() > 0 || mAddedItems.size() > 0)
     {
         if (mUndoRedoStackEnabled) { //should be deleted after scene own undo stack implemented
@@ -864,6 +878,126 @@ void UBGraphicsScene::drawPointer(const QPointF &pPoint, bool isFirstDraw)
             mPointer->show();
         }
     }
+}
+
+qreal UBGraphicsScene::strokeWidth(int tool, qreal pressure, std::optional<QLineF> direction) const
+{
+    const qreal width = UBDrawingController::drawingController()->currentToolWidth();
+
+    if (tool == UBStylusTool::Line)
+    {
+        return width;
+    }
+
+    if (tool != UBStylusTool::Pen)
+    {
+        return width * pressure;
+    }
+
+    switch (UBSettings::settings()->penStrokeType->get().toInt())
+    {
+        case UBPenStrokeType::Basic:
+            return width;
+
+        case UBPenStrokeType::Calligraphy:
+        {
+            // A flat nib held at 45 degrees: thin when the stroke follows
+            // the nib, wide when it crosses it.
+            if (!direction || direction->length() < 0.01)
+            {
+                return width * 0.6;
+            }
+
+            const qreal angle = qDegreesToRadians(direction->angle() - 45.0);
+            return width * (0.25 + 0.75 * std::fabs(std::sin(angle)));
+        }
+
+        default:
+            return width * pressure;
+    }
+}
+
+bool UBGraphicsScene::isShapeTool(int tool)
+{
+    return tool == UBStylusTool::Arrow
+            || tool == UBStylusTool::Rectangle
+            || tool == UBStylusTool::Ellipse
+            || tool == UBStylusTool::Underline;
+}
+
+UBShapeStyle UBGraphicsScene::shapeStyle(int tool) const
+{
+    UBShapeStyle style;
+    UBSettings::ShapeSettings* settings = UBSettings::settings()->shapeSettings(tool);
+
+    if (!settings)
+    {
+        return style;
+    }
+
+    // Widths are set on screen, so they do not depend on the zoom.
+    const qreal screenToScene = 1.0 / (UBApplication::boardController->systemScaleFactor()
+                                       * UBApplication::boardController->currentZoom());
+
+    style.strokeColor = QColor(settings->strokeColor->get().toString());
+    style.fillColor = QColor(settings->fillColor->get().toString());
+    style.width = settings->width->get().toDouble() * screenToScene;
+    style.dash = settings->dash->get().toInt();
+    style.borderStyle = settings->borderStyle->get().toInt();
+    style.startEnding = settings->startEnding->get().toInt();
+    style.endEnding = settings->endEnding->get().toInt();
+    style.opacity = settings->opacity->get().toDouble();
+    style.minimumHeadSize = 12 * screenToScene;
+
+    return style;
+}
+
+void UBGraphicsScene::finishShape()
+{
+    const int tool = mShapeTool;
+    mShapeTool = -1;
+
+    if (mShapePreview)
+    {
+        mShapePreview->clear();
+    }
+
+    // A click without dragging draws nothing.
+    const qreal screenToScene = 1.0 / (UBApplication::boardController->systemScaleFactor()
+                                       * UBApplication::boardController->currentZoom());
+
+    if (QLineF(mShapeStart, mShapeEnd).length() < 3 * screenToScene)
+    {
+        return;
+    }
+
+    const QList<UBShapePart> parts = UBShapeGeometry::build(tool, mShapeStart, mShapeEnd, shapeStyle(tool));
+
+    if (parts.isEmpty())
+    {
+        return;
+    }
+
+    // The shape is made of polygons like a pen stroke, so that it is saved,
+    // erased and moved like one.
+    auto stroke = new UBGraphicsStroke(shared_from_this());
+    auto strokesGroup = new UBGraphicsStrokesGroup();
+
+    for (const UBShapePart& part : parts)
+    {
+        auto polygonItem = new UBGraphicsPolygonItem(part.polygon);
+        polygonItem->setColor(part.color);
+        polygonItem->setColorOnDarkBackground(part.color);
+        polygonItem->setColorOnLightBackground(part.color);
+        polygonItem->setData(UBGraphicsItemData::ItemLayerType, QVariant(UBItemLayerType::Graphic));
+        polygonItem->setStroke(stroke);
+        polygonItem->setStrokesGroup(strokesGroup);
+        strokesGroup->addToGroup(polygonItem);
+    }
+
+    mAddedItems << strokesGroup;
+    addItem(strokesGroup);
+    setDocumentUpdated();
 }
 
 void UBGraphicsScene::startLaserTrail(const QPointF& point)
@@ -1076,16 +1210,35 @@ void UBGraphicsScene::eraseLineTo(const QPointF &pEndPoint, const qreal &pWidth)
     typedef QList<QPolygonF> POLYGONSLIST;
     QList<POLYGONSLIST> intersectedPolygons;
 
+    const bool eraseWholeStrokes = UBSettings::settings()->eraserMode->get().toInt() == UBEraserMode::Whole;
+
     for(int i=0; i<collidItems.size(); i++)
     {
         UBGraphicsPolygonItem *pi = qgraphicsitem_cast<UBGraphicsPolygonItem*>(collidItems[i]);
-        if(pi == NULL)
+        if(pi == NULL || intersectedItems.contains(pi))
             continue;
 
         QPainterPath itemPainterPath;
         itemPainterPath.addPolygon(pi->sceneTransform().map(pi->polygon()));
 
-        if (eraserPath.contains(itemPainterPath))
+        if (eraseWholeStrokes)
+        {
+            if (eraserPath.intersects(itemPainterPath))
+            {
+                // Remove every polygon of the touched stroke.
+                const QList<UBGraphicsPolygonItem*> strokePolygons = polygonsOfSameStroke(pi);
+
+                for (UBGraphicsPolygonItem* polygon : strokePolygons)
+                {
+                    if (!intersectedItems.contains(polygon))
+                    {
+                        intersectedItems << polygon;
+                        intersectedPolygons << QList<QPolygonF>();
+                    }
+                }
+            }
+        }
+        else if (eraserPath.contains(itemPainterPath))
         {
             // Completely remove item
             intersectedItems << pi;
@@ -1149,6 +1302,29 @@ void UBGraphicsScene::eraseLineTo(const QPointF &pEndPoint, const qreal &pWidth)
 
     if (!intersectedItems.empty())
         setModified(true);
+}
+
+QList<UBGraphicsPolygonItem*> UBGraphicsScene::polygonsOfSameStroke(UBGraphicsPolygonItem* polygon) const
+{
+    QList<UBGraphicsPolygonItem*> polygons;
+
+    if (!polygon->strokesGroup())
+    {
+        polygons << polygon;
+        return polygons;
+    }
+
+    const QList<QGraphicsItem*> children = polygon->strokesGroup()->childItems();
+
+    for (QGraphicsItem* child : children)
+    {
+        if (auto childPolygon = qgraphicsitem_cast<UBGraphicsPolygonItem*>(child))
+        {
+            polygons << childPolygon;
+        }
+    }
+
+    return polygons;
 }
 
 void UBGraphicsScene::drawArcTo(const QPointF& pCenterPoint, qreal pSpanAngle)
@@ -1295,6 +1471,14 @@ void UBGraphicsScene::initPolygonItem(UBGraphicsPolygonItem* polygonItem)
     {
         colorOnDarkBG = UBApplication::boardController->penColorOnDarkBackground();
         colorOnLightBG = UBApplication::boardController->penColorOnLightBackground();
+
+        const qreal opacity = UBSettings::settings()->penOpacity->get().toDouble();
+
+        if (opacity < 1.0)
+        {
+            colorOnDarkBG.setAlphaF(colorOnDarkBG.alphaF() * opacity);
+            colorOnLightBG.setAlphaF(colorOnLightBG.alphaF() * opacity);
+        }
     }
 
     if (mDarkBackground)
@@ -3223,6 +3407,17 @@ void UBGraphicsScene::createPointer()
 
     mTools << mPointer;
     UBGraphicsScene::addItem(mPointer);
+}
+
+void UBGraphicsScene::createShapePreview()
+{
+    mShapePreview = new UBGraphicsShapePreview();  // mem : owned and destroyed by the scene
+
+    mShapePreview->setData(UBGraphicsItemData::ItemLayerType, QVariant(UBItemLayerType::Tool));
+    mShapePreview->setData(UBGraphicsItemData::itemLayerType, QVariant(itemLayerType::Pointer)); //Necessary to set if we want z value to be assigned correctly
+
+    mTools << mShapePreview;
+    UBGraphicsScene::addItem(mShapePreview);
 }
 
 void UBGraphicsScene::createLaserTrail()

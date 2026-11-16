@@ -1573,6 +1573,70 @@
     <string>Ctrl+J</string>
    </property>
   </action>
+  <action name="actionArrowShape">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../OpenBoard.qrc">
+     <normaloff>:/images/stylusPalette/arrowShape.svg</normaloff>
+     <normalon>:/images/stylusPalette/arrowShapeOn.svg</normalon>:/images/stylusPalette/arrowShape.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Arrow</string>
+   </property>
+   <property name="toolTip">
+    <string>Draw Arrows</string>
+   </property>
+  </action>
+  <action name="actionRectangle">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../OpenBoard.qrc">
+     <normaloff>:/images/stylusPalette/rectangle.svg</normaloff>
+     <normalon>:/images/stylusPalette/rectangleOn.svg</normalon>:/images/stylusPalette/rectangle.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Rectangle</string>
+   </property>
+   <property name="toolTip">
+    <string>Draw Rectangles</string>
+   </property>
+  </action>
+  <action name="actionEllipse">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../OpenBoard.qrc">
+     <normaloff>:/images/stylusPalette/ellipse.svg</normaloff>
+     <normalon>:/images/stylusPalette/ellipseOn.svg</normalon>:/images/stylusPalette/ellipse.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Ellipse</string>
+   </property>
+   <property name="toolTip">
+    <string>Draw Ellipses</string>
+   </property>
+  </action>
+  <action name="actionUnderline">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../OpenBoard.qrc">
+     <normaloff>:/images/stylusPalette/underline.svg</normaloff>
+     <normalon>:/images/stylusPalette/underlineOn.svg</normalon>:/images/stylusPalette/underline.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Underline</string>
+   </property>
+   <property name="toolTip">
+    <string>Underline Text</string>
+   </property>
+  </action>
   <action name="actionText">
    <property name="checkable">
     <bool>true</bool>

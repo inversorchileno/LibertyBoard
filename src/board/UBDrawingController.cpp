@@ -78,6 +78,25 @@ UBDrawingController::UBDrawingController(QObject * parent)
     connect(UBApplication::mainWindow->actionLine, SIGNAL(triggered(bool)), this, SLOT(lineToolSelected(bool)));
     connect(UBApplication::mainWindow->actionText, SIGNAL(triggered(bool)), this, SLOT(textToolSelected(bool)));
     connect(UBApplication::mainWindow->actionCapture, SIGNAL(triggered(bool)), this, SLOT(captureToolSelected(bool)));
+
+    const QList<QPair<QAction*, UBStylusTool::Enum>> shapeTools = {
+        { UBApplication::mainWindow->actionArrowShape, UBStylusTool::Arrow },
+        { UBApplication::mainWindow->actionRectangle, UBStylusTool::Rectangle },
+        { UBApplication::mainWindow->actionEllipse, UBStylusTool::Ellipse },
+        { UBApplication::mainWindow->actionUnderline, UBStylusTool::Underline },
+    };
+
+    for (const auto& shapeTool : shapeTools)
+    {
+        const UBStylusTool::Enum tool = shapeTool.second;
+
+        connect(shapeTool.first, &QAction::triggered, this, [this, tool](bool checked) {
+            if (checked)
+            {
+                setStylusTool(tool);
+            }
+        });
+    }
 }
 
 
@@ -149,6 +168,14 @@ void UBDrawingController::setStylusTool(int tool)
             UBApplication::mainWindow->actionText->setChecked(true);
         else if (mStylusTool == UBStylusTool::Capture)
             UBApplication::mainWindow->actionCapture->setChecked(true);
+        else if (mStylusTool == UBStylusTool::Arrow)
+            UBApplication::mainWindow->actionArrowShape->setChecked(true);
+        else if (mStylusTool == UBStylusTool::Rectangle)
+            UBApplication::mainWindow->actionRectangle->setChecked(true);
+        else if (mStylusTool == UBStylusTool::Ellipse)
+            UBApplication::mainWindow->actionEllipse->setChecked(true);
+        else if (mStylusTool == UBStylusTool::Underline)
+            UBApplication::mainWindow->actionUnderline->setChecked(true);
 
 
         // workaround for #827
