@@ -41,7 +41,6 @@
 
 #include "board/UBDrawingController.h"
 
-#include "frameworks/UBPlatformUtils.h"
 
 #include "core/memcheck.h"
 
@@ -54,6 +53,7 @@ UBStylusPalette::UBStylusPalette(QWidget *parent, Qt::Orientation orient)
     actions << UBApplication::mainWindow->actionPen;
     actions << UBApplication::mainWindow->actionEraser;
     actions << UBApplication::mainWindow->actionMarker;
+    actions << UBApplication::mainWindow->actionPointer;
     actions << UBApplication::mainWindow->actionSelector;
     actions << UBApplication::mainWindow->actionPlay;
 
@@ -61,22 +61,12 @@ UBStylusPalette::UBStylusPalette(QWidget *parent, Qt::Orientation orient)
     actions << UBApplication::mainWindow->actionZoomIn;
     actions << UBApplication::mainWindow->actionZoomOut;
 
-    actions << UBApplication::mainWindow->actionPointer;
     actions << UBApplication::mainWindow->actionLine;
     actions << UBApplication::mainWindow->actionText;
-    actions << UBApplication::mainWindow->actionCapture;
-
-    if(UBPlatformUtils::hasVirtualKeyboard())
-    {
-        actions << UBApplication::mainWindow->actionVirtualKeyboard;
-        UBApplication::mainWindow->actionVirtualKeyboard->setProperty("ungrouped", true);
-    }
-
-    actions << UBApplication::mainWindow->actionSnap;
-    UBApplication::mainWindow->actionSnap->setProperty("ungrouped", true);
 
     setActions(actions);
     setButtonIconSize(QSize(42, 42));
+    setBackgroundBrush(QBrush(UBSettings::opaquePaletteColor));
     groupActions();
 
     UBShortcutManager::shortcutManager()->addActionGroup(mActionGroup);

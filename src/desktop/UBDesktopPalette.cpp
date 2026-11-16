@@ -31,7 +31,6 @@
 
 #include <QtGui>
 
-#include "frameworks/UBPlatformUtils.h"
 
 #include "core/UBSettings.h"
 #include "core/UBSetting.h"
@@ -60,19 +59,16 @@ UBDesktopPalette::UBDesktopPalette(QWidget *parent, UBRightPalette* _rightPalett
     actions << UBApplication::mainWindow->actionPen;
     actions << UBApplication::mainWindow->actionEraser;
     actions << UBApplication::mainWindow->actionMarker;
-    actions << UBApplication::mainWindow->actionSelector;
     actions << UBApplication::mainWindow->actionPointer;
+    actions << UBApplication::mainWindow->actionSelector;
 
-    if (UBPlatformUtils::hasVirtualKeyboard())
-        actions << UBApplication::mainWindow->actionVirtualKeyboard;
-
+    // The screen captures stay available through their shortcuts and the
+    // controller, but they are not shown on the palette.
     mActionCustomSelect = new QAction(QIcon(":/images/toolbar/captureArea.png"), tr("Capture Part of the Screen"), this);
     connect(mActionCustomSelect, SIGNAL(triggered()), this, SIGNAL(customClick()));
-    actions << mActionCustomSelect;
 
     mDisplaySelectAction = new QAction(QIcon(":/images/toolbar/captureScreen.png"), tr("Capture the Screen"), this);
     connect(mDisplaySelectAction, SIGNAL(triggered()), this, SIGNAL(screenClick()));
-    actions << mDisplaySelectAction;
 
     QIcon showHideIcon;
     showHideIcon.addPixmap(QPixmap(":/images/toolbar/eyeOpened.png"), QIcon::Normal , QIcon::On);
@@ -187,13 +183,8 @@ void UBDesktopPalette::maximizeMe()
     actions << UBApplication::mainWindow->actionPen;
     actions << UBApplication::mainWindow->actionEraser;
     actions << UBApplication::mainWindow->actionMarker;
-    actions << UBApplication::mainWindow->actionSelector;
     actions << UBApplication::mainWindow->actionPointer;
-    if (UBPlatformUtils::hasVirtualKeyboard())
-        actions << UBApplication::mainWindow->actionVirtualKeyboard;
-
-    actions << mActionCustomSelect;
-    actions << mDisplaySelectAction;
+    actions << UBApplication::mainWindow->actionSelector;
     actions << mShowHideAction;
 
     setActions(actions);

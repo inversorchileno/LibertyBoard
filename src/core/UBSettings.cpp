@@ -98,7 +98,7 @@ QColor UBSettings::documentSizeMarkColorDarkBackground = QColor(44, 44, 44, 200)
 QColor UBSettings::documentSizeMarkColorLightBackground = QColor(241, 241, 241);
 
 QColor UBSettings::paletteColor = QColor(127, 127, 127, 127);
-QColor UBSettings::opaquePaletteColor = QColor(66, 66, 66, 200);
+QColor UBSettings::opaquePaletteColor = QColor(50, 50, 50);
 
 QColor UBSettings::documentViewLightColor = QColor(241, 241, 241);
 
