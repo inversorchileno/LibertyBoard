@@ -21,6 +21,8 @@ target_sources(${PROJECT_NAME} PRIVATE
     UBIdleTimer.h
     UBMimeData.cpp
     UBMimeData.h
+    UBOpenedFiles.cpp
+    UBOpenedFiles.h
     UBPersistenceManager.cpp
     UBPersistenceManager.h
     UBPersistenceWorker.cpp

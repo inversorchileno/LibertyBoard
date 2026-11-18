@@ -4,6 +4,7 @@ HEADERS      += src/core/UB.h \
                 src/core/UBApplication.h \
                 src/core/UBSettings.h \
                 src/core/UBSetting.h \
+                src/core/UBOpenedFiles.h \
                 src/core/UBPersistenceManager.h \
                 src/core/UBSceneCache.h \
                 src/core/UBPreferencesController.h \
@@ -24,6 +25,7 @@ SOURCES      += src/core/main.cpp \
                 src/core/UBApplication.cpp \
                 src/core/UBSettings.cpp \
                 src/core/UBSetting.cpp \
+                src/core/UBOpenedFiles.cpp \
                 src/core/UBPersistenceManager.cpp \
                 src/core/UBSceneCache.cpp \
                 src/core/UBPreferencesController.cpp \

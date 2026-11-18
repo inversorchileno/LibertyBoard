@@ -34,6 +34,7 @@
 #include "board/UBBoardSaver.h"
 #include "core/UBApplication.h"
 #include "core/UBApplicationController.h"
+#include "core/UBOpenedFiles.h"
 #include "core/UBPersistenceManager.h"
 #include "document/UBDocumentProxy.h"
 #include "domain/UBGraphicsScene.h"
@@ -271,6 +272,9 @@ void UBDocumentTabs::rememberSavedFile(const QString& filename)
     if (QFileInfo(filename).suffix().compare("pdf", Qt::CaseInsensitive) == 0)
     {
         open.pdfFile = filename;
+
+        // Opening the saved PDF again shows this document, with its annotations to edit.
+        UBOpenedFiles::remember(filename, open.document);
     }
     else
     {

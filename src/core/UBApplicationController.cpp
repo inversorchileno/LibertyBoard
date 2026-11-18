@@ -28,6 +28,8 @@
 
 #include "UBApplicationController.h"
 
+#include "core/UBOpenedFiles.h"
+
 #include "frameworks/UBPlatformUtils.h"
 #include "frameworks/UBVersion.h"
 
@@ -714,7 +716,20 @@ void UBApplicationController::importFile(const QString& pFilePath)
 
     bool success = false;
 
-    std::shared_ptr<UBDocumentProxy> document = UBDocumentManager::documentManager()->importFile(fileToOpen, "");
+    // A file opened before, unchanged since, shows the document worked on.
+    std::shared_ptr<UBDocumentProxy> document = UBOpenedFiles::documentOf(pFilePath);
+
+    if (document && UBApplication::boardController)
+    {
+        UBApplication::boardController->persistCurrentScene(false, true);
+        UBApplication::boardController->setActiveDocumentScene(document, qBound(0, document->lastVisitedSceneIndex(), document->pageCount() - 1));
+        showBoard();
+        UBOpenedFiles::remember(pFilePath, document);
+        emit fileImported(document, QFileInfo(pFilePath).absoluteFilePath());
+        return;
+    }
+
+    document = UBDocumentManager::documentManager()->importFile(fileToOpen, "");
 
     success = (document != 0);
 
@@ -734,6 +749,7 @@ void UBApplicationController::importFile(const QString& pFilePath)
         // The document is added and set as current document, so the user probably wants to see it immediately.
         showBoard();
 
+        UBOpenedFiles::remember(pFilePath, document);
         emit fileImported(document, QFileInfo(pFilePath).absoluteFilePath());
     }
 }

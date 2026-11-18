@@ -23,6 +23,7 @@
 
 #include <QActionGroup>
 #include <QDesktopServices>
+#include <QDir>
 #include <QFileDialog>
 #include <QHBoxLayout>
 #include <QLabel>
@@ -37,6 +38,7 @@
 #include "board/UBDrawingController.h"
 #include "board/UBDualBoard.h"
 #include "core/UBApplication.h"
+#include "core/UBOpenedFiles.h"
 #include "core/UBDocumentManager.h"
 #include "core/UBGitHubUpdater.h"
 #include "core/UBSettings.h"
@@ -146,6 +148,25 @@ void UBMainMenu::createMenus()
 
     homeMenu->addAction(newAction);
     homeMenu->addAction(openAction);
+
+    // The files opened last, to open again in one click.
+    QMenu* recentMenu = homeMenu->addMenu(QIcon(":/images/toolbar/recent.svg"), tr("Recent files"));
+    connect(recentMenu, &QMenu::aboutToShow, this, [this, recentMenu]() {
+        recentMenu->clear();
+        const QStringList files = UBOpenedFiles::recentFiles();
+
+        for (const QString& file : files)
+        {
+            QAction* action = recentMenu->addAction(QFileInfo(file).fileName());
+            action->setToolTip(QDir::toNativeSeparators(file));
+            connect(action, &QAction::triggered, this, [this, file]() { mDocumentTabs->openFile(file); });
+        }
+
+        if (files.isEmpty())
+        {
+            recentMenu->addAction(tr("No recent files"))->setEnabled(false);
+        }
+    });
     homeMenu->addAction(saveAction);
     homeMenu->addAction(saveAsAction);
     homeMenu->addSeparator();
