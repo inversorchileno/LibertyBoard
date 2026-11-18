@@ -262,6 +262,8 @@ void UBMainMenu::arrangeBoardToolBar()
     // backgrounds and erase on the right.
     QToolBar* toolBar = mMainWindow->boardToolBar;
     toolBar->insertWidget(mMainWindow->actionPages, new UBToolOptionsBar(toolBar));
+    // The same line as after undo and redo, between the options and the pages.
+    toolBar->insertSeparator(mMainWindow->actionPages);
     toolBar->insertWidget(mMainWindow->actionForward, new UBPageIndicator(toolBar));
 }
 
