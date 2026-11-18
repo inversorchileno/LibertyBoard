@@ -193,6 +193,7 @@ class UBBoardPaletteManager : public QObject
         void changeStylusPaletteOrientation(QVariant var);
         void placeStylusPalette(int edge);
         void placeZoomPalette();
+        void saveBoardScreenshot();
 };
 
 #endif /* UBBOARDPALETTEMANAGER_H_ */

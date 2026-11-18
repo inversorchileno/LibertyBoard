@@ -29,6 +29,9 @@
 
 #include "UBBoardPaletteManager.h"
 
+#include "board/UBBoardView.h"
+#include "gui/UBScreenshot.h"
+
 #include "frameworks/UBPlatformUtils.h"
 #include "frameworks/UBFileSystemUtils.h"
 
@@ -242,6 +245,7 @@ void UBBoardPaletteManager::setupPalettes()
     mStylusPalette = new UBStylusPalette(mContainer, vertical ? Qt::Vertical : Qt::Horizontal);
     connect(mStylusPalette, SIGNAL(stylusToolDoubleClicked(int)), UBApplication::boardController, SLOT(stylusToolDoubleClicked(int)));
     connect(mStylusPalette, &UBStylusPalette::edgeChosen, this, &UBBoardPaletteManager::placeStylusPalette);
+    connect(mStylusPalette, &UBStylusPalette::screenshotRequested, this, &UBBoardPaletteManager::saveBoardScreenshot);
     mStylusPalette->show(); // always show stylus palette at startup
 
     mZoomPalette = new UBZoomPalette(mContainer);
@@ -1008,6 +1012,28 @@ void UBBoardPaletteManager::placeStylusPalette(int edge)
     }
 
     placeZoomPalette();
+}
+
+void UBBoardPaletteManager::saveBoardScreenshot()
+{
+    // Only the board, as it is seen: the palettes are widgets above it and
+    // are not part of what the view renders.
+    UBBoardView* view = UBApplication::boardController->controlView();
+    QWidget* viewport = view->viewport();
+    const qreal ratio = viewport->devicePixelRatioF();
+
+    QPixmap screenshot(viewport->size() * ratio);
+    screenshot.setDevicePixelRatio(ratio);
+    screenshot.fill(Qt::white);
+
+    {
+        QPainter painter(&screenshot);
+        painter.setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform);
+        view->render(&painter, QRectF(QPointF(0, 0), viewport->size()), viewport->rect());
+    }
+
+    UBScreenshot::flash(QRect(viewport->mapToGlobal(QPoint(0, 0)), viewport->size()));
+    UBApplication::showMessage(UBScreenshot::save(screenshot));
 }
 
 void UBBoardPaletteManager::placeZoomPalette()

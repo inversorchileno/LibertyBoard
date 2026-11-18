@@ -45,6 +45,8 @@ target_sources(${PROJECT_NAME} PRIVATE
     UBNoteDialog.h
     UBPageIndicator.cpp
     UBPageIndicator.h
+    UBScreenshot.cpp
+    UBScreenshot.h
     UBPagesSidebar.cpp
     UBPagesSidebar.h
     UBMagnifer.cpp

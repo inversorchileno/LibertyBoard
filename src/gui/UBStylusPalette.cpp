@@ -70,6 +70,13 @@ UBStylusPalette::UBStylusPalette(QWidget *parent, Qt::Orientation orient)
     actions << UBApplication::mainWindow->actionPlay;
     actions << UBApplication::mainWindow->actionHand;
 
+    // Saves the board as it is seen, without the palettes, in one click.
+    mScreenshotAction = new QAction(QIcon(":/images/stylusPalette/screenshot.svg"), tr("Save a screenshot"), this);
+    mScreenshotAction->setToolTip(tr("Save a screenshot of the board in the Pictures folder"));
+    mScreenshotAction->setProperty("ungrouped", true);
+    connect(mScreenshotAction, &QAction::triggered, this, &UBStylusPalette::screenshotRequested);
+    actions << mScreenshotAction;
+
     setActions(actions);
     setButtonIconSize(QSize(42, 42));
     setBackgroundBrush(QBrush(UBSettings::opaquePaletteColor));
@@ -83,7 +90,10 @@ UBStylusPalette::UBStylusPalette(QWidget *parent, Qt::Orientation orient)
 
     foreach(const UBActionPaletteButton* button, mButtons)
     {
-        connect(button, SIGNAL(doubleClicked()), this, SLOT(stylusToolDoubleClicked()));
+        if (button->defaultAction() != mScreenshotAction)
+        {
+            connect(button, SIGNAL(doubleClicked()), this, SLOT(stylusToolDoubleClicked()));
+        }
     }
 
 }

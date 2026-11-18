@@ -29,12 +29,11 @@
 
 #include "UBDesktopAnnotationController.h"
 
+#include "gui/UBScreenshot.h"
 #include "gui/UBToolOptionsArrows.h"
 
-#include <QDateTime>
-#include <QDir>
 #include <QLabel>
-#include <QStandardPaths>
+#include <QScreen>
 
 #include "frameworks/UBPlatformUtils.h"
 
@@ -397,17 +396,20 @@ void UBDesktopAnnotationController::saveScreenshot()
     qApp->processEvents();
 
     QTimer::singleShot(150, this, [this]() {
-        const QPixmap screenshot = getScreenPixmap();
+        // The whole screen except the taskbar of the system.
+        QScreen* screen = UBApplication::displayManager->screen(ScreenRole::Control);
+        const QRect area = screen ? screen->availableGeometry() : QRect();
+        const QPixmap screenshot = screen ? UBApplication::displayManager->grab(ScreenRole::Control,
+                                                area.translated(-screen->geometry().topLeft()))
+                                          : QPixmap();
         mDesktopPalette->show();
 
-        const QString folder = QStandardPaths::writableLocation(QStandardPaths::PicturesLocation) + "/LibertyBoard";
-        QDir().mkpath(folder);
-        const QString filename = folder + "/" + tr("Screenshot") + " "
-                                 + QDateTime::currentDateTime().toString("yyyy-MM-dd HH-mm-ss") + ".png";
+        if (screen)
+        {
+            UBScreenshot::flash(area);
+        }
 
-        const bool saved = !screenshot.isNull() && screenshot.save(filename, "PNG");
-        showNotice(saved ? tr("Screenshot saved in %1").arg(QDir::toNativeSeparators(folder))
-                         : tr("The screenshot could not be saved."));
+        showNotice(UBScreenshot::save(screenshot));
     });
 }
 

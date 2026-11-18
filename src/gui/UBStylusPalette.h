@@ -61,9 +61,13 @@ class UBStylusPalette : public UBActionPalette
 
     private:
         int mLastSelectedId;
+        QAction* mScreenshotAction{nullptr};
 
     signals:
         void stylusToolDoubleClicked(int tool);
+
+        /** @brief The screenshot button was pressed. */
+        void screenshotRequested();
 
         /** @brief The palette was dropped close to a border of the board. */
         void edgeChosen(int edge);
