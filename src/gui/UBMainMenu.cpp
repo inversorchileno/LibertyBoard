@@ -41,6 +41,7 @@
 #include "gui/UBDocumentTabs.h"
 #include "gui/UBMainWindow.h"
 #include "gui/UBPageIndicator.h"
+#include "gui/UBSearchBar.h"
 #include "gui/UBToolOptionsBar.h"
 
 UBMainMenu::UBMainMenu(UBMainWindow* mainWindow)
@@ -252,6 +253,23 @@ void UBMainMenu::createCornerButtons()
     mSavedNotice->setMinimumWidth(QFontMetrics(bold).horizontalAdvance(tr("Saved")) + 24);
     layout->addWidget(mSavedNotice);
     connect(mDocumentTabs, &UBDocumentTabs::saved, this, &UBMainMenu::showSavedNotice);
+
+    // Finds a text in the PDF shown on the board.
+    auto searchBar = new UBSearchBar(mMainWindow);
+    auto searchAction = new QAction(QIcon(":/images/toolbar/search.svg"), tr("Search..."), mMainWindow);
+    searchAction->setShortcut(QKeySequence::Find);
+    // Ctrl+F is for the search, as in other programs, not for the selector.
+    mMainWindow->actionSelector->setShortcut(QKeySequence());
+    searchAction->setToolTip(tr("Find words in the PDF"));
+    mMainWindow->addAction(searchAction);
+    connect(searchAction, &QAction::triggered, searchBar, &UBSearchBar::open);
+
+    auto searchButton = new QToolButton(corner);
+    searchButton->setDefaultAction(searchAction);
+    searchButton->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+    searchButton->setIconSize(QSize(18, 18));
+    searchButton->setStyleSheet(buttonStyle);
+    layout->addWidget(searchButton);
 
     // Goes to the desktop mode, like the board button of the desktop palette goes back.
     auto desktopButton = new QToolButton(corner);
