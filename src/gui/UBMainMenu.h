@@ -60,7 +60,7 @@ private:
     void arrangeBoardToolBar();
     void createCornerButtons();
     void createDocumentTabs();
-    void showNoteColorOnTool();
+    void showColorsOnTools();
     void openFiles();
     void showSavedNotice();
     void updateDocumentTabsVisibility();

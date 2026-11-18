@@ -8,11 +8,13 @@ HEADERS +=  \
     src/gui/UBFloatingPalette.h \
     src/gui/UBToolbarButtonGroup.h \
     src/gui/UBStylusPalette.h \
+    src/gui/UBToolColorIcon.h \
     src/gui/UBToolOptionsPanel.h \
     src/gui/UBToolOptionsArrows.h \
     src/gui/UBToolOptionsBar.h \
     src/gui/UBMainMenu.h \
     src/gui/UBNoteDialog.h \
+    src/gui/UBDocumentScrollBar.h \
     src/gui/UBDocumentTabs.h \
     src/gui/UBNoteToolIcon.h \
     src/gui/UBCommentPopup.h \
@@ -73,11 +75,13 @@ SOURCES +=  \
     src/gui/UBFloatingPalette.cpp \
     src/gui/UBToolbarButtonGroup.cpp \
     src/gui/UBStylusPalette.cpp \
+    src/gui/UBToolColorIcon.cpp \
     src/gui/UBToolOptionsPanel.cpp \
     src/gui/UBToolOptionsArrows.cpp \
     src/gui/UBToolOptionsBar.cpp \
     src/gui/UBMainMenu.cpp \
     src/gui/UBNoteDialog.cpp \
+    src/gui/UBDocumentScrollBar.cpp \
     src/gui/UBDocumentTabs.cpp \
     src/gui/UBNoteToolIcon.cpp \
     src/gui/UBCommentPopup.cpp \

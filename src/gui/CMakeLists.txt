@@ -91,6 +91,8 @@ target_sources(${PROJECT_NAME} PRIVATE
     UBStartupHintsPalette.h
     UBStylusPalette.cpp
     UBStylusPalette.h
+    UBToolColorIcon.cpp
+    UBToolColorIcon.h
     UBThumbnail.cpp
     UBThumbnail.h
     UBThumbnailArranger.cpp

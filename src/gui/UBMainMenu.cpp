@@ -34,6 +34,7 @@
 #include <QTimer>
 #include <QToolButton>
 
+#include "board/UBDrawingController.h"
 #include "core/UBApplication.h"
 #include "core/UBDocumentManager.h"
 #include "core/UBGitHubUpdater.h"
@@ -42,6 +43,7 @@
 #include "gui/UBDocumentTabs.h"
 #include "gui/UBMainWindow.h"
 #include "gui/UBNoteToolIcon.h"
+#include "gui/UBToolColorIcon.h"
 #include "gui/UBToolOptionsArrows.h"
 #include "gui/UBPageIndicator.h"
 #include "gui/UBSearchBar.h"
@@ -53,7 +55,7 @@ UBMainMenu::UBMainMenu(UBMainWindow* mainWindow)
 {
     createDocumentTabs();
     createMenus();
-    showNoteColorOnTool();
+    showColorsOnTools();
     setupDocumentShortcuts();
     arrangeBoardToolBar();
     createCornerButtons();
@@ -305,16 +307,60 @@ void UBMainMenu::createCornerButtons()
     mMainWindow->menuBar()->setCornerWidget(corner, Qt::TopRightCorner);
 }
 
-void UBMainMenu::showNoteColorOnTool()
+void UBMainMenu::showColorsOnTools()
 {
+    UBSettings* settings = UBSettings::settings();
+
     // The note tool shows the ribbon of the next note, in its color.
-    auto update = [this]() {
-        const QColor color(UBSettings::settings()->noteColor->get().toString());
+    auto updateNote = [this, settings]() {
+        const QColor color(settings->noteColor->get().toString());
         UBToolOptionsArrows::setIcon(mMainWindow->actionNote, UBNoteToolIcon::create(color));
     };
 
-    update();
-    connect(UBSettings::settings()->noteColor, &UBSetting::changed, this, update);
+    // The pen, marker, laser and highlight show the color they draw with.
+    auto iconOf = [](const QString& off, const QString& on) {
+        QIcon icon;
+        icon.addFile(off, QSize(), QIcon::Normal, QIcon::Off);
+        icon.addFile(on, QSize(), QIcon::Normal, QIcon::On);
+        return icon;
+    };
+
+    const QIcon pen = iconOf(":/images/stylusPalette/pen.svg", ":/images/stylusPalette/penOn.svg");
+    const QIcon marker = iconOf(":/images/stylusPalette/marker.svg", ":/images/stylusPalette/markerOn.svg");
+    const QIcon laser = iconOf(":/images/stylusPalette/laser.png", ":/images/stylusPalette/laserOn.png");
+    const QIcon highlight = iconOf(":/images/stylusPalette/highlight.svg", ":/images/stylusPalette/highlightOn.svg");
+
+    auto opaque = [](QColor color) {
+        color.setAlpha(255);
+        return color;
+    };
+
+    auto updatePenAndMarker = [this, settings, pen, marker, opaque]() {
+        UBToolOptionsArrows::setIcon(mMainWindow->actionPen, UBToolColorIcon::create(pen, opaque(settings->currentPenColor())));
+        UBToolOptionsArrows::setIcon(mMainWindow->actionMarker, UBToolColorIcon::create(marker, opaque(settings->currentMarkerColor())));
+    };
+
+    auto updateLaser = [this, settings, laser]() {
+        UBToolOptionsArrows::setIcon(mMainWindow->actionPointer, UBToolColorIcon::create(laser, QColor(settings->laserColor->get().toString())));
+    };
+
+    auto updateHighlight = [this, settings, highlight]() {
+        const QColor color(settings->highlightSettings.strokeColor->get().toString());
+        UBToolOptionsArrows::setIcon(mMainWindow->actionHighlight, UBToolColorIcon::create(highlight, color));
+    };
+
+    updateNote();
+    updatePenAndMarker();
+    updateLaser();
+    updateHighlight();
+
+    connect(settings->noteColor, &UBSetting::changed, this, updateNote);
+    connect(settings->laserColor, &UBSetting::changed, this, updateLaser);
+    connect(settings->highlightSettings.strokeColor, &UBSetting::changed, this, updateHighlight);
+
+    UBDrawingController* drawing = UBDrawingController::drawingController();
+    connect(drawing, &UBDrawingController::colorPaletteChanged, this, updatePenAndMarker);
+    connect(drawing, &UBDrawingController::colorIndexChanged, this, updatePenAndMarker);
 }
 
 void UBMainMenu::createDocumentTabs()
