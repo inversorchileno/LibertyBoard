@@ -2297,7 +2297,7 @@ Providing a new name will create a new document.</source>
         <translation>新增白板</translation>
     </message>
     <message>
-        <location line="+56"/>
+        <location line="+114"/>
         <source>Save</source>
         <translation>儲存</translation>
     </message>
@@ -2307,7 +2307,7 @@ Providing a new name will create a new document.</source>
         <translation>無法儲存 %1。請檢查它是否在其他程式中開啟。</translation>
     </message>
     <message>
-        <location line="+178"/>
+        <location line="+185"/>
         <source>Save the changes to the PDF before closing?</source>
         <translation>關閉前將變更儲存到 PDF 嗎？</translation>
     </message>
@@ -2434,6 +2434,29 @@ Do you want to continue?</source>
     <message>
         <source>Page %0</source>
         <translation type="obsolete">第 %0 頁</translation>
+    </message>
+</context>
+<context>
+    <name>UBDualBoard</name>
+    <message>
+        <location filename="../../src/board/UBDualBoard.cpp" line="+256"/>
+        <source>Double board</source>
+        <translation>雙白板</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>The double board shows two documents at a time. Choose which to close (%1):</source>
+        <translation>雙白板一次顯示兩份文件。請選擇要關閉的文件 (%1)：</translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>The document you work on stays open</source>
+        <translation>正在編輯的文件保持開啟</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Close and continue</source>
+        <translation>關閉並繼續</translation>
     </message>
 </context>
 <context>
@@ -3364,13 +3387,13 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+81"/>
-        <location line="+94"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+82"/>
+        <location line="+109"/>
         <source>Page Size</source>
         <translation>頁面大小</translation>
     </message>
     <message>
-        <location line="-70"/>
+        <location line="-85"/>
         <location line="+49"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -3399,12 +3422,12 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>模式(&amp;M)</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+20"/>
         <source>&amp;Edit</source>
         <translation>編輯(&amp;E)</translation>
     </message>
     <message>
-        <location line="-12"/>
+        <location line="-27"/>
         <source>Close document</source>
         <translation>關閉文件</translation>
     </message>
@@ -3434,7 +3457,17 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>將副本另存為 PDF、PNG 或 JPEG 檔案</translation>
     </message>
     <message>
-        <location line="+46"/>
+        <location line="+28"/>
+        <source>Double board</source>
+        <translation>雙白板</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Two documents side by side: click a side to work on it</source>
+        <translation>兩份文件並排：按一下一側即可在該側工作</translation>
+    </message>
+    <message>
+        <location line="+31"/>
         <source>Full screen</source>
         <translation>全螢幕</translation>
     </message>
@@ -3638,6 +3671,14 @@ Do you want to ignore these errors for this host?</source>
     <message>
         <source>Proceed</source>
         <translation type="vanished">繼續</translation>
+    </message>
+</context>
+<context>
+    <name>UBOtherBoardView</name>
+    <message>
+        <location filename="../../src/board/UBDualBoard.cpp" line="-214"/>
+        <source>Click to work on this side</source>
+        <translation>按一下即可在此側工作</translation>
     </message>
 </context>
 <context>

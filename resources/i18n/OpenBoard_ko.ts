@@ -2274,7 +2274,7 @@ Providing a new name will create a new document.</source>
         <translation>새 보드</translation>
     </message>
     <message>
-        <location line="+56"/>
+        <location line="+114"/>
         <source>Save</source>
         <translation>저장</translation>
     </message>
@@ -2284,7 +2284,7 @@ Providing a new name will create a new document.</source>
         <translation>%1을(를) 저장할 수 없습니다. 다른 프로그램에서 열려 있지 않은지 확인하세요.</translation>
     </message>
     <message>
-        <location line="+178"/>
+        <location line="+185"/>
         <source>Save the changes to the PDF before closing?</source>
         <translation>닫기 전에 변경 내용을 PDF에 저장할까요?</translation>
     </message>
@@ -2412,6 +2412,29 @@ Do you want to continue?</source>
     <message>
         <source>Page %0</source>
         <translation type="obsolete">%0 페이지</translation>
+    </message>
+</context>
+<context>
+    <name>UBDualBoard</name>
+    <message>
+        <location filename="../../src/board/UBDualBoard.cpp" line="+256"/>
+        <source>Double board</source>
+        <translation>이중 보드</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>The double board shows two documents at a time. Choose which to close (%1):</source>
+        <translation>이중 보드는 한 번에 두 문서를 표시합니다. 닫을 문서를 선택하세요 (%1):</translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>The document you work on stays open</source>
+        <translation>작업 중인 문서는 열린 상태로 유지됩니다</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Close and continue</source>
+        <translation>닫고 계속</translation>
     </message>
 </context>
 <context>
@@ -3342,13 +3365,13 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+81"/>
-        <location line="+94"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+82"/>
+        <location line="+109"/>
         <source>Page Size</source>
         <translation>페이지 크기</translation>
     </message>
     <message>
-        <location line="-70"/>
+        <location line="-85"/>
         <location line="+49"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -3377,12 +3400,12 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>모드(&amp;M)</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+20"/>
         <source>&amp;Edit</source>
         <translation>편집(&amp;E)</translation>
     </message>
     <message>
-        <location line="-12"/>
+        <location line="-27"/>
         <source>Close document</source>
         <translation>문서 닫기</translation>
     </message>
@@ -3412,7 +3435,17 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>PDF, PNG 또는 JPEG 파일로 사본 저장</translation>
     </message>
     <message>
-        <location line="+46"/>
+        <location line="+28"/>
+        <source>Double board</source>
+        <translation>이중 보드</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Two documents side by side: click a side to work on it</source>
+        <translation>두 문서를 나란히: 한쪽을 클릭하면 그쪽에서 작업합니다</translation>
+    </message>
+    <message>
+        <location line="+31"/>
         <source>Full screen</source>
         <translation>전체 화면</translation>
     </message>
@@ -3618,6 +3651,14 @@ Do you want to ignore these errors for this host?</source>
     <message>
         <source>Cancel</source>
         <translation type="obsolete">취소</translation>
+    </message>
+</context>
+<context>
+    <name>UBOtherBoardView</name>
+    <message>
+        <location filename="../../src/board/UBDualBoard.cpp" line="-214"/>
+        <source>Click to work on this side</source>
+        <translation>클릭하여 이쪽에서 작업</translation>
     </message>
 </context>
 <context>

@@ -2283,7 +2283,7 @@ Providing a new name will create a new document.</source>
         <translation>Nová tabuľa</translation>
     </message>
     <message>
-        <location line="+56"/>
+        <location line="+114"/>
         <source>Save</source>
         <translation>Uložiť</translation>
     </message>
@@ -2293,7 +2293,7 @@ Providing a new name will create a new document.</source>
         <translation>%1 sa nepodarilo uložiť. Skontrolujte, či nie je otvorený v inom programe.</translation>
     </message>
     <message>
-        <location line="+178"/>
+        <location line="+185"/>
         <source>Save the changes to the PDF before closing?</source>
         <translation>Uložiť zmeny do PDF pred zatvorením?</translation>
     </message>
@@ -2418,6 +2418,29 @@ Do you want to continue?</source>
     <message>
         <source>Page %0</source>
         <translation type="obsolete">Stránka %0</translation>
+    </message>
+</context>
+<context>
+    <name>UBDualBoard</name>
+    <message>
+        <location filename="../../src/board/UBDualBoard.cpp" line="+256"/>
+        <source>Double board</source>
+        <translation>Dvojitá tabuľa</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>The double board shows two documents at a time. Choose which to close (%1):</source>
+        <translation>Dvojitá tabuľa zobrazuje dva dokumenty naraz. Vyberte, ktoré zavrieť (%1):</translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>The document you work on stays open</source>
+        <translation>Dokument, na ktorom pracujete, zostane otvorený</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Close and continue</source>
+        <translation>Zavrieť a pokračovať</translation>
     </message>
 </context>
 <context>
@@ -3348,13 +3371,13 @@ Stiahnuť a nainštalovať teraz? LibertyBoard uloží vaše dokumenty, zavrie s
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+81"/>
-        <location line="+94"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+82"/>
+        <location line="+109"/>
         <source>Page Size</source>
         <translation>Veľkosť strany</translation>
     </message>
     <message>
-        <location line="-70"/>
+        <location line="-85"/>
         <location line="+49"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -3383,12 +3406,12 @@ Stiahnuť a nainštalovať teraz? LibertyBoard uloží vaše dokumenty, zavrie s
         <translation>&amp;Režim</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+20"/>
         <source>&amp;Edit</source>
         <translation>Úp&amp;ravy</translation>
     </message>
     <message>
-        <location line="-12"/>
+        <location line="-27"/>
         <source>Close document</source>
         <translation>Zavrieť dokument</translation>
     </message>
@@ -3418,7 +3441,17 @@ Stiahnuť a nainštalovať teraz? LibertyBoard uloží vaše dokumenty, zavrie s
         <translation>Uložiť kópiu ako súbor PDF, PNG alebo JPEG</translation>
     </message>
     <message>
-        <location line="+46"/>
+        <location line="+28"/>
+        <source>Double board</source>
+        <translation>Dvojitá tabuľa</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Two documents side by side: click a side to work on it</source>
+        <translation>Dva dokumenty vedľa seba: kliknutím na stranu na nej budete pracovať</translation>
+    </message>
+    <message>
+        <location line="+31"/>
         <source>Full screen</source>
         <translation>Celá obrazovka</translation>
     </message>
@@ -3644,6 +3677,14 @@ Chcete ignorovať tieto chyby na tomto serveri?</translation>
     <message>
         <source>Open-Sankoré documents are present on your computer. It is possible to import them to LibertyBoard by pressing the “Proceed” button to launch the importer application.</source>
         <translation type="vanished">Vo vašom počítači sa nachádzajú dokumenty Open-Sankoré. Do LibertyBoardu ich môžete nahrať stlačením tlačidla Pokračovať, ktorým sa spustí aplikácia na nahrávanie.</translation>
+    </message>
+</context>
+<context>
+    <name>UBOtherBoardView</name>
+    <message>
+        <location filename="../../src/board/UBDualBoard.cpp" line="-214"/>
+        <source>Click to work on this side</source>
+        <translation>Kliknutím budete pracovať na tejto strane</translation>
     </message>
 </context>
 <context>

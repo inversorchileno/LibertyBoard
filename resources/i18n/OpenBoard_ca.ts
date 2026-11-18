@@ -2279,7 +2279,7 @@ Providing a new name will create a new document.</source>
         <translation>Pissarra nova</translation>
     </message>
     <message>
-        <location line="+56"/>
+        <location line="+114"/>
         <source>Save</source>
         <translation>Desa</translation>
     </message>
@@ -2289,7 +2289,7 @@ Providing a new name will create a new document.</source>
         <translation>No s&apos;ha pogut desar %1. Comproveu que no estigui obert en un altre programa.</translation>
     </message>
     <message>
-        <location line="+178"/>
+        <location line="+185"/>
         <source>Save the changes to the PDF before closing?</source>
         <translation>Voleu desar els canvis al PDF abans de tancar?</translation>
     </message>
@@ -2415,6 +2415,29 @@ Do you want to continue?</source>
     <message>
         <source>Page %0</source>
         <translation type="obsolete">Pàgina %0</translation>
+    </message>
+</context>
+<context>
+    <name>UBDualBoard</name>
+    <message>
+        <location filename="../../src/board/UBDualBoard.cpp" line="+256"/>
+        <source>Double board</source>
+        <translation>Pissarra doble</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>The double board shows two documents at a time. Choose which to close (%1):</source>
+        <translation>La pissarra doble mostra dos documents alhora. Trieu quins tancar (%1):</translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>The document you work on stays open</source>
+        <translation>El document en què treballeu queda obert</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Close and continue</source>
+        <translation>Tanca i continua</translation>
     </message>
 </context>
 <context>
@@ -3345,13 +3368,13 @@ Voleu baixar-la i instal·lar-la ara? LibertyBoard desa els documents, es tanca 
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+81"/>
-        <location line="+94"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+82"/>
+        <location line="+109"/>
         <source>Page Size</source>
         <translation>Mida de la pàgina</translation>
     </message>
     <message>
-        <location line="-70"/>
+        <location line="-85"/>
         <location line="+49"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -3380,12 +3403,12 @@ Voleu baixar-la i instal·lar-la ara? LibertyBoard desa els documents, es tanca 
         <translation>&amp;Mode</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+20"/>
         <source>&amp;Edit</source>
         <translation>&amp;Edició</translation>
     </message>
     <message>
-        <location line="-12"/>
+        <location line="-27"/>
         <source>Close document</source>
         <translation>Tanca el document</translation>
     </message>
@@ -3415,7 +3438,17 @@ Voleu baixar-la i instal·lar-la ara? LibertyBoard desa els documents, es tanca 
         <translation>Desa una còpia com a fitxer PDF, PNG o JPEG</translation>
     </message>
     <message>
-        <location line="+46"/>
+        <location line="+28"/>
+        <source>Double board</source>
+        <translation>Pissarra doble</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Two documents side by side: click a side to work on it</source>
+        <translation>Dos documents un al costat de l&apos;altre: feu clic en un costat per treballar-hi</translation>
+    </message>
+    <message>
+        <location line="+31"/>
         <source>Full screen</source>
         <translation>Pantalla completa</translation>
     </message>
@@ -3621,6 +3654,14 @@ Voleu ignorar aquests errors per a aquest amfitrió?</translation>
     <message>
         <source>Cancel</source>
         <translation type="obsolete">Cancel·la</translation>
+    </message>
+</context>
+<context>
+    <name>UBOtherBoardView</name>
+    <message>
+        <location filename="../../src/board/UBDualBoard.cpp" line="-214"/>
+        <source>Click to work on this side</source>
+        <translation>Feu clic per treballar en aquest costat</translation>
     </message>
 </context>
 <context>

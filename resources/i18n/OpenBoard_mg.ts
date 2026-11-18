@@ -2275,7 +2275,7 @@ Providing a new name will create a new document.</source>
         <translation>Solaitrabe vaovao</translation>
     </message>
     <message>
-        <location line="+56"/>
+        <location line="+114"/>
         <source>Save</source>
         <translation>Hitahiry</translation>
     </message>
@@ -2285,7 +2285,7 @@ Providing a new name will create a new document.</source>
         <translation>Tsy nety notehirizina i %1. Jereo raha tsy misokatra amin&apos;ny rindrankajy hafa izy.</translation>
     </message>
     <message>
-        <location line="+178"/>
+        <location line="+185"/>
         <source>Save the changes to the PDF before closing?</source>
         <translation>Hotehirizina ao amin&apos;ny PDF ve ny fanovana alohan&apos;ny hanidiana?</translation>
     </message>
@@ -2407,6 +2407,29 @@ Do you want to continue?</source>
     <message>
         <source>Page %0</source>
         <translation type="obsolete">Pejy %0</translation>
+    </message>
+</context>
+<context>
+    <name>UBDualBoard</name>
+    <message>
+        <location filename="../../src/board/UBDualBoard.cpp" line="+256"/>
+        <source>Double board</source>
+        <translation>Solaitrabe roa</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>The double board shows two documents at a time. Choose which to close (%1):</source>
+        <translation>Antontan-taratasy roa no asehon&apos;ny solaitrabe roa indray mandeha. Fidio izay hakatona (%1):</translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>The document you work on stays open</source>
+        <translation>Mijanona misokatra ny antontan-taratasy iasanao</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Close and continue</source>
+        <translation>Hanidy ary hanohy</translation>
     </message>
 </context>
 <context>
@@ -3337,13 +3360,13 @@ Alaina sy apetraka izao ve? Hotehirizin&apos;ny LibertyBoard ny antontan-taratas
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+81"/>
-        <location line="+94"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+82"/>
+        <location line="+109"/>
         <source>Page Size</source>
         <translation>Haben&apos;ny pejy</translation>
     </message>
     <message>
-        <location line="-70"/>
+        <location line="-85"/>
         <location line="+49"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -3372,12 +3395,12 @@ Alaina sy apetraka izao ve? Hotehirizin&apos;ny LibertyBoard ny antontan-taratas
         <translation>&amp;Fomba</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+20"/>
         <source>&amp;Edit</source>
         <translation>&amp;Hanova</translation>
     </message>
     <message>
-        <location line="-12"/>
+        <location line="-27"/>
         <source>Close document</source>
         <translation>Hanidy ny antontan-taratasy</translation>
     </message>
@@ -3407,7 +3430,17 @@ Alaina sy apetraka izao ve? Hotehirizin&apos;ny LibertyBoard ny antontan-taratas
         <translation>Hitahiry dika ho rakitra PDF, PNG na JPEG</translation>
     </message>
     <message>
-        <location line="+46"/>
+        <location line="+28"/>
+        <source>Double board</source>
+        <translation>Solaitrabe roa</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Two documents side by side: click a side to work on it</source>
+        <translation>Antontan-taratasy roa mifanila: tsindrio ny ilany iray raha hiasa eo</translation>
+    </message>
+    <message>
+        <location line="+31"/>
         <source>Full screen</source>
         <translation>Efijery feno</translation>
     </message>
@@ -3613,6 +3646,14 @@ Tena tsy te hiraharaha an&apos;ireo tsy mety ho an&apos;ilay milina ve ianao?</t
     <message>
         <source>Cancel</source>
         <translation type="obsolete">Ajanony</translation>
+    </message>
+</context>
+<context>
+    <name>UBOtherBoardView</name>
+    <message>
+        <location filename="../../src/board/UBDualBoard.cpp" line="-214"/>
+        <source>Click to work on this side</source>
+        <translation>Tsindrio raha hiasa amin&apos;ity ilany ity</translation>
     </message>
 </context>
 <context>

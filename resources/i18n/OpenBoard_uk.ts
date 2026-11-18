@@ -2286,7 +2286,7 @@ Providing a new name will create a new document.</source>
         <translation>Нова дошка</translation>
     </message>
     <message>
-        <location line="+56"/>
+        <location line="+114"/>
         <source>Save</source>
         <translation>Зберегти</translation>
     </message>
@@ -2296,7 +2296,7 @@ Providing a new name will create a new document.</source>
         <translation>Не вдалося зберегти %1. Перевірте, чи він не відкритий в іншій програмі.</translation>
     </message>
     <message>
-        <location line="+178"/>
+        <location line="+185"/>
         <source>Save the changes to the PDF before closing?</source>
         <translation>Зберегти зміни в PDF перед закриттям?</translation>
     </message>
@@ -2418,6 +2418,29 @@ Do you want to continue?</source>
     <message>
         <source>Page %0</source>
         <translation type="vanished">Сторінка %0</translation>
+    </message>
+</context>
+<context>
+    <name>UBDualBoard</name>
+    <message>
+        <location filename="../../src/board/UBDualBoard.cpp" line="+256"/>
+        <source>Double board</source>
+        <translation>Подвійна дошка</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>The double board shows two documents at a time. Choose which to close (%1):</source>
+        <translation>Подвійна дошка показує два документи одночасно. Виберіть, які закрити (%1):</translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>The document you work on stays open</source>
+        <translation>Документ, з яким ви працюєте, залишається відкритим</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Close and continue</source>
+        <translation>Закрити й продовжити</translation>
     </message>
 </context>
 <context>
@@ -3348,13 +3371,13 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+81"/>
-        <location line="+94"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+82"/>
+        <location line="+109"/>
         <source>Page Size</source>
         <translation>Розмір сторінки</translation>
     </message>
     <message>
-        <location line="-70"/>
+        <location line="-85"/>
         <location line="+49"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -3383,12 +3406,12 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>&amp;Режим</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+20"/>
         <source>&amp;Edit</source>
         <translation>&amp;Редагування</translation>
     </message>
     <message>
-        <location line="-12"/>
+        <location line="-27"/>
         <source>Close document</source>
         <translation>Закрити документ</translation>
     </message>
@@ -3418,7 +3441,17 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>Зберегти копію як файл PDF, PNG або JPEG</translation>
     </message>
     <message>
-        <location line="+46"/>
+        <location line="+28"/>
+        <source>Double board</source>
+        <translation>Подвійна дошка</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Two documents side by side: click a side to work on it</source>
+        <translation>Два документи поруч: клацніть бік, щоб працювати з ним</translation>
+    </message>
+    <message>
+        <location line="+31"/>
         <source>Full screen</source>
         <translation>Повноекранний режим</translation>
     </message>
@@ -3644,6 +3677,14 @@ Do you want to ignore these errors for this host?</source>
     <message>
         <source>Open-Sankoré documents are present on your computer. It is possible to import them to LibertyBoard by pressing the “Proceed” button to launch the importer application.</source>
         <translation type="vanished">Документи Open-Sankoré присутні на вашому комп&apos;ютері. Імпортувати їх можна в LibertyBoard, натиснувши кнопку «Продовжити», щоб запустити програму для імпорту.</translation>
+    </message>
+</context>
+<context>
+    <name>UBOtherBoardView</name>
+    <message>
+        <location filename="../../src/board/UBDualBoard.cpp" line="-214"/>
+        <source>Click to work on this side</source>
+        <translation>Клацніть, щоб працювати з цього боку</translation>
     </message>
 </context>
 <context>

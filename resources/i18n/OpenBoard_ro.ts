@@ -2275,7 +2275,7 @@ Providing a new name will create a new document.</source>
         <translation>Tablă nouă</translation>
     </message>
     <message>
-        <location line="+56"/>
+        <location line="+114"/>
         <source>Save</source>
         <translation>Salvare</translation>
     </message>
@@ -2285,7 +2285,7 @@ Providing a new name will create a new document.</source>
         <translation>%1 nu a putut fi salvat. Verificați că nu este deschis în alt program.</translation>
     </message>
     <message>
-        <location line="+178"/>
+        <location line="+185"/>
         <source>Save the changes to the PDF before closing?</source>
         <translation>Salvați modificările în PDF înainte de închidere?</translation>
     </message>
@@ -2407,6 +2407,29 @@ Do you want to continue?</source>
     <message>
         <source>Page %0</source>
         <translation type="obsolete">Pagina %0</translation>
+    </message>
+</context>
+<context>
+    <name>UBDualBoard</name>
+    <message>
+        <location filename="../../src/board/UBDualBoard.cpp" line="+256"/>
+        <source>Double board</source>
+        <translation>Tablă dublă</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>The double board shows two documents at a time. Choose which to close (%1):</source>
+        <translation>Tabla dublă afișează două documente deodată. Alegeți pe care să le închideți (%1):</translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>The document you work on stays open</source>
+        <translation>Documentul la care lucrați rămâne deschis</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Close and continue</source>
+        <translation>Închide și continuă</translation>
     </message>
 </context>
 <context>
@@ -3337,13 +3360,13 @@ O descărcați și o instalați acum? LibertyBoard vă salvează documentele, se
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+81"/>
-        <location line="+94"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+82"/>
+        <location line="+109"/>
         <source>Page Size</source>
         <translation>Dimensiunea paginii</translation>
     </message>
     <message>
-        <location line="-70"/>
+        <location line="-85"/>
         <location line="+49"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -3372,12 +3395,12 @@ O descărcați și o instalați acum? LibertyBoard vă salvează documentele, se
         <translation>&amp;Mod</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+20"/>
         <source>&amp;Edit</source>
         <translation>&amp;Editare</translation>
     </message>
     <message>
-        <location line="-12"/>
+        <location line="-27"/>
         <source>Close document</source>
         <translation>Închide documentul</translation>
     </message>
@@ -3407,7 +3430,17 @@ O descărcați și o instalați acum? LibertyBoard vă salvează documentele, se
         <translation>Salvați o copie ca fișier PDF, PNG sau JPEG</translation>
     </message>
     <message>
-        <location line="+46"/>
+        <location line="+28"/>
+        <source>Double board</source>
+        <translation>Tablă dublă</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Two documents side by side: click a side to work on it</source>
+        <translation>Două documente alăturate: faceți clic pe o parte pentru a lucra pe ea</translation>
+    </message>
+    <message>
+        <location line="+31"/>
         <source>Full screen</source>
         <translation>Ecran complet</translation>
     </message>
@@ -3613,6 +3646,14 @@ Doriţi să ignoraţi aceste erori pentru acest host?</translation>
     <message>
         <source>Cancel</source>
         <translation type="obsolete">Anulare</translation>
+    </message>
+</context>
+<context>
+    <name>UBOtherBoardView</name>
+    <message>
+        <location filename="../../src/board/UBDualBoard.cpp" line="-214"/>
+        <source>Click to work on this side</source>
+        <translation>Faceți clic pentru a lucra pe această parte</translation>
     </message>
 </context>
 <context>

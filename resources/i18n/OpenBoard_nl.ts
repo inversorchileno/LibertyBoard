@@ -2259,7 +2259,7 @@ Providing a new name will create a new document.</source>
         <translation>Nieuw bord</translation>
     </message>
     <message>
-        <location line="+56"/>
+        <location line="+114"/>
         <source>Save</source>
         <translation>Opslaan</translation>
     </message>
@@ -2269,7 +2269,7 @@ Providing a new name will create a new document.</source>
         <translation>%1 kon niet worden opgeslagen. Controleer of het niet in een ander programma geopend is.</translation>
     </message>
     <message>
-        <location line="+178"/>
+        <location line="+185"/>
         <source>Save the changes to the PDF before closing?</source>
         <translation>De wijzigingen in de PDF opslaan voor het sluiten?</translation>
     </message>
@@ -2391,6 +2391,29 @@ Do you want to continue?</source>
     <message>
         <source>Page %0</source>
         <translation type="obsolete">Pagina %0</translation>
+    </message>
+</context>
+<context>
+    <name>UBDualBoard</name>
+    <message>
+        <location filename="../../src/board/UBDualBoard.cpp" line="+256"/>
+        <source>Double board</source>
+        <translation>Dubbel bord</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>The double board shows two documents at a time. Choose which to close (%1):</source>
+        <translation>Het dubbele bord toont twee documenten tegelijk. Kies welke u sluit (%1):</translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>The document you work on stays open</source>
+        <translation>Het document waaraan u werkt blijft open</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Close and continue</source>
+        <translation>Sluiten en doorgaan</translation>
     </message>
 </context>
 <context>
@@ -3321,13 +3344,13 @@ Nu downloaden en installeren? LibertyBoard bewaart je documenten, sluit af en op
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+81"/>
-        <location line="+94"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+82"/>
+        <location line="+109"/>
         <source>Page Size</source>
         <translation>Paginagrootte</translation>
     </message>
     <message>
-        <location line="-70"/>
+        <location line="-85"/>
         <location line="+49"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -3356,12 +3379,12 @@ Nu downloaden en installeren? LibertyBoard bewaart je documenten, sluit af en op
         <translation>&amp;Modus</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+20"/>
         <source>&amp;Edit</source>
         <translation>&amp;Bewerken</translation>
     </message>
     <message>
-        <location line="-12"/>
+        <location line="-27"/>
         <source>Close document</source>
         <translation>Document sluiten</translation>
     </message>
@@ -3391,7 +3414,17 @@ Nu downloaden en installeren? LibertyBoard bewaart je documenten, sluit af en op
         <translation>Een kopie opslaan als PDF-, PNG- of JPEG-bestand</translation>
     </message>
     <message>
-        <location line="+46"/>
+        <location line="+28"/>
+        <source>Double board</source>
+        <translation>Dubbel bord</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Two documents side by side: click a side to work on it</source>
+        <translation>Twee documenten naast elkaar: klik op een kant om daar te werken</translation>
+    </message>
+    <message>
+        <location line="+31"/>
         <source>Full screen</source>
         <translation>Volledig scherm</translation>
     </message>
@@ -3591,6 +3624,14 @@ Do you want to ignore these errors for this host?</source>
     <message>
         <source>Cancel</source>
         <translation type="obsolete">Annuleren</translation>
+    </message>
+</context>
+<context>
+    <name>UBOtherBoardView</name>
+    <message>
+        <location filename="../../src/board/UBDualBoard.cpp" line="-214"/>
+        <source>Click to work on this side</source>
+        <translation>Klik om aan deze kant te werken</translation>
     </message>
 </context>
 <context>

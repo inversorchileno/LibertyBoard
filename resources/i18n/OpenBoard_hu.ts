@@ -2361,7 +2361,7 @@ Ennek a névnek a megtartása helyettesíti a dokumentumot.
         <translation>Új tábla</translation>
     </message>
     <message>
-        <location line="+56"/>
+        <location line="+114"/>
         <source>Save</source>
         <translation>Mentés</translation>
     </message>
@@ -2371,7 +2371,7 @@ Ennek a névnek a megtartása helyettesíti a dokumentumot.
         <translation>%1 nem menthető. Ellenőrizze, hogy nincs-e megnyitva egy másik programban.</translation>
     </message>
     <message>
-        <location line="+178"/>
+        <location line="+185"/>
         <source>Save the changes to the PDF before closing?</source>
         <translation>Menti a változásokat a PDF-be bezárás előtt?</translation>
     </message>
@@ -2498,6 +2498,29 @@ Do you want to continue?</source>
     <message>
         <source>Page %0</source>
         <translation type="vanished">Oldal %0</translation>
+    </message>
+</context>
+<context>
+    <name>UBDualBoard</name>
+    <message>
+        <location filename="../../src/board/UBDualBoard.cpp" line="+256"/>
+        <source>Double board</source>
+        <translation>Kettős tábla</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>The double board shows two documents at a time. Choose which to close (%1):</source>
+        <translation>A kettős tábla egyszerre két dokumentumot mutat. Válassza ki, melyeket zárja be (%1):</translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>The document you work on stays open</source>
+        <translation>A dokumentum, amelyen dolgozik, nyitva marad</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Close and continue</source>
+        <translation>Bezárás és folytatás</translation>
     </message>
 </context>
 <context>
@@ -3429,13 +3452,13 @@ Letölti és telepíti most? A LibertyBoard menti a dokumentumait, bezárul, maj
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+81"/>
-        <location line="+94"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+82"/>
+        <location line="+109"/>
         <source>Page Size</source>
         <translation>Oldalméret</translation>
     </message>
     <message>
-        <location line="-70"/>
+        <location line="-85"/>
         <location line="+49"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -3464,12 +3487,12 @@ Letölti és telepíti most? A LibertyBoard menti a dokumentumait, bezárul, maj
         <translation>&amp;Mód</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+20"/>
         <source>&amp;Edit</source>
         <translation>S&amp;zerkesztés</translation>
     </message>
     <message>
-        <location line="-12"/>
+        <location line="-27"/>
         <source>Close document</source>
         <translation>Dokumentum bezárása</translation>
     </message>
@@ -3499,7 +3522,17 @@ Letölti és telepíti most? A LibertyBoard menti a dokumentumait, bezárul, maj
         <translation>Másolat mentése PDF-, PNG- vagy JPEG-fájlként</translation>
     </message>
     <message>
-        <location line="+46"/>
+        <location line="+28"/>
+        <source>Double board</source>
+        <translation>Kettős tábla</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Two documents side by side: click a side to work on it</source>
+        <translation>Két dokumentum egymás mellett: kattintson egy oldalra, hogy azon dolgozzon</translation>
+    </message>
+    <message>
+        <location line="+31"/>
         <source>Full screen</source>
         <translation>Teljes képernyő</translation>
     </message>
@@ -3725,6 +3758,14 @@ Figyelmen kívül hagyja ezeket a hibákat ennél a hosztnál?</translation>
     <message>
         <source>Open-Sankoré documents are present on your computer. It is possible to import them to LibertyBoard by pressing the “Proceed” button to launch the importer application.</source>
         <translation type="vanished">Open-Sankoré dokumentumok vannak a számítógépén. Importálásuk az LibertyBoardba, a &quot;FOLYTATÁS&quot; gombra kattintva, az elinduló importáló alkalmazással lehetséges.</translation>
+    </message>
+</context>
+<context>
+    <name>UBOtherBoardView</name>
+    <message>
+        <location filename="../../src/board/UBDualBoard.cpp" line="-214"/>
+        <source>Click to work on this side</source>
+        <translation>Kattintson, hogy ezen az oldalon dolgozzon</translation>
     </message>
 </context>
 <context>

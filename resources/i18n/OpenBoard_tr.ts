@@ -2295,7 +2295,7 @@ Yeni bir ad sağlamak yeni belge oluşturur.</translation>
         <translation>Yeni tahta</translation>
     </message>
     <message>
-        <location line="+56"/>
+        <location line="+114"/>
         <source>Save</source>
         <translation>Kaydet</translation>
     </message>
@@ -2305,7 +2305,7 @@ Yeni bir ad sağlamak yeni belge oluşturur.</translation>
         <translation>%1 kaydedilemedi. Başka bir programda açık olmadığını kontrol edin.</translation>
     </message>
     <message>
-        <location line="+178"/>
+        <location line="+185"/>
         <source>Save the changes to the PDF before closing?</source>
         <translation>Kapatmadan önce değişiklikler PDF&apos;ye kaydedilsin mi?</translation>
     </message>
@@ -2424,6 +2424,29 @@ Do you want to continue?</source>
     <message>
         <source>Page %0</source>
         <translation type="vanished">Sayfa %0</translation>
+    </message>
+</context>
+<context>
+    <name>UBDualBoard</name>
+    <message>
+        <location filename="../../src/board/UBDualBoard.cpp" line="+256"/>
+        <source>Double board</source>
+        <translation>Çift tahta</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>The double board shows two documents at a time. Choose which to close (%1):</source>
+        <translation>Çift tahta aynı anda iki belge gösterir. Hangilerinin kapanacağını seçin (%1):</translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>The document you work on stays open</source>
+        <translation>Üzerinde çalıştığınız belge açık kalır</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Close and continue</source>
+        <translation>Kapat ve devam et</translation>
     </message>
 </context>
 <context>
@@ -3358,13 +3381,13 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+81"/>
-        <location line="+94"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+82"/>
+        <location line="+109"/>
         <source>Page Size</source>
         <translation>Sayfa boyutu</translation>
     </message>
     <message>
-        <location line="-70"/>
+        <location line="-85"/>
         <location line="+49"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -3393,12 +3416,12 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>&amp;Mod</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+20"/>
         <source>&amp;Edit</source>
         <translation>&amp;Düzen</translation>
     </message>
     <message>
-        <location line="-12"/>
+        <location line="-27"/>
         <source>Close document</source>
         <translation>Belgeyi kapat</translation>
     </message>
@@ -3428,7 +3451,17 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>Bir kopyayı PDF, PNG veya JPEG dosyası olarak kaydet</translation>
     </message>
     <message>
-        <location line="+46"/>
+        <location line="+28"/>
+        <source>Double board</source>
+        <translation>Çift tahta</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Two documents side by side: click a side to work on it</source>
+        <translation>Yan yana iki belge: üzerinde çalışmak için bir tarafa tıklayın</translation>
+    </message>
+    <message>
+        <location line="+31"/>
         <source>Full screen</source>
         <translation>Tam ekran</translation>
     </message>
@@ -3654,6 +3687,14 @@ Bu ana bilgisayar için yukarıdaki hatalar yok sayılsın mı?</translation>
     <message>
         <source>Proceed</source>
         <translation type="vanished">Devam</translation>
+    </message>
+</context>
+<context>
+    <name>UBOtherBoardView</name>
+    <message>
+        <location filename="../../src/board/UBDualBoard.cpp" line="-214"/>
+        <source>Click to work on this side</source>
+        <translation>Bu tarafta çalışmak için tıklayın</translation>
     </message>
 </context>
 <context>

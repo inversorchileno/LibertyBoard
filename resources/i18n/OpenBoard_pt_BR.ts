@@ -2434,7 +2434,7 @@ Um outro nome permitirá que você mantenha o documento antigo.</translation>
         <translation>Novo quadro</translation>
     </message>
     <message>
-        <location line="+56"/>
+        <location line="+114"/>
         <source>Save</source>
         <translation>Salvar</translation>
     </message>
@@ -2444,7 +2444,7 @@ Um outro nome permitirá que você mantenha o documento antigo.</translation>
         <translation>Não foi possível salvar %1. Verifique se não está aberto em outro programa.</translation>
     </message>
     <message>
-        <location line="+178"/>
+        <location line="+185"/>
         <source>Save the changes to the PDF before closing?</source>
         <translation>Salvar as alterações no PDF antes de fechar?</translation>
     </message>
@@ -2574,6 +2574,29 @@ Do you want to continue?</source>
     <message>
         <source>Page %0</source>
         <translation type="vanished">Página %0</translation>
+    </message>
+</context>
+<context>
+    <name>UBDualBoard</name>
+    <message>
+        <location filename="../../src/board/UBDualBoard.cpp" line="+256"/>
+        <source>Double board</source>
+        <translation>Quadro duplo</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>The double board shows two documents at a time. Choose which to close (%1):</source>
+        <translation>O quadro duplo mostra dois documentos de cada vez. Escolha quais fechar (%1):</translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>The document you work on stays open</source>
+        <translation>O documento em que você trabalha fica aberto</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Close and continue</source>
+        <translation>Fechar e continuar</translation>
     </message>
 </context>
 <context>
@@ -3516,13 +3539,13 @@ Baixar e instalar agora? O LibertyBoard salva seus documentos, fecha e abre nova
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+81"/>
-        <location line="+94"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+82"/>
+        <location line="+109"/>
         <source>Page Size</source>
         <translation>Tamanho da página</translation>
     </message>
     <message>
-        <location line="-70"/>
+        <location line="-85"/>
         <location line="+49"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -3551,12 +3574,12 @@ Baixar e instalar agora? O LibertyBoard salva seus documentos, fecha e abre nova
         <translation>&amp;Modo</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+20"/>
         <source>&amp;Edit</source>
         <translation>&amp;Editar</translation>
     </message>
     <message>
-        <location line="-12"/>
+        <location line="-27"/>
         <source>Close document</source>
         <translation>Fechar documento</translation>
     </message>
@@ -3586,7 +3609,17 @@ Baixar e instalar agora? O LibertyBoard salva seus documentos, fecha e abre nova
         <translation>Salvar uma cópia como arquivo PDF, PNG ou JPEG</translation>
     </message>
     <message>
-        <location line="+46"/>
+        <location line="+28"/>
+        <source>Double board</source>
+        <translation>Quadro duplo</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Two documents side by side: click a side to work on it</source>
+        <translation>Dois documentos lado a lado: clique em um lado para trabalhar nele</translation>
+    </message>
+    <message>
+        <location line="+31"/>
         <source>Full screen</source>
         <translation>Tela cheia</translation>
     </message>
@@ -3812,6 +3845,14 @@ Quer ignorar estes erros deste servidor?</translation>
     <message>
         <source>Proceed</source>
         <translation type="vanished">Prosseguir</translation>
+    </message>
+</context>
+<context>
+    <name>UBOtherBoardView</name>
+    <message>
+        <location filename="../../src/board/UBDualBoard.cpp" line="-214"/>
+        <source>Click to work on this side</source>
+        <translation>Clique para trabalhar neste lado</translation>
     </message>
 </context>
 <context>

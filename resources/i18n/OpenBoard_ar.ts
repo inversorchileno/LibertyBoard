@@ -2280,7 +2280,7 @@ Providing a new name will create a new document.</source>
         <translation>سبورة جديدة</translation>
     </message>
     <message>
-        <location line="+56"/>
+        <location line="+114"/>
         <source>Save</source>
         <translation>حفظ</translation>
     </message>
@@ -2290,7 +2290,7 @@ Providing a new name will create a new document.</source>
         <translation>تعذّر حفظ %1. تحقق من أنه غير مفتوح في برنامج آخر.</translation>
     </message>
     <message>
-        <location line="+178"/>
+        <location line="+185"/>
         <source>Save the changes to the PDF before closing?</source>
         <translation>حفظ التغييرات في ملف PDF قبل الإغلاق؟</translation>
     </message>
@@ -2424,6 +2424,29 @@ Do you want to continue?</source>
     <message>
         <source>Page %0</source>
         <translation type="obsolete">صفحة %0</translation>
+    </message>
+</context>
+<context>
+    <name>UBDualBoard</name>
+    <message>
+        <location filename="../../src/board/UBDualBoard.cpp" line="+256"/>
+        <source>Double board</source>
+        <translation>سبورة مزدوجة</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>The double board shows two documents at a time. Choose which to close (%1):</source>
+        <translation>تعرض السبورة المزدوجة مستندين في وقت واحد. اختر ما تريد إغلاقه (%1):</translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>The document you work on stays open</source>
+        <translation>يبقى المستند الذي تعمل عليه مفتوحًا</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Close and continue</source>
+        <translation>إغلاق ومتابعة</translation>
     </message>
 </context>
 <context>
@@ -3354,13 +3377,13 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+81"/>
-        <location line="+94"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+82"/>
+        <location line="+109"/>
         <source>Page Size</source>
         <translation>حجم الصفحة</translation>
     </message>
     <message>
-        <location line="-70"/>
+        <location line="-85"/>
         <location line="+49"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -3389,12 +3412,12 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>&amp;الوضع</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+20"/>
         <source>&amp;Edit</source>
         <translation>&amp;تحرير</translation>
     </message>
     <message>
-        <location line="-12"/>
+        <location line="-27"/>
         <source>Close document</source>
         <translation>إغلاق المستند</translation>
     </message>
@@ -3424,7 +3447,17 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>حفظ نسخة كملف PDF أو PNG أو JPEG</translation>
     </message>
     <message>
-        <location line="+46"/>
+        <location line="+28"/>
+        <source>Double board</source>
+        <translation>سبورة مزدوجة</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Two documents side by side: click a side to work on it</source>
+        <translation>مستندان جنبًا إلى جنب: انقر على جانب للعمل عليه</translation>
+    </message>
+    <message>
+        <location line="+31"/>
         <source>Full screen</source>
         <translation>ملء الشاشة</translation>
     </message>
@@ -3624,6 +3657,14 @@ Do you want to ignore these errors for this host?</source>
     <message>
         <source>Cancel</source>
         <translation type="obsolete">إلغاء </translation>
+    </message>
+</context>
+<context>
+    <name>UBOtherBoardView</name>
+    <message>
+        <location filename="../../src/board/UBDualBoard.cpp" line="-214"/>
+        <source>Click to work on this side</source>
+        <translation>انقر للعمل على هذا الجانب</translation>
     </message>
 </context>
 <context>

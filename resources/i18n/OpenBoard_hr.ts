@@ -2358,7 +2358,7 @@ Davanjem novog imena stvorit će se novi dokument.</translation>
         <translation>Nova ploča</translation>
     </message>
     <message>
-        <location line="+56"/>
+        <location line="+114"/>
         <source>Save</source>
         <translation>Spremi</translation>
     </message>
@@ -2368,7 +2368,7 @@ Davanjem novog imena stvorit će se novi dokument.</translation>
         <translation>%1 nije moguće spremiti. Provjerite da nije otvoren u drugom programu.</translation>
     </message>
     <message>
-        <location line="+178"/>
+        <location line="+185"/>
         <source>Save the changes to the PDF before closing?</source>
         <translation>Spremiti promjene u PDF prije zatvaranja?</translation>
     </message>
@@ -2494,6 +2494,29 @@ Do you want to continue?</source>
     <message>
         <source>Page %0</source>
         <translation type="vanished">Stranica %0</translation>
+    </message>
+</context>
+<context>
+    <name>UBDualBoard</name>
+    <message>
+        <location filename="../../src/board/UBDualBoard.cpp" line="+256"/>
+        <source>Double board</source>
+        <translation>Dvostruka ploča</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>The double board shows two documents at a time. Choose which to close (%1):</source>
+        <translation>Dvostruka ploča prikazuje dva dokumenta odjednom. Odaberite koje zatvoriti (%1):</translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>The document you work on stays open</source>
+        <translation>Dokument na kojem radite ostaje otvoren</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Close and continue</source>
+        <translation>Zatvori i nastavi</translation>
     </message>
 </context>
 <context>
@@ -3428,13 +3451,13 @@ Preuzeti i instalirati sada? LibertyBoard sprema tvoje dokumente, zatvara se i p
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+81"/>
-        <location line="+94"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+82"/>
+        <location line="+109"/>
         <source>Page Size</source>
         <translation>Veličina stranice</translation>
     </message>
     <message>
-        <location line="-70"/>
+        <location line="-85"/>
         <location line="+49"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -3463,12 +3486,12 @@ Preuzeti i instalirati sada? LibertyBoard sprema tvoje dokumente, zatvara se i p
         <translation>&amp;Način</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+20"/>
         <source>&amp;Edit</source>
         <translation>&amp;Uredi</translation>
     </message>
     <message>
-        <location line="-12"/>
+        <location line="-27"/>
         <source>Close document</source>
         <translation>Zatvori dokument</translation>
     </message>
@@ -3498,7 +3521,17 @@ Preuzeti i instalirati sada? LibertyBoard sprema tvoje dokumente, zatvara se i p
         <translation>Spremi kopiju kao PDF, PNG ili JPEG datoteku</translation>
     </message>
     <message>
-        <location line="+46"/>
+        <location line="+28"/>
+        <source>Double board</source>
+        <translation>Dvostruka ploča</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Two documents side by side: click a side to work on it</source>
+        <translation>Dva dokumenta jedan uz drugi: kliknite stranu za rad na njoj</translation>
+    </message>
+    <message>
+        <location line="+31"/>
         <source>Full screen</source>
         <translation>Cijeli zaslon</translation>
     </message>
@@ -3724,6 +3757,14 @@ Do you want to ignore these errors for this host?</source>
     <message>
         <source>Proceed</source>
         <translation type="vanished">Nastavi</translation>
+    </message>
+</context>
+<context>
+    <name>UBOtherBoardView</name>
+    <message>
+        <location filename="../../src/board/UBDualBoard.cpp" line="-214"/>
+        <source>Click to work on this side</source>
+        <translation>Kliknite za rad na ovoj strani</translation>
     </message>
 </context>
 <context>

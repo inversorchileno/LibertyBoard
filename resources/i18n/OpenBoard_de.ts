@@ -2334,7 +2334,7 @@ Wenn Sie einen neuen Namen wählen, wird ein neues Dokument erstellt.</translati
         <translation>Neue Tafel</translation>
     </message>
     <message>
-        <location line="+56"/>
+        <location line="+114"/>
         <source>Save</source>
         <translation>Speichern</translation>
     </message>
@@ -2344,7 +2344,7 @@ Wenn Sie einen neuen Namen wählen, wird ein neues Dokument erstellt.</translati
         <translation>%1 konnte nicht gespeichert werden. Prüfen Sie, ob die Datei in einem anderen Programm geöffnet ist.</translation>
     </message>
     <message>
-        <location line="+178"/>
+        <location line="+185"/>
         <source>Save the changes to the PDF before closing?</source>
         <translation>Die Änderungen vor dem Schließen im PDF speichern?</translation>
     </message>
@@ -2487,6 +2487,29 @@ Möchten Sie fortfahren?</translation>
     <message>
         <source>Page %0</source>
         <translation type="vanished">Seite %0</translation>
+    </message>
+</context>
+<context>
+    <name>UBDualBoard</name>
+    <message>
+        <location filename="../../src/board/UBDualBoard.cpp" line="+256"/>
+        <source>Double board</source>
+        <translation>Doppeltafel</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>The double board shows two documents at a time. Choose which to close (%1):</source>
+        <translation>Die Doppeltafel zeigt zwei Dokumente gleichzeitig. Wählen Sie, welche geschlossen werden (%1):</translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>The document you work on stays open</source>
+        <translation>Das Dokument, an dem Sie arbeiten, bleibt geöffnet</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Close and continue</source>
+        <translation>Schließen und weiter</translation>
     </message>
 </context>
 <context>
@@ -3419,13 +3442,13 @@ Jetzt herunterladen und installieren? LibertyBoard speichert Ihre Dokumente, sch
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+81"/>
-        <location line="+94"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+82"/>
+        <location line="+109"/>
         <source>Page Size</source>
         <translation>Seitengröße</translation>
     </message>
     <message>
-        <location line="-70"/>
+        <location line="-85"/>
         <location line="+49"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -3454,12 +3477,12 @@ Jetzt herunterladen und installieren? LibertyBoard speichert Ihre Dokumente, sch
         <translation>&amp;Modus</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+20"/>
         <source>&amp;Edit</source>
         <translation>&amp;Bearbeiten</translation>
     </message>
     <message>
-        <location line="-12"/>
+        <location line="-27"/>
         <source>Close document</source>
         <translation>Dokument schließen</translation>
     </message>
@@ -3489,7 +3512,17 @@ Jetzt herunterladen und installieren? LibertyBoard speichert Ihre Dokumente, sch
         <translation>Eine Kopie als PDF, PNG oder JPEG speichern</translation>
     </message>
     <message>
-        <location line="+46"/>
+        <location line="+28"/>
+        <source>Double board</source>
+        <translation>Doppeltafel</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Two documents side by side: click a side to work on it</source>
+        <translation>Zwei Dokumente nebeneinander: Klicken Sie auf eine Seite, um dort zu arbeiten</translation>
+    </message>
+    <message>
+        <location line="+31"/>
         <source>Full screen</source>
         <translation>Vollbild</translation>
     </message>
@@ -3715,6 +3748,14 @@ Möchten Sie diese Fehler für diesen Computer ignorieren?</translation>
     <message>
         <source>Open-Sankoré documents are present on your computer. It is possible to import them to LibertyBoard by pressing the “Proceed” button to launch the importer application.</source>
         <translation type="vanished">Auf Ihrem Computer befinden sich Open-Sankoré Dokumente. Um diese in LibertyBoard zu importieren drücken Sie den &quot;Fortfahren&quot; Knopf um die Importanwendung zu starten.</translation>
+    </message>
+</context>
+<context>
+    <name>UBOtherBoardView</name>
+    <message>
+        <location filename="../../src/board/UBDualBoard.cpp" line="-214"/>
+        <source>Click to work on this side</source>
+        <translation>Klicken, um auf dieser Seite zu arbeiten</translation>
     </message>
 </context>
 <context>

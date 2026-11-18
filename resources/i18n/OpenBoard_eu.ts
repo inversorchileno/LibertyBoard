@@ -2461,7 +2461,7 @@ Izen berria ematean dokumentu berri bat sortuko da.</translation>
         <translation>Arbel berria</translation>
     </message>
     <message>
-        <location line="+56"/>
+        <location line="+114"/>
         <source>Save</source>
         <translation>Gorde</translation>
     </message>
@@ -2471,7 +2471,7 @@ Izen berria ematean dokumentu berri bat sortuko da.</translation>
         <translation>Ezin izan da %1 gorde. Egiaztatu ez dagoela beste programa batean irekita.</translation>
     </message>
     <message>
-        <location line="+178"/>
+        <location line="+185"/>
         <source>Save the changes to the PDF before closing?</source>
         <translation>Aldaketak PDFan gorde itxi aurretik?</translation>
     </message>
@@ -2579,6 +2579,29 @@ Do you want to continue?</source>
     <message>
         <source>Page %0</source>
         <translation type="obsolete">%0 orria</translation>
+    </message>
+</context>
+<context>
+    <name>UBDualBoard</name>
+    <message>
+        <location filename="../../src/board/UBDualBoard.cpp" line="+256"/>
+        <source>Double board</source>
+        <translation>Arbel bikoitza</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>The double board shows two documents at a time. Choose which to close (%1):</source>
+        <translation>Arbel bikoitzak bi dokumentu erakusten ditu aldi berean. Aukeratu zein itxi (%1):</translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>The document you work on stays open</source>
+        <translation>Lantzen ari zaren dokumentua irekita geratzen da</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Close and continue</source>
+        <translation>Itxi eta jarraitu</translation>
     </message>
 </context>
 <context>
@@ -3521,13 +3544,13 @@ Orain deskargatu eta instalatu? LibertyBoard-ek zure dokumentuak gordeko ditu, i
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+81"/>
-        <location line="+94"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+82"/>
+        <location line="+109"/>
         <source>Page Size</source>
         <translation>Orriaren tamaina</translation>
     </message>
     <message>
-        <location line="-70"/>
+        <location line="-85"/>
         <location line="+49"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -3556,12 +3579,12 @@ Orain deskargatu eta instalatu? LibertyBoard-ek zure dokumentuak gordeko ditu, i
         <translation>&amp;Modua</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+20"/>
         <source>&amp;Edit</source>
         <translation>&amp;Edizioa</translation>
     </message>
     <message>
-        <location line="-12"/>
+        <location line="-27"/>
         <source>Close document</source>
         <translation>Itxi dokumentua</translation>
     </message>
@@ -3591,7 +3614,17 @@ Orain deskargatu eta instalatu? LibertyBoard-ek zure dokumentuak gordeko ditu, i
         <translation>Gorde kopia bat PDF, PNG edo JPEG fitxategi gisa</translation>
     </message>
     <message>
-        <location line="+46"/>
+        <location line="+28"/>
+        <source>Double board</source>
+        <translation>Arbel bikoitza</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Two documents side by side: click a side to work on it</source>
+        <translation>Bi dokumentu elkarren ondoan: egin klik alde batean bertan lan egiteko</translation>
+    </message>
+    <message>
+        <location line="+31"/>
         <source>Full screen</source>
         <translation>Pantaila osoa</translation>
     </message>
@@ -3817,6 +3850,14 @@ Ostalari onentzako errore hauek ez-ikusi nahi dituzu?</translation>
     <message>
         <source>Proceed</source>
         <translation type="vanished">Jarraitu</translation>
+    </message>
+</context>
+<context>
+    <name>UBOtherBoardView</name>
+    <message>
+        <location filename="../../src/board/UBDualBoard.cpp" line="-214"/>
+        <source>Click to work on this side</source>
+        <translation>Egin klik alde honetan lan egiteko</translation>
     </message>
 </context>
 <context>

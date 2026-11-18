@@ -2276,7 +2276,7 @@ Providing a new name will create a new document.</source>
         <translation>Ny tavla</translation>
     </message>
     <message>
-        <location line="+56"/>
+        <location line="+114"/>
         <source>Save</source>
         <translation>Spara</translation>
     </message>
@@ -2286,7 +2286,7 @@ Providing a new name will create a new document.</source>
         <translation>%1 kunde inte sparas. Kontrollera att den inte är öppen i ett annat program.</translation>
     </message>
     <message>
-        <location line="+178"/>
+        <location line="+185"/>
         <source>Save the changes to the PDF before closing?</source>
         <translation>Spara ändringarna i PDF:en innan du stänger?</translation>
     </message>
@@ -2408,6 +2408,29 @@ Do you want to continue?</source>
     <message>
         <source>Page %0</source>
         <translation type="obsolete">Sida %0</translation>
+    </message>
+</context>
+<context>
+    <name>UBDualBoard</name>
+    <message>
+        <location filename="../../src/board/UBDualBoard.cpp" line="+256"/>
+        <source>Double board</source>
+        <translation>Dubbel tavla</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>The double board shows two documents at a time. Choose which to close (%1):</source>
+        <translation>Den dubbla tavlan visar två dokument åt gången. Välj vilka som ska stängas (%1):</translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>The document you work on stays open</source>
+        <translation>Dokumentet du arbetar med förblir öppet</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Close and continue</source>
+        <translation>Stäng och fortsätt</translation>
     </message>
 </context>
 <context>
@@ -3338,13 +3361,13 @@ Ladda ner och installera nu? LibertyBoard sparar dina dokument, stängs och öpp
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+81"/>
-        <location line="+94"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+82"/>
+        <location line="+109"/>
         <source>Page Size</source>
         <translation>Sidstorlek</translation>
     </message>
     <message>
-        <location line="-70"/>
+        <location line="-85"/>
         <location line="+49"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -3373,12 +3396,12 @@ Ladda ner och installera nu? LibertyBoard sparar dina dokument, stängs och öpp
         <translation>&amp;Läge</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+20"/>
         <source>&amp;Edit</source>
         <translation>&amp;Redigera</translation>
     </message>
     <message>
-        <location line="-12"/>
+        <location line="-27"/>
         <source>Close document</source>
         <translation>Stäng dokument</translation>
     </message>
@@ -3408,7 +3431,17 @@ Ladda ner och installera nu? LibertyBoard sparar dina dokument, stängs och öpp
         <translation>Spara en kopia som PDF-, PNG- eller JPEG-fil</translation>
     </message>
     <message>
-        <location line="+46"/>
+        <location line="+28"/>
+        <source>Double board</source>
+        <translation>Dubbel tavla</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Two documents side by side: click a side to work on it</source>
+        <translation>Två dokument sida vid sida: klicka på en sida för att arbeta där</translation>
+    </message>
+    <message>
+        <location line="+31"/>
         <source>Full screen</source>
         <translation>Helskärm</translation>
     </message>
@@ -3614,6 +3647,14 @@ Vill du ignorera felen för den här värden?</translation>
     <message>
         <source>Cancel</source>
         <translation type="obsolete">Avsluta</translation>
+    </message>
+</context>
+<context>
+    <name>UBOtherBoardView</name>
+    <message>
+        <location filename="../../src/board/UBDualBoard.cpp" line="-214"/>
+        <source>Click to work on this side</source>
+        <translation>Klicka för att arbeta på den här sidan</translation>
     </message>
 </context>
 <context>

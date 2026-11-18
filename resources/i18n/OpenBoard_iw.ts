@@ -2276,7 +2276,7 @@ Providing a new name will create a new document.</source>
         <translation>לוח חדש</translation>
     </message>
     <message>
-        <location line="+56"/>
+        <location line="+114"/>
         <source>Save</source>
         <translation>שמירה</translation>
     </message>
@@ -2286,7 +2286,7 @@ Providing a new name will create a new document.</source>
         <translation>לא ניתן לשמור את %1. ודאו שהוא לא פתוח בתוכנה אחרת.</translation>
     </message>
     <message>
-        <location line="+178"/>
+        <location line="+185"/>
         <source>Save the changes to the PDF before closing?</source>
         <translation>לשמור את השינויים ב-PDF לפני הסגירה?</translation>
     </message>
@@ -2408,6 +2408,29 @@ Do you want to continue?</source>
     <message>
         <source>Page %0</source>
         <translation type="obsolete">עמוד %0</translation>
+    </message>
+</context>
+<context>
+    <name>UBDualBoard</name>
+    <message>
+        <location filename="../../src/board/UBDualBoard.cpp" line="+256"/>
+        <source>Double board</source>
+        <translation>לוח כפול</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>The double board shows two documents at a time. Choose which to close (%1):</source>
+        <translation>הלוח הכפול מציג שני מסמכים בבת אחת. בחרו אילו לסגור (%1):</translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>The document you work on stays open</source>
+        <translation>המסמך שאתם עובדים עליו נשאר פתוח</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Close and continue</source>
+        <translation>סגירה והמשך</translation>
     </message>
 </context>
 <context>
@@ -3339,13 +3362,13 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+81"/>
-        <location line="+94"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+82"/>
+        <location line="+109"/>
         <source>Page Size</source>
         <translation>גודל עמוד</translation>
     </message>
     <message>
-        <location line="-70"/>
+        <location line="-85"/>
         <location line="+49"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -3374,12 +3397,12 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>&amp;מצב</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+20"/>
         <source>&amp;Edit</source>
         <translation>&amp;עריכה</translation>
     </message>
     <message>
-        <location line="-12"/>
+        <location line="-27"/>
         <source>Close document</source>
         <translation>סגירת מסמך</translation>
     </message>
@@ -3409,7 +3432,17 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>שמירת עותק כקובץ PDF,‏ PNG או JPEG</translation>
     </message>
     <message>
-        <location line="+46"/>
+        <location line="+28"/>
+        <source>Double board</source>
+        <translation>לוח כפול</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Two documents side by side: click a side to work on it</source>
+        <translation>שני מסמכים זה לצד זה: לחצו על צד כדי לעבוד בו</translation>
+    </message>
+    <message>
+        <location line="+31"/>
         <source>Full screen</source>
         <translation>מסך מלא</translation>
     </message>
@@ -3609,6 +3642,14 @@ Do you want to ignore these errors for this host?</source>
     <message>
         <source>Cancel</source>
         <translation type="obsolete">בטל</translation>
+    </message>
+</context>
+<context>
+    <name>UBOtherBoardView</name>
+    <message>
+        <location filename="../../src/board/UBDualBoard.cpp" line="-214"/>
+        <source>Click to work on this side</source>
+        <translation>לחצו כדי לעבוד בצד הזה</translation>
     </message>
 </context>
 <context>
