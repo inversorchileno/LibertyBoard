@@ -137,7 +137,7 @@ void UBMainMenu::createMenus()
     mMainWindow->addAction(saveAction);
     connect(saveAction, &QAction::triggered, mDocumentTabs, &UBDocumentTabs::saveCurrent);
 
-    auto saveAsAction = new QAction(tr("Save as..."), mMainWindow);
+    auto saveAsAction = new QAction(QIcon(":/images/toolbar/saveAs.svg"), tr("Save as..."), mMainWindow);
     saveAsAction->setShortcut(QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_S));
     saveAsAction->setToolTip(tr("Save a copy as a PDF, PNG or JPEG file"));
     mMainWindow->addAction(saveAsAction);
@@ -167,7 +167,7 @@ void UBMainMenu::createMenus()
 
     // Two documents side by side on the board.
     auto dualBoard = new UBDualBoard(mDocumentTabs, this);
-    auto dualBoardAction = new QAction(tr("Double board"), mMainWindow);
+    auto dualBoardAction = new QAction(QIcon(":/images/toolbar/dualBoard.svg"), tr("Double board"), mMainWindow);
     dualBoardAction->setCheckable(true);
     dualBoardAction->setToolTip(tr("Two documents side by side: click a side to work on it"));
     connect(dualBoardAction, &QAction::toggled, this, [dualBoard](bool enabled) {
@@ -200,7 +200,7 @@ void UBMainMenu::createMenus()
     editMenu->addSeparator();
 
     // The whole screen for the board: no menu and no taskbar of the system.
-    mFullScreenAction = new QAction(tr("Full screen"), mMainWindow);
+    mFullScreenAction = new QAction(QIcon(":/images/toolbar/fullScreen.svg"), tr("Full screen"), mMainWindow);
     mFullScreenAction->setCheckable(true);
     mFullScreenAction->setShortcut(QKeySequence(Qt::Key_F11));
     mMainWindow->addAction(mFullScreenAction);
@@ -212,7 +212,7 @@ void UBMainMenu::createMenus()
     aboutMenu->addAction(mMainWindow->actionHintsAndTips);
     aboutMenu->addSeparator();
 
-    auto gitHubAction = new QAction(tr("LibertyBoard on GitHub"), mMainWindow);
+    auto gitHubAction = new QAction(QIcon(":/images/toolbar/github.svg"), tr("LibertyBoard on GitHub"), mMainWindow);
     connect(gitHubAction, &QAction::triggered, this, []() {
         QDesktopServices::openUrl(QUrl("https://github.com/noteimportaaaa/LibertyBoard"));
     });
