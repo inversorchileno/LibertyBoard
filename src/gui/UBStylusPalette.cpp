@@ -53,7 +53,7 @@ UBStylusPalette::UBStylusPalette(QWidget *parent, Qt::Orientation orient)
     QList<QAction*> actions;
 
     // The order of the desktop palette, with the line among the shapes and
-    // the hand at the end. Zooming is done in the zoom box. The tool that
+    // the hand just above the note. Zooming is done in the zoom box. The tool that
     // interacts with the items is left out: the selector does the same.
     actions << UBApplication::mainWindow->actionPen;
     actions << UBApplication::mainWindow->actionEraser;
@@ -61,6 +61,7 @@ UBStylusPalette::UBStylusPalette(QWidget *parent, Qt::Orientation orient)
     actions << UBApplication::mainWindow->actionPointer;
     actions << UBApplication::mainWindow->actionHighlight;
     actions << UBApplication::mainWindow->actionSelector;
+    actions << UBApplication::mainWindow->actionHand;
     actions << UBApplication::mainWindow->actionNote;
     actions << UBApplication::mainWindow->actionStamp;
     // Only on the board: they put files and sounds in the document.
@@ -73,7 +74,6 @@ UBStylusPalette::UBStylusPalette(QWidget *parent, Qt::Orientation orient)
     actions << UBApplication::mainWindow->actionArrowShape;
     actions << UBApplication::mainWindow->actionRectangle;
     actions << UBApplication::mainWindow->actionEllipse;
-    actions << UBApplication::mainWindow->actionHand;
 
     // Saves the board as it is seen, without the palettes, in one click.
     mScreenshotAction = new QAction(QIcon(":/images/stylusPalette/screenshot.svg"), tr("Save a screenshot"), this);
