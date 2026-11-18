@@ -556,12 +556,12 @@ Do you wish to override the security check and continue ?   </source>
     </message>
     <message>
         <location line="+12"/>
-        <location line="+537"/>
+        <location line="+601"/>
         <source>Erase Annotations</source>
         <translation>Σβήσιμο σχολίων</translation>
     </message>
     <message>
-        <location line="-525"/>
+        <location line="-589"/>
         <source>Clear Page</source>
         <translation>Καθαρισμός σελίδας</translation>
     </message>
@@ -636,6 +636,46 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Προσθήκη σημειώσεων</translation>
     </message>
     <message>
+        <location line="+13"/>
+        <source>Stamp</source>
+        <translation>Σφραγίδα</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Put a stamp on the page</source>
+        <translation>Τοποθέτηση σφραγίδας στη σελίδα</translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <source>Quick note</source>
+        <translation>Γρήγορη σημείωση</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Add a quick note</source>
+        <translation>Προσθήκη γρήγορης σημείωσης</translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <source>Attach file</source>
+        <translation>Επισύναψη αρχείου</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Attach a file to the page</source>
+        <translation>Επισύναψη αρχείου στη σελίδα</translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <source>Sound</source>
+        <translation>Ήχος</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Add a sound to the page</source>
+        <translation>Προσθήκη ήχου στη σελίδα</translation>
+    </message>
+    <message>
         <location line="+270"/>
         <source>Check Update</source>
         <translation>Έλεγχος για ενημερώσεις</translation>
@@ -656,7 +696,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-1642"/>
+        <location line="-1706"/>
         <location line="+18"/>
         <location line="+15"/>
         <location line="+987"/>
@@ -937,7 +977,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Ctrl+J</translation>
     </message>
     <message>
-        <location line="+109"/>
+        <location line="+173"/>
         <source>Text</source>
         <translation>Κείμενο</translation>
     </message>
@@ -1113,7 +1153,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Εμφάνιση στην Οθόνη</translation>
     </message>
     <message>
-        <location line="-1868"/>
+        <location line="-1932"/>
         <location line="+686"/>
         <location line="+3"/>
         <source>LibertyBoard</source>
@@ -1125,7 +1165,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Εξοδος από το LibertyBoard</translation>
     </message>
     <message>
-        <location line="+1537"/>
+        <location line="+1601"/>
         <source>Hide LibertyBoard</source>
         <translation>Απόκρυψη του LibertyBoard</translation>
     </message>
@@ -1150,7 +1190,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Αφαίρεση παρασκηνίου</translation>
     </message>
     <message>
-        <location line="-745"/>
+        <location line="-809"/>
         <location line="+6"/>
         <source>Ruled Light Background</source>
         <translation>Γραμμές σε ανοιχτόχρωμο παρασκήνιο</translation>
@@ -1167,7 +1207,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Επιλέξτε και τροποποιήστε αντικείμενα</translation>
     </message>
     <message>
-        <location line="+480"/>
+        <location line="+544"/>
         <source>Interact with items</source>
         <translation>Αλληλεπιδράστε με στοιχεία</translation>
     </message>
@@ -1188,7 +1228,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Επαναφορά μεγέθους πλέγματος</translation>
     </message>
     <message>
-        <location line="-1574"/>
+        <location line="-1638"/>
         <source>Small Eraser</source>
         <translation>Μικρή γόμα</translation>
     </message>
@@ -1223,7 +1263,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Χρώμα 5</translation>
     </message>
     <message>
-        <location line="+1467"/>
+        <location line="+1531"/>
         <location line="+3"/>
         <source>Draw intermediate grid lines</source>
         <translation>Σχεδίαση ενδιάμεσων γραμμών πλέγματος</translation>
@@ -1237,7 +1277,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Λήψη στιγμιότυπου διαδικτυακού περιεχομένου</translation>
     </message>
     <message>
-        <location line="-1534"/>
+        <location line="-1598"/>
         <source>Documents Mode</source>
         <translation>Λειτουργία εγγράφων</translation>
     </message>
@@ -1304,7 +1344,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Γραμμές Seyes σε σκουρόχρωμο παρασκήνιο</translation>
     </message>
     <message>
-        <location line="+461"/>
+        <location line="+525"/>
         <source>Import one or more pages (supported formats : jpg, png, svg, ubz, pdf)</source>
         <translation>Εισαγωγή μιας ή περισσότερων σελίδων (υποστηριζόμενες μορφές : jpg, png, svg, ubz, pdf)</translation>
     </message>
@@ -1380,7 +1420,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="vanished">Θέλετε σίγουρα να αφαιρέσετε μια σελίδα από το επιλεγμένο έγγραφο &apos;%0&apos;;</translation>
     </message>
     <message>
-        <location filename="../../src/adaptors/UBSvgSubsetAdaptor.cpp" line="+248"/>
+        <location filename="../../src/adaptors/UBSvgSubsetAdaptor.cpp" line="+251"/>
         <source>Loading scene (%1/%2)</source>
         <translation>Φόρτωση σκηνής (%1/%2)</translation>
     </message>
@@ -1397,6 +1437,44 @@ Do you wish to override the security check and continue ?   </source>
         <location filename="../../src/core/UBShortcutManager.cpp" line="+46"/>
         <source>Common</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/board/UBComments.cpp" line="+153"/>
+        <location line="+72"/>
+        <location line="+53"/>
+        <source>Quick notes</source>
+        <translation>Γρήγορες σημειώσεις</translation>
+    </message>
+    <message>
+        <location line="-125"/>
+        <location line="+125"/>
+        <source>The document has no quick notes.</source>
+        <translation>Το έγγραφο δεν έχει γρήγορες σημειώσεις.</translation>
+    </message>
+    <message>
+        <location line="-49"/>
+        <source>Page</source>
+        <translation>Σελίδα</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Date</source>
+        <translation>Ημερομηνία</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Text</source>
+        <translation>Κείμενο</translation>
+    </message>
+    <message>
+        <location line="+53"/>
+        <source>Merge quick notes</source>
+        <translation>Συγχώνευση γρήγορων σημειώσεων</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Each quick note becomes a picture of the note on its page, with its date and text. The notes can no longer be edited. Merge the %1 quick notes?</source>
+        <translation>Κάθε γρήγορη σημείωση γίνεται εικόνα της σημείωσης στη σελίδα της, με ημερομηνία και κείμενο. Οι σημειώσεις δεν θα μπορούν πλέον να επεξεργαστούν. Συγχώνευση των %1 γρήγορων σημειώσεων;</translation>
     </message>
 </context>
 <context>
@@ -1448,9 +1526,9 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="vanished">Βίντεο</translation>
     </message>
     <message>
-        <location filename="../../src/core/UBApplication.cpp" line="+380"/>
-        <location line="+49"/>
-        <location line="+214"/>
+        <location filename="../../src/core/UBApplication.cpp" line="+384"/>
+        <location line="+47"/>
+        <location line="+221"/>
         <source>Cannot open your UBX file directly. Please import it in Documents mode instead</source>
         <translation>Δεν είναι δυνατό το απευθείας άνοιγμα του αρχείου UBX σας. Παρακαλώ εισάγετέ το στη λειτουργία Εγγράφων</translation>
     </message>
@@ -1519,7 +1597,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Αγνωστο είδος περιεχομενου %1</translation>
     </message>
     <message>
-        <location line="+1137"/>
+        <location line="+1154"/>
         <source>Add Item</source>
         <translation>Προσθήκη αντικειμένου</translation>
     </message>
@@ -1529,20 +1607,20 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Ολα τα υποστηριζόμενα (%1)</translation>
     </message>
     <message>
-        <location line="-1886"/>
+        <location line="-1903"/>
         <source>Page %1 deleted</source>
         <translation>Η σελίδα %1 διαγράφηκε</translation>
     </message>
     <message>
         <location line="+506"/>
         <location line="+45"/>
-        <location line="+925"/>
+        <location line="+942"/>
         <location line="+36"/>
         <source>Add file operation failed: file copying error</source>
         <translation>Η προσθήκη λειτουργίας στο αρχείο απέτυχε: σφάλμα αντιγραφής αρχείου</translation>
     </message>
     <message>
-        <location line="-2335"/>
+        <location line="-2352"/>
         <source>Group</source>
         <translation>Ομαδοποίηση</translation>
     </message>
@@ -1585,7 +1663,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBoardPaletteManager</name>
     <message>
-        <location filename="../../src/board/UBBoardPaletteManager.cpp" line="+938"/>
+        <location filename="../../src/board/UBBoardPaletteManager.cpp" line="+942"/>
         <source>Error Adding Image to Library</source>
         <translation>Σφάλμα κατά την προσθήκη εικόνας στη βιβλιοθήκη</translation>
     </message>
@@ -1598,7 +1676,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBoardSaver</name>
     <message>
-        <location filename="../../src/board/UBBoardSaver.cpp" line="+78"/>
+        <location filename="../../src/board/UBBoardSaver.cpp" line="+130"/>
         <source>PDF with annotations (*.pdf)</source>
         <translation>PDF με σχόλια (*.pdf)</translation>
     </message>
@@ -1613,41 +1691,41 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Εικόνα JPEG της τρέχουσας σελίδας (*.jpg *.jpeg)</translation>
     </message>
     <message>
-        <location line="+18"/>
-        <location line="+32"/>
+        <location line="+39"/>
+        <source>Save as</source>
+        <translation>Αποθήκευση ως</translation>
+    </message>
+    <message>
+        <location line="+17"/>
         <source>Save</source>
         <translation>Αποθήκευση</translation>
     </message>
     <message>
-        <location line="-4"/>
         <source>Saved to %1</source>
-        <translation>Αποθηκεύτηκε στο %1</translation>
+        <translation type="vanished">Αποθηκεύτηκε στο %1</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+0"/>
         <source>The file could not be saved. Check that the folder can be written.</source>
         <translation>Δεν ήταν δυνατή η αποθήκευση του αρχείου. Ελέγξτε ότι ο φάκελος επιτρέπει εγγραφή.</translation>
     </message>
     <message>
-        <location line="+21"/>
         <source>Save the changes to the PDF before closing?</source>
-        <translation>Αποθήκευση των αλλαγών στο PDF πριν το κλείσιμο;</translation>
+        <translation type="vanished">Αποθήκευση των αλλαγών στο PDF πριν το κλείσιμο;</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Save the board as a picture before closing?</source>
-        <translation>Αποθήκευση του πίνακα ως εικόνα πριν το κλείσιμο;</translation>
+        <translation type="vanished">Αποθήκευση του πίνακα ως εικόνα πριν το κλείσιμο;</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Close document</source>
-        <translation>Κλείσιμο εγγράφου</translation>
+        <translation type="vanished">Κλείσιμο εγγράφου</translation>
     </message>
 </context>
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+1914"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+1918"/>
         <source>Is it for Board or Widget ?</source>
         <translation>Είναι για Πίνακα ή Γραφικό στοιχείο ;</translation>
     </message>
@@ -1698,33 +1776,86 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Άλλο χρώμα</translation>
     </message>
     <message>
-        <location line="+53"/>
+        <location line="+86"/>
         <source>Choose a color</source>
         <translation>Επιλέξτε χρώμα</translation>
     </message>
 </context>
 <context>
-    <name>UBDesktopAnnotationController</name>
+    <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/desktop/UBDesktopAnnotationController.cpp" line="+403"/>
-        <source>Screenshot</source>
-        <translation>Στιγμιότυπο οθόνης</translation>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+859"/>
+        <source>Quick note</source>
+        <translation>Γρήγορη σημείωση</translation>
     </message>
     <message>
-        <location line="+4"/>
-        <source>Screenshot saved in %1</source>
-        <translation>Το στιγμιότυπο οθόνης αποθηκεύτηκε στο %1</translation>
+        <location line="+43"/>
+        <source>Previous</source>
+        <translation>Προηγούμενο</translation>
     </message>
     <message>
         <location line="+1"/>
+        <source>Next</source>
+        <translation>Επόμενο</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>List of notes</source>
+        <translation>Λίστα σχολίων</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Show</source>
+        <translation>Εμφάνιση</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Show or hide the quick notes of the pages</source>
+        <translation>Εμφάνιση ή απόκρυψη των γρήγορων σημειώσεων των σελίδων</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Merge notes</source>
+        <translation>Συγχώνευση σχολίων</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Put the quick notes into the pages, as pictures</source>
+        <translation>Τοποθέτηση των γρήγορων σημειώσεων στις σελίδες ως εικόνες</translation>
+    </message>
+</context>
+<context>
+    <name>UBCommentPopup</name>
+    <message>
+        <location filename="../../src/gui/UBCommentPopup.cpp" line="+91"/>
+        <source>Quick note</source>
+        <translation>Γρήγορη σημείωση</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Close</source>
+        <translation>Κλείσιμο</translation>
+    </message>
+</context>
+<context>
+    <name>UBDesktopAnnotationController</name>
+    <message>
+        <source>Screenshot</source>
+        <translation type="vanished">Στιγμιότυπο οθόνης</translation>
+    </message>
+    <message>
+        <source>Screenshot saved in %1</source>
+        <translation type="vanished">Το στιγμιότυπο οθόνης αποθηκεύτηκε στο %1</translation>
+    </message>
+    <message>
         <source>The screenshot could not be saved.</source>
-        <translation>Δεν ήταν δυνατή η αποθήκευση του στιγμιότυπου οθόνης.</translation>
+        <translation type="vanished">Δεν ήταν δυνατή η αποθήκευση του στιγμιότυπου οθόνης.</translation>
     </message>
 </context>
 <context>
     <name>UBDesktopPalette</name>
     <message>
-        <location filename="../../src/desktop/UBDesktopPalette.cpp" line="+70"/>
+        <location filename="../../src/desktop/UBDesktopPalette.cpp" line="+74"/>
         <source>Save a screenshot</source>
         <translation>Αποθήκευση στιγμιότυπου οθόνης</translation>
     </message>
@@ -2153,9 +2284,42 @@ Providing a new name will create a new document.</source>
     </message>
 </context>
 <context>
+    <name>UBDocumentTabs</name>
+    <message>
+        <location filename="../../src/gui/UBDocumentTabs.cpp" line="+64"/>
+        <source>New document</source>
+        <translation>Νέο έγγραφο</translation>
+    </message>
+    <message>
+        <location line="+55"/>
+        <source>Save</source>
+        <translation>Αποθήκευση</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>%1 could not be saved. Check that it is not open in another program.</source>
+        <translation>Δεν ήταν δυνατή η αποθήκευση του %1. Ελέγξτε ότι δεν είναι ανοιχτό σε άλλο πρόγραμμα.</translation>
+    </message>
+    <message>
+        <location line="+178"/>
+        <source>Save the changes to the PDF before closing?</source>
+        <translation>Αποθήκευση των αλλαγών στο PDF πριν το κλείσιμο;</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Save the board as a picture before closing?</source>
+        <translation>Αποθήκευση του πίνακα ως εικόνα πριν το κλείσιμο;</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Close document</source>
+        <translation>Κλείσιμο εγγράφου</translation>
+    </message>
+</context>
+<context>
     <name>UBDocumentTreeModel</name>
     <message>
-        <location line="+259"/>
+        <location filename="../../src/document/UBDocumentController.cpp" line="+259"/>
         <source>Trash</source>
         <translation>Κάδος απορριμμάτων</translation>
     </message>
@@ -2289,7 +2453,7 @@ Do you want to continue?</source>
 <context>
     <name>UBEraserOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+255"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-628"/>
         <source>Eraser</source>
         <translation>Γόμα</translation>
     </message>
@@ -2441,12 +2605,12 @@ Do you want to continue?</source>
 <context>
     <name>UBExportFullPDF</name>
     <message>
-        <location filename="../../src/adaptors/UBExportFullPDF.cpp" line="+185"/>
+        <location filename="../../src/adaptors/UBExportFullPDF.cpp" line="+201"/>
         <source>Export as PDF File</source>
         <translation>Εξαγωγή ως αρχείο PDF</translation>
     </message>
     <message>
-        <location line="+178"/>
+        <location line="+182"/>
         <source>Export to PDF</source>
         <translation>Εξαγωγή σε PDF</translation>
     </message>
@@ -2725,6 +2889,19 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     </message>
 </context>
 <context>
+    <name>UBGraphicsAttachmentItem</name>
+    <message>
+        <location filename="../../src/domain/UBGraphicsAttachmentItem.cpp" line="+54"/>
+        <source>Attached file</source>
+        <translation>Συνημμένο αρχείο</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>%1 could not be opened.</source>
+        <translation>Δεν ήταν δυνατό το άνοιγμα του %1.</translation>
+    </message>
+</context>
+<context>
     <name>UBGraphicsGroupContainerItemDelegate</name>
     <message>
         <location filename="../../src/domain/UBGraphicsGroupContainerItemDelegate.cpp" line="+57"/>
@@ -2810,6 +2987,19 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     </message>
 </context>
 <context>
+    <name>UBGraphicsPageMarkItem</name>
+    <message>
+        <location filename="../../src/domain/UBGraphicsPageMarkItem.cpp" line="+161"/>
+        <source>Delete</source>
+        <translation>Διαγραφή</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Delete this icon from the page?</source>
+        <translation>Διαγραφή αυτού του εικονιδίου από τη σελίδα;</translation>
+    </message>
+</context>
+<context>
     <name>UBGraphicsProtractor</name>
     <message>
         <location filename="../../src/tools/UBGraphicsProtractor.cpp" line="+535"/>
@@ -2824,6 +3014,38 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <location line="+4"/>
         <source>use arrow keys for precise moves</source>
         <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UBGraphicsScene</name>
+    <message>
+        <location filename="../../src/domain/UBGraphicsScene.cpp" line="+1027"/>
+        <location line="+11"/>
+        <source>Attach a file</source>
+        <translation>Επισύναψη αρχείου</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>The file could not be copied into the document.</source>
+        <translation>Δεν ήταν δυνατή η αντιγραφή του αρχείου στο έγγραφο.</translation>
+    </message>
+    <message>
+        <location line="+19"/>
+        <source>Sound</source>
+        <translation>Ήχος</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>The sound could not be copied into the document.</source>
+        <translation>Δεν ήταν δυνατή η αντιγραφή του ήχου στο έγγραφο.</translation>
+    </message>
+</context>
+<context>
+    <name>UBGraphicsSoundItem</name>
+    <message>
+        <location filename="../../src/domain/UBGraphicsSoundItem.cpp" line="+56"/>
+        <source>Sound: click to play or stop</source>
+        <translation>Ήχος: κάντε κλικ για αναπαραγωγή ή διακοπή</translation>
     </message>
 </context>
 <context>
@@ -3074,118 +3296,100 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
 <context>
     <name>UBLaserPreferencesPage</name>
     <message>
-        <location filename="../../src/gui/UBLaserPreferencesPage.cpp" line="+45"/>
         <source>Red</source>
-        <translation>Κόκκινο</translation>
+        <translation type="vanished">Κόκκινο</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Orange</source>
-        <translation>Πορτοκαλί</translation>
+        <translation type="vanished">Πορτοκαλί</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Magenta</source>
-        <translation>Ματζέντα</translation>
+        <translation type="vanished">Ματζέντα</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Green</source>
-        <translation>Πράσινο</translation>
+        <translation type="vanished">Πράσινο</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Blue</source>
-        <translation>Μπλε</translation>
+        <translation type="vanished">Μπλε</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Purple</source>
-        <translation>Μωβ</translation>
+        <translation type="vanished">Μωβ</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Black</source>
-        <translation>Μαύρο</translation>
+        <translation type="vanished">Μαύρο</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Dark green</source>
-        <translation>Σκούρο πράσινο</translation>
+        <translation type="vanished">Σκούρο πράσινο</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Yellow</source>
-        <translation>Κίτρινο</translation>
+        <translation type="vanished">Κίτρινο</translation>
     </message>
     <message>
-        <location line="+12"/>
         <source> px</source>
-        <translation> px</translation>
+        <translation type="vanished"> px</translation>
     </message>
     <message>
-        <location line="+6"/>
-        <location line="+6"/>
         <source> s</source>
-        <translation> s</translation>
+        <translation type="vanished"> s</translation>
     </message>
     <message>
-        <location line="+4"/>
         <source>Color</source>
-        <translation>Χρώμα</translation>
+        <translation type="vanished">Χρώμα</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Width</source>
-        <translation>Πάχος</translation>
+        <translation type="vanished">Πάχος</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Wait before fading</source>
-        <translation>Αναμονή πριν την εξασθένιση</translation>
+        <translation type="vanished">Αναμονή πριν την εξασθένιση</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Fading duration</source>
-        <translation>Διάρκεια εξασθένισης</translation>
+        <translation type="vanished">Διάρκεια εξασθένισης</translation>
     </message>
 </context>
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+68"/>
-        <location line="+79"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+75"/>
+        <location line="+94"/>
         <source>Page Size</source>
         <translation>Μέγεθος σελίδας</translation>
     </message>
     <message>
-        <location line="-55"/>
-        <location line="+34"/>
+        <location line="-70"/>
+        <location line="+49"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
     </message>
     <message>
-        <location line="-17"/>
+        <location line="-33"/>
         <source>&amp;Home</source>
         <translation>&amp;Αρχική</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Save...</source>
-        <translation>Αποθήκευση...</translation>
+        <translation type="vanished">Αποθήκευση...</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Save as a PDF with the annotations, or the page as a PNG or JPEG picture</source>
-        <translation>Αποθήκευση ως PDF με τα σχόλια ή της σελίδας ως εικόνα PNG ή JPEG</translation>
+        <translation type="vanished">Αποθήκευση ως PDF με τα σχόλια ή της σελίδας ως εικόνα PNG ή JPEG</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+7"/>
         <source>Open/Import</source>
         <translation>Άνοιγμα/Εισαγωγή</translation>
     </message>
     <message>
-        <location line="+19"/>
+        <location line="+36"/>
         <source>&amp;Mode</source>
         <translation>&amp;Λειτουργία</translation>
     </message>
@@ -3200,7 +3404,27 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>Κλείσιμο εγγράφου</translation>
     </message>
     <message>
-        <location line="+28"/>
+        <location line="-24"/>
+        <source>Save</source>
+        <translation>Αποθήκευση</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Save the annotations in the PDF, or the page as a picture</source>
+        <translation>Αποθήκευση των σημειώσεων στο PDF, ή της σελίδας ως εικόνα</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Save as...</source>
+        <translation>Αποθήκευση ως...</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Save a copy as a PDF, PNG or JPEG file</source>
+        <translation>Αποθήκευση αντιγράφου ως αρχείο PDF, PNG ή JPEG</translation>
+    </message>
+    <message>
+        <location line="+44"/>
         <source>&amp;About</source>
         <translation>&amp;Σχετικά</translation>
     </message>
@@ -3220,9 +3444,30 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>Λήψη και εγκατάσταση της τελευταίας έκδοσης από το GitHub</translation>
     </message>
     <message>
-        <location line="+64"/>
+        <location line="+60"/>
+        <location line="+92"/>
+        <source>Saved</source>
+        <translation>Αποθηκεύτηκε</translation>
+    </message>
+    <message>
+        <location line="-86"/>
+        <source>Search...</source>
+        <translation>Αναζήτηση...</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Find words in the PDF</source>
+        <translation>Αναζήτηση λέξεων στο PDF</translation>
+    </message>
+    <message>
+        <location line="+21"/>
         <source>Hide or show the toolbar</source>
         <translation>Απόκρυψη ή εμφάνιση της γραμμής εργαλείων</translation>
+    </message>
+    <message>
+        <location line="+43"/>
+        <source>Open</source>
+        <translation>Άνοιγμα</translation>
     </message>
 </context>
 <context>
@@ -3355,7 +3600,7 @@ Do you want to ignore these errors for this host?</source>
 <context>
     <name>UBNoteOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+394"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+585"/>
         <source>Note</source>
         <translation>Σημείωση</translation>
     </message>
@@ -3395,9 +3640,24 @@ Do you want to ignore these errors for this host?</source>
 <context>
     <name>UBPageIndicator</name>
     <message>
-        <location filename="../../src/gui/UBPageIndicator.cpp" line="+45"/>
+        <location filename="../../src/gui/UBPageIndicator.cpp" line="+49"/>
         <source>Type a page number and press Enter</source>
         <translation>Πληκτρολογήστε αριθμό σελίδας και πατήστε Enter</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Rotate the page to the left</source>
+        <translation>Περιστροφή σελίδας αριστερά</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Rotate the page to the right</source>
+        <translation>Περιστροφή σελίδας δεξιά</translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>Rotate</source>
+        <translation>Περιστροφή</translation>
     </message>
 </context>
 <context>
@@ -3411,7 +3671,7 @@ Do you want to ignore these errors for this host?</source>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-524"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-715"/>
         <source>Pen</source>
         <translation>Πένα</translation>
     </message>
@@ -3604,7 +3864,7 @@ Dynamic width</source>
 <context>
     <name>UBPreferencesController</name>
     <message>
-        <location filename="../../src/core/UBPreferencesController.cpp" line="+127"/>
+        <location filename="../../src/core/UBPreferencesController.cpp" line="+128"/>
         <source>Language</source>
         <translation>Γλώσσα</translation>
     </message>
@@ -3619,7 +3879,17 @@ Dynamic width</source>
         <translation>Η νέα γλώσσα θα χρησιμοποιηθεί την επόμενη φορά που θα ξεκινήσει το LibertyBoard.</translation>
     </message>
     <message>
-        <location line="+65"/>
+        <location line="+19"/>
+        <source>General</source>
+        <translation>Γενικά</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Pressure of the pen</source>
+        <translation>Πίεση γραφίδας</translation>
+    </message>
+    <message>
+        <location line="+67"/>
         <source>version: </source>
         <translation>έκδοση: </translation>
     </message>
@@ -3634,14 +3904,74 @@ Dynamic width</source>
         <translation>Ο μαρκαδόρος είναι ευαίσθητος στην πίεση</translation>
     </message>
     <message>
-        <location line="+13"/>
         <source>Laser pointer</source>
-        <translation>Δείκτης λέιζερ</translation>
+        <translation type="vanished">Δείκτης λέιζερ</translation>
     </message>
     <message>
-        <location line="-185"/>
+        <location line="-172"/>
         <source>Use all available displays</source>
         <translation>Χρήση όλων των διαθέσιμων οθονών</translation>
+    </message>
+</context>
+<context>
+    <name>UBScreenshot</name>
+    <message>
+        <location filename="../../src/gui/UBScreenshot.cpp" line="+35"/>
+        <source>Screenshot</source>
+        <translation>Στιγμιότυπο οθόνης</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Screenshot saved in %1</source>
+        <translation>Το στιγμιότυπο αποθηκεύτηκε στο %1</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>The screenshot could not be saved.</source>
+        <translation>Δεν ήταν δυνατή η αποθήκευση του στιγμιότυπου.</translation>
+    </message>
+</context>
+<context>
+    <name>UBSearchBar</name>
+    <message>
+        <location filename="../../src/gui/UBSearchBar.cpp" line="+59"/>
+        <source>Search...</source>
+        <translation>Αναζήτηση...</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Previous result</source>
+        <translation>Προηγούμενο αποτέλεσμα</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Next result</source>
+        <translation>Επόμενο αποτέλεσμα</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Close</source>
+        <translation>Κλείσιμο</translation>
+    </message>
+    <message>
+        <location line="+34"/>
+        <source>Search</source>
+        <translation>Αναζήτηση</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>The search only works in a PDF with text.</source>
+        <translation>Η αναζήτηση λειτουργεί μόνο σε PDF με κείμενο.</translation>
+    </message>
+    <message>
+        <location line="+207"/>
+        <source>Not found</source>
+        <translation>Δεν βρέθηκε</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>%1 of %2</source>
+        <translation>%1 από %2</translation>
     </message>
 </context>
 <context>
@@ -3745,7 +4075,7 @@ Dynamic width</source>
     </message>
     <message>
         <location line="+15"/>
-        <location line="+25"/>
+        <location line="+29"/>
         <location line="+3"/>
         <source>Stylus Palette</source>
         <translation type="unfinished">Παλέτα εργαλείων</translation>
@@ -3929,11 +4259,110 @@ Dynamic width</source>
     </message>
 </context>
 <context>
+    <name>UBSoundDialog</name>
+    <message>
+        <location filename="../../src/gui/UBSoundDialog.cpp" line="+51"/>
+        <source>Sound</source>
+        <translation>Ήχος</translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>Record a sound or choose an audio file.</source>
+        <translation>Ηχογραφήστε έναν ήχο ή επιλέξτε ένα αρχείο ήχου.</translation>
+    </message>
+    <message>
+        <location line="+12"/>
+        <source>Play</source>
+        <translation>Αναπαραγωγή</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Stop</source>
+        <translation>Διακοπή</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Record with the microphone</source>
+        <translation>Ηχογράφηση με το μικρόφωνο</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Browse...</source>
+        <translation>Αναζήτηση...</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Volume</source>
+        <translation>Ένταση</translation>
+    </message>
+    <message>
+        <location line="+106"/>
+        <source>Recording... %1 s</source>
+        <translation>Ηχογράφηση... %1 δ</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>The microphone could not be used: %1</source>
+        <translation>Δεν ήταν δυνατή η χρήση του μικροφώνου: %1</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Recording</source>
+        <translation>Ηχογράφηση</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Recording... press Stop to end.</source>
+        <translation>Ηχογράφηση... πατήστε Διακοπή για τέλος.</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Choose an audio file</source>
+        <translation>Επιλογή αρχείου ήχου</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Audio files (*.mp3 *.wav *.m4a *.aac *.ogg *.wma *.flac);;All files (*)</source>
+        <translation>Αρχεία ήχου (*.mp3 *.wav *.m4a *.aac *.ogg *.wma *.flac);;Όλα τα αρχεία (*)</translation>
+    </message>
+</context>
+<context>
+    <name>UBStampOptionsPanel</name>
+    <message>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+187"/>
+        <source>Stamp</source>
+        <translation>Σφραγίδα</translation>
+    </message>
+    <message>
+        <location line="+78"/>
+        <source>Picture of the custom stamp</source>
+        <translation>Εικόνα της προσαρμοσμένης σφραγίδας</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>PNG pictures (*.png)</source>
+        <translation>Εικόνες PNG (*.png)</translation>
+    </message>
+</context>
+<context>
     <name>UBStartupHintsPalette</name>
     <message>
         <location filename="../../src/gui/UBStartupHintsPalette.cpp" line="+67"/>
         <source>Visible next time</source>
         <translation>Εμφάνιση την επόμενη φορά</translation>
+    </message>
+</context>
+<context>
+    <name>UBStylusPalette</name>
+    <message>
+        <location filename="../../src/gui/UBStylusPalette.cpp" line="+79"/>
+        <source>Save a screenshot</source>
+        <translation>Αποθήκευση στιγμιότυπου οθόνης</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Save a screenshot of the board in the Pictures folder</source>
+        <translation>Αποθήκευση στιγμιότυπου του πίνακα στον φάκελο Εικόνες</translation>
     </message>
 </context>
 <context>
@@ -3946,7 +4375,7 @@ Dynamic width</source>
 <context>
     <name>UBTextOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+110"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-157"/>
         <source>Text</source>
         <translation>Κείμενο</translation>
     </message>
@@ -4017,6 +4446,14 @@ Dynamic width</source>
         <location filename="../../src/gui/UBToolOptionsBar.cpp" line="+53"/>
         <source>This tool has no options.</source>
         <translation>Αυτό το εργαλείο δεν έχει επιλογές.</translation>
+    </message>
+</context>
+<context>
+    <name>UBToolOptionsPanel</name>
+    <message>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-531"/>
+        <source>Color</source>
+        <translation>Χρώμα</translation>
     </message>
 </context>
 <context>
@@ -4234,7 +4671,7 @@ Please reboot the application to access the updated documents.</source>
 <context>
     <name>UBZLayerController</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsScene.cpp" line="+212"/>
+        <location filename="../../src/domain/UBGraphicsScene.cpp" line="-838"/>
         <source>Bottom layer limit reached</source>
         <translation type="unfinished"></translation>
     </message>

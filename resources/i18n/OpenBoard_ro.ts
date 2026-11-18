@@ -62,7 +62,7 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location filename="../../src/web/simplebrowser/downloadmanagerwidget.cpp" line="+82"/>
         <source>Save as</source>
-        <translation type="unfinished"></translation>
+        <translation>Salvare ca</translation>
     </message>
 </context>
 <context>
@@ -746,12 +746,12 @@ Do you wish to override the security check and continue ?   </source>
     </message>
     <message>
         <location line="+9"/>
-        <location line="+537"/>
+        <location line="+601"/>
         <source>Erase Annotations</source>
         <translation>Ştergere adnotări</translation>
     </message>
     <message>
-        <location line="-534"/>
+        <location line="-598"/>
         <source>Erase All Annotations</source>
         <translation>Ştergere toate adnotările</translation>
     </message>
@@ -836,6 +836,46 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Adaugă note</translation>
     </message>
     <message>
+        <location line="+13"/>
+        <source>Stamp</source>
+        <translation>Ștampilă</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Put a stamp on the page</source>
+        <translation>Puneți o ștampilă pe pagină</translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <source>Quick note</source>
+        <translation>Notă rapidă</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Add a quick note</source>
+        <translation>Adăugați o notă rapidă</translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <source>Attach file</source>
+        <translation>Atașare fișier</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Attach a file to the page</source>
+        <translation>Atașați un fișier la pagină</translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <source>Sound</source>
+        <translation>Sunet</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Add a sound to the page</source>
+        <translation>Adăugați un sunet pe pagină</translation>
+    </message>
+    <message>
         <location line="+399"/>
         <source>Snap to grid</source>
         <translation type="unfinished"></translation>
@@ -850,7 +890,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="vanished">Ctrl+I</translation>
     </message>
     <message>
-        <location line="-619"/>
+        <location line="-683"/>
         <source>Erase Annotation</source>
         <translation>Ştergere adnotare</translation>
     </message>
@@ -925,7 +965,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Ctrl+J</translation>
     </message>
     <message>
-        <location line="+109"/>
+        <location line="+173"/>
         <source>Text</source>
         <translation>Text</translation>
     </message>
@@ -1111,7 +1151,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Ctrl+H</translation>
     </message>
     <message>
-        <location line="-1913"/>
+        <location line="-1977"/>
         <location line="+686"/>
         <location line="+3"/>
         <source>LibertyBoard</source>
@@ -1123,7 +1163,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Ieşire din LibertyBoard</translation>
     </message>
     <message>
-        <location line="+1537"/>
+        <location line="+1601"/>
         <source>Hide LibertyBoard</source>
         <translation>Ascundere LibertyBoard</translation>
     </message>
@@ -1153,7 +1193,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Eliminare fundal</translation>
     </message>
     <message>
-        <location line="-745"/>
+        <location line="-809"/>
         <location line="+6"/>
         <source>Ruled Light Background</source>
         <translation type="unfinished"></translation>
@@ -1165,7 +1205,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+672"/>
+        <location line="+736"/>
         <source>Open Tutorial</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1181,7 +1221,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-1574"/>
+        <location line="-1638"/>
         <source>Small Eraser</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1216,7 +1256,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1467"/>
+        <location line="+1531"/>
         <location line="+3"/>
         <source>Draw intermediate grid lines</source>
         <translation type="unfinished"></translation>
@@ -1230,7 +1270,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-1534"/>
+        <location line="-1598"/>
         <source>Documents Mode</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1302,7 +1342,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+363"/>
+        <location line="+427"/>
         <source>Import one or more pages (supported formats : jpg, png, svg, ubz, pdf)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1378,7 +1418,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="vanished">Sunteți sigur că doriți să eliminați 1 pagină din documentul selectat &apos;%0&apos;?</translation>
     </message>
     <message>
-        <location filename="../../src/adaptors/UBSvgSubsetAdaptor.cpp" line="+248"/>
+        <location filename="../../src/adaptors/UBSvgSubsetAdaptor.cpp" line="+251"/>
         <source>Loading scene (%1/%2)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1391,6 +1431,44 @@ Do you wish to override the security check and continue ?   </source>
         <location filename="../../src/core/UBShortcutManager.cpp" line="+46"/>
         <source>Common</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/board/UBComments.cpp" line="+153"/>
+        <location line="+72"/>
+        <location line="+53"/>
+        <source>Quick notes</source>
+        <translation>Note rapide</translation>
+    </message>
+    <message>
+        <location line="-125"/>
+        <location line="+125"/>
+        <source>The document has no quick notes.</source>
+        <translation>Documentul nu are note rapide.</translation>
+    </message>
+    <message>
+        <location line="-49"/>
+        <source>Page</source>
+        <translation>Pagină</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Date</source>
+        <translation>Dată</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Text</source>
+        <translation>Text</translation>
+    </message>
+    <message>
+        <location line="+53"/>
+        <source>Merge quick notes</source>
+        <translation>Combină notele rapide</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Each quick note becomes a picture of the note on its page, with its date and text. The notes can no longer be edited. Merge the %1 quick notes?</source>
+        <translation>Fiecare notă rapidă devine o imagine a notei pe pagina ei, cu data și textul. Notele nu vor mai putea fi editate. Combinați cele %1 note rapide?</translation>
     </message>
 </context>
 <context>
@@ -1442,9 +1520,9 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="vanished">Podcast</translation>
     </message>
     <message>
-        <location filename="../../src/core/UBApplication.cpp" line="+380"/>
-        <location line="+49"/>
-        <location line="+214"/>
+        <location filename="../../src/core/UBApplication.cpp" line="+384"/>
+        <location line="+47"/>
+        <location line="+221"/>
         <source>Cannot open your UBX file directly. Please import it in Documents mode instead</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1513,7 +1591,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Tip de conţinut necunoscut %1</translation>
     </message>
     <message>
-        <location line="+1137"/>
+        <location line="+1154"/>
         <source>Add Item</source>
         <translation>Adăugare articol</translation>
     </message>
@@ -1523,20 +1601,20 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Tot ce se suportă (%1)</translation>
     </message>
     <message>
-        <location line="-1886"/>
+        <location line="-1903"/>
         <source>Page %1 deleted</source>
         <translation>Pagina %1 ștearsă</translation>
     </message>
     <message>
         <location line="+506"/>
         <location line="+45"/>
-        <location line="+925"/>
+        <location line="+942"/>
         <location line="+36"/>
         <source>Add file operation failed: file copying error</source>
         <translation>Operațiunea de adăugare fișier nu a reușit: eroare copiere fișier</translation>
     </message>
     <message>
-        <location line="-2335"/>
+        <location line="-2352"/>
         <source>Group</source>
         <translation>Grupare</translation>
     </message>
@@ -1579,7 +1657,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBoardPaletteManager</name>
     <message>
-        <location filename="../../src/board/UBBoardPaletteManager.cpp" line="+938"/>
+        <location filename="../../src/board/UBBoardPaletteManager.cpp" line="+942"/>
         <source>Error Adding Image to Library</source>
         <translation>Eroare adăugare imagine la bibliotecă</translation>
     </message>
@@ -1592,7 +1670,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBoardSaver</name>
     <message>
-        <location filename="../../src/board/UBBoardSaver.cpp" line="+78"/>
+        <location filename="../../src/board/UBBoardSaver.cpp" line="+130"/>
         <source>PDF with annotations (*.pdf)</source>
         <translation>PDF cu adnotări (*.pdf)</translation>
     </message>
@@ -1607,41 +1685,41 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Imagine JPEG a paginii curente (*.jpg *.jpeg)</translation>
     </message>
     <message>
-        <location line="+18"/>
-        <location line="+32"/>
+        <location line="+39"/>
+        <source>Save as</source>
+        <translation>Salvare ca</translation>
+    </message>
+    <message>
+        <location line="+17"/>
         <source>Save</source>
         <translation>Salvează</translation>
     </message>
     <message>
-        <location line="-4"/>
         <source>Saved to %1</source>
-        <translation>Salvat în %1</translation>
+        <translation type="vanished">Salvat în %1</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+0"/>
         <source>The file could not be saved. Check that the folder can be written.</source>
         <translation>Fișierul nu a putut fi salvat. Verificați dacă se poate scrie în dosar.</translation>
     </message>
     <message>
-        <location line="+21"/>
         <source>Save the changes to the PDF before closing?</source>
-        <translation>Salvați modificările PDF-ului înainte de închidere?</translation>
+        <translation type="vanished">Salvați modificările PDF-ului înainte de închidere?</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Save the board as a picture before closing?</source>
-        <translation>Salvați tabla ca imagine înainte de închidere?</translation>
+        <translation type="vanished">Salvați tabla ca imagine înainte de închidere?</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Close document</source>
-        <translation>Închide documentul</translation>
+        <translation type="vanished">Închide documentul</translation>
     </message>
 </context>
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+1914"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+1918"/>
         <source>Is it for Board or Widget ?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1692,33 +1770,86 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Altă culoare</translation>
     </message>
     <message>
-        <location line="+53"/>
+        <location line="+86"/>
         <source>Choose a color</source>
         <translation>Alegeți o culoare</translation>
     </message>
 </context>
 <context>
-    <name>UBDesktopAnnotationController</name>
+    <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/desktop/UBDesktopAnnotationController.cpp" line="+403"/>
-        <source>Screenshot</source>
-        <translation>Captură de ecran</translation>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+859"/>
+        <source>Quick note</source>
+        <translation>Notă rapidă</translation>
     </message>
     <message>
-        <location line="+4"/>
-        <source>Screenshot saved in %1</source>
-        <translation>Captura de ecran a fost salvată în %1</translation>
+        <location line="+43"/>
+        <source>Previous</source>
+        <translation>Anterior</translation>
     </message>
     <message>
         <location line="+1"/>
+        <source>Next</source>
+        <translation>Următorul</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>List of notes</source>
+        <translation>Lista comentariilor</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Show</source>
+        <translation>Afișare</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Show or hide the quick notes of the pages</source>
+        <translation>Afișați sau ascundeți notele rapide ale paginilor</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Merge notes</source>
+        <translation>Combină comentariile</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Put the quick notes into the pages, as pictures</source>
+        <translation>Puneți notele rapide în pagini, ca imagini</translation>
+    </message>
+</context>
+<context>
+    <name>UBCommentPopup</name>
+    <message>
+        <location filename="../../src/gui/UBCommentPopup.cpp" line="+91"/>
+        <source>Quick note</source>
+        <translation>Notă rapidă</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Close</source>
+        <translation>Închide</translation>
+    </message>
+</context>
+<context>
+    <name>UBDesktopAnnotationController</name>
+    <message>
+        <source>Screenshot</source>
+        <translation type="vanished">Captură de ecran</translation>
+    </message>
+    <message>
+        <source>Screenshot saved in %1</source>
+        <translation type="vanished">Captura de ecran a fost salvată în %1</translation>
+    </message>
+    <message>
         <source>The screenshot could not be saved.</source>
-        <translation>Captura de ecran nu a putut fi salvată.</translation>
+        <translation type="vanished">Captura de ecran nu a putut fi salvată.</translation>
     </message>
 </context>
 <context>
     <name>UBDesktopPalette</name>
     <message>
-        <location filename="../../src/desktop/UBDesktopPalette.cpp" line="+70"/>
+        <location filename="../../src/desktop/UBDesktopPalette.cpp" line="+74"/>
         <source>Save a screenshot</source>
         <translation>Salvează o captură de ecran</translation>
     </message>
@@ -2133,9 +2264,42 @@ Providing a new name will create a new document.</source>
     </message>
 </context>
 <context>
+    <name>UBDocumentTabs</name>
+    <message>
+        <location filename="../../src/gui/UBDocumentTabs.cpp" line="+64"/>
+        <source>New document</source>
+        <translation>Document nou</translation>
+    </message>
+    <message>
+        <location line="+55"/>
+        <source>Save</source>
+        <translation>Salvare</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>%1 could not be saved. Check that it is not open in another program.</source>
+        <translation>%1 nu a putut fi salvat. Verificați că nu este deschis în alt program.</translation>
+    </message>
+    <message>
+        <location line="+178"/>
+        <source>Save the changes to the PDF before closing?</source>
+        <translation>Salvați modificările în PDF înainte de închidere?</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Save the board as a picture before closing?</source>
+        <translation>Salvați tabla ca imagine înainte de închidere?</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Close document</source>
+        <translation>Închide documentul</translation>
+    </message>
+</context>
+<context>
     <name>UBDocumentTreeModel</name>
     <message>
-        <location line="+259"/>
+        <location filename="../../src/document/UBDocumentController.cpp" line="+259"/>
         <source>Trash</source>
         <translation type="unfinished">Coş de gunoi</translation>
     </message>
@@ -2263,7 +2427,7 @@ Do you want to continue?</source>
 <context>
     <name>UBEraserOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+255"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-628"/>
         <source>Eraser</source>
         <translation>Gumă</translation>
     </message>
@@ -2415,12 +2579,12 @@ Do you want to continue?</source>
 <context>
     <name>UBExportFullPDF</name>
     <message>
-        <location filename="../../src/adaptors/UBExportFullPDF.cpp" line="+185"/>
+        <location filename="../../src/adaptors/UBExportFullPDF.cpp" line="+201"/>
         <source>Export as PDF File</source>
         <translation>Exportare ca fişier PDF</translation>
     </message>
     <message>
-        <location line="+178"/>
+        <location line="+182"/>
         <source>Export to PDF</source>
         <translation>Exportare în PDF</translation>
     </message>
@@ -2699,6 +2863,19 @@ O descărcați și o instalați acum? LibertyBoard vă salvează documentele, se
     </message>
 </context>
 <context>
+    <name>UBGraphicsAttachmentItem</name>
+    <message>
+        <location filename="../../src/domain/UBGraphicsAttachmentItem.cpp" line="+54"/>
+        <source>Attached file</source>
+        <translation>Fișier atașat</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>%1 could not be opened.</source>
+        <translation>%1 nu a putut fi deschis.</translation>
+    </message>
+</context>
+<context>
     <name>UBGraphicsGroupContainerItemDelegate</name>
     <message>
         <location filename="../../src/domain/UBGraphicsGroupContainerItemDelegate.cpp" line="+57"/>
@@ -2784,6 +2961,19 @@ O descărcați și o instalați acum? LibertyBoard vă salvează documentele, se
     </message>
 </context>
 <context>
+    <name>UBGraphicsPageMarkItem</name>
+    <message>
+        <location filename="../../src/domain/UBGraphicsPageMarkItem.cpp" line="+161"/>
+        <source>Delete</source>
+        <translation>Șterge</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Delete this icon from the page?</source>
+        <translation>Ștergeți această pictogramă de pe pagină?</translation>
+    </message>
+</context>
+<context>
     <name>UBGraphicsProtractor</name>
     <message>
         <location filename="../../src/tools/UBGraphicsProtractor.cpp" line="+535"/>
@@ -2798,6 +2988,38 @@ O descărcați și o instalați acum? LibertyBoard vă salvează documentele, se
         <location line="+4"/>
         <source>use arrow keys for precise moves</source>
         <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UBGraphicsScene</name>
+    <message>
+        <location filename="../../src/domain/UBGraphicsScene.cpp" line="+1027"/>
+        <location line="+11"/>
+        <source>Attach a file</source>
+        <translation>Atașați un fișier</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>The file could not be copied into the document.</source>
+        <translation>Fișierul nu a putut fi copiat în document.</translation>
+    </message>
+    <message>
+        <location line="+19"/>
+        <source>Sound</source>
+        <translation>Sunet</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>The sound could not be copied into the document.</source>
+        <translation>Sunetul nu a putut fi copiat în document.</translation>
+    </message>
+</context>
+<context>
+    <name>UBGraphicsSoundItem</name>
+    <message>
+        <location filename="../../src/domain/UBGraphicsSoundItem.cpp" line="+56"/>
+        <source>Sound: click to play or stop</source>
+        <translation>Sunet: clic pentru redare sau oprire</translation>
     </message>
 </context>
 <context>
@@ -3048,118 +3270,100 @@ O descărcați și o instalați acum? LibertyBoard vă salvează documentele, se
 <context>
     <name>UBLaserPreferencesPage</name>
     <message>
-        <location filename="../../src/gui/UBLaserPreferencesPage.cpp" line="+45"/>
         <source>Red</source>
-        <translation>Roșu</translation>
+        <translation type="vanished">Roșu</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Orange</source>
-        <translation>Portocaliu</translation>
+        <translation type="vanished">Portocaliu</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Magenta</source>
-        <translation>Magenta</translation>
+        <translation type="vanished">Magenta</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Green</source>
-        <translation>Verde</translation>
+        <translation type="vanished">Verde</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Blue</source>
-        <translation>Albastru</translation>
+        <translation type="vanished">Albastru</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Purple</source>
-        <translation>Mov</translation>
+        <translation type="vanished">Mov</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Black</source>
-        <translation>Negru</translation>
+        <translation type="vanished">Negru</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Dark green</source>
-        <translation>Verde închis</translation>
+        <translation type="vanished">Verde închis</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Yellow</source>
-        <translation>Galben</translation>
+        <translation type="vanished">Galben</translation>
     </message>
     <message>
-        <location line="+12"/>
         <source> px</source>
-        <translation> px</translation>
+        <translation type="vanished"> px</translation>
     </message>
     <message>
-        <location line="+6"/>
-        <location line="+6"/>
         <source> s</source>
-        <translation> s</translation>
+        <translation type="vanished"> s</translation>
     </message>
     <message>
-        <location line="+4"/>
         <source>Color</source>
-        <translation>Culoare</translation>
+        <translation type="vanished">Culoare</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Width</source>
-        <translation>Grosime</translation>
+        <translation type="vanished">Grosime</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Wait before fading</source>
-        <translation>Așteptare înainte de estompare</translation>
+        <translation type="vanished">Așteptare înainte de estompare</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Fading duration</source>
-        <translation>Durata estompării</translation>
+        <translation type="vanished">Durata estompării</translation>
     </message>
 </context>
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+68"/>
-        <location line="+79"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+75"/>
+        <location line="+94"/>
         <source>Page Size</source>
         <translation>Dimensiunea paginii</translation>
     </message>
     <message>
-        <location line="-55"/>
-        <location line="+34"/>
+        <location line="-70"/>
+        <location line="+49"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
     </message>
     <message>
-        <location line="-17"/>
+        <location line="-33"/>
         <source>&amp;Home</source>
         <translation>&amp;Acasă</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Save...</source>
-        <translation>Salvează...</translation>
+        <translation type="vanished">Salvează...</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Save as a PDF with the annotations, or the page as a PNG or JPEG picture</source>
-        <translation>Salvează ca PDF cu adnotările sau pagina ca imagine PNG ori JPEG</translation>
+        <translation type="vanished">Salvează ca PDF cu adnotările sau pagina ca imagine PNG ori JPEG</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+7"/>
         <source>Open/Import</source>
         <translation>Deschide/Importă</translation>
     </message>
     <message>
-        <location line="+19"/>
+        <location line="+36"/>
         <source>&amp;Mode</source>
         <translation>&amp;Mod</translation>
     </message>
@@ -3174,7 +3378,27 @@ O descărcați și o instalați acum? LibertyBoard vă salvează documentele, se
         <translation>Închide documentul</translation>
     </message>
     <message>
-        <location line="+28"/>
+        <location line="-24"/>
+        <source>Save</source>
+        <translation>Salvare</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Save the annotations in the PDF, or the page as a picture</source>
+        <translation>Salvați adnotările în PDF, sau pagina ca imagine</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Save as...</source>
+        <translation>Salvare ca...</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Save a copy as a PDF, PNG or JPEG file</source>
+        <translation>Salvați o copie ca fișier PDF, PNG sau JPEG</translation>
+    </message>
+    <message>
+        <location line="+44"/>
         <source>&amp;About</source>
         <translation>&amp;Despre</translation>
     </message>
@@ -3194,9 +3418,30 @@ O descărcați și o instalați acum? LibertyBoard vă salvează documentele, se
         <translation>Descarcă și instalează cea mai nouă versiune de pe GitHub</translation>
     </message>
     <message>
-        <location line="+64"/>
+        <location line="+60"/>
+        <location line="+92"/>
+        <source>Saved</source>
+        <translation>Salvat</translation>
+    </message>
+    <message>
+        <location line="-86"/>
+        <source>Search...</source>
+        <translation>Căutare...</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Find words in the PDF</source>
+        <translation>Căutați cuvinte în PDF</translation>
+    </message>
+    <message>
+        <location line="+21"/>
         <source>Hide or show the toolbar</source>
         <translation>Ascunde sau afișează bara de instrumente</translation>
+    </message>
+    <message>
+        <location line="+43"/>
+        <source>Open</source>
+        <translation>Deschide</translation>
     </message>
 </context>
 <context>
@@ -3329,7 +3574,7 @@ Doriţi să ignoraţi aceste erori pentru acest host?</translation>
 <context>
     <name>UBNoteOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+394"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+585"/>
         <source>Note</source>
         <translation>Notă</translation>
     </message>
@@ -3349,9 +3594,24 @@ Doriţi să ignoraţi aceste erori pentru acest host?</translation>
 <context>
     <name>UBPageIndicator</name>
     <message>
-        <location filename="../../src/gui/UBPageIndicator.cpp" line="+45"/>
+        <location filename="../../src/gui/UBPageIndicator.cpp" line="+49"/>
         <source>Type a page number and press Enter</source>
         <translation>Introduceți un număr de pagină și apăsați Enter</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Rotate the page to the left</source>
+        <translation>Rotiți pagina spre stânga</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Rotate the page to the right</source>
+        <translation>Rotiți pagina spre dreapta</translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>Rotate</source>
+        <translation>Rotire</translation>
     </message>
 </context>
 <context>
@@ -3365,7 +3625,7 @@ Doriţi să ignoraţi aceste erori pentru acest host?</translation>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-524"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-715"/>
         <source>Pen</source>
         <translation>Stilou</translation>
     </message>
@@ -3558,7 +3818,7 @@ Lățime dinamică</translation>
 <context>
     <name>UBPreferencesController</name>
     <message>
-        <location filename="../../src/core/UBPreferencesController.cpp" line="+127"/>
+        <location filename="../../src/core/UBPreferencesController.cpp" line="+128"/>
         <source>Language</source>
         <translation>Limbă</translation>
     </message>
@@ -3573,7 +3833,17 @@ Lățime dinamică</translation>
         <translation>Noua limbă este folosită la următoarea pornire a LibertyBoard.</translation>
     </message>
     <message>
-        <location line="+65"/>
+        <location line="+19"/>
+        <source>General</source>
+        <translation>General</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Pressure of the pen</source>
+        <translation>Presiunea stiloului</translation>
+    </message>
+    <message>
+        <location line="+67"/>
         <source>version: </source>
         <translation>versiune:</translation>
     </message>
@@ -3588,14 +3858,74 @@ Lățime dinamică</translation>
         <translation>Markerul este sensibil la apăsare</translation>
     </message>
     <message>
-        <location line="+13"/>
         <source>Laser pointer</source>
-        <translation>Indicator laser</translation>
+        <translation type="vanished">Indicator laser</translation>
     </message>
     <message>
-        <location line="-185"/>
+        <location line="-172"/>
         <source>Use all available displays</source>
         <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UBScreenshot</name>
+    <message>
+        <location filename="../../src/gui/UBScreenshot.cpp" line="+35"/>
+        <source>Screenshot</source>
+        <translation>Captură de ecran</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Screenshot saved in %1</source>
+        <translation>Captură salvată în %1</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>The screenshot could not be saved.</source>
+        <translation>Captura de ecran nu a putut fi salvată.</translation>
+    </message>
+</context>
+<context>
+    <name>UBSearchBar</name>
+    <message>
+        <location filename="../../src/gui/UBSearchBar.cpp" line="+59"/>
+        <source>Search...</source>
+        <translation>Căutare...</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Previous result</source>
+        <translation>Rezultatul anterior</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Next result</source>
+        <translation>Rezultatul următor</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Close</source>
+        <translation>Închide</translation>
+    </message>
+    <message>
+        <location line="+34"/>
+        <source>Search</source>
+        <translation>Căutare</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>The search only works in a PDF with text.</source>
+        <translation>Căutarea funcționează doar într-un PDF cu text.</translation>
+    </message>
+    <message>
+        <location line="+207"/>
+        <source>Not found</source>
+        <translation>Nu a fost găsit</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>%1 of %2</source>
+        <translation>%1 din %2</translation>
     </message>
 </context>
 <context>
@@ -3699,7 +4029,7 @@ Lățime dinamică</translation>
     </message>
     <message>
         <location line="+15"/>
-        <location line="+25"/>
+        <location line="+29"/>
         <location line="+3"/>
         <source>Stylus Palette</source>
         <translation type="unfinished">Paletă stilou</translation>
@@ -3883,11 +4213,110 @@ Lățime dinamică</translation>
     </message>
 </context>
 <context>
+    <name>UBSoundDialog</name>
+    <message>
+        <location filename="../../src/gui/UBSoundDialog.cpp" line="+51"/>
+        <source>Sound</source>
+        <translation>Sunet</translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>Record a sound or choose an audio file.</source>
+        <translation>Înregistrați un sunet sau alegeți un fișier audio.</translation>
+    </message>
+    <message>
+        <location line="+12"/>
+        <source>Play</source>
+        <translation>Redă</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Stop</source>
+        <translation>Oprire</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Record with the microphone</source>
+        <translation>Înregistrare cu microfonul</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Browse...</source>
+        <translation>Răsfoire...</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Volume</source>
+        <translation>Volum</translation>
+    </message>
+    <message>
+        <location line="+106"/>
+        <source>Recording... %1 s</source>
+        <translation>Se înregistrează... %1 s</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>The microphone could not be used: %1</source>
+        <translation>Microfonul nu a putut fi folosit: %1</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Recording</source>
+        <translation>Înregistrare</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Recording... press Stop to end.</source>
+        <translation>Se înregistrează... apăsați Oprire pentru a termina.</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Choose an audio file</source>
+        <translation>Alegeți un fișier audio</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Audio files (*.mp3 *.wav *.m4a *.aac *.ogg *.wma *.flac);;All files (*)</source>
+        <translation>Fișiere audio (*.mp3 *.wav *.m4a *.aac *.ogg *.wma *.flac);;Toate fișierele (*)</translation>
+    </message>
+</context>
+<context>
+    <name>UBStampOptionsPanel</name>
+    <message>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+187"/>
+        <source>Stamp</source>
+        <translation>Ștampilă</translation>
+    </message>
+    <message>
+        <location line="+78"/>
+        <source>Picture of the custom stamp</source>
+        <translation>Imaginea ștampilei personalizate</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>PNG pictures (*.png)</source>
+        <translation>Imagini PNG (*.png)</translation>
+    </message>
+</context>
+<context>
     <name>UBStartupHintsPalette</name>
     <message>
         <location filename="../../src/gui/UBStartupHintsPalette.cpp" line="+67"/>
         <source>Visible next time</source>
         <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UBStylusPalette</name>
+    <message>
+        <location filename="../../src/gui/UBStylusPalette.cpp" line="+79"/>
+        <source>Save a screenshot</source>
+        <translation>Salvați o captură de ecran</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Save a screenshot of the board in the Pictures folder</source>
+        <translation>Salvați o captură a tablei în dosarul Imagini</translation>
     </message>
 </context>
 <context>
@@ -3900,7 +4329,7 @@ Lățime dinamică</translation>
 <context>
     <name>UBTextOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+110"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-157"/>
         <source>Text</source>
         <translation>Text</translation>
     </message>
@@ -3967,6 +4396,14 @@ Lățime dinamică</translation>
         <location filename="../../src/gui/UBToolOptionsBar.cpp" line="+53"/>
         <source>This tool has no options.</source>
         <translation>Acest instrument nu are opțiuni.</translation>
+    </message>
+</context>
+<context>
+    <name>UBToolOptionsPanel</name>
+    <message>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-531"/>
+        <source>Color</source>
+        <translation>Culoare</translation>
     </message>
 </context>
 <context>
@@ -4184,7 +4621,7 @@ Vă rugăm să reporniţi aplicaţia pentru a accesa documentele actualizate.</t
 <context>
     <name>UBZLayerController</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsScene.cpp" line="+212"/>
+        <location filename="../../src/domain/UBGraphicsScene.cpp" line="-838"/>
         <source>Bottom layer limit reached</source>
         <translation type="unfinished"></translation>
     </message>

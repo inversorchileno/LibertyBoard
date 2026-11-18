@@ -748,12 +748,12 @@ Do you wish to override the security check and continue ?   </source>
     </message>
     <message>
         <location line="+9"/>
-        <location line="+537"/>
+        <location line="+601"/>
         <source>Erase Annotations</source>
         <translation>Cancella annotazioni</translation>
     </message>
     <message>
-        <location line="-534"/>
+        <location line="-598"/>
         <source>Erase All Annotations</source>
         <translation>Cancella tutte le annotazioni</translation>
     </message>
@@ -838,6 +838,46 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Aggiungi note</translation>
     </message>
     <message>
+        <location line="+13"/>
+        <source>Stamp</source>
+        <translation>Timbro</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Put a stamp on the page</source>
+        <translation>Applica un timbro sulla pagina</translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <source>Quick note</source>
+        <translation>Nota rapida</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Add a quick note</source>
+        <translation>Aggiungi una nota rapida</translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <source>Attach file</source>
+        <translation>Allega file</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Attach a file to the page</source>
+        <translation>Allega un file alla pagina</translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <source>Sound</source>
+        <translation>Suono</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Add a sound to the page</source>
+        <translation>Aggiungi un suono alla pagina</translation>
+    </message>
+    <message>
         <location line="+399"/>
         <source>Snap to grid</source>
         <translation></translation>
@@ -856,7 +896,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="vanished">Ctrl+I</translation>
     </message>
     <message>
-        <location line="-619"/>
+        <location line="-683"/>
         <source>Erase Annotation</source>
         <translation>Cancella l&apos;annotazione</translation>
     </message>
@@ -931,7 +971,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Ctrl+J</translation>
     </message>
     <message>
-        <location line="+109"/>
+        <location line="+173"/>
         <source>Text</source>
         <translation>Testo</translation>
     </message>
@@ -1117,7 +1157,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Ctrl+H</translation>
     </message>
     <message>
-        <location line="-1913"/>
+        <location line="-1977"/>
         <location line="+686"/>
         <location line="+3"/>
         <source>LibertyBoard</source>
@@ -1129,7 +1169,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Chiudi LibertyBoard</translation>
     </message>
     <message>
-        <location line="+1537"/>
+        <location line="+1601"/>
         <source>Hide LibertyBoard</source>
         <translation>Nascondi LibertyBoard</translation>
     </message>
@@ -1169,7 +1209,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Apri la pagina web del tutorial</translation>
     </message>
     <message>
-        <location line="-757"/>
+        <location line="-821"/>
         <location line="+6"/>
         <source>Ruled Light Background</source>
         <translation>Sfondo chiaro a righe</translation>
@@ -1181,13 +1221,13 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Sfondo scuro a righe</translation>
     </message>
     <message>
-        <location line="+684"/>
+        <location line="+748"/>
         <location line="+3"/>
         <source>Reset grid size</source>
         <translation>Ripristina la dimensione della griglia</translation>
     </message>
     <message>
-        <location line="-1574"/>
+        <location line="-1638"/>
         <source>Small Eraser</source>
         <translation>Gomma piccola</translation>
     </message>
@@ -1222,7 +1262,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Colore 5</translation>
     </message>
     <message>
-        <location line="+1467"/>
+        <location line="+1531"/>
         <location line="+3"/>
         <source>Draw intermediate grid lines</source>
         <translation>disegna linee di griglia intermedie</translation>
@@ -1236,7 +1276,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Catturare il contenuto del web</translation>
     </message>
     <message>
-        <location line="-1534"/>
+        <location line="-1598"/>
         <source>Documents Mode</source>
         <translation>Modalità Documenti</translation>
     </message>
@@ -1308,7 +1348,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Ctrl+P</translation>
     </message>
     <message>
-        <location line="+363"/>
+        <location line="+427"/>
         <source>Import one or more pages (supported formats : jpg, png, svg, ubz, pdf)</source>
         <translation>Importa una o più pagine (formato accettato&#xa0;: (jpg, png, svg, ubz, pdf)</translation>
     </message>
@@ -1388,7 +1428,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="vanished">Sei sicuro di voler rimuovere 1 pagina dal documento selezionato &apos;%0&apos;?</translation>
     </message>
     <message>
-        <location filename="../../src/adaptors/UBSvgSubsetAdaptor.cpp" line="+248"/>
+        <location filename="../../src/adaptors/UBSvgSubsetAdaptor.cpp" line="+251"/>
         <source>Loading scene (%1/%2)</source>
         <translation>Caricamento della scena (%1/%2)</translation>
     </message>
@@ -1405,6 +1445,44 @@ Do you wish to override the security check and continue ?   </source>
         <location filename="../../src/core/UBShortcutManager.cpp" line="+46"/>
         <source>Common</source>
         <translation>Comune</translation>
+    </message>
+    <message>
+        <location filename="../../src/board/UBComments.cpp" line="+153"/>
+        <location line="+72"/>
+        <location line="+53"/>
+        <source>Quick notes</source>
+        <translation>Note rapide</translation>
+    </message>
+    <message>
+        <location line="-125"/>
+        <location line="+125"/>
+        <source>The document has no quick notes.</source>
+        <translation>Il documento non ha note rapide.</translation>
+    </message>
+    <message>
+        <location line="-49"/>
+        <source>Page</source>
+        <translation>Pagina</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Date</source>
+        <translation>Data</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Text</source>
+        <translation>Testo</translation>
+    </message>
+    <message>
+        <location line="+53"/>
+        <source>Merge quick notes</source>
+        <translation>Unisci note rapide</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Each quick note becomes a picture of the note on its page, with its date and text. The notes can no longer be edited. Merge the %1 quick notes?</source>
+        <translation>Ogni nota rapida diventa un&apos;immagine della nota sulla sua pagina, con data e testo. Le note non potranno più essere modificate. Unire le %1 note rapide?</translation>
     </message>
 </context>
 <context>
@@ -1456,9 +1534,9 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="vanished">PodCast</translation>
     </message>
     <message>
-        <location filename="../../src/core/UBApplication.cpp" line="+380"/>
-        <location line="+49"/>
-        <location line="+214"/>
+        <location filename="../../src/core/UBApplication.cpp" line="+384"/>
+        <location line="+47"/>
+        <location line="+221"/>
         <source>Cannot open your UBX file directly. Please import it in Documents mode instead</source>
         <translation>Impossibile aprire direttamente un file UBX. Si prega di importarlo dalla modalità Documenti</translation>
     </message>
@@ -1527,7 +1605,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Tipo di contentuto %1 sconosciuto</translation>
     </message>
     <message>
-        <location line="+1137"/>
+        <location line="+1154"/>
         <source>Add Item</source>
         <translation>Aggiungi oggetto</translation>
     </message>
@@ -1537,20 +1615,20 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Tutto supportato (%1)</translation>
     </message>
     <message>
-        <location line="-1886"/>
+        <location line="-1903"/>
         <source>Page %1 deleted</source>
         <translation>Pagina %1 rimossa</translation>
     </message>
     <message>
         <location line="+506"/>
         <location line="+45"/>
-        <location line="+925"/>
+        <location line="+942"/>
         <location line="+36"/>
         <source>Add file operation failed: file copying error</source>
         <translation>Operazione di aggiunta file fallita: errore nella copia file</translation>
     </message>
     <message>
-        <location line="-2335"/>
+        <location line="-2352"/>
         <source>Group</source>
         <translation>Raggruppa</translation>
     </message>
@@ -1593,7 +1671,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBoardPaletteManager</name>
     <message>
-        <location filename="../../src/board/UBBoardPaletteManager.cpp" line="+938"/>
+        <location filename="../../src/board/UBBoardPaletteManager.cpp" line="+942"/>
         <source>Error Adding Image to Library</source>
         <translation>Errore aggiungendo l&apos;immagine alla biblioteca</translation>
     </message>
@@ -1606,7 +1684,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBoardSaver</name>
     <message>
-        <location filename="../../src/board/UBBoardSaver.cpp" line="+78"/>
+        <location filename="../../src/board/UBBoardSaver.cpp" line="+130"/>
         <source>PDF with annotations (*.pdf)</source>
         <translation>PDF con annotazioni (*.pdf)</translation>
     </message>
@@ -1621,35 +1699,35 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Immagine JPEG della pagina corrente (*.jpg *.jpeg)</translation>
     </message>
     <message>
-        <location line="+18"/>
-        <location line="+32"/>
+        <location line="+39"/>
+        <source>Save as</source>
+        <translation>Salva con nome</translation>
+    </message>
+    <message>
+        <location line="+17"/>
         <source>Save</source>
         <translation>Salva</translation>
     </message>
     <message>
-        <location line="-4"/>
         <source>Saved to %1</source>
-        <translation>Salvato in %1</translation>
+        <translation type="vanished">Salvato in %1</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+0"/>
         <source>The file could not be saved. Check that the folder can be written.</source>
         <translation>Impossibile salvare il file. Controlla che la cartella sia scrivibile.</translation>
     </message>
     <message>
-        <location line="+21"/>
         <source>Save the changes to the PDF before closing?</source>
-        <translation>Salvare le modifiche al PDF prima di chiudere?</translation>
+        <translation type="vanished">Salvare le modifiche al PDF prima di chiudere?</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Save the board as a picture before closing?</source>
-        <translation>Salvare la lavagna come immagine prima di chiudere?</translation>
+        <translation type="vanished">Salvare la lavagna come immagine prima di chiudere?</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Close document</source>
-        <translation>Chiudi documento</translation>
+        <translation type="vanished">Chiudi documento</translation>
     </message>
 </context>
 <context>
@@ -1662,7 +1740,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+1914"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+1918"/>
         <source>Is it for Board or Widget ?</source>
         <translation>Per la lavagna o per il widget?</translation>
     </message>
@@ -1713,33 +1791,86 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Altro colore</translation>
     </message>
     <message>
-        <location line="+53"/>
+        <location line="+86"/>
         <source>Choose a color</source>
         <translation>Scegli un colore</translation>
     </message>
 </context>
 <context>
-    <name>UBDesktopAnnotationController</name>
+    <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/desktop/UBDesktopAnnotationController.cpp" line="+403"/>
-        <source>Screenshot</source>
-        <translation>Screenshot</translation>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+859"/>
+        <source>Quick note</source>
+        <translation>Nota rapida</translation>
     </message>
     <message>
-        <location line="+4"/>
-        <source>Screenshot saved in %1</source>
-        <translation>Screenshot salvato in %1</translation>
+        <location line="+43"/>
+        <source>Previous</source>
+        <translation>Precedente</translation>
     </message>
     <message>
         <location line="+1"/>
+        <source>Next</source>
+        <translation>Successivo</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>List of notes</source>
+        <translation>Elenco dei commenti</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Show</source>
+        <translation>Mostra</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Show or hide the quick notes of the pages</source>
+        <translation>Mostra o nascondi le note rapide delle pagine</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Merge notes</source>
+        <translation>Unisci commenti</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Put the quick notes into the pages, as pictures</source>
+        <translation>Inserisci le note rapide nelle pagine, come immagini</translation>
+    </message>
+</context>
+<context>
+    <name>UBCommentPopup</name>
+    <message>
+        <location filename="../../src/gui/UBCommentPopup.cpp" line="+91"/>
+        <source>Quick note</source>
+        <translation>Nota rapida</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Close</source>
+        <translation>Chiudi</translation>
+    </message>
+</context>
+<context>
+    <name>UBDesktopAnnotationController</name>
+    <message>
+        <source>Screenshot</source>
+        <translation type="vanished">Screenshot</translation>
+    </message>
+    <message>
+        <source>Screenshot saved in %1</source>
+        <translation type="vanished">Screenshot salvato in %1</translation>
+    </message>
+    <message>
         <source>The screenshot could not be saved.</source>
-        <translation>Impossibile salvare lo screenshot.</translation>
+        <translation type="vanished">Impossibile salvare lo screenshot.</translation>
     </message>
 </context>
 <context>
     <name>UBDesktopPalette</name>
     <message>
-        <location filename="../../src/desktop/UBDesktopPalette.cpp" line="+70"/>
+        <location filename="../../src/desktop/UBDesktopPalette.cpp" line="+74"/>
         <source>Save a screenshot</source>
         <translation>Salva uno screenshot</translation>
     </message>
@@ -2184,9 +2315,42 @@ Dando un nuovo nome si creerà un nuovo documento.</translation>
     </message>
 </context>
 <context>
+    <name>UBDocumentTabs</name>
+    <message>
+        <location filename="../../src/gui/UBDocumentTabs.cpp" line="+64"/>
+        <source>New document</source>
+        <translation>Nuovo documento</translation>
+    </message>
+    <message>
+        <location line="+55"/>
+        <source>Save</source>
+        <translation>Salva</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>%1 could not be saved. Check that it is not open in another program.</source>
+        <translation>Impossibile salvare %1. Verifica che non sia aperto in un altro programma.</translation>
+    </message>
+    <message>
+        <location line="+178"/>
+        <source>Save the changes to the PDF before closing?</source>
+        <translation>Salvare le modifiche nel PDF prima di chiudere?</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Save the board as a picture before closing?</source>
+        <translation>Salvare la lavagna come immagine prima di chiudere?</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Close document</source>
+        <translation>Chiudi documento</translation>
+    </message>
+</context>
+<context>
     <name>UBDocumentTreeModel</name>
     <message>
-        <location line="+255"/>
+        <location filename="../../src/document/UBDocumentController.cpp" line="+255"/>
         <source>My documents</source>
         <translation>I miei documenti</translation>
     </message>
@@ -2336,7 +2500,7 @@ Vuoi continuare?</translation>
 <context>
     <name>UBEraserOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+255"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-628"/>
         <source>Eraser</source>
         <translation>Gomma</translation>
     </message>
@@ -2488,12 +2652,12 @@ Vuoi continuare?</translation>
 <context>
     <name>UBExportFullPDF</name>
     <message>
-        <location filename="../../src/adaptors/UBExportFullPDF.cpp" line="+185"/>
+        <location filename="../../src/adaptors/UBExportFullPDF.cpp" line="+201"/>
         <source>Export as PDF File</source>
         <translation>Esporta come PDF</translation>
     </message>
     <message>
-        <location line="+178"/>
+        <location line="+182"/>
         <source>Export to PDF</source>
         <translation>Esporta in PDF</translation>
     </message>
@@ -2772,6 +2936,19 @@ Scaricarla e installarla ora? LibertyBoard salva i tuoi documenti, si chiude e s
     </message>
 </context>
 <context>
+    <name>UBGraphicsAttachmentItem</name>
+    <message>
+        <location filename="../../src/domain/UBGraphicsAttachmentItem.cpp" line="+54"/>
+        <source>Attached file</source>
+        <translation>File allegato</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>%1 could not be opened.</source>
+        <translation>Impossibile aprire %1.</translation>
+    </message>
+</context>
+<context>
     <name>UBGraphicsGroupContainerItemDelegate</name>
     <message>
         <location filename="../../src/domain/UBGraphicsGroupContainerItemDelegate.cpp" line="+57"/>
@@ -2857,6 +3034,19 @@ Scaricarla e installarla ora? LibertyBoard salva i tuoi documenti, si chiude e s
     </message>
 </context>
 <context>
+    <name>UBGraphicsPageMarkItem</name>
+    <message>
+        <location filename="../../src/domain/UBGraphicsPageMarkItem.cpp" line="+161"/>
+        <source>Delete</source>
+        <translation>Elimina</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Delete this icon from the page?</source>
+        <translation>Eliminare questa icona dalla pagina?</translation>
+    </message>
+</context>
+<context>
     <name>UBGraphicsProtractor</name>
     <message>
         <location filename="../../src/tools/UBGraphicsProtractor.cpp" line="+535"/>
@@ -2871,6 +3061,38 @@ Scaricarla e installarla ora? LibertyBoard salva i tuoi documenti, si chiude e s
         <location line="+4"/>
         <source>use arrow keys for precise moves</source>
         <translation>Utilizza le frecce della tastiera per movimenti più precisi</translation>
+    </message>
+</context>
+<context>
+    <name>UBGraphicsScene</name>
+    <message>
+        <location filename="../../src/domain/UBGraphicsScene.cpp" line="+1027"/>
+        <location line="+11"/>
+        <source>Attach a file</source>
+        <translation>Allega un file</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>The file could not be copied into the document.</source>
+        <translation>Impossibile copiare il file nel documento.</translation>
+    </message>
+    <message>
+        <location line="+19"/>
+        <source>Sound</source>
+        <translation>Suono</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>The sound could not be copied into the document.</source>
+        <translation>Impossibile copiare il suono nel documento.</translation>
+    </message>
+</context>
+<context>
+    <name>UBGraphicsSoundItem</name>
+    <message>
+        <location filename="../../src/domain/UBGraphicsSoundItem.cpp" line="+56"/>
+        <source>Sound: click to play or stop</source>
+        <translation>Suono: clic per riprodurre o fermare</translation>
     </message>
 </context>
 <context>
@@ -3121,118 +3343,100 @@ Scaricarla e installarla ora? LibertyBoard salva i tuoi documenti, si chiude e s
 <context>
     <name>UBLaserPreferencesPage</name>
     <message>
-        <location filename="../../src/gui/UBLaserPreferencesPage.cpp" line="+45"/>
         <source>Red</source>
-        <translation>Rosso</translation>
+        <translation type="vanished">Rosso</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Orange</source>
-        <translation>Arancione</translation>
+        <translation type="vanished">Arancione</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Magenta</source>
-        <translation>Magenta</translation>
+        <translation type="vanished">Magenta</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Green</source>
-        <translation>Verde</translation>
+        <translation type="vanished">Verde</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Blue</source>
-        <translation>Blu</translation>
+        <translation type="vanished">Blu</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Purple</source>
-        <translation>Viola</translation>
+        <translation type="vanished">Viola</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Black</source>
-        <translation>Nero</translation>
+        <translation type="vanished">Nero</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Dark green</source>
-        <translation>Verde scuro</translation>
+        <translation type="vanished">Verde scuro</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Yellow</source>
-        <translation>Giallo</translation>
+        <translation type="vanished">Giallo</translation>
     </message>
     <message>
-        <location line="+12"/>
         <source> px</source>
-        <translation> px</translation>
+        <translation type="vanished"> px</translation>
     </message>
     <message>
-        <location line="+6"/>
-        <location line="+6"/>
         <source> s</source>
-        <translation> s</translation>
+        <translation type="vanished"> s</translation>
     </message>
     <message>
-        <location line="+4"/>
         <source>Color</source>
-        <translation>Colore</translation>
+        <translation type="vanished">Colore</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Width</source>
-        <translation>Spessore</translation>
+        <translation type="vanished">Spessore</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Wait before fading</source>
-        <translation>Attesa prima della dissolvenza</translation>
+        <translation type="vanished">Attesa prima della dissolvenza</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Fading duration</source>
-        <translation>Durata della dissolvenza</translation>
+        <translation type="vanished">Durata della dissolvenza</translation>
     </message>
 </context>
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+68"/>
-        <location line="+79"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+75"/>
+        <location line="+94"/>
         <source>Page Size</source>
         <translation>Dimensione pagina</translation>
     </message>
     <message>
-        <location line="-55"/>
-        <location line="+34"/>
+        <location line="-70"/>
+        <location line="+49"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
     </message>
     <message>
-        <location line="-17"/>
+        <location line="-33"/>
         <source>&amp;Home</source>
         <translation>&amp;Home</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Save...</source>
-        <translation>Salva...</translation>
+        <translation type="vanished">Salva...</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Save as a PDF with the annotations, or the page as a PNG or JPEG picture</source>
-        <translation>Salva come PDF con le annotazioni, o la pagina come immagine PNG o JPEG</translation>
+        <translation type="vanished">Salva come PDF con le annotazioni, o la pagina come immagine PNG o JPEG</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+7"/>
         <source>Open/Import</source>
         <translation>Apri/Importa</translation>
     </message>
     <message>
-        <location line="+19"/>
+        <location line="+36"/>
         <source>&amp;Mode</source>
         <translation>&amp;Modalità</translation>
     </message>
@@ -3247,7 +3451,27 @@ Scaricarla e installarla ora? LibertyBoard salva i tuoi documenti, si chiude e s
         <translation>Chiudi documento</translation>
     </message>
     <message>
-        <location line="+28"/>
+        <location line="-24"/>
+        <source>Save</source>
+        <translation>Salva</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Save the annotations in the PDF, or the page as a picture</source>
+        <translation>Salva le annotazioni nel PDF, o la pagina come immagine</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Save as...</source>
+        <translation>Salva con nome...</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Save a copy as a PDF, PNG or JPEG file</source>
+        <translation>Salva una copia come file PDF, PNG o JPEG</translation>
+    </message>
+    <message>
+        <location line="+44"/>
         <source>&amp;About</source>
         <translation>&amp;Informazioni</translation>
     </message>
@@ -3267,9 +3491,30 @@ Scaricarla e installarla ora? LibertyBoard salva i tuoi documenti, si chiude e s
         <translation>Scarica e installa l&apos;ultima versione da GitHub</translation>
     </message>
     <message>
-        <location line="+64"/>
+        <location line="+60"/>
+        <location line="+92"/>
+        <source>Saved</source>
+        <translation>Salvato</translation>
+    </message>
+    <message>
+        <location line="-86"/>
+        <source>Search...</source>
+        <translation>Cerca...</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Find words in the PDF</source>
+        <translation>Cerca parole nel PDF</translation>
+    </message>
+    <message>
+        <location line="+21"/>
         <source>Hide or show the toolbar</source>
         <translation>Nascondi o mostra la barra degli strumenti</translation>
+    </message>
+    <message>
+        <location line="+43"/>
+        <source>Open</source>
+        <translation>Apri</translation>
     </message>
 </context>
 <context>
@@ -3402,7 +3647,7 @@ Vuoi ignorare gli errori per questo host?</translation>
 <context>
     <name>UBNoteOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+394"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+585"/>
         <source>Note</source>
         <translation>Nota</translation>
     </message>
@@ -3442,9 +3687,24 @@ Vuoi ignorare gli errori per questo host?</translation>
 <context>
     <name>UBPageIndicator</name>
     <message>
-        <location filename="../../src/gui/UBPageIndicator.cpp" line="+45"/>
+        <location filename="../../src/gui/UBPageIndicator.cpp" line="+49"/>
         <source>Type a page number and press Enter</source>
         <translation>Digita un numero di pagina e premi Invio</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Rotate the page to the left</source>
+        <translation>Ruota la pagina a sinistra</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Rotate the page to the right</source>
+        <translation>Ruota la pagina a destra</translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>Rotate</source>
+        <translation>Ruota</translation>
     </message>
 </context>
 <context>
@@ -3458,7 +3718,7 @@ Vuoi ignorare gli errori per questo host?</translation>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-524"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-715"/>
         <source>Pen</source>
         <translation>Penna</translation>
     </message>
@@ -3651,7 +3911,7 @@ Larghezza dinamica</translation>
 <context>
     <name>UBPreferencesController</name>
     <message>
-        <location filename="../../src/core/UBPreferencesController.cpp" line="+127"/>
+        <location filename="../../src/core/UBPreferencesController.cpp" line="+128"/>
         <source>Language</source>
         <translation>Lingua</translation>
     </message>
@@ -3666,7 +3926,17 @@ Larghezza dinamica</translation>
         <translation>La nuova lingua viene usata al prossimo avvio di LibertyBoard.</translation>
     </message>
     <message>
-        <location line="+65"/>
+        <location line="+19"/>
+        <source>General</source>
+        <translation>Generale</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Pressure of the pen</source>
+        <translation>Pressione della penna</translation>
+    </message>
+    <message>
+        <location line="+67"/>
         <source>version: </source>
         <translation>versione:</translation>
     </message>
@@ -3681,14 +3951,74 @@ Larghezza dinamica</translation>
         <translation>L&apos;evidenziatore è sensibile alla pressione</translation>
     </message>
     <message>
-        <location line="+13"/>
         <source>Laser pointer</source>
-        <translation>Puntatore laser</translation>
+        <translation type="vanished">Puntatore laser</translation>
     </message>
     <message>
-        <location line="-185"/>
+        <location line="-172"/>
         <source>Use all available displays</source>
         <translation>Utlizzare tutti gli schermi</translation>
+    </message>
+</context>
+<context>
+    <name>UBScreenshot</name>
+    <message>
+        <location filename="../../src/gui/UBScreenshot.cpp" line="+35"/>
+        <source>Screenshot</source>
+        <translation>Screenshot</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Screenshot saved in %1</source>
+        <translation>Screenshot salvato in %1</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>The screenshot could not be saved.</source>
+        <translation>Impossibile salvare lo screenshot.</translation>
+    </message>
+</context>
+<context>
+    <name>UBSearchBar</name>
+    <message>
+        <location filename="../../src/gui/UBSearchBar.cpp" line="+59"/>
+        <source>Search...</source>
+        <translation>Cerca...</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Previous result</source>
+        <translation>Risultato precedente</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Next result</source>
+        <translation>Risultato successivo</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Close</source>
+        <translation>Chiudi</translation>
+    </message>
+    <message>
+        <location line="+34"/>
+        <source>Search</source>
+        <translation>Cerca</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>The search only works in a PDF with text.</source>
+        <translation>La ricerca funziona solo in un PDF con testo.</translation>
+    </message>
+    <message>
+        <location line="+207"/>
+        <source>Not found</source>
+        <translation>Non trovato</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>%1 of %2</source>
+        <translation>%1 di %2</translation>
     </message>
 </context>
 <context>
@@ -3792,7 +4122,7 @@ Larghezza dinamica</translation>
     </message>
     <message>
         <location line="+15"/>
-        <location line="+25"/>
+        <location line="+29"/>
         <location line="+3"/>
         <source>Stylus Palette</source>
         <translation>Palette stilo</translation>
@@ -3976,11 +4306,110 @@ Larghezza dinamica</translation>
     </message>
 </context>
 <context>
+    <name>UBSoundDialog</name>
+    <message>
+        <location filename="../../src/gui/UBSoundDialog.cpp" line="+51"/>
+        <source>Sound</source>
+        <translation>Suono</translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>Record a sound or choose an audio file.</source>
+        <translation>Registra un suono o scegli un file audio.</translation>
+    </message>
+    <message>
+        <location line="+12"/>
+        <source>Play</source>
+        <translation>Riproduci</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Stop</source>
+        <translation>Stop</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Record with the microphone</source>
+        <translation>Registra con il microfono</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Browse...</source>
+        <translation>Sfoglia...</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Volume</source>
+        <translation>Volume</translation>
+    </message>
+    <message>
+        <location line="+106"/>
+        <source>Recording... %1 s</source>
+        <translation>Registrazione... %1 s</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>The microphone could not be used: %1</source>
+        <translation>Impossibile usare il microfono: %1</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Recording</source>
+        <translation>Registrazione</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Recording... press Stop to end.</source>
+        <translation>Registrazione... premi Stop per terminare.</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Choose an audio file</source>
+        <translation>Scegli un file audio</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Audio files (*.mp3 *.wav *.m4a *.aac *.ogg *.wma *.flac);;All files (*)</source>
+        <translation>File audio (*.mp3 *.wav *.m4a *.aac *.ogg *.wma *.flac);;Tutti i file (*)</translation>
+    </message>
+</context>
+<context>
+    <name>UBStampOptionsPanel</name>
+    <message>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+187"/>
+        <source>Stamp</source>
+        <translation>Timbro</translation>
+    </message>
+    <message>
+        <location line="+78"/>
+        <source>Picture of the custom stamp</source>
+        <translation>Immagine del timbro personalizzato</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>PNG pictures (*.png)</source>
+        <translation>Immagini PNG (*.png)</translation>
+    </message>
+</context>
+<context>
     <name>UBStartupHintsPalette</name>
     <message>
         <location filename="../../src/gui/UBStartupHintsPalette.cpp" line="+67"/>
         <source>Visible next time</source>
         <translation>Visibile la prossima volta</translation>
+    </message>
+</context>
+<context>
+    <name>UBStylusPalette</name>
+    <message>
+        <location filename="../../src/gui/UBStylusPalette.cpp" line="+79"/>
+        <source>Save a screenshot</source>
+        <translation>Salva uno screenshot</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Save a screenshot of the board in the Pictures folder</source>
+        <translation>Salva uno screenshot della lavagna nella cartella Immagini</translation>
     </message>
 </context>
 <context>
@@ -3993,7 +4422,7 @@ Larghezza dinamica</translation>
 <context>
     <name>UBTextOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+110"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-157"/>
         <source>Text</source>
         <translation>Testo</translation>
     </message>
@@ -4068,6 +4497,14 @@ Larghezza dinamica</translation>
         <location filename="../../src/gui/UBToolOptionsBar.cpp" line="+53"/>
         <source>This tool has no options.</source>
         <translation>Questo strumento non ha opzioni.</translation>
+    </message>
+</context>
+<context>
+    <name>UBToolOptionsPanel</name>
+    <message>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-531"/>
+        <source>Color</source>
+        <translation>Colore</translation>
     </message>
 </context>
 <context>
@@ -4285,7 +4722,7 @@ Si prega di riavviare l&apos;applicazione per accedere ai documenti aggiornati.<
 <context>
     <name>UBZLayerController</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsScene.cpp" line="+212"/>
+        <location filename="../../src/domain/UBGraphicsScene.cpp" line="-838"/>
         <source>Bottom layer limit reached</source>
         <translation>Limite del livello inferiore raggiunto</translation>
     </message>
