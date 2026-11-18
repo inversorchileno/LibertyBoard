@@ -9,6 +9,7 @@ LibertyBoard es una pizarra digital y lector PDF con puntero láser estilo Drawb
 3. **Rediseño a ventana normal con menús (modo pizarra y modo documentos).** *(hecha)*
 4. **Identidad propia: nombre, logo, carpeta de datos y documentación.** *(hecha)*
 5. **Menús, guardar, actualización, zoom, notas de colores, idiomas y triángulos de opciones.** *(hecha, compilaciones 9 a 13)*
+6. **Pestañas, Guardar/Guardar como, girar, sellos, buscar, notas rápidas, adjuntos y sonidos.** *(hecha, compilación 14)*
 
 ## 1. Barras de herramientas
 
@@ -99,9 +100,8 @@ En modo escritorio son paneles emergentes; en modo pizarra, un panel fijo a la d
 
 ## Cómo quedó la Etapa 5
 
-- **Menús** (4): **Inicio** (Abrir/Importar, Guardar, Preferencias, Multipantalla, Podcast, Cerrar documento, Salir), **Modo** (Pizarra, Web, Escritorio), **Edición** (Tamaño de página, Cortar, Copiar, Pegar, Ocultar LibertyBoard, Dormir) y **Acerca** (Tutorial, Consejos, LibertyBoard en GitHub, Actualización). Código en `src/gui/UBMainMenu.cpp`.
-- **Guardar** (Ctrl+S, `src/board/UBBoardSaver`): documento que viene de un PDF → PDF con las anotaciones; pizarra en blanco → PNG o JPEG de la página.
-- **Cerrar documento** (Ctrl+F4, icono X roja): pregunta si guardar (PDF o imagen) y deja una pizarra limpia como al iniciar; el documento sigue en Abrir/Importar.
+- **Menús** (4): **Inicio** (Nuevo documento, Abrir/Importar, Guardar, Guardar como, Preferencias, Multipantalla, Podcast, Cerrar documento, Salir; desde la compilación 14), **Modo** (Pizarra, Web, Escritorio), **Edición** (Tamaño de página, Cortar, Copiar, Pegar, Ocultar LibertyBoard, Dormir) y **Acerca** (Tutorial, Consejos, LibertyBoard en GitHub, Actualización). Código en `src/gui/UBMainMenu.cpp`.
+- **Guardar y Cerrar documento:** ver la Etapa 6.
 - **Zoom:** recuadro fijo abajo a la derecha de la pizarra con −, % editable y + (`src/gui/UBZoomPalette`). Ya no hay zoom en la barra de herramientas.
 - **Rueda del mouse en PDF:** al pasar el final de la página va a la siguiente desde arriba, y al pasar el inicio a la anterior desde abajo, con el mismo zoom (`UBBoardView::turnPageWithWheel`). No es una vista continua.
 - **Orden de herramientas** (escritorio y pizarra): Lápiz, Borrador, Rotulador, Láser, Resaltar, Interactuar, Nota, Subrayar, Texto, [Línea, solo pizarra], Flecha, Rectángulo, Elipse; en pizarra al final las dos manos (Interactuar con contenidos y Mano); en escritorio al final la **captura de pantalla** (cámara), que guarda pantalla + rayas en `Imágenes\LibertyBoard`.
@@ -109,9 +109,25 @@ En modo escritorio son paneles emergentes; en modo pizarra, un panel fijo a la d
 - **Opciones:** iconos estilo Drawboard en Básico/Pro/Caligrafía, Borde/Relleno, Estela/Punto y Estándar/Brillo blanco; la vista previa del lápiz cambia según el tipo de trazo; el láser muestra los títulos y valores encima de sus barras; la sección de color se llama "Color".
 - **Notas de colores:** 7 colores (amarillo, rojo, naranjo, verde, azul, morado, gris), elegibles en la barra de la herramienta Nota y en la ventana de la nota. Las notas van en la capa de los dibujos, sobre el PDF, y salen en el PDF guardado.
 - **Idioma:** Preferencias → Mostrar → Idioma (primera opción): idioma del sistema o uno de los 33. Se aplica al reiniciar. Todo texto nuevo de LibertyBoard se traduce a los 33 idiomas en un commit `i18n:` aparte.
-- **Preferencias** con fondo claro y letras negras; LibertyBoard fuerza el tema claro (Qt 6.8) porque el modo oscuro de Windows dejaba texto oscuro sobre fondo oscuro.
+- **Preferencias** con fondo claro y letras negras; LibertyBoard fuerza el tema claro (Qt 6.8) porque el modo oscuro de Windows dejaba texto oscuro sobre fondo oscuro. Desde la compilación 14 tienen solo las pestañas General (antes Mostrar, con idioma y presión del lápiz y del rotulador), Cuadrícula, Red, Licencias y Acerca de (con los créditos).
 - **Multipantalla** apagada por defecto.
 - **Portable:** el dueño usa el zip, sin instalador. Para que aparezca en programas que listan aplicaciones (como Stream Dock), se pone un acceso directo en `shell:common programs`.
+
+## Cómo quedó la Etapa 6
+
+- **Pestañas de documentos** (`src/gui/UBDocumentTabs`): una fila entre el menú y la barra de opciones, visible solo con 2 o más documentos abiertos. Clic cambia de documento (vuelve a la página donde estaba), la X lo cierra (pregunta si guardar cuando hubo cambios) y + abre una pizarra nueva. Un punto • junto al nombre indica cambios sin guardar. Una pizarra en blanco sin usar se reemplaza por el archivo que se abre después.
+- **Abrir/Importar** (Ctrl+O) abre la ventana de Windows para elegir archivos (varios a la vez) y los abre en pestañas; ya no lleva al modo Documentos. Un archivo ya abierto se muestra en su pestaña. **Nuevo documento** (Ctrl+N) está en Inicio.
+- **Guardar** (Ctrl+S): sin preguntar, en el archivo de la pestaña: el PDF original con las anotaciones, o para una pizarra la imagen donde se guardó esa página. La primera vez en una pizarra, y con **Guardar como** (Ctrl+Mayús+S), se abre la ventana de Windows (PNG por defecto, JPEG o PDF). Se escribe primero un archivo aparte y solo al terminar reemplaza al original. Aparece «Guardado» 3 segundos a la izquierda de Buscar. El archivo de cada pestaña se recuerda mientras el programa está abierto.
+- **Girar** (`src/board/UBPageRotation`): bajo el número de página, dos flechas y la palabra Girar. Gira la página con todo lo que tiene encima, un cuarto de vuelta; vertical ↔ horizontal; se puede deshacer. El PDF guardado sale con la página girada. Las pizarras nuevas siguen partiendo horizontales (decisión de Luis).
+- **Pantallazo:** en escritorio, toda la pantalla menos la barra de tareas; en pizarra (botón de cámara al final de la barra), solo la pizarra, sin barras ni paletas (`src/gui/UBScreenshot`). La zona capturada se oscurece un momento, como en Windows.
+- **Sello** (`src/domain/UBStamps`): herramienta después de Nota, en escritorio (con triángulo) y en pizarra (fila de sellos en la barra superior). 14 sellos tipo PDF-XChange, en inglés, o en español si LibertyBoard está en español (no pasan por las traducciones). El último, Personalizada, pide un PNG y lo ajusta al tamaño de los demás, con margen. Se ponen como imagen: se mueven, borran y deshacen.
+- **Buscar** (Ctrl+F, botón a la izquierda de Escritorio, `src/gui/UBSearchBar` y `src/pdf/UBPdfTextSearch`): busca el texto en el PDF (sin distinguir mayúsculas), marca en amarillo y lleva a cada resultado; «2 de 7» o «No encontrado». En una pizarra sin PDF avisa que solo funciona en PDF con texto. Ctrl+F dejó de ser el atajo de la herramienta Selección.
+- **Nota rápida, Adjuntar archivo y Sonido** (solo pizarra, `src/domain/UBGraphicsPageMarkItem` y derivadas): íconos que mantienen su tamaño en pantalla, se mueven, se abren con un clic y se borran con Supr tras clicarlos. Se guardan en la página como `ub:comment`, `ub:attachment` y `ub:sound`; OpenBoard normal no los muestra. En el PDF guardado salen como íconos.
+  - Nota rápida: globo amarillo con ventana (fecha y texto); una nota vacía se borra. Con la herramienta, la barra superior ofrece Anterior, Siguiente, Lista de comentarios, Mostrar (ocultar/mostrar todas) y Fusionar comentarios (cada nota pasa a ser una imagen fija con su fecha y texto).
+  - Adjuntar archivo: clip; el archivo se copia dentro del documento (`attachments/`) y un clic lo abre con su programa (Excel, etc.).
+  - Sonido: altavoz; la ventana permite grabar con el micrófono o examinar un archivo de audio, escucharlo y aceptarlo; se copia al documento (`sounds/`) y un clic lo reproduce o detiene.
+- **Colores** en la barra superior: dos filas de muestras más pequeñas y sin la palabra «Color».
+- **Zoom:** mostrar u ocultar la barra de opciones ya no vuelve al 100 %; se mantienen el zoom y el lugar.
 
 ## Forma de trabajo
 
@@ -132,6 +148,8 @@ En modo escritorio son paneles emergentes; en modo pizarra, un panel fijo a la d
 
 - **Instalador** (Inno Setup, hay un script de OpenBoard en `release_scripts/windows`): por ahora el dueño prefiere el portable.
 - **Vista continua** de las páginas del PDF (todas una debajo de otra), en vez de pasar página a página.
-- Importar un PDF con el mismo nombre que uno ya importado pregunta si reemplazar; para un lector de PDF debería abrirlo sin preguntar.
+- Importar un PDF con el mismo nombre que uno ya importado pregunta si reemplazar; para un lector de PDF debería abrirlo sin preguntar. **Importante desde la compilación 14:** si se responde Reemplazar, se borra el documento anterior de LibertyBoard con sus notas rápidas, adjuntos y sonidos. Lo ideal es que abrir de nuevo un PDF ya trabajado retome su documento.
+- El archivo de cada pestaña (para Guardar sin preguntar) se olvida al cerrar el programa.
+- La grabación y la reproducción de sonido no se pudieron probar en Linux (sin dispositivo de audio).
 - Se vio una vez que el programa se cerraba al abrir un segundo PDF mientras aparecía esa pregunta de reemplazo (viene de OpenBoard); revisar.
 - La ventana de bienvenida (consejos) se abre al inicio hasta que se desmarca.
