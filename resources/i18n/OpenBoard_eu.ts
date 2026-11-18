@@ -1843,7 +1843,7 @@ Segurtasun egiaztapena gainidatzi eta jarraitu nahi duzu?</translation>
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+1918"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+2020"/>
         <source>Is it for Board or Widget ?</source>
         <translation type="unfinished">Arbelerako edo trepetarako?</translation>
     </message>
@@ -1902,7 +1902,7 @@ Segurtasun egiaztapena gainidatzi eta jarraitu nahi duzu?</translation>
 <context>
     <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+859"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+897"/>
         <source>Quick note</source>
         <translation>Ohar azkarra</translation>
     </message>
@@ -2003,7 +2003,7 @@ Segurtasun egiaztapena gainidatzi eta jarraitu nahi duzu?</translation>
         <translation>Erakutsi stylus paleta</translation>
     </message>
     <message>
-        <location line="+49"/>
+        <location line="+55"/>
         <source>Show Board on Secondary Screen</source>
         <translation>Erakutsi arbela bigarren pantailan</translation>
     </message>
@@ -2452,12 +2452,12 @@ Izen berria ematean dokumentu berri bat sortuko da.</translation>
 <context>
     <name>UBDocumentTabs</name>
     <message>
-        <location filename="../../src/gui/UBDocumentTabs.cpp" line="+64"/>
+        <location filename="../../src/gui/UBDocumentTabs.cpp" line="+66"/>
         <source>New document</source>
         <translation>Dokumentu berria</translation>
     </message>
     <message>
-        <location line="+55"/>
+        <location line="+56"/>
         <source>Save</source>
         <translation>Gorde</translation>
     </message>
@@ -2599,7 +2599,7 @@ Do you want to continue?</source>
 <context>
     <name>UBEraserOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-628"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-666"/>
         <source>Eraser</source>
         <translation>Borragoma</translation>
     </message>
@@ -3177,7 +3177,7 @@ Orain deskargatu eta instalatu? LibertyBoard-ek zure dokumentuak gordeko ditu, i
 <context>
     <name>UBGraphicsScene</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsScene.cpp" line="+1027"/>
+        <location filename="../../src/domain/UBGraphicsScene.cpp" line="+1031"/>
         <location line="+11"/>
         <source>Attach a file</source>
         <translation>Erantsi fitxategi bat</translation>
@@ -3517,7 +3517,7 @@ Orain deskargatu eta instalatu? LibertyBoard-ek zure dokumentuak gordeko ditu, i
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+75"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+79"/>
         <location line="+94"/>
         <source>Page Size</source>
         <translation>Orriaren tamaina</translation>
@@ -3582,7 +3582,12 @@ Orain deskargatu eta instalatu? LibertyBoard-ek zure dokumentuak gordeko ditu, i
         <translation>Gorde kopia bat PDF, PNG edo JPEG fitxategi gisa</translation>
     </message>
     <message>
-        <location line="+44"/>
+        <location line="+46"/>
+        <source>Full screen</source>
+        <translation>Pantaila osoa</translation>
+    </message>
+    <message>
+        <location line="+7"/>
         <source>&amp;About</source>
         <translation>&amp;Honi buruz</translation>
     </message>
@@ -3603,12 +3608,12 @@ Orain deskargatu eta instalatu? LibertyBoard-ek zure dokumentuak gordeko ditu, i
     </message>
     <message>
         <location line="+60"/>
-        <location line="+92"/>
+        <location line="+154"/>
         <source>Saved</source>
         <translation>Gordeta</translation>
     </message>
     <message>
-        <location line="-86"/>
+        <location line="-148"/>
         <source>Search...</source>
         <translation>Bilatu...</translation>
     </message>
@@ -3623,7 +3628,17 @@ Orain deskargatu eta instalatu? LibertyBoard-ek zure dokumentuak gordeko ditu, i
         <translation>Ezkutatu edo erakutsi tresna-barra</translation>
     </message>
     <message>
-        <location line="+43"/>
+        <location line="+42"/>
+        <source>Exit full screen</source>
+        <translation>Irten pantaila osotik</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Back to the window, with the menu (F11)</source>
+        <translation>Itzuli leihora, menuarekin (F11)</translation>
+    </message>
+    <message>
+        <location line="+62"/>
         <source>Open</source>
         <translation>Ireki</translation>
     </message>
@@ -3758,7 +3773,7 @@ Ostalari onentzako errore hauek ez-ikusi nahi dituzu?</translation>
 <context>
     <name>UBNoteOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+585"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+623"/>
         <source>Note</source>
         <translation>Oharra</translation>
     </message>
@@ -3829,7 +3844,7 @@ Ostalari onentzako errore hauek ez-ikusi nahi dituzu?</translation>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-715"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-753"/>
         <source>Pen</source>
         <translation>Boligrafoa</translation>
     </message>
@@ -4112,7 +4127,7 @@ Zabalera dinamikoa</translation>
 <context>
     <name>UBScreenshot</name>
     <message>
-        <location filename="../../src/gui/UBScreenshot.cpp" line="+35"/>
+        <location filename="../../src/gui/UBScreenshot.cpp" line="+36"/>
         <source>Screenshot</source>
         <translation>Pantaila-argazkia</translation>
     </message>
@@ -4457,7 +4472,7 @@ Zabalera dinamikoa</translation>
 <context>
     <name>UBSoundDialog</name>
     <message>
-        <location filename="../../src/gui/UBSoundDialog.cpp" line="+51"/>
+        <location filename="../../src/gui/UBSoundDialog.cpp" line="+53"/>
         <source>Sound</source>
         <translation>Soinua</translation>
     </message>
@@ -4467,7 +4482,7 @@ Zabalera dinamikoa</translation>
         <translation>Grabatu soinu bat edo aukeratu audio-fitxategi bat.</translation>
     </message>
     <message>
-        <location line="+12"/>
+        <location line="+13"/>
         <source>Play</source>
         <translation>Erreproduzitu</translation>
     </message>
@@ -4492,7 +4507,7 @@ Zabalera dinamikoa</translation>
         <translation>Bolumena</translation>
     </message>
     <message>
-        <location line="+106"/>
+        <location line="+116"/>
         <source>Recording... %1 s</source>
         <translation>Grabatzen... %1 s</translation>
     </message>
@@ -4530,7 +4545,17 @@ Zabalera dinamikoa</translation>
         <translation>Zigilua</translation>
     </message>
     <message>
-        <location line="+78"/>
+        <location line="+4"/>
+        <source>Remove</source>
+        <translation>Kendu</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Click a stamp to take it away</source>
+        <translation>Egin klik zigilu batean kentzeko</translation>
+    </message>
+    <message>
+        <location line="+111"/>
         <source>Picture of the custom stamp</source>
         <translation>Zigilu pertsonalizatuaren irudia</translation>
     </message>
@@ -4564,7 +4589,7 @@ Zabalera dinamikoa</translation>
 <context>
     <name>UBTextOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-157"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-195"/>
         <source>Text</source>
         <translation>Testua</translation>
     </message>
@@ -4874,7 +4899,7 @@ Berrabiarazi aplikazioa eguneratutako dokumentuak irekitzeko.</translation>
 <context>
     <name>UBZLayerController</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsScene.cpp" line="-838"/>
+        <location filename="../../src/domain/UBGraphicsScene.cpp" line="-842"/>
         <source>Bottom layer limit reached</source>
         <translation type="unfinished"></translation>
     </message>

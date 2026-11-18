@@ -1726,7 +1726,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+1918"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+2020"/>
         <source>Is it for Board or Widget ?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1785,7 +1785,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+859"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+897"/>
         <source>Quick note</source>
         <translation>Nota rápida</translation>
     </message>
@@ -1881,7 +1881,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Mostrar a paleta do lapis</translation>
     </message>
     <message>
-        <location line="+49"/>
+        <location line="+55"/>
         <source>Show Board on Secondary Screen</source>
         <translation>Mostrar o encerado na pantalla secundaria</translation>
     </message>
@@ -1891,7 +1891,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Mostrar escritorio na pantalla secundaria</translation>
     </message>
     <message>
-        <location line="-89"/>
+        <location line="-95"/>
         <source>Show LibertyBoard</source>
         <translation>Mostrar LibertyBoard</translation>
     </message>
@@ -2291,12 +2291,12 @@ Proporcionar un novo nome creará un novo documento.</translation>
 <context>
     <name>UBDocumentTabs</name>
     <message>
-        <location filename="../../src/gui/UBDocumentTabs.cpp" line="+64"/>
+        <location filename="../../src/gui/UBDocumentTabs.cpp" line="+66"/>
         <source>New document</source>
         <translation>Novo documento</translation>
     </message>
     <message>
-        <location line="+55"/>
+        <location line="+56"/>
         <source>Save</source>
         <translation>Gardar</translation>
     </message>
@@ -2460,7 +2460,7 @@ Do you want to continue?</source>
 <context>
     <name>UBEraserOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-628"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-666"/>
         <source>Eraser</source>
         <translation>Borrador</translation>
     </message>
@@ -3026,7 +3026,7 @@ Descargala e instalala agora? LibertyBoard garda os teus documentos, péchase e 
 <context>
     <name>UBGraphicsScene</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsScene.cpp" line="+1027"/>
+        <location filename="../../src/domain/UBGraphicsScene.cpp" line="+1031"/>
         <location line="+11"/>
         <source>Attach a file</source>
         <translation>Anexar un ficheiro</translation>
@@ -3366,7 +3366,7 @@ Descargala e instalala agora? LibertyBoard garda os teus documentos, péchase e 
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+75"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+79"/>
         <location line="+94"/>
         <source>Page Size</source>
         <translation>Tamaño de páxina</translation>
@@ -3431,7 +3431,12 @@ Descargala e instalala agora? LibertyBoard garda os teus documentos, péchase e 
         <translation>Gardar unha copia como ficheiro PDF, PNG ou JPEG</translation>
     </message>
     <message>
-        <location line="+44"/>
+        <location line="+46"/>
+        <source>Full screen</source>
+        <translation>Pantalla completa</translation>
+    </message>
+    <message>
+        <location line="+7"/>
         <source>&amp;About</source>
         <translation>&amp;Acerca de</translation>
     </message>
@@ -3452,12 +3457,12 @@ Descargala e instalala agora? LibertyBoard garda os teus documentos, péchase e 
     </message>
     <message>
         <location line="+60"/>
-        <location line="+92"/>
+        <location line="+154"/>
         <source>Saved</source>
         <translation>Gardado</translation>
     </message>
     <message>
-        <location line="-86"/>
+        <location line="-148"/>
         <source>Search...</source>
         <translation>Buscar...</translation>
     </message>
@@ -3472,7 +3477,17 @@ Descargala e instalala agora? LibertyBoard garda os teus documentos, péchase e 
         <translation>Ocultar ou amosar a barra</translation>
     </message>
     <message>
-        <location line="+43"/>
+        <location line="+42"/>
+        <source>Exit full screen</source>
+        <translation>Saír da pantalla completa</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Back to the window, with the menu (F11)</source>
+        <translation>Volver á xanela, co menú (F11)</translation>
+    </message>
+    <message>
+        <location line="+62"/>
         <source>Open</source>
         <translation>Abrir</translation>
     </message>
@@ -3601,7 +3616,7 @@ Do you want to ignore these errors for this host?</source>
 <context>
     <name>UBNoteOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+585"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+623"/>
         <source>Note</source>
         <translation>Nota</translation>
     </message>
@@ -3672,7 +3687,7 @@ Do you want to ignore these errors for this host?</source>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-715"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-753"/>
         <source>Pen</source>
         <translation>Bolígrafo</translation>
     </message>
@@ -3917,7 +3932,7 @@ Largura dinámica</translation>
 <context>
     <name>UBScreenshot</name>
     <message>
-        <location filename="../../src/gui/UBScreenshot.cpp" line="+35"/>
+        <location filename="../../src/gui/UBScreenshot.cpp" line="+36"/>
         <source>Screenshot</source>
         <translation>Captura de pantalla</translation>
     </message>
@@ -4262,7 +4277,7 @@ Largura dinámica</translation>
 <context>
     <name>UBSoundDialog</name>
     <message>
-        <location filename="../../src/gui/UBSoundDialog.cpp" line="+51"/>
+        <location filename="../../src/gui/UBSoundDialog.cpp" line="+53"/>
         <source>Sound</source>
         <translation>Son</translation>
     </message>
@@ -4272,7 +4287,7 @@ Largura dinámica</translation>
         <translation>Grave un son ou escolla un ficheiro de son.</translation>
     </message>
     <message>
-        <location line="+12"/>
+        <location line="+13"/>
         <source>Play</source>
         <translation>Reproducir</translation>
     </message>
@@ -4297,7 +4312,7 @@ Largura dinámica</translation>
         <translation>Volume</translation>
     </message>
     <message>
-        <location line="+106"/>
+        <location line="+116"/>
         <source>Recording... %1 s</source>
         <translation>Gravando... %1 s</translation>
     </message>
@@ -4335,7 +4350,17 @@ Largura dinámica</translation>
         <translation>Selo</translation>
     </message>
     <message>
-        <location line="+78"/>
+        <location line="+4"/>
+        <source>Remove</source>
+        <translation>Quitar</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Click a stamp to take it away</source>
+        <translation>Prema nun selo para quitalo</translation>
+    </message>
+    <message>
+        <location line="+111"/>
         <source>Picture of the custom stamp</source>
         <translation>Imaxe do selo personalizado</translation>
     </message>
@@ -4376,7 +4401,7 @@ Largura dinámica</translation>
 <context>
     <name>UBTextOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-157"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-195"/>
         <source>Text</source>
         <translation>Texto</translation>
     </message>
@@ -4668,7 +4693,7 @@ Por favor, reinicie a aplicación para acceder aos documentos actualizados.</tra
 <context>
     <name>UBZLayerController</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsScene.cpp" line="-838"/>
+        <location filename="../../src/domain/UBGraphicsScene.cpp" line="-842"/>
         <source>Bottom layer limit reached</source>
         <translation type="unfinished"></translation>
     </message>

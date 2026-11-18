@@ -1779,7 +1779,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+1918"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+2020"/>
         <source>Is it for Board or Widget ?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1838,7 +1838,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+859"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+897"/>
         <source>Quick note</source>
         <translation>Brza bilješka</translation>
     </message>
@@ -1939,7 +1939,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Prikaži paletu alata</translation>
     </message>
     <message>
-        <location line="+49"/>
+        <location line="+55"/>
         <source>Show Board on Secondary Screen</source>
         <translation>Prikaži ploču na sekundarnom ekranu</translation>
     </message>
@@ -2349,12 +2349,12 @@ Davanjem novog imena stvorit će se novi dokument.</translation>
 <context>
     <name>UBDocumentTabs</name>
     <message>
-        <location filename="../../src/gui/UBDocumentTabs.cpp" line="+64"/>
+        <location filename="../../src/gui/UBDocumentTabs.cpp" line="+66"/>
         <source>New document</source>
         <translation>Novi dokument</translation>
     </message>
     <message>
-        <location line="+55"/>
+        <location line="+56"/>
         <source>Save</source>
         <translation>Spremi</translation>
     </message>
@@ -2514,7 +2514,7 @@ Do you want to continue?</source>
 <context>
     <name>UBEraserOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-628"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-666"/>
         <source>Eraser</source>
         <translation>Gumica</translation>
     </message>
@@ -3084,7 +3084,7 @@ Preuzeti i instalirati sada? LibertyBoard sprema tvoje dokumente, zatvara se i p
 <context>
     <name>UBGraphicsScene</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsScene.cpp" line="+1027"/>
+        <location filename="../../src/domain/UBGraphicsScene.cpp" line="+1031"/>
         <location line="+11"/>
         <source>Attach a file</source>
         <translation>Priloži datoteku</translation>
@@ -3424,7 +3424,7 @@ Preuzeti i instalirati sada? LibertyBoard sprema tvoje dokumente, zatvara se i p
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+75"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+79"/>
         <location line="+94"/>
         <source>Page Size</source>
         <translation>Veličina stranice</translation>
@@ -3489,7 +3489,12 @@ Preuzeti i instalirati sada? LibertyBoard sprema tvoje dokumente, zatvara se i p
         <translation>Spremi kopiju kao PDF, PNG ili JPEG datoteku</translation>
     </message>
     <message>
-        <location line="+44"/>
+        <location line="+46"/>
+        <source>Full screen</source>
+        <translation>Cijeli zaslon</translation>
+    </message>
+    <message>
+        <location line="+7"/>
         <source>&amp;About</source>
         <translation>&amp;O programu</translation>
     </message>
@@ -3510,12 +3515,12 @@ Preuzeti i instalirati sada? LibertyBoard sprema tvoje dokumente, zatvara se i p
     </message>
     <message>
         <location line="+60"/>
-        <location line="+92"/>
+        <location line="+154"/>
         <source>Saved</source>
         <translation>Spremljeno</translation>
     </message>
     <message>
-        <location line="-86"/>
+        <location line="-148"/>
         <source>Search...</source>
         <translation>Traži...</translation>
     </message>
@@ -3530,7 +3535,17 @@ Preuzeti i instalirati sada? LibertyBoard sprema tvoje dokumente, zatvara se i p
         <translation>Sakrij ili prikaži alatnu traku</translation>
     </message>
     <message>
-        <location line="+43"/>
+        <location line="+42"/>
+        <source>Exit full screen</source>
+        <translation>Izlaz iz cijelog zaslona</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Back to the window, with the menu (F11)</source>
+        <translation>Natrag na prozor s izbornikom (F11)</translation>
+    </message>
+    <message>
+        <location line="+62"/>
         <source>Open</source>
         <translation>Otvori</translation>
     </message>
@@ -3665,7 +3680,7 @@ Do you want to ignore these errors for this host?</source>
 <context>
     <name>UBNoteOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+585"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+623"/>
         <source>Note</source>
         <translation>Bilješka</translation>
     </message>
@@ -3736,7 +3751,7 @@ Do you want to ignore these errors for this host?</source>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-715"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-753"/>
         <source>Pen</source>
         <translation>Pisaljka</translation>
     </message>
@@ -3981,7 +3996,7 @@ Dinamična širina</translation>
 <context>
     <name>UBScreenshot</name>
     <message>
-        <location filename="../../src/gui/UBScreenshot.cpp" line="+35"/>
+        <location filename="../../src/gui/UBScreenshot.cpp" line="+36"/>
         <source>Screenshot</source>
         <translation>Snimka zaslona</translation>
     </message>
@@ -4326,7 +4341,7 @@ Dinamična širina</translation>
 <context>
     <name>UBSoundDialog</name>
     <message>
-        <location filename="../../src/gui/UBSoundDialog.cpp" line="+51"/>
+        <location filename="../../src/gui/UBSoundDialog.cpp" line="+53"/>
         <source>Sound</source>
         <translation>Zvuk</translation>
     </message>
@@ -4336,7 +4351,7 @@ Dinamična širina</translation>
         <translation>Snimite zvuk ili odaberite zvučnu datoteku.</translation>
     </message>
     <message>
-        <location line="+12"/>
+        <location line="+13"/>
         <source>Play</source>
         <translation>Reproduciraj</translation>
     </message>
@@ -4361,7 +4376,7 @@ Dinamična širina</translation>
         <translation>Glasnoća</translation>
     </message>
     <message>
-        <location line="+106"/>
+        <location line="+116"/>
         <source>Recording... %1 s</source>
         <translation>Snimanje... %1 s</translation>
     </message>
@@ -4399,7 +4414,17 @@ Dinamična širina</translation>
         <translation>Pečat</translation>
     </message>
     <message>
-        <location line="+78"/>
+        <location line="+4"/>
+        <source>Remove</source>
+        <translation>Ukloni</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Click a stamp to take it away</source>
+        <translation>Kliknite pečat da ga uklonite</translation>
+    </message>
+    <message>
+        <location line="+111"/>
         <source>Picture of the custom stamp</source>
         <translation>Slika vlastitog pečata</translation>
     </message>
@@ -4440,7 +4465,7 @@ Dinamična širina</translation>
 <context>
     <name>UBTextOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-157"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-195"/>
         <source>Text</source>
         <translation>Tekst</translation>
     </message>
@@ -4761,7 +4786,7 @@ Za pristup aktualiziranim dokumentima ponovo pokreni program.</translation>
 <context>
     <name>UBZLayerController</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsScene.cpp" line="-838"/>
+        <location filename="../../src/domain/UBGraphicsScene.cpp" line="-842"/>
         <source>Bottom layer limit reached</source>
         <translation type="unfinished"></translation>
     </message>

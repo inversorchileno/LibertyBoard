@@ -1740,7 +1740,7 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+1918"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+2020"/>
         <source>Is it for Board or Widget ?</source>
         <translation>Ist das für das Board oder das Widget?</translation>
     </message>
@@ -1799,7 +1799,7 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
 <context>
     <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+859"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+897"/>
         <source>Quick note</source>
         <translation>Kurznotiz</translation>
     </message>
@@ -1895,7 +1895,7 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
         <translation>Stylus-Palette anzeigen</translation>
     </message>
     <message>
-        <location line="+49"/>
+        <location line="+55"/>
         <source>Show Board on Secondary Screen</source>
         <translation>Board auf zweitem Bildschirm anzeigen</translation>
     </message>
@@ -1905,7 +1905,7 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
         <translation>Desktop auf zweitem Bildschirm anzeigen</translation>
     </message>
     <message>
-        <location line="-89"/>
+        <location line="-95"/>
         <source>Show LibertyBoard</source>
         <translation>Zeige LibertyBoard</translation>
     </message>
@@ -2325,12 +2325,12 @@ Wenn Sie einen neuen Namen wählen, wird ein neues Dokument erstellt.</translati
 <context>
     <name>UBDocumentTabs</name>
     <message>
-        <location filename="../../src/gui/UBDocumentTabs.cpp" line="+64"/>
+        <location filename="../../src/gui/UBDocumentTabs.cpp" line="+66"/>
         <source>New document</source>
         <translation>Neues Dokument</translation>
     </message>
     <message>
-        <location line="+55"/>
+        <location line="+56"/>
         <source>Save</source>
         <translation>Speichern</translation>
     </message>
@@ -2508,7 +2508,7 @@ Möchten Sie fortfahren?</translation>
 <context>
     <name>UBEraserOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-628"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-666"/>
         <source>Eraser</source>
         <translation>Löschen</translation>
     </message>
@@ -3075,7 +3075,7 @@ Jetzt herunterladen und installieren? LibertyBoard speichert Ihre Dokumente, sch
 <context>
     <name>UBGraphicsScene</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsScene.cpp" line="+1027"/>
+        <location filename="../../src/domain/UBGraphicsScene.cpp" line="+1031"/>
         <location line="+11"/>
         <source>Attach a file</source>
         <translation>Datei anhängen</translation>
@@ -3415,7 +3415,7 @@ Jetzt herunterladen und installieren? LibertyBoard speichert Ihre Dokumente, sch
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+75"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+79"/>
         <location line="+94"/>
         <source>Page Size</source>
         <translation>Seitengröße</translation>
@@ -3480,7 +3480,12 @@ Jetzt herunterladen und installieren? LibertyBoard speichert Ihre Dokumente, sch
         <translation>Eine Kopie als PDF, PNG oder JPEG speichern</translation>
     </message>
     <message>
-        <location line="+44"/>
+        <location line="+46"/>
+        <source>Full screen</source>
+        <translation>Vollbild</translation>
+    </message>
+    <message>
+        <location line="+7"/>
         <source>&amp;About</source>
         <translation>&amp;Über</translation>
     </message>
@@ -3501,12 +3506,12 @@ Jetzt herunterladen und installieren? LibertyBoard speichert Ihre Dokumente, sch
     </message>
     <message>
         <location line="+60"/>
-        <location line="+92"/>
+        <location line="+154"/>
         <source>Saved</source>
         <translation>Gespeichert</translation>
     </message>
     <message>
-        <location line="-86"/>
+        <location line="-148"/>
         <source>Search...</source>
         <translation>Suchen...</translation>
     </message>
@@ -3521,7 +3526,17 @@ Jetzt herunterladen und installieren? LibertyBoard speichert Ihre Dokumente, sch
         <translation>Werkzeugleiste ein- oder ausblenden</translation>
     </message>
     <message>
-        <location line="+43"/>
+        <location line="+42"/>
+        <source>Exit full screen</source>
+        <translation>Vollbild beenden</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Back to the window, with the menu (F11)</source>
+        <translation>Zurück zum Fenster mit dem Menü (F11)</translation>
+    </message>
+    <message>
+        <location line="+62"/>
         <source>Open</source>
         <translation>Öffnen</translation>
     </message>
@@ -3656,7 +3671,7 @@ Möchten Sie diese Fehler für diesen Computer ignorieren?</translation>
 <context>
     <name>UBNoteOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+585"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+623"/>
         <source>Note</source>
         <translation>Notiz</translation>
     </message>
@@ -3727,7 +3742,7 @@ Möchten Sie diese Fehler für diesen Computer ignorieren?</translation>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-715"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-753"/>
         <source>Pen</source>
         <translation>Stift</translation>
     </message>
@@ -3972,7 +3987,7 @@ Dynamische Breite</translation>
 <context>
     <name>UBScreenshot</name>
     <message>
-        <location filename="../../src/gui/UBScreenshot.cpp" line="+35"/>
+        <location filename="../../src/gui/UBScreenshot.cpp" line="+36"/>
         <source>Screenshot</source>
         <translation>Bildschirmfoto</translation>
     </message>
@@ -4317,7 +4332,7 @@ Dynamische Breite</translation>
 <context>
     <name>UBSoundDialog</name>
     <message>
-        <location filename="../../src/gui/UBSoundDialog.cpp" line="+51"/>
+        <location filename="../../src/gui/UBSoundDialog.cpp" line="+53"/>
         <source>Sound</source>
         <translation>Ton</translation>
     </message>
@@ -4327,7 +4342,7 @@ Dynamische Breite</translation>
         <translation>Nehmen Sie einen Ton auf oder wählen Sie eine Audiodatei.</translation>
     </message>
     <message>
-        <location line="+12"/>
+        <location line="+13"/>
         <source>Play</source>
         <translation>Abspielen</translation>
     </message>
@@ -4352,7 +4367,7 @@ Dynamische Breite</translation>
         <translation>Lautstärke</translation>
     </message>
     <message>
-        <location line="+106"/>
+        <location line="+116"/>
         <source>Recording... %1 s</source>
         <translation>Aufnahme... %1 s</translation>
     </message>
@@ -4390,7 +4405,17 @@ Dynamische Breite</translation>
         <translation>Stempel</translation>
     </message>
     <message>
-        <location line="+78"/>
+        <location line="+4"/>
+        <source>Remove</source>
+        <translation>Entfernen</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Click a stamp to take it away</source>
+        <translation>Klicken Sie auf einen Stempel, um ihn zu entfernen</translation>
+    </message>
+    <message>
+        <location line="+111"/>
         <source>Picture of the custom stamp</source>
         <translation>Bild des eigenen Stempels</translation>
     </message>
@@ -4431,7 +4456,7 @@ Dynamische Breite</translation>
 <context>
     <name>UBTextOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-157"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-195"/>
         <source>Text</source>
         <translation>Text</translation>
     </message>
@@ -4732,7 +4757,7 @@ Bitte starten Sie die Anwendung erneut, um auf die aktualisierten Dokumente zugr
 <context>
     <name>UBZLayerController</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsScene.cpp" line="-838"/>
+        <location filename="../../src/domain/UBGraphicsScene.cpp" line="-842"/>
         <source>Bottom layer limit reached</source>
         <translation>Untere Ebenengrenze erreicht</translation>
     </message>
