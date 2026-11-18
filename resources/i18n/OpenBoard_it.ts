@@ -3433,7 +3433,7 @@ Scaricarla e installarla ora? LibertyBoard salva i tuoi documenti, si chiude e s
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+82"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+83"/>
         <location line="+109"/>
         <source>Page Size</source>
         <translation>Dimensione pagina</translation>
@@ -3539,12 +3539,12 @@ Scaricarla e installarla ora? LibertyBoard salva i tuoi documenti, si chiude e s
     </message>
     <message>
         <location line="+60"/>
-        <location line="+198"/>
+        <location line="+226"/>
         <source>Saved</source>
         <translation>Salvato</translation>
     </message>
     <message>
-        <location line="-192"/>
+        <location line="-220"/>
         <source>Search...</source>
         <translation>Cerca...</translation>
     </message>
@@ -3559,7 +3559,7 @@ Scaricarla e installarla ora? LibertyBoard salva i tuoi documenti, si chiude e s
         <translation>Nascondi o mostra la barra degli strumenti</translation>
     </message>
     <message>
-        <location line="+86"/>
+        <location line="+114"/>
         <source>Exit full screen</source>
         <translation>Esci da schermo intero</translation>
     </message>
@@ -3976,7 +3976,7 @@ Larghezza dinamica</translation>
 <context>
     <name>UBPreferencesController</name>
     <message>
-        <location filename="../../src/core/UBPreferencesController.cpp" line="+128"/>
+        <location filename="../../src/core/UBPreferencesController.cpp" line="+132"/>
         <source>Language</source>
         <translation>Lingua</translation>
     </message>
@@ -4011,7 +4011,27 @@ Larghezza dinamica</translation>
         <translation> (build %1)</translation>
     </message>
     <message>
-        <location line="+129"/>
+        <location line="+49"/>
+        <source>Top</source>
+        <translation>In alto</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Bottom</source>
+        <translation>In basso</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Left</source>
+        <translation>A sinistra</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Right</source>
+        <translation>A destra</translation>
+    </message>
+    <message>
+        <location line="+95"/>
         <source>Marker is pressure sensitive</source>
         <translation>L&apos;evidenziatore è sensibile alla pressione</translation>
     </message>
@@ -4020,7 +4040,7 @@ Larghezza dinamica</translation>
         <translation type="vanished">Puntatore laser</translation>
     </message>
     <message>
-        <location line="-172"/>
+        <location line="-188"/>
         <source>Use all available displays</source>
         <translation>Utlizzare tutti gli schermi</translation>
     </message>

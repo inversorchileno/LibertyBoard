@@ -3371,7 +3371,7 @@ Stiahnuť a nainštalovať teraz? LibertyBoard uloží vaše dokumenty, zavrie s
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+82"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+83"/>
         <location line="+109"/>
         <source>Page Size</source>
         <translation>Veľkosť strany</translation>
@@ -3477,12 +3477,12 @@ Stiahnuť a nainštalovať teraz? LibertyBoard uloží vaše dokumenty, zavrie s
     </message>
     <message>
         <location line="+60"/>
-        <location line="+198"/>
+        <location line="+226"/>
         <source>Saved</source>
         <translation>Uložené</translation>
     </message>
     <message>
-        <location line="-192"/>
+        <location line="-220"/>
         <source>Search...</source>
         <translation>Hľadať...</translation>
     </message>
@@ -3497,7 +3497,7 @@ Stiahnuť a nainštalovať teraz? LibertyBoard uloží vaše dokumenty, zavrie s
         <translation>Skryť alebo zobraziť panel nástrojov</translation>
     </message>
     <message>
-        <location line="+86"/>
+        <location line="+114"/>
         <source>Exit full screen</source>
         <translation>Ukončiť celú obrazovku</translation>
     </message>
@@ -3916,7 +3916,7 @@ Dynamická šírka</translation>
 <context>
     <name>UBPreferencesController</name>
     <message>
-        <location filename="../../src/core/UBPreferencesController.cpp" line="+128"/>
+        <location filename="../../src/core/UBPreferencesController.cpp" line="+132"/>
         <source>Language</source>
         <translation>Jazyk</translation>
     </message>
@@ -3951,7 +3951,27 @@ Dynamická šírka</translation>
         <translation> (zostavenie %1)</translation>
     </message>
     <message>
-        <location line="+129"/>
+        <location line="+49"/>
+        <source>Top</source>
+        <translation>Hore</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Bottom</source>
+        <translation>Dole</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Left</source>
+        <translation>Vľavo</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Right</source>
+        <translation>Vpravo</translation>
+    </message>
+    <message>
+        <location line="+95"/>
         <source>Marker is pressure sensitive</source>
         <translation>Zvýrazňovač je citlivý na tlak</translation>
     </message>
@@ -3960,7 +3980,7 @@ Dynamická šírka</translation>
         <translation type="vanished">Laserové ukazovadlo</translation>
     </message>
     <message>
-        <location line="-172"/>
+        <location line="-188"/>
         <source>Use all available displays</source>
         <translation type="unfinished"></translation>
     </message>

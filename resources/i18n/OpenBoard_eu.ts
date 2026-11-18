@@ -3544,7 +3544,7 @@ Orain deskargatu eta instalatu? LibertyBoard-ek zure dokumentuak gordeko ditu, i
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+82"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+83"/>
         <location line="+109"/>
         <source>Page Size</source>
         <translation>Orriaren tamaina</translation>
@@ -3650,12 +3650,12 @@ Orain deskargatu eta instalatu? LibertyBoard-ek zure dokumentuak gordeko ditu, i
     </message>
     <message>
         <location line="+60"/>
-        <location line="+198"/>
+        <location line="+226"/>
         <source>Saved</source>
         <translation>Gordeta</translation>
     </message>
     <message>
-        <location line="-192"/>
+        <location line="-220"/>
         <source>Search...</source>
         <translation>Bilatu...</translation>
     </message>
@@ -3670,7 +3670,7 @@ Orain deskargatu eta instalatu? LibertyBoard-ek zure dokumentuak gordeko ditu, i
         <translation>Ezkutatu edo erakutsi tresna-barra</translation>
     </message>
     <message>
-        <location line="+86"/>
+        <location line="+114"/>
         <source>Exit full screen</source>
         <translation>Irten pantaila osotik</translation>
     </message>
@@ -4091,7 +4091,7 @@ Zabalera dinamikoa</translation>
 <context>
     <name>UBPreferencesController</name>
     <message>
-        <location filename="../../src/core/UBPreferencesController.cpp" line="+128"/>
+        <location filename="../../src/core/UBPreferencesController.cpp" line="+132"/>
         <source>Language</source>
         <translation>Hizkuntza</translation>
     </message>
@@ -4126,7 +4126,27 @@ Zabalera dinamikoa</translation>
         <translation> (%1. konpilazioa)</translation>
     </message>
     <message>
-        <location line="+129"/>
+        <location line="+49"/>
+        <source>Top</source>
+        <translation>Goian</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Bottom</source>
+        <translation>Behean</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Left</source>
+        <translation>Ezkerrean</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Right</source>
+        <translation>Eskuinean</translation>
+    </message>
+    <message>
+        <location line="+95"/>
         <source>Marker is pressure sensitive</source>
         <translation>Errotulagailua presioarekiko sentibera da</translation>
     </message>
@@ -4135,7 +4155,7 @@ Zabalera dinamikoa</translation>
         <translation type="vanished">Laser erakuslea</translation>
     </message>
     <message>
-        <location line="-172"/>
+        <location line="-188"/>
         <source>Use all available displays</source>
         <translation type="unfinished">Erabili pantaila eskuragarri guztiak</translation>
     </message>

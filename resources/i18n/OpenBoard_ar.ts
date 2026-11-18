@@ -3377,7 +3377,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+82"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+83"/>
         <location line="+109"/>
         <source>Page Size</source>
         <translation>حجم الصفحة</translation>
@@ -3483,12 +3483,12 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     </message>
     <message>
         <location line="+60"/>
-        <location line="+198"/>
+        <location line="+226"/>
         <source>Saved</source>
         <translation>تم الحفظ</translation>
     </message>
     <message>
-        <location line="-192"/>
+        <location line="-220"/>
         <source>Search...</source>
         <translation>بحث...</translation>
     </message>
@@ -3503,7 +3503,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>إخفاء شريط الأدوات أو إظهاره</translation>
     </message>
     <message>
-        <location line="+86"/>
+        <location line="+114"/>
         <source>Exit full screen</source>
         <translation>الخروج من ملء الشاشة</translation>
     </message>
@@ -3894,7 +3894,7 @@ Dynamic width</source>
 <context>
     <name>UBPreferencesController</name>
     <message>
-        <location filename="../../src/core/UBPreferencesController.cpp" line="+128"/>
+        <location filename="../../src/core/UBPreferencesController.cpp" line="+132"/>
         <source>Language</source>
         <translation>اللغة</translation>
     </message>
@@ -3929,7 +3929,27 @@ Dynamic width</source>
         <translation> (الإصدار %1)</translation>
     </message>
     <message>
-        <location line="+129"/>
+        <location line="+49"/>
+        <source>Top</source>
+        <translation>أعلى</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Bottom</source>
+        <translation>أسفل</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Left</source>
+        <translation>يسار</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Right</source>
+        <translation>يمين</translation>
+    </message>
+    <message>
+        <location line="+95"/>
         <source>Marker is pressure sensitive</source>
         <translation>العلامة حساسة للضغط</translation>
     </message>
@@ -3938,7 +3958,7 @@ Dynamic width</source>
         <translation type="vanished">مؤشر ليزر</translation>
     </message>
     <message>
-        <location line="-172"/>
+        <location line="-188"/>
         <source>Use all available displays</source>
         <translation type="unfinished"></translation>
     </message>

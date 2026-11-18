@@ -3445,7 +3445,7 @@ La télécharger et l&apos;installer maintenant ? LibertyBoard enregistre vos do
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+82"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+83"/>
         <location line="+109"/>
         <source>Page Size</source>
         <translation>Taille de la page</translation>
@@ -3551,12 +3551,12 @@ La télécharger et l&apos;installer maintenant ? LibertyBoard enregistre vos do
     </message>
     <message>
         <location line="+60"/>
-        <location line="+198"/>
+        <location line="+226"/>
         <source>Saved</source>
         <translation>Enregistré</translation>
     </message>
     <message>
-        <location line="-192"/>
+        <location line="-220"/>
         <source>Search...</source>
         <translation>Rechercher...</translation>
     </message>
@@ -3571,7 +3571,7 @@ La télécharger et l&apos;installer maintenant ? LibertyBoard enregistre vos do
         <translation>Masquer ou afficher la barre d&apos;outils</translation>
     </message>
     <message>
-        <location line="+86"/>
+        <location line="+114"/>
         <source>Exit full screen</source>
         <translation>Quitter le plein écran</translation>
     </message>
@@ -3992,12 +3992,12 @@ Largeur dynamique</translation>
 <context>
     <name>UBPreferencesController</name>
     <message>
-        <location filename="../../src/core/UBPreferencesController.cpp" line="+391"/>
+        <location filename="../../src/core/UBPreferencesController.cpp" line="+411"/>
         <source>Marker is pressure sensitive</source>
         <translation>Stylet sensible à la pression</translation>
     </message>
     <message>
-        <location line="-130"/>
+        <location line="-146"/>
         <source>version: </source>
         <translation>version : </translation>
     </message>
@@ -4035,6 +4035,26 @@ Largeur dynamique</translation>
         <location line="+43"/>
         <source> (build %1)</source>
         <translation> (version %1)</translation>
+    </message>
+    <message>
+        <location line="+49"/>
+        <source>Top</source>
+        <translation>En haut</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Bottom</source>
+        <translation>En bas</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Left</source>
+        <translation>À gauche</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Right</source>
+        <translation>À droite</translation>
     </message>
     <message>
         <source>Laser pointer</source>

@@ -3393,7 +3393,7 @@ Descargala e instalala agora? LibertyBoard garda os teus documentos, péchase e 
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+82"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+83"/>
         <location line="+109"/>
         <source>Page Size</source>
         <translation>Tamaño de páxina</translation>
@@ -3499,12 +3499,12 @@ Descargala e instalala agora? LibertyBoard garda os teus documentos, péchase e 
     </message>
     <message>
         <location line="+60"/>
-        <location line="+198"/>
+        <location line="+226"/>
         <source>Saved</source>
         <translation>Gardado</translation>
     </message>
     <message>
-        <location line="-192"/>
+        <location line="-220"/>
         <source>Search...</source>
         <translation>Buscar...</translation>
     </message>
@@ -3519,7 +3519,7 @@ Descargala e instalala agora? LibertyBoard garda os teus documentos, péchase e 
         <translation>Ocultar ou amosar a barra</translation>
     </message>
     <message>
-        <location line="+86"/>
+        <location line="+114"/>
         <source>Exit full screen</source>
         <translation>Saír da pantalla completa</translation>
     </message>
@@ -3930,7 +3930,7 @@ Largura dinámica</translation>
 <context>
     <name>UBPreferencesController</name>
     <message>
-        <location filename="../../src/core/UBPreferencesController.cpp" line="+128"/>
+        <location filename="../../src/core/UBPreferencesController.cpp" line="+132"/>
         <source>Language</source>
         <translation>Idioma</translation>
     </message>
@@ -3965,7 +3965,27 @@ Largura dinámica</translation>
         <translation> (compilación %1)</translation>
     </message>
     <message>
-        <location line="+129"/>
+        <location line="+49"/>
+        <source>Top</source>
+        <translation>Arriba</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Bottom</source>
+        <translation>Abaixo</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Left</source>
+        <translation>Á esquerda</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Right</source>
+        <translation>Á dereita</translation>
+    </message>
+    <message>
+        <location line="+95"/>
         <source>Marker is pressure sensitive</source>
         <translation>O marcador é sensible á presión</translation>
     </message>
@@ -3974,7 +3994,7 @@ Largura dinámica</translation>
         <translation type="vanished">Punteiro láser</translation>
     </message>
     <message>
-        <location line="-172"/>
+        <location line="-188"/>
         <source>Use all available displays</source>
         <translation type="unfinished"></translation>
     </message>

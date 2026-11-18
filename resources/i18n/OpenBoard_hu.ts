@@ -3452,7 +3452,7 @@ Letölti és telepíti most? A LibertyBoard menti a dokumentumait, bezárul, maj
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+82"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+83"/>
         <location line="+109"/>
         <source>Page Size</source>
         <translation>Oldalméret</translation>
@@ -3558,12 +3558,12 @@ Letölti és telepíti most? A LibertyBoard menti a dokumentumait, bezárul, maj
     </message>
     <message>
         <location line="+60"/>
-        <location line="+198"/>
+        <location line="+226"/>
         <source>Saved</source>
         <translation>Mentve</translation>
     </message>
     <message>
-        <location line="-192"/>
+        <location line="-220"/>
         <source>Search...</source>
         <translation>Keresés...</translation>
     </message>
@@ -3578,7 +3578,7 @@ Letölti és telepíti most? A LibertyBoard menti a dokumentumait, bezárul, maj
         <translation>Eszköztár elrejtése vagy megjelenítése</translation>
     </message>
     <message>
-        <location line="+86"/>
+        <location line="+114"/>
         <source>Exit full screen</source>
         <translation>Kilépés a teljes képernyőből</translation>
     </message>
@@ -4003,7 +4003,7 @@ Dinamikus szélesség</translation>
 <context>
     <name>UBPreferencesController</name>
     <message>
-        <location filename="../../src/core/UBPreferencesController.cpp" line="+128"/>
+        <location filename="../../src/core/UBPreferencesController.cpp" line="+132"/>
         <source>Language</source>
         <translation>Nyelv</translation>
     </message>
@@ -4038,7 +4038,27 @@ Dinamikus szélesség</translation>
         <translation> (%1. build)</translation>
     </message>
     <message>
-        <location line="+129"/>
+        <location line="+49"/>
+        <source>Top</source>
+        <translation>Fent</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Bottom</source>
+        <translation>Lent</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Left</source>
+        <translation>Balra</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Right</source>
+        <translation>Jobbra</translation>
+    </message>
+    <message>
+        <location line="+95"/>
         <source>Marker is pressure sensitive</source>
         <translation>A jelölőtoll nyomásérzékeny</translation>
     </message>
@@ -4047,7 +4067,7 @@ Dinamikus szélesség</translation>
         <translation type="vanished">Lézermutató</translation>
     </message>
     <message>
-        <location line="-172"/>
+        <location line="-188"/>
         <source>Use all available displays</source>
         <translation>Az összes elérhető kijelző használata</translation>
     </message>

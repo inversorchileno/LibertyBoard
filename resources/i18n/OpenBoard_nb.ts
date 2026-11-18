@@ -3362,7 +3362,7 @@ Laste ned og installere nå? LibertyBoard lagrer dokumentene dine, lukkes og åp
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+82"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+83"/>
         <location line="+109"/>
         <source>Page Size</source>
         <translation>Sidestørrelse</translation>
@@ -3468,12 +3468,12 @@ Laste ned og installere nå? LibertyBoard lagrer dokumentene dine, lukkes og åp
     </message>
     <message>
         <location line="+60"/>
-        <location line="+198"/>
+        <location line="+226"/>
         <source>Saved</source>
         <translation>Lagret</translation>
     </message>
     <message>
-        <location line="-192"/>
+        <location line="-220"/>
         <source>Search...</source>
         <translation>Søk...</translation>
     </message>
@@ -3488,7 +3488,7 @@ Laste ned og installere nå? LibertyBoard lagrer dokumentene dine, lukkes og åp
         <translation>Skjul eller vis verktøylinjen</translation>
     </message>
     <message>
-        <location line="+86"/>
+        <location line="+114"/>
         <source>Exit full screen</source>
         <translation>Avslutt fullskjerm</translation>
     </message>
@@ -3879,7 +3879,7 @@ Dynamisk bredde</translation>
 <context>
     <name>UBPreferencesController</name>
     <message>
-        <location filename="../../src/core/UBPreferencesController.cpp" line="+128"/>
+        <location filename="../../src/core/UBPreferencesController.cpp" line="+132"/>
         <source>Language</source>
         <translation>Språk</translation>
     </message>
@@ -3914,7 +3914,27 @@ Dynamisk bredde</translation>
         <translation> (bygg %1)</translation>
     </message>
     <message>
-        <location line="+129"/>
+        <location line="+49"/>
+        <source>Top</source>
+        <translation>Øverst</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Bottom</source>
+        <translation>Nederst</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Left</source>
+        <translation>Venstre</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Right</source>
+        <translation>Høyre</translation>
+    </message>
+    <message>
+        <location line="+95"/>
         <source>Marker is pressure sensitive</source>
         <translation>Markøren er trykksensitiv</translation>
     </message>
@@ -3923,7 +3943,7 @@ Dynamisk bredde</translation>
         <translation type="vanished">Laserpeker</translation>
     </message>
     <message>
-        <location line="-172"/>
+        <location line="-188"/>
         <source>Use all available displays</source>
         <translation type="unfinished"></translation>
     </message>

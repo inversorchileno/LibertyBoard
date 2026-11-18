@@ -3360,7 +3360,7 @@ O descărcați și o instalați acum? LibertyBoard vă salvează documentele, se
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+82"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+83"/>
         <location line="+109"/>
         <source>Page Size</source>
         <translation>Dimensiunea paginii</translation>
@@ -3466,12 +3466,12 @@ O descărcați și o instalați acum? LibertyBoard vă salvează documentele, se
     </message>
     <message>
         <location line="+60"/>
-        <location line="+198"/>
+        <location line="+226"/>
         <source>Saved</source>
         <translation>Salvat</translation>
     </message>
     <message>
-        <location line="-192"/>
+        <location line="-220"/>
         <source>Search...</source>
         <translation>Căutare...</translation>
     </message>
@@ -3486,7 +3486,7 @@ O descărcați și o instalați acum? LibertyBoard vă salvează documentele, se
         <translation>Ascunde sau afișează bara de instrumente</translation>
     </message>
     <message>
-        <location line="+86"/>
+        <location line="+114"/>
         <source>Exit full screen</source>
         <translation>Ieșire din ecran complet</translation>
     </message>
@@ -3883,7 +3883,7 @@ Lățime dinamică</translation>
 <context>
     <name>UBPreferencesController</name>
     <message>
-        <location filename="../../src/core/UBPreferencesController.cpp" line="+128"/>
+        <location filename="../../src/core/UBPreferencesController.cpp" line="+132"/>
         <source>Language</source>
         <translation>Limbă</translation>
     </message>
@@ -3918,7 +3918,27 @@ Lățime dinamică</translation>
         <translation> (versiunea %1)</translation>
     </message>
     <message>
-        <location line="+129"/>
+        <location line="+49"/>
+        <source>Top</source>
+        <translation>Sus</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Bottom</source>
+        <translation>Jos</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Left</source>
+        <translation>Stânga</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Right</source>
+        <translation>Dreapta</translation>
+    </message>
+    <message>
+        <location line="+95"/>
         <source>Marker is pressure sensitive</source>
         <translation>Markerul este sensibil la apăsare</translation>
     </message>
@@ -3927,7 +3947,7 @@ Lățime dinamică</translation>
         <translation type="vanished">Indicator laser</translation>
     </message>
     <message>
-        <location line="-172"/>
+        <location line="-188"/>
         <source>Use all available displays</source>
         <translation type="unfinished"></translation>
     </message>

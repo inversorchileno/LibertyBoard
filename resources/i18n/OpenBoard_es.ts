@@ -3397,7 +3397,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+315"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+316"/>
         <source>Hide or show the toolbar</source>
         <translation>Ocultar o mostrar la barra</translation>
     </message>
@@ -3516,12 +3516,12 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     </message>
     <message>
         <location line="+60"/>
-        <location line="+198"/>
+        <location line="+226"/>
         <source>Saved</source>
         <translation>Guardado</translation>
     </message>
     <message>
-        <location line="-192"/>
+        <location line="-220"/>
         <source>Search...</source>
         <translation>Buscar...</translation>
     </message>
@@ -3531,7 +3531,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>Buscar palabras en el PDF</translation>
     </message>
     <message>
-        <location line="+107"/>
+        <location line="+135"/>
         <source>Exit full screen</source>
         <translation>Salir de pantalla completa</translation>
     </message>
@@ -3950,7 +3950,7 @@ Ancho dinámico</translation>
         <translation type="vanished">Puntero láser</translation>
     </message>
     <message>
-        <location filename="../../src/core/UBPreferencesController.cpp" line="+261"/>
+        <location filename="../../src/core/UBPreferencesController.cpp" line="+265"/>
         <source>version: </source>
         <translation>versión:</translation>
     </message>
@@ -3985,12 +3985,32 @@ Ancho dinámico</translation>
         <translation> (compilación %1)</translation>
     </message>
     <message>
-        <location line="+129"/>
+        <location line="+49"/>
+        <source>Top</source>
+        <translation>Arriba</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Bottom</source>
+        <translation>Abajo</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Left</source>
+        <translation>Izquierda</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Right</source>
+        <translation>Derecha</translation>
+    </message>
+    <message>
+        <location line="+95"/>
         <source>Marker is pressure sensitive</source>
         <translation>El marcador es sensible a la presión</translation>
     </message>
     <message>
-        <location line="-172"/>
+        <location line="-188"/>
         <source>Use all available displays</source>
         <translation type="unfinished"></translation>
     </message>

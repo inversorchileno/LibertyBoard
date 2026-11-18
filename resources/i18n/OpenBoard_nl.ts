@@ -3344,7 +3344,7 @@ Nu downloaden en installeren? LibertyBoard bewaart je documenten, sluit af en op
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+82"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+83"/>
         <location line="+109"/>
         <source>Page Size</source>
         <translation>Paginagrootte</translation>
@@ -3450,12 +3450,12 @@ Nu downloaden en installeren? LibertyBoard bewaart je documenten, sluit af en op
     </message>
     <message>
         <location line="+60"/>
-        <location line="+198"/>
+        <location line="+226"/>
         <source>Saved</source>
         <translation>Opgeslagen</translation>
     </message>
     <message>
-        <location line="-192"/>
+        <location line="-220"/>
         <source>Search...</source>
         <translation>Zoeken...</translation>
     </message>
@@ -3470,7 +3470,7 @@ Nu downloaden en installeren? LibertyBoard bewaart je documenten, sluit af en op
         <translation>Werkbalk verbergen of tonen</translation>
     </message>
     <message>
-        <location line="+86"/>
+        <location line="+114"/>
         <source>Exit full screen</source>
         <translation>Volledig scherm afsluiten</translation>
     </message>
@@ -3861,7 +3861,7 @@ Dynamische breedte</translation>
 <context>
     <name>UBPreferencesController</name>
     <message>
-        <location filename="../../src/core/UBPreferencesController.cpp" line="+128"/>
+        <location filename="../../src/core/UBPreferencesController.cpp" line="+132"/>
         <source>Language</source>
         <translation>Taal</translation>
     </message>
@@ -3896,7 +3896,27 @@ Dynamische breedte</translation>
         <translation> (build %1)</translation>
     </message>
     <message>
-        <location line="+129"/>
+        <location line="+49"/>
+        <source>Top</source>
+        <translation>Boven</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Bottom</source>
+        <translation>Onder</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Left</source>
+        <translation>Links</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Right</source>
+        <translation>Rechts</translation>
+    </message>
+    <message>
+        <location line="+95"/>
         <source>Marker is pressure sensitive</source>
         <translation>Markeerstift is druk gevoelig</translation>
     </message>
@@ -3905,7 +3925,7 @@ Dynamische breedte</translation>
         <translation type="vanished">Laseraanwijzer</translation>
     </message>
     <message>
-        <location line="-172"/>
+        <location line="-188"/>
         <source>Use all available displays</source>
         <translation type="unfinished"></translation>
     </message>
