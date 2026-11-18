@@ -23,14 +23,13 @@
 #pragma once
 
 #include <QObject>
+#include <QString>
 
 class QWidget;
 
 /**
- * @brief Saves what the user sees on the board to a file of their choice.
- *
- * A document made from a PDF is saved as a PDF with the annotations; a
- * blank board is saved as a PNG or JPEG picture of the current page.
+ * @brief Writes the document of the board to a file of the user: a PDF with
+ * the annotations, or the current page as a PNG or JPEG picture.
  */
 class UBBoardSaver : public QObject
 {
@@ -39,14 +38,21 @@ class UBBoardSaver : public QObject
 public:
     explicit UBBoardSaver(QObject* parent = nullptr);
 
-    /** @brief Asks where to save, then saves. Returns false when the user cancels or saving fails. */
-    bool save(QWidget* dialogParent);
+    /** @brief True when the current page shows a page of an imported PDF. */
+    static bool isFromPdf();
 
     /**
-     * @brief Closes the document of the board, offering to save it first,
-     * and shows a new blank board as when LibertyBoard starts.
+     * @brief Writes the file, in the format of its extension (pdf, png, jpg).
+     * An existing file is only replaced once the new one is complete.
      */
-    void closeDocument(QWidget* dialogParent);
+    bool saveTo(const QString& filename);
+
+    /**
+     * @brief Asks for a file with the dialog of the system, then saves to it.
+     * Returns the file written, or an empty string when the user cancels or
+     * saving fails.
+     */
+    QString saveAs(QWidget* dialogParent, const QString& suggestedFile);
 
 private:
     bool saveAsPdf(const QString& filename);

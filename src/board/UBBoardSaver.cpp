@@ -22,10 +22,10 @@
 
 #include "UBBoardSaver.h"
 
+#include <QFile>
 #include <QFileDialog>
 #include <QFileInfo>
 #include <QImage>
-#include <QMessageBox>
 #include <QPainter>
 #include <QRegularExpression>
 #include <QStandardPaths>
@@ -34,8 +34,6 @@
 #include "board/UBBoardController.h"
 #include "core/UB.h"
 #include "core/UBApplication.h"
-#include "core/UBApplicationController.h"
-#include "core/UBPersistenceManager.h"
 #include "core/UBSettings.h"
 #include "document/UBDocumentProxy.h"
 #include "domain/UBGraphicsScene.h"
@@ -43,8 +41,21 @@
 
 static const QString sLastFolderKey = QStringLiteral("App/LibertyBoardLastSaveFolder");
 
-static bool hasPdfPage(UBGraphicsScene* scene)
+UBBoardSaver::UBBoardSaver(QObject* parent)
+    : QObject(parent)
 {
+}
+
+bool UBBoardSaver::isFromPdf()
+{
+    UBBoardController* board = UBApplication::boardController;
+    std::shared_ptr<UBGraphicsScene> scene = board ? board->activeScene() : nullptr;
+
+    if (!scene)
+    {
+        return false;
+    }
+
     for (QGraphicsItem* item : scene->items())
     {
         if (item->type() == UBGraphicsItemType::PDFItemType)
@@ -56,18 +67,11 @@ static bool hasPdfPage(UBGraphicsScene* scene)
     return false;
 }
 
-UBBoardSaver::UBBoardSaver(QObject* parent)
-    : QObject(parent)
-{
-}
-
-bool UBBoardSaver::save(QWidget* dialogParent)
+bool UBBoardSaver::saveTo(const QString& filename)
 {
     UBBoardController* board = UBApplication::boardController;
-    std::shared_ptr<UBDocumentProxy> document = board ? board->selectedDocument() : nullptr;
-    std::shared_ptr<UBGraphicsScene> scene = board ? board->activeScene() : nullptr;
 
-    if (!document || !scene)
+    if (!board || !board->selectedDocument() || !board->activeScene())
     {
         return false;
     }
@@ -75,102 +79,117 @@ bool UBBoardSaver::save(QWidget* dialogParent)
     // What the user wrote last must be in the document before it is exported.
     board->persistCurrentScene(false, true);
 
+    // Written beside the file first, so that a failure leaves the file as it was.
+    // It keeps the extension: the PDF export derives other names from it.
+    const QFileInfo target(filename);
+    const QString suffix = target.suffix().toLower();
+    const QString partial = target.path() + "/" + target.completeBaseName() + ".saving." + target.suffix();
+    QFile::remove(partial);
+
+    bool written = false;
+
+    if (suffix == "png")
+    {
+        written = saveAsImage(partial, "PNG");
+    }
+    else if (suffix == "jpg" || suffix == "jpeg")
+    {
+        written = saveAsImage(partial, "JPEG");
+    }
+    else
+    {
+        written = saveAsPdf(partial);
+    }
+
+    if (!written)
+    {
+        QFile::remove(partial);
+        return false;
+    }
+
+    if (QFile::exists(filename) && !QFile::remove(filename))
+    {
+        // For example a PDF still open in another program.
+        QFile::remove(partial);
+        return false;
+    }
+
+    return QFile::rename(partial, filename);
+}
+
+QString UBBoardSaver::saveAs(QWidget* dialogParent, const QString& suggestedFile)
+{
+    UBBoardController* board = UBApplication::boardController;
+    std::shared_ptr<UBDocumentProxy> document = board ? board->selectedDocument() : nullptr;
+
+    if (!document)
+    {
+        return QString();
+    }
+
     const QString pdfFilter = tr("PDF with annotations (*.pdf)");
     const QString pngFilter = tr("PNG image of the current page (*.png)");
     const QString jpegFilter = tr("JPEG image of the current page (*.jpg *.jpeg)");
 
-    const bool fromPdf = hasPdfPage(scene.get());
+    const bool fromPdf = isFromPdf();
     const QStringList filters = fromPdf ? QStringList{ pdfFilter, pngFilter, jpegFilter }
                                         : QStringList{ pngFilter, jpegFilter, pdfFilter };
 
-    const QString folder = UBSettings::settings()->value(sLastFolderKey,
-        QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)).toString();
-    QString name = document->name();
-    name.replace(QRegularExpression("[\\\\/:*?\"<>|]"), "_");
+    QString suggested = suggestedFile;
 
-    if (!fromPdf)
+    if (suggested.isEmpty())
     {
-        name += QString(" - %1").arg(board->activeSceneIndex() + 1);
+        const QString folder = UBSettings::settings()->value(sLastFolderKey,
+            QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)).toString();
+        QString name = document->name();
+        name.replace(QRegularExpression("[\\\\/:*?\"<>|]"), "_");
+
+        if (!fromPdf)
+        {
+            name += QString(" - %1").arg(board->activeSceneIndex() + 1);
+        }
+
+        suggested = folder + "/" + name + (fromPdf ? ".pdf" : ".png");
     }
 
     QString selectedFilter = filters.first();
-    const QString suggested = folder + "/" + name + (fromPdf ? ".pdf" : ".png");
-    QString filename = QFileDialog::getSaveFileName(dialogParent, tr("Save"), suggested,
+    const QString suggestedSuffix = QFileInfo(suggested).suffix().toLower();
+
+    if (suggestedSuffix == "pdf")
+    {
+        selectedFilter = pdfFilter;
+    }
+    else if (suggestedSuffix == "jpg" || suggestedSuffix == "jpeg")
+    {
+        selectedFilter = jpegFilter;
+    }
+    else if (suggestedSuffix == "png")
+    {
+        selectedFilter = pngFilter;
+    }
+
+    QString filename = QFileDialog::getSaveFileName(dialogParent, tr("Save as"), suggested,
                                                     filters.join(";;"), &selectedFilter);
 
     if (filename.isEmpty())
     {
-        return false;
+        return QString();
     }
 
     UBSettings::settings()->setValue(sLastFolderKey, QFileInfo(filename).absolutePath());
 
-    const QString suffix = QFileInfo(filename).suffix().toLower();
-    bool saved = false;
-
-    if (suffix == "png" || (suffix.isEmpty() && selectedFilter == pngFilter))
+    if (QFileInfo(filename).suffix().isEmpty())
     {
-        saved = saveAsImage(suffix.isEmpty() ? filename + ".png" : filename, "PNG");
-    }
-    else if (suffix == "jpg" || suffix == "jpeg" || (suffix.isEmpty() && selectedFilter == jpegFilter))
-    {
-        saved = saveAsImage(suffix.isEmpty() ? filename + ".jpg" : filename, "JPEG");
-    }
-    else
-    {
-        saved = saveAsPdf(suffix == "pdf" ? filename : filename + ".pdf");
+        filename += selectedFilter == pngFilter ? ".png" : selectedFilter == jpegFilter ? ".jpg" : ".pdf";
     }
 
-    if (saved)
-    {
-        UBApplication::showMessage(tr("Saved to %1").arg(QFileInfo(filename).fileName()));
-    }
-    else
+    if (!saveTo(filename))
     {
         UBApplication::mainWindow->warning(tr("Save"), tr("The file could not be saved. Check that the folder can be written."));
+        return QString();
     }
 
-    return saved;
-}
-
-void UBBoardSaver::closeDocument(QWidget* dialogParent)
-{
-    UBBoardController* board = UBApplication::boardController;
-    std::shared_ptr<UBGraphicsScene> scene = board ? board->activeScene() : nullptr;
-
-    if (!scene)
-    {
-        return;
-    }
-
-    const bool fromPdf = hasPdfPage(scene.get());
-
-    // A blank board without anything drawn has nothing to save.
-    if (fromPdf || !scene->isEmpty())
-    {
-        const QString question = fromPdf ? tr("Save the changes to the PDF before closing?")
-                                         : tr("Save the board as a picture before closing?");
-        const auto answer = QMessageBox::question(dialogParent, tr("Close document"), question,
-                                                  QMessageBox::Save | QMessageBox::Discard | QMessageBox::Cancel,
-                                                  QMessageBox::Save);
-
-        if (answer == QMessageBox::Cancel || (answer == QMessageBox::Save && !save(dialogParent)))
-        {
-            return;
-        }
-    }
-
-    // The document stays in the Documents mode; only the board starts again blank.
-    board->persistCurrentScene(false, true);
-    std::shared_ptr<UBDocumentProxy> blank = UBPersistenceManager::persistenceManager()->createNewDocument();
-
-    if (blank)
-    {
-        board->setActiveDocumentScene(blank);
-    }
-
-    UBApplication::applicationController->showBoard();
-    board->zoomRestore();
+    return filename;
 }
 
 bool UBBoardSaver::saveAsPdf(const QString& filename)

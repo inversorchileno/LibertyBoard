@@ -13,6 +13,7 @@ HEADERS +=  \
     src/gui/UBToolOptionsBar.h \
     src/gui/UBMainMenu.h \
     src/gui/UBNoteDialog.h \
+    src/gui/UBDocumentTabs.h \
     src/gui/UBPageIndicator.h \
     src/gui/UBScreenshot.h \
     src/gui/UBPagesSidebar.h \
@@ -72,6 +73,7 @@ SOURCES +=  \
     src/gui/UBToolOptionsBar.cpp \
     src/gui/UBMainMenu.cpp \
     src/gui/UBNoteDialog.cpp \
+    src/gui/UBDocumentTabs.cpp \
     src/gui/UBPageIndicator.cpp \
     src/gui/UBScreenshot.cpp \
     src/gui/UBPagesSidebar.cpp \

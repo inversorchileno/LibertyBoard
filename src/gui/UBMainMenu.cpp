@@ -23,17 +23,22 @@
 
 #include <QActionGroup>
 #include <QDesktopServices>
+#include <QFileDialog>
 #include <QHBoxLayout>
+#include <QLabel>
 #include <QMenu>
 #include <QMenuBar>
 #include <QToolBar>
+#include <QStandardPaths>
+#include <QTimer>
 #include <QToolButton>
 
-#include "board/UBBoardSaver.h"
 #include "core/UBApplication.h"
+#include "core/UBDocumentManager.h"
 #include "core/UBGitHubUpdater.h"
 #include "core/UBSettings.h"
 #include "core/UBSetting.h"
+#include "gui/UBDocumentTabs.h"
 #include "gui/UBMainWindow.h"
 #include "gui/UBPageIndicator.h"
 #include "gui/UBToolOptionsBar.h"
@@ -42,6 +47,7 @@ UBMainMenu::UBMainMenu(UBMainWindow* mainWindow)
     : QObject(mainWindow)
     , mMainWindow(mainWindow)
 {
+    createDocumentTabs();
     createMenus();
     setupDocumentShortcuts();
     arrangeBoardToolBar();
@@ -102,22 +108,37 @@ void UBMainMenu::createMenus()
     QMenuBar* menuBar = mMainWindow->menuBar();
     menuBar->setNativeMenuBar(false);
 
-    mSaver = new UBBoardSaver(this);
     mUpdater = new UBGitHubUpdater(mMainWindow);
 
-    // Home: save, settings and quit.
+    // Home: new, open, save, settings and quit.
     QMenu* homeMenu = menuBar->addMenu(tr("&Home"));
 
-    auto saveAction = new QAction(QIcon(":/images/toolbar/export.png"), tr("Save..."), mMainWindow);
-    saveAction->setShortcut(QKeySequence::Save);
-    saveAction->setToolTip(tr("Save as a PDF with the annotations, or the page as a PNG or JPEG picture"));
-    mMainWindow->addAction(saveAction);
-    connect(saveAction, &QAction::triggered, this, [this]() { mSaver->save(mMainWindow); });
-    // Opens the Documents mode, where documents are opened and files imported.
+    auto newAction = new QAction(mMainWindow->actionNewDocument->icon(), mMainWindow->actionNewDocument->text(), mMainWindow);
+    newAction->setShortcut(QKeySequence::New);
+    mMainWindow->addAction(newAction);
+    connect(newAction, &QAction::triggered, mDocumentTabs, &UBDocumentTabs::newDocument);
+
     auto openAction = new QAction(QIcon(":/images/toolbar/documents.png"), tr("Open/Import"), mMainWindow);
-    connect(openAction, &QAction::triggered, mMainWindow->actionDocument, &QAction::trigger);
+    openAction->setShortcut(QKeySequence::Open);
+    mMainWindow->addAction(openAction);
+    connect(openAction, &QAction::triggered, this, &UBMainMenu::openFiles);
+
+    auto saveAction = new QAction(QIcon(":/images/toolbar/export.png"), tr("Save"), mMainWindow);
+    saveAction->setShortcut(QKeySequence::Save);
+    saveAction->setToolTip(tr("Save the annotations in the PDF, or the page as a picture"));
+    mMainWindow->addAction(saveAction);
+    connect(saveAction, &QAction::triggered, mDocumentTabs, &UBDocumentTabs::saveCurrent);
+
+    auto saveAsAction = new QAction(tr("Save as..."), mMainWindow);
+    saveAsAction->setShortcut(QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_S));
+    saveAsAction->setToolTip(tr("Save a copy as a PDF, PNG or JPEG file"));
+    mMainWindow->addAction(saveAsAction);
+    connect(saveAsAction, &QAction::triggered, mDocumentTabs, &UBDocumentTabs::saveCurrentAs);
+
+    homeMenu->addAction(newAction);
     homeMenu->addAction(openAction);
     homeMenu->addAction(saveAction);
+    homeMenu->addAction(saveAsAction);
     homeMenu->addSeparator();
     homeMenu->addAction(mMainWindow->actionPreferences);
     homeMenu->addAction(mMainWindow->actionMultiScreen);
@@ -129,7 +150,7 @@ void UBMainMenu::createMenus()
     auto closeAction = new QAction(QIcon(":/images/toolbar/closeDocument.svg"), tr("Close document"), mMainWindow);
     closeAction->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_F4));
     mMainWindow->addAction(closeAction);
-    connect(closeAction, &QAction::triggered, this, [this]() { mSaver->closeDocument(mMainWindow); });
+    connect(closeAction, &QAction::triggered, mDocumentTabs, &UBDocumentTabs::closeCurrent);
     homeMenu->addAction(closeAction);
     homeMenu->addAction(mMainWindow->actionQuit);
 
@@ -183,7 +204,6 @@ void UBMainMenu::createMenus()
 void UBMainMenu::setupDocumentShortcuts()
 {
     const QList<QPair<QAction*, QKeySequence>> shortcuts = {
-        { mMainWindow->actionNewDocument, QKeySequence(Qt::CTRL | Qt::Key_N) },
         { mMainWindow->actionNewFolder, QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_N) },
         { mMainWindow->actionImport, QKeySequence(Qt::CTRL | Qt::Key_I) },
         { mMainWindow->actionRename, QKeySequence(Qt::Key_F2) },
@@ -222,6 +242,17 @@ void UBMainMenu::createCornerButtons()
     const QString buttonStyle = "QToolButton { color: #f0f0f0; background: transparent; border: none; padding: 2px 8px; }"
                                 "QToolButton:hover { background: #4a4a4a; }";
 
+    // "Saved", for a few seconds after each save.
+    // Its place is kept, so that the buttons beside it do not move.
+    mSavedNotice = new QLabel(corner);
+    mSavedNotice->setStyleSheet("QLabel { color: #8fe3a0; font-weight: bold; padding: 0 10px; }");
+    mSavedNotice->setAlignment(Qt::AlignCenter);
+    QFont bold = mSavedNotice->font();
+    bold.setBold(true);
+    mSavedNotice->setMinimumWidth(QFontMetrics(bold).horizontalAdvance(tr("Saved")) + 24);
+    layout->addWidget(mSavedNotice);
+    connect(mDocumentTabs, &UBDocumentTabs::saved, this, &UBMainMenu::showSavedNotice);
+
     // Goes to the desktop mode, like the board button of the desktop palette goes back.
     auto desktopButton = new QToolButton(corner);
     desktopButton->setDefaultAction(mMainWindow->actionDesktop);
@@ -241,6 +272,60 @@ void UBMainMenu::createCornerButtons()
 
     setToolBarsHidden(false);
     mMainWindow->menuBar()->setCornerWidget(corner, Qt::TopRightCorner);
+}
+
+void UBMainMenu::createDocumentTabs()
+{
+    // A row of its own under the toolbar of the board.
+    mDocumentTabs = new UBDocumentTabs(mMainWindow);
+    mDocumentTabsToolBar = new QToolBar(mMainWindow);
+    mDocumentTabsToolBar->setObjectName("documentTabsToolBar");
+    mDocumentTabsToolBar->setMovable(false);
+    mDocumentTabsToolBar->setFloatable(false);
+    mDocumentTabsToolBar->toggleViewAction()->setVisible(false);
+    mDocumentTabsToolBar->setContextMenuPolicy(Qt::PreventContextMenu);
+    mDocumentTabsToolBar->setStyleSheet("QToolBar { background: #20242b; border: none; padding: 0; }");
+    mDocumentTabsToolBar->addWidget(mDocumentTabs);
+
+    mMainWindow->insertToolBar(mMainWindow->boardToolBar, mDocumentTabsToolBar);
+    mMainWindow->insertToolBarBreak(mMainWindow->boardToolBar);
+
+    connect(mDocumentTabs, &UBDocumentTabs::countChanged, this, &UBMainMenu::updateDocumentTabsVisibility);
+    updateDocumentTabsVisibility();
+}
+
+void UBMainMenu::updateDocumentTabsVisibility()
+{
+    // Only useful to switch between documents: hidden with a single one.
+    mDocumentTabsToolBar->setVisible(mMode == UBApplicationController::Board && mDocumentTabs->count() > 1);
+}
+
+void UBMainMenu::openFiles()
+{
+    static const QString lastFolderKey = QStringLiteral("App/LibertyBoardLastOpenFolder");
+    const QString folder = UBSettings::settings()->value(lastFolderKey,
+        QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)).toString();
+
+    const QStringList files = QFileDialog::getOpenFileNames(mMainWindow, tr("Open"), folder,
+        UBDocumentManager::documentManager()->importFileFilter(true));
+
+    if (files.isEmpty())
+    {
+        return;
+    }
+
+    UBSettings::settings()->setValue(lastFolderKey, QFileInfo(files.first()).absolutePath());
+
+    for (const QString& file : files)
+    {
+        mDocumentTabs->openFile(file);
+    }
+}
+
+void UBMainMenu::showSavedNotice()
+{
+    mSavedNotice->setText(tr("Saved"));
+    QTimer::singleShot(3000, mSavedNotice, &QLabel::clear);
 }
 
 QToolBar* UBMainMenu::currentToolBar() const
@@ -272,6 +357,7 @@ void UBMainMenu::setToolBarsHidden(bool hidden)
 void UBMainMenu::onMainModeChanged(UBApplicationController::MainMode mode)
 {
     mMode = mode;
+    updateDocumentTabsVisibility();
 
     // The application controller shows the toolbar of each mode: keep it
     // hidden if the user hid it.

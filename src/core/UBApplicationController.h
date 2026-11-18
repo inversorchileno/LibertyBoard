@@ -118,6 +118,9 @@ class UBApplicationController : public QObject
         void mainModeChanged(UBApplicationController::MainMode pMode);
         void desktopMode(bool displayed);
 
+        /** @brief A file was imported as a document and shown on the board. */
+        void fileImported(std::shared_ptr<UBDocumentProxy> document, const QString& filePath);
+
     public slots:
 
         /**

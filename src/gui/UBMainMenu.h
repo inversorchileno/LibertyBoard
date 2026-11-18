@@ -27,14 +27,16 @@
 
 class QMenu;
 class QToolBar;
+class QLabel;
 class QToolButton;
-class UBBoardSaver;
+class UBDocumentTabs;
 class UBGitHubUpdater;
 class UBMainWindow;
 
 /**
  * @brief The menu bar of the main window, like most desktop programs: Home
- * (save, settings, quit), Mode, Edit and About.
+ * (new, open, save, settings, quit), Mode, Edit and About, and the tabs of
+ * the open documents above the toolbar of the board.
  *
  * The toolbars keep only the actions used most often; every other action
  * of a mode is in the menus, with its keyboard shortcut.
@@ -56,11 +58,17 @@ private:
     void setupDocumentShortcuts();
     void arrangeBoardToolBar();
     void createCornerButtons();
+    void createDocumentTabs();
+    void openFiles();
+    void showSavedNotice();
+    void updateDocumentTabsVisibility();
     void setToolBarsHidden(bool hidden);
     QToolBar* currentToolBar() const;
 
     UBMainWindow* mMainWindow{nullptr};
-    UBBoardSaver* mSaver{nullptr};
+    UBDocumentTabs* mDocumentTabs{nullptr};
+    QToolBar* mDocumentTabsToolBar{nullptr};
+    QLabel* mSavedNotice{nullptr};
     UBGitHubUpdater* mUpdater{nullptr};
     QToolButton* mToggleToolBarButton{nullptr};
     UBApplicationController::MainMode mMode{UBApplicationController::Board};

@@ -733,6 +733,8 @@ void UBApplicationController::importFile(const QString& pFilePath)
         // This import operation happens when double-clicking on a UBZ for example.
         // The document is added and set as current document, so the user probably wants to see it immediately.
         showBoard();
+
+        emit fileImported(document, QFileInfo(pFilePath).absoluteFilePath());
     }
 }
 

@@ -372,6 +372,10 @@ int UBApplication::exec(const QString& pFileToImport)
                                                         boardController->paletteManager()->rightPalette());
 
 
+    // Before the file to open, so that its tab knows the file.
+    UBMainMenu* mainMenu = new UBMainMenu(mainWindow);
+    connect(applicationController, &UBApplicationController::mainModeChanged, mainMenu, &UBMainMenu::onMainModeChanged);
+
     if (!UBApplication::fileToOpen.isEmpty())
     {
         if (!UBApplication::fileToOpen.endsWith("ubx"))
@@ -386,8 +390,6 @@ int UBApplication::exec(const QString& pFileToImport)
     connect(applicationController, SIGNAL(desktopMode(bool)),
             boardController->paletteManager(), SLOT(slot_changeDesktopMode(bool)));
 
-    UBMainMenu* mainMenu = new UBMainMenu(mainWindow);
-    connect(applicationController, &UBApplicationController::mainModeChanged, mainMenu, &UBMainMenu::onMainModeChanged);
 
     connect(applicationController, SIGNAL(mainModeChanged(UBApplicationController::MainMode))
           , boardController,       SLOT(appMainModeChanged(UBApplicationController::MainMode)));
@@ -506,6 +508,13 @@ void UBApplication::toolBarPositionChanged(QVariant topOrBottom)
         area = Qt::TopToolBarArea;
     else
         area = Qt::BottomToolBarArea;
+
+    // The tabs of the open documents first, on a row of their own above the toolbar.
+    if (QToolBar* documentTabs = mainWindow->findChild<QToolBar*>("documentTabsToolBar"))
+    {
+        mainWindow->addToolBar(area, documentTabs);
+        mainWindow->addToolBarBreak(area);
+    }
 
     mainWindow->addToolBar(area, mainWindow->boardToolBar);
     mainWindow->addToolBar(area, mainWindow->webToolBar);
