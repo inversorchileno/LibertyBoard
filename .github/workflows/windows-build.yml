@@ -3,6 +3,10 @@ name: Windows build
 on:
   push:
     branches: [ master ]
+    # Documentation alone does not make a new version.
+    paths-ignore:
+      - 'docs/**'
+      - '**.md'
   workflow_dispatch:
 
 permissions:
