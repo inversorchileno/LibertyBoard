@@ -141,6 +141,11 @@ En modo escritorio son paneles emergentes; en modo pizarra, un panel fijo a la d
 - **Sello → Quitar:** botón junto al título; mientras está activo, un clic en un sello lo quita al instante (también en escritorio). Se reconocen los sellos puestos durante la sesión; los de una página reabierta se borran con Selección.
 - **Pantallazo en pizarra:** el oscurecimiento es una capa dentro de la ventana (en Windows la ventana aparte quedaba detrás).
 - **Grabar sonido:** curva del micrófono en la ventana de Sonido (`src/gui/UBSoundWave`): plana en silencio, onda al hablar.
+- **Barra de desplazamiento del documento** (`src/gui/UBDocumentScrollBar`): en el borde derecho de la pizarra, abarca todo el documento hoja tras hoja; se arrastra para ir rápido a cualquier parte, con el mismo zoom. Solo con 2 o más páginas y solo mientras el puntero está cerca del borde derecho; luego se oculta. La barra de herramientas a la derecha le deja espacio.
+- **Íconos con el color elegido:** Bolígrafo, Rotulador, Láser y Resaltar cambian sus partes de color al color con que dibujan (`src/gui/UBToolColorIcon`), igual que la Nota.
+- **Mano** justo encima de la Nota en la barra de la pizarra.
+- **Goma:** dibujos para Completo (trazo punteado que desaparece entero) y Parcial (trazo con un hueco), en pizarra y escritorio.
+- **Texto en escritorio:** con Selección, un clic sobre un elemento (texto, su marco o sus botones) lo usa como en la pizarra: cerrar, cambiar tamaño, girar, mover; un clic en lo vacío sigue pasando al escritorio.
 - **Scroll continuo** (`UBBoardView::turnPageWithWheel`, `drawNeighbourPages`): la hoja anterior y la siguiente se dibujan pegadas a la actual (16 px de separación); la rueda sigue a su ritmo y, cuando la vecina ocupa el centro, pasa a ser la hoja actual sin mover la imagen. Sigue siendo una hoja a la vez por dentro (no es una vista continua completa).
 
 ## Forma de trabajo
