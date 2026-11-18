@@ -164,10 +164,17 @@ void UBMainMenu::createMenus()
     homeMenu->addAction(mMainWindow->actionQuit);
 
     QMenu* modeMenu = menuBar->addMenu(tr("&Mode"));
-    modeMenu->addAction(mMainWindow->actionBoard);
-
     // Two documents side by side on the board.
     auto dualBoard = new UBDualBoard(mDocumentTabs, this);
+
+    // The board, single: also the way back from the double board, which
+    // leaves both documents in their tabs.
+    auto singleBoardAction = new QAction(mMainWindow->actionBoard->icon(), mMainWindow->actionBoard->text(), mMainWindow);
+    connect(singleBoardAction, &QAction::triggered, this, [dualBoard]() {
+        UBApplication::applicationController->showBoard();
+        dualBoard->setEnabled(false);
+    });
+    modeMenu->addAction(singleBoardAction);
     auto dualBoardAction = new QAction(QIcon(":/images/toolbar/dualBoard.svg"), tr("Double board"), mMainWindow);
     dualBoardAction->setCheckable(true);
     dualBoardAction->setToolTip(tr("Two documents side by side: click a side to work on it"));
