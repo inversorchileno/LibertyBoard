@@ -45,6 +45,8 @@ target_sources(${PROJECT_NAME} PRIVATE
     UBNoteDialog.h
     UBDocumentTabs.cpp
     UBDocumentTabs.h
+    UBNoteToolIcon.cpp
+    UBNoteToolIcon.h
     UBCommentPopup.cpp
     UBCommentPopup.h
     UBPageIndicator.cpp
@@ -55,6 +57,8 @@ target_sources(${PROJECT_NAME} PRIVATE
     UBSearchBar.h
     UBSoundDialog.cpp
     UBSoundDialog.h
+    UBSoundWave.cpp
+    UBSoundWave.h
     UBPagesSidebar.cpp
     UBPagesSidebar.h
     UBMagnifer.cpp

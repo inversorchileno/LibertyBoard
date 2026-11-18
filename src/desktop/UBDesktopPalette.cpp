@@ -122,6 +122,12 @@ UBDesktopPalette::~UBDesktopPalette()
 
 void UBDesktopPalette::adjustPosition()
 {
+    // All the tools are seen, whatever the height of the screen.
+    if (const QScreen* paletteScreen = screen())
+    {
+        fitInLength(paletteScreen->availableGeometry().height() - 40, Qt::Vertical, 42);
+    }
+
     QPoint pos = this->pos();
     if(this->pos().y() < 30){
         pos.setY(30);

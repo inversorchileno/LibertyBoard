@@ -29,6 +29,7 @@
 #include <QPainter>
 #include <QPixmap>
 #include <QPolygonF>
+#include <QTransform>
 
 #include "core/UBApplication.h"
 #include "gui/UBMainWindow.h"
@@ -41,6 +42,10 @@ namespace
         static QMap<QAction*, QIcon> icons;
         return icons;
     }
+
+    // The edge of the palette showing the triangles, while they are shown.
+    bool sApplied = false;
+    Qt::Edge sEdge = Qt::LeftEdge;
 
     QList<QAction*> toolsWithOptions()
     {
@@ -151,23 +156,35 @@ void UBToolOptionsArrows::apply(Qt::Edge paletteEdge)
     {
         action->setIcon(QIcon(new TriangleIconEngine(plainIcon(action), paletteEdge)));
     }
+
+    sApplied = true;
+    sEdge = paletteEdge;
+}
+
+void UBToolOptionsArrows::setIcon(QAction* action, const QIcon& icon)
+{
+    plainIcons().insert(action, icon);
+    action->setIcon(sApplied && toolsWithOptions().contains(action) ? QIcon(new TriangleIconEngine(icon, sEdge)) : icon);
 }
 
 void UBToolOptionsArrows::remove()
 {
+    sApplied = false;
+
     for (auto it = plainIcons().constBegin(); it != plainIcons().constEnd(); ++it)
     {
         it.key()->setIcon(it.value());
     }
 }
 
-bool UBToolOptionsArrows::isOnTriangle(Qt::Edge paletteEdge, const QPoint& position, const QSize& buttonSize)
+bool UBToolOptionsArrows::isOnTriangle(Qt::Edge paletteEdge, const QPoint& position, const QSize& buttonSize, const QSize& iconSize)
 {
-    // The icon is centered in the button; a margin around the triangle
-    // makes it easy to hit with a pen.
-    const QPointF offset((buttonSize.width() - 42) / 2.0, (buttonSize.height() - 42) / 2.0);
-    const QRectF area = triangle(paletteEdge).boundingRect().translated(offset).adjusted(-5, -5, 5, 5);
-    return area.contains(position);
+    // The icon is centered in the button and the triangle is scaled with it;
+    // a margin around the triangle makes it easy to hit with a pen.
+    const qreal scale = qMin(iconSize.width(), iconSize.height()) / 42.0;
+    const QPointF offset((buttonSize.width() - 42 * scale) / 2.0, (buttonSize.height() - 42 * scale) / 2.0);
+    const QRectF triangleArea = QTransform::fromScale(scale, scale).mapRect(triangle(paletteEdge).boundingRect());
+    return triangleArea.translated(offset).adjusted(-5, -5, 5, 5).contains(position);
 }
 
 Qt::Edge UBToolOptionsArrows::openingSide(Qt::Edge paletteEdge)

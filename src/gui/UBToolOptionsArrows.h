@@ -22,7 +22,10 @@
 
 #pragma once
 
+#include <QIcon>
 #include <QPoint>
+
+class QAction;
 #include <QSize>
 #include <Qt>
 
@@ -47,8 +50,11 @@ namespace UBToolOptionsArrows
     /** @brief Gives the tools back their icons without triangle. */
     void remove();
 
+    /** @brief Changes the icon of a tool, with its triangle when the triangles are shown. */
+    void setIcon(QAction* action, const QIcon& icon);
+
     /** @brief True when a press at this point of a tool button is on its triangle. */
-    bool isOnTriangle(Qt::Edge paletteEdge, const QPoint& position, const QSize& buttonSize);
+    bool isOnTriangle(Qt::Edge paletteEdge, const QPoint& position, const QSize& buttonSize, const QSize& iconSize);
 
     /** @brief The side where the options open, for a palette standing at this edge. */
     Qt::Edge openingSide(Qt::Edge paletteEdge);

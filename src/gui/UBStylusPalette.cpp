@@ -53,7 +53,8 @@ UBStylusPalette::UBStylusPalette(QWidget *parent, Qt::Orientation orient)
     QList<QAction*> actions;
 
     // The order of the desktop palette, with the line among the shapes and
-    // the two hands at the end. Zooming is done in the zoom box.
+    // the hand at the end. Zooming is done in the zoom box. The tool that
+    // interacts with the items is left out: the selector does the same.
     actions << UBApplication::mainWindow->actionPen;
     actions << UBApplication::mainWindow->actionEraser;
     actions << UBApplication::mainWindow->actionMarker;
@@ -72,7 +73,6 @@ UBStylusPalette::UBStylusPalette(QWidget *parent, Qt::Orientation orient)
     actions << UBApplication::mainWindow->actionArrowShape;
     actions << UBApplication::mainWindow->actionRectangle;
     actions << UBApplication::mainWindow->actionEllipse;
-    actions << UBApplication::mainWindow->actionPlay;
     actions << UBApplication::mainWindow->actionHand;
 
     // Saves the board as it is seen, without the palettes, in one click.
@@ -111,6 +111,10 @@ void UBStylusPalette::initPosition()
     mCustomPosition = true;
 
     const QRect area = boardArea();
+
+    // All the tools are seen, whatever the size of the screen.
+    const bool vertical = (edge() == Qt::LeftEdge || edge() == Qt::RightEdge);
+    fitInLength((vertical ? area.height() : area.width()) - 2 * border(), vertical ? Qt::Vertical : Qt::Horizontal, 42);
     QPoint pos;
 
     switch (edge())

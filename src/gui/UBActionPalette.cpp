@@ -154,6 +154,43 @@ void UBActionPalette::setButtonIconSize(const QSize& size)
 }
 
 
+void UBActionPalette::fitInLength(int length, Qt::Orientation orientation, int preferredIconSize)
+{
+    int count = 0;
+
+    for (QToolButton* button : std::as_const(mButtons))
+    {
+        if (!button->isHidden())
+        {
+            ++count;
+        }
+    }
+
+    if (count == 0 || length <= 0)
+    {
+        return;
+    }
+
+    // What a button and the palette add around the icons, at the present size.
+    auto extentOf = [orientation](const QSize& size) {
+        return orientation == Qt::Vertical ? size.height() : size.width();
+    };
+
+    const int icon = extentOf(mButtonSize);
+    const int button = extentOf(mButtons.first()->sizeHint());
+    const int aroundButton = button - icon;
+    const int aroundButtons = extentOf(preferredSize()) - count * button;
+
+    const int fitting = (length - aroundButtons) / count - aroundButton;
+    const int newIcon = qBound(16, fitting, preferredIconSize);
+
+    if (newIcon != icon)
+    {
+        setButtonIconSize(QSize(newIcon, newIcon));
+        adjustSizeAndPosition();
+    }
+}
+
 void UBActionPalette::groupActions()
 {
     mActionGroup = new QActionGroup(this);

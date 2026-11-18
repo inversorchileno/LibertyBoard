@@ -523,7 +523,7 @@ void UBDesktopAnnotationController::toolButtonPressed()
     // Check if the mouse cursor is on the little arrow
     const QPoint cursorPos = button->mapFromGlobal(QCursor::pos());
 
-    if (UBToolOptionsArrows::isOnTriangle(mDesktopPalette->screenEdge(), cursorPos, button->size()))
+    if (UBToolOptionsArrows::isOnTriangle(mDesktopPalette->screenEdge(), cursorPos, button->size(), button->iconSize()))
     {
         mbArrowClicked = true;
         toolButtonReleased();

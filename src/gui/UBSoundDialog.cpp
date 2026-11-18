@@ -22,6 +22,8 @@
 
 #include "UBSoundDialog.h"
 
+#include "gui/UBSoundWave.h"
+
 #include <QAudioInput>
 #include <QAudioOutput>
 #include <QDateTime>
@@ -60,6 +62,7 @@ UBSoundDialog::UBSoundDialog(QWidget* parent)
     mProgress->setFixedHeight(12);
 
     mStatus = new QLabel(tr("Record a sound or choose an audio file."), this);
+    mWave = new UBSoundWave(this);
 
     auto makeButton = [this](const QString& symbol, const QString& tip, const QString& color) {
         auto button = new QToolButton(this);
@@ -99,6 +102,7 @@ UBSoundDialog::UBSoundDialog(QWidget* parent)
     mAccept = buttons->button(QDialogButtonBox::Ok);
 
     auto layout = new QVBoxLayout(this);
+    layout->addWidget(mWave);
     layout->addWidget(mProgress);
     layout->addLayout(controls);
     layout->addWidget(mStatus);
@@ -177,6 +181,15 @@ void UBSoundDialog::record()
         mRecorder->setQuality(QMediaRecorder::HighQuality);
 
         connect(mRecorder, &QMediaRecorder::recorderStateChanged, this, [this](QMediaRecorder::RecorderState state) {
+            if (state == QMediaRecorder::RecordingState)
+            {
+                mWave->start();
+            }
+            else
+            {
+                mWave->stop();
+            }
+
             if (state == QMediaRecorder::StoppedState && QFileInfo(mRecorder->actualLocation().toLocalFile()).size() > 0)
             {
                 mRecordingFile = mRecorder->actualLocation().toLocalFile();

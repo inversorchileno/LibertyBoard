@@ -34,6 +34,7 @@ class QMediaRecorder;
 class QProgressBar;
 class QPushButton;
 class QToolButton;
+class UBSoundWave;
 
 /**
  * @brief Gets the sound of a page: recorded with the microphone, or taken
@@ -66,6 +67,7 @@ private:
     QAudioInput* mInput{nullptr};
     QMediaRecorder* mRecorder{nullptr};
     QProgressBar* mProgress{nullptr};
+    UBSoundWave* mWave{nullptr};
     QLabel* mStatus{nullptr};
     QToolButton* mPlay{nullptr};
     QToolButton* mStop{nullptr};

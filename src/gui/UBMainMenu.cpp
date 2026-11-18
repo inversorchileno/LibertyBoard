@@ -28,6 +28,7 @@
 #include <QLabel>
 #include <QMenu>
 #include <QMenuBar>
+#include <QLayout>
 #include <QToolBar>
 #include <QStandardPaths>
 #include <QTimer>
@@ -40,6 +41,8 @@
 #include "core/UBSetting.h"
 #include "gui/UBDocumentTabs.h"
 #include "gui/UBMainWindow.h"
+#include "gui/UBNoteToolIcon.h"
+#include "gui/UBToolOptionsArrows.h"
 #include "gui/UBPageIndicator.h"
 #include "gui/UBSearchBar.h"
 #include "gui/UBToolOptionsBar.h"
@@ -50,6 +53,7 @@ UBMainMenu::UBMainMenu(UBMainWindow* mainWindow)
 {
     createDocumentTabs();
     createMenus();
+    showNoteColorOnTool();
     setupDocumentShortcuts();
     arrangeBoardToolBar();
     createCornerButtons();
@@ -175,6 +179,15 @@ void UBMainMenu::createMenus()
     editMenu->addAction(mMainWindow->actionPaste);
     editMenu->addAction(mMainWindow->actionHideApplication);
     editMenu->addAction(mMainWindow->actionSleep);
+    editMenu->addSeparator();
+
+    // The whole screen for the board: no menu and no taskbar of the system.
+    mFullScreenAction = new QAction(tr("Full screen"), mMainWindow);
+    mFullScreenAction->setCheckable(true);
+    mFullScreenAction->setShortcut(QKeySequence(Qt::Key_F11));
+    mMainWindow->addAction(mFullScreenAction);
+    connect(mFullScreenAction, &QAction::toggled, this, &UBMainMenu::setFullScreen);
+    editMenu->addAction(mFullScreenAction);
 
     QMenu* aboutMenu = menuBar->addMenu(tr("&About"));
     aboutMenu->addAction(mMainWindow->actionOpenTutorial);
@@ -292,6 +305,18 @@ void UBMainMenu::createCornerButtons()
     mMainWindow->menuBar()->setCornerWidget(corner, Qt::TopRightCorner);
 }
 
+void UBMainMenu::showNoteColorOnTool()
+{
+    // The note tool shows the ribbon of the next note, in its color.
+    auto update = [this]() {
+        const QColor color(UBSettings::settings()->noteColor->get().toString());
+        UBToolOptionsArrows::setIcon(mMainWindow->actionNote, UBNoteToolIcon::create(color));
+    };
+
+    update();
+    connect(UBSettings::settings()->noteColor, &UBSetting::changed, this, update);
+}
+
 void UBMainMenu::createDocumentTabs()
 {
     // A row of its own under the toolbar of the board.
@@ -302,8 +327,30 @@ void UBMainMenu::createDocumentTabs()
     mDocumentTabsToolBar->setFloatable(false);
     mDocumentTabsToolBar->toggleViewAction()->setVisible(false);
     mDocumentTabsToolBar->setContextMenuPolicy(Qt::PreventContextMenu);
-    mDocumentTabsToolBar->setStyleSheet("QToolBar { background: #20242b; border: none; padding: 0; }");
+    mDocumentTabsToolBar->setStyleSheet("QToolBar { background: #20242b; border: none; padding: 0px; margin: 0px; spacing: 0px; }");
     mDocumentTabsToolBar->addWidget(mDocumentTabs);
+
+    // In full screen the menu is hidden: the way back is at the right of the tabs.
+    auto spacer = new QWidget(mDocumentTabsToolBar);
+    spacer->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
+    mDocumentTabsToolBar->addWidget(spacer);
+
+    auto exitFullScreen = new QToolButton(mDocumentTabsToolBar);
+    exitFullScreen->setText(tr("Exit full screen"));
+    exitFullScreen->setToolTip(tr("Back to the window, with the menu (F11)"));
+    exitFullScreen->setStyleSheet("QToolButton { color: #f0f0f0; background: #3a404b; border: none; border-radius: 3px; padding: 2px 10px; margin: 1px 4px; }"
+                                  "QToolButton:hover { background: #4a5260; }");
+    exitFullScreen->setFixedHeight(22);
+    exitFullScreen->setToolButtonStyle(Qt::ToolButtonTextOnly);
+    mExitFullScreenAction = mDocumentTabsToolBar->addWidget(exitFullScreen);
+    mExitFullScreenAction->setVisible(false);
+    connect(exitFullScreen, &QToolButton::clicked, this, [this]() { mFullScreenAction->setChecked(false); });
+
+    // As thin as the tabs: no room for icons or a handle around them.
+    mDocumentTabsToolBar->setIconSize(QSize(16, 16));
+    mDocumentTabsToolBar->layout()->setContentsMargins(0, 0, 0, 0);
+    mDocumentTabsToolBar->layout()->setSpacing(0);
+    mDocumentTabsToolBar->setFixedHeight(25);
 
     mMainWindow->insertToolBar(mMainWindow->boardToolBar, mDocumentTabsToolBar);
     mMainWindow->insertToolBarBreak(mMainWindow->boardToolBar);
@@ -314,8 +361,36 @@ void UBMainMenu::createDocumentTabs()
 
 void UBMainMenu::updateDocumentTabsVisibility()
 {
-    // Only useful to switch between documents: hidden with a single one.
-    mDocumentTabsToolBar->setVisible(mMode == UBApplicationController::Board && mDocumentTabs->count() > 1);
+    // Only useful to switch between documents, hidden with a single one,
+    // except in full screen, where it holds the way back.
+    const bool fullScreen = mFullScreenAction && mFullScreenAction->isChecked();
+    mDocumentTabsToolBar->setVisible(mMode == UBApplicationController::Board && (mDocumentTabs->count() > 1 || fullScreen));
+}
+
+void UBMainMenu::setFullScreen(bool fullScreen)
+{
+    if (fullScreen)
+    {
+        mWindowWasMaximized = mMainWindow->isMaximized();
+        mMainWindow->menuBar()->hide();
+        mMainWindow->showFullScreen();
+    }
+    else
+    {
+        mMainWindow->menuBar()->show();
+
+        if (mWindowWasMaximized)
+        {
+            mMainWindow->showMaximized();
+        }
+        else
+        {
+            mMainWindow->showNormal();
+        }
+    }
+
+    mExitFullScreenAction->setVisible(fullScreen);
+    updateDocumentTabsVisibility();
 }
 
 void UBMainMenu::openFiles()

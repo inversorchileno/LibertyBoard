@@ -27,6 +27,7 @@
 
 class QMenu;
 class QToolBar;
+class QAction;
 class QLabel;
 class QToolButton;
 class UBDocumentTabs;
@@ -59,9 +60,11 @@ private:
     void arrangeBoardToolBar();
     void createCornerButtons();
     void createDocumentTabs();
+    void showNoteColorOnTool();
     void openFiles();
     void showSavedNotice();
     void updateDocumentTabsVisibility();
+    void setFullScreen(bool fullScreen);
     void setToolBarsHidden(bool hidden);
     QToolBar* currentToolBar() const;
 
@@ -69,6 +72,9 @@ private:
     UBDocumentTabs* mDocumentTabs{nullptr};
     QToolBar* mDocumentTabsToolBar{nullptr};
     QLabel* mSavedNotice{nullptr};
+    QAction* mFullScreenAction{nullptr};
+    QAction* mExitFullScreenAction{nullptr};
+    bool mWindowWasMaximized{true};
     UBGitHubUpdater* mUpdater{nullptr};
     QToolButton* mToggleToolBarButton{nullptr};
     UBApplicationController::MainMode mMode{UBApplicationController::Board};

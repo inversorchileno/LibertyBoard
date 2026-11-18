@@ -91,6 +91,13 @@ class UBActionPalette : public UBFloatingPalette
         virtual void mouseReleaseEvent(QMouseEvent * event);
         virtual void init(Qt::Orientation orientation);
 
+        /**
+         * @brief Makes the buttons smaller, down to a minimum, so that the
+         * palette fits in this length along its orientation, and back up to
+         * their preferred size when there is room.
+         */
+        void fitInLength(int length, Qt::Orientation orientation, int preferredIconSize);
+
         virtual void updateLayout();
 
         QList<UBActionPaletteButton*> mButtons;
