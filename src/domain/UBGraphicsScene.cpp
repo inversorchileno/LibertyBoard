@@ -32,6 +32,7 @@
 #include "UBGraphicsShapePreview.h"
 #include "UBShapeGeometry.h"
 #include "UBGraphicsNoteItem.h"
+#include "UBStamps.h"
 #include "gui/UBNoteDialog.h"
 
 #include <cmath>
@@ -494,6 +495,11 @@ bool UBGraphicsScene::inputDevicePress(const QPointF& scenePos, const qreal& pre
             mNotePosition = scenePos;
             accepted = true;
         }
+        else if (currentTool == UBStylusTool::Stamp) {
+            mStampPending = true;
+            mNotePosition = scenePos;
+            accepted = true;
+        }
         else if (isShapeTool(currentTool)) {
             mShapeTool = currentTool;
             mShapeStart = scenePos;
@@ -815,6 +821,12 @@ bool UBGraphicsScene::inputDeviceRelease(int tool, Qt::KeyboardModifiers modifie
         QTimer::singleShot(0, this, [this, position]() { addOrEditNote(position); });
     }
 
+    if (mStampPending)
+    {
+        mStampPending = false;
+        addStamp(mNotePosition);
+    }
+
     if (mRemovedItems.size() > 0 || mAddedItems.size() > 0)
     {
         if (mUndoRedoStackEnabled) { //should be deleted after scene own undo stack implemented
@@ -967,6 +979,25 @@ UBShapeStyle UBGraphicsScene::shapeStyle(int tool) const
     style.minimumHeadSize = 12 * screenToScene;
 
     return style;
+}
+
+void UBGraphicsScene::addStamp(const QPointF& position)
+{
+    // Centered where the page was clicked, at the size of a stamp on the page.
+    const QImage stamp = UBStamps::image(UBStamps::current());
+
+    if (stamp.isNull())
+    {
+        return;
+    }
+
+    UBGraphicsPixmapItem* item = addPixmap(QPixmap::fromImage(stamp), nullptr, position,
+                                           qreal(UBStamps::pageSize().width()) / stamp.width());
+
+    if (item)
+    {
+        item->setSelected(false);
+    }
 }
 
 void UBGraphicsScene::addOrEditNote(const QPointF& position)

@@ -86,6 +86,7 @@ UBDrawingController::UBDrawingController(QObject * parent)
         { UBApplication::mainWindow->actionUnderline, UBStylusTool::Underline },
         { UBApplication::mainWindow->actionHighlight, UBStylusTool::Highlight },
         { UBApplication::mainWindow->actionNote, UBStylusTool::Note },
+        { UBApplication::mainWindow->actionStamp, UBStylusTool::Stamp },
     };
 
     for (const auto& shapeTool : shapeTools)
@@ -182,6 +183,8 @@ void UBDrawingController::setStylusTool(int tool)
             UBApplication::mainWindow->actionHighlight->setChecked(true);
         else if (mStylusTool == UBStylusTool::Note)
             UBApplication::mainWindow->actionNote->setChecked(true);
+        else if (mStylusTool == UBStylusTool::Stamp)
+            UBApplication::mainWindow->actionStamp->setChecked(true);
 
 
         // workaround for #827

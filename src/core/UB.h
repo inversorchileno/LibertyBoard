@@ -80,7 +80,8 @@ struct UBStylusTool
         Ellipse,
         Underline,
         Highlight,
-        Note
+        Note,
+        Stamp
     };
 };
 

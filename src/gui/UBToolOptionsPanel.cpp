@@ -21,7 +21,11 @@
 
 #include "UBToolOptionsPanel.h"
 
+#include <QFileDialog>
 #include <QFontComboBox>
+#include <QGridLayout>
+#include <QPainter>
+#include <QStandardPaths>
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QToolButton>
@@ -34,6 +38,7 @@
 #include "core/UBSettings.h"
 #include "domain/UBGraphicsNoteItem.h"
 #include "domain/UBGraphicsTextItem.h"
+#include "domain/UBStamps.h"
 #include "gui/UBMainWindow.h"
 #include "gui/UBToolOptionsWidgets.h"
 
@@ -96,6 +101,8 @@ UBToolOptionsPanel* UBToolOptionsPanel::create(int tool, QWidget* parent)
             return new UBTextOptionsPanel(parent);
         case UBStylusTool::Note:
             return new UBNoteOptionsPanel(parent);
+        case UBStylusTool::Stamp:
+            return new UBStampOptionsPanel(parent);
         default:
             return nullptr;
     }
@@ -167,6 +174,7 @@ void UBToolOptionsPanel::setHorizontal()
         }
     }
 
+    layOutForToolbar();
     mLayout->addStretch();
 }
 
@@ -707,6 +715,127 @@ void UBTextOptionsPanel::refresh()
 
 // ---------------------------------------------------------------------------
 // Notes
+
+UBStampOptionsPanel::UBStampOptionsPanel(QWidget* parent)
+    : UBToolOptionsPanel(tr("Stamp"), parent)
+{
+    auto gallery = new QWidget(this);
+    mGallery = new QGridLayout(gallery);
+    mGallery->setContentsMargins(0, 0, 0, 0);
+    mGallery->setSpacing(6);
+
+    for (int i = 0; i < UBStamps::count(); ++i)
+    {
+        auto button = new QToolButton(gallery);
+        button->setCheckable(true);
+        button->setAutoExclusive(true);
+        button->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
+        button->setIconSize(QSize(150, 50));
+        button->setText(UBStamps::name(i));
+        button->setToolTip(UBStamps::name(i));
+        button->setIcon(iconFor(i));
+        button->setStyleSheet("QToolButton { background: #ffffff; color: #222222; border: 1px solid #c9ced6; border-radius: 4px; padding: 4px; }"
+                              "QToolButton:hover { border-color: #f6c343; }"
+                              "QToolButton:checked { background: #fff4cf; border: 2px solid #f6c343; }");
+        mGallery->addWidget(button, i / 3, i % 3);
+        mStamps << button;
+
+        connect(button, &QToolButton::clicked, this, [this, i]() {
+            if (UBStamps::isCustom(i))
+            {
+                chooseCustomPicture();
+            }
+            else
+            {
+                choose(i);
+            }
+        });
+    }
+
+    addRow(gallery);
+    refresh();
+}
+
+void UBStampOptionsPanel::refresh()
+{
+    const int current = UBStamps::current();
+
+    for (int i = 0; i < mStamps.size(); ++i)
+    {
+        mStamps.at(i)->setChecked(i == current);
+    }
+
+    mStamps.last()->setIcon(iconFor(mStamps.size() - 1));
+}
+
+void UBStampOptionsPanel::layOutForToolbar()
+{
+    // One row of small pictures, their names as tooltips.
+    for (int i = 0; i < mStamps.size(); ++i)
+    {
+        QToolButton* button = mStamps.at(i);
+        mGallery->removeWidget(button);
+        mGallery->addWidget(button, 0, i);
+        button->setToolButtonStyle(Qt::ToolButtonIconOnly);
+        button->setIconSize(QSize(72, 24));
+    }
+
+    mGallery->setSpacing(3);
+}
+
+void UBStampOptionsPanel::choose(int index)
+{
+    UBStamps::setCurrent(index);
+
+    // The stamp is put with the stamp tool, which the choice selects.
+    UBDrawingController::drawingController()->setStylusTool(UBStylusTool::Stamp);
+    refresh();
+}
+
+void UBStampOptionsPanel::chooseCustomPicture()
+{
+    const QString current = UBStamps::customFile();
+    const QString file = QFileDialog::getOpenFileName(window(), tr("Picture of the custom stamp"),
+        current.isEmpty() ? QStandardPaths::writableLocation(QStandardPaths::PicturesLocation) : current,
+        tr("PNG pictures (*.png)"));
+
+    if (!file.isEmpty())
+    {
+        UBStamps::setCustomFile(file);
+    }
+
+    if (UBStamps::customFile().isEmpty())
+    {
+        // Nothing to stamp with: the previous choice stays.
+        refresh();
+        return;
+    }
+
+    choose(UBStamps::count() - 1);
+}
+
+QIcon UBStampOptionsPanel::iconFor(int index) const
+{
+    QImage picture = UBStamps::image(index);
+
+    if (picture.isNull())
+    {
+        // The custom stamp before a picture is chosen: a frame with a plus.
+        picture = QImage(UBStamps::pageSize() * 2, QImage::Format_ARGB32_Premultiplied);
+        picture.fill(Qt::transparent);
+        QPainter painter(&picture);
+        painter.setRenderHint(QPainter::Antialiasing);
+        painter.setPen(QPen(QColor("#8a9099"), 6, Qt::DashLine));
+        painter.drawRoundedRect(QRectF(picture.rect()).adjusted(6, 6, -6, -6), 20, 20);
+        QFont font = painter.font();
+        font.setPixelSize(picture.height() / 2);
+        font.setBold(true);
+        painter.setFont(font);
+        painter.drawText(picture.rect(), Qt::AlignCenter, "+");
+    }
+
+    return QIcon(QPixmap::fromImage(picture));
+}
 
 UBNoteOptionsPanel::UBNoteOptionsPanel(QWidget* parent)
     : UBToolOptionsPanel(tr("Note"), parent)

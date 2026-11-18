@@ -61,6 +61,7 @@ UBStylusPalette::UBStylusPalette(QWidget *parent, Qt::Orientation orient)
     actions << UBApplication::mainWindow->actionHighlight;
     actions << UBApplication::mainWindow->actionSelector;
     actions << UBApplication::mainWindow->actionNote;
+    actions << UBApplication::mainWindow->actionStamp;
     actions << UBApplication::mainWindow->actionUnderline;
     actions << UBApplication::mainWindow->actionText;
     actions << UBApplication::mainWindow->actionLine;

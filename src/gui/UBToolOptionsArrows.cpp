@@ -46,7 +46,7 @@ namespace
     {
         UBMainWindow* w = UBApplication::mainWindow;
         return { w->actionPen, w->actionEraser, w->actionMarker, w->actionPointer, w->actionHighlight,
-                 w->actionNote, w->actionUnderline, w->actionText, w->actionLine, w->actionArrowShape,
+                 w->actionNote, w->actionStamp, w->actionUnderline, w->actionText, w->actionLine, w->actionArrowShape,
                  w->actionRectangle, w->actionEllipse };
     }
 

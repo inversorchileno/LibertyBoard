@@ -413,6 +413,9 @@ signals:
         UBShapeStyle shapeStyle(int tool) const;
         void finishShape();
         void addOrEditNote(const QPointF& position);
+
+        /** @brief Puts the current stamp of the stamp tool on the page, centered on the position. */
+        void addStamp(const QPointF& position);
         qreal strokeWidth(int tool, qreal pressure, std::optional<QLineF> direction) const;
         QList<UBGraphicsPolygonItem*> polygonsOfSameStroke(UBGraphicsPolygonItem* polygon) const;
         void drawMarkerCircle(const QPointF& pEndPoint);
@@ -457,6 +460,7 @@ signals:
         QPointF mShapeStart;
         QPointF mShapeEnd;
         bool mNotePending{false};
+        bool mStampPending{false};
         QPointF mNotePosition;
         QGraphicsEllipseItem* mMarkerCircle; // dotted circle around marker
         QGraphicsEllipseItem* mPenCircle; // dotted circle around pen

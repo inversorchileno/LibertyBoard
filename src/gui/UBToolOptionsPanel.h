@@ -26,6 +26,7 @@
 #include "core/UBSettings.h"
 
 class QCheckBox;
+class QGridLayout;
 class QFontComboBox;
 class QLabel;
 class QToolButton;
@@ -59,6 +60,9 @@ public:
 
 protected:
     UBToolOptionsPanel(const QString& title, QWidget* parent);
+
+    /** @brief Called by setHorizontal() for the changes a panel needs to fit in the toolbar. */
+    virtual void layOutForToolbar() {}
 
     /** @brief True when the toolbar shows captions and values above the sliders, to save room. */
     virtual bool stacksSlidersInToolbar() const { return false; }
@@ -179,6 +183,27 @@ public:
 
 private:
     UBColorSwatches* mColors{nullptr};
+};
+
+/** @brief The stamps to choose from, as a gallery of pictures with their names. */
+class UBStampOptionsPanel : public UBToolOptionsPanel
+{
+    Q_OBJECT
+
+public:
+    explicit UBStampOptionsPanel(QWidget* parent = nullptr);
+    void refresh() override;
+
+protected:
+    void layOutForToolbar() override;
+
+private:
+    void choose(int index);
+    void chooseCustomPicture();
+    QIcon iconFor(int index) const;
+
+    QList<QToolButton*> mStamps;
+    QGridLayout* mGallery{nullptr};
 };
 
 class UBTextOptionsPanel : public UBToolOptionsPanel
