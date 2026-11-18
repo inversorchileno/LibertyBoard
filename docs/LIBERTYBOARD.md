@@ -148,6 +148,14 @@ En modo escritorio son paneles emergentes; en modo pizarra, un panel fijo a la d
 - **Texto en escritorio:** con Selección, un clic sobre un elemento (texto, su marco o sus botones) lo usa como en la pizarra: cerrar, cambiar tamaño, girar, mover; un clic en lo vacío sigue pasando al escritorio.
 - **Scroll continuo** (`UBBoardView::turnPageWithWheel`, `drawNeighbourPages`): la hoja anterior y la siguiente se dibujan pegadas a la actual (16 px de separación); la rueda sigue a su ritmo y, cuando la vecina ocupa el centro, pasa a ser la hoja actual sin mover la imagen. Sigue siendo una hoja a la vez por dentro (no es una vista continua completa).
 
+## Doble pizarra (compilación 16)
+
+- **Modo → Doble pizarra** (`src/board/UBDualBoard`): dos documentos lado a lado (dos PDF, dos pizarras, o un PDF y una pizarra de notas).
+- Solo un lado es la pizarra a la vez, el **activo**, con marco azul oscuro: ahí trabajan las herramientas, las páginas, guardar y la barra de desplazamiento. El otro lado (marco claro, `UBOtherBoardView`) muestra su documento como quedó y se puede desplazar; un clic en él, o en su pestaña, lo vuelve activo sin moverlo, con su zoom y lugar.
+- La **línea divisoria** se arrastra: parte en 50/50 y cada lado queda entre 20 % y 80 %.
+- **Dos documentos como máximo:** con uno abierto, el otro lado es una pizarra nueva (con su pestaña); con más de dos, un aviso pide elegir cuáles cerrar (el actual queda). Abrir un tercero estando en el modo pregunta lo mismo. Cerrar uno de los dos vuelve a pizarra simple; al salir del modo, el otro documento queda en las pestañas.
+- **Inicio → Nueva pizarra** (antes «Nuevo documento»), rotulador con dibujo de destacador tipo Stabilo.
+
 ## Forma de trabajo
 
 - El dueño es **Luis** (Chile), analista financiero, sin experiencia en programación. Habla en español; se le responde en español, claro y sin jerga. Usa Windows 11, pantalla ancha (unos 2540 px) y lápiz digital.
