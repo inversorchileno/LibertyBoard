@@ -24,6 +24,7 @@
 
 #include <QDateTime>
 #include <QDir>
+#include <QGraphicsOpacityEffect>
 #include <QPropertyAnimation>
 #include <QStandardPaths>
 #include <QWidget>
@@ -58,5 +59,35 @@ void UBScreenshot::flash(const QRect& area)
     fade->setEndValue(0.0);
     fade->setEasingCurve(QEasingCurve::OutCubic);
     connect(fade, &QPropertyAnimation::finished, shade, &QWidget::close);
+    fade->start();
+}
+
+void UBScreenshot::flash(QWidget* widget)
+{
+    QWidget* window = widget ? widget->window() : nullptr;
+
+    if (!window)
+    {
+        return;
+    }
+
+    auto shade = new QWidget(window);
+    shade->setAttribute(Qt::WA_TransparentForMouseEvents);
+    shade->setAttribute(Qt::WA_StyledBackground);
+    shade->setStyleSheet("background: black;");
+    shade->setGeometry(QRect(widget->mapTo(window, QPoint(0, 0)), widget->size()));
+
+    auto opacity = new QGraphicsOpacityEffect(shade);
+    opacity->setOpacity(0.45);
+    shade->setGraphicsEffect(opacity);
+    shade->show();
+    shade->raise();
+
+    auto fade = new QPropertyAnimation(opacity, "opacity", shade);
+    fade->setDuration(450);
+    fade->setStartValue(0.45);
+    fade->setEndValue(0.0);
+    fade->setEasingCurve(QEasingCurve::OutCubic);
+    connect(fade, &QPropertyAnimation::finished, shade, &QObject::deleteLater);
     fade->start();
 }

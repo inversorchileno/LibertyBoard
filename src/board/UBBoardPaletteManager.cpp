@@ -1032,7 +1032,7 @@ void UBBoardPaletteManager::saveBoardScreenshot()
         view->render(&painter, QRectF(QPointF(0, 0), viewport->size()), viewport->rect());
     }
 
-    UBScreenshot::flash(QRect(viewport->mapToGlobal(QPoint(0, 0)), viewport->size()));
+    UBScreenshot::flash(viewport);
     UBApplication::showMessage(UBScreenshot::save(screenshot));
 }
 

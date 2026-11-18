@@ -27,6 +27,8 @@
 #include <QRect>
 #include <QString>
 
+class QWidget;
+
 /**
  * @brief Keeps a screenshot in the Pictures folder and shows, like Windows,
  * that it was taken: the captured area dims for a moment.
@@ -44,4 +46,10 @@ public:
 
     /** @brief Dims the area, in global coordinates, and fades back. */
     static void flash(const QRect& area);
+
+    /**
+     * @brief Dims a widget of a window and fades back, with a layer inside
+     * the window, which stays above it whatever the window system does.
+     */
+    static void flash(QWidget* widget);
 };
