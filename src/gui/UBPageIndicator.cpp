@@ -38,12 +38,13 @@ UBPageIndicator::UBPageIndicator(QWidget* parent)
     : QWidget(parent)
 {
     setObjectName("pageIndicator");
-    setStyleSheet("QLineEdit { background: #111317; color: #f0f0f0; border: 1px solid #3a404b; border-radius: 4px; padding: 2px 4px; }"
+    setStyleSheet("QLineEdit { background: #111317; color: #f0f0f0; border: 1px solid #3a404b; border-radius: 4px; padding: 0px 4px; }"
                   "QLabel { color: #e8e8e8; background: transparent; }");
 
     mPage = new QLineEdit(this);
     mPage->setAlignment(Qt::AlignRight);
     mPage->setFixedWidth(52);
+    mPage->setFixedHeight(20);
     mPage->setValidator(new QIntValidator(1, 99999, mPage));
     mPage->setToolTip(tr("Type a page number and press Enter"));
 
@@ -61,28 +62,38 @@ UBPageIndicator::UBPageIndicator(QWidget* parent)
 
     for (QToolButton* button : { rotateLeft, rotateRight })
     {
-        button->setIconSize(QSize(20, 20));
+        button->setIconSize(QSize(19, 19));
+        button->setFixedSize(24, 21);
         button->setAutoRaise(true);
-        button->setStyleSheet("QToolButton { border: none; padding: 1px; } QToolButton:hover { background: #3a404b; border-radius: 3px; }");
+        button->setStyleSheet("QToolButton { border: none; padding: 0px; } QToolButton:hover { background: #3a404b; border-radius: 3px; }");
     }
+
+    // Written under the arrows like the names under the buttons beside it.
+    auto rotateLabel = new QLabel(tr("Rotate"), this);
+    rotateLabel->setAlignment(Qt::AlignHCenter | Qt::AlignBottom);
+    rotateLabel->setObjectName("rotateLabel");
 
     auto pageRow = new QHBoxLayout();
     pageRow->setSpacing(4);
+    pageRow->addStretch(1);
     pageRow->addWidget(mPage);
     pageRow->addWidget(mTotal);
+    pageRow->addStretch(1);
 
     auto rotateRow = new QHBoxLayout();
-    rotateRow->setSpacing(2);
+    rotateRow->setSpacing(6);
     rotateRow->addStretch(1);
     rotateRow->addWidget(rotateLeft);
     rotateRow->addWidget(rotateRight);
     rotateRow->addStretch(1);
 
     auto layout = new QVBoxLayout(this);
-    layout->setContentsMargins(6, 2, 6, 2);
-    layout->setSpacing(2);
+    layout->setContentsMargins(6, 6, 6, 10);
+    layout->setSpacing(0);
     layout->addLayout(pageRow);
     layout->addLayout(rotateRow);
+    layout->addStretch(1);
+    layout->addWidget(rotateLabel);
 
     connect(rotateLeft, &QToolButton::clicked, this, []() { UBPageRotation::rotateActivePage(-90); });
     connect(rotateRight, &QToolButton::clicked, this, []() { UBPageRotation::rotateActivePage(90); });
