@@ -731,6 +731,12 @@ void UBDesktopAnnotationController::updateMask(bool bTransparent)
 
                 annotationPainter.drawRect(rect);
             }
+            else if (pCrntItem->isVisible() && !pCrntItem->parentItem() && dynamic_cast<UBGraphicsItem*>(pCrntItem))
+            {
+                // Text boxes, stamps and other items take the clicks, with
+                // room around them for the buttons of their frame.
+                annotationPainter.drawRect(pCrntItem->sceneBoundingRect().adjusted(-40, -40, 40, 40));
+            }
         }
 
         annotationPainter.end();

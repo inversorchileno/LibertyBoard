@@ -1146,7 +1146,10 @@ void UBBoardView::mousePressEvent (QMouseEvent *event)
 
         case UBStylusTool::Selector :
         case UBStylusTool::Play :
-            if (bIsDesktop) {
+            // On the desktop the selector lets the clicks through to the other
+            // programs, except on the items of the annotations, such as a text
+            // box, its frame and its buttons, which are used as on the board.
+            if (bIsDesktop && !getMovingItem()) {
                 event->ignore();
                 return;
             }
@@ -1226,7 +1229,7 @@ void UBBoardView::mousePressEvent (QMouseEvent *event)
         case UBStylusTool::Selector :
         case UBStylusTool::Play :
         {
-            if (bIsDesktop) {
+            if (bIsDesktop && !getMovingItem()) {
                 event->ignore();
                 return;
             }
@@ -1293,7 +1296,7 @@ void UBBoardView::mouseMoveEvent (QMouseEvent *event)
 
     case UBStylusTool::Selector :
     case UBStylusTool::Play : {
-        if (bIsDesktop) {
+        if (bIsDesktop && !getMovingItem()) {
             event->ignore();
             return;
         }
@@ -1408,7 +1411,7 @@ void UBBoardView::mouseReleaseEvent (QMouseEvent *event)
 
     if (currentTool == UBStylusTool::Selector)
     {
-        if (bIsDesktop) {
+        if (bIsDesktop && !getMovingItem()) {
             event->ignore();
             return;
         }
@@ -1590,7 +1593,7 @@ void UBBoardView::mouseReleaseEvent (QMouseEvent *event)
         }
     }
     else if (currentTool == UBStylusTool::Play) {
-        if (bIsDesktop) {
+        if (bIsDesktop && !getMovingItem()) {
             event->ignore();
             return;
         }
