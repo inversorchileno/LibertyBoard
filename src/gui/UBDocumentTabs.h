@@ -22,6 +22,7 @@
 
 #pragma once
 
+#include <functional>
 #include <memory>
 
 #include <QList>
@@ -59,6 +60,28 @@ public:
     /** @brief Asks for a file with the dialog of the system and saves to it. */
     bool saveCurrentAs();
 
+    /** @brief The open documents, in the order of their tabs. */
+    QList<std::shared_ptr<UBDocumentProxy>> documents() const;
+
+    /** @brief The name shown on the tab of a document. */
+    QString nameOf(const std::shared_ptr<UBDocumentProxy>& document) const;
+
+    /** @brief The page a document was left at. */
+    int pageOf(const std::shared_ptr<UBDocumentProxy>& document) const;
+
+    /** @brief Gives a document a tab without showing it, like the other side of the double board. */
+    void addDocument(const std::shared_ptr<UBDocumentProxy>& document, int page = 0);
+
+    /** @brief Closes the tab of a document, offering to save it first. Returns false when the user keeps it. */
+    bool closeDocument(const std::shared_ptr<UBDocumentProxy>& document);
+
+    /**
+     * @brief Lets another part show the document of a clicked tab, the double
+     * board for the document of its other side. The handler returns true
+     * when it showed the document.
+     */
+    void setShowHandler(std::function<bool(const std::shared_ptr<UBDocumentProxy>&)> handler);
+
 public slots:
     /** @brief Opens a new blank board in a new tab. */
     void newDocument();
@@ -72,6 +95,9 @@ signals:
 
     /** @brief A document was opened or closed. */
     void countChanged(int count);
+
+    /** @brief The tab of a document is about to close. */
+    void documentClosing(std::shared_ptr<UBDocumentProxy> document);
 
 private:
     struct OpenDocument
@@ -102,4 +128,5 @@ private:
     UBBoardSaver* mSaver{nullptr};
     QList<OpenDocument> mDocuments;
     bool mSwitching{false};
+    std::function<bool(const std::shared_ptr<UBDocumentProxy>&)> mShowHandler;
 };

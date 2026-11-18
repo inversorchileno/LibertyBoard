@@ -2115,6 +2115,17 @@ void UBBoardView::drawForeground(QPainter* painter, const QRectF& rect)
     // Drawn over the background, which is cached, and outside the page.
     drawNeighbourPages(painter, rect);
 
+    if (mActiveFrameShown)
+    {
+        // The active side of the double board.
+        painter->save();
+        painter->resetTransform();
+        painter->setPen(QPen(QColor("#1f3f7a"), 6));
+        painter->setBrush(Qt::NoBrush);
+        painter->drawRect(QRectF(viewport()->rect()).adjusted(3, 3, -3, -3));
+        painter->restore();
+    }
+
     QTransform transform{viewportTransform()};
     QRect viewportRect(0, 0, viewport()->width(), viewport()->height());
     QRectF visible{mapToScene(viewportRect).boundingRect()};
@@ -2181,6 +2192,12 @@ qreal UBBoardView::documentPosition()
     const QRectF visible = mapToScene(viewport()->rect()).boundingRect();
     const qreal fraction = page.height() > 0 ? (visible.top() - page.top()) / page.height() : 0;
     return mController->activeSceneIndex() + qBound(0.0, fraction, 1.0);
+}
+
+void UBBoardView::setActiveFrameShown(bool shown)
+{
+    mActiveFrameShown = shown;
+    viewport()->update();
 }
 
 qreal UBBoardView::visiblePageFraction()

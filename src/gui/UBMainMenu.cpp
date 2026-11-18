@@ -35,6 +35,7 @@
 #include <QToolButton>
 
 #include "board/UBDrawingController.h"
+#include "board/UBDualBoard.h"
 #include "core/UBApplication.h"
 #include "core/UBDocumentManager.h"
 #include "core/UBGitHubUpdater.h"
@@ -163,6 +164,21 @@ void UBMainMenu::createMenus()
 
     QMenu* modeMenu = menuBar->addMenu(tr("&Mode"));
     modeMenu->addAction(mMainWindow->actionBoard);
+
+    // Two documents side by side on the board.
+    auto dualBoard = new UBDualBoard(mDocumentTabs, this);
+    auto dualBoardAction = new QAction(tr("Double board"), mMainWindow);
+    dualBoardAction->setCheckable(true);
+    dualBoardAction->setToolTip(tr("Two documents side by side: click a side to work on it"));
+    connect(dualBoardAction, &QAction::toggled, this, [dualBoard](bool enabled) {
+        UBApplication::applicationController->showBoard();
+        dualBoard->setEnabled(enabled);
+    });
+    modeMenu->addAction(dualBoardAction);
+    connect(dualBoard, &UBDualBoard::enabledChanged, dualBoardAction, [dualBoardAction](bool enabled) {
+        const QSignalBlocker blocker(dualBoardAction);
+        dualBoardAction->setChecked(enabled);
+    });
     modeMenu->addAction(mMainWindow->actionWeb);
     modeMenu->addAction(mMainWindow->actionDesktop);
 

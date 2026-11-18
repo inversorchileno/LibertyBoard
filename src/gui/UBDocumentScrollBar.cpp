@@ -75,7 +75,8 @@ int UBDocumentScrollBar::barWidth()
 
 void UBDocumentScrollBar::placeBesideView()
 {
-    const QRect view = mView->geometry();
+    // The view may be one side of the double board, inside its splitter.
+    const QRect view(mView->mapTo(parentWidget(), QPoint(0, 0)), mView->size());
     setGeometry(view.right() - barWidth() + 1, view.top(), barWidth(), view.height());
     raise();
 }

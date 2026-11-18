@@ -92,6 +92,64 @@ int UBDocumentTabs::count() const
     return mDocuments.size();
 }
 
+QList<std::shared_ptr<UBDocumentProxy>> UBDocumentTabs::documents() const
+{
+    QList<std::shared_ptr<UBDocumentProxy>> list;
+
+    for (const OpenDocument& open : mDocuments)
+    {
+        list << open.document;
+    }
+
+    return list;
+}
+
+QString UBDocumentTabs::nameOf(const std::shared_ptr<UBDocumentProxy>& document) const
+{
+    const int index = indexOf(document);
+    return index >= 0 ? mTabBar->tabText(index) : QString();
+}
+
+int UBDocumentTabs::pageOf(const std::shared_ptr<UBDocumentProxy>& document) const
+{
+    const int index = indexOf(document);
+    return index >= 0 ? mDocuments.at(index).page : 0;
+}
+
+void UBDocumentTabs::addDocument(const std::shared_ptr<UBDocumentProxy>& document, int page)
+{
+    if (!document || indexOf(document) >= 0)
+    {
+        return;
+    }
+
+    OpenDocument open{ document };
+    open.page = page;
+    mDocuments.append(open);
+    mTabBar->addTab(QString());
+    updateTabText(mDocuments.size() - 1);
+    mTabBar->setCurrentIndex(currentIndex());
+    emit countChanged(count());
+}
+
+bool UBDocumentTabs::closeDocument(const std::shared_ptr<UBDocumentProxy>& document)
+{
+    const int index = indexOf(document);
+
+    if (index < 0)
+    {
+        return true;
+    }
+
+    closeTab(index);
+    return indexOf(document) < 0;
+}
+
+void UBDocumentTabs::setShowHandler(std::function<bool(const std::shared_ptr<UBDocumentProxy>&)> handler)
+{
+    mShowHandler = handler;
+}
+
 void UBDocumentTabs::openFile(const QString& filePath)
 {
     const QString absolute = QFileInfo(filePath).absoluteFilePath();
@@ -259,7 +317,14 @@ void UBDocumentTabs::showDocument(int index)
 
 void UBDocumentTabs::closeTab(int index)
 {
-    if (index < 0 || index >= mDocuments.size() || !confirmClose(index))
+    if (index < 0 || index >= mDocuments.size())
+    {
+        return;
+    }
+
+    emit documentClosing(mDocuments.at(index).document);
+
+    if (index >= mDocuments.size() || !confirmClose(index))
     {
         return;
     }
@@ -383,6 +448,12 @@ bool UBDocumentTabs::isBlank(const OpenDocument& open) const
 
 void UBDocumentTabs::onTabClicked(int index)
 {
+    if (index >= 0 && index < mDocuments.size() && mShowHandler && mShowHandler(mDocuments.at(index).document))
+    {
+        mTabBar->setCurrentIndex(currentIndex());
+        return;
+    }
+
     showDocument(index);
 }
 

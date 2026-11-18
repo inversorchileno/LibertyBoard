@@ -80,6 +80,9 @@ public:
 
     /** @brief Shows the page and the place of a document position, at the same zoom. */
     void showDocumentPosition(qreal position);
+
+    /** @brief A dark frame telling that this side of the double board is the active one. */
+    void setActiveFrameShown(bool shown);
     void updateSnapIndicator(Qt::Corner corner, QPointF snapPoint, double angle = 0);
 
     // work around for handling tablet events on MAC OS with Qt 4.8.0 and above
@@ -162,6 +165,7 @@ private:
         qreal pageGap() const;
 
         bool mNeighbourRepaintPending{false};
+        bool mActiveFrameShown{false};
         int mLastNeighbourIndex{-1};
         int mNeighbourRepaints{0};
 

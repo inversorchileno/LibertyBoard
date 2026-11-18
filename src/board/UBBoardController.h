@@ -87,6 +87,12 @@ class UBBoardController : public UBDocumentContainer
 
         int currentPage() const;
 
+        /** @brief The row of the pages sidebar and the board views. */
+        QHBoxLayout* controlLayout() const
+        {
+            return mControlLayout;
+        }
+
         QWidget* controlContainer() const
         {
             return mControlContainer;

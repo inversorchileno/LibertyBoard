@@ -148,6 +148,12 @@ QRect UBStylusPalette::boardArea() const
         return view->geometry();
     }
 
+    // Both sides of the double board, in their splitter.
+    if (view && view->parentWidget() && view->parentWidget()->parentWidget() == parentWidget())
+    {
+        return view->parentWidget()->geometry();
+    }
+
     return parentWidget()->rect();
 }
 
