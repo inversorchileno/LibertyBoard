@@ -42,6 +42,7 @@
 
 class UBWebToolsPalette;
 class UBStylusPalette;
+class UBDocumentScrollBar;
 class UBClockPalette;
 class UBPageNumberPalette;
 class UBZoomPalette;
@@ -111,6 +112,8 @@ class UBBoardPaletteManager : public QObject
         UBBoardController *mBoardControler;
 
         UBStylusPalette *mStylusPalette;
+
+        UBDocumentScrollBar* mDocumentScrollBar{nullptr};
         UBToolOptionsPopup* mToolOptionsPopup{nullptr};
 
         UBZoomPalette *mZoomPalette;

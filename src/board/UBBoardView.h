@@ -68,6 +68,18 @@ public:
     bool isMultipleSelectionEnabled() { return mMultipleSelectionIsEnabled; }
 
     void setBoxing(const QMargins& margins);
+
+    /**
+     * @brief Where the view is in the document, in pages from its start:
+     * 2.5 is the middle of the third page at the top of the view.
+     */
+    qreal documentPosition();
+
+    /** @brief The height of the view, in pages. */
+    qreal visiblePageFraction();
+
+    /** @brief Shows the page and the place of a document position, at the same zoom. */
+    void showDocumentPosition(qreal position);
     void updateSnapIndicator(Qt::Corner corner, QPointF snapPoint, double angle = 0);
 
     // work around for handling tablet events on MAC OS with Qt 4.8.0 and above
@@ -80,6 +92,9 @@ signals:
     void shown();
     void mouseReleased();
     void painted(const QRectF region);
+
+    /** @brief The view moved in the document: scrolled, zoomed or on another page. */
+    void documentPositionChanged();
 
 protected:
 
@@ -139,6 +154,9 @@ private:
 
         /** @brief Draws the previous and the next page beside the current one. */
         void drawNeighbourPages(QPainter* painter, const QRectF& rect);
+
+        /** @brief Shows another page at the given zoom, as set by the transform of the view. */
+        void showPageAtScale(int index, qreal scale);
 
         /** @brief The space between two pages, in units of the page. */
         qreal pageGap() const;

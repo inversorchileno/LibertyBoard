@@ -41,6 +41,7 @@
 
 #include "board/UBBoardController.h"
 #include "board/UBBoardView.h"
+#include "gui/UBDocumentScrollBar.h"
 #include "board/UBDrawingController.h"
 
 
@@ -129,7 +130,8 @@ void UBStylusPalette::initPosition()
             pos = QPoint(area.center().x() - width() / 2, area.bottom() - border() - height());
             break;
         default:
-            pos = QPoint(area.right() - border() - width(), area.center().y() - height() / 2);
+            // Left of the scroll bar of the document.
+            pos = QPoint(area.right() - border() - UBDocumentScrollBar::barWidth() - width(), area.center().y() - height() / 2);
             break;
     }
 

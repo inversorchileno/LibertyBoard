@@ -1779,26 +1779,12 @@ void UBBoardView::switchToNeighbourPage()
     const QPointF edgeOnScreen = viewportTransform().map(edge);
     const qreal scale = transform().m11();
 
-    if (direction > 0)
-    {
-        mController->nextScene();
-    }
-    else
-    {
-        mController->previousScene();
-    }
+    // The same zoom as before.
+    showPageAtScale(index + direction, scale);
 
     if (!scene())
     {
         return;
-    }
-
-    // The same zoom as before.
-    const qreal newScale = transform().m11();
-
-    if (newScale > 0 && qAbs(newScale - scale) > 1e-6)
-    {
-        mController->zoom(scale / newScale, mapToScene(viewport()->rect().center()));
     }
 
     const QRectF newPage = scene()->normalizedSceneRect();
@@ -2180,6 +2166,78 @@ void UBBoardView::scrollContentsBy(int dx, int dy)
     QGraphicsView::scrollContentsBy(dx, dy);
     if (scene())
         scene()->controlViewportChanged();
+
+    emit documentPositionChanged();
+}
+
+qreal UBBoardView::documentPosition()
+{
+    if (!mController || !scene())
+    {
+        return 0;
+    }
+
+    const QRectF page = scene()->normalizedSceneRect();
+    const QRectF visible = mapToScene(viewport()->rect()).boundingRect();
+    const qreal fraction = page.height() > 0 ? (visible.top() - page.top()) / page.height() : 0;
+    return mController->activeSceneIndex() + qBound(0.0, fraction, 1.0);
+}
+
+qreal UBBoardView::visiblePageFraction()
+{
+    if (!scene())
+    {
+        return 1;
+    }
+
+    const QRectF page = scene()->normalizedSceneRect();
+    const QRectF visible = mapToScene(viewport()->rect()).boundingRect();
+    return page.height() > 0 ? visible.height() / page.height() : 1;
+}
+
+void UBBoardView::showPageAtScale(int index, qreal scale)
+{
+    mController->persistCurrentScene(false, true);
+    mController->setActiveDocumentScene(index);
+
+    const qreal newScale = transform().m11();
+
+    if (newScale > 0 && qAbs(newScale - scale) > 1e-6)
+    {
+        mController->zoom(scale / newScale, mapToScene(viewport()->rect().center()));
+    }
+}
+
+void UBBoardView::showDocumentPosition(qreal position)
+{
+    std::shared_ptr<UBDocumentProxy> document = mController ? mController->selectedDocument() : nullptr;
+
+    if (!document || !scene())
+    {
+        return;
+    }
+
+    const int index = qBound(0, int(position), document->pageCount() - 1);
+    const qreal fraction = qBound(0.0, position - index, 1.0);
+    const qreal scale = transform().m11();
+    const qreal centerX = mapToScene(viewport()->rect().center()).x();
+
+    if (index != mController->activeSceneIndex())
+    {
+        showPageAtScale(index, scale);
+    }
+
+    const QRectF page = scene()->normalizedSceneRect();
+    const qreal visibleHeight = viewport()->height() / transform().m11();
+    const QPointF middle(centerX, page.top() + fraction * page.height() + visibleHeight / 2);
+    centerOn(middle);
+
+    // Showing a page restores its saved view once the events are processed:
+    // the place is set again after that.
+    QTimer::singleShot(0, this, [this, middle]() {
+        centerOn(middle);
+        UBApplication::applicationController->adjustDisplayView();
+    });
 }
 
 void UBBoardView::settingChanged (QVariant newValue)

@@ -30,6 +30,7 @@
 #include "UBBoardPaletteManager.h"
 
 #include "board/UBBoardView.h"
+#include "gui/UBDocumentScrollBar.h"
 #include "gui/UBScreenshot.h"
 
 #include "frameworks/UBPlatformUtils.h"
@@ -247,6 +248,11 @@ void UBBoardPaletteManager::setupPalettes()
     connect(mStylusPalette, &UBStylusPalette::edgeChosen, this, &UBBoardPaletteManager::placeStylusPalette);
     connect(mStylusPalette, &UBStylusPalette::screenshotRequested, this, &UBBoardPaletteManager::saveBoardScreenshot);
     mStylusPalette->show(); // always show stylus palette at startup
+
+    // The scroll bar of the document, at the right edge of the board.
+    UBBoardView* view = UBApplication::boardController->controlView();
+    mDocumentScrollBar = new UBDocumentScrollBar(view, view->parentWidget());
+    connect(view, &UBBoardView::resized, mDocumentScrollBar, &UBDocumentScrollBar::placeBesideView);
 
     mZoomPalette = new UBZoomPalette(mContainer);
     mZoomPalette->show();
