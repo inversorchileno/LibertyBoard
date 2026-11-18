@@ -32,7 +32,9 @@
 #include "core/UBGitHubUpdater.h"
 #include "frameworks/UBPlatformUtils.h"
 
+#include <QButtonGroup>
 #include <QComboBox>
+#include <QRadioButton>
 #include <QGroupBox>
 #include <QHBoxLayout>
 #include <QLabel>
@@ -52,6 +54,8 @@
 #include "frameworks/UBStringUtils.h"
 
 #include "board/UBBoardController.h"
+#include "board/UBBoardPaletteManager.h"
+#include "gui/UBStylusPalette.h"
 #include "document/UBDocumentController.h"
 #include "domain/UBGraphicsScene.h"
 #include "board/UBDrawingController.h"
@@ -303,8 +307,24 @@ void UBPreferencesController::wire()
 
     connect(mPreferencesUI->toolbarAtTopRadioButton, SIGNAL(clicked(bool)), this, SLOT(toolbarPositionChanged(bool)));
     connect(mPreferencesUI->toolbarAtBottomRadioButton, SIGNAL(clicked(bool)), this, SLOT(toolbarPositionChanged(bool)));
-    connect(mPreferencesUI->horizontalChoice, SIGNAL(clicked(bool)), this, SLOT(toolbarOrientationHorizontal(bool)));
-    connect(mPreferencesUI->verticalChoice, SIGNAL(clicked(bool)), this, SLOT(toolbarOrientationVertical(bool)));
+    // The palette of the tools goes to an edge of the board, as when it is
+    // dropped there: at the top or bottom it is horizontal, at the sides vertical.
+    mPreferencesUI->horizontalChoice->hide();
+    mPreferencesUI->verticalChoice->hide();
+    mPaletteEdges = new QButtonGroup(this);
+    const QList<QPair<QString, int>> edges = { { tr("Top"), Qt::TopEdge }, { tr("Bottom"), Qt::BottomEdge },
+                                               { tr("Left"), Qt::LeftEdge }, { tr("Right"), Qt::RightEdge } };
+
+    for (int i = 0; i < edges.size(); ++i)
+    {
+        auto choice = new QRadioButton(edges.at(i).first, mPreferencesUI->horizontalChoice->parentWidget());
+        mPreferencesUI->gridLayout_5->addWidget(choice, i / 2, i % 2);
+        mPaletteEdges->addButton(choice, edges.at(i).second);
+    }
+
+    connect(mPaletteEdges, &QButtonGroup::idClicked, this, [](int edge) {
+        UBApplication::boardController->paletteManager()->placeStylusPalette(edge);
+    });
     connect(mPreferencesUI->toolbarDisplayTextCheckBox, SIGNAL(clicked(bool)), settings->appToolBarDisplayText, SLOT(setBool(bool)));
 
     //grid tab
@@ -443,8 +463,10 @@ void UBPreferencesController::init()
     mPreferencesUI->toolbarAtTopRadioButton->setChecked(settings->appToolBarPositionedAtTop->get().toBool());
     mPreferencesUI->toolbarAtBottomRadioButton->setChecked(!settings->appToolBarPositionedAtTop->get().toBool());
     mPreferencesUI->toolbarDisplayTextCheckBox->setChecked(settings->appToolBarDisplayText->get().toBool());
-    mPreferencesUI->verticalChoice->setChecked(settings->appToolBarOrientationVertical->get().toBool());
-    mPreferencesUI->horizontalChoice->setChecked(!settings->appToolBarOrientationVertical->get().toBool());
+    if (QAbstractButton* edge = mPaletteEdges->button(UBStylusPalette::edge()))
+    {
+        edge->setChecked(true);
+    }
 
     // pen tab
     mPenProperties->fineSlider->setValue(settings->boardPenFineWidth->get().toDouble() * sSliderRatio);
@@ -491,8 +513,9 @@ void UBPreferencesController::defaultSettings()
 
         defaultValue = settings->appToolBarDisplayText->reset().toBool();
         mPreferencesUI->toolbarDisplayTextCheckBox->setChecked(defaultValue);
-        mPreferencesUI->verticalChoice->setChecked(settings->appToolBarOrientationVertical->reset().toBool());
-        mPreferencesUI->horizontalChoice->setChecked(!settings->appToolBarOrientationVertical->reset().toBool());
+        // At the right, vertical, as LibertyBoard starts.
+        UBApplication::boardController->paletteManager()->placeStylusPalette(Qt::RightEdge);
+        mPaletteEdges->button(Qt::RightEdge)->setChecked(true);
         mPreferencesUI->startModeComboBox->setCurrentIndex(0);
 
         mPreferencesUI->useSystemOSKCheckBox->setChecked(settings->useSystemOnScreenKeyboard->reset().toBool());

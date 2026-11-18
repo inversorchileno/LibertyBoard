@@ -63,6 +63,10 @@ class UBBoardPaletteManager : public QObject
     Q_OBJECT
 
     public:
+
+        /** @brief Docks the stylus palette at an edge of the board: Qt::LeftEdge, TopEdge, RightEdge or BottomEdge. */
+        void placeStylusPalette(int edge);
+
         UBBoardPaletteManager(QWidget* container, UBBoardController* controller);
         virtual ~UBBoardPaletteManager();
 
@@ -194,7 +198,6 @@ class UBBoardPaletteManager : public QObject
         void handButtonReleased();
 
         void changeStylusPaletteOrientation(QVariant var);
-        void placeStylusPalette(int edge);
         void placeZoomPalette();
         void saveBoardScreenshot();
 };

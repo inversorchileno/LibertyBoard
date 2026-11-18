@@ -34,6 +34,7 @@
 #include <QDialog>
 #include <QLineEdit>
 
+class QButtonGroup;
 class UBColorPicker;
 class UBApplication;
 class UBSettings;
@@ -84,6 +85,7 @@ class UBPreferencesController : public QObject
         Ui::preferencesDialog* mPreferencesUI;
         UBBrushPropertiesFrame* mPenProperties;
         UBBrushPropertiesFrame* mMarkerProperties;
+        QButtonGroup* mPaletteEdges{nullptr};
         UBColorPicker* mDarkBackgroundGridColorPicker;
         UBColorPicker* mLightBackgroundGridColorPicker;
         QString mScreenConfigurationPath;
