@@ -44,6 +44,7 @@
 #include "gui/UBDocumentTabs.h"
 #include "gui/UBMainWindow.h"
 #include "gui/UBNoteToolIcon.h"
+#include "gui/UBShapeToolIcon.h"
 #include "gui/UBToolColorIcon.h"
 #include "gui/UBToolOptionsArrows.h"
 #include "gui/UBPageIndicator.h"
@@ -373,6 +374,34 @@ void UBMainMenu::showColorsOnTools()
     connect(settings->noteColor, &UBSetting::changed, this, updateNote);
     connect(settings->laserColor, &UBSetting::changed, this, updateLaser);
     connect(settings->highlightSettings.strokeColor, &UBSetting::changed, this, updateHighlight);
+
+    // The arrow, rectangle and ellipse show the border and the filling of the next shape.
+    const QList<QPair<QAction*, UBStylusTool::Enum>> shapes = {
+        { mMainWindow->actionArrowShape, UBStylusTool::Arrow },
+        { mMainWindow->actionRectangle, UBStylusTool::Rectangle },
+        { mMainWindow->actionEllipse, UBStylusTool::Ellipse },
+    };
+
+    for (const auto& shape : shapes)
+    {
+        UBSettings::ShapeSettings* shapeSettings = settings->shapeSettings(shape.second);
+        QAction* action = shape.first;
+        const int tool = shape.second;
+
+        auto updateShape = [action, tool, shapeSettings]() {
+            const QColor stroke(shapeSettings->strokeColor->get().toString());
+            const QString fillName = shapeSettings->fillColor ? shapeSettings->fillColor->get().toString() : QString();
+            UBToolOptionsArrows::setIcon(action, UBShapeToolIcon::create(tool, stroke, fillName.isEmpty() ? QColor() : QColor(fillName)));
+        };
+
+        updateShape();
+        connect(shapeSettings->strokeColor, &UBSetting::changed, this, updateShape);
+
+        if (shapeSettings->fillColor)
+        {
+            connect(shapeSettings->fillColor, &UBSetting::changed, this, updateShape);
+        }
+    }
 
     UBDrawingController* drawing = UBDrawingController::drawingController();
     connect(drawing, &UBDrawingController::colorPaletteChanged, this, updatePenAndMarker);

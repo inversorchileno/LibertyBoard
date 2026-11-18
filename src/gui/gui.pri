@@ -20,6 +20,7 @@ HEADERS +=  \
     src/gui/UBCommentPopup.h \
     src/gui/UBPageIndicator.h \
     src/gui/UBScreenshot.h \
+    src/gui/UBShapeToolIcon.h \
     src/gui/UBSearchBar.h \
     src/gui/UBSoundDialog.h \
     src/gui/UBSoundWave.h \
@@ -87,6 +88,7 @@ SOURCES +=  \
     src/gui/UBCommentPopup.cpp \
     src/gui/UBPageIndicator.cpp \
     src/gui/UBScreenshot.cpp \
+    src/gui/UBShapeToolIcon.cpp \
     src/gui/UBSearchBar.cpp \
     src/gui/UBSoundDialog.cpp \
     src/gui/UBSoundWave.cpp \

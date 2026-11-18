@@ -57,6 +57,8 @@ target_sources(${PROJECT_NAME} PRIVATE
     UBScreenshot.h
     UBSearchBar.cpp
     UBSearchBar.h
+    UBShapeToolIcon.cpp
+    UBShapeToolIcon.h
     UBSoundDialog.cpp
     UBSoundDialog.h
     UBSoundWave.cpp
