@@ -28,6 +28,8 @@
 #include <QSize>
 #include <QString>
 
+class QGraphicsItem;
+
 /**
  * @brief The stamps put on a page with the stamp tool: standard ones, like
  * "Approved" or "Draft", and a custom one made from a picture of the user.
@@ -57,6 +59,14 @@ public:
     /** @brief The stamp the next click puts on the page. */
     static int current();
     static void setCurrent(int index);
+
+    /** @brief True while a click with the stamp tool takes a stamp away instead of putting one. */
+    static bool isRemoving();
+    static void setRemoving(bool removing);
+
+    /** @brief Marks an item of the page as a stamp, which Remove can take away. */
+    static void markAsStamp(QGraphicsItem* item);
+    static bool isStamp(const QGraphicsItem* item);
 
     /** @brief The picture file of the custom stamp, empty until one is chosen. */
     static QString customFile();

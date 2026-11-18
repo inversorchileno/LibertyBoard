@@ -501,6 +501,10 @@ bool UBGraphicsScene::inputDevicePress(const QPointF& scenePos, const qreal& pre
             mNotePosition = scenePos;
             accepted = true;
         }
+        else if (currentTool == UBStylusTool::Stamp && UBStamps::isRemoving()) {
+            removeStampAt(scenePos);
+            accepted = true;
+        }
         else if (currentTool == UBStylusTool::Stamp) {
             mStampPending = true;
             mNotePosition = scenePos;
@@ -1094,6 +1098,27 @@ void UBGraphicsScene::addStamp(const QPointF& position)
     if (item)
     {
         item->setSelected(false);
+        UBStamps::markAsStamp(item);
+    }
+}
+
+void UBGraphicsScene::removeStampAt(const QPointF& position)
+{
+    // Anywhere in the frame of the stamp, also between its letters, where it is transparent.
+    for (QGraphicsItem* item : items(position, Qt::IntersectsItemBoundingRect))
+    {
+        if (UBStamps::isStamp(item))
+        {
+            removeItem(item);
+
+            if (mUndoRedoStackEnabled && UBApplication::undoStack)
+            {
+                UBApplication::undoStack->push(new UBGraphicsItemUndoCommand(shared_from_this(), item, nullptr));
+            }
+
+            setDocumentUpdated();
+            return;
+        }
     }
 }
 

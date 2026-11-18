@@ -202,6 +202,7 @@ private:
     void chooseCustomPicture();
     QIcon iconFor(int index) const;
 
+    QToolButton* mRemove{nullptr};
     QList<QToolButton*> mStamps;
     QGridLayout* mGallery{nullptr};
 };

@@ -23,6 +23,7 @@
 #include "UBStamps.h"
 
 #include <QFont>
+#include <QGraphicsItem>
 #include <QFontMetricsF>
 #include <QImageReader>
 #include <QPainter>
@@ -33,6 +34,10 @@
 
 static const QString sCurrentKey = QStringLiteral("Board/LibertyBoardStamp");
 static const QString sCustomKey = QStringLiteral("Board/LibertyBoardCustomStamp");
+
+// Marks the stamps among the pictures of a page, while LibertyBoard runs.
+static constexpr int sStampDataKey = 0x5354414d;
+static bool sRemoving = false;
 
 // The picture is drawn at twice the size of the stamp on the page, sharp when zoomed.
 static constexpr int sResolution = 2;
@@ -123,6 +128,26 @@ int UBStamps::current()
 void UBStamps::setCurrent(int index)
 {
     UBSettings::settings()->setValue(sCurrentKey, index);
+}
+
+bool UBStamps::isRemoving()
+{
+    return sRemoving;
+}
+
+void UBStamps::setRemoving(bool removing)
+{
+    sRemoving = removing;
+}
+
+void UBStamps::markAsStamp(QGraphicsItem* item)
+{
+    item->setData(sStampDataKey, true);
+}
+
+bool UBStamps::isStamp(const QGraphicsItem* item)
+{
+    return item && item->data(sStampDataKey).toBool();
 }
 
 QString UBStamps::customFile()

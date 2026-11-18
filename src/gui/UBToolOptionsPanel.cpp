@@ -737,6 +737,34 @@ void UBTextOptionsPanel::refresh()
 UBStampOptionsPanel::UBStampOptionsPanel(QWidget* parent)
     : UBToolOptionsPanel(tr("Stamp"), parent)
 {
+    // Remove, beside the title: a click on a stamp then takes it away.
+    mRemove = new QToolButton(this);
+    mRemove->setText(tr("Remove"));
+    mRemove->setToolTip(tr("Click a stamp to take it away"));
+    mRemove->setCheckable(true);
+    mRemove->setStyleSheet("QToolButton { color: #f0f0f0; background: #3a404b; border: 1px solid #555c68; border-radius: 4px; padding: 3px 10px; }"
+                           "QToolButton:checked { background: #c0392b; border-color: #e5533d; }");
+
+    auto header = new QWidget(this);
+    auto headerLayout = new QHBoxLayout(header);
+    headerLayout->setContentsMargins(0, 0, 0, 0);
+    mLayout->removeWidget(mTitle);
+    headerLayout->addWidget(mTitle);
+    headerLayout->addStretch(1);
+    headerLayout->addWidget(mRemove);
+    mLayout->insertWidget(0, header);
+
+    connect(mRemove, &QToolButton::toggled, this, [this](bool removing) {
+        UBStamps::setRemoving(removing);
+
+        if (removing)
+        {
+            UBDrawingController::drawingController()->setStylusTool(UBStylusTool::Stamp);
+        }
+
+        refresh();
+    });
+
     auto gallery = new QWidget(this);
     mGallery = new QGridLayout(gallery);
     mGallery->setContentsMargins(0, 0, 0, 0);
@@ -777,10 +805,19 @@ UBStampOptionsPanel::UBStampOptionsPanel(QWidget* parent)
 void UBStampOptionsPanel::refresh()
 {
     const int current = UBStamps::current();
+    const bool removing = UBStamps::isRemoving();
+
+    {
+        const QSignalBlocker blocker(mRemove);
+        mRemove->setChecked(removing);
+    }
 
     for (int i = 0; i < mStamps.size(); ++i)
     {
-        mStamps.at(i)->setChecked(i == current);
+        // While removing, no stamp is the one to put.
+        mStamps.at(i)->setAutoExclusive(!removing);
+        mStamps.at(i)->setChecked(!removing && i == current);
+        mStamps.at(i)->setAutoExclusive(true);
     }
 
     mStamps.last()->setIcon(iconFor(mStamps.size() - 1));
@@ -804,6 +841,7 @@ void UBStampOptionsPanel::layOutForToolbar()
 void UBStampOptionsPanel::choose(int index)
 {
     UBStamps::setCurrent(index);
+    UBStamps::setRemoving(false);
 
     // The stamp is put with the stamp tool, which the choice selects.
     UBDrawingController::drawingController()->setStylusTool(UBStylusTool::Stamp);

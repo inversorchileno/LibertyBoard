@@ -417,6 +417,9 @@ signals:
         /** @brief Puts the current stamp of the stamp tool on the page, centered on the position. */
         void addStamp(const QPointF& position);
 
+        /** @brief Takes away the stamp at the position, if there is one. */
+        void removeStampAt(const QPointF& position);
+
         /** @brief Puts a quick note, an attached file or a sound on the page, or opens the one clicked. */
         void addPageMark(int tool, const QPointF& position);
         qreal strokeWidth(int tool, qreal pressure, std::optional<QLineF> direction) const;
