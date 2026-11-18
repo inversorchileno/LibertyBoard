@@ -14,9 +14,11 @@ HEADERS +=  \
     src/gui/UBMainMenu.h \
     src/gui/UBNoteDialog.h \
     src/gui/UBDocumentTabs.h \
+    src/gui/UBCommentPopup.h \
     src/gui/UBPageIndicator.h \
     src/gui/UBScreenshot.h \
     src/gui/UBSearchBar.h \
+    src/gui/UBSoundDialog.h \
     src/gui/UBPagesSidebar.h \
     src/gui/UBToolOptionsPopup.h \
     src/gui/UBToolOptionsWidgets.h \
@@ -75,9 +77,11 @@ SOURCES +=  \
     src/gui/UBMainMenu.cpp \
     src/gui/UBNoteDialog.cpp \
     src/gui/UBDocumentTabs.cpp \
+    src/gui/UBCommentPopup.cpp \
     src/gui/UBPageIndicator.cpp \
     src/gui/UBScreenshot.cpp \
     src/gui/UBSearchBar.cpp \
+    src/gui/UBSoundDialog.cpp \
     src/gui/UBPagesSidebar.cpp \
     src/gui/UBToolOptionsPopup.cpp \
     src/gui/UBToolOptionsWidgets.cpp \

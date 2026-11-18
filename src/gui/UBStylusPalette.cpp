@@ -62,6 +62,10 @@ UBStylusPalette::UBStylusPalette(QWidget *parent, Qt::Orientation orient)
     actions << UBApplication::mainWindow->actionSelector;
     actions << UBApplication::mainWindow->actionNote;
     actions << UBApplication::mainWindow->actionStamp;
+    // Only on the board: they put files and sounds in the document.
+    actions << UBApplication::mainWindow->actionComment;
+    actions << UBApplication::mainWindow->actionAttachment;
+    actions << UBApplication::mainWindow->actionSound;
     actions << UBApplication::mainWindow->actionUnderline;
     actions << UBApplication::mainWindow->actionText;
     actions << UBApplication::mainWindow->actionLine;

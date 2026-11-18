@@ -58,6 +58,7 @@ bool UBToolOptionsPopup::hasOptions(int tool)
         case UBStylusTool::Highlight:
         case UBStylusTool::Note:
         case UBStylusTool::Stamp:
+        case UBStylusTool::Comment:
             return true;
         default:
             return false;

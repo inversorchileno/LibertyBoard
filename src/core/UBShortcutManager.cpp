@@ -169,7 +169,10 @@ void UBShortcutManager::addMainActions(UBMainWindow *mainWindow)
                    mainWindow->actionUnderline,
                    mainWindow->actionHighlight,
                    mainWindow->actionNote,
-                   mainWindow->actionStamp
+                   mainWindow->actionStamp,
+                   mainWindow->actionComment,
+                   mainWindow->actionAttachment,
+                   mainWindow->actionSound
                }, mainWindow);
 
     if(UBPlatformUtils::hasVirtualKeyboard())

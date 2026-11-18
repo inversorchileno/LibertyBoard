@@ -2,6 +2,7 @@
 HEADERS      += src/board/UBBoardController.h \
                 src/board/UBBoardPaletteManager.h \
                 src/board/UBBoardSaver.h \
+                src/board/UBComments.h \
                 src/board/UBPageRotation.h \
                 src/board/UBBoardView.h \
                 src/board/UBDrawingController.h \
@@ -10,6 +11,7 @@ HEADERS      += src/board/UBBoardController.h \
 SOURCES      += src/board/UBBoardController.cpp \
                 src/board/UBBoardPaletteManager.cpp \
                 src/board/UBBoardSaver.cpp \
+                src/board/UBComments.cpp \
                 src/board/UBPageRotation.cpp \
                 src/board/UBBoardView.cpp \
                 src/board/UBDrawingController.cpp \

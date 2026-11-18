@@ -36,6 +36,8 @@
 #include "core/UBApplication.h"
 #include "core/UBSetting.h"
 #include "core/UBSettings.h"
+#include "board/UBComments.h"
+#include "domain/UBGraphicsCommentItem.h"
 #include "domain/UBGraphicsNoteItem.h"
 #include "domain/UBGraphicsTextItem.h"
 #include "domain/UBStamps.h"
@@ -103,6 +105,8 @@ UBToolOptionsPanel* UBToolOptionsPanel::create(int tool, QWidget* parent)
             return new UBNoteOptionsPanel(parent);
         case UBStylusTool::Stamp:
             return new UBStampOptionsPanel(parent);
+        case UBStylusTool::Comment:
+            return new UBCommentOptionsPanel(parent);
         default:
             return nullptr;
     }
@@ -849,6 +853,76 @@ QIcon UBStampOptionsPanel::iconFor(int index) const
     }
 
     return QIcon(QPixmap::fromImage(picture));
+}
+
+UBCommentOptionsPanel::UBCommentOptionsPanel(QWidget* parent)
+    : UBToolOptionsPanel(tr("Quick note"), parent)
+{
+    auto buttons = new QWidget(this);
+    auto row = new QHBoxLayout(buttons);
+    row->setContentsMargins(0, 0, 0, 0);
+    row->setSpacing(4);
+
+    auto addButton = [this, buttons, row](const QString& text, const QString& badge) {
+        // The note icon with a small sign, like the comment buttons of PDF readers.
+        QPixmap picture(QSize(64, 64));
+        picture.fill(Qt::transparent);
+        {
+            QPainter painter(&picture);
+            painter.setRenderHint(QPainter::Antialiasing);
+            QIcon(":/images/marks/comment.svg").paint(&painter, QRect(4, 4, 48, 48));
+
+            if (!badge.isEmpty())
+            {
+                painter.setPen(Qt::NoPen);
+                painter.setBrush(QColor("#3fa34d"));
+                painter.drawEllipse(QRectF(32, 32, 30, 30));
+                painter.setPen(Qt::white);
+                QFont font = painter.font();
+                font.setPixelSize(24);
+                font.setBold(true);
+                painter.setFont(font);
+                painter.drawText(QRectF(32, 30, 30, 30), Qt::AlignCenter, badge);
+            }
+        }
+
+        auto button = new QToolButton(buttons);
+        button->setIcon(QIcon(picture));
+        button->setIconSize(QSize(30, 30));
+        button->setText(text);
+        button->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
+        button->setStyleSheet("QToolButton { color: #e8e8e8; background: transparent; border: none; padding: 2px 6px; }"
+                              "QToolButton:hover { background: #3a404b; border-radius: 4px; }"
+                              "QToolButton:checked { background: #4a5260; border-radius: 4px; }");
+        row->addWidget(button);
+        Q_UNUSED(this)
+        return button;
+    };
+
+    auto previous = addButton(tr("Previous"), QStringLiteral("\u2039"));
+    auto next = addButton(tr("Next"), QStringLiteral("\u203A"));
+    auto list = addButton(tr("List of notes"), QString());
+    mShow = addButton(tr("Show"), QStringLiteral("\u25C9"));
+    mShow->setCheckable(true);
+    mShow->setToolTip(tr("Show or hide the quick notes of the pages"));
+    auto merge = addButton(tr("Merge notes"), QStringLiteral("\u2193"));
+    merge->setToolTip(tr("Put the quick notes into the pages, as pictures"));
+
+    addRow(buttons);
+
+    connect(previous, &QToolButton::clicked, this, [this]() { UBComments::step(-1, window()); });
+    connect(next, &QToolButton::clicked, this, [this]() { UBComments::step(+1, window()); });
+    connect(list, &QToolButton::clicked, this, [this]() { UBComments::showList(window()); });
+    connect(mShow, &QToolButton::toggled, this, [](bool shown) { UBComments::setShown(shown); });
+    connect(merge, &QToolButton::clicked, this, [this]() { UBComments::merge(window()); });
+
+    refresh();
+}
+
+void UBCommentOptionsPanel::refresh()
+{
+    const QSignalBlocker blocker(mShow);
+    mShow->setChecked(UBGraphicsCommentItem::areShown());
 }
 
 UBNoteOptionsPanel::UBNoteOptionsPanel(QWidget* parent)

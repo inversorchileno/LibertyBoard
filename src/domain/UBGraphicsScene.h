@@ -416,6 +416,9 @@ signals:
 
         /** @brief Puts the current stamp of the stamp tool on the page, centered on the position. */
         void addStamp(const QPointF& position);
+
+        /** @brief Puts a quick note, an attached file or a sound on the page, or opens the one clicked. */
+        void addPageMark(int tool, const QPointF& position);
         qreal strokeWidth(int tool, qreal pressure, std::optional<QLineF> direction) const;
         QList<UBGraphicsPolygonItem*> polygonsOfSameStroke(UBGraphicsPolygonItem* polygon) const;
         void drawMarkerCircle(const QPointF& pEndPoint);
@@ -461,6 +464,7 @@ signals:
         QPointF mShapeEnd;
         bool mNotePending{false};
         bool mStampPending{false};
+        int mPendingMarkTool{-1};
         QPointF mNotePosition;
         QGraphicsEllipseItem* mMarkerCircle; // dotted circle around marker
         QGraphicsEllipseItem* mPenCircle; // dotted circle around pen

@@ -206,6 +206,19 @@ private:
     QGridLayout* mGallery{nullptr};
 };
 
+/** @brief The quick notes of the document: previous, next, list, show or hide, merge. */
+class UBCommentOptionsPanel : public UBToolOptionsPanel
+{
+    Q_OBJECT
+
+public:
+    explicit UBCommentOptionsPanel(QWidget* parent = nullptr);
+    void refresh() override;
+
+private:
+    QToolButton* mShow{nullptr};
+};
+
 class UBTextOptionsPanel : public UBToolOptionsPanel
 {
     Q_OBJECT

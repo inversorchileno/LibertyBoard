@@ -162,6 +162,15 @@
         <file>images/stylusPalette/noteOn.svg</file>
         <file>images/stylusPalette/stamp.svg</file>
         <file>images/stylusPalette/stampOn.svg</file>
+        <file>images/stylusPalette/comment.svg</file>
+        <file>images/stylusPalette/commentOn.svg</file>
+        <file>images/stylusPalette/attachment.svg</file>
+        <file>images/stylusPalette/attachmentOn.svg</file>
+        <file>images/stylusPalette/sound.svg</file>
+        <file>images/stylusPalette/soundOn.svg</file>
+        <file>images/marks/comment.svg</file>
+        <file>images/marks/attachment.svg</file>
+        <file>images/marks/sound.svg</file>
         <file>images/stylusPalette/zoomOut.png</file>
         <file>images/stylusPalette/zoomOutOn.png</file>
         <file>images/stylusPalette/zoomIn.png</file>

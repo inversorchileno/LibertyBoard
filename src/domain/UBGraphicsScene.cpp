@@ -28,11 +28,17 @@
 
 
 #include "UBGraphicsScene.h"
+
+#include <QFileDialog>
 #include "UBGraphicsLaserTrail.h"
 #include "UBGraphicsShapePreview.h"
 #include "UBShapeGeometry.h"
 #include "UBGraphicsNoteItem.h"
 #include "UBStamps.h"
+#include "UBGraphicsAttachmentItem.h"
+#include "UBGraphicsCommentItem.h"
+#include "UBGraphicsSoundItem.h"
+#include "gui/UBSoundDialog.h"
 #include "gui/UBNoteDialog.h"
 
 #include <cmath>
@@ -500,6 +506,12 @@ bool UBGraphicsScene::inputDevicePress(const QPointF& scenePos, const qreal& pre
             mNotePosition = scenePos;
             accepted = true;
         }
+        else if (currentTool == UBStylusTool::Comment || currentTool == UBStylusTool::Attachment
+                 || currentTool == UBStylusTool::Sound) {
+            mPendingMarkTool = currentTool;
+            mNotePosition = scenePos;
+            accepted = true;
+        }
         else if (isShapeTool(currentTool)) {
             mShapeTool = currentTool;
             mShapeStart = scenePos;
@@ -827,6 +839,16 @@ bool UBGraphicsScene::inputDeviceRelease(int tool, Qt::KeyboardModifiers modifie
         addStamp(mNotePosition);
     }
 
+    if (mPendingMarkTool >= 0)
+    {
+        const int tool = mPendingMarkTool;
+        const QPointF position = mNotePosition;
+        mPendingMarkTool = -1;
+
+        // After the mouse event: the dialogs run their own event loop.
+        QTimer::singleShot(0, this, [this, tool, position]() { addPageMark(tool, position); });
+    }
+
     if (mRemovedItems.size() > 0 || mAddedItems.size() > 0)
     {
         if (mUndoRedoStackEnabled) { //should be deleted after scene own undo stack implemented
@@ -979,6 +1001,81 @@ UBShapeStyle UBGraphicsScene::shapeStyle(int tool) const
     style.minimumHeadSize = 12 * screenToScene;
 
     return style;
+}
+
+void UBGraphicsScene::addPageMark(int tool, const QPointF& position)
+{
+    // A click on a mark opens it.
+    for (QGraphicsItem* item : items(position))
+    {
+        if (UBGraphicsPageMarkItem::isPageMark(item))
+        {
+            static_cast<UBGraphicsPageMarkItem*>(item)->open();
+            return;
+        }
+    }
+
+    const QString documentFolder = document() ? document()->persistencePath() : QString();
+    UBGraphicsPageMarkItem* mark = nullptr;
+
+    if (tool == UBStylusTool::Comment)
+    {
+        mark = new UBGraphicsCommentItem();
+    }
+    else if (tool == UBStylusTool::Attachment)
+    {
+        const QString file = QFileDialog::getOpenFileName(UBApplication::mainWindow, tr("Attach a file"));
+
+        if (file.isEmpty())
+        {
+            return;
+        }
+
+        const QString copy = UBGraphicsAttachmentItem::copyIntoDocument(file, documentFolder, "attachments");
+
+        if (copy.isEmpty())
+        {
+            UBApplication::mainWindow->warning(tr("Attach a file"), tr("The file could not be copied into the document."));
+            return;
+        }
+
+        mark = new UBGraphicsAttachmentItem(copy);
+    }
+    else if (tool == UBStylusTool::Sound)
+    {
+        UBSoundDialog dialog(UBApplication::mainWindow);
+
+        if (dialog.exec() != QDialog::Accepted || dialog.soundFile().isEmpty())
+        {
+            return;
+        }
+
+        const QString copy = UBGraphicsAttachmentItem::copyIntoDocument(dialog.soundFile(), documentFolder, "sounds");
+
+        if (copy.isEmpty())
+        {
+            UBApplication::mainWindow->warning(tr("Sound"), tr("The sound could not be copied into the document."));
+            return;
+        }
+
+        mark = new UBGraphicsSoundItem(copy);
+    }
+
+    if (!mark)
+    {
+        return;
+    }
+
+    mark->setPos(position);
+    addItem(mark);
+    setModified(true);
+    setDocumentUpdated();
+
+    // A new quick note opens to be written.
+    if (tool == UBStylusTool::Comment)
+    {
+        mark->open();
+    }
 }
 
 void UBGraphicsScene::addStamp(const QPointF& position)

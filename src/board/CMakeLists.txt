@@ -5,6 +5,8 @@ target_sources(${PROJECT_NAME} PRIVATE
     UBBoardPaletteManager.h
     UBBoardSaver.cpp
     UBBoardSaver.h
+    UBComments.cpp
+    UBComments.h
     UBPageRotation.cpp
     UBPageRotation.h
     UBBoardView.cpp

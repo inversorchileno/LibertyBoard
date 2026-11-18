@@ -1658,6 +1658,54 @@
     <string>Put a stamp on the page</string>
    </property>
   </action>
+  <action name="actionComment">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../OpenBoard.qrc">
+     <normaloff>:/images/stylusPalette/comment.svg</normaloff>
+     <normalon>:/images/stylusPalette/commentOn.svg</normalon>:/images/stylusPalette/comment.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Quick note</string>
+   </property>
+   <property name="toolTip">
+    <string>Add a quick note</string>
+   </property>
+  </action>
+  <action name="actionAttachment">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../OpenBoard.qrc">
+     <normaloff>:/images/stylusPalette/attachment.svg</normaloff>
+     <normalon>:/images/stylusPalette/attachmentOn.svg</normalon>:/images/stylusPalette/attachment.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Attach file</string>
+   </property>
+   <property name="toolTip">
+    <string>Attach a file to the page</string>
+   </property>
+  </action>
+  <action name="actionSound">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../OpenBoard.qrc">
+     <normaloff>:/images/stylusPalette/sound.svg</normaloff>
+     <normalon>:/images/stylusPalette/soundOn.svg</normalon>:/images/stylusPalette/sound.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Sound</string>
+   </property>
+   <property name="toolTip">
+    <string>Add a sound to the page</string>
+   </property>
+  </action>
   <action name="actionText">
    <property name="checkable">
     <bool>true</bool>

@@ -30,6 +30,7 @@
 #include "core/UBApplication.h"
 #include "document/UBDocumentProxy.h"
 #include "domain/UBGraphicsScene.h"
+#include "domain/UBGraphicsPageMarkItem.h"
 #include "domain/UBItem.h"
 #include "domain/UBUndoCommand.h"
 
@@ -99,7 +100,20 @@ void UBPageRotation::rotate(const std::shared_ptr<UBGraphicsScene>& scene, int d
 
     for (QGraphicsItem* item : items)
     {
-        if (item->parentItem() || !dynamic_cast<UBItem*>(item))
+        if (item->parentItem())
+        {
+            continue;
+        }
+
+        // Notes, quick notes, files and sounds keep their size and stay
+        // upright on screen: only their place turns.
+        if (UBGraphicsPageMarkItem::isPageMark(item) || item->type() == UBGraphicsItemType::NoteItemType)
+        {
+            item->setPos(turn.map(item->pos()));
+            continue;
+        }
+
+        if (!dynamic_cast<UBItem*>(item))
         {
             continue;
         }

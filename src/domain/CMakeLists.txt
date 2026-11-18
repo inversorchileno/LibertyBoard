@@ -25,6 +25,14 @@ target_sources(${PROJECT_NAME} PRIVATE
     UBGraphicsNoteItem.h
     UBStamps.cpp
     UBStamps.h
+    UBGraphicsAttachmentItem.cpp
+    UBGraphicsAttachmentItem.h
+    UBGraphicsCommentItem.cpp
+    UBGraphicsCommentItem.h
+    UBGraphicsPageMarkItem.cpp
+    UBGraphicsPageMarkItem.h
+    UBGraphicsSoundItem.cpp
+    UBGraphicsSoundItem.h
     UBGraphicsPDFItem.cpp
     UBGraphicsPDFItem.h
     UBGraphicsPixmapItem.cpp

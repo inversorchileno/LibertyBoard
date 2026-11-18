@@ -49,6 +49,7 @@ class UBGraphicsW3CWidgetItem;
 class UBGraphicsTextItem;
 class UBGraphicsCurtainItem;
 class UBGraphicsNoteItem;
+class UBGraphicsPageMarkItem;
 class UBGraphicsRuler;
 class UBGraphicsAxes;
 class UBGraphicsCompass;
@@ -163,6 +164,7 @@ class UBSvgSubsetAdaptor
 
                 UBGraphicsCurtainItem* curtainItemFromSvg();
                 UBGraphicsNoteItem* noteItemFromSvg();
+                UBGraphicsPageMarkItem* pageMarkFromSvg(const QString& name);
 
                 UBGraphicsRuler* rulerFromSvg();
 
@@ -278,6 +280,7 @@ class UBSvgSubsetAdaptor
                 void textItemToSvg(UBGraphicsTextItem *item);
                 void curtainItemToSvg(UBGraphicsCurtainItem *item);
                 void noteItemToSvg(UBGraphicsNoteItem* noteItem);
+                void pageMarkToSvg(UBGraphicsPageMarkItem* mark);
                 void rulerToSvg(UBGraphicsRuler *item);
                 void axesToSvg(UBGraphicsAxes *item);
                 void compassToSvg(UBGraphicsCompass *item);

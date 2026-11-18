@@ -1200,7 +1200,10 @@ void UBBoardView::mousePressEvent (QMouseEvent *event)
             if (UBDrawingController::drawingController()->activeRuler() == nullptr
                     && !UBGraphicsScene::isShapeTool(currentTool)
                     && currentTool != UBStylusTool::Note
-                    && currentTool != UBStylusTool::Stamp) {
+                    && currentTool != UBStylusTool::Stamp
+                    && currentTool != UBStylusTool::Comment
+                    && currentTool != UBStylusTool::Attachment
+                    && currentTool != UBStylusTool::Sound) {
                 viewport()->setCursor (QCursor (Qt::BlankCursor));
             }
             if (scene () && !mTabletStylusIsPressed) {
@@ -2125,6 +2128,9 @@ void UBBoardView::setToolCursor (int tool)
         break;
     case UBStylusTool::Note:
     case UBStylusTool::Stamp:
+    case UBStylusTool::Comment:
+    case UBStylusTool::Attachment:
+    case UBStylusTool::Sound:
         controlViewport->setCursor (QCursor (Qt::PointingHandCursor));
         break;
     case UBStylusTool::Hand:

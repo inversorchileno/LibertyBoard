@@ -45,12 +45,16 @@ target_sources(${PROJECT_NAME} PRIVATE
     UBNoteDialog.h
     UBDocumentTabs.cpp
     UBDocumentTabs.h
+    UBCommentPopup.cpp
+    UBCommentPopup.h
     UBPageIndicator.cpp
     UBPageIndicator.h
     UBScreenshot.cpp
     UBScreenshot.h
     UBSearchBar.cpp
     UBSearchBar.h
+    UBSoundDialog.cpp
+    UBSoundDialog.h
     UBPagesSidebar.cpp
     UBPagesSidebar.h
     UBMagnifer.cpp

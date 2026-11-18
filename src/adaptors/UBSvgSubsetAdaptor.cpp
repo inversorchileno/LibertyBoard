@@ -43,7 +43,10 @@
 #include "domain/UBGraphicsMediaItem.h"
 #include "domain/UBGraphicsWidgetItem.h"
 #include "domain/UBGraphicsPDFItem.h"
+#include "domain/UBGraphicsAttachmentItem.h"
+#include "domain/UBGraphicsCommentItem.h"
 #include "domain/UBGraphicsNoteItem.h"
+#include "domain/UBGraphicsSoundItem.h"
 #include "domain/UBGraphicsTextItem.h"
 #include "domain/UBGraphicsTextItemDelegate.h"
 #include "domain/UBGraphicsStroke.h"
@@ -784,6 +787,15 @@ void UBSvgSubsetAdaptor::UBSvgSubsetReader::processElement()
                 textItem->show();
             }
         }
+        else if (name == "comment" || name == "attachment" || name == "sound")
+        {
+            UBGraphicsPageMarkItem* mark = pageMarkFromSvg(name);
+
+            if (mark)
+            {
+                mScene->addItem(mark);
+            }
+        }
         else if (name == "note")
         {
             UBGraphicsNoteItem* note = noteItemFromSvg();
@@ -1458,6 +1470,14 @@ bool UBSvgSubsetAdaptor::UBSvgSubsetWriter::persistScene(std::shared_ptr<UBDocum
         if (noteItem && noteItem->isVisible())
         {
             noteItemToSvg(noteItem);
+            continue;
+        }
+
+        // Is the item a quick note, an attached file or a sound? Saved even
+        // while the quick notes are hidden.
+        if (UBGraphicsPageMarkItem::isPageMark(item))
+        {
+            pageMarkToSvg(static_cast<UBGraphicsPageMarkItem*>(item));
             continue;
         }
 
@@ -3098,6 +3118,80 @@ UBGraphicsNoteItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::noteItemFromSvg()
     }
 
     return note;
+}
+
+void UBSvgSubsetAdaptor::UBSvgSubsetWriter::pageMarkToSvg(UBGraphicsPageMarkItem* mark)
+{
+    /**
+     * samples
+     *
+      <ub:comment x="250" y="150" ub:z-value="12" ub:date="2026-11-18T12:00:00">The text</ub:comment>
+      <ub:attachment x="250" y="150" ub:z-value="12" xlink:href="attachments/{uuid}/Budget.xlsx"/>
+      <ub:sound x="250" y="150" ub:z-value="12" xlink:href="sounds/{uuid}/Recording.m4a"/>
+     */
+
+    const auto comment = qgraphicsitem_cast<UBGraphicsCommentItem*>(mark);
+    const auto attachment = qgraphicsitem_cast<UBGraphicsAttachmentItem*>(mark);
+    const auto sound = qgraphicsitem_cast<UBGraphicsSoundItem*>(mark);
+
+    mXmlWriter.writeStartElement(UBSettings::uniboardDocumentNamespaceUri, comment ? "comment" : attachment ? "attachment" : "sound");
+    mXmlWriter.writeAttribute("x", QString::number(mark->scenePos().x()));
+    mXmlWriter.writeAttribute("y", QString::number(mark->scenePos().y()));
+
+    QString zs;
+    zs.setNum(mark->zValue(), 'f'); // 'f' keeps precision
+    mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "z-value", zs);
+
+    if (comment)
+    {
+        mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "date", comment->date().toString(Qt::ISODate));
+        mXmlWriter.writeCharacters(comment->text());
+    }
+    else
+    {
+        mXmlWriter.writeAttribute(nsXLink, "href", attachment ? attachment->file() : sound->file());
+    }
+
+    mXmlWriter.writeEndElement();
+}
+
+UBGraphicsPageMarkItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::pageMarkFromSvg(const QString& name)
+{
+    const QPointF position(mXmlReader.attributes().value("x").toString().toDouble(),
+                           mXmlReader.attributes().value("y").toString().toDouble());
+    const auto z = mXmlReader.attributes().value(UBSettings::uniboardDocumentNamespaceUri, "z-value");
+    const QString file = mXmlReader.attributes().value(nsXLink, "href").toString();
+    const QDateTime date = QDateTime::fromString(
+        mXmlReader.attributes().value(UBSettings::uniboardDocumentNamespaceUri, "date").toString(), Qt::ISODate);
+
+    // Reads up to the end of the element.
+    const QString text = mXmlReader.readElementText();
+    UBGraphicsPageMarkItem* mark = nullptr;
+
+    if (name == "comment" && !text.isEmpty())
+    {
+        mark = new UBGraphicsCommentItem(text, date);
+    }
+    else if (name == "attachment" && !file.isEmpty())
+    {
+        mark = new UBGraphicsAttachmentItem(file);
+    }
+    else if (name == "sound" && !file.isEmpty())
+    {
+        mark = new UBGraphicsSoundItem(file);
+    }
+
+    if (mark)
+    {
+        mark->setPos(position);
+
+        if (!z.isNull())
+        {
+            mark->setZValue(z.toString().toDouble());
+        }
+    }
+
+    return mark;
 }
 
 UBGraphicsCurtainItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::curtainItemFromSvg()
