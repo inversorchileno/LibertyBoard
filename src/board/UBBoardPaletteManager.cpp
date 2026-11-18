@@ -29,8 +29,6 @@
 
 #include "UBBoardPaletteManager.h"
 
-#include "gui/UBToolOptionsArrows.h"
-
 #include "frameworks/UBPlatformUtils.h"
 #include "frameworks/UBFileSystemUtils.h"
 
@@ -1014,13 +1012,6 @@ void UBBoardPaletteManager::placeStylusPalette(int edge)
 
 void UBBoardPaletteManager::placeZoomPalette()
 {
-    // The triangles of the tools point away from the edge of the palette,
-    // unless the desktop palette is the one on screen.
-    if (!UBApplication::applicationController || !UBApplication::applicationController->isShowingDesktop())
-    {
-        UBToolOptionsArrows::apply(Qt::Edge(UBStylusPalette::edge()));
-    }
-
     if (!mZoomPalette)
     {
         return;
@@ -1136,5 +1127,5 @@ void UBBoardPaletteManager::showToolOptions(int tool)
         }
     }
 
-    mToolOptionsPopup->showForTool(tool, anchor, UBToolOptionsArrows::openingSide(Qt::Edge(UBStylusPalette::edge())));
+    mToolOptionsPopup->showForTool(tool, anchor);
 }

@@ -24,6 +24,7 @@
 
 #include <QAction>
 #include <QIcon>
+#include <QIconEngine>
 #include <QMap>
 #include <QPainter>
 #include <QPixmap>
@@ -51,32 +52,6 @@ namespace
 
     QIcon plainIcon(QAction* action)
     {
-        UBMainWindow* w = UBApplication::mainWindow;
-
-        // The pen, eraser and marker have icons with an old black arrow:
-        // their plain icons are used instead.
-        auto fromFiles = [](const QString& name) {
-            QIcon icon;
-            icon.addFile(":images/stylusPalette/" + name + ".svg", QSize(), QIcon::Normal, QIcon::Off);
-            icon.addFile(":images/stylusPalette/" + name + "On.svg", QSize(), QIcon::Normal, QIcon::On);
-            return icon;
-        };
-
-        if (action == w->actionPen)
-        {
-            return fromFiles("pen");
-        }
-
-        if (action == w->actionEraser)
-        {
-            return fromFiles("eraser");
-        }
-
-        if (action == w->actionMarker)
-        {
-            return fromFiles("marker");
-        }
-
         if (!plainIcons().contains(action))
         {
             plainIcons().insert(action, action->icon());
@@ -101,38 +76,68 @@ namespace
         }
     }
 
-    QIcon withTriangle(const QIcon& icon, Qt::Edge paletteEdge)
+    /**
+     * Paints the plain icon and its triangle at the size and resolution of
+     * the screen, so that the vector icons stay sharp on scaled displays.
+     */
+    class TriangleIconEngine : public QIconEngine
     {
-        QIcon result;
-        const QSize size(42, 42);
-
-        for (QIcon::State state : { QIcon::Off, QIcon::On })
+    public:
+        TriangleIconEngine(const QIcon& icon, Qt::Edge paletteEdge)
+            : mIcon(icon)
+            , mPaletteEdge(paletteEdge)
         {
-            QPixmap pixmap = icon.pixmap(size, QIcon::Normal, state);
-
-            if (pixmap.size() != size)
-            {
-                // An icon smaller than the button is centered, as the button would.
-                QPixmap centered(size);
-                centered.fill(Qt::transparent);
-                QPainter center(&centered);
-                center.drawPixmap((size.width() - pixmap.width()) / 2, (size.height() - pixmap.height()) / 2, pixmap);
-                center.end();
-                pixmap = centered;
-            }
-
-            QPainter painter(&pixmap);
-            painter.setRenderHint(QPainter::Antialiasing);
-            painter.setPen(QPen(QColor(235, 235, 235), 1.2, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
-            painter.setBrush(Qt::black);
-            painter.drawPolygon(triangle(paletteEdge));
-            painter.end();
-
-            result.addPixmap(pixmap, QIcon::Normal, state);
         }
 
-        return result;
-    }
+        void paint(QPainter* painter, const QRect& rect, QIcon::Mode mode, QIcon::State state) override
+        {
+            mIcon.paint(painter, rect, Qt::AlignCenter, mode, state);
+
+            const qreal scale = qMin(rect.width(), rect.height()) / 42.0;
+            const QPointF origin = QRectF(rect).center() - QPointF(21 * scale, 21 * scale);
+
+            painter->save();
+            painter->setRenderHint(QPainter::Antialiasing);
+            painter->translate(origin);
+            painter->scale(scale, scale);
+            painter->setPen(QPen(QColor(235, 235, 235), 1.2, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+            painter->setBrush(Qt::black);
+            painter->drawPolygon(triangle(mPaletteEdge));
+            painter->restore();
+        }
+
+        QPixmap pixmap(const QSize& size, QIcon::Mode mode, QIcon::State state) override
+        {
+            return scaledPixmap(size, mode, state, 1.0);
+        }
+
+        QPixmap scaledPixmap(const QSize& size, QIcon::Mode mode, QIcon::State state, qreal scale) override
+        {
+            QPixmap pixmap(size * scale);
+            pixmap.fill(Qt::transparent);
+
+            QPainter painter(&pixmap);
+            paint(&painter, QRect(QPoint(0, 0), pixmap.size()), mode, state);
+            painter.end();
+
+            pixmap.setDevicePixelRatio(scale);
+            return pixmap;
+        }
+
+        QSize actualSize(const QSize& size, QIcon::Mode, QIcon::State) override
+        {
+            return size;
+        }
+
+        QIconEngine* clone() const override
+        {
+            return new TriangleIconEngine(mIcon, mPaletteEdge);
+        }
+
+    private:
+        QIcon mIcon;
+        Qt::Edge mPaletteEdge;
+    };
 }
 
 void UBToolOptionsArrows::apply(Qt::Edge paletteEdge)
@@ -144,7 +149,15 @@ void UBToolOptionsArrows::apply(Qt::Edge paletteEdge)
 
     for (QAction* action : toolsWithOptions())
     {
-        action->setIcon(withTriangle(plainIcon(action), paletteEdge));
+        action->setIcon(QIcon(new TriangleIconEngine(plainIcon(action), paletteEdge)));
+    }
+}
+
+void UBToolOptionsArrows::remove()
+{
+    for (auto it = plainIcons().constBegin(); it != plainIcons().constEnd(); ++it)
+    {
+        it.key()->setIcon(it.value());
     }
 }
 

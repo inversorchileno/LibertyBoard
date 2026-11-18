@@ -31,7 +31,6 @@
 
 #include <QScreen>
 
-#include "gui/UBStylusPalette.h"
 #include "gui/UBToolOptionsArrows.h"
 
 #include <QtGui>
@@ -240,8 +239,8 @@ void UBDesktopPalette::hideEvent(QHideEvent *event)
 {
     Q_UNUSED(event);
 
-    // Back to the board: the triangles of the board palette.
-    UBToolOptionsArrows::apply(Qt::Edge(UBStylusPalette::edge()));
+    // Back to the board, whose tools have no triangle.
+    UBToolOptionsArrows::remove();
 }
 
 void UBDesktopPalette::mouseReleaseEvent(QMouseEvent* event)

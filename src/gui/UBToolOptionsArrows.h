@@ -29,10 +29,11 @@
 /**
  * @brief The small triangles on the tools that have options.
  *
- * The board palette and the desktop palette share the same actions, so the
- * palette on screen puts the triangles on them. Each triangle is black
- * with a white border and points to where the options open: away from the
- * edge of the screen where the palette stands.
+ * Only the desktop palette shows them. It shares its actions with the
+ * board palette, so it puts the triangles on them when it appears and
+ * removes them when the board is back. Each triangle is black with a white
+ * border and points to where the options open: away from the edge of the
+ * screen where the palette stands.
  */
 namespace UBToolOptionsArrows
 {
@@ -42,6 +43,9 @@ namespace UBToolOptionsArrows
      * Top: pointing down, bottom center. Bottom: pointing up, top center.
      */
     void apply(Qt::Edge paletteEdge);
+
+    /** @brief Gives the tools back their icons without triangle. */
+    void remove();
 
     /** @brief True when a press at this point of a tool button is on its triangle. */
     bool isOnTriangle(Qt::Edge paletteEdge, const QPoint& position, const QSize& buttonSize);
