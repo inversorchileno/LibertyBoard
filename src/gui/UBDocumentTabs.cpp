@@ -63,7 +63,7 @@ UBDocumentTabs::UBDocumentTabs(QWidget* parent)
 
     auto newButton = new QToolButton(this);
     newButton->setText("+");
-    newButton->setToolTip(tr("New document"));
+    newButton->setToolTip(tr("New board"));
     newButton->setFixedSize(26, 22);
 
     auto layout = new QHBoxLayout(this);

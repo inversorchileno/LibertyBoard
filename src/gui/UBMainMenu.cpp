@@ -120,7 +120,7 @@ void UBMainMenu::createMenus()
     // Home: new, open, save, settings and quit.
     QMenu* homeMenu = menuBar->addMenu(tr("&Home"));
 
-    auto newAction = new QAction(mMainWindow->actionNewDocument->icon(), mMainWindow->actionNewDocument->text(), mMainWindow);
+    auto newAction = new QAction(mMainWindow->actionNewDocument->icon(), tr("New board"), mMainWindow);
     newAction->setShortcut(QKeySequence::New);
     mMainWindow->addAction(newAction);
     connect(newAction, &QAction::triggered, mDocumentTabs, &UBDocumentTabs::newDocument);
