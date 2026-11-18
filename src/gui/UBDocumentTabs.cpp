@@ -59,7 +59,7 @@ UBDocumentTabs::UBDocumentTabs(QWidget* parent)
     mTabBar->setDocumentMode(true);
     mTabBar->setDrawBase(false);
     // Only as high as the tabs: the row stays thin.
-    setFixedHeight(24);
+    setFixedHeight(29);
 
     auto newButton = new QToolButton(this);
     newButton->setText("+");
@@ -67,7 +67,7 @@ UBDocumentTabs::UBDocumentTabs(QWidget* parent)
     newButton->setFixedSize(26, 22);
 
     auto layout = new QHBoxLayout(this);
-    layout->setContentsMargins(4, 1, 4, 0);
+    layout->setContentsMargins(4, 1, 4, 5);
     layout->setSpacing(2);
     layout->addWidget(mTabBar);
     layout->addWidget(newButton);

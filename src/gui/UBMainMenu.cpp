@@ -412,7 +412,7 @@ void UBMainMenu::createDocumentTabs()
     mDocumentTabsToolBar->setIconSize(QSize(16, 16));
     mDocumentTabsToolBar->layout()->setContentsMargins(0, 0, 0, 0);
     mDocumentTabsToolBar->layout()->setSpacing(0);
-    mDocumentTabsToolBar->setFixedHeight(25);
+    mDocumentTabsToolBar->setFixedHeight(30);
 
     mMainWindow->insertToolBar(mMainWindow->boardToolBar, mDocumentTabsToolBar);
     mMainWindow->insertToolBarBreak(mMainWindow->boardToolBar);
