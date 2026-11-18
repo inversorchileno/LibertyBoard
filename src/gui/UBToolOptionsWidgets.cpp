@@ -600,6 +600,44 @@ QIcon optionIcon(UBOptionIcon kind)
             painter.drawPath(path);
             break;
         }
+        case UBOptionIcon::EraserWhole:
+        case UBOptionIcon::EraserPartial:
+        {
+            const QPainterPath path = wavePath(wave);
+            const QPointF touch = path.pointAtPercent(0.5);
+
+            if (kind == UBOptionIcon::EraserWhole)
+            {
+                // The whole stroke goes as soon as the eraser touches it.
+                QColor ghost = red;
+                ghost.setAlphaF(0.3);
+                painter.setPen(QPen(ghost, 3.5, Qt::DotLine, Qt::RoundCap));
+                painter.drawPath(path);
+            }
+            else
+            {
+                // Only the part under the eraser goes.
+                painter.setPen(QPen(red, 3.5, Qt::SolidLine, Qt::RoundCap));
+                painter.drawPath(path);
+                painter.setCompositionMode(QPainter::CompositionMode_Clear);
+                painter.setPen(Qt::NoPen);
+                painter.setBrush(Qt::black);
+                painter.drawEllipse(touch, 8, 8);
+                painter.setCompositionMode(QPainter::CompositionMode_SourceOver);
+            }
+
+            // The eraser, pink and blue, tilted on the place it touches.
+            painter.save();
+            painter.translate(touch + QPointF(2, -3));
+            painter.rotate(-30);
+            painter.setPen(QPen(QColor("#5a4a55"), 1));
+            painter.setBrush(QColor("#ff9fc4"));
+            painter.drawRoundedRect(QRectF(-8, -5.5, 10, 11), 2, 2);
+            painter.setBrush(QColor("#6f8de8"));
+            painter.drawRoundedRect(QRectF(2, -5.5, 8, 11), 2, 2);
+            painter.restore();
+            break;
+        }
     }
 
     return QIcon(pixmap);

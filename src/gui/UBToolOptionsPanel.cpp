@@ -283,6 +283,7 @@ UBEraserOptionsPanel::UBEraserOptionsPanel(QWidget* parent)
     UBSettings* settings = UBSettings::settings();
 
     mMode = new UBSegmentedChoice({ tr("Whole"), tr("Partial") }, this);
+    mMode->setIcons({ optionIcon(UBOptionIcon::EraserWhole), optionIcon(UBOptionIcon::EraserPartial) });
     mMode->setToolTip(tr("Whole: erases every stroke the eraser touches. Partial: erases only where the eraser passes."));
     addRow(mMode);
 

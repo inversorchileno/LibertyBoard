@@ -151,7 +151,9 @@ enum class UBOptionIcon
     LaserTrail,
     LaserPoint,
     LaserStandard,
-    LaserWhiteBurn
+    LaserWhiteBurn,
+    EraserWhole,
+    EraserPartial
 };
 
 QIcon optionIcon(UBOptionIcon kind);
