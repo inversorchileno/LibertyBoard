@@ -29,6 +29,8 @@
 
 #include "UBExportFullPDF.h"
 
+#include <QtMath>
+
 #include <QtCore>
 #include <QtSvg>
 #include <QPrinter>
@@ -76,6 +78,20 @@ UBExportFullPDF::~UBExportFullPDF()
     // NOOP
 }
 
+
+/** The clockwise turn of the page on the board: 0, 90, 180 or 270 degrees. */
+static int quarterTurns(const UBGraphicsPDFItem* pdfItem)
+{
+    const QTransform placement = pdfItem->sceneTransform();
+    return (qRound(qRadiansToDegrees(qAtan2(placement.m12(), placement.m11())) / 90.0) * 90 + 360) % 360;
+}
+
+/** The size of the page of the original PDF, as it is turned on the board. */
+static QSizeF turnedPageSize(const UBGraphicsPDFItem* pdfItem)
+{
+    QSizeF size = pdfItem->pageSize();
+    return quarterTurns(pdfItem) % 180 == 0 ? size : size.transposed();
+}
 
 void UBExportFullPDF::saveOverlayPdf(std::shared_ptr<UBDocumentProxy> pDocumentProxy, const QString& filename)
 {
@@ -130,7 +146,7 @@ void UBExportFullPDF::saveOverlayPdf(std::shared_ptr<UBDocumentProxy> pDocumentP
             {
                 mHasPDFBackgrounds = true;
                 sceneHasPDFBackground = true;
-                pageSize = pdfItem->pageSize();     // original PDF document page size
+                pageSize = turnedPageSize(pdfItem);     // original PDF document page size, as turned on the board
             }
             else
             {
@@ -253,7 +269,11 @@ bool UBExportFullPDF::persistsDocument(std::shared_ptr<UBDocumentProxy> pDocumen
                     // Compute scaling of PDF on the scene
                     // If the PDF was scaled when added to the scene (e.g if it was loaded from a document with a different DPI
                     // than the current one), it should also be scaled here.
-                    QSizeF pageSize = pdfItem->pageSize();
+                    // A page turned on the board is turned in the PDF too:
+                    // the merger turns it counterclockwise, the board clockwise.
+                    const int turn = quarterTurns(pdfItem);
+                    const QSizeF pageSize = turnedPageSize(pdfItem);
+
                     double pdfScale = pdfSceneRect.width() / pageSize.width() * dpiScale;
 
                     // Offsets are calculated in the PDF coordinate system.
@@ -266,7 +286,7 @@ bool UBExportFullPDF::persistsDocument(std::shared_ptr<UBDocumentProxy> pDocumen
                     xPdfOffset += (xPdf - xAnnotation) * scaleFactor * dpiScale / pdfScale;
                     yPdfOffset -= (yPdf - yAnnotation) * scaleFactor * dpiScale / pdfScale;
 
-                    TransformationDescription pdfTransform(xPdfOffset, yPdfOffset, scaleFactor, 0);
+                    TransformationDescription pdfTransform(xPdfOffset, yPdfOffset, scaleFactor, (360 - turn) % 360);
                     TransformationDescription annotationTransform(xAnnotationsOffset, yAnnotationsOffset, 1, 0);
 
                     MergePageDescription pageDescription(pageSize.width(),

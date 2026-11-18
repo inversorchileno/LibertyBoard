@@ -28,7 +28,8 @@ class QLineEdit;
 
 /**
  * @brief Shows the current page and the number of pages, like "1 / 200".
- * The current page can be typed: Enter goes to that page.
+ * The current page can be typed: Enter goes to that page. Two buttons
+ * under it turn the page to the left or to the right.
  */
 class UBPageIndicator : public QWidget
 {
