@@ -101,7 +101,7 @@ En modo escritorio son paneles emergentes; en modo pizarra, un panel fijo a la d
 
 ## Cómo quedó la Etapa 5
 
-- **Menús** (4): **Inicio** (Nuevo documento, Abrir/Importar, Guardar, Guardar como, Preferencias, Multipantalla, Podcast, Cerrar documento, Salir; desde la compilación 14), **Modo** (Pizarra, Web, Escritorio), **Edición** (Tamaño de página, Cortar, Copiar, Pegar, Ocultar LibertyBoard, Dormir) y **Acerca** (Tutorial, Consejos, LibertyBoard en GitHub, Actualización). Código en `src/gui/UBMainMenu.cpp`.
+- **Menús** (4): **Inicio** (Nueva pizarra, Abrir/Importar, Guardar, Guardar como, Preferencias, Multipantalla, Podcast, Cerrar documento, Salir; desde la compilación 14), **Modo** (Pizarra, Web, Escritorio), **Edición** (Tamaño de página, Cortar, Copiar, Pegar, Ocultar LibertyBoard, Dormir) y **Acerca** (Tutorial, Consejos, LibertyBoard en GitHub, Actualización). Código en `src/gui/UBMainMenu.cpp`.
 - **Guardar y Cerrar documento:** ver la Etapa 6.
 - **Zoom:** recuadro fijo abajo a la derecha de la pizarra con −, % editable y + (`src/gui/UBZoomPalette`). Ya no hay zoom en la barra de herramientas.
 - **Rueda del mouse en PDF:** al pasar el final de la página va a la siguiente desde arriba, y al pasar el inicio a la anterior desde abajo, con el mismo zoom (`UBBoardView::turnPageWithWheel`). No es una vista continua.
@@ -117,7 +117,7 @@ En modo escritorio son paneles emergentes; en modo pizarra, un panel fijo a la d
 ## Cómo quedó la Etapa 6
 
 - **Pestañas de documentos** (`src/gui/UBDocumentTabs`): una fila entre el menú y la barra de opciones, visible solo con 2 o más documentos abiertos. Clic cambia de documento (vuelve a la página donde estaba), la X lo cierra (pregunta si guardar cuando hubo cambios) y + abre una pizarra nueva. Un punto • junto al nombre indica cambios sin guardar. Una pizarra en blanco sin usar se reemplaza por el archivo que se abre después.
-- **Abrir/Importar** (Ctrl+O) abre la ventana de Windows para elegir archivos (varios a la vez) y los abre en pestañas; ya no lleva al modo Documentos. Un archivo ya abierto se muestra en su pestaña. **Nuevo documento** (Ctrl+N) está en Inicio.
+- **Abrir/Importar** (Ctrl+O) abre la ventana de Windows para elegir archivos (varios a la vez) y los abre en pestañas; ya no lleva al modo Documentos. Un archivo ya abierto se muestra en su pestaña. **Nueva pizarra** (Ctrl+N) está en Inicio.
 - **Guardar** (Ctrl+S): sin preguntar, en el archivo de la pestaña: el PDF original con las anotaciones, o para una pizarra la imagen donde se guardó esa página. La primera vez en una pizarra, y con **Guardar como** (Ctrl+Mayús+S), se abre la ventana de Windows (PNG por defecto, JPEG o PDF). Se escribe primero un archivo aparte y solo al terminar reemplaza al original. Aparece «Guardado» 3 segundos a la izquierda de Buscar. El archivo de cada pestaña se recuerda mientras el programa está abierto.
 - **Girar** (`src/board/UBPageRotation`): bajo el número de página, dos flechas y la palabra Girar. Gira la página con todo lo que tiene encima, un cuarto de vuelta; vertical ↔ horizontal; se puede deshacer. El PDF guardado sale con la página girada. Las pizarras nuevas siguen partiendo horizontales (decisión de Luis).
 - **Pantallazo:** en escritorio, toda la pantalla menos la barra de tareas; en pizarra (botón de cámara al final de la barra), solo la pizarra, sin barras ni paletas (`src/gui/UBScreenshot`). La zona capturada se oscurece un momento, como en Windows.
