@@ -8,7 +8,6 @@ HEADERS +=  \
     src/gui/UBFloatingPalette.h \
     src/gui/UBToolbarButtonGroup.h \
     src/gui/UBStylusPalette.h \
-    src/gui/UBLaserPreferencesPage.h \
     src/gui/UBToolOptionsPanel.h \
     src/gui/UBToolOptionsArrows.h \
     src/gui/UBToolOptionsBar.h \
@@ -67,7 +66,6 @@ SOURCES +=  \
     src/gui/UBFloatingPalette.cpp \
     src/gui/UBToolbarButtonGroup.cpp \
     src/gui/UBStylusPalette.cpp \
-    src/gui/UBLaserPreferencesPage.cpp \
     src/gui/UBToolOptionsPanel.cpp \
     src/gui/UBToolOptionsArrows.cpp \
     src/gui/UBToolOptionsBar.cpp \

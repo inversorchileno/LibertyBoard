@@ -37,12 +37,13 @@
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QLocale>
+#include <QTabWidget>
+#include <QVBoxLayout>
 
 #include "UBSettings.h"
 #include "UBApplication.h"
 
 #include "gui/UBCircleFrame.h"
-#include "gui/UBLaserPreferencesPage.h"
 
 #include "core/UBSetting.h"
 #include "core/UBApplicationController.h"
@@ -182,6 +183,30 @@ void UBPreferencesController::addLanguageChoice()
     tabLayout->removeWidget(mPreferencesUI->scrollArea);
     tabLayout->addWidget(group, 0, 0);
     tabLayout->addWidget(mPreferencesUI->scrollArea, 1, 0);
+}
+
+void UBPreferencesController::simplifyTabs()
+{
+    QTabWidget* tabs = mPreferencesUI->mainTabWidget;
+    tabs->setTabText(tabs->indexOf(mPreferencesUI->displayTab), tr("General"));
+
+    // Pressure sensitivity of the pen and the marker, under the language.
+    auto pressure = new QGroupBox(tr("Pressure of the pen"), mPreferencesUI->displayTab);
+    auto pressureLayout = new QVBoxLayout(pressure);
+    pressureLayout->addWidget(mPenProperties->pressureSensitiveCheckBox);
+    pressureLayout->addWidget(mMarkerProperties->pressureSensitiveCheckBox);
+
+    QGridLayout* displayLayout = mPreferencesUI->gridLayout_3;
+    displayLayout->removeWidget(mPreferencesUI->scrollArea);
+    displayLayout->addWidget(pressure, 1, 0);
+    displayLayout->addWidget(mPreferencesUI->scrollArea, 2, 0);
+
+    tabs->removeTab(tabs->indexOf(mPreferencesUI->penTab));
+    tabs->removeTab(tabs->indexOf(mPreferencesUI->markerTab));
+
+    // Credits and About in one tab: the credits under the copyright.
+    mPreferencesUI->verticalLayout_2->insertWidget(1, mPreferencesUI->textBrowser);
+    tabs->removeTab(tabs->indexOf(mPreferencesUI->creditsTab));
 }
 
 void UBPreferencesController::adjustScreensPreferences()
@@ -373,10 +398,9 @@ void UBPreferencesController::wire()
     connect(mMarkerProperties->pressureSensitiveCheckBox, SIGNAL(clicked(bool)), settings, SLOT(setMarkerPressureSensitive(bool)));
     connect(mMarkerProperties->opacitySlider, SIGNAL(valueChanged(int)), this, SLOT(opacitySliderChanged(int)));
 
-    // laser pointer
-    mLaserPage = new UBLaserPreferencesPage();
-    const int laserTabIndex = mPreferencesUI->mainTabWidget->indexOf(mPreferencesUI->markerTab) + 1;
-    mPreferencesUI->mainTabWidget->insertTab(laserTabIndex, mLaserPage, tr("Laser pointer"));
+    // The pen, marker and laser settings are in the options of each tool;
+    // only the pressure sensitivity stays here, in the General tab.
+    simplifyTabs();
 
     // about tab
     connect(mPreferencesUI->checkSoftwareUpdateAtLaunchCheckBox, SIGNAL(clicked(bool)), settings->appEnableAutomaticSoftwareUpdates, SLOT(setBool(bool)));
@@ -482,10 +506,8 @@ void UBPreferencesController::defaultSettings()
         mPreferencesUI->emptyTrashForOlderDocuments->setChecked(settings->emptyTrashForOlderDocuments->reset().toBool());
         mPreferencesUI->emptyTrashDaysValue->setValue(settings->emptyTrashDaysValue->reset().toInt());
 
-    }
-    else if (mPreferencesUI->mainTabWidget->currentWidget() == mLaserPage)
-    {
-        mLaserPage->resetToDefaults();
+        mPenProperties->pressureSensitiveCheckBox->setChecked(settings->boardPenPressureSensitive->reset().toBool());
+        mMarkerProperties->pressureSensitiveCheckBox->setChecked(settings->boardMarkerPressureSensitive->reset().toBool());
     }
     else if (mPreferencesUI->mainTabWidget->currentWidget() == mPreferencesUI->penTab)
     {

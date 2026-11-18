@@ -47,7 +47,6 @@ namespace Ui
 #include "ui_brushProperties.h"
 
 class UBBrushPropertiesFrame;
-class UBLaserPreferencesPage;
 
 class UBPreferencesDialog : public QDialog
 {
@@ -85,7 +84,6 @@ class UBPreferencesController : public QObject
         Ui::preferencesDialog* mPreferencesUI;
         UBBrushPropertiesFrame* mPenProperties;
         UBBrushPropertiesFrame* mMarkerProperties;
-        UBLaserPreferencesPage* mLaserPage{nullptr};
         UBColorPicker* mDarkBackgroundGridColorPicker;
         UBColorPicker* mLightBackgroundGridColorPicker;
         QString mScreenConfigurationPath;
@@ -110,6 +108,7 @@ class UBPreferencesController : public QObject
     private slots:
         void adjustScreensPreferences();
         void addLanguageChoice();
+        void simplifyTabs();
 
     private:
         static qreal sSliderRatio;
