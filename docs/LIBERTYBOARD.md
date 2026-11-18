@@ -10,6 +10,7 @@ LibertyBoard es una pizarra digital y lector PDF con puntero láser estilo Drawb
 4. **Identidad propia: nombre, logo, carpeta de datos y documentación.** *(hecha)*
 5. **Menús, guardar, actualización, zoom, notas de colores, idiomas y triángulos de opciones.** *(hecha, compilaciones 9 a 13)*
 6. **Pestañas, Guardar/Guardar como, girar, sellos, buscar, notas rápidas, adjuntos y sonidos.** *(hecha, compilación 14)*
+7. **Logo nuevo, íconos a color, scroll continuo, pantalla completa, barra que cabe en la pantalla.** *(hecha, compilación 15)*
 
 ## 1. Barras de herramientas
 
@@ -93,7 +94,7 @@ En modo escritorio son paneles emergentes; en modo pizarra, un panel fijo a la d
 ## Identidad de LibertyBoard
 
 - **Nombre.** El programa se llama LibertyBoard en todo lo visible: ventana, menús, mensajes, ayudas de inicio, traducciones e información del ejecutable de Windows (`LibertyBoard.exe`). El nombre interno de algunos archivos del código (`OpenBoard.pro`, `OpenBoard.qrc`, `OpenBoard_es.ts`) se mantiene para no romper la compilación ni facilitar traer mejoras de OpenBoard.
-- **Logo.** Tarjeta blanca con una tableta naranja con firma azul, un lápiz azul escribiendo y alas azules a los lados. El original vectorial está en `docs/images/libertyboard-logo.svg`; los iconos del programa (`resources/images/OpenBoard.png`, `bigOpenBoard.png`, `ch.openboard.OpenBoard.svg`, `resources/win/LibertyBoard.ico`) se generan desde él.
+- **Logo** (desde la compilación 15): cuadrado azul de esquinas redondeadas con una pizarra naranja, firma azul y un lápiz sostenido como antorcha. Es la imagen que entregó Luis, recortada sin el blanco de alrededor (esquinas transparentes): `docs/images/libertyboard-logo.png` (1024 px). Los iconos del programa (`resources/images/OpenBoard.png`, `bigOpenBoard.png`, `ch.openboard.OpenBoard.svg`, `resources/win/LibertyBoard.ico`) se generan desde ella.
 - **Carpeta propia.** El nombre de aplicación y de organización es LibertyBoard, así que los documentos y la configuración del usuario quedan en `%LOCALAPPDATA%\LibertyBoard` y el archivo de usuario se llama `LibertyBoardUser.config`. No se lee ni se copia nada de una instalación de OpenBoard: quien instala LibertyBoard parte de cero. La configuración de fábrica está en `resources/etc/LibertyBoard.config` y el estilo en `LibertyBoard.css`.
 - **Sin actualizaciones de OpenBoard.** La búsqueda de actualizaciones está apagada y los enlaces de inicio y tutorial apuntan al repositorio de LibertyBoard.
 - **Créditos.** La pestaña Acerca de muestra primero LibertyBoard y luego indica que es una versión modificada de OpenBoard, con sus créditos y la licencia GPLv3. Los encabezados de copyright de los archivos de código se mantienen tal cual, como exige la licencia.
@@ -128,6 +129,19 @@ En modo escritorio son paneles emergentes; en modo pizarra, un panel fijo a la d
   - Sonido: altavoz; la ventana permite grabar con el micrófono o examinar un archivo de audio, escucharlo y aceptarlo; se copia al documento (`sounds/`) y un clic lo reproduce o detiene.
 - **Colores** en la barra superior: dos filas de muestras más pequeñas y sin la palabra «Color».
 - **Zoom:** mostrar u ocultar la barra de opciones ya no vuelve al 100 %; se mantienen el zoom y el lugar.
+
+## Cómo quedó la Etapa 7
+
+- **Logo nuevo** (ver Identidad).
+- **Íconos** de Sello, Nota rápida, Adjuntar archivo y Sonido con el estilo de Bolígrafo/Borrador: objetos a color con degradado y sombra (`resources/images/stylusPalette`). El ícono de **Nota** es la cinta que queda en la página, del color elegido para la próxima nota (`src/gui/UBNoteToolIcon`); cambia al cambiar el color.
+- **Interactuar** (el dedo con chispa) salió de la barra de la pizarra.
+- **Barras que caben:** la barra vertical (pizarra y escritorio) achica sus botones cuando la pantalla no alcanza (`UBActionPalette::fitInLength`); los triángulos se achican con ellos.
+- **Pestañas:** la fila mide lo mismo que las pestañas (24 px).
+- **Pantalla completa** (Edición, F11): oculta el menú y la barra de tareas; la fila de pestañas se muestra siempre en ese modo, con «Salir de pantalla completa» a la derecha.
+- **Sello → Quitar:** botón junto al título; mientras está activo, un clic en un sello lo quita al instante (también en escritorio). Se reconocen los sellos puestos durante la sesión; los de una página reabierta se borran con Selección.
+- **Pantallazo en pizarra:** el oscurecimiento es una capa dentro de la ventana (en Windows la ventana aparte quedaba detrás).
+- **Grabar sonido:** curva del micrófono en la ventana de Sonido (`src/gui/UBSoundWave`): plana en silencio, onda al hablar.
+- **Scroll continuo** (`UBBoardView::turnPageWithWheel`, `drawNeighbourPages`): la hoja anterior y la siguiente se dibujan pegadas a la actual (16 px de separación); la rueda sigue a su ritmo y, cuando la vecina ocupa el centro, pasa a ser la hoja actual sin mover la imagen. Sigue siendo una hoja a la vez por dentro (no es una vista continua completa).
 
 ## Forma de trabajo
 
