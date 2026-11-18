@@ -35,6 +35,7 @@
 #include <QTimer>
 #include <QToolButton>
 
+#include "board/UBDocumentPrinter.h"
 #include "board/UBDrawingController.h"
 #include "board/UBDualBoard.h"
 #include "core/UBApplication.h"
@@ -169,6 +170,14 @@ void UBMainMenu::createMenus()
     });
     homeMenu->addAction(saveAction);
     homeMenu->addAction(saveAsAction);
+
+    auto printAction = new QAction(QIcon(":/images/toolbar/print.svg"), tr("Print..."), mMainWindow);
+    printAction->setShortcut(QKeySequence::Print);
+    // Ctrl+P prints, as in other programs, instead of choosing the pen.
+    mMainWindow->actionPen->setShortcut(QKeySequence());
+    mMainWindow->addAction(printAction);
+    connect(printAction, &QAction::triggered, this, [this]() { UBDocumentPrinter::print(mMainWindow); });
+    homeMenu->addAction(printAction);
     homeMenu->addSeparator();
     homeMenu->addAction(mMainWindow->actionPreferences);
     homeMenu->addAction(mMainWindow->actionMultiScreen);
