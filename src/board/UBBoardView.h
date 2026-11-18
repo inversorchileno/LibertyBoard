@@ -127,15 +127,25 @@ protected:
 
 private:
         /**
-         * @brief Turns the page when the wheel goes past its bottom or its
-         * top, so that a PDF is read from page to page by scrolling.
-         * Returns true when the wheel event was used for that.
+         * @brief Scrolls on past the bottom or the top of the page into the
+         * next or previous page, drawn beside it, so that a document is read
+         * as one long strip, as in a word processor. Returns true when the
+         * wheel event was used for that.
          */
         bool turnPageWithWheel(QWheelEvent* wheelEvent);
-        void showPageEdge(bool top);
 
-        qreal mWheelPageTurn{0};
-        QElapsedTimer mLastPageTurn;
+        /** @brief Shows the neighbour page as the current one once it fills the middle of the view, without moving the picture. */
+        void switchToNeighbourPage();
+
+        /** @brief Draws the previous and the next page beside the current one. */
+        void drawNeighbourPages(QPainter* painter, const QRectF& rect);
+
+        /** @brief The space between two pages, in units of the page. */
+        qreal pageGap() const;
+
+        bool mNeighbourRepaintPending{false};
+        int mLastNeighbourIndex{-1};
+        int mNeighbourRepaints{0};
 
 private:
 

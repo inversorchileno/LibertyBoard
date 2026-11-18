@@ -1707,44 +1707,76 @@ bool UBBoardView::turnPageWithWheel(QWheelEvent* wheelEvent)
 
     const bool down = (delta < 0);
     const int index = mController->activeSceneIndex();
-    const bool hasNextPage = down ? (index < document->pageCount() - 1) : (index > 0);
+    const bool hasNeighbour = down ? (index < document->pageCount() - 1) : (index > 0);
 
-    const QRectF page = scene()->normalizedSceneRect();
-    const QRectF visible = mapToScene(viewport()->rect()).boundingRect();
-    const qreal tolerance = 2;
-    const bool atEdge = down ? (visible.bottom() >= page.bottom() - tolerance)
-                             : (visible.top() <= page.top() + tolerance);
-
-    if (!atEdge)
+    if (!hasNeighbour)
     {
-        // Scrolling inside the page.
-        mWheelPageTurn = 0;
+        // The end of the document: the wheel stops at the edge of the page.
+        const QRectF page = scene()->normalizedSceneRect();
+        const QRectF visible = mapToScene(viewport()->rect()).boundingRect();
+        const qreal tolerance = 2;
+        const bool atEdge = down ? (visible.bottom() >= page.bottom() - tolerance)
+                                 : (visible.top() <= page.top() + tolerance);
+
+        if (atEdge)
+        {
+            wheelEvent->accept();
+            return true;
+        }
+
         return false;
     }
 
-    wheelEvent->accept();
+    // The wheel scrolls at its own pace on into the neighbour page.
+    QAbstractScrollArea::wheelEvent(wheelEvent);
+    switchToNeighbourPage();
+    UBApplication::applicationController->adjustDisplayView();
+    return true;
+}
 
-    if (!hasNextPage)
+qreal UBBoardView::pageGap() const
+{
+    // 16 pixels on screen, whatever the zoom.
+    const qreal scale = transform().m11();
+    return scale > 0 ? 16 / scale : 16;
+}
+
+void UBBoardView::switchToNeighbourPage()
+{
+    std::shared_ptr<UBDocumentProxy> document = mController->selectedDocument();
+
+    if (!document || !scene())
     {
-        return true;
+        return;
     }
 
-    // One notch of the wheel turns the page, touchpads add up small steps,
-    // and a pause between turns keeps a fast wheel from skipping pages.
-    mWheelPageTurn += std::abs(delta);
+    const int index = mController->activeSceneIndex();
+    const QRectF page = scene()->normalizedSceneRect();
+    const qreal gap = pageGap();
+    const QPointF middle = mapToScene(viewport()->rect().center());
 
-    if (mWheelPageTurn < 120 || (mLastPageTurn.isValid() && mLastPageTurn.elapsed() < 350))
+    int direction = 0;
+
+    if (middle.y() > page.bottom() + gap / 2 && index < document->pageCount() - 1)
     {
-        return true;
+        direction = 1;
+    }
+    else if (middle.y() < page.top() - gap / 2 && index > 0)
+    {
+        direction = -1;
     }
 
-    mWheelPageTurn = 0;
-    mLastPageTurn.start();
+    if (direction == 0)
+    {
+        return;
+    }
 
-    // The next page keeps the zoom of this one, as in a PDF reader.
-    const qreal zoom = mController->currentZoom();
+    // Where the edge of the neighbour page is on the screen now: it stays there.
+    const QPointF edge(page.center().x(), direction > 0 ? page.bottom() + gap : page.top() - gap);
+    const QPointF edgeOnScreen = viewportTransform().map(edge);
+    const qreal scale = transform().m11();
 
-    if (down)
+    if (direction > 0)
     {
         mController->nextScene();
     }
@@ -1753,38 +1785,108 @@ bool UBBoardView::turnPageWithWheel(QWheelEvent* wheelEvent)
         mController->previousScene();
     }
 
-    // The new page is shown from its top when going down, from its bottom when going up.
-    QTimer::singleShot(0, this, [this, down, zoom]() {
-        const qreal current = mController->currentZoom();
-
-        if (current > 0 && qAbs(current - zoom) > 0.001)
-        {
-            mController->zoom(zoom / current, mapToScene(viewport()->rect().center()));
-        }
-
-        showPageEdge(down);
-    });
-    return true;
-}
-
-void UBBoardView::showPageEdge(bool top)
-{
     if (!scene())
     {
         return;
     }
 
-    const QRectF page = scene()->normalizedSceneRect();
-    const QRectF visible = mapToScene(viewport()->rect()).boundingRect();
+    // The same zoom as before.
+    const qreal newScale = transform().m11();
 
-    if (visible.height() >= page.height())
+    if (newScale > 0 && qAbs(newScale - scale) > 1e-6)
+    {
+        mController->zoom(scale / newScale, mapToScene(viewport()->rect().center()));
+    }
+
+    const QRectF newPage = scene()->normalizedSceneRect();
+    const QPointF newEdge(newPage.center().x(), direction > 0 ? newPage.top() : newPage.bottom());
+    const QPointF viewportMiddle = QRectF(viewport()->rect()).center();
+    const QPointF newMiddle = newEdge + (viewportMiddle - edgeOnScreen) / scale;
+    centerOn(newMiddle);
+
+    // Showing a page restores its saved view once the events are processed:
+    // the place is set again after that.
+    QTimer::singleShot(0, this, [this, newMiddle]() {
+        centerOn(newMiddle);
+        UBApplication::applicationController->adjustDisplayView();
+    });
+}
+
+void UBBoardView::drawNeighbourPages(QPainter* painter, const QRectF& rect)
+{
+    if (!mController || this != mController->controlView() || !scene())
     {
         return;
     }
 
-    const qreal y = top ? page.top() + visible.height() / 2 : page.bottom() - visible.height() / 2;
-    centerOn(QPointF(visible.center().x(), y));
-    UBApplication::applicationController->adjustDisplayView();
+    std::shared_ptr<UBDocumentProxy> document = mController->selectedDocument();
+
+    if (!document || document->pageCount() < 2)
+    {
+        return;
+    }
+
+    const int index = mController->activeSceneIndex();
+    const QRectF page = scene()->normalizedSceneRect();
+    const qreal gap = pageGap();
+
+    for (int direction : { -1, 1 })
+    {
+        const int neighbourIndex = index + direction;
+
+        // Only loaded when the space beside the page is seen.
+        const bool seen = direction > 0 ? rect.bottom() > page.bottom() + gap : rect.top() < page.top() - gap;
+
+        if (!seen || neighbourIndex < 0 || neighbourIndex >= document->pageCount())
+        {
+            continue;
+        }
+
+        std::shared_ptr<UBGraphicsScene> neighbour = UBPersistenceManager::persistenceManager()->loadDocumentScene(document, neighbourIndex);
+
+        if (!neighbour)
+        {
+            continue;
+        }
+
+        const QRectF source = neighbour->normalizedSceneRect();
+        const qreal top = direction > 0 ? page.bottom() + gap : page.top() - gap - source.height();
+        const QRectF target(page.center().x() - source.width() / 2, top, source.width(), source.height());
+
+        if (!target.intersects(rect))
+        {
+            continue;
+        }
+
+        painter->save();
+        painter->fillRect(target, neighbour->isDarkBackground() ? Qt::black : Qt::white);
+        neighbour->render(painter, target, source);
+
+        const qreal penWidth = 8.0 / transform().m11();
+        painter->setPen(QPen(neighbour->isDarkBackground() ? UBSettings::documentSizeMarkColorDarkBackground
+                                                           : UBSettings::documentSizeMarkColorLightBackground, penWidth));
+        painter->setBrush(Qt::NoBrush);
+        painter->drawRect(target.adjusted(-penWidth / 2, -penWidth / 2, penWidth / 2, penWidth / 2));
+        painter->restore();
+
+        // A page of a PDF is drawn in the background the first time: the
+        // view is painted again once it is ready.
+        if (neighbourIndex != mLastNeighbourIndex)
+        {
+            mLastNeighbourIndex = neighbourIndex;
+            mNeighbourRepaints = 0;
+        }
+
+        if (!mNeighbourRepaintPending && mNeighbourRepaints < 4)
+        {
+            ++mNeighbourRepaints;
+            mNeighbourRepaintPending = true;
+            QTimer::singleShot(250, this, [this]() {
+                mNeighbourRepaintPending = false;
+                viewport()->update();
+            });
+        }
+    }
 }
 
 void UBBoardView::wheelEvent (QWheelEvent *wheelEvent)
@@ -2020,6 +2122,10 @@ void UBBoardView::drawBackground (QPainter *painter, const QRectF &rect)
 
 void UBBoardView::drawForeground(QPainter* painter, const QRectF& rect)
 {
+    // The pages before and after, so that scrolling goes on from page to page.
+    // Drawn over the background, which is cached, and outside the page.
+    drawNeighbourPages(painter, rect);
+
     QTransform transform{viewportTransform()};
     QRect viewportRect(0, 0, viewport()->width(), viewport()->height());
     QRectF visible{mapToScene(viewportRect).boundingRect()};
