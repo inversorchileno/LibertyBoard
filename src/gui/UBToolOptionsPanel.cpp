@@ -150,6 +150,20 @@ void UBToolOptionsPanel::setHorizontal()
         slider->setCompact();
     }
 
+    for (UBColorSwatches* swatches : findChildren<UBColorSwatches*>())
+    {
+        swatches->setTwoRows();
+    }
+
+    // The swatches say what they are for: no "Color" title before them.
+    for (QLabel* label : findChildren<QLabel*>())
+    {
+        if (label->objectName() == "section" && label->text() == tr("Color"))
+        {
+            label->hide();
+        }
+    }
+
     if (stacksSlidersInToolbar())
     {
         // A section title just before a slider becomes its caption.

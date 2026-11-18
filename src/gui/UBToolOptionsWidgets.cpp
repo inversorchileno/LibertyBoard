@@ -114,6 +114,39 @@ UBColorSwatches::UBColorSwatches(const QList<QColor>& colors, bool offerNone, QW
     connect(mOtherColorButton, &QToolButton::clicked, this, &UBColorSwatches::chooseOtherColor);
 }
 
+void UBColorSwatches::setTwoRows()
+{
+    QList<QWidget*> buttons;
+
+    for (QToolButton* swatch : std::as_const(mSwatches))
+    {
+        buttons << swatch;
+    }
+
+    if (!mOtherColorButton->isHidden())
+    {
+        mOtherColorButton->setStyleSheet("QToolButton { padding: 0px; }");
+        buttons << mOtherColorButton;
+    }
+
+    delete layout();
+
+    auto grid = new QGridLayout(this);
+    grid->setContentsMargins(0, 0, 0, 0);
+    grid->setHorizontalSpacing(4);
+    grid->setVerticalSpacing(4);
+
+    const int columns = (buttons.size() + 1) / 2;
+
+    for (int i = 0; i < buttons.size(); ++i)
+    {
+        buttons.at(i)->setFixedSize(26, 18);
+        grid->addWidget(buttons.at(i), i / columns, i % columns);
+    }
+
+    grid->setColumnStretch(columns, 1);
+}
+
 void UBColorSwatches::setCurrentColor(const QColor& color)
 {
     selectSwatch(color);

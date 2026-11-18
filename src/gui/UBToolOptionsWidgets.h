@@ -51,6 +51,9 @@ public:
     /** @brief Offers only the swatches, without the button for any other color. */
     void hideOtherColorButton();
 
+    /** @brief Lays the swatches out in two rows of smaller swatches, to save width in the toolbar. */
+    void setTwoRows();
+
 signals:
     void colorChosen(const QColor& color);
 
