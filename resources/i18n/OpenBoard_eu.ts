@@ -1781,7 +1781,7 @@ Segurtasun egiaztapena gainidatzi eta jarraitu nahi duzu?</translation>
 <context>
     <name>UBBoardPaletteManager</name>
     <message>
-        <location filename="../../src/board/UBBoardPaletteManager.cpp" line="+937"/>
+        <location filename="../../src/board/UBBoardPaletteManager.cpp" line="+943"/>
         <source>CapturedImage</source>
         <translation>Kapturatutako irudia</translation>
     </message>
@@ -1843,7 +1843,7 @@ Segurtasun egiaztapena gainidatzi eta jarraitu nahi duzu?</translation>
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+2020"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+2009"/>
         <source>Is it for Board or Widget ?</source>
         <translation type="unfinished">Arbelerako edo trepetarako?</translation>
     </message>
@@ -1902,7 +1902,7 @@ Segurtasun egiaztapena gainidatzi eta jarraitu nahi duzu?</translation>
 <context>
     <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+897"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+898"/>
         <source>Quick note</source>
         <translation>Ohar azkarra</translation>
     </message>
@@ -2452,9 +2452,13 @@ Izen berria ematean dokumentu berri bat sortuko da.</translation>
 <context>
     <name>UBDocumentTabs</name>
     <message>
-        <location filename="../../src/gui/UBDocumentTabs.cpp" line="+66"/>
         <source>New document</source>
-        <translation>Dokumentu berria</translation>
+        <translation type="vanished">Dokumentu berria</translation>
+    </message>
+    <message>
+        <location filename="../../src/gui/UBDocumentTabs.cpp" line="+66"/>
+        <source>New board</source>
+        <translation>Arbel berria</translation>
     </message>
     <message>
         <location line="+56"/>
@@ -2599,7 +2603,7 @@ Do you want to continue?</source>
 <context>
     <name>UBEraserOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-666"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-667"/>
         <source>Eraser</source>
         <translation>Borragoma</translation>
     </message>
@@ -2614,7 +2618,7 @@ Do you want to continue?</source>
         <translation>Partziala</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>Whole: erases every stroke the eraser touches. Partial: erases only where the eraser passes.</source>
         <translation>Osoa: ezabagailuak ukitzen duen marra oro ezabatzen du. Partziala: ezabagailua pasatzen den lekuan bakarrik ezabatzen du.</translation>
     </message>
@@ -3517,7 +3521,7 @@ Orain deskargatu eta instalatu? LibertyBoard-ek zure dokumentuak gordeko ditu, i
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+79"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+81"/>
         <location line="+94"/>
         <source>Page Size</source>
         <translation>Orriaren tamaina</translation>
@@ -3562,7 +3566,12 @@ Orain deskargatu eta instalatu? LibertyBoard-ek zure dokumentuak gordeko ditu, i
         <translation>Itxi dokumentua</translation>
     </message>
     <message>
-        <location line="-24"/>
+        <location line="-34"/>
+        <source>New board</source>
+        <translation>Arbel berria</translation>
+    </message>
+    <message>
+        <location line="+10"/>
         <source>Save</source>
         <translation>Gorde</translation>
     </message>
@@ -3608,12 +3617,12 @@ Orain deskargatu eta instalatu? LibertyBoard-ek zure dokumentuak gordeko ditu, i
     </message>
     <message>
         <location line="+60"/>
-        <location line="+154"/>
+        <location line="+198"/>
         <source>Saved</source>
         <translation>Gordeta</translation>
     </message>
     <message>
-        <location line="-148"/>
+        <location line="-192"/>
         <source>Search...</source>
         <translation>Bilatu...</translation>
     </message>
@@ -3628,7 +3637,7 @@ Orain deskargatu eta instalatu? LibertyBoard-ek zure dokumentuak gordeko ditu, i
         <translation>Ezkutatu edo erakutsi tresna-barra</translation>
     </message>
     <message>
-        <location line="+42"/>
+        <location line="+86"/>
         <source>Exit full screen</source>
         <translation>Irten pantaila osotik</translation>
     </message>
@@ -3844,7 +3853,7 @@ Ostalari onentzako errore hauek ez-ikusi nahi dituzu?</translation>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-753"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-754"/>
         <source>Pen</source>
         <translation>Boligrafoa</translation>
     </message>
@@ -4196,7 +4205,7 @@ Zabalera dinamikoa</translation>
 <context>
     <name>UBShapeOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+239"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+240"/>
         <source>Rectangle</source>
         <translation>Laukizuzena</translation>
     </message>
@@ -4576,7 +4585,7 @@ Zabalera dinamikoa</translation>
 <context>
     <name>UBStylusPalette</name>
     <message>
-        <location filename="../../src/gui/UBStylusPalette.cpp" line="+79"/>
+        <location filename="../../src/gui/UBStylusPalette.cpp" line="+80"/>
         <source>Save a screenshot</source>
         <translation>Gorde pantaila-argazki bat</translation>
     </message>
@@ -4665,7 +4674,7 @@ Zabalera dinamikoa</translation>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-531"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-532"/>
         <source>Color</source>
         <translation>Kolorea</translation>
     </message>

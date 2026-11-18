@@ -1658,7 +1658,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBoardPaletteManager</name>
     <message>
-        <location filename="../../src/board/UBBoardPaletteManager.cpp" line="+942"/>
+        <location filename="../../src/board/UBBoardPaletteManager.cpp" line="+948"/>
         <source>Error Adding Image to Library</source>
         <translation>Chyba při přidávání obrázku do knihovny</translation>
     </message>
@@ -1720,7 +1720,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+2020"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+2009"/>
         <source>Is it for Board or Widget ?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1779,7 +1779,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+897"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+898"/>
         <source>Quick note</source>
         <translation>Rychlá poznámka</translation>
     </message>
@@ -2268,9 +2268,13 @@ Providing a new name will create a new document.</source>
 <context>
     <name>UBDocumentTabs</name>
     <message>
-        <location filename="../../src/gui/UBDocumentTabs.cpp" line="+66"/>
         <source>New document</source>
-        <translation>Nový dokument</translation>
+        <translation type="vanished">Nový dokument</translation>
+    </message>
+    <message>
+        <location filename="../../src/gui/UBDocumentTabs.cpp" line="+66"/>
+        <source>New board</source>
+        <translation>Nová tabule</translation>
     </message>
     <message>
         <location line="+56"/>
@@ -2432,7 +2436,7 @@ Do you want to continue?</source>
 <context>
     <name>UBEraserOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-666"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-667"/>
         <source>Eraser</source>
         <translation>Vygumovat</translation>
     </message>
@@ -2447,7 +2451,7 @@ Do you want to continue?</source>
         <translation>Částečně</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>Whole: erases every stroke the eraser touches. Partial: erases only where the eraser passes.</source>
         <translation>Celé: maže každý tah, kterého se guma dotkne. Částečně: maže jen tam, kudy guma projde.</translation>
     </message>
@@ -3338,7 +3342,7 @@ Stáhnout a nainstalovat nyní? LibertyBoard uloží vaše dokumenty, zavře se 
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+79"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+81"/>
         <location line="+94"/>
         <source>Page Size</source>
         <translation>Velikost stránky</translation>
@@ -3383,7 +3387,12 @@ Stáhnout a nainstalovat nyní? LibertyBoard uloží vaše dokumenty, zavře se 
         <translation>Zavřít dokument</translation>
     </message>
     <message>
-        <location line="-24"/>
+        <location line="-34"/>
+        <source>New board</source>
+        <translation>Nová tabule</translation>
+    </message>
+    <message>
+        <location line="+10"/>
         <source>Save</source>
         <translation>Uložit</translation>
     </message>
@@ -3429,12 +3438,12 @@ Stáhnout a nainstalovat nyní? LibertyBoard uloží vaše dokumenty, zavře se 
     </message>
     <message>
         <location line="+60"/>
-        <location line="+154"/>
+        <location line="+198"/>
         <source>Saved</source>
         <translation>Uloženo</translation>
     </message>
     <message>
-        <location line="-148"/>
+        <location line="-192"/>
         <source>Search...</source>
         <translation>Hledat...</translation>
     </message>
@@ -3449,7 +3458,7 @@ Stáhnout a nainstalovat nyní? LibertyBoard uloží vaše dokumenty, zavře se 
         <translation>Skrýt nebo zobrazit panel nástrojů</translation>
     </message>
     <message>
-        <location line="+42"/>
+        <location line="+86"/>
         <source>Exit full screen</source>
         <translation>Ukončit celou obrazovku</translation>
     </message>
@@ -3645,7 +3654,7 @@ Chcete ignorovat tyto chyby na tomto serveru?</translation>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-753"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-754"/>
         <source>Pen</source>
         <translation>Pero</translation>
     </message>
@@ -3959,7 +3968,7 @@ Dynamická šířka</translation>
 <context>
     <name>UBShapeOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+239"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+240"/>
         <source>Rectangle</source>
         <translation>Obdélník</translation>
     </message>
@@ -4339,7 +4348,7 @@ Dynamická šířka</translation>
 <context>
     <name>UBStylusPalette</name>
     <message>
-        <location filename="../../src/gui/UBStylusPalette.cpp" line="+79"/>
+        <location filename="../../src/gui/UBStylusPalette.cpp" line="+80"/>
         <source>Save a screenshot</source>
         <translation>Uložit snímek obrazovky</translation>
     </message>
@@ -4431,7 +4440,7 @@ Dynamická šířka</translation>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-531"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-532"/>
         <source>Color</source>
         <translation>Barva</translation>
     </message>

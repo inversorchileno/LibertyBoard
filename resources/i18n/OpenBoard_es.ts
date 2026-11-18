@@ -1657,7 +1657,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBoardPaletteManager</name>
     <message>
-        <location filename="../../src/board/UBBoardPaletteManager.cpp" line="+942"/>
+        <location filename="../../src/board/UBBoardPaletteManager.cpp" line="+948"/>
         <source>Error Adding Image to Library</source>
         <translation>Error al añadir la imagen a la biblioteca</translation>
     </message>
@@ -1726,7 +1726,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+2020"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+2009"/>
         <source>Is it for Board or Widget ?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1785,7 +1785,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+897"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+898"/>
         <source>Quick note</source>
         <translation>Nota rápida</translation>
     </message>
@@ -2291,9 +2291,13 @@ Proporcionar un nuevo nombre creará un nuevo documento.</translation>
 <context>
     <name>UBDocumentTabs</name>
     <message>
-        <location filename="../../src/gui/UBDocumentTabs.cpp" line="+66"/>
         <source>New document</source>
-        <translation>Nuevo documento</translation>
+        <translation type="vanished">Nuevo documento</translation>
+    </message>
+    <message>
+        <location filename="../../src/gui/UBDocumentTabs.cpp" line="+66"/>
+        <source>New board</source>
+        <translation>Nueva pizarra</translation>
     </message>
     <message>
         <location line="+56"/>
@@ -2460,7 +2464,7 @@ Do you want to continue?</source>
 <context>
     <name>UBEraserOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-666"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-667"/>
         <source>Eraser</source>
         <translation>Goma</translation>
     </message>
@@ -2475,7 +2479,7 @@ Do you want to continue?</source>
         <translation>Parcial</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>Whole: erases every stroke the eraser touches. Partial: erases only where the eraser passes.</source>
         <translation>Completo: borra cada trazo que toca la goma. Parcial: borra solo por donde pasa la goma.</translation>
     </message>
@@ -3370,7 +3374,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+297"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+299"/>
         <source>Hide or show the toolbar</source>
         <translation>Ocultar o mostrar la barra</translation>
     </message>
@@ -3428,7 +3432,12 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>Cerrar documento</translation>
     </message>
     <message>
-        <location line="-24"/>
+        <location line="-34"/>
+        <source>New board</source>
+        <translation>Nueva pizarra</translation>
+    </message>
+    <message>
+        <location line="+10"/>
         <source>Save</source>
         <translation>Guardar</translation>
     </message>
@@ -3474,12 +3483,12 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     </message>
     <message>
         <location line="+60"/>
-        <location line="+154"/>
+        <location line="+198"/>
         <source>Saved</source>
         <translation>Guardado</translation>
     </message>
     <message>
-        <location line="-148"/>
+        <location line="-192"/>
         <source>Search...</source>
         <translation>Buscar...</translation>
     </message>
@@ -3489,7 +3498,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>Buscar palabras en el PDF</translation>
     </message>
     <message>
-        <location line="+63"/>
+        <location line="+107"/>
         <source>Exit full screen</source>
         <translation>Salir de pantalla completa</translation>
     </message>
@@ -3699,7 +3708,7 @@ Do you want to ignore these errors for this host?</source>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-753"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-754"/>
         <source>Pen</source>
         <translation>Bolígrafo</translation>
     </message>
@@ -4017,7 +4026,7 @@ Ancho dinámico</translation>
 <context>
     <name>UBShapeOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+245"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+246"/>
         <source>Text highlight</source>
         <translation>Resaltado del texto</translation>
     </message>
@@ -4397,7 +4406,7 @@ Ancho dinámico</translation>
 <context>
     <name>UBStylusPalette</name>
     <message>
-        <location filename="../../src/gui/UBStylusPalette.cpp" line="+79"/>
+        <location filename="../../src/gui/UBStylusPalette.cpp" line="+80"/>
         <source>Save a screenshot</source>
         <translation>Guardar una captura de pantalla</translation>
     </message>
@@ -4493,7 +4502,7 @@ Ancho dinámico</translation>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-531"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-532"/>
         <source>Color</source>
         <translation>Color</translation>
     </message>

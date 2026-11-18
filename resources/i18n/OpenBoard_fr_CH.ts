@@ -1672,7 +1672,7 @@ Voulez-vous continuer quand-même ?   </translation>
 <context>
     <name>UBBoardPaletteManager</name>
     <message>
-        <location filename="../../src/board/UBBoardPaletteManager.cpp" line="+942"/>
+        <location filename="../../src/board/UBBoardPaletteManager.cpp" line="+948"/>
         <source>Error Adding Image to Library</source>
         <translation>Erreur lors de l&apos;ajout d&apos;images à la bibliothèque</translation>
     </message>
@@ -1741,7 +1741,7 @@ Voulez-vous continuer quand-même ?   </translation>
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+2020"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+2009"/>
         <source>Is it for Board or Widget ?</source>
         <translation>Est-ce pour le tableau ou le widget ?</translation>
     </message>
@@ -1800,7 +1800,7 @@ Voulez-vous continuer quand-même ?   </translation>
 <context>
     <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+897"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+898"/>
         <source>Quick note</source>
         <translation>Note rapide</translation>
     </message>
@@ -2327,9 +2327,13 @@ Un nouveau nom vous permettra de conserver l&apos;ancien document.</translation>
 <context>
     <name>UBDocumentTabs</name>
     <message>
-        <location filename="../../src/gui/UBDocumentTabs.cpp" line="+66"/>
         <source>New document</source>
-        <translation>Nouveau document</translation>
+        <translation type="vanished">Nouveau document</translation>
+    </message>
+    <message>
+        <location filename="../../src/gui/UBDocumentTabs.cpp" line="+66"/>
+        <source>New board</source>
+        <translation>Nouveau tableau</translation>
     </message>
     <message>
         <location line="+56"/>
@@ -2510,7 +2514,7 @@ Voulez-vous continuer ?</translation>
 <context>
     <name>UBEraserOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-666"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-667"/>
         <source>Eraser</source>
         <translation>Gomme</translation>
     </message>
@@ -2525,7 +2529,7 @@ Voulez-vous continuer ?</translation>
         <translation>Partiel</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>Whole: erases every stroke the eraser touches. Partial: erases only where the eraser passes.</source>
         <translation>Entier : efface chaque trait touché par la gomme. Partiel : efface seulement là où passe la gomme.</translation>
     </message>
@@ -3418,7 +3422,7 @@ La télécharger et l&apos;installer maintenant ? LibertyBoard enregistre vos do
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+79"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+81"/>
         <location line="+94"/>
         <source>Page Size</source>
         <translation>Taille de la page</translation>
@@ -3463,7 +3467,12 @@ La télécharger et l&apos;installer maintenant ? LibertyBoard enregistre vos do
         <translation>Fermer le document</translation>
     </message>
     <message>
-        <location line="-24"/>
+        <location line="-34"/>
+        <source>New board</source>
+        <translation>Nouveau tableau</translation>
+    </message>
+    <message>
+        <location line="+10"/>
         <source>Save</source>
         <translation>Enregistrer</translation>
     </message>
@@ -3509,12 +3518,12 @@ La télécharger et l&apos;installer maintenant ? LibertyBoard enregistre vos do
     </message>
     <message>
         <location line="+60"/>
-        <location line="+154"/>
+        <location line="+198"/>
         <source>Saved</source>
         <translation>Enregistré</translation>
     </message>
     <message>
-        <location line="-148"/>
+        <location line="-192"/>
         <source>Search...</source>
         <translation>Rechercher...</translation>
     </message>
@@ -3529,7 +3538,7 @@ La télécharger et l&apos;installer maintenant ? LibertyBoard enregistre vos do
         <translation>Masquer ou afficher la barre d&apos;outils</translation>
     </message>
     <message>
-        <location line="+42"/>
+        <location line="+86"/>
         <source>Exit full screen</source>
         <translation>Quitter le plein écran</translation>
     </message>
@@ -3745,7 +3754,7 @@ Voulez-vous ignorer les erreurs pour ce serveur ?</translation>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-753"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-754"/>
         <source>Pen</source>
         <translation>Stylo</translation>
     </message>
@@ -4063,7 +4072,7 @@ Largeur dynamique</translation>
 <context>
     <name>UBShapeOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+239"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+240"/>
         <source>Rectangle</source>
         <translation>Rectangle</translation>
     </message>
@@ -4443,7 +4452,7 @@ Largeur dynamique</translation>
 <context>
     <name>UBStylusPalette</name>
     <message>
-        <location filename="../../src/gui/UBStylusPalette.cpp" line="+79"/>
+        <location filename="../../src/gui/UBStylusPalette.cpp" line="+80"/>
         <source>Save a screenshot</source>
         <translation>Enregistrer une capture d&apos;écran</translation>
     </message>
@@ -4543,7 +4552,7 @@ Largeur dynamique</translation>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-531"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-532"/>
         <source>Color</source>
         <translation>Couleur</translation>
     </message>

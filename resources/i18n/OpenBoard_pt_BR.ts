@@ -1787,7 +1787,7 @@ Deseja substituir a verificação de segurança e continuar?</translation>
 <context>
     <name>UBBoardPaletteManager</name>
     <message>
-        <location filename="../../src/board/UBBoardPaletteManager.cpp" line="+937"/>
+        <location filename="../../src/board/UBBoardPaletteManager.cpp" line="+943"/>
         <source>CapturedImage</source>
         <translation>Imagem capturada</translation>
     </message>
@@ -1856,7 +1856,7 @@ Deseja substituir a verificação de segurança e continuar?</translation>
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+2020"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+2009"/>
         <source>Is it for Board or Widget ?</source>
         <translation>É para Quadro ou Widget?</translation>
     </message>
@@ -1915,7 +1915,7 @@ Deseja substituir a verificação de segurança e continuar?</translation>
 <context>
     <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+897"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+898"/>
         <source>Quick note</source>
         <translation>Nota rápida</translation>
     </message>
@@ -2425,9 +2425,13 @@ Um outro nome permitirá que você mantenha o documento antigo.</translation>
 <context>
     <name>UBDocumentTabs</name>
     <message>
-        <location filename="../../src/gui/UBDocumentTabs.cpp" line="+66"/>
         <source>New document</source>
-        <translation>Novo documento</translation>
+        <translation type="vanished">Novo documento</translation>
+    </message>
+    <message>
+        <location filename="../../src/gui/UBDocumentTabs.cpp" line="+66"/>
+        <source>New board</source>
+        <translation>Novo quadro</translation>
     </message>
     <message>
         <location line="+56"/>
@@ -2598,7 +2602,7 @@ Do you want to continue?</source>
 <context>
     <name>UBEraserOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-666"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-667"/>
         <source>Eraser</source>
         <translation>Borracha</translation>
     </message>
@@ -2613,7 +2617,7 @@ Do you want to continue?</source>
         <translation>Parcial</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>Whole: erases every stroke the eraser touches. Partial: erases only where the eraser passes.</source>
         <translation>Inteiro: apaga cada traço que a borracha toca. Parcial: apaga só por onde a borracha passa.</translation>
     </message>
@@ -3512,7 +3516,7 @@ Baixar e instalar agora? O LibertyBoard salva seus documentos, fecha e abre nova
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+79"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+81"/>
         <location line="+94"/>
         <source>Page Size</source>
         <translation>Tamanho da página</translation>
@@ -3557,7 +3561,12 @@ Baixar e instalar agora? O LibertyBoard salva seus documentos, fecha e abre nova
         <translation>Fechar documento</translation>
     </message>
     <message>
-        <location line="-24"/>
+        <location line="-34"/>
+        <source>New board</source>
+        <translation>Novo quadro</translation>
+    </message>
+    <message>
+        <location line="+10"/>
         <source>Save</source>
         <translation>Salvar</translation>
     </message>
@@ -3603,12 +3612,12 @@ Baixar e instalar agora? O LibertyBoard salva seus documentos, fecha e abre nova
     </message>
     <message>
         <location line="+60"/>
-        <location line="+154"/>
+        <location line="+198"/>
         <source>Saved</source>
         <translation>Salvo</translation>
     </message>
     <message>
-        <location line="-148"/>
+        <location line="-192"/>
         <source>Search...</source>
         <translation>Buscar...</translation>
     </message>
@@ -3623,7 +3632,7 @@ Baixar e instalar agora? O LibertyBoard salva seus documentos, fecha e abre nova
         <translation>Ocultar ou mostrar a barra de ferramentas</translation>
     </message>
     <message>
-        <location line="+42"/>
+        <location line="+86"/>
         <source>Exit full screen</source>
         <translation>Sair da tela cheia</translation>
     </message>
@@ -3839,7 +3848,7 @@ Quer ignorar estes erros deste servidor?</translation>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-753"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-754"/>
         <source>Pen</source>
         <translation>Caneta</translation>
     </message>
@@ -4175,7 +4184,7 @@ Largura dinâmica</translation>
 <context>
     <name>UBShapeOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+239"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+240"/>
         <source>Rectangle</source>
         <translation>Retângulo</translation>
     </message>
@@ -4555,7 +4564,7 @@ Largura dinâmica</translation>
 <context>
     <name>UBStylusPalette</name>
     <message>
-        <location filename="../../src/gui/UBStylusPalette.cpp" line="+79"/>
+        <location filename="../../src/gui/UBStylusPalette.cpp" line="+80"/>
         <source>Save a screenshot</source>
         <translation>Salvar uma captura de tela</translation>
     </message>
@@ -4651,7 +4660,7 @@ Largura dinâmica</translation>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-531"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-532"/>
         <source>Color</source>
         <translation>Cor</translation>
     </message>

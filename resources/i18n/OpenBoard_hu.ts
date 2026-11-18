@@ -1663,7 +1663,7 @@ Felülírja a biztonsági ellenőrzést, és folytatja?</translation>
 <context>
     <name>UBBoardPaletteManager</name>
     <message>
-        <location filename="../../src/board/UBBoardPaletteManager.cpp" line="+942"/>
+        <location filename="../../src/board/UBBoardPaletteManager.cpp" line="+948"/>
         <source>Error Adding Image to Library</source>
         <translation>Hiba a kép könyvtárhoz adásakor</translation>
     </message>
@@ -1732,7 +1732,7 @@ Felülírja a biztonsági ellenőrzést, és folytatja?</translation>
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+2020"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+2009"/>
         <source>Is it for Board or Widget ?</source>
         <translation>Táblára vagy vezérlőre való?</translation>
     </message>
@@ -1791,7 +1791,7 @@ Felülírja a biztonsági ellenőrzést, és folytatja?</translation>
 <context>
     <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+897"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+898"/>
         <source>Quick note</source>
         <translation>Gyors jegyzet</translation>
     </message>
@@ -2352,9 +2352,13 @@ Ennek a névnek a megtartása helyettesíti a dokumentumot.
 <context>
     <name>UBDocumentTabs</name>
     <message>
-        <location filename="../../src/gui/UBDocumentTabs.cpp" line="+66"/>
         <source>New document</source>
-        <translation>Új dokumentum</translation>
+        <translation type="vanished">Új dokumentum</translation>
+    </message>
+    <message>
+        <location filename="../../src/gui/UBDocumentTabs.cpp" line="+66"/>
+        <source>New board</source>
+        <translation>Új tábla</translation>
     </message>
     <message>
         <location line="+56"/>
@@ -2519,7 +2523,7 @@ Do you want to continue?</source>
 <context>
     <name>UBEraserOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-666"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-667"/>
         <source>Eraser</source>
         <translation>Radír</translation>
     </message>
@@ -2534,7 +2538,7 @@ Do you want to continue?</source>
         <translation>Részleges</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>Whole: erases every stroke the eraser touches. Partial: erases only where the eraser passes.</source>
         <translation>Teljes: törli az összes vonást, amelyhez a radír hozzáér. Részleges: csak ott töröl, ahol a radír áthalad.</translation>
     </message>
@@ -3425,7 +3429,7 @@ Letölti és telepíti most? A LibertyBoard menti a dokumentumait, bezárul, maj
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+79"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+81"/>
         <location line="+94"/>
         <source>Page Size</source>
         <translation>Oldalméret</translation>
@@ -3470,7 +3474,12 @@ Letölti és telepíti most? A LibertyBoard menti a dokumentumait, bezárul, maj
         <translation>Dokumentum bezárása</translation>
     </message>
     <message>
-        <location line="-24"/>
+        <location line="-34"/>
+        <source>New board</source>
+        <translation>Új tábla</translation>
+    </message>
+    <message>
+        <location line="+10"/>
         <source>Save</source>
         <translation>Mentés</translation>
     </message>
@@ -3516,12 +3525,12 @@ Letölti és telepíti most? A LibertyBoard menti a dokumentumait, bezárul, maj
     </message>
     <message>
         <location line="+60"/>
-        <location line="+154"/>
+        <location line="+198"/>
         <source>Saved</source>
         <translation>Mentve</translation>
     </message>
     <message>
-        <location line="-148"/>
+        <location line="-192"/>
         <source>Search...</source>
         <translation>Keresés...</translation>
     </message>
@@ -3536,7 +3545,7 @@ Letölti és telepíti most? A LibertyBoard menti a dokumentumait, bezárul, maj
         <translation>Eszköztár elrejtése vagy megjelenítése</translation>
     </message>
     <message>
-        <location line="+42"/>
+        <location line="+86"/>
         <source>Exit full screen</source>
         <translation>Kilépés a teljes képernyőből</translation>
     </message>
@@ -3752,7 +3761,7 @@ Figyelmen kívül hagyja ezeket a hibákat ennél a hosztnál?</translation>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-753"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-754"/>
         <source>Pen</source>
         <translation>Toll</translation>
     </message>
@@ -4074,7 +4083,7 @@ Dinamikus szélesség</translation>
 <context>
     <name>UBShapeOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+239"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+240"/>
         <source>Rectangle</source>
         <translation>Téglalap</translation>
     </message>
@@ -4454,7 +4463,7 @@ Dinamikus szélesség</translation>
 <context>
     <name>UBStylusPalette</name>
     <message>
-        <location filename="../../src/gui/UBStylusPalette.cpp" line="+79"/>
+        <location filename="../../src/gui/UBStylusPalette.cpp" line="+80"/>
         <source>Save a screenshot</source>
         <translation>Képernyőkép mentése</translation>
     </message>
@@ -4550,7 +4559,7 @@ Dinamikus szélesség</translation>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-531"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-532"/>
         <source>Color</source>
         <translation>Szín</translation>
     </message>

@@ -1671,7 +1671,7 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
 <context>
     <name>UBBoardPaletteManager</name>
     <message>
-        <location filename="../../src/board/UBBoardPaletteManager.cpp" line="+942"/>
+        <location filename="../../src/board/UBBoardPaletteManager.cpp" line="+948"/>
         <source>Error Adding Image to Library</source>
         <translation>Fehler beim Hinzufügen des Bildes zur Bibliothek</translation>
     </message>
@@ -1740,7 +1740,7 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+2020"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+2009"/>
         <source>Is it for Board or Widget ?</source>
         <translation>Ist das für das Board oder das Widget?</translation>
     </message>
@@ -1799,7 +1799,7 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
 <context>
     <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+897"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+898"/>
         <source>Quick note</source>
         <translation>Kurznotiz</translation>
     </message>
@@ -2325,9 +2325,13 @@ Wenn Sie einen neuen Namen wählen, wird ein neues Dokument erstellt.</translati
 <context>
     <name>UBDocumentTabs</name>
     <message>
-        <location filename="../../src/gui/UBDocumentTabs.cpp" line="+66"/>
         <source>New document</source>
-        <translation>Neues Dokument</translation>
+        <translation type="vanished">Neues Dokument</translation>
+    </message>
+    <message>
+        <location filename="../../src/gui/UBDocumentTabs.cpp" line="+66"/>
+        <source>New board</source>
+        <translation>Neue Tafel</translation>
     </message>
     <message>
         <location line="+56"/>
@@ -2508,7 +2512,7 @@ Möchten Sie fortfahren?</translation>
 <context>
     <name>UBEraserOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-666"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-667"/>
         <source>Eraser</source>
         <translation>Löschen</translation>
     </message>
@@ -2523,7 +2527,7 @@ Möchten Sie fortfahren?</translation>
         <translation>Teilweise</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>Whole: erases every stroke the eraser touches. Partial: erases only where the eraser passes.</source>
         <translation>Ganz: löscht jeden Strich, den der Radierer berührt. Teilweise: löscht nur dort, wo der Radierer vorbeigeht.</translation>
     </message>
@@ -3415,7 +3419,7 @@ Jetzt herunterladen und installieren? LibertyBoard speichert Ihre Dokumente, sch
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+79"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+81"/>
         <location line="+94"/>
         <source>Page Size</source>
         <translation>Seitengröße</translation>
@@ -3460,7 +3464,12 @@ Jetzt herunterladen und installieren? LibertyBoard speichert Ihre Dokumente, sch
         <translation>Dokument schließen</translation>
     </message>
     <message>
-        <location line="-24"/>
+        <location line="-34"/>
+        <source>New board</source>
+        <translation>Neue Tafel</translation>
+    </message>
+    <message>
+        <location line="+10"/>
         <source>Save</source>
         <translation>Speichern</translation>
     </message>
@@ -3506,12 +3515,12 @@ Jetzt herunterladen und installieren? LibertyBoard speichert Ihre Dokumente, sch
     </message>
     <message>
         <location line="+60"/>
-        <location line="+154"/>
+        <location line="+198"/>
         <source>Saved</source>
         <translation>Gespeichert</translation>
     </message>
     <message>
-        <location line="-148"/>
+        <location line="-192"/>
         <source>Search...</source>
         <translation>Suchen...</translation>
     </message>
@@ -3526,7 +3535,7 @@ Jetzt herunterladen und installieren? LibertyBoard speichert Ihre Dokumente, sch
         <translation>Werkzeugleiste ein- oder ausblenden</translation>
     </message>
     <message>
-        <location line="+42"/>
+        <location line="+86"/>
         <source>Exit full screen</source>
         <translation>Vollbild beenden</translation>
     </message>
@@ -3742,7 +3751,7 @@ Möchten Sie diese Fehler für diesen Computer ignorieren?</translation>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-753"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-754"/>
         <source>Pen</source>
         <translation>Stift</translation>
     </message>
@@ -4056,7 +4065,7 @@ Dynamische Breite</translation>
 <context>
     <name>UBShapeOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+239"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+240"/>
         <source>Rectangle</source>
         <translation>Rechteck</translation>
     </message>
@@ -4436,7 +4445,7 @@ Dynamische Breite</translation>
 <context>
     <name>UBStylusPalette</name>
     <message>
-        <location filename="../../src/gui/UBStylusPalette.cpp" line="+79"/>
+        <location filename="../../src/gui/UBStylusPalette.cpp" line="+80"/>
         <source>Save a screenshot</source>
         <translation>Bildschirmfoto speichern</translation>
     </message>
@@ -4537,7 +4546,7 @@ Miniaturansicht der Seite %1 wird geladen</translation>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-531"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-532"/>
         <source>Color</source>
         <translation>Farbe</translation>
     </message>
