@@ -154,6 +154,10 @@ En modo escritorio son paneles emergentes; en modo pizarra, un panel fijo a la d
 - Solo un lado es la pizarra a la vez, el **activo**, con marco azul oscuro: ahí trabajan las herramientas, las páginas, guardar y la barra de desplazamiento. El otro lado (marco claro, `UBOtherBoardView`) muestra su documento como quedó y se puede desplazar; un clic en él, o en su pestaña, lo vuelve activo sin moverlo, con su zoom y lugar.
 - La **línea divisoria** se arrastra: parte en 50/50 y cada lado queda entre 20 % y 80 %.
 - **Dos documentos como máximo:** con uno abierto, el otro lado es una pizarra nueva (con su pestaña); con más de dos, un aviso pide elegir cuáles cerrar (el actual queda). Abrir un tercero estando en el modo pregunta lo mismo. Cerrar uno de los dos vuelve a pizarra simple; al salir del modo, el otro documento queda en las pestañas.
+- Íconos en los menús nuevos (Guardar como, Doble pizarra, Pantalla completa, GitHub); todo menú nuevo lleva su ícono.
+- Flecha, Rectángulo y Elipse muestran en su ícono el color de borde y el relleno elegidos (`src/gui/UBShapeToolIcon`).
+- Preferencias → Paleta del lápiz: Arriba, Abajo, Izquierda o Derecha (antes Horizontal/Vertical); se puede seguir arrastrando.
+- La fila de pestañas tiene la misma holgura arriba y abajo.
 - **Inicio → Nueva pizarra** (antes «Nuevo documento»), rotulador con dibujo de destacador tipo Stabilo.
 
 ## Forma de trabajo
