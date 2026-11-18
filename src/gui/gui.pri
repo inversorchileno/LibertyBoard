@@ -10,6 +10,7 @@ HEADERS +=  \
     src/gui/UBStylusPalette.h \
     src/gui/UBLaserPreferencesPage.h \
     src/gui/UBToolOptionsPanel.h \
+    src/gui/UBToolOptionsArrows.h \
     src/gui/UBToolOptionsBar.h \
     src/gui/UBMainMenu.h \
     src/gui/UBNoteDialog.h \
@@ -68,6 +69,7 @@ SOURCES +=  \
     src/gui/UBStylusPalette.cpp \
     src/gui/UBLaserPreferencesPage.cpp \
     src/gui/UBToolOptionsPanel.cpp \
+    src/gui/UBToolOptionsArrows.cpp \
     src/gui/UBToolOptionsBar.cpp \
     src/gui/UBMainMenu.cpp \
     src/gui/UBNoteDialog.cpp \

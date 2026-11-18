@@ -29,6 +29,8 @@
 
 #include "UBDesktopAnnotationController.h"
 
+#include "gui/UBToolOptionsArrows.h"
+
 #include <QDateTime>
 #include <QDir>
 #include <QLabel>
@@ -518,7 +520,7 @@ void UBDesktopAnnotationController::toolButtonPressed()
     // Check if the mouse cursor is on the little arrow
     const QPoint cursorPos = button->mapFromGlobal(QCursor::pos());
 
-    if (cursorPos.x() >= 30 && cursorPos.x() <= 44 && cursorPos.y() >= 30 && cursorPos.y() <= 44)
+    if (UBToolOptionsArrows::isOnTriangle(mDesktopPalette->screenEdge(), cursorPos, button->size()))
     {
         mbArrowClicked = true;
         toolButtonReleased();
@@ -570,7 +572,7 @@ void UBDesktopAnnotationController::showToolOptions(QAction* action)
     }
 
     const QRect anchor(button->mapToGlobal(QPoint(0, 0)), button->size());
-    mToolOptionsPopup->showForTool(toolOf(action), anchor);
+    mToolOptionsPopup->showForTool(toolOf(action), anchor, UBToolOptionsArrows::openingSide(mDesktopPalette->screenEdge()));
 }
 
 

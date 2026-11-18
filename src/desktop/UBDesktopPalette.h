@@ -51,6 +51,9 @@ class UBDesktopPalette : public UBActionPalette
         void appear();
         QPoint buttonPos(QAction* action);
 
+        /** @brief The edge of the screen the palette stands at, left or right. */
+        Qt::Edge screenEdge() const;
+
         /** @brief The tools of the palette, in their order. */
         static QList<QAction*> toolActions();
 
@@ -77,6 +80,7 @@ class UBDesktopPalette : public UBActionPalette
 protected:
         void showEvent(QShowEvent *event);
         void hideEvent(QHideEvent *event);
+        void mouseReleaseEvent(QMouseEvent* event) override;
 
         virtual int getParentRightOffset();
 
@@ -87,8 +91,9 @@ private:
         QAction *mActionUniboard;
         QAction *mActionCustomSelect;
         QAction* mScreenshotAction{nullptr};
+
+        void updateOptionArrows();
         QAction* mActionTest;
-        QMap<QAction*, QIcon> mIconsWithoutArrow;
 
 
         UBRightPalette* rightPalette;

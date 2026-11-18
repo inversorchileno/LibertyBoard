@@ -95,6 +95,8 @@ target_sources(${PROJECT_NAME} PRIVATE
     UBToolWidget.h
     UBToolOptionsPanel.cpp
     UBToolOptionsPanel.h
+    UBToolOptionsArrows.cpp
+    UBToolOptionsArrows.h
     UBToolOptionsBar.cpp
     UBToolOptionsBar.h
     UBToolOptionsPopup.cpp

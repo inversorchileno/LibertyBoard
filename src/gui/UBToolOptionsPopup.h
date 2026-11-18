@@ -42,7 +42,7 @@ public:
     static bool hasOptions(int tool);
 
     /** @brief Shows the panel of the tool beside the given rectangle, in global coordinates. */
-    void showForTool(int tool, const QRect& anchor);
+    void showForTool(int tool, const QRect& anchor, Qt::Edge side = Qt::RightEdge);
 
 private:
     UBToolOptionsPanel* panelFor(int tool);

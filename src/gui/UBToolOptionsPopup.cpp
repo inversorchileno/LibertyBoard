@@ -63,7 +63,7 @@ bool UBToolOptionsPopup::hasOptions(int tool)
     }
 }
 
-void UBToolOptionsPopup::showForTool(int tool, const QRect& anchor)
+void UBToolOptionsPopup::showForTool(int tool, const QRect& anchor, Qt::Edge side)
 {
     UBToolOptionsPanel* panel = panelFor(tool);
 
@@ -90,12 +90,40 @@ void UBToolOptionsPopup::showForTool(int tool, const QRect& anchor)
     const QScreen* screen = QGuiApplication::screenAt(anchor.center());
     const QRect available = screen ? screen->availableGeometry() : QRect(0, 0, 1920, 1080);
 
-    // Beside the button, on the side where there is room.
-    QPoint position(anchor.right() + sGap, anchor.top());
+    // Beside the button, on the side the triangle points to, or the other
+    // side when there is no room.
+    QPoint position;
 
-    if (position.x() + width() > available.right())
+    switch (side)
     {
-        position.setX(anchor.left() - sGap - width());
+        case Qt::LeftEdge:
+            position = QPoint(anchor.left() - sGap - width(), anchor.top());
+            if (position.x() < available.left())
+            {
+                position.setX(anchor.right() + sGap);
+            }
+            break;
+        case Qt::BottomEdge:
+            position = QPoint(anchor.center().x() - width() / 2, anchor.bottom() + sGap);
+            if (position.y() + height() > available.bottom())
+            {
+                position.setY(anchor.top() - sGap - height());
+            }
+            break;
+        case Qt::TopEdge:
+            position = QPoint(anchor.center().x() - width() / 2, anchor.top() - sGap - height());
+            if (position.y() < available.top())
+            {
+                position.setY(anchor.bottom() + sGap);
+            }
+            break;
+        default:
+            position = QPoint(anchor.right() + sGap, anchor.top());
+            if (position.x() + width() > available.right())
+            {
+                position.setX(anchor.left() - sGap - width());
+            }
+            break;
     }
 
     position.setY(qBound(available.top(), position.y(), available.bottom() - height()));

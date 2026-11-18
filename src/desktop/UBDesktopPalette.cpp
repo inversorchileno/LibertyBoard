@@ -29,6 +29,11 @@
 
 #include "UBDesktopPalette.h"
 
+#include <QScreen>
+
+#include "gui/UBStylusPalette.h"
+#include "gui/UBToolOptionsArrows.h"
+
 #include <QtGui>
 
 
@@ -208,65 +213,26 @@ void UBDesktopPalette::maximizeMe()
 #endif
 }
 
-/**
- * \brief Adds the little arrow that opens the options of a tool, as on the pen icon.
- */
-static QIcon iconWithOptionsArrow(const QIcon& icon)
+Qt::Edge UBDesktopPalette::screenEdge() const
 {
-    QIcon result;
-    const QSize size(42, 42);
+    // The palette stands vertically on the left or the right half of its screen.
+    const QScreen* paletteScreen = screen();
+    const QRect area = paletteScreen ? paletteScreen->geometry() : QRect();
+    const QPoint center = mapToGlobal(rect().center());
 
-    for (QIcon::State state : { QIcon::Off, QIcon::On })
-    {
-        QPixmap pixmap = icon.pixmap(size, QIcon::Normal, state);
+    return (area.isValid() && center.x() > area.center().x()) ? Qt::RightEdge : Qt::LeftEdge;
+}
 
-        QPainter painter(&pixmap);
-        painter.setRenderHint(QPainter::Antialiasing);
-        painter.setPen(QPen(QColor(220, 220, 220), 1));
-        painter.setBrush(Qt::black);
-        painter.drawPolygon(QPolygonF({ QPointF(35, 30), QPointF(41, 35), QPointF(35, 40) }));
-        painter.end();
-
-        result.addPixmap(pixmap, QIcon::Normal, state);
-    }
-
-    return result;
+void UBDesktopPalette::updateOptionArrows()
+{
+    UBToolOptionsArrows::apply(screenEdge());
 }
 
 void UBDesktopPalette::showEvent(QShowEvent *event)
 {
     Q_UNUSED(event);
 
-    // Tools without an arrow icon of their own
-    const QList<QAction*> toolsWithOptions = {
-        UBApplication::mainWindow->actionPointer, UBApplication::mainWindow->actionArrowShape,
-        UBApplication::mainWindow->actionRectangle, UBApplication::mainWindow->actionEllipse,
-        UBApplication::mainWindow->actionUnderline, UBApplication::mainWindow->actionText,
-        UBApplication::mainWindow->actionHighlight, UBApplication::mainWindow->actionNote
-    };
-
-    for (QAction* action : toolsWithOptions)
-    {
-        if (!mIconsWithoutArrow.contains(action))
-        {
-            mIconsWithoutArrow.insert(action, action->icon());
-            action->setIcon(iconWithOptionsArrow(action->icon()));
-        }
-    }
-
-    QIcon penIcon;
-    QIcon markerIcon;
-    QIcon eraserIcon;
-    penIcon.addFile(":images/stylusPalette/penArrow.svg", QSize(), QIcon::Normal, QIcon::Off);
-    penIcon.addFile(":images/stylusPalette/penOnArrow.svg", QSize(), QIcon::Normal, QIcon::On);
-    UBApplication::mainWindow->actionPen->setIcon(penIcon);
-    markerIcon.addFile(":images/stylusPalette/markerArrow.svg", QSize(), QIcon::Normal, QIcon::Off);
-    markerIcon.addFile(":images/stylusPalette/markerOnArrow.svg", QSize(), QIcon::Normal, QIcon::On);
-    UBApplication::mainWindow->actionMarker->setIcon(markerIcon);
-    eraserIcon.addFile(":images/stylusPalette/eraserArrow.svg", QSize(), QIcon::Normal, QIcon::Off);
-    eraserIcon.addFile(":images/stylusPalette/eraserOnArrow.svg", QSize(), QIcon::Normal, QIcon::On);
-    UBApplication::mainWindow->actionEraser->setIcon(eraserIcon);
-
+    updateOptionArrows();
     adjustPosition();
 }
 
@@ -274,25 +240,16 @@ void UBDesktopPalette::hideEvent(QHideEvent *event)
 {
     Q_UNUSED(event);
 
-    for (auto it = mIconsWithoutArrow.constBegin(); it != mIconsWithoutArrow.constEnd(); ++it)
-    {
-        it.key()->setIcon(it.value());
-    }
+    // Back to the board: the triangles of the board palette.
+    UBToolOptionsArrows::apply(Qt::Edge(UBStylusPalette::edge()));
+}
 
-    mIconsWithoutArrow.clear();
+void UBDesktopPalette::mouseReleaseEvent(QMouseEvent* event)
+{
+    UBActionPalette::mouseReleaseEvent(event);
 
-    QIcon penIcon;
-    QIcon markerIcon;
-    QIcon eraserIcon;
-    penIcon.addFile(":images/stylusPalette/pen.svg", QSize(), QIcon::Normal, QIcon::Off);
-    penIcon.addFile(":images/stylusPalette/penOn.svg", QSize(), QIcon::Normal, QIcon::On);
-    UBApplication::mainWindow->actionPen->setIcon(penIcon);
-    markerIcon.addFile(":images/stylusPalette/marker.svg", QSize(), QIcon::Normal, QIcon::Off);
-    markerIcon.addFile(":images/stylusPalette/markerOn.svg", QSize(), QIcon::Normal, QIcon::On);
-    UBApplication::mainWindow->actionMarker->setIcon(markerIcon);
-    eraserIcon.addFile(":images/stylusPalette/eraser.svg", QSize(), QIcon::Normal, QIcon::Off);
-    eraserIcon.addFile(":images/stylusPalette/eraserOn.svg", QSize(), QIcon::Normal, QIcon::On);
-    UBApplication::mainWindow->actionEraser->setIcon(eraserIcon);
+    // Moved to the other half of the screen: the triangles turn.
+    updateOptionArrows();
 }
 
 QPoint UBDesktopPalette::buttonPos(QAction *action)
