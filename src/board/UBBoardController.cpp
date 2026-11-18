@@ -1930,7 +1930,12 @@ void UBBoardController::changeBackground(bool isDark, UBPageBackground pageBackg
 
 void UBBoardController::boardViewResized(QResizeEvent* event)
 {
-    Q_UNUSED(event);
+    // Showing or hiding a toolbar resizes the view: the zoom and the place
+    // the user works at stay as they are.
+    const bool keepView = mActiveScene && mControlView->isVisible() && event
+                          && event->oldSize().isValid() && !event->oldSize().isEmpty();
+    const qreal zoom = mSystemScaleFactor > 0 ? mControlView->transform().m11() / mSystemScaleFactor : 1.0;
+    const QPointF center = mControlView->mapToScene(mControlView->viewport()->rect().center());
 
     int innerMargin = UBSettings::boardMargin;
     int userHeight = mControlContainer->height() - (2 * innerMargin);
@@ -1944,7 +1949,19 @@ void UBBoardController::boardViewResized(QResizeEvent* event)
 
     updateSystemScaleFactor();
 
-    mControlView->centerOn(0,0);
+    if (keepView)
+    {
+        QTransform transform;
+        transform.scale(zoom * mSystemScaleFactor, zoom * mSystemScaleFactor);
+        mControlView->setTransform(transform);
+        mControlView->centerOn(center);
+        mActiveScene->setBackgroundZoomFactor(mControlView->transform().m11());
+        emit controlViewportChanged();
+    }
+    else
+    {
+        mControlView->centerOn(0,0);
+    }
 
     if (mDisplayView && UBApplication::displayManager->hasDisplay()) {
         UBApplication::applicationController->adjustDisplayView();
