@@ -1715,7 +1715,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+2111"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+2118"/>
         <source>That page is not in the document any more.</source>
         <translation>そのページはもう文書にありません。</translation>
     </message>
@@ -2633,12 +2633,12 @@ Do you want to continue?</source>
 <context>
     <name>UBExportFullPDF</name>
     <message>
-        <location filename="../../src/adaptors/UBExportFullPDF.cpp" line="+261"/>
+        <location filename="../../src/adaptors/UBExportFullPDF.cpp" line="+262"/>
         <source>Export as PDF File</source>
         <translation>PDFファイルとしてエクスポート</translation>
     </message>
     <message>
-        <location line="+189"/>
+        <location line="+219"/>
         <source>Export to PDF</source>
         <translation>PDFへエクスポート</translation>
     </message>
@@ -3387,19 +3387,19 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+93"/>
-        <location line="+147"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+102"/>
+        <location line="+152"/>
         <source>Page Size</source>
         <translation>ページサイズ</translation>
     </message>
     <message>
-        <location line="-123"/>
-        <location line="+80"/>
+        <location line="-128"/>
+        <location line="+85"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
     </message>
     <message>
-        <location line="-64"/>
+        <location line="-69"/>
         <source>&amp;Home</source>
         <translation>ホーム(&amp;H)</translation>
     </message>
@@ -3417,7 +3417,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>開く/インポート</translation>
     </message>
     <message>
-        <location line="+67"/>
+        <location line="+72"/>
         <source>&amp;Mode</source>
         <translation>モード(&amp;M)</translation>
     </message>
@@ -3432,7 +3432,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>ドキュメントを閉じる</translation>
     </message>
     <message>
-        <location line="-65"/>
+        <location line="-70"/>
         <source>New board</source>
         <translation>新しいボード</translation>
     </message>
@@ -3477,6 +3477,16 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>ページの抽出...</translation>
     </message>
     <message>
+        <location line="+4"/>
+        <source>Recognize text (OCR)...</source>
+        <translation>テキストを認識 (OCR)...</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Reads the text of the scanned pages, so that it can be searched and copied</source>
+        <translation>スキャンしたページのテキストを読み取り、検索やコピーができるようにします</translation>
+    </message>
+    <message>
         <location line="+30"/>
         <source>Double board</source>
         <translation>ダブルボード</translation>
@@ -3513,12 +3523,12 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     </message>
     <message>
         <location line="+66"/>
-        <location line="+278"/>
+        <location line="+299"/>
         <source>Saved</source>
         <translation>保存しました</translation>
     </message>
     <message>
-        <location line="-272"/>
+        <location line="-293"/>
         <source>Search...</source>
         <translation>検索...</translation>
     </message>
@@ -3528,7 +3538,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>PDF 内の語句を検索</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+23"/>
         <source>Index</source>
         <translation>目次</translation>
     </message>
@@ -3538,12 +3548,12 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>PDF の目次: タイトルをクリックするとそのページへ移動します</translation>
     </message>
     <message>
-        <location line="+22"/>
+        <location line="+31"/>
         <source>Hide or show the toolbar</source>
         <translation>ツールバーの表示/非表示</translation>
     </message>
     <message>
-        <location line="+151"/>
+        <location line="+153"/>
         <source>Exit full screen</source>
         <translation>全画面表示を終了</translation>
     </message>
@@ -3697,6 +3707,59 @@ Do you want to ignore these errors for this host?</source>
         <location line="+2"/>
         <source>Marker color</source>
         <translation>マーカーの色</translation>
+    </message>
+</context>
+<context>
+    <name>UBOcrRunner</name>
+    <message>
+        <location filename="../../src/gui/UBOcrRunner.cpp" line="+101"/>
+        <location line="+124"/>
+        <source>Recognize text</source>
+        <translation>テキストを認識</translation>
+    </message>
+    <message>
+        <location line="-115"/>
+        <source>This computer has no text reader. On Windows, the reader comes with the languages of Windows: check in the settings of Windows, Time and language, that Spanish is installed.</source>
+        <translation>このコンピューターにはテキスト読み取り機能がありません。Windows では読み取り機能が Windows の言語に含まれます。Windows の設定の「時刻と言語」で、使用する言語がインストールされているか確認してください。</translation>
+    </message>
+    <message>
+        <location line="+27"/>
+        <source>Every page of this document already has its text: there is nothing to recognize.</source>
+        <translation>この文書のすべてのページにはすでにテキストがあります。認識するものはありません。</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Recognizing the text of the scanned pages...</source>
+        <translation>スキャンしたページのテキストを認識しています...</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Stop</source>
+        <translation>停止</translation>
+    </message>
+    <message>
+        <location line="+15"/>
+        <source>Recognizing the text: page %1 of %2</source>
+        <translation>テキストを認識しています: %1 / %2 ページ</translation>
+    </message>
+    <message>
+        <location line="+32"/>
+        <source>The text could not be recognized: %1</source>
+        <translation>テキストを認識できませんでした: %1</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>The text of %1 pages was recognized. The search and the copy of text now work on them, and a saved PDF keeps their text.</source>
+        <translation>%1 ページのテキストを認識しました。これらのページで検索とテキストのコピーができるようになり、保存した PDF にもテキストが残ります。</translation>
+    </message>
+    <message>
+        <location line="+32"/>
+        <source>This PDF looks scanned: its pages are pictures, without text to search or copy. Recognize their text now?
+
+It can also be done later with Home &gt; Recognize text.</source>
+        <translation>この PDF はスキャンしたもののようです。ページは画像で、検索やコピーできるテキストがありません。今すぐテキストを認識しますか?
+
+後で ホーム &gt; テキストを認識 からも実行できます。</translation>
     </message>
 </context>
 <context>
@@ -4206,6 +4269,212 @@ Dynamic width</source>
         <location line="-188"/>
         <source>Use all available displays</source>
         <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UBPrintDialog</name>
+    <message>
+        <location filename="../../src/board/UBDocumentPrinter.cpp" line="+95"/>
+        <location line="+115"/>
+        <source>Print</source>
+        <translation>印刷</translation>
+    </message>
+    <message>
+        <location line="-104"/>
+        <location line="+507"/>
+        <source>PDF file</source>
+        <translation>PDF ファイル</translation>
+    </message>
+    <message>
+        <location line="-496"/>
+        <source>Printer settings...</source>
+        <translation>プリンターの設定...</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>The settings of the printer itself: tray, quality, and others</source>
+        <translation>プリンター自体の設定: トレイ、品質など</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Collate</source>
+        <translation>部単位で印刷</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Each copy complete, one after the other</source>
+        <translation>各部をそろえて 1 部ずつ</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>All pages (%1)</source>
+        <translation>すべてのページ (%1)</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Current page (%1)</source>
+        <translation>現在のページ (%1)</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Pages:</source>
+        <translation>ページ:</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>For example 1-3, 5, 8-</source>
+        <translation>例: 1-3, 5, 8-</translation>
+    </message>
+    <message>
+        <location line="+25"/>
+        <source>Automatic, as each page</source>
+        <translation>自動 (ページごと)</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Portrait</source>
+        <translation>縦</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Landscape</source>
+        <translation>横</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Fit to the sheet</source>
+        <translation>用紙に合わせる</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Actual size</source>
+        <translation>実際のサイズ</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>1 page per sheet</source>
+        <translation>1 ページ/枚</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>2 pages per sheet</source>
+        <translation>2 ページ/枚</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>4 pages per sheet</source>
+        <translation>4 ページ/枚</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <location line="+22"/>
+        <source>Color</source>
+        <translation>カラー</translation>
+    </message>
+    <message>
+        <location line="-21"/>
+        <source>Black and white (grayscale)</source>
+        <translation>白黒 (グレースケール)</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>One side</source>
+        <translation>片面</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Both sides, turning on the long edge</source>
+        <translation>両面 (長辺とじ)</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Both sides, turning on the short edge</source>
+        <translation>両面 (短辺とじ)</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Print the annotations</source>
+        <translation>注釈を印刷</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Without them, only the pages of the PDF are printed, as they came</source>
+        <translation>オフにすると、PDF のページだけを元のまま印刷します</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Printer</source>
+        <translation>プリンター</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Copies</source>
+        <translation>部数</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Pages</source>
+        <translation>ページ</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Paper</source>
+        <translation>用紙</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Orientation</source>
+        <translation>向き</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Scale</source>
+        <translation>倍率</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Pages per sheet</source>
+        <translation>1 枚あたりのページ数</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Sides</source>
+        <translation>片面/両面</translation>
+    </message>
+    <message>
+        <location line="+28"/>
+        <source>Previous sheet</source>
+        <translation>前の用紙</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Next sheet</source>
+        <translation>次の用紙</translation>
+    </message>
+    <message>
+        <location line="+240"/>
+        <source>Write the pages as numbers from 1 to %1, for example 1-3, 5.</source>
+        <translation>ページを 1 から %1 までの数字で入力してください (例: 1-3, 5)。</translation>
+    </message>
+    <message>
+        <location line="+25"/>
+        <source>Sheet %1 of %2</source>
+        <translation>用紙 %1 / %2</translation>
+    </message>
+    <message>
+        <location line="+77"/>
+        <source>Printer settings</source>
+        <translation>プリンターの設定</translation>
+    </message>
+    <message>
+        <location line="+39"/>
+        <source>PDF (*.pdf)</source>
+        <translation>PDF (*.pdf)</translation>
+    </message>
+    <message>
+        <location line="+47"/>
+        <source>The printer could not be used. Check that it is on and connected.</source>
+        <translation>プリンターを使用できませんでした。電源が入っていて接続されているか確認してください。</translation>
     </message>
 </context>
 <context>

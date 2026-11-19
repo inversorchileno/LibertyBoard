@@ -1737,7 +1737,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+2111"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+2118"/>
         <source>That page is not in the document any more.</source>
         <translation>Tej strony nie ma już w dokumencie.</translation>
     </message>
@@ -2693,12 +2693,12 @@ Do you want to continue?</source>
 <context>
     <name>UBExportFullPDF</name>
     <message>
-        <location filename="../../src/adaptors/UBExportFullPDF.cpp" line="+261"/>
+        <location filename="../../src/adaptors/UBExportFullPDF.cpp" line="+262"/>
         <source>Export as PDF File</source>
         <translation>Eksportowanie jako plik PDF</translation>
     </message>
     <message>
-        <location line="+189"/>
+        <location line="+219"/>
         <source>Export to PDF</source>
         <translation>Eksportowanie do PDF</translation>
     </message>
@@ -3447,19 +3447,19 @@ Pobrać i zainstalować teraz? LibertyBoard zapisze dokumenty, zamknie się i ur
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+93"/>
-        <location line="+147"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+102"/>
+        <location line="+152"/>
         <source>Page Size</source>
         <translation>Rozmiar strony</translation>
     </message>
     <message>
-        <location line="-123"/>
-        <location line="+80"/>
+        <location line="-128"/>
+        <location line="+85"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
     </message>
     <message>
-        <location line="-64"/>
+        <location line="-69"/>
         <source>&amp;Home</source>
         <translation>&amp;Start</translation>
     </message>
@@ -3477,7 +3477,7 @@ Pobrać i zainstalować teraz? LibertyBoard zapisze dokumenty, zamknie się i ur
         <translation>Otwórz/Importuj</translation>
     </message>
     <message>
-        <location line="+67"/>
+        <location line="+72"/>
         <source>&amp;Mode</source>
         <translation>&amp;Tryb</translation>
     </message>
@@ -3492,7 +3492,7 @@ Pobrać i zainstalować teraz? LibertyBoard zapisze dokumenty, zamknie się i ur
         <translation>Zamknij dokument</translation>
     </message>
     <message>
-        <location line="-65"/>
+        <location line="-70"/>
         <source>New board</source>
         <translation>Nowa tablica</translation>
     </message>
@@ -3537,6 +3537,16 @@ Pobrać i zainstalować teraz? LibertyBoard zapisze dokumenty, zamknie się i ur
         <translation>Wyodrębnij strony...</translation>
     </message>
     <message>
+        <location line="+4"/>
+        <source>Recognize text (OCR)...</source>
+        <translation>Rozpoznaj tekst (OCR)...</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Reads the text of the scanned pages, so that it can be searched and copied</source>
+        <translation>Odczytuje tekst zeskanowanych stron, aby można go było wyszukiwać i kopiować</translation>
+    </message>
+    <message>
         <location line="+30"/>
         <source>Double board</source>
         <translation>Podwójna tablica</translation>
@@ -3573,12 +3583,12 @@ Pobrać i zainstalować teraz? LibertyBoard zapisze dokumenty, zamknie się i ur
     </message>
     <message>
         <location line="+66"/>
-        <location line="+278"/>
+        <location line="+299"/>
         <source>Saved</source>
         <translation>Zapisano</translation>
     </message>
     <message>
-        <location line="-272"/>
+        <location line="-293"/>
         <source>Search...</source>
         <translation>Szukaj...</translation>
     </message>
@@ -3588,7 +3598,7 @@ Pobrać i zainstalować teraz? LibertyBoard zapisze dokumenty, zamknie się i ur
         <translation>Szukaj słów w PDF</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+23"/>
         <source>Index</source>
         <translation>Spis treści</translation>
     </message>
@@ -3598,12 +3608,12 @@ Pobrać i zainstalować teraz? LibertyBoard zapisze dokumenty, zamknie się i ur
         <translation>Spis treści PDF: kliknięcie tytułu przenosi na jego stronę</translation>
     </message>
     <message>
-        <location line="+22"/>
+        <location line="+31"/>
         <source>Hide or show the toolbar</source>
         <translation>Ukryj lub pokaż pasek narzędzi</translation>
     </message>
     <message>
-        <location line="+151"/>
+        <location line="+153"/>
         <source>Exit full screen</source>
         <translation>Zakończ pełny ekran</translation>
     </message>
@@ -3756,6 +3766,59 @@ Czy chcesz ignorować te błędy dla tego hosta?</translation>
         <location line="+2"/>
         <source>Marker color</source>
         <translation>Kolor znacznika</translation>
+    </message>
+</context>
+<context>
+    <name>UBOcrRunner</name>
+    <message>
+        <location filename="../../src/gui/UBOcrRunner.cpp" line="+101"/>
+        <location line="+124"/>
+        <source>Recognize text</source>
+        <translation>Rozpoznaj tekst</translation>
+    </message>
+    <message>
+        <location line="-115"/>
+        <source>This computer has no text reader. On Windows, the reader comes with the languages of Windows: check in the settings of Windows, Time and language, that Spanish is installed.</source>
+        <translation>Ten komputer nie ma czytnika tekstu. W systemie Windows czytnik jest dostarczany z językami systemu: sprawdź w ustawieniach systemu Windows, Czas i język, czy Twój język jest zainstalowany.</translation>
+    </message>
+    <message>
+        <location line="+27"/>
+        <source>Every page of this document already has its text: there is nothing to recognize.</source>
+        <translation>Wszystkie strony tego dokumentu mają już tekst: nie ma czego rozpoznawać.</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Recognizing the text of the scanned pages...</source>
+        <translation>Rozpoznawanie tekstu zeskanowanych stron...</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Stop</source>
+        <translation>Zatrzymaj</translation>
+    </message>
+    <message>
+        <location line="+15"/>
+        <source>Recognizing the text: page %1 of %2</source>
+        <translation>Rozpoznawanie tekstu: strona %1 z %2</translation>
+    </message>
+    <message>
+        <location line="+32"/>
+        <source>The text could not be recognized: %1</source>
+        <translation>Nie można rozpoznać tekstu: %1</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>The text of %1 pages was recognized. The search and the copy of text now work on them, and a saved PDF keeps their text.</source>
+        <translation>Rozpoznano tekst %1 stron. Wyszukiwanie i kopiowanie tekstu działa już na nich, a zapisany PDF zachowuje ich tekst.</translation>
+    </message>
+    <message>
+        <location line="+32"/>
+        <source>This PDF looks scanned: its pages are pictures, without text to search or copy. Recognize their text now?
+
+It can also be done later with Home &gt; Recognize text.</source>
+        <translation>Ten PDF wygląda na zeskanowany: jego strony to obrazy, bez tekstu do wyszukiwania i kopiowania. Rozpoznać tekst teraz?
+
+Można to też zrobić później: Start &gt; Rozpoznaj tekst.</translation>
     </message>
 </context>
 <context>
@@ -4285,6 +4348,212 @@ Dynamiczna szerokość</translation>
         <location line="-188"/>
         <source>Use all available displays</source>
         <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UBPrintDialog</name>
+    <message>
+        <location filename="../../src/board/UBDocumentPrinter.cpp" line="+95"/>
+        <location line="+115"/>
+        <source>Print</source>
+        <translation>Drukuj</translation>
+    </message>
+    <message>
+        <location line="-104"/>
+        <location line="+507"/>
+        <source>PDF file</source>
+        <translation>Plik PDF</translation>
+    </message>
+    <message>
+        <location line="-496"/>
+        <source>Printer settings...</source>
+        <translation>Ustawienia drukarki...</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>The settings of the printer itself: tray, quality, and others</source>
+        <translation>Ustawienia samej drukarki: podajnik, jakość i inne</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Collate</source>
+        <translation>Sortuj</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Each copy complete, one after the other</source>
+        <translation>Każda kopia w całości, jedna po drugiej</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>All pages (%1)</source>
+        <translation>Wszystkie strony (%1)</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Current page (%1)</source>
+        <translation>Bieżąca strona (%1)</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Pages:</source>
+        <translation>Strony:</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>For example 1-3, 5, 8-</source>
+        <translation>Na przykład 1-3, 5, 8-</translation>
+    </message>
+    <message>
+        <location line="+25"/>
+        <source>Automatic, as each page</source>
+        <translation>Automatyczna, według każdej strony</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Portrait</source>
+        <translation>Pionowa</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Landscape</source>
+        <translation>Pozioma</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Fit to the sheet</source>
+        <translation>Dopasuj do arkusza</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Actual size</source>
+        <translation>Rzeczywisty rozmiar</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>1 page per sheet</source>
+        <translation>1 strona na arkusz</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>2 pages per sheet</source>
+        <translation>2 strony na arkusz</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>4 pages per sheet</source>
+        <translation>4 strony na arkusz</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <location line="+22"/>
+        <source>Color</source>
+        <translation>Kolor</translation>
+    </message>
+    <message>
+        <location line="-21"/>
+        <source>Black and white (grayscale)</source>
+        <translation>Czarno-biały (skala szarości)</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>One side</source>
+        <translation>Jednostronnie</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Both sides, turning on the long edge</source>
+        <translation>Dwustronnie, odwracanie wzdłuż dłuższej krawędzi</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Both sides, turning on the short edge</source>
+        <translation>Dwustronnie, odwracanie wzdłuż krótszej krawędzi</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Print the annotations</source>
+        <translation>Drukuj adnotacje</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Without them, only the pages of the PDF are printed, as they came</source>
+        <translation>Bez nich drukowane są tylko strony PDF, takie jak były</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Printer</source>
+        <translation>Drukarka</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Copies</source>
+        <translation>Kopie</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Pages</source>
+        <translation>Strony</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Paper</source>
+        <translation>Papier</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Orientation</source>
+        <translation>Orientacja</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Scale</source>
+        <translation>Skala</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Pages per sheet</source>
+        <translation>Strony na arkusz</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Sides</source>
+        <translation>Strony</translation>
+    </message>
+    <message>
+        <location line="+28"/>
+        <source>Previous sheet</source>
+        <translation>Poprzedni arkusz</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Next sheet</source>
+        <translation>Następny arkusz</translation>
+    </message>
+    <message>
+        <location line="+240"/>
+        <source>Write the pages as numbers from 1 to %1, for example 1-3, 5.</source>
+        <translation>Wpisz strony jako liczby od 1 do %1, na przykład 1-3, 5.</translation>
+    </message>
+    <message>
+        <location line="+25"/>
+        <source>Sheet %1 of %2</source>
+        <translation>Arkusz %1 z %2</translation>
+    </message>
+    <message>
+        <location line="+77"/>
+        <source>Printer settings</source>
+        <translation>Ustawienia drukarki</translation>
+    </message>
+    <message>
+        <location line="+39"/>
+        <source>PDF (*.pdf)</source>
+        <translation>PDF (*.pdf)</translation>
+    </message>
+    <message>
+        <location line="+47"/>
+        <source>The printer could not be used. Check that it is on and connected.</source>
+        <translation>Nie można użyć drukarki. Sprawdź, czy jest włączona i podłączona.</translation>
     </message>
 </context>
 <context>

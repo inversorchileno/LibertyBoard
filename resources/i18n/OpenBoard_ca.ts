@@ -1727,7 +1727,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+2111"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+2118"/>
         <source>That page is not in the document any more.</source>
         <translation>Aquesta pàgina ja no és al document.</translation>
     </message>
@@ -2661,12 +2661,12 @@ Do you want to continue?</source>
 <context>
     <name>UBExportFullPDF</name>
     <message>
-        <location filename="../../src/adaptors/UBExportFullPDF.cpp" line="+261"/>
+        <location filename="../../src/adaptors/UBExportFullPDF.cpp" line="+262"/>
         <source>Export as PDF File</source>
         <translation>Exporta com a fitxer PDF</translation>
     </message>
     <message>
-        <location line="+189"/>
+        <location line="+219"/>
         <source>Export to PDF</source>
         <translation>Exporta a PDF</translation>
     </message>
@@ -3415,19 +3415,19 @@ Voleu baixar-la i instal·lar-la ara? LibertyBoard desa els documents, es tanca 
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+93"/>
-        <location line="+147"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+102"/>
+        <location line="+152"/>
         <source>Page Size</source>
         <translation>Mida de la pàgina</translation>
     </message>
     <message>
-        <location line="-123"/>
-        <location line="+80"/>
+        <location line="-128"/>
+        <location line="+85"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
     </message>
     <message>
-        <location line="-64"/>
+        <location line="-69"/>
         <source>&amp;Home</source>
         <translation>&amp;Inici</translation>
     </message>
@@ -3445,7 +3445,7 @@ Voleu baixar-la i instal·lar-la ara? LibertyBoard desa els documents, es tanca 
         <translation>Obre/Importa</translation>
     </message>
     <message>
-        <location line="+67"/>
+        <location line="+72"/>
         <source>&amp;Mode</source>
         <translation>&amp;Mode</translation>
     </message>
@@ -3460,7 +3460,7 @@ Voleu baixar-la i instal·lar-la ara? LibertyBoard desa els documents, es tanca 
         <translation>Tanca el document</translation>
     </message>
     <message>
-        <location line="-65"/>
+        <location line="-70"/>
         <source>New board</source>
         <translation>Pissarra nova</translation>
     </message>
@@ -3505,6 +3505,16 @@ Voleu baixar-la i instal·lar-la ara? LibertyBoard desa els documents, es tanca 
         <translation>Extreu pàgines...</translation>
     </message>
     <message>
+        <location line="+4"/>
+        <source>Recognize text (OCR)...</source>
+        <translation>Reconeix el text (OCR)...</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Reads the text of the scanned pages, so that it can be searched and copied</source>
+        <translation>Llegeix el text de les pàgines escanejades, per poder cercar-lo i copiar-lo</translation>
+    </message>
+    <message>
         <location line="+30"/>
         <source>Double board</source>
         <translation>Pissarra doble</translation>
@@ -3541,12 +3551,12 @@ Voleu baixar-la i instal·lar-la ara? LibertyBoard desa els documents, es tanca 
     </message>
     <message>
         <location line="+66"/>
-        <location line="+278"/>
+        <location line="+299"/>
         <source>Saved</source>
         <translation>Desat</translation>
     </message>
     <message>
-        <location line="-272"/>
+        <location line="-293"/>
         <source>Search...</source>
         <translation>Cerca...</translation>
     </message>
@@ -3556,7 +3566,7 @@ Voleu baixar-la i instal·lar-la ara? LibertyBoard desa els documents, es tanca 
         <translation>Cerca paraules al PDF</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+23"/>
         <source>Index</source>
         <translation>Índex</translation>
     </message>
@@ -3566,12 +3576,12 @@ Voleu baixar-la i instal·lar-la ara? LibertyBoard desa els documents, es tanca 
         <translation>L&apos;índex del PDF: un clic en un títol porta a la seva pàgina</translation>
     </message>
     <message>
-        <location line="+22"/>
+        <location line="+31"/>
         <source>Hide or show the toolbar</source>
         <translation>Amaga o mostra la barra d&apos;eines</translation>
     </message>
     <message>
-        <location line="+151"/>
+        <location line="+153"/>
         <source>Exit full screen</source>
         <translation>Surt de la pantalla completa</translation>
     </message>
@@ -3724,6 +3734,59 @@ Voleu ignorar aquests errors per a aquest amfitrió?</translation>
         <location line="+2"/>
         <source>Marker color</source>
         <translation>Color del marcador</translation>
+    </message>
+</context>
+<context>
+    <name>UBOcrRunner</name>
+    <message>
+        <location filename="../../src/gui/UBOcrRunner.cpp" line="+101"/>
+        <location line="+124"/>
+        <source>Recognize text</source>
+        <translation>Reconeix el text</translation>
+    </message>
+    <message>
+        <location line="-115"/>
+        <source>This computer has no text reader. On Windows, the reader comes with the languages of Windows: check in the settings of Windows, Time and language, that Spanish is installed.</source>
+        <translation>Aquest ordinador no té lector de text. A Windows, el lector ve amb els idiomes de Windows: comprova a la configuració de Windows, Hora i idioma, que el teu idioma estigui instal·lat.</translation>
+    </message>
+    <message>
+        <location line="+27"/>
+        <source>Every page of this document already has its text: there is nothing to recognize.</source>
+        <translation>Totes les pàgines d&apos;aquest document ja tenen text: no hi ha res a reconèixer.</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Recognizing the text of the scanned pages...</source>
+        <translation>S&apos;està reconeixent el text de les pàgines escanejades...</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Stop</source>
+        <translation>Atura</translation>
+    </message>
+    <message>
+        <location line="+15"/>
+        <source>Recognizing the text: page %1 of %2</source>
+        <translation>S&apos;està reconeixent el text: pàgina %1 de %2</translation>
+    </message>
+    <message>
+        <location line="+32"/>
+        <source>The text could not be recognized: %1</source>
+        <translation>No s&apos;ha pogut reconèixer el text: %1</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>The text of %1 pages was recognized. The search and the copy of text now work on them, and a saved PDF keeps their text.</source>
+        <translation>S&apos;ha reconegut el text de %1 pàgines. La cerca i la còpia de text ja hi funcionen, i un PDF desat en conserva el text.</translation>
+    </message>
+    <message>
+        <location line="+32"/>
+        <source>This PDF looks scanned: its pages are pictures, without text to search or copy. Recognize their text now?
+
+It can also be done later with Home &gt; Recognize text.</source>
+        <translation>Aquest PDF sembla escanejat: les seves pàgines són imatges, sense text per cercar ni copiar. Vols reconèixer-ne el text ara?
+
+També es pot fer després amb Inici &gt; Reconeix el text.</translation>
     </message>
 </context>
 <context>
@@ -4233,6 +4296,212 @@ Amplada dinàmica</translation>
         <location line="-188"/>
         <source>Use all available displays</source>
         <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UBPrintDialog</name>
+    <message>
+        <location filename="../../src/board/UBDocumentPrinter.cpp" line="+95"/>
+        <location line="+115"/>
+        <source>Print</source>
+        <translation>Imprimeix</translation>
+    </message>
+    <message>
+        <location line="-104"/>
+        <location line="+507"/>
+        <source>PDF file</source>
+        <translation>Fitxer PDF</translation>
+    </message>
+    <message>
+        <location line="-496"/>
+        <source>Printer settings...</source>
+        <translation>Configuració de la impressora...</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>The settings of the printer itself: tray, quality, and others</source>
+        <translation>La configuració de la mateixa impressora: safata, qualitat i altres</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Collate</source>
+        <translation>Intercala</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Each copy complete, one after the other</source>
+        <translation>Cada còpia completa, una darrere l&apos;altra</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>All pages (%1)</source>
+        <translation>Totes les pàgines (%1)</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Current page (%1)</source>
+        <translation>Pàgina actual (%1)</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Pages:</source>
+        <translation>Pàgines:</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>For example 1-3, 5, 8-</source>
+        <translation>Per exemple 1-3, 5, 8-</translation>
+    </message>
+    <message>
+        <location line="+25"/>
+        <source>Automatic, as each page</source>
+        <translation>Automàtica, segons cada pàgina</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Portrait</source>
+        <translation>Vertical</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Landscape</source>
+        <translation>Horitzontal</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Fit to the sheet</source>
+        <translation>Ajusta al full</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Actual size</source>
+        <translation>Mida real</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>1 page per sheet</source>
+        <translation>1 pàgina per full</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>2 pages per sheet</source>
+        <translation>2 pàgines per full</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>4 pages per sheet</source>
+        <translation>4 pàgines per full</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <location line="+22"/>
+        <source>Color</source>
+        <translation>Color</translation>
+    </message>
+    <message>
+        <location line="-21"/>
+        <source>Black and white (grayscale)</source>
+        <translation>Blanc i negre (escala de grisos)</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>One side</source>
+        <translation>Una cara</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Both sides, turning on the long edge</source>
+        <translation>Doble cara, girant per la vora llarga</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Both sides, turning on the short edge</source>
+        <translation>Doble cara, girant per la vora curta</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Print the annotations</source>
+        <translation>Imprimeix les anotacions</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Without them, only the pages of the PDF are printed, as they came</source>
+        <translation>Sense elles, s&apos;imprimeixen només les pàgines del PDF, tal com venien</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Printer</source>
+        <translation>Impressora</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Copies</source>
+        <translation>Còpies</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Pages</source>
+        <translation>Pàgines</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Paper</source>
+        <translation>Paper</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Orientation</source>
+        <translation>Orientació</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Scale</source>
+        <translation>Escala</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Pages per sheet</source>
+        <translation>Pàgines per full</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Sides</source>
+        <translation>Cares</translation>
+    </message>
+    <message>
+        <location line="+28"/>
+        <source>Previous sheet</source>
+        <translation>Full anterior</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Next sheet</source>
+        <translation>Full següent</translation>
+    </message>
+    <message>
+        <location line="+240"/>
+        <source>Write the pages as numbers from 1 to %1, for example 1-3, 5.</source>
+        <translation>Escriu les pàgines com a números de l&apos;1 al %1, per exemple 1-3, 5.</translation>
+    </message>
+    <message>
+        <location line="+25"/>
+        <source>Sheet %1 of %2</source>
+        <translation>Full %1 de %2</translation>
+    </message>
+    <message>
+        <location line="+77"/>
+        <source>Printer settings</source>
+        <translation>Configuració de la impressora</translation>
+    </message>
+    <message>
+        <location line="+39"/>
+        <source>PDF (*.pdf)</source>
+        <translation>PDF (*.pdf)</translation>
+    </message>
+    <message>
+        <location line="+47"/>
+        <source>The printer could not be used. Check that it is on and connected.</source>
+        <translation>No s&apos;ha pogut fer servir la impressora. Comprova que estigui engegada i connectada.</translation>
     </message>
 </context>
 <context>

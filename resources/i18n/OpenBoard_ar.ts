@@ -1727,7 +1727,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+2111"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+2118"/>
         <source>That page is not in the document any more.</source>
         <translation>لم تعد هذه الصفحة في المستند.</translation>
     </message>
@@ -2670,12 +2670,12 @@ Do you want to continue?</source>
 <context>
     <name>UBExportFullPDF</name>
     <message>
-        <location filename="../../src/adaptors/UBExportFullPDF.cpp" line="+261"/>
+        <location filename="../../src/adaptors/UBExportFullPDF.cpp" line="+262"/>
         <source>Export as PDF File</source>
         <translation>التصدير كملف PDF</translation>
     </message>
     <message>
-        <location line="+189"/>
+        <location line="+219"/>
         <source>Export to PDF</source>
         <translation>التصدير للـPDF</translation>
     </message>
@@ -3424,19 +3424,19 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+93"/>
-        <location line="+147"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+102"/>
+        <location line="+152"/>
         <source>Page Size</source>
         <translation>حجم الصفحة</translation>
     </message>
     <message>
-        <location line="-123"/>
-        <location line="+80"/>
+        <location line="-128"/>
+        <location line="+85"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
     </message>
     <message>
-        <location line="-64"/>
+        <location line="-69"/>
         <source>&amp;Home</source>
         <translation>&amp;الرئيسية</translation>
     </message>
@@ -3454,7 +3454,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>فتح/استيراد</translation>
     </message>
     <message>
-        <location line="+67"/>
+        <location line="+72"/>
         <source>&amp;Mode</source>
         <translation>&amp;الوضع</translation>
     </message>
@@ -3469,7 +3469,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>إغلاق المستند</translation>
     </message>
     <message>
-        <location line="-65"/>
+        <location line="-70"/>
         <source>New board</source>
         <translation>سبورة جديدة</translation>
     </message>
@@ -3514,6 +3514,16 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>استخراج الصفحات...</translation>
     </message>
     <message>
+        <location line="+4"/>
+        <source>Recognize text (OCR)...</source>
+        <translation>التعرف على النص (OCR)...</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Reads the text of the scanned pages, so that it can be searched and copied</source>
+        <translation>يقرأ نص الصفحات الممسوحة ضوئيًا ليمكن البحث فيه ونسخه</translation>
+    </message>
+    <message>
         <location line="+30"/>
         <source>Double board</source>
         <translation>سبورة مزدوجة</translation>
@@ -3550,12 +3560,12 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     </message>
     <message>
         <location line="+66"/>
-        <location line="+278"/>
+        <location line="+299"/>
         <source>Saved</source>
         <translation>تم الحفظ</translation>
     </message>
     <message>
-        <location line="-272"/>
+        <location line="-293"/>
         <source>Search...</source>
         <translation>بحث...</translation>
     </message>
@@ -3565,7 +3575,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>البحث عن كلمات في ملف PDF</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+23"/>
         <source>Index</source>
         <translation>الفهرس</translation>
     </message>
@@ -3575,12 +3585,12 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>فهرس ملف PDF: النقر على عنوان ينقلك إلى صفحته</translation>
     </message>
     <message>
-        <location line="+22"/>
+        <location line="+31"/>
         <source>Hide or show the toolbar</source>
         <translation>إخفاء شريط الأدوات أو إظهاره</translation>
     </message>
     <message>
-        <location line="+151"/>
+        <location line="+153"/>
         <source>Exit full screen</source>
         <translation>الخروج من ملء الشاشة</translation>
     </message>
@@ -3727,6 +3737,59 @@ Do you want to ignore these errors for this host?</source>
         <location line="+2"/>
         <source>Marker color</source>
         <translation>لون العلامة</translation>
+    </message>
+</context>
+<context>
+    <name>UBOcrRunner</name>
+    <message>
+        <location filename="../../src/gui/UBOcrRunner.cpp" line="+101"/>
+        <location line="+124"/>
+        <source>Recognize text</source>
+        <translation>التعرف على النص</translation>
+    </message>
+    <message>
+        <location line="-115"/>
+        <source>This computer has no text reader. On Windows, the reader comes with the languages of Windows: check in the settings of Windows, Time and language, that Spanish is installed.</source>
+        <translation>لا يوجد في هذا الحاسوب قارئ للنص. في Windows يأتي القارئ مع لغات Windows: تحقق في إعدادات Windows، الوقت واللغة، من تثبيت لغتك.</translation>
+    </message>
+    <message>
+        <location line="+27"/>
+        <source>Every page of this document already has its text: there is nothing to recognize.</source>
+        <translation>كل صفحات هذا المستند تحتوي على نص بالفعل: لا شيء للتعرف عليه.</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Recognizing the text of the scanned pages...</source>
+        <translation>جارٍ التعرف على نص الصفحات الممسوحة ضوئيًا...</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Stop</source>
+        <translation>إيقاف</translation>
+    </message>
+    <message>
+        <location line="+15"/>
+        <source>Recognizing the text: page %1 of %2</source>
+        <translation>جارٍ التعرف على النص: الصفحة %1 من %2</translation>
+    </message>
+    <message>
+        <location line="+32"/>
+        <source>The text could not be recognized: %1</source>
+        <translation>تعذر التعرف على النص: %1</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>The text of %1 pages was recognized. The search and the copy of text now work on them, and a saved PDF keeps their text.</source>
+        <translation>تم التعرف على نص %1 صفحات. يعمل الآن البحث ونسخ النص فيها، ويحتفظ ملف PDF المحفوظ بنصها.</translation>
+    </message>
+    <message>
+        <location line="+32"/>
+        <source>This PDF looks scanned: its pages are pictures, without text to search or copy. Recognize their text now?
+
+It can also be done later with Home &gt; Recognize text.</source>
+        <translation>يبدو أن ملف PDF هذا ممسوح ضوئيًا: صفحاته صور بلا نص للبحث أو النسخ. هل تريد التعرف على النص الآن؟
+
+يمكن فعل ذلك لاحقًا من البداية &gt; التعرف على النص.</translation>
     </message>
 </context>
 <context>
@@ -4236,6 +4299,212 @@ Dynamic width</source>
         <location line="-188"/>
         <source>Use all available displays</source>
         <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UBPrintDialog</name>
+    <message>
+        <location filename="../../src/board/UBDocumentPrinter.cpp" line="+95"/>
+        <location line="+115"/>
+        <source>Print</source>
+        <translation>طباعة</translation>
+    </message>
+    <message>
+        <location line="-104"/>
+        <location line="+507"/>
+        <source>PDF file</source>
+        <translation>ملف PDF</translation>
+    </message>
+    <message>
+        <location line="-496"/>
+        <source>Printer settings...</source>
+        <translation>إعدادات الطابعة...</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>The settings of the printer itself: tray, quality, and others</source>
+        <translation>إعدادات الطابعة نفسها: الدرج والجودة وغيرها</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Collate</source>
+        <translation>ترتيب النسخ</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Each copy complete, one after the other</source>
+        <translation>كل نسخة كاملة، واحدة تلو الأخرى</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>All pages (%1)</source>
+        <translation>كل الصفحات (%1)</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Current page (%1)</source>
+        <translation>الصفحة الحالية (%1)</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Pages:</source>
+        <translation>الصفحات:</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>For example 1-3, 5, 8-</source>
+        <translation>مثلاً 1-3، 5، 8-</translation>
+    </message>
+    <message>
+        <location line="+25"/>
+        <source>Automatic, as each page</source>
+        <translation>تلقائي، حسب كل صفحة</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Portrait</source>
+        <translation>عمودي</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Landscape</source>
+        <translation>أفقي</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Fit to the sheet</source>
+        <translation>ملاءمة الورقة</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Actual size</source>
+        <translation>الحجم الفعلي</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>1 page per sheet</source>
+        <translation>صفحة واحدة لكل ورقة</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>2 pages per sheet</source>
+        <translation>صفحتان لكل ورقة</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>4 pages per sheet</source>
+        <translation>4 صفحات لكل ورقة</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <location line="+22"/>
+        <source>Color</source>
+        <translation>ملون</translation>
+    </message>
+    <message>
+        <location line="-21"/>
+        <source>Black and white (grayscale)</source>
+        <translation>أبيض وأسود (تدرج رمادي)</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>One side</source>
+        <translation>وجه واحد</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Both sides, turning on the long edge</source>
+        <translation>الوجهان، القلب على الحافة الطويلة</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Both sides, turning on the short edge</source>
+        <translation>الوجهان، القلب على الحافة القصيرة</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Print the annotations</source>
+        <translation>طباعة التعليقات</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Without them, only the pages of the PDF are printed, as they came</source>
+        <translation>بدونها تُطبع صفحات PDF فقط كما كانت</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Printer</source>
+        <translation>الطابعة</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Copies</source>
+        <translation>النسخ</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Pages</source>
+        <translation>الصفحات</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Paper</source>
+        <translation>الورق</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Orientation</source>
+        <translation>الاتجاه</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Scale</source>
+        <translation>المقياس</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Pages per sheet</source>
+        <translation>صفحات لكل ورقة</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Sides</source>
+        <translation>الأوجه</translation>
+    </message>
+    <message>
+        <location line="+28"/>
+        <source>Previous sheet</source>
+        <translation>الورقة السابقة</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Next sheet</source>
+        <translation>الورقة التالية</translation>
+    </message>
+    <message>
+        <location line="+240"/>
+        <source>Write the pages as numbers from 1 to %1, for example 1-3, 5.</source>
+        <translation>اكتب الصفحات كأرقام من 1 إلى %1، مثلاً 1-3، 5.</translation>
+    </message>
+    <message>
+        <location line="+25"/>
+        <source>Sheet %1 of %2</source>
+        <translation>الورقة %1 من %2</translation>
+    </message>
+    <message>
+        <location line="+77"/>
+        <source>Printer settings</source>
+        <translation>إعدادات الطابعة</translation>
+    </message>
+    <message>
+        <location line="+39"/>
+        <source>PDF (*.pdf)</source>
+        <translation>PDF (*.pdf)</translation>
+    </message>
+    <message>
+        <location line="+47"/>
+        <source>The printer could not be used. Check that it is on and connected.</source>
+        <translation>تعذر استخدام الطابعة. تحقق من أنها قيد التشغيل ومتصلة.</translation>
     </message>
 </context>
 <context>

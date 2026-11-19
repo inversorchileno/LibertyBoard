@@ -1020,7 +1020,7 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="+12"/>
         <source>Pages</source>
-        <translation type="unfinished"></translation>
+        <translation>Pages</translation>
     </message>
     <message>
         <location line="+3"/>

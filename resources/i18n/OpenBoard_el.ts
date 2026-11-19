@@ -1733,7 +1733,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+2111"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+2118"/>
         <source>That page is not in the document any more.</source>
         <translation>Αυτή η σελίδα δεν υπάρχει πια στο έγγραφο.</translation>
     </message>
@@ -2679,12 +2679,12 @@ Do you want to continue?</source>
 <context>
     <name>UBExportFullPDF</name>
     <message>
-        <location filename="../../src/adaptors/UBExportFullPDF.cpp" line="+261"/>
+        <location filename="../../src/adaptors/UBExportFullPDF.cpp" line="+262"/>
         <source>Export as PDF File</source>
         <translation>Εξαγωγή ως αρχείο PDF</translation>
     </message>
     <message>
-        <location line="+189"/>
+        <location line="+219"/>
         <source>Export to PDF</source>
         <translation>Εξαγωγή σε PDF</translation>
     </message>
@@ -3433,19 +3433,19 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+93"/>
-        <location line="+147"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+102"/>
+        <location line="+152"/>
         <source>Page Size</source>
         <translation>Μέγεθος σελίδας</translation>
     </message>
     <message>
-        <location line="-123"/>
-        <location line="+80"/>
+        <location line="-128"/>
+        <location line="+85"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
     </message>
     <message>
-        <location line="-64"/>
+        <location line="-69"/>
         <source>&amp;Home</source>
         <translation>&amp;Αρχική</translation>
     </message>
@@ -3463,7 +3463,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>Άνοιγμα/Εισαγωγή</translation>
     </message>
     <message>
-        <location line="+67"/>
+        <location line="+72"/>
         <source>&amp;Mode</source>
         <translation>&amp;Λειτουργία</translation>
     </message>
@@ -3478,7 +3478,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>Κλείσιμο εγγράφου</translation>
     </message>
     <message>
-        <location line="-65"/>
+        <location line="-70"/>
         <source>New board</source>
         <translation>Νέος πίνακας</translation>
     </message>
@@ -3523,6 +3523,16 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>Εξαγωγή σελίδων...</translation>
     </message>
     <message>
+        <location line="+4"/>
+        <source>Recognize text (OCR)...</source>
+        <translation>Αναγνώριση κειμένου (OCR)...</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Reads the text of the scanned pages, so that it can be searched and copied</source>
+        <translation>Διαβάζει το κείμενο των σαρωμένων σελίδων, ώστε να μπορεί να αναζητηθεί και να αντιγραφεί</translation>
+    </message>
+    <message>
         <location line="+30"/>
         <source>Double board</source>
         <translation>Διπλός πίνακας</translation>
@@ -3559,12 +3569,12 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     </message>
     <message>
         <location line="+66"/>
-        <location line="+278"/>
+        <location line="+299"/>
         <source>Saved</source>
         <translation>Αποθηκεύτηκε</translation>
     </message>
     <message>
-        <location line="-272"/>
+        <location line="-293"/>
         <source>Search...</source>
         <translation>Αναζήτηση...</translation>
     </message>
@@ -3574,7 +3584,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>Αναζήτηση λέξεων στο PDF</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+23"/>
         <source>Index</source>
         <translation>Περιεχόμενα</translation>
     </message>
@@ -3584,12 +3594,12 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>Τα περιεχόμενα του PDF: ένα κλικ σε έναν τίτλο οδηγεί στη σελίδα του</translation>
     </message>
     <message>
-        <location line="+22"/>
+        <location line="+31"/>
         <source>Hide or show the toolbar</source>
         <translation>Απόκρυψη ή εμφάνιση της γραμμής εργαλείων</translation>
     </message>
     <message>
-        <location line="+151"/>
+        <location line="+153"/>
         <source>Exit full screen</source>
         <translation>Έξοδος από πλήρη οθόνη</translation>
     </message>
@@ -3742,6 +3752,59 @@ Do you want to ignore these errors for this host?</source>
         <location line="+2"/>
         <source>Marker color</source>
         <translation>Χρώμα δείκτη</translation>
+    </message>
+</context>
+<context>
+    <name>UBOcrRunner</name>
+    <message>
+        <location filename="../../src/gui/UBOcrRunner.cpp" line="+101"/>
+        <location line="+124"/>
+        <source>Recognize text</source>
+        <translation>Αναγνώριση κειμένου</translation>
+    </message>
+    <message>
+        <location line="-115"/>
+        <source>This computer has no text reader. On Windows, the reader comes with the languages of Windows: check in the settings of Windows, Time and language, that Spanish is installed.</source>
+        <translation>Αυτός ο υπολογιστής δεν έχει αναγνώστη κειμένου. Στα Windows ο αναγνώστης έρχεται με τις γλώσσες των Windows: ελέγξτε στις ρυθμίσεις των Windows, Ώρα και γλώσσα, ότι η γλώσσα σας είναι εγκατεστημένη.</translation>
+    </message>
+    <message>
+        <location line="+27"/>
+        <source>Every page of this document already has its text: there is nothing to recognize.</source>
+        <translation>Όλες οι σελίδες αυτού του εγγράφου έχουν ήδη κείμενο: δεν υπάρχει κάτι για αναγνώριση.</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Recognizing the text of the scanned pages...</source>
+        <translation>Αναγνώριση του κειμένου των σαρωμένων σελίδων...</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Stop</source>
+        <translation>Διακοπή</translation>
+    </message>
+    <message>
+        <location line="+15"/>
+        <source>Recognizing the text: page %1 of %2</source>
+        <translation>Αναγνώριση κειμένου: σελίδα %1 από %2</translation>
+    </message>
+    <message>
+        <location line="+32"/>
+        <source>The text could not be recognized: %1</source>
+        <translation>Δεν ήταν δυνατή η αναγνώριση του κειμένου: %1</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>The text of %1 pages was recognized. The search and the copy of text now work on them, and a saved PDF keeps their text.</source>
+        <translation>Αναγνωρίστηκε το κείμενο %1 σελίδων. Η αναζήτηση και η αντιγραφή κειμένου λειτουργούν πλέον σε αυτές, και ένα αποθηκευμένο PDF κρατά το κείμενό τους.</translation>
+    </message>
+    <message>
+        <location line="+32"/>
+        <source>This PDF looks scanned: its pages are pictures, without text to search or copy. Recognize their text now?
+
+It can also be done later with Home &gt; Recognize text.</source>
+        <translation>Αυτό το PDF μοιάζει σαρωμένο: οι σελίδες του είναι εικόνες, χωρίς κείμενο για αναζήτηση ή αντιγραφή. Να αναγνωριστεί το κείμενο τώρα;
+
+Μπορεί να γίνει και αργότερα από Αρχική &gt; Αναγνώριση κειμένου.</translation>
     </message>
 </context>
 <context>
@@ -4271,6 +4334,212 @@ Dynamic width</source>
         <location line="-188"/>
         <source>Use all available displays</source>
         <translation>Χρήση όλων των διαθέσιμων οθονών</translation>
+    </message>
+</context>
+<context>
+    <name>UBPrintDialog</name>
+    <message>
+        <location filename="../../src/board/UBDocumentPrinter.cpp" line="+95"/>
+        <location line="+115"/>
+        <source>Print</source>
+        <translation>Εκτύπωση</translation>
+    </message>
+    <message>
+        <location line="-104"/>
+        <location line="+507"/>
+        <source>PDF file</source>
+        <translation>Αρχείο PDF</translation>
+    </message>
+    <message>
+        <location line="-496"/>
+        <source>Printer settings...</source>
+        <translation>Ρυθμίσεις εκτυπωτή...</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>The settings of the printer itself: tray, quality, and others</source>
+        <translation>Οι ρυθμίσεις του ίδιου του εκτυπωτή: δίσκος, ποιότητα και άλλα</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Collate</source>
+        <translation>Συρραφή</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Each copy complete, one after the other</source>
+        <translation>Κάθε αντίγραφο ολόκληρο, το ένα μετά το άλλο</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>All pages (%1)</source>
+        <translation>Όλες οι σελίδες (%1)</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Current page (%1)</source>
+        <translation>Τρέχουσα σελίδα (%1)</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Pages:</source>
+        <translation>Σελίδες:</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>For example 1-3, 5, 8-</source>
+        <translation>Για παράδειγμα 1-3, 5, 8-</translation>
+    </message>
+    <message>
+        <location line="+25"/>
+        <source>Automatic, as each page</source>
+        <translation>Αυτόματος, ανά σελίδα</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Portrait</source>
+        <translation>Κατακόρυφος</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Landscape</source>
+        <translation>Οριζόντιος</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Fit to the sheet</source>
+        <translation>Προσαρμογή στο φύλλο</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Actual size</source>
+        <translation>Πραγματικό μέγεθος</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>1 page per sheet</source>
+        <translation>1 σελίδα ανά φύλλο</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>2 pages per sheet</source>
+        <translation>2 σελίδες ανά φύλλο</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>4 pages per sheet</source>
+        <translation>4 σελίδες ανά φύλλο</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <location line="+22"/>
+        <source>Color</source>
+        <translation>Έγχρωμη</translation>
+    </message>
+    <message>
+        <location line="-21"/>
+        <source>Black and white (grayscale)</source>
+        <translation>Ασπρόμαυρη (κλίμακα του γκρι)</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>One side</source>
+        <translation>Μονής όψης</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Both sides, turning on the long edge</source>
+        <translation>Διπλής όψης, γύρισμα στη μεγάλη πλευρά</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Both sides, turning on the short edge</source>
+        <translation>Διπλής όψης, γύρισμα στη μικρή πλευρά</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Print the annotations</source>
+        <translation>Εκτύπωση σημειώσεων</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Without them, only the pages of the PDF are printed, as they came</source>
+        <translation>Χωρίς αυτές τυπώνονται μόνο οι σελίδες του PDF, όπως ήταν</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Printer</source>
+        <translation>Εκτυπωτής</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Copies</source>
+        <translation>Αντίγραφα</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Pages</source>
+        <translation>Σελίδες</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Paper</source>
+        <translation>Χαρτί</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Orientation</source>
+        <translation>Προσανατολισμός</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Scale</source>
+        <translation>Κλίμακα</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Pages per sheet</source>
+        <translation>Σελίδες ανά φύλλο</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Sides</source>
+        <translation>Όψεις</translation>
+    </message>
+    <message>
+        <location line="+28"/>
+        <source>Previous sheet</source>
+        <translation>Προηγούμενο φύλλο</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Next sheet</source>
+        <translation>Επόμενο φύλλο</translation>
+    </message>
+    <message>
+        <location line="+240"/>
+        <source>Write the pages as numbers from 1 to %1, for example 1-3, 5.</source>
+        <translation>Γράψτε τις σελίδες ως αριθμούς από 1 έως %1, για παράδειγμα 1-3, 5.</translation>
+    </message>
+    <message>
+        <location line="+25"/>
+        <source>Sheet %1 of %2</source>
+        <translation>Φύλλο %1 από %2</translation>
+    </message>
+    <message>
+        <location line="+77"/>
+        <source>Printer settings</source>
+        <translation>Ρυθμίσεις εκτυπωτή</translation>
+    </message>
+    <message>
+        <location line="+39"/>
+        <source>PDF (*.pdf)</source>
+        <translation>PDF (*.pdf)</translation>
+    </message>
+    <message>
+        <location line="+47"/>
+        <source>The printer could not be used. Check that it is on and connected.</source>
+        <translation>Δεν ήταν δυνατή η χρήση του εκτυπωτή. Ελέγξτε ότι είναι αναμμένος και συνδεδεμένος.</translation>
     </message>
 </context>
 <context>

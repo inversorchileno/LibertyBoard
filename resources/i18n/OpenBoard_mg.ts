@@ -1727,7 +1727,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+2111"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+2118"/>
         <source>That page is not in the document any more.</source>
         <translation>Tsy ao anaty antontan-taratasy intsony io pejy io.</translation>
     </message>
@@ -2653,12 +2653,12 @@ Do you want to continue?</source>
 <context>
     <name>UBExportFullPDF</name>
     <message>
-        <location filename="../../src/adaptors/UBExportFullPDF.cpp" line="+261"/>
+        <location filename="../../src/adaptors/UBExportFullPDF.cpp" line="+262"/>
         <source>Export as PDF File</source>
         <translation>Alefa ho rakitra PDF </translation>
     </message>
     <message>
-        <location line="+189"/>
+        <location line="+219"/>
         <source>Export to PDF</source>
         <translation>Alefa ho PDF</translation>
     </message>
@@ -3407,19 +3407,19 @@ Alaina sy apetraka izao ve? Hotehirizin&apos;ny LibertyBoard ny antontan-taratas
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+93"/>
-        <location line="+147"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+102"/>
+        <location line="+152"/>
         <source>Page Size</source>
         <translation>Haben&apos;ny pejy</translation>
     </message>
     <message>
-        <location line="-123"/>
-        <location line="+80"/>
+        <location line="-128"/>
+        <location line="+85"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
     </message>
     <message>
-        <location line="-64"/>
+        <location line="-69"/>
         <source>&amp;Home</source>
         <translation>&amp;Fandraisana</translation>
     </message>
@@ -3437,7 +3437,7 @@ Alaina sy apetraka izao ve? Hotehirizin&apos;ny LibertyBoard ny antontan-taratas
         <translation>Hanokatra/Hampiditra</translation>
     </message>
     <message>
-        <location line="+67"/>
+        <location line="+72"/>
         <source>&amp;Mode</source>
         <translation>&amp;Fomba</translation>
     </message>
@@ -3452,7 +3452,7 @@ Alaina sy apetraka izao ve? Hotehirizin&apos;ny LibertyBoard ny antontan-taratas
         <translation>Hanidy ny antontan-taratasy</translation>
     </message>
     <message>
-        <location line="-65"/>
+        <location line="-70"/>
         <source>New board</source>
         <translation>Solaitrabe vaovao</translation>
     </message>
@@ -3497,6 +3497,16 @@ Alaina sy apetraka izao ve? Hotehirizin&apos;ny LibertyBoard ny antontan-taratas
         <translation>Esory ireo pejy...</translation>
     </message>
     <message>
+        <location line="+4"/>
+        <source>Recognize text (OCR)...</source>
+        <translation>Fantaro ny lahatsoratra (OCR)...</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Reads the text of the scanned pages, so that it can be searched and copied</source>
+        <translation>Vakiany ny lahatsoratry ny pejy voasikana, mba hahafahana mikaroka sy mandika azy</translation>
+    </message>
+    <message>
         <location line="+30"/>
         <source>Double board</source>
         <translation>Solaitrabe roa</translation>
@@ -3533,12 +3543,12 @@ Alaina sy apetraka izao ve? Hotehirizin&apos;ny LibertyBoard ny antontan-taratas
     </message>
     <message>
         <location line="+66"/>
-        <location line="+278"/>
+        <location line="+299"/>
         <source>Saved</source>
         <translation>Voatahiry</translation>
     </message>
     <message>
-        <location line="-272"/>
+        <location line="-293"/>
         <source>Search...</source>
         <translation>Hikaroka...</translation>
     </message>
@@ -3548,7 +3558,7 @@ Alaina sy apetraka izao ve? Hotehirizin&apos;ny LibertyBoard ny antontan-taratas
         <translation>Hikaroka teny ao amin&apos;ny PDF</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+23"/>
         <source>Index</source>
         <translation>Fizahan-takila</translation>
     </message>
@@ -3558,12 +3568,12 @@ Alaina sy apetraka izao ve? Hotehirizin&apos;ny LibertyBoard ny antontan-taratas
         <translation>Ny fizahan-takilan&apos;ny PDF: ny fipihana lohateny iray dia mitondra any amin&apos;ny pejiny</translation>
     </message>
     <message>
-        <location line="+22"/>
+        <location line="+31"/>
         <source>Hide or show the toolbar</source>
         <translation>Hanafina na haneho ny fitaovana</translation>
     </message>
     <message>
-        <location line="+151"/>
+        <location line="+153"/>
         <source>Exit full screen</source>
         <translation>Hiala amin&apos;ny efijery feno</translation>
     </message>
@@ -3716,6 +3726,59 @@ Tena tsy te hiraharaha an&apos;ireo tsy mety ho an&apos;ilay milina ve ianao?</t
         <location line="+2"/>
         <source>Marker color</source>
         <translation>Lokon&apos;ny marika</translation>
+    </message>
+</context>
+<context>
+    <name>UBOcrRunner</name>
+    <message>
+        <location filename="../../src/gui/UBOcrRunner.cpp" line="+101"/>
+        <location line="+124"/>
+        <source>Recognize text</source>
+        <translation>Fantaro ny lahatsoratra</translation>
+    </message>
+    <message>
+        <location line="-115"/>
+        <source>This computer has no text reader. On Windows, the reader comes with the languages of Windows: check in the settings of Windows, Time and language, that Spanish is installed.</source>
+        <translation>Tsy manana mpamaky lahatsoratra ity solosaina ity. Amin&apos;ny Windows, miaraka amin&apos;ny fiteny Windows ny mpamaky: hamarino ao amin&apos;ny fandrindrana Windows, Ora sy fiteny, fa voapetraka ny fiteninao.</translation>
+    </message>
+    <message>
+        <location line="+27"/>
+        <source>Every page of this document already has its text: there is nothing to recognize.</source>
+        <translation>Efa manana lahatsoratra ny pejy rehetra amin&apos;ity antontan-taratasy ity: tsy misy fantarina.</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Recognizing the text of the scanned pages...</source>
+        <translation>Famantarana ny lahatsoratry ny pejy voasikana...</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Stop</source>
+        <translation>Ajanony</translation>
+    </message>
+    <message>
+        <location line="+15"/>
+        <source>Recognizing the text: page %1 of %2</source>
+        <translation>Famantarana ny lahatsoratra: pejy %1 amin&apos;ny %2</translation>
+    </message>
+    <message>
+        <location line="+32"/>
+        <source>The text could not be recognized: %1</source>
+        <translation>Tsy afaka namantatra ny lahatsoratra: %1</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>The text of %1 pages was recognized. The search and the copy of text now work on them, and a saved PDF keeps their text.</source>
+        <translation>Fantatra ny lahatsoratry ny pejy %1. Mandeha amin&apos;izy ireo izao ny fikarohana sy ny fandikana lahatsoratra, ary mitazona ny lahatsorany ny PDF voatahiry.</translation>
+    </message>
+    <message>
+        <location line="+32"/>
+        <source>This PDF looks scanned: its pages are pictures, without text to search or copy. Recognize their text now?
+
+It can also be done later with Home &gt; Recognize text.</source>
+        <translation>Toa voasikana ity PDF ity: sary ny pejiny, tsy misy lahatsoratra hokarohina na hadika. Hamantatra ny lahatsorany izao ve?
+
+Azo atao any aoriana ihany koa amin&apos;ny Fandraisana &gt; Fantaro ny lahatsoratra.</translation>
     </message>
 </context>
 <context>
@@ -4225,6 +4288,212 @@ Sakany miova</translation>
         <location line="-188"/>
         <source>Use all available displays</source>
         <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UBPrintDialog</name>
+    <message>
+        <location filename="../../src/board/UBDocumentPrinter.cpp" line="+95"/>
+        <location line="+115"/>
+        <source>Print</source>
+        <translation>Ataovy pirinty</translation>
+    </message>
+    <message>
+        <location line="-104"/>
+        <location line="+507"/>
+        <source>PDF file</source>
+        <translation>Rakitra PDF</translation>
+    </message>
+    <message>
+        <location line="-496"/>
+        <source>Printer settings...</source>
+        <translation>Fandrindrana ny mpanonta...</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>The settings of the printer itself: tray, quality, and others</source>
+        <translation>Ny fandrindran&apos;ny mpanonta mihitsy: lovia, kalitao sy ny sisa</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Collate</source>
+        <translation>Ampifanaraho</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Each copy complete, one after the other</source>
+        <translation>Feno ny kopia tsirairay, mifanesy</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>All pages (%1)</source>
+        <translation>Pejy rehetra (%1)</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Current page (%1)</source>
+        <translation>Pejy ankehitriny (%1)</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Pages:</source>
+        <translation>Pejy:</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>For example 1-3, 5, 8-</source>
+        <translation>Ohatra 1-3, 5, 8-</translation>
+    </message>
+    <message>
+        <location line="+25"/>
+        <source>Automatic, as each page</source>
+        <translation>Mandeha ho azy, araka ny pejy tsirairay</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Portrait</source>
+        <translation>Mitsangana</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Landscape</source>
+        <translation>Mandry</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Fit to the sheet</source>
+        <translation>Ampifanaraho amin&apos;ny taratasy</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Actual size</source>
+        <translation>Habe tena izy</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>1 page per sheet</source>
+        <translation>Pejy 1 isaky ny taratasy</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>2 pages per sheet</source>
+        <translation>Pejy 2 isaky ny taratasy</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>4 pages per sheet</source>
+        <translation>Pejy 4 isaky ny taratasy</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <location line="+22"/>
+        <source>Color</source>
+        <translation>Miloko</translation>
+    </message>
+    <message>
+        <location line="-21"/>
+        <source>Black and white (grayscale)</source>
+        <translation>Mainty sy fotsy (volondavenona)</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>One side</source>
+        <translation>Lafiny iray</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Both sides, turning on the long edge</source>
+        <translation>Lafiny roa, mivadika amin&apos;ny sisiny lava</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Both sides, turning on the short edge</source>
+        <translation>Lafiny roa, mivadika amin&apos;ny sisiny fohy</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Print the annotations</source>
+        <translation>Ataovy pirinty ny fanamarihana</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Without them, only the pages of the PDF are printed, as they came</source>
+        <translation>Raha tsy misy azy, ny pejin&apos;ny PDF ihany no atao pirinty, toy ny niaviany</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Printer</source>
+        <translation>Mpanonta</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Copies</source>
+        <translation>Kopia</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Pages</source>
+        <translation>Pejy</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Paper</source>
+        <translation>Taratasy</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Orientation</source>
+        <translation>Fitodiana</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Scale</source>
+        <translation>Ambaratonga</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Pages per sheet</source>
+        <translation>Pejy isaky ny taratasy</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Sides</source>
+        <translation>Lafiny</translation>
+    </message>
+    <message>
+        <location line="+28"/>
+        <source>Previous sheet</source>
+        <translation>Taratasy teo aloha</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Next sheet</source>
+        <translation>Taratasy manaraka</translation>
+    </message>
+    <message>
+        <location line="+240"/>
+        <source>Write the pages as numbers from 1 to %1, for example 1-3, 5.</source>
+        <translation>Soraty ho isa manomboka amin&apos;ny 1 ka hatramin&apos;ny %1 ireo pejy, ohatra 1-3, 5.</translation>
+    </message>
+    <message>
+        <location line="+25"/>
+        <source>Sheet %1 of %2</source>
+        <translation>Taratasy %1 amin&apos;ny %2</translation>
+    </message>
+    <message>
+        <location line="+77"/>
+        <source>Printer settings</source>
+        <translation>Fandrindrana ny mpanonta</translation>
+    </message>
+    <message>
+        <location line="+39"/>
+        <source>PDF (*.pdf)</source>
+        <translation>PDF (*.pdf)</translation>
+    </message>
+    <message>
+        <location line="+47"/>
+        <source>The printer could not be used. Check that it is on and connected.</source>
+        <translation>Tsy azo nampiasaina ny mpanonta. Hamarino fa mandeha sy mifandray izy.</translation>
     </message>
 </context>
 <context>

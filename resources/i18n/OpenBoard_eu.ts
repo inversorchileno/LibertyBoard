@@ -1851,7 +1851,7 @@ Segurtasun egiaztapena gainidatzi eta jarraitu nahi duzu?</translation>
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+2111"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+2118"/>
         <source>That page is not in the document any more.</source>
         <translation>Orri hori ez dago jada dokumentuan.</translation>
     </message>
@@ -2825,12 +2825,12 @@ Do you want to continue?</source>
 <context>
     <name>UBExportFullPDF</name>
     <message>
-        <location filename="../../src/adaptors/UBExportFullPDF.cpp" line="+261"/>
+        <location filename="../../src/adaptors/UBExportFullPDF.cpp" line="+262"/>
         <source>Export as PDF File</source>
         <translation>Esportatu PDF fitxategi gisa</translation>
     </message>
     <message>
-        <location line="+189"/>
+        <location line="+219"/>
         <source>Export to PDF</source>
         <translation>Esportatu PDF gisa</translation>
     </message>
@@ -3591,19 +3591,19 @@ Orain deskargatu eta instalatu? LibertyBoard-ek zure dokumentuak gordeko ditu, i
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+93"/>
-        <location line="+147"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+102"/>
+        <location line="+152"/>
         <source>Page Size</source>
         <translation>Orriaren tamaina</translation>
     </message>
     <message>
-        <location line="-123"/>
-        <location line="+80"/>
+        <location line="-128"/>
+        <location line="+85"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
     </message>
     <message>
-        <location line="-64"/>
+        <location line="-69"/>
         <source>&amp;Home</source>
         <translation>&amp;Hasiera</translation>
     </message>
@@ -3621,7 +3621,7 @@ Orain deskargatu eta instalatu? LibertyBoard-ek zure dokumentuak gordeko ditu, i
         <translation>Ireki/Inportatu</translation>
     </message>
     <message>
-        <location line="+67"/>
+        <location line="+72"/>
         <source>&amp;Mode</source>
         <translation>&amp;Modua</translation>
     </message>
@@ -3636,7 +3636,7 @@ Orain deskargatu eta instalatu? LibertyBoard-ek zure dokumentuak gordeko ditu, i
         <translation>Itxi dokumentua</translation>
     </message>
     <message>
-        <location line="-65"/>
+        <location line="-70"/>
         <source>New board</source>
         <translation>Arbel berria</translation>
     </message>
@@ -3681,6 +3681,16 @@ Orain deskargatu eta instalatu? LibertyBoard-ek zure dokumentuak gordeko ditu, i
         <translation>Atera orriak...</translation>
     </message>
     <message>
+        <location line="+4"/>
+        <source>Recognize text (OCR)...</source>
+        <translation>Ezagutu testua (OCR)...</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Reads the text of the scanned pages, so that it can be searched and copied</source>
+        <translation>Eskaneatutako orrien testua irakurtzen du, bilatu eta kopiatu ahal izateko</translation>
+    </message>
+    <message>
         <location line="+30"/>
         <source>Double board</source>
         <translation>Arbel bikoitza</translation>
@@ -3717,12 +3727,12 @@ Orain deskargatu eta instalatu? LibertyBoard-ek zure dokumentuak gordeko ditu, i
     </message>
     <message>
         <location line="+66"/>
-        <location line="+278"/>
+        <location line="+299"/>
         <source>Saved</source>
         <translation>Gordeta</translation>
     </message>
     <message>
-        <location line="-272"/>
+        <location line="-293"/>
         <source>Search...</source>
         <translation>Bilatu...</translation>
     </message>
@@ -3732,7 +3742,7 @@ Orain deskargatu eta instalatu? LibertyBoard-ek zure dokumentuak gordeko ditu, i
         <translation>Bilatu hitzak PDFan</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+23"/>
         <source>Index</source>
         <translation>Aurkibidea</translation>
     </message>
@@ -3742,12 +3752,12 @@ Orain deskargatu eta instalatu? LibertyBoard-ek zure dokumentuak gordeko ditu, i
         <translation>PDFaren aurkibidea: izenburu batean klik eginez gero, haren orrira joaten da</translation>
     </message>
     <message>
-        <location line="+22"/>
+        <location line="+31"/>
         <source>Hide or show the toolbar</source>
         <translation>Ezkutatu edo erakutsi tresna-barra</translation>
     </message>
     <message>
-        <location line="+151"/>
+        <location line="+153"/>
         <source>Exit full screen</source>
         <translation>Irten pantaila osotik</translation>
     </message>
@@ -3900,6 +3910,59 @@ Ostalari onentzako errore hauek ez-ikusi nahi dituzu?</translation>
         <location line="+2"/>
         <source>Marker color</source>
         <translation>Markatzailearen kolorea</translation>
+    </message>
+</context>
+<context>
+    <name>UBOcrRunner</name>
+    <message>
+        <location filename="../../src/gui/UBOcrRunner.cpp" line="+101"/>
+        <location line="+124"/>
+        <source>Recognize text</source>
+        <translation>Ezagutu testua</translation>
+    </message>
+    <message>
+        <location line="-115"/>
+        <source>This computer has no text reader. On Windows, the reader comes with the languages of Windows: check in the settings of Windows, Time and language, that Spanish is installed.</source>
+        <translation>Ordenagailu honek ez du testu-irakurgailurik. Windows-en, irakurgailua Windows-en hizkuntzekin dator: egiaztatu Windows-en ezarpenetan, Ordua eta hizkuntza atalean, zure hizkuntza instalatuta dagoela.</translation>
+    </message>
+    <message>
+        <location line="+27"/>
+        <source>Every page of this document already has its text: there is nothing to recognize.</source>
+        <translation>Dokumentu honetako orri guztiek dute testua: ez dago ezer ezagutzeko.</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Recognizing the text of the scanned pages...</source>
+        <translation>Eskaneatutako orrien testua ezagutzen...</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Stop</source>
+        <translation>Gelditu</translation>
+    </message>
+    <message>
+        <location line="+15"/>
+        <source>Recognizing the text: page %1 of %2</source>
+        <translation>Testua ezagutzen: %1. orria %2(e)tik</translation>
+    </message>
+    <message>
+        <location line="+32"/>
+        <source>The text could not be recognized: %1</source>
+        <translation>Ezin izan da testua ezagutu: %1</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>The text of %1 pages was recognized. The search and the copy of text now work on them, and a saved PDF keeps their text.</source>
+        <translation>%1 orriren testua ezagutu da. Testua bilatzea eta kopiatzea badabil haietan, eta gordetako PDF batek testua gordetzen du.</translation>
+    </message>
+    <message>
+        <location line="+32"/>
+        <source>This PDF looks scanned: its pages are pictures, without text to search or copy. Recognize their text now?
+
+It can also be done later with Home &gt; Recognize text.</source>
+        <translation>PDF hau eskaneatua dirudi: haren orriak irudiak dira, bilatu edo kopiatzeko testurik gabe. Haien testua orain ezagutu?
+
+Geroago ere egin daiteke Hasiera &gt; Ezagutu testua erabiliz.</translation>
     </message>
 </context>
 <context>
@@ -4433,6 +4496,212 @@ Zabalera dinamikoa</translation>
         <location line="-188"/>
         <source>Use all available displays</source>
         <translation type="unfinished">Erabili pantaila eskuragarri guztiak</translation>
+    </message>
+</context>
+<context>
+    <name>UBPrintDialog</name>
+    <message>
+        <location filename="../../src/board/UBDocumentPrinter.cpp" line="+95"/>
+        <location line="+115"/>
+        <source>Print</source>
+        <translation>Inprimatu</translation>
+    </message>
+    <message>
+        <location line="-104"/>
+        <location line="+507"/>
+        <source>PDF file</source>
+        <translation>PDF fitxategia</translation>
+    </message>
+    <message>
+        <location line="-496"/>
+        <source>Printer settings...</source>
+        <translation>Inprimagailuaren ezarpenak...</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>The settings of the printer itself: tray, quality, and others</source>
+        <translation>Inprimagailuaren beraren ezarpenak: erretilua, kalitatea eta beste</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Collate</source>
+        <translation>Bildu</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Each copy complete, one after the other</source>
+        <translation>Kopia bakoitza osorik, bata bestearen ondoren</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>All pages (%1)</source>
+        <translation>Orri guztiak (%1)</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Current page (%1)</source>
+        <translation>Uneko orria (%1)</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Pages:</source>
+        <translation>Orriak:</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>For example 1-3, 5, 8-</source>
+        <translation>Adibidez 1-3, 5, 8-</translation>
+    </message>
+    <message>
+        <location line="+25"/>
+        <source>Automatic, as each page</source>
+        <translation>Automatikoa, orri bakoitzaren arabera</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Portrait</source>
+        <translation>Bertikala</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Landscape</source>
+        <translation>Horizontala</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Fit to the sheet</source>
+        <translation>Doitu orrira</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Actual size</source>
+        <translation>Benetako tamaina</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>1 page per sheet</source>
+        <translation>Orri 1 orrialde bakoitzeko</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>2 pages per sheet</source>
+        <translation>2 orri orrialde bakoitzeko</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>4 pages per sheet</source>
+        <translation>4 orri orrialde bakoitzeko</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <location line="+22"/>
+        <source>Color</source>
+        <translation>Kolorea</translation>
+    </message>
+    <message>
+        <location line="-21"/>
+        <source>Black and white (grayscale)</source>
+        <translation>Zuri-beltza (gris-eskala)</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>One side</source>
+        <translation>Alde bat</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Both sides, turning on the long edge</source>
+        <translation>Bi aldeak, ertz luzetik biratuz</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Both sides, turning on the short edge</source>
+        <translation>Bi aldeak, ertz laburretik biratuz</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Print the annotations</source>
+        <translation>Inprimatu oharrak</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Without them, only the pages of the PDF are printed, as they came</source>
+        <translation>Haiek gabe, PDFaren orriak bakarrik inprimatzen dira, zeuden bezala</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Printer</source>
+        <translation>Inprimagailua</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Copies</source>
+        <translation>Kopiak</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Pages</source>
+        <translation>Orriak</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Paper</source>
+        <translation>Papera</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Orientation</source>
+        <translation>Orientazioa</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Scale</source>
+        <translation>Eskala</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Pages per sheet</source>
+        <translation>Orri orrialde bakoitzeko</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Sides</source>
+        <translation>Aldeak</translation>
+    </message>
+    <message>
+        <location line="+28"/>
+        <source>Previous sheet</source>
+        <translation>Aurreko orrialdea</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Next sheet</source>
+        <translation>Hurrengo orrialdea</translation>
+    </message>
+    <message>
+        <location line="+240"/>
+        <source>Write the pages as numbers from 1 to %1, for example 1-3, 5.</source>
+        <translation>Idatzi orriak 1etik %1era bitarteko zenbaki gisa, adibidez 1-3, 5.</translation>
+    </message>
+    <message>
+        <location line="+25"/>
+        <source>Sheet %1 of %2</source>
+        <translation>%1. orrialdea %2(e)tik</translation>
+    </message>
+    <message>
+        <location line="+77"/>
+        <source>Printer settings</source>
+        <translation>Inprimagailuaren ezarpenak</translation>
+    </message>
+    <message>
+        <location line="+39"/>
+        <source>PDF (*.pdf)</source>
+        <translation>PDF (*.pdf)</translation>
+    </message>
+    <message>
+        <location line="+47"/>
+        <source>The printer could not be used. Check that it is on and connected.</source>
+        <translation>Ezin izan da inprimagailua erabili. Egiaztatu piztuta eta konektatuta dagoela.</translation>
     </message>
 </context>
 <context>
