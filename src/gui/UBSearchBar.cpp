@@ -182,46 +182,53 @@ void UBSearchBar::hideEvent(QHideEvent* event)
     QFrame::hideEvent(event);
 }
 
-void UBSearchBar::placeInWindow()
+QRect UBSearchBar::panelRect(QWidget* window, int width, bool besideTools)
 {
-    auto window = qobject_cast<QMainWindow*>(parentWidget());
-    int top = window && window->menuBar() ? window->menuBar()->geometry().bottom() + 6 : 6;
+    auto mainWindow = qobject_cast<QMainWindow*>(window);
+    int top = mainWindow && mainWindow->menuBar() ? mainWindow->menuBar()->geometry().bottom() + 6 : 6;
     UBBoardController* board = UBApplication::boardController;
 
     // Under the toolbar, on the board, so that no button is hidden.
     if (board && board->controlView() && board->controlView()->isVisible())
     {
-        top = qMax(top, board->controlView()->mapTo(parentWidget(), QPoint()).y() + 8);
+        top = qMax(top, board->controlView()->mapTo(window, QPoint()).y() + 8);
     }
 
-    int right = parentWidget()->width() - 12;
+    int right = window->width() - 12;
 
     // Beside the tools when they stand on the right of the board, not over them.
     QWidget* tools = board && board->paletteManager() ? board->paletteManager()->stylusPalette() : nullptr;
 
-    if (tools && tools->isVisible() && mList->isVisible())
+    if (besideTools && tools && tools->isVisible())
     {
-        const QRect toolsRect(tools->mapTo(parentWidget(), QPoint()), tools->size());
+        const QRect toolsRect(tools->mapTo(window, QPoint()), tools->size());
 
-        if (toolsRect.left() > parentWidget()->width() / 2)
+        if (toolsRect.left() > window->width() / 2)
         {
             right = toolsRect.left() - 8;
         }
     }
 
+    // Down to the bottom of the board.
+    const int height = qMax(220, window->height() - top - 60);
+    return QRect(right - width, top, width, height);
+}
+
+void UBSearchBar::placeInWindow()
+{
     if (mList->isVisible())
     {
-        // A panel down to the bottom of the board.
-        setFixedSize(360, qMax(220, parentWidget()->height() - top - 60));
-    }
-    else
-    {
-        setMinimumSize(0, 0);
-        setMaximumSize(QWIDGETSIZE_MAX, QWIDGETSIZE_MAX);
-        adjustSize();
+        const QRect rect = panelRect(parentWidget(), 360, true);
+        setFixedSize(rect.size());
+        move(rect.topLeft());
+        return;
     }
 
-    move(right - width(), top);
+    setMinimumSize(0, 0);
+    setMaximumSize(QWIDGETSIZE_MAX, QWIDGETSIZE_MAX);
+    adjustSize();
+    const QRect rect = panelRect(parentWidget(), width(), false);
+    move(rect.topLeft());
 }
 
 void UBSearchBar::step(int direction)

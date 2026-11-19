@@ -53,6 +53,7 @@
 #include "gui/UBToolOptionsArrows.h"
 #include "gui/UBPageButtons.h"
 #include "gui/UBPageIndicator.h"
+#include "gui/UBPdfOutlinePanel.h"
 #include "gui/UBSearchBar.h"
 #include "gui/UBToolOptionsBar.h"
 
@@ -354,6 +355,21 @@ void UBMainMenu::createCornerButtons()
     searchButton->setIconSize(QSize(18, 18));
     searchButton->setStyleSheet(buttonStyle);
     layout->addWidget(searchButton);
+
+    // The index of the PDF, beside the search; one panel at a time.
+    auto outlinePanel = new UBPdfOutlinePanel(mMainWindow);
+    auto outlineAction = new QAction(QIcon(":/images/toolbar/outline.svg"), tr("Index"), mMainWindow);
+    outlineAction->setToolTip(tr("The index of the PDF: a click on a title goes to its page"));
+    connect(outlineAction, &QAction::triggered, searchBar, &QWidget::hide);
+    connect(outlineAction, &QAction::triggered, outlinePanel, &UBPdfOutlinePanel::open);
+    connect(searchAction, &QAction::triggered, outlinePanel, &QWidget::hide);
+
+    auto outlineButton = new QToolButton(corner);
+    outlineButton->setDefaultAction(outlineAction);
+    outlineButton->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+    outlineButton->setIconSize(QSize(18, 18));
+    outlineButton->setStyleSheet(buttonStyle);
+    layout->insertWidget(layout->indexOf(searchButton), outlineButton);
 
     // Goes to the desktop mode, like the board button of the desktop palette goes back.
     auto desktopButton = new QToolButton(corner);

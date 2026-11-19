@@ -55,6 +55,8 @@ target_sources(${PROJECT_NAME} PRIVATE
     UBPageButtons.h
     UBPageIndicator.cpp
     UBPageIndicator.h
+    UBPdfOutlinePanel.cpp
+    UBPdfOutlinePanel.h
     UBScreenshot.cpp
     UBScreenshot.h
     UBSearchBar.cpp

@@ -53,6 +53,12 @@ class UBSearchBar : public QFrame
 public:
     explicit UBSearchBar(QWidget* parent);
 
+    /**
+     * @brief Where a panel of the board stands: on the right, under the
+     * toolbar, beside the tools when they are on the right too.
+     */
+    static QRect panelRect(QWidget* window, int width, bool besideTools);
+
 public slots:
     /** @brief Shows the box, or a message when the board shows no PDF. */
     void open();

@@ -30,6 +30,8 @@
 #include "UBBoardView.h"
 
 #include <QClipboard>
+#include <QDesktopServices>
+#include <QMessageBox>
 
 #include <QtGlobal>
 #include <QtGui>
@@ -1161,6 +1163,9 @@ void UBBoardView::mousePressEvent (QMouseEvent *event)
             if (scene()->backgroundObject() == getMovingItem())
                 setMovingItem(NULL);
 
+            // A click there may follow a link of the PDF.
+            mSelectorOnNothing = !getMovingItem();
+
             connect(&mLongPressTimer, SIGNAL(timeout()), this, SLOT(longPressEvent()));
             if (!getMovingItem() && !mController->cacheIsVisible())
                 mLongPressTimer.start();
@@ -1263,6 +1268,24 @@ void UBBoardView::mouseMoveEvent (QMouseEvent *event)
     //    }
 
     //  QTime mouseMoveTime = QTime::currentTime();
+
+    // A hand over a link of the PDF with the selector, to show it can be followed.
+    if (event->buttons() == Qt::NoButton && bIsControl && !bIsDesktop
+            && UBDrawingController::drawingController()->stylusTool() == UBStylusTool::Selector)
+    {
+        const bool overLink = pdfLinkAt(event->pos()).has_value();
+
+        if (overLink != mOverPdfLink)
+        {
+            mOverPdfLink = overLink;
+            viewport()->setCursor(overLink ? QCursor(Qt::PointingHandCursor) : UBResources::resources()->arrowCursor);
+        }
+    }
+    else if (mOverPdfLink && event->buttons() == Qt::NoButton)
+    {
+        mOverPdfLink = false;
+    }
+
     if(!mIsDragInProgress && ((mapToScene(event->pos()) - mLastPressedMousePos).manhattanLength() < QApplication::startDragDistance())) {
         return;
     }
@@ -1658,6 +1681,17 @@ void UBBoardView::mouseReleaseEvent (QMouseEvent *event)
     {
         copyPdfText(mUBRubberBand->geometry());
     }
+    else if (!mUBRubberBand && currentTool == UBStylusTool::Selector && mSelectorOnNothing && bIsControl && !bIsDesktop
+             && (eventPosition.toPoint() - mMouseDownPos).manhattanLength() < QApplication::startDragDistance())
+    {
+        // A click, not a drag, on a link of the PDF.
+        if (const auto link = pdfLinkAt(eventPosition.toPoint()))
+        {
+            followPdfLink(*link);
+        }
+    }
+
+    mSelectorOnNothing = false;
 
     if (mUBRubberBand) {
         mUBRubberBand->hide();
@@ -1768,6 +1802,91 @@ bool UBBoardView::turnPageWithWheel(QWheelEvent* wheelEvent)
     switchToNeighbourPage();
     UBApplication::applicationController->adjustDisplayView();
     return true;
+}
+
+bool UBBoardView::pdfPointAt(const QPoint& viewPoint, UBGraphicsPDFItem** item, QPointF* onPage)
+{
+    auto pdfItem = scene() ? qgraphicsitem_cast<UBGraphicsPDFItem*>(scene()->backgroundObject()) : nullptr;
+
+    if (!pdfItem)
+    {
+        return false;
+    }
+
+    const QPointF onItem = pdfItem->mapFromScene(mapToScene(viewPoint));
+    const QRectF bounds = pdfItem->boundingRect();
+    const QSizeF points = pdfItem->pageSize();
+
+    if (!bounds.contains(onItem) || points.isEmpty())
+    {
+        return false;
+    }
+
+    *item = pdfItem;
+    *onPage = QPointF((onItem.x() - bounds.left()) * points.width() / bounds.width(),
+                      (onItem.y() - bounds.top()) * points.height() / bounds.height());
+    return true;
+}
+
+std::optional<UBPdfNavigation::Link> UBBoardView::pdfLinkAt(const QPoint& viewPoint)
+{
+    UBGraphicsPDFItem* item = nullptr;
+    QPointF onPage;
+
+    if (!mController || !pdfPointAt(viewPoint, &item, &onPage))
+    {
+        return std::nullopt;
+    }
+
+    // The links of the page are read once, while it is shown.
+    const QString pdfFile = UBPdfNavigation::pdfFileOf(mController->selectedDocument(), item);
+    const QString key = pdfFile + "#" + QString::number(item->pageNumber());
+
+    if (key != mPdfLinksOf)
+    {
+        mPdfLinksOf = key;
+        mPdfLinks = UBPdfNavigation(pdfFile).links(item->pageNumber());
+    }
+
+    for (const UBPdfNavigation::Link& link : std::as_const(mPdfLinks))
+    {
+        if (link.rect.contains(onPage))
+        {
+            return link;
+        }
+    }
+
+    return std::nullopt;
+}
+
+void UBBoardView::followPdfLink(const UBPdfNavigation::Link& link)
+{
+    if (link.page > 0)
+    {
+        const QString pdfFile = mPdfLinksOf.section('#', 0, 0);
+
+        if (!UBPdfNavigation::goToPdfPage(pdfFile, link.page))
+        {
+            UBApplication::showMessage(tr("That page is not in the document any more."));
+        }
+
+        return;
+    }
+
+    const QUrl url(link.uri);
+
+    if (!url.isValid() || url.scheme().isEmpty())
+    {
+        return;
+    }
+
+    // An address of a document opens only when the user agrees.
+    const auto answer = QMessageBox::question(this, tr("Open link"), tr("Open this address?\n\n%1").arg(link.uri));
+
+    if (answer == QMessageBox::Yes)
+    {
+        QDesktopServices::openUrl(url);
+    }
 }
 
 void UBBoardView::copyPdfText(const QRect& band)

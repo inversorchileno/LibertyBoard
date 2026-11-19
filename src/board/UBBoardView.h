@@ -36,10 +36,14 @@
 #include <QGraphicsView>
 #include <QRubberBand>
 
+#include <optional>
+
 #include "core/UB.h"
 #include "domain/UBGraphicsDelegateFrame.h"
+#include "pdf/UBPdfNavigation.h"
 
 class UBBoardController;
+class UBGraphicsPDFItem;
 class UBGraphicsScene;
 class UBGraphicsWidgetItem;
 class UBRubberBand;
@@ -167,6 +171,18 @@ private:
          */
         void copyPdfText(const QRect& band);
 
+        /**
+         * @brief The PDF page under a point of the view, and the point in
+         * points of that page as it is shown. False where there is none.
+         */
+        bool pdfPointAt(const QPoint& viewPoint, UBGraphicsPDFItem** item, QPointF* onPage);
+
+        /** @brief The link of the PDF under a point of the view, or none. */
+        std::optional<UBPdfNavigation::Link> pdfLinkAt(const QPoint& viewPoint);
+
+        /** @brief Goes to the page, or opens the address, of a link of the PDF. */
+        void followPdfLink(const UBPdfNavigation::Link& link);
+
         /** @brief The space between two pages, in units of the page. */
         qreal pageGap() const;
 
@@ -175,6 +191,10 @@ private:
         int mLastNeighbourIndex{-1};
         int mNeighbourRepaints{0};
         int mWheelTurn{0};
+        bool mSelectorOnNothing{false};
+        bool mOverPdfLink{false};
+        QString mPdfLinksOf;
+        QList<UBPdfNavigation::Link> mPdfLinks;
 
 private:
 
