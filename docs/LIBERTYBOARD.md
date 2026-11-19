@@ -172,10 +172,11 @@ En modo escritorio son paneles emergentes; en modo pizarra, un panel fijo a la d
 - **Copiar texto del PDF**: con la flecha de selección, un recuadro donde no hay objetos copia el texto del PDF (palabras completas) al portapapeles.
 - **Índice y enlaces** (`src/pdf/UBPdfNavigation`, `src/gui/UBPdfOutlinePanel`): botón **Índice** junto a Buscar con el índice del PDF; con la flecha, clic en un enlace del PDF lleva a la página, o pregunta antes de abrir una dirección web. Buscar e Índice se turnan el mismo lugar.
 - **Lazo** (`UBDrawingController::isLassoSelection`): la flecha tiene opciones; el botón «Lazo» cambia a selección a mano alzada y el ícono de la paleta pasa a ser un lazo; entonces el botón ofrece «Flecha». En el escritorio la flecha sigue sin opciones.
-- **Reconocer formas** (`src/domain/UBShapeRecognizer`): casilla en las opciones del bolígrafo; línea, círculo, óvalo, triángulo, cuadrado, rectángulo y polígonos de hasta 6 lados se vuelven limpios al levantar el lápiz.
+- **Reconocer formas** (`src/domain/UBShapeRecognizer`): casilla en las opciones del bolígrafo; línea, flecha (dibujada de un trazo, con la punta al final o al principio), círculo, óvalo, triángulo, cuadrado, rectángulo y polígonos de hasta 6 lados se vuelven limpios al levantar el lápiz.
 - **Pantalla táctil** (`UBBoardView::viewportEvent`): dos dedos hacen zoom y desplazan; un dedo funciona como el mouse; se ignora la palma (contacto grande) y todo toque mientras se usa el lápiz y un momento después. **No probado en Linux** (sin pantalla táctil).
 - **Notas y adjuntos dentro del PDF** (`src/pdf/UBPdfAnnotations`): al guardar o extraer, las notas rápidas quedan como comentarios del PDF y los archivos y sonidos como adjuntos del PDF, en su lugar; otros lectores los muestran. Los íconos de LibertyBoard ya no se dibujan en el PDF (sí al imprimir y en imágenes).
 - **Compatibilidad con poppler:** la compilación de Windows usa poppler 23.01 (OpenBoard-ThirdParty) y Linux 24.02; lo que difiere entre versiones se resuelve con sobrecargas (ver `UBPdfNavigation.cpp`, `UBPdfTextSearch.cpp`, `UBPdfAnnotations.cpp`).
+- **Español completo:** el archivo de traducción no tiene textos sin traducir (incluidos 180 heredados de OpenBoard) y la ventana de consejos tiene versión en español (`resources/startupHints/locales/es`). Otros idiomas aún tienen textos de OpenBoard sin traducir.
 - **Modo → Pizarra** sale de la doble pizarra; ambos documentos quedan en sus pestañas.
 
 ## Forma de trabajo
