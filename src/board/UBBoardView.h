@@ -161,6 +161,12 @@ private:
         /** @brief Shows another page at the given zoom, as set by the transform of the view. */
         void showPageAtScale(int index, qreal scale);
 
+        /**
+         * @brief Copies the words of the PDF page inside a rectangle of the
+         * view, drawn with the selector where there was nothing to select.
+         */
+        void copyPdfText(const QRect& band);
+
         /** @brief The space between two pages, in units of the page. */
         qreal pageGap() const;
 

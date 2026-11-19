@@ -76,6 +76,17 @@ static QString takeText(GooString* text)
     return QString::fromUtf8(text.c_str());
 }
 
+// Older versions of poppler give the list of words to delete.
+[[maybe_unused]] static void releaseList(TextWordList* words)
+{
+    delete words;
+}
+
+[[maybe_unused]] static void releaseList(std::unique_ptr<TextWordList>& words)
+{
+    words.reset();
+}
+
 QList<QRectF> UBPdfTextSearch::find(int pageNumber, const QString& text) const
 {
     QList<QRectF> places;
@@ -86,6 +97,54 @@ QList<QRectF> UBPdfTextSearch::find(int pageNumber, const QString& text) const
     }
 
     return places;
+}
+
+QString UBPdfTextSearch::textIn(int pageNumber, const QRectF& rect) const
+{
+    if (!isValid() || pageNumber < 1 || pageNumber > pageCount() || rect.isEmpty())
+    {
+        return QString();
+    }
+
+    // In reading order, as the words were written.
+    TextOutputDev output(nullptr, false, 0, false, false);
+
+    if (!output.isOk())
+    {
+        return QString();
+    }
+
+    mDocument->displayPage(&output, pageNumber, 72, 72, 0, true, false, false);
+
+    // A word touched by the rectangle is taken whole, not cut in its letters.
+    QRectF area = rect;
+    auto words = output.makeWordList();
+
+    for (int i = 0; words && i < words->getLength(); ++i)
+    {
+        double xMin = 0;
+        double yMin = 0;
+        double xMax = 0;
+        double yMax = 0;
+        words->get(i)->getBBox(&xMin, &yMin, &xMax, &yMax);
+        const QRectF word(QPointF(xMin, yMin), QPointF(xMax, yMax));
+
+        // Most of its height in the rectangle: a line only grazed is left out.
+        const QRectF common = word.intersected(rect);
+
+        if (!common.isEmpty() && common.height() > word.height() / 2)
+        {
+            area |= word;
+        }
+    }
+
+    releaseList(words);
+
+    QString text = takeText(output.getText(area.left(), area.top(), area.right(), area.bottom()));
+
+    // Lines end as on the system, without a blank one at the end.
+    text.replace("\r\n", "\n");
+    return text.trimmed();
 }
 
 QList<UBPdfTextSearch::Found> UBPdfTextSearch::findWithLines(int pageNumber, const QString& text) const

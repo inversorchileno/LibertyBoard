@@ -57,6 +57,12 @@ public:
         QString line;
     };
 
+    /**
+     * @brief The words inside a rectangle of the page, numbered from 1, in
+     * points from the top left corner of the page as it is shown, line by line.
+     */
+    QString textIn(int pageNumber, const QRectF& rect) const;
+
     /** @brief As find, with the line of each place, to show it in a list. */
     QList<Found> findWithLines(int pageNumber, const QString& text) const;
 

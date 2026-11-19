@@ -29,6 +29,8 @@
 
 #include "UBBoardView.h"
 
+#include <QClipboard>
+
 #include <QtGlobal>
 #include <QtGui>
 #include <QtXml>
@@ -78,6 +80,8 @@
 #include "domain/UBGraphicsTextItemDelegate.h"
 
 #include "document/UBDocumentProxy.h"
+
+#include "pdf/UBPdfTextSearch.h"
 
 #include "tools/UBGraphicsRuler.h"
 #include "tools/UBGraphicsAxes.h"
@@ -1647,6 +1651,14 @@ void UBBoardView::mouseReleaseEvent (QMouseEvent *event)
     }
 
 
+    // A frame drawn with the selector over nothing to select copies the
+    // text of the PDF under it.
+    if (mUBRubberBand && mUBRubberBand->isVisible() && currentTool == UBStylusTool::Selector
+            && !bIsDesktop && scene() && scene()->selectedItems().isEmpty())
+    {
+        copyPdfText(mUBRubberBand->geometry());
+    }
+
     if (mUBRubberBand) {
         mUBRubberBand->hide();
         delete mUBRubberBand;
@@ -1756,6 +1768,58 @@ bool UBBoardView::turnPageWithWheel(QWheelEvent* wheelEvent)
     switchToNeighbourPage();
     UBApplication::applicationController->adjustDisplayView();
     return true;
+}
+
+void UBBoardView::copyPdfText(const QRect& band)
+{
+    if (band.width() < 6 || band.height() < 6 || !mController)
+    {
+        return;
+    }
+
+    auto item = qgraphicsitem_cast<UBGraphicsPDFItem*>(scene()->backgroundObject());
+    std::shared_ptr<UBDocumentProxy> document = mController->selectedDocument();
+
+    if (!item || !document)
+    {
+        return;
+    }
+
+    // From the view to the page item, then to points of the page.
+    const QRectF onItem = item->mapFromScene(mapToScene(band)).boundingRect();
+    const QRectF bounds = item->boundingRect();
+    const QSizeF points = item->pageSize();
+
+    if (bounds.isEmpty() || points.isEmpty())
+    {
+        return;
+    }
+
+    const qreal sx = points.width() / bounds.width();
+    const qreal sy = points.height() / bounds.height();
+    const QRectF onPage((onItem.left() - bounds.left()) * sx, (onItem.top() - bounds.top()) * sy,
+                        onItem.width() * sx, onItem.height() * sy);
+
+    const QString pdfFile = document->persistencePath() + "/" + UBPersistenceManager::objectDirectory + "/"
+                            + item->fileUuid().toString() + ".pdf";
+    const QString text = UBPdfTextSearch(pdfFile).textIn(item->pageNumber(), onPage);
+
+    if (text.isEmpty())
+    {
+        UBApplication::showMessage(tr("No text to copy here: a scanned page is only a picture."));
+        return;
+    }
+
+    QApplication::clipboard()->setText(text);
+
+    QString shown = text.simplified();
+
+    if (shown.size() > 60)
+    {
+        shown = shown.left(57) + QStringLiteral("\u2026");
+    }
+
+    UBApplication::showMessage(tr("Text copied: %1").arg(shown));
 }
 
 qreal UBBoardView::pageGap() const
