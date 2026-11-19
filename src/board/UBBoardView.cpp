@@ -1731,7 +1731,28 @@ bool UBBoardView::turnPageWithWheel(QWheelEvent* wheelEvent)
     }
 
     // The wheel scrolls at its own pace on into the neighbour page.
+    const QPointF middleBefore = mapToScene(viewport()->rect().center());
     QAbstractScrollArea::wheelEvent(wheelEvent);
+
+    if (mapToScene(viewport()->rect().center()) == middleBefore)
+    {
+        // The whole page fits in the view, so the view cannot move: a turn
+        // of the wheel, or the same distance on a touchpad, shows the
+        // neighbour page in the middle, the other pages around it.
+        mWheelTurn += delta;
+
+        if (qAbs(mWheelTurn) >= 120)
+        {
+            mWheelTurn = 0;
+            showPageAtScale(index + (down ? 1 : -1), transform().m11());
+            UBApplication::applicationController->adjustDisplayView();
+        }
+
+        wheelEvent->accept();
+        return true;
+    }
+
+    mWheelTurn = 0;
     switchToNeighbourPage();
     UBApplication::applicationController->adjustDisplayView();
     return true;
@@ -1774,13 +1795,35 @@ void UBBoardView::switchToNeighbourPage()
         return;
     }
 
-    // Where the edge of the neighbour page is on the screen now: it stays there.
-    const QPointF edge(page.center().x(), direction > 0 ? page.bottom() + gap : page.top() - gap);
+    // The page in the middle of the view: the next one, or one further
+    // when the zoom is small and the wheel turned fast.
+    int steps = 1;
+    qreal edgeY = direction > 0 ? page.bottom() + gap : page.top() - gap;
+
+    for (;;)
+    {
+        std::shared_ptr<UBGraphicsScene> neighbour = UBPersistenceManager::persistenceManager()->loadDocumentScene(document, index + direction * steps);
+        const qreal height = neighbour ? neighbour->normalizedSceneRect().height() : 0;
+        const qreal farEdge = direction > 0 ? edgeY + height : edgeY - height;
+        const int further = index + direction * (steps + 1);
+        const bool beyond = direction > 0 ? middle.y() > farEdge + gap / 2 : middle.y() < farEdge - gap / 2;
+
+        if (!neighbour || !beyond || further < 0 || further >= document->pageCount())
+        {
+            break;
+        }
+
+        edgeY = direction > 0 ? farEdge + gap : farEdge - gap;
+        ++steps;
+    }
+
+    // Where the edge of that page is on the screen now: it stays there.
+    const QPointF edge(page.center().x(), edgeY);
     const QPointF edgeOnScreen = viewportTransform().map(edge);
     const qreal scale = transform().m11();
 
     // The same zoom as before.
-    showPageAtScale(index + direction, scale);
+    showPageAtScale(index + direction * steps, scale);
 
     if (!scene())
     {
@@ -1819,62 +1862,89 @@ void UBBoardView::drawNeighbourPages(QPainter* painter, const QRectF& rect)
     const QRectF page = scene()->normalizedSceneRect();
     const qreal gap = pageGap();
 
+    // As many pages above and below as the view shows, a few at most when
+    // the zoom is very small.
+    const int mostPerSide = 8;
+    QPair<int, int> drawn(index, index);
+
     for (int direction : { -1, 1 })
     {
-        const int neighbourIndex = index + direction;
+        qreal edge = direction > 0 ? page.bottom() + gap : page.top() - gap;
 
-        // Only loaded when the space beside the page is seen.
-        const bool seen = direction > 0 ? rect.bottom() > page.bottom() + gap : rect.top() < page.top() - gap;
-
-        if (!seen || neighbourIndex < 0 || neighbourIndex >= document->pageCount())
+        for (int step = 1; step <= mostPerSide; ++step)
         {
-            continue;
+            const int neighbourIndex = index + direction * step;
+
+            // Only loaded when the space where it goes is seen.
+            const bool seen = direction > 0 ? rect.bottom() > edge : rect.top() < edge;
+
+            if (!seen || neighbourIndex < 0 || neighbourIndex >= document->pageCount())
+            {
+                break;
+            }
+
+            std::shared_ptr<UBGraphicsScene> neighbour = UBPersistenceManager::persistenceManager()->loadDocumentScene(document, neighbourIndex);
+
+            if (!neighbour)
+            {
+                break;
+            }
+
+            const QRectF source = neighbour->normalizedSceneRect();
+            const qreal top = direction > 0 ? edge : edge - source.height();
+            const QRectF target(page.center().x() - source.width() / 2, top, source.width(), source.height());
+            edge = direction > 0 ? target.bottom() + gap : target.top() - gap;
+
+            if (!target.intersects(rect))
+            {
+                continue;
+            }
+
+            if (direction > 0)
+            {
+                drawn.second = neighbourIndex;
+            }
+            else
+            {
+                drawn.first = neighbourIndex;
+            }
+
+            painter->save();
+            painter->fillRect(target, neighbour->isDarkBackground() ? Qt::black : Qt::white);
+            neighbour->render(painter, target, source);
+
+            const qreal penWidth = 8.0 / transform().m11();
+            painter->setPen(QPen(neighbour->isDarkBackground() ? UBSettings::documentSizeMarkColorDarkBackground
+                                                               : UBSettings::documentSizeMarkColorLightBackground, penWidth));
+            painter->setBrush(Qt::NoBrush);
+            painter->drawRect(target.adjusted(-penWidth / 2, -penWidth / 2, penWidth / 2, penWidth / 2));
+            painter->restore();
         }
+    }
 
-        std::shared_ptr<UBGraphicsScene> neighbour = UBPersistenceManager::persistenceManager()->loadDocumentScene(document, neighbourIndex);
+    if (drawn.first == index && drawn.second == index)
+    {
+        return;
+    }
 
-        if (!neighbour)
-        {
-            continue;
-        }
+    // A page of a PDF is drawn in the background the first time: the view
+    // is painted again once it is ready.
+    const int shown = drawn.first * 10000 + drawn.second;
 
-        const QRectF source = neighbour->normalizedSceneRect();
-        const qreal top = direction > 0 ? page.bottom() + gap : page.top() - gap - source.height();
-        const QRectF target(page.center().x() - source.width() / 2, top, source.width(), source.height());
+    if (shown != mLastNeighbourIndex)
+    {
+        mLastNeighbourIndex = shown;
+        mNeighbourRepaints = 0;
+    }
 
-        if (!target.intersects(rect))
-        {
-            continue;
-        }
-
-        painter->save();
-        painter->fillRect(target, neighbour->isDarkBackground() ? Qt::black : Qt::white);
-        neighbour->render(painter, target, source);
-
-        const qreal penWidth = 8.0 / transform().m11();
-        painter->setPen(QPen(neighbour->isDarkBackground() ? UBSettings::documentSizeMarkColorDarkBackground
-                                                           : UBSettings::documentSizeMarkColorLightBackground, penWidth));
-        painter->setBrush(Qt::NoBrush);
-        painter->drawRect(target.adjusted(-penWidth / 2, -penWidth / 2, penWidth / 2, penWidth / 2));
-        painter->restore();
-
-        // A page of a PDF is drawn in the background the first time: the
-        // view is painted again once it is ready.
-        if (neighbourIndex != mLastNeighbourIndex)
-        {
-            mLastNeighbourIndex = neighbourIndex;
-            mNeighbourRepaints = 0;
-        }
-
-        if (!mNeighbourRepaintPending && mNeighbourRepaints < 4)
-        {
-            ++mNeighbourRepaints;
-            mNeighbourRepaintPending = true;
-            QTimer::singleShot(250, this, [this]() {
-                mNeighbourRepaintPending = false;
-                viewport()->update();
-            });
-        }
+    if (!mNeighbourRepaintPending && mNeighbourRepaints < 4)
+    {
+        ++mNeighbourRepaints;
+        mNeighbourRepaintPending = true;
+        QTimer::singleShot(250, this, [this]() {
+            mNeighbourRepaintPending = false;
+            viewport()->update();
+        });
     }
 }
 

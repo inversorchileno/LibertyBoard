@@ -155,7 +155,7 @@ private:
         /** @brief Shows the neighbour page as the current one once it fills the middle of the view, without moving the picture. */
         void switchToNeighbourPage();
 
-        /** @brief Draws the previous and the next page beside the current one. */
+        /** @brief Draws the pages above and below the current one, as many as the view shows. */
         void drawNeighbourPages(QPainter* painter, const QRectF& rect);
 
         /** @brief Shows another page at the given zoom, as set by the transform of the view. */
@@ -168,6 +168,7 @@ private:
         bool mActiveFrameShown{false};
         int mLastNeighbourIndex{-1};
         int mNeighbourRepaints{0};
+        int mWheelTurn{0};
 
 private:
 
