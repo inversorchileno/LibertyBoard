@@ -28,6 +28,8 @@
 
 #include "core/UBSettings.h"
 
+#include <cmath>
+
 // The glow around the trail is wider than the trail itself.
 static constexpr qreal sGlowWidthFactor = 3.2;
 static constexpr int sFrameIntervalMs = 16;
@@ -57,6 +59,7 @@ void UBGraphicsLaserTrail::startTrail(const QPointF& point, qreal width)
     trail.opacity = qBound(0.0, settings->laserOpacity->get().toDouble(), 1.0);
     trail.pointOnly = settings->laserMode->get().toInt() == UBLaserMode::Point;
     trail.whiteBurn = settings->laserEffect->get().toInt() == UBLaserEffect::WhiteBurn;
+    trail.rainbow = settings->laserRainbow->get().toBool();
 
     if (!trail.color.isValid())
     {
@@ -141,6 +144,12 @@ void UBGraphicsLaserTrail::paint(QPainter* painter, const QStyleOptionGraphicsIt
             continue;
         }
 
+        if (trail.rainbow)
+        {
+            paintRainbow(painter, trail, opacity, now);
+            continue;
+        }
+
         const QPainterPath path = smoothPath(trail.points);
 
         // From the outside in: a soft wide glow, a stronger inner glow,
@@ -191,6 +200,111 @@ void UBGraphicsLaserTrail::paint(QPainter* painter, const QStyleOptionGraphicsIt
         for (const Layer& layer : standardLayers)
         {
             drawLayer(layer);
+        }
+    }
+}
+
+void UBGraphicsLaserTrail::paintRainbow(QPainter* painter, const Trail& trail, qreal opacity, qint64 now) const
+{
+    // The colors of the rainbow follow one another along the trail; a point
+    // goes through them with time.
+    const qreal width = trail.pointOnly ? trail.width * 2 : trail.width;
+    const qreal cycle = qMax(900.0, width * 100);
+    const qreal timeShift = trail.pointOnly ? qreal(now % 2000) / 2000 : 0;
+
+    auto colorAt = [cycle, timeShift](qreal distance, qreal lightness) {
+        qreal hue = std::fmod(distance / cycle + timeShift, 1.0);
+        return QColor::fromHslF(hue, 0.85, lightness);
+    };
+
+    struct Layer
+    {
+        qreal widthFactor;
+        qreal alpha;
+        qreal lightness;
+    };
+
+    const Layer layers[] = {
+        { sGlowWidthFactor, 0.15, 0.6 },
+        { 2.0, 0.35, 0.6 },
+        { 1.0, 1.0, 0.62 },
+        { 0.4, 0.85, 0.82 },
+    };
+
+    // Pieces of a few widths, each one of a single color: their flat ends
+    // meet without covering each other, so the glow keeps its transparency.
+    const qreal pieceLength = qMax(width * 2, 8.0);
+    // Along the same smooth curve as a trail of one color.
+    QPolygonF points;
+
+    for (const QPolygonF& part : smoothPath(trail.points).toSubpathPolygons())
+    {
+        points << part;
+    }
+
+    if (points.isEmpty())
+    {
+        return;
+    }
+
+    // The trail cut into pieces of that length, long segments included, so
+    // that the color changes smoothly.
+    QList<QPolygonF> pieces;
+    QList<qreal> pieceMiddles;
+    QPolygonF piece{ points.first() };
+    qreal distance = 0;
+    qreal pieceStart = 0;
+
+    for (int i = 1; i < points.size(); ++i)
+    {
+        QPointF from = points.at(i - 1);
+        const QPointF to = points.at(i);
+        qreal remaining = QLineF(from, to).length();
+
+        while (distance + remaining - pieceStart >= pieceLength)
+        {
+            const qreal step = pieceLength - (distance - pieceStart);
+            const QPointF cut = from + (to - from) * (step / remaining);
+            piece << cut;
+            pieces << piece;
+            pieceMiddles << pieceStart + pieceLength / 2;
+
+            distance += step;
+            remaining -= step;
+            pieceStart = distance;
+            from = cut;
+            piece = QPolygonF{ cut };
+        }
+
+        distance += remaining;
+        piece << to;
+    }
+
+    if (piece.size() > 1 || pieces.isEmpty())
+    {
+        pieces << piece;
+        pieceMiddles << (pieceStart + distance) / 2;
+    }
+
+    for (const Layer& layer : layers)
+    {
+        for (int i = 0; i < pieces.size(); ++i)
+        {
+            QColor color = colorAt(pieceMiddles.at(i), layer.lightness);
+            color.setAlphaF(layer.alpha * opacity);
+
+            // The two ends of the trail are round, like the trail of one color.
+            const bool end = (i == 0 || i == pieces.size() - 1);
+            painter->setPen(QPen(color, width * layer.widthFactor, Qt::SolidLine, end ? Qt::RoundCap : Qt::FlatCap, Qt::RoundJoin));
+
+            if (pieces.at(i).size() == 1)
+            {
+                painter->drawPoint(pieces.at(i).first());
+            }
+            else
+            {
+                painter->drawPolyline(pieces.at(i));
+            }
         }
     }
 }

@@ -587,6 +587,47 @@ QIcon optionIcon(UBOptionIcon kind)
             painter.drawEllipse(QPointF(24, 14), 4, 4);
             break;
         }
+        case UBOptionIcon::MarkerRoundTip:
+        case UBOptionIcon::MarkerChiselTip:
+        {
+            // The mark the tip leaves, then the tip at its end: a bullet
+            // tip leaves round ends, a chisel tip straight ones.
+            const bool round = (kind == UBOptionIcon::MarkerRoundTip);
+            QColor ink("#e6d23a");
+            ink.setAlphaF(0.85);
+            painter.setPen(Qt::NoPen);
+            painter.setBrush(ink);
+
+            if (round)
+            {
+                painter.drawRoundedRect(QRectF(3, 9, 30, 10), 5, 5);
+            }
+            else
+            {
+                painter.drawPolygon(QPolygonF({ QPointF(5, 7), QPointF(31, 7), QPointF(27, 21), QPointF(1, 21) }));
+            }
+
+            // The marker, grey with a colored body, seen from the side.
+            painter.save();
+            painter.translate(round ? 36 : 33, 14);
+            painter.rotate(-35);
+            painter.setPen(QPen(QColor("#3a3a3a"), 0.8));
+            painter.setBrush(QColor("#9a9a9a"));
+
+            if (round)
+            {
+                painter.drawRoundedRect(QRectF(-3, -3.5, 8, 7), 3.5, 3.5);
+            }
+            else
+            {
+                painter.drawPolygon(QPolygonF({ QPointF(-3, -1), QPointF(4, -4), QPointF(4, 4), QPointF(-3, 4) }));
+            }
+
+            painter.setBrush(QColor("#d9c32c"));
+            painter.drawRect(QRectF(4, -4.5, 12, 9));
+            painter.restore();
+            break;
+        }
         case UBOptionIcon::LaserStandard:
         case UBOptionIcon::LaserWhiteBurn:
         {

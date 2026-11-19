@@ -452,6 +452,7 @@ bool UBGraphicsScene::inputDevicePress(const QPointF& scenePos, const qreal& pre
             // Create a new Stroke. A Stroke is a collection of QGraphicsLines
             // ---------------------------------------------------------------
             mCurrentStroke = new UBGraphicsStroke(shared_from_this());
+            mLastStrokePosition = qMakePair(QPointF(), qreal(0));
 
             width = strokeWidth(currentTool, pressure, std::nullopt);
 
@@ -667,6 +668,7 @@ bool UBGraphicsScene::inputDeviceMove(const QPointF& scenePos, const qreal& pres
                 qreal distance = QLineF(mPreviousPoint, scenePos).length();
 
                 mDistanceFromLastStrokePoint += distance;
+                mLastStrokePosition = qMakePair(scenePos, width);
 
                 if (mDistanceFromLastStrokePoint > MIN_DISTANCE) {
                     QList<QPair<QPointF, qreal> > newPoints = mCurrentStroke->addPoint(scenePos, width, interpolate);
@@ -796,8 +798,13 @@ bool UBGraphicsScene::inputDeviceRelease(int tool, Qt::KeyboardModifiers modifie
                     && UBSettings::settings()->value("Board/LibertyBoardRecognizeShapes", false).toBool()
                     && recognizeCurrentStroke();
 
+            // A marker with a chisel tip: the stroke is drawn again by that tip.
+            const bool chiseled = !recognized && currentTool == UBStylusTool::Marker
+                    && UBSettings::settings()->markerChiselTip->get().toBool()
+                    && redrawCurrentStrokeWithChiselTip();
+
             // replace the stroke by a simplified version of it
-            if (!recognized
+            if (!recognized && !chiseled
                 && ((currentTool == UBStylusTool::Pen && UBSettings::settings()->boardSimplifyPenStrokes->get().toBool())
                     || (currentTool == UBStylusTool::Marker && UBSettings::settings()->boardSimplifyMarkerStrokes->get().toBool())))
             {
@@ -1009,6 +1016,7 @@ UBShapeStyle UBGraphicsScene::shapeStyle(int tool) const
     style.startEnding = settings->startEnding->get().toInt();
     style.endEnding = settings->endEnding->get().toInt();
     style.opacity = settings->opacity->get().toDouble();
+    style.tapered = (tool == UBStylusTool::Arrow) && settings->tapered->get().toBool();
     style.minimumHeadSize = 12 * screenToScene;
 
     return style;
@@ -3593,6 +3601,31 @@ bool UBGraphicsScene::recognizeCurrentStroke()
     }
 
     mCurrentStroke = cleanStroke;
+
+    foreach(UBGraphicsPolygonItem* poly, mCurrentStroke->polygons()) {
+        addItem(poly);
+        mPreviousPolygonItems.append(poly);
+    }
+
+    return true;
+}
+
+bool UBGraphicsScene::redrawCurrentStrokeWithChiselTip()
+{
+    if (!mCurrentStroke)
+        return false;
+
+    UBGraphicsStroke* chiseled = mCurrentStroke->redrawnWithChiselTip(shared_from_this(), mLastStrokePosition);
+
+    if (!chiseled)
+        return false;
+
+    foreach(UBGraphicsPolygonItem* poly, mCurrentStroke->polygons()){
+        mPreviousPolygonItems.removeAll(poly);
+        removeItem(poly);
+    }
+
+    mCurrentStroke = chiseled;
 
     foreach(UBGraphicsPolygonItem* poly, mCurrentStroke->polygons()) {
         addItem(poly);

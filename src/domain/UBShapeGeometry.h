@@ -45,6 +45,7 @@ struct UBShapeStyle
     int endEnding{0};       // UBLineEnding
     qreal opacity{1};
     qreal minimumHeadSize{10};  // smallest size of arrow endings, in scene units
+    bool tapered{false};        // arrow line growing from its start to its tip
 };
 
 /**

@@ -296,6 +296,7 @@ class UBSettings : public QObject
         UBSetting* laserEffect;
         UBSetting* laserOpacity;
         UBSetting* laserColor;
+        UBSetting* laserRainbow;    // the colors of the rainbow along the trail, instead of the color
         UBSetting* noteColor;
         UBSetting* laserWidth;
         UBSetting* laserFadeDelay;
@@ -312,6 +313,7 @@ class UBSettings : public QObject
             UBSetting* startEnding{nullptr};
             UBSetting* endEnding{nullptr};
             UBSetting* opacity{nullptr};
+            UBSetting* tapered{nullptr};        // arrow only
         };
 
         ShapeSettings rectangleSettings;
@@ -351,6 +353,7 @@ class UBSettings : public QObject
         UBColorListSetting* boardPenDarkBackgroundSelectedColors;
 
         UBSetting* boardMarkerAlpha;
+        UBSetting* markerChiselTip;     // straight ends like a highlighter, instead of round ones
 
         UBColorListSetting* boardMarkerLightBackgroundColors;
         UBColorListSetting* boardMarkerLightBackgroundSelectedColors;

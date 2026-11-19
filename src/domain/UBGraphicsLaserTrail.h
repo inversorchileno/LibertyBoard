@@ -62,12 +62,14 @@ private:
         qreal opacity{1};
         bool pointOnly{false};
         bool whiteBurn{false};
+        bool rainbow{false};
         qint64 finishedAt{-1};
         qint64 fadeDelay{0};
         qint64 fadeDuration{0};
     };
 
     void onFrame();
+    void paintRainbow(QPainter* painter, const Trail& trail, qreal opacity, qint64 now) const;
     qreal opacityOf(const Trail& trail, qint64 now) const;
     void updateBounds();
     static qreal marginOf(const Trail& trail);

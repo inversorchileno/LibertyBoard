@@ -69,6 +69,13 @@ class UBGraphicsStroke
          * @brief A new stroke along the given points, of the mean width of
          * this one: smooth for a round shape, with sharp corners otherwise.
          */
+        /**
+         * @brief A new stroke along the same points, drawn as by the slanted
+         * flat tip of a highlighter: wide across a horizontal line, thin
+         * along a steep one, with straight ends.
+         */
+        UBGraphicsStroke* redrawnWithChiselTip(std::shared_ptr<UBGraphicsScene> scene, const QPair<QPointF, qreal>& lastPosition);
+
         UBGraphicsStroke* redrawnAlong(std::shared_ptr<UBGraphicsScene> scene, const QList<QPointF>& outline, bool smooth);
 
     protected:

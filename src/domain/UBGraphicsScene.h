@@ -472,6 +472,10 @@ signals:
         void updatePenCircleColor();
         bool hasTextItemWithFocus(UBGraphicsGroupContainerItem* item);
         void simplifyCurrentStroke();
+        bool redrawCurrentStrokeWithChiselTip();
+
+        // Where the pen was last, even if too close to the last point of the stroke to be kept.
+        QPair<QPointF, qreal> mLastStrokePosition;
         bool recognizeCurrentStroke();
 
         QGraphicsEllipseItem* mEraser;

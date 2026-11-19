@@ -296,6 +296,7 @@ void UBSettings::init()
     laserEffect = new UBSetting(this, "Laser", "Effect", int(UBLaserEffect::Standard));
     laserOpacity = new UBSetting(this, "Laser", "Opacity", 1.0);
     laserColor = new UBSetting(this, "Laser", "Color", QString("#ff2828"));
+    laserRainbow = new UBSetting(this, "Laser", "LibertyBoardRainbow", false);
     noteColor = new UBSetting(this, "Board", "LibertyBoardNoteColor", QString("#f5b400"));
     laserWidth = new UBSetting(this, "Laser", "Width", 8.0);
     laserFadeDelay = new UBSetting(this, "Laser", "FadeDelay", 0.1);
@@ -340,6 +341,7 @@ void UBSettings::init()
     boardPenDarkBackgroundColors = new UBColorListSetting(this, "Board", "PenDarkBackgroundColors", penDarkBackgroundColors, 1.0);
 
     boardMarkerAlpha = new UBSetting(this, "Board", "MarkerAlpha", 0.5);
+    markerChiselTip = new UBSetting(this, "Board", "LibertyBoardMarkerChiselTip", false);
 
     QStringList markerLightBackgroundColors;
     markerLightBackgroundColors << "#E3FF00" << "#FF0000" <<"#004080" << "#008000" << "#C87400" << "#800040" << "#008080"  << "#000000";
@@ -842,6 +844,7 @@ void UBSettings::initShapeSettings(ShapeSettings& shape, const QString& domain, 
     shape.startEnding = new UBSetting(this, domain, "StartEnding", startEnding);
     shape.endEnding = new UBSetting(this, domain, "EndEnding", endEnding);
     shape.opacity = new UBSetting(this, domain, "Opacity", opacity);
+    shape.tapered = new UBSetting(this, domain, "LibertyBoardTapered", false);
 }
 
 UBSettings::ShapeSettings* UBSettings::shapeSettings(int tool)

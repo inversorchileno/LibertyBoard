@@ -29,6 +29,12 @@
 
 #include "UBGraphicsStroke.h"
 
+#include <algorithm>
+#include <cmath>
+
+#include <QPainterPath>
+#include <QtMath>
+
 #include "UBGraphicsPolygonItem.h"
 
 #include "board/UBBoardController.h"
@@ -195,6 +201,109 @@ void UBGraphicsStroke::clear()
     if(!mPolygons.empty()){
         mPolygons.clear();
     }
+}
+
+static QPolygonF convexHull(QList<QPointF> points)
+{
+    std::sort(points.begin(), points.end(), [](const QPointF& a, const QPointF& b) {
+        return a.x() < b.x() || (a.x() == b.x() && a.y() < b.y());
+    });
+
+    auto cross = [](const QPointF& o, const QPointF& a, const QPointF& b) {
+        return (a.x() - o.x()) * (b.y() - o.y()) - (a.y() - o.y()) * (b.x() - o.x());
+    };
+
+    QList<QPointF> hull;
+
+    for (int pass = 0; pass < 2; ++pass)
+    {
+        const int start = hull.size();
+
+        for (const QPointF& point : std::as_const(points))
+        {
+            while (hull.size() >= start + 2 && cross(hull.at(hull.size() - 2), hull.last(), point) <= 0)
+            {
+                hull.removeLast();
+            }
+
+            hull << point;
+        }
+
+        hull.removeLast();
+        std::reverse(points.begin(), points.end());
+    }
+
+    return QPolygonF(hull);
+}
+
+UBGraphicsStroke* UBGraphicsStroke::redrawnWithChiselTip(std::shared_ptr<UBGraphicsScene> scene, const QPair<QPointF, qreal>& lastPosition)
+{
+    if (mDrawnPoints.isEmpty() || !scene)
+    {
+        return nullptr;
+    }
+
+    // The stroke goes on to where the pen was lifted.
+    QList<strokePoint> points = mDrawnPoints;
+
+    if (lastPosition.second > 0 && points.last().first != lastPosition.first)
+    {
+        points << lastPosition;
+    }
+
+    // The tip is a flat rectangle as long as the width of the marker, tilted
+    // like a highlighter held in the right hand.
+    const qreal angle = qDegreesToRadians(-65.0);
+    const QPointF along(std::cos(angle), std::sin(angle));
+    const QPointF across(-along.y(), along.x());
+
+    auto tipCorners = [&](const QPointF& center, qreal width) {
+        const QPointF length = along * width / 2;
+        const QPointF thickness = across * width * 0.14;
+        return QList<QPointF>{ center + length + thickness, center + length - thickness,
+                               center - length - thickness, center - length + thickness };
+    };
+
+    QPainterPath outline;
+    outline.setFillRule(Qt::WindingFill);
+
+    if (points.size() == 1)
+    {
+        outline.addPolygon(convexHull(tipCorners(points.first().first, points.first().second)));
+        outline.closeSubpath();
+    }
+
+    // The tip swept from each point to the next one.
+    for (int i = 1; i < points.size(); ++i)
+    {
+        const strokePoint& from = points.at(i - 1);
+        const strokePoint& to = points.at(i);
+        outline.addPolygon(convexHull(tipCorners(from.first, from.second) + tipCorners(to.first, to.second)));
+        outline.closeSubpath();
+    }
+
+    UBGraphicsStroke* newStroke = new UBGraphicsStroke(scene);
+    newStroke->mDrawnPoints = points;
+
+    // One outline without overlaps keeps the transparency even.
+    for (const QPolygonF& polygon : outline.simplified().toFillPolygons())
+    {
+        if (polygon.size() > 2)
+        {
+            UBGraphicsPolygonItem* poly = scene->polygonToPolygonItem(polygon);
+            poly->setFillRule(Qt::WindingFill);
+            poly->setStroke(newStroke);
+            newStroke->mPolygons << poly;
+        }
+    }
+
+    if (newStroke->mPolygons.isEmpty())
+    {
+        delete newStroke;
+        return nullptr;
+    }
+
+    return newStroke;
 }
 
 /**

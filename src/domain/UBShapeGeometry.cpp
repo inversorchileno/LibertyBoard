@@ -437,7 +437,8 @@ QList<UBShapePart> buildArrow(const QPointF& start, const QPointF& end, const UB
     }
 
     const QPointF along = direction / lineLength;
-    const qreal headSize = qMax(style.width * 3.5, style.minimumHeadSize);
+    // A tapered line ends wider than its width: its head grows with it.
+    const qreal headSize = qMax(style.width * 3.5, style.minimumHeadSize) * (style.tapered ? 1.6 : 1.0);
 
     const qreal startCut = qMin(shaftShortening(style.startEnding, headSize), lineLength / 2);
     const qreal endCut = qMin(shaftShortening(style.endEnding, headSize), lineLength / 2);
@@ -446,6 +447,51 @@ QList<UBShapePart> buildArrow(const QPointF& start, const QPointF& end, const UB
     QPainterPath wings;
     const QPolygonF startShape = endingPolygon(style.startEnding, start, -along, headSize, wings);
     const QPolygonF endShape = endingPolygon(style.endEnding, end, along, headSize, wings);
+
+    if (style.tapered)
+    {
+        // A solid line that grows from a thin start to the full width at the
+        // tip, one outline with the wings and the ending so that a
+        // transparent arrow has the same transparency everywhere.
+        const QPointF across(-along.y(), along.x());
+        // The wide end stops inside the wings of an open arrow.
+        const QPointF shaftStart = shaft.first();
+        const QPointF shaftEnd = (style.endEnding == UBLineEnding::OpenArrow && lineLength > headSize)
+                ? shaft.last() - along * headSize * 0.45
+                : shaft.last();
+        const qreal startHalf = style.width * 0.15;
+        const qreal endHalf = style.width * 1.2;
+
+        QPainterPath outline;
+        outline.setFillRule(Qt::WindingFill);
+        outline.addPolygon(QPolygonF({ shaftStart + across * startHalf, shaftEnd + across * endHalf,
+                                       shaftEnd - across * endHalf, shaftStart - across * startHalf }));
+        outline.addEllipse(shaftStart, startHalf, startHalf);
+        outline.closeSubpath();
+
+        if (!wings.isEmpty())
+        {
+            QPainterPathStroker stroker;
+            stroker.setWidth(style.width);
+            stroker.setCapStyle(Qt::RoundCap);
+            stroker.setJoinStyle(Qt::RoundJoin);
+            outline = outline.united(stroker.createStroke(wings));
+        }
+
+        for (const QPolygonF& ending : { startShape, endShape })
+        {
+            if (!ending.isEmpty())
+            {
+                QPainterPath endingPath;
+                endingPath.addPolygon(ending);
+                endingPath.closeSubpath();
+                outline = outline.united(endingPath);
+            }
+        }
+
+        addPolygons(parts, outline.simplified().toFillPolygons(), color);
+        return parts;
+    }
 
     if (style.dash == UBLineDash::Solid)
     {

@@ -26,6 +26,7 @@
 #include <QFontComboBox>
 #include <QGridLayout>
 #include <QPainter>
+#include <QPainterPath>
 #include <QStandardPaths>
 #include <QHBoxLayout>
 #include <QLabel>
@@ -64,6 +65,29 @@ static QList<QColor> laserColors()
 {
     return { QColor("#ff2828"), QColor("#ff9a1f"), QColor("#ff1fd2"), QColor("#2bff2b"), QColor("#2f54ff"),
              QColor("#9a46f0"), QColor("#000000"), QColor("#14b85a"), QColor("#ffee1f") };
+}
+
+static QIcon rainbowIcon()
+{
+    QPixmap pixmap(72, 28);
+    pixmap.fill(Qt::transparent);
+
+    QLinearGradient gradient(0, 0, pixmap.width(), 0);
+
+    for (int i = 0; i <= 6; ++i)
+    {
+        gradient.setColorAt(i / 6.0, QColor::fromHslF(i / 7.0, 0.95, 0.6));
+    }
+
+    QPainter painter(&pixmap);
+    painter.setRenderHint(QPainter::Antialiasing);
+    painter.setPen(QPen(QBrush(gradient), 8, Qt::SolidLine, Qt::RoundCap));
+    QPainterPath wave;
+    wave.moveTo(6, 18);
+    wave.cubicTo(24, 2, 44, 28, 66, 10);
+    painter.drawPath(wave);
+
+    return QIcon(pixmap);
 }
 
 static QColor settingColor(UBSetting* setting)
@@ -356,6 +380,11 @@ UBMarkerOptionsPanel::UBMarkerOptionsPanel(QWidget* parent)
     mWidth = new UBValueSlider({ 20, 30, 40, 50, 80, 100 }, tr(" pt"), 0, this);
     addRow(mWidth);
 
+    mTip = new UBSegmentedChoice({ tr("Round tip"), tr("Straight tip") }, this);
+    mTip->setIcons({ optionIcon(UBOptionIcon::MarkerRoundTip), optionIcon(UBOptionIcon::MarkerChiselTip) });
+    mTip->setToolTip(tr("Round: the stroke has round ends. Straight: like a highlighter, wide across the lines of text, with straight ends."));
+    addRow(mTip);
+
     addSection(tr("Advanced"));
     mOpacity = new UBValueSlider(opacityMarks(), tr(" %"), 0, this);
     addRow(mOpacity);
@@ -375,6 +404,9 @@ UBMarkerOptionsPanel::UBMarkerOptionsPanel(QWidget* parent)
         UBDrawingController::drawingController()->setMarkerAlpha(opacity / 100);
         updatePreview();
     });
+    connect(mTip, &UBSegmentedChoice::choiceChanged, this, [settings](int tip) {
+        settings->markerChiselTip->set(tip == 1);
+    });
 
     refresh();
 }
@@ -386,6 +418,7 @@ void UBMarkerOptionsPanel::refresh()
     mColors->setCurrentColor(settings->currentMarkerColor());
     mWidth->setValue(settings->currentMarkerWidth());
     mOpacity->setValue(settings->boardMarkerAlpha->get().toDouble() * 100);
+    mTip->setChoice(settings->markerChiselTip->get().toBool() ? 1 : 0);
     updatePreview();
 }
 
@@ -417,6 +450,13 @@ UBLaserOptionsPanel::UBLaserOptionsPanel(QWidget* parent)
     mColors = new UBColorSwatches(laserColors(), false, this);
     addRow(mColors);
 
+    // Apart from the colors: the trail takes all the colors of the rainbow.
+    mRainbow = new QCheckBox(tr("Rainbow"), this);
+    mRainbow->setIcon(rainbowIcon());
+    mRainbow->setIconSize(QSize(36, 14));
+    mRainbow->setToolTip(tr("The trail takes the colors of the rainbow, one after the other."));
+    addRow(mRainbow);
+
     mEffect = new UBSegmentedChoice({ tr("Standard"), tr("White burn") }, this);
     mEffect->setIcons({ optionIcon(UBOptionIcon::LaserStandard), optionIcon(UBOptionIcon::LaserWhiteBurn) });
     addRow(mEffect);
@@ -441,7 +481,11 @@ UBLaserOptionsPanel::UBLaserOptionsPanel(QWidget* parent)
     });
     connect(mColors, &UBColorSwatches::colorChosen, this, [this, settings](const QColor& color) {
         settings->laserColor->set(color.name());
+        mRainbow->setChecked(false);
         updatePreview();
+    });
+    connect(mRainbow, &QCheckBox::toggled, this, [settings](bool on) {
+        settings->laserRainbow->set(on);
     });
     connect(mEffect, &UBSegmentedChoice::choiceChanged, this, [settings](int effect) {
         settings->laserEffect->set(effect);
@@ -468,6 +512,7 @@ void UBLaserOptionsPanel::refresh()
     mWidth->setValue(settings->laserWidth->get().toDouble());
     mColors->setCurrentColor(settingColor(settings->laserColor));
     mEffect->setChoice(settings->laserEffect->get().toInt());
+    mRainbow->setChecked(settings->laserRainbow->get().toBool());
     mOpacity->setValue(settings->laserOpacity->get().toDouble() * 100);
     mDelay->setValue(settings->laserFadeDelay->get().toDouble());
     mDuration->setValue(settings->laserFadeDuration->get().toDouble());
@@ -559,6 +604,10 @@ UBShapeOptionsPanel::UBShapeOptionsPanel(int tool, QWidget* parent)
         addSection(tr("Line end"));
         mEndEnding = new UBPictureChoice(UBPictureChoice::Kind::EndEnding, 6, this);
         addRow(mEndEnding);
+
+        mTapered = new QCheckBox(tr("Tapered"), this);
+        mTapered->setToolTip(tr("The line grows from its start to the tip of the arrow."));
+        addRow(mTapered);
     }
 
     if (!isUnderline)
@@ -621,6 +670,13 @@ UBShapeOptionsPanel::UBShapeOptionsPanel(int tool, QWidget* parent)
         });
     }
 
+    if (mTapered)
+    {
+        connect(mTapered, &QCheckBox::toggled, this, [settings](bool on) {
+            settings->tapered->set(on);
+        });
+    }
+
     refresh();
     showColorTarget(0);
 }
@@ -650,6 +706,11 @@ void UBShapeOptionsPanel::refresh()
     {
         mStartEnding->setChoice(mSettings->startEnding->get().toInt());
         mEndEnding->setChoice(mSettings->endEnding->get().toInt());
+    }
+
+    if (mTapered)
+    {
+        mTapered->setChecked(mSettings->tapered->get().toBool());
     }
 
     if (mOpacity)

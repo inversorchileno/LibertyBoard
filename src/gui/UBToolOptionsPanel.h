@@ -122,6 +122,7 @@ private:
     UBColorSwatches* mColors{nullptr};
     UBValueSlider* mWidth{nullptr};
     UBValueSlider* mOpacity{nullptr};
+    UBSegmentedChoice* mTip{nullptr};
 };
 
 class UBLaserOptionsPanel : public UBToolOptionsPanel
@@ -142,6 +143,7 @@ private:
     UBSegmentedChoice* mMode{nullptr};
     UBValueSlider* mWidth{nullptr};
     UBColorSwatches* mColors{nullptr};
+    QCheckBox* mRainbow{nullptr};
     UBSegmentedChoice* mEffect{nullptr};
     UBValueSlider* mOpacity{nullptr};
     UBValueSlider* mDelay{nullptr};
@@ -170,6 +172,7 @@ private:
     UBPictureChoice* mBorderStyle{nullptr};
     UBPictureChoice* mStartEnding{nullptr};
     UBPictureChoice* mEndEnding{nullptr};
+    QCheckBox* mTapered{nullptr};
     UBValueSlider* mOpacity{nullptr};
 };
 
