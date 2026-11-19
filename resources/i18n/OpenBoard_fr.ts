@@ -482,17 +482,15 @@ Voulez-vous continuer quand-même ?   </translation>
         <translation>Ctrl+B</translation>
     </message>
     <message>
-        <location line="+12"/>
         <source>Erase</source>
-        <translation>Effacer</translation>
+        <translation type="vanished">Effacer</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Erase Content</source>
-        <translation>Effacer le contenu</translation>
+        <translation type="vanished">Effacer le contenu</translation>
     </message>
     <message>
-        <location line="+17"/>
+        <location line="+32"/>
         <source>Display Preferences</source>
         <translation>Afficher les préférences</translation>
     </message>
@@ -551,7 +549,17 @@ Voulez-vous continuer quand-même ?   </translation>
         <translation>Bureau</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="-70"/>
+        <source>Clear page</source>
+        <translation>Nettoyer la page</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Takes away everything added to the page; a PDF stays. Hold the button for more ways to erase.</source>
+        <translation>Retire tout ce qui a été ajouté à la page ; un PDF reste. Maintenez le bouton pour d&apos;autres façons d&apos;effacer.</translation>
+    </message>
+    <message>
+        <location line="+81"/>
         <source>Ctrl+Shift+H</source>
         <translation>Ctrl+Maj+H</translation>
     </message>
@@ -3833,14 +3841,22 @@ Voulez-vous ignorer les erreurs pour ce serveur ?</translation>
 <context>
     <name>UBPageButtons</name>
     <message>
-        <location filename="../../src/gui/UBPageButtons.cpp" line="+53"/>
         <source>Delete</source>
-        <translation>Supprimer</translation>
+        <translation type="vanished">Supprimer</translation>
+    </message>
+    <message>
+        <source>Delete the page shown</source>
+        <translation type="vanished">Supprimer la page affichée</translation>
+    </message>
+    <message>
+        <location filename="../../src/gui/UBPageButtons.cpp" line="+53"/>
+        <source>Delete page</source>
+        <translation>Supprimer la page</translation>
     </message>
     <message>
         <location line="+0"/>
-        <source>Delete the page shown</source>
-        <translation>Supprimer la page affichée</translation>
+        <source>Deletes the page shown, with all it holds</source>
+        <translation>Supprime la page affichée, avec tout son contenu</translation>
     </message>
 </context>
 <context>

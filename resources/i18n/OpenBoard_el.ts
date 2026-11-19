@@ -326,12 +326,11 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Ctrl+B</translation>
     </message>
     <message>
-        <location line="+12"/>
         <source>Erase</source>
-        <translation>Σβήσιμο</translation>
+        <translation type="vanished">Σβήσιμο</translation>
     </message>
     <message>
-        <location line="+17"/>
+        <location line="+29"/>
         <source>Preferences</source>
         <translation>Ρυθμίσεις</translation>
     </message>
@@ -788,12 +787,11 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="vanished">Εμφάνιση Πίνακα</translation>
     </message>
     <message>
-        <location line="+35"/>
         <source>Erase Content</source>
-        <translation>Σβήσιμο περιεχομένου</translation>
+        <translation type="vanished">Σβήσιμο περιεχομένου</translation>
     </message>
     <message>
-        <location line="+17"/>
+        <location line="+52"/>
         <source>Display Preferences</source>
         <translation>Εμφάνιση ρυθμίσεων</translation>
     </message>
@@ -1317,7 +1315,17 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Λειτουργία Πίνακα</translation>
     </message>
     <message>
-        <location line="+93"/>
+        <location line="+20"/>
+        <source>Clear page</source>
+        <translation>Καθαρισμός σελίδας</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Takes away everything added to the page; a PDF stays. Hold the button for more ways to erase.</source>
+        <translation>Αφαιρεί ό,τι προστέθηκε στη σελίδα· ένα PDF μένει. Κρατήστε πατημένο το κουμπί για περισσότερους τρόπους διαγραφής.</translation>
+    </message>
+    <message>
+        <location line="+70"/>
         <source>Desktop</source>
         <translation>Επιφάνεια εργασίας</translation>
     </message>
@@ -3774,14 +3782,22 @@ Do you want to ignore these errors for this host?</source>
 <context>
     <name>UBPageButtons</name>
     <message>
-        <location filename="../../src/gui/UBPageButtons.cpp" line="+53"/>
         <source>Delete</source>
-        <translation>Διαγραφή</translation>
+        <translation type="vanished">Διαγραφή</translation>
+    </message>
+    <message>
+        <source>Delete the page shown</source>
+        <translation type="vanished">Διαγραφή της σελίδας που εμφανίζεται</translation>
+    </message>
+    <message>
+        <location filename="../../src/gui/UBPageButtons.cpp" line="+53"/>
+        <source>Delete page</source>
+        <translation>Διαγραφή σελίδας</translation>
     </message>
     <message>
         <location line="+0"/>
-        <source>Delete the page shown</source>
-        <translation>Διαγραφή της σελίδας που εμφανίζεται</translation>
+        <source>Deletes the page shown, with all it holds</source>
+        <translation>Διαγράφει τη σελίδα που εμφανίζεται, με όλο το περιεχόμενό της</translation>
     </message>
 </context>
 <context>

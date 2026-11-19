@@ -389,17 +389,15 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Ctrl+B</translation>
     </message>
     <message>
-        <location line="+12"/>
         <source>Erase</source>
-        <translation>Ştergere</translation>
+        <translation type="vanished">Ştergere</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Erase Content</source>
-        <translation>Ştergere conţinut</translation>
+        <translation type="vanished">Ştergere conţinut</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+29"/>
         <source>Preferences</source>
         <translation>Preferinţe</translation>
     </message>
@@ -1310,7 +1308,17 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+93"/>
+        <location line="+20"/>
+        <source>Clear page</source>
+        <translation>Curăță pagina</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Takes away everything added to the page; a PDF stays. Hold the button for more ways to erase.</source>
+        <translation>Înlătură tot ce s-a adăugat paginii; un PDF rămâne. Țineți apăsat butonul pentru alte moduri de ștergere.</translation>
+    </message>
+    <message>
+        <location line="+70"/>
         <source>Desktop</source>
         <translation type="unfinished">Desktop</translation>
     </message>
@@ -3728,14 +3736,22 @@ Doriţi să ignoraţi aceste erori pentru acest host?</translation>
 <context>
     <name>UBPageButtons</name>
     <message>
-        <location filename="../../src/gui/UBPageButtons.cpp" line="+53"/>
         <source>Delete</source>
-        <translation>Șterge</translation>
+        <translation type="vanished">Șterge</translation>
+    </message>
+    <message>
+        <source>Delete the page shown</source>
+        <translation type="vanished">Șterge pagina afișată</translation>
+    </message>
+    <message>
+        <location filename="../../src/gui/UBPageButtons.cpp" line="+53"/>
+        <source>Delete page</source>
+        <translation>Șterge pagina</translation>
     </message>
     <message>
         <location line="+0"/>
-        <source>Delete the page shown</source>
-        <translation>Șterge pagina afișată</translation>
+        <source>Deletes the page shown, with all it holds</source>
+        <translation>Șterge pagina afișată, cu tot ce conține</translation>
     </message>
 </context>
 <context>

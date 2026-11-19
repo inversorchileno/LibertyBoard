@@ -275,12 +275,11 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Tabuľa</translation>
     </message>
     <message>
-        <location line="+23"/>
         <source>Erase</source>
-        <translation>Vygumovať</translation>
+        <translation type="vanished">Vygumovať</translation>
     </message>
     <message>
-        <location line="+315"/>
+        <location line="+338"/>
         <location line="+15"/>
         <source>Display Tools</source>
         <translation>Zobraziť nástroje</translation>
@@ -667,12 +666,11 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Vygumovať všetky položky</translation>
     </message>
     <message>
-        <location line="-698"/>
         <source>Erase Content</source>
-        <translation>Vygumovať obsah</translation>
+        <translation type="vanished">Vygumovať obsah</translation>
     </message>
     <message>
-        <location line="+695"/>
+        <location line="-3"/>
         <source>Erase Items</source>
         <translation>Vygumovať položky</translation>
     </message>
@@ -1203,7 +1201,17 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+93"/>
+        <location line="+20"/>
+        <source>Clear page</source>
+        <translation>Vyčistiť stranu</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Takes away everything added to the page; a PDF stays. Hold the button for more ways to erase.</source>
+        <translation>Odstráni všetko, čo bolo na stranu pridané; PDF zostane. Podržaním tlačidla získate ďalšie spôsoby mazania.</translation>
+    </message>
+    <message>
+        <location line="+70"/>
         <source>Desktop</source>
         <translation type="unfinished">Pracovná plocha</translation>
     </message>
@@ -3759,14 +3767,22 @@ Chcete ignorovať tieto chyby na tomto serveri?</translation>
 <context>
     <name>UBPageButtons</name>
     <message>
-        <location filename="../../src/gui/UBPageButtons.cpp" line="+53"/>
         <source>Delete</source>
-        <translation>Odstrániť</translation>
+        <translation type="vanished">Odstrániť</translation>
+    </message>
+    <message>
+        <source>Delete the page shown</source>
+        <translation type="vanished">Odstrániť zobrazenú stranu</translation>
+    </message>
+    <message>
+        <location filename="../../src/gui/UBPageButtons.cpp" line="+53"/>
+        <source>Delete page</source>
+        <translation>Odstrániť stranu</translation>
     </message>
     <message>
         <location line="+0"/>
-        <source>Delete the page shown</source>
-        <translation>Odstrániť zobrazenú stranu</translation>
+        <source>Deletes the page shown, with all it holds</source>
+        <translation>Odstráni zobrazenú stranu so všetkým, čo obsahuje</translation>
     </message>
 </context>
 <context>

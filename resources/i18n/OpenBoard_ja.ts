@@ -389,17 +389,15 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Ctrl+B </translation>
     </message>
     <message>
-        <location line="+12"/>
         <source>Erase</source>
-        <translation>消去</translation>
+        <translation type="vanished">消去</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Erase Content</source>
-        <translation>コンテンツを消去</translation>
+        <translation type="vanished">コンテンツを消去</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+29"/>
         <source>Preferences</source>
         <translation>設定</translation>
     </message>
@@ -1310,7 +1308,17 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+93"/>
+        <location line="+20"/>
+        <source>Clear page</source>
+        <translation>ページをクリア</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Takes away everything added to the page; a PDF stays. Hold the button for more ways to erase.</source>
+        <translation>ページに追加したものをすべて取り除きます。PDF は残ります。ほかの消し方はボタンを長押しします。</translation>
+    </message>
+    <message>
+        <location line="+70"/>
         <source>Desktop</source>
         <translation type="unfinished">デスクトップ</translation>
     </message>
@@ -3709,14 +3717,22 @@ Do you want to ignore these errors for this host?</source>
 <context>
     <name>UBPageButtons</name>
     <message>
-        <location filename="../../src/gui/UBPageButtons.cpp" line="+53"/>
         <source>Delete</source>
-        <translation>削除</translation>
+        <translation type="vanished">削除</translation>
+    </message>
+    <message>
+        <source>Delete the page shown</source>
+        <translation type="vanished">表示中のページを削除</translation>
+    </message>
+    <message>
+        <location filename="../../src/gui/UBPageButtons.cpp" line="+53"/>
+        <source>Delete page</source>
+        <translation>ページを削除</translation>
     </message>
     <message>
         <location line="+0"/>
-        <source>Delete the page shown</source>
-        <translation>表示中のページを削除</translation>
+        <source>Deletes the page shown, with all it holds</source>
+        <translation>表示中のページを内容ごと削除します</translation>
     </message>
 </context>
 <context>

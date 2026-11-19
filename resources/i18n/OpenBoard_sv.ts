@@ -389,17 +389,15 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Ctrl+B</translation>
     </message>
     <message>
-        <location line="+12"/>
         <source>Erase</source>
-        <translation>Radera</translation>
+        <translation type="vanished">Radera</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Erase Content</source>
-        <translation>Radera innehåll</translation>
+        <translation type="vanished">Radera innehåll</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+29"/>
         <source>Preferences</source>
         <translation>Inställningar</translation>
     </message>
@@ -1310,7 +1308,17 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+93"/>
+        <location line="+20"/>
+        <source>Clear page</source>
+        <translation>Rensa sidan</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Takes away everything added to the page; a PDF stays. Hold the button for more ways to erase.</source>
+        <translation>Tar bort allt som lagts till på sidan; en PDF blir kvar. Håll ned knappen för fler sätt att radera.</translation>
+    </message>
+    <message>
+        <location line="+70"/>
         <source>Desktop</source>
         <translation type="unfinished">Skrivbord</translation>
     </message>
@@ -3729,14 +3737,22 @@ Vill du ignorera felen för den här värden?</translation>
 <context>
     <name>UBPageButtons</name>
     <message>
-        <location filename="../../src/gui/UBPageButtons.cpp" line="+53"/>
         <source>Delete</source>
-        <translation>Ta bort</translation>
+        <translation type="vanished">Ta bort</translation>
+    </message>
+    <message>
+        <source>Delete the page shown</source>
+        <translation type="vanished">Ta bort sidan som visas</translation>
+    </message>
+    <message>
+        <location filename="../../src/gui/UBPageButtons.cpp" line="+53"/>
+        <source>Delete page</source>
+        <translation>Ta bort sidan</translation>
     </message>
     <message>
         <location line="+0"/>
-        <source>Delete the page shown</source>
-        <translation>Ta bort sidan som visas</translation>
+        <source>Deletes the page shown, with all it holds</source>
+        <translation>Tar bort sidan som visas, med allt den innehåller</translation>
     </message>
 </context>
 <context>

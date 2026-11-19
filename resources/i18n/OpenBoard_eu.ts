@@ -506,17 +506,15 @@ Segurtasun egiaztapena gainidatzi eta jarraitu nahi duzu?</translation>
         <translation>Ktrl+B</translation>
     </message>
     <message>
-        <location line="+12"/>
         <source>Erase</source>
-        <translation>Ezabatu</translation>
+        <translation type="vanished">Ezabatu</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Erase Content</source>
-        <translation>Ezabatu edukia</translation>
+        <translation type="vanished">Ezabatu edukia</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+29"/>
         <source>Preferences</source>
         <translation>Hobespenak</translation>
     </message>
@@ -1379,7 +1377,17 @@ Segurtasun egiaztapena gainidatzi eta jarraitu nahi duzu?</translation>
         <translation type="unfinished">Arbela modua</translation>
     </message>
     <message>
-        <location line="+93"/>
+        <location line="+20"/>
+        <source>Clear page</source>
+        <translation>Garbitu orria</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Takes away everything added to the page; a PDF stays. Hold the button for more ways to erase.</source>
+        <translation>Orriari gehitutako guztia kentzen du; PDF bat geratu egiten da. Eutsi botoia sakatuta ezabatzeko beste modu batzuetarako.</translation>
+    </message>
+    <message>
+        <location line="+70"/>
         <source>Desktop</source>
         <translation type="unfinished">Mahaigaina</translation>
     </message>
@@ -3932,14 +3940,22 @@ Ostalari onentzako errore hauek ez-ikusi nahi dituzu?</translation>
 <context>
     <name>UBPageButtons</name>
     <message>
-        <location filename="../../src/gui/UBPageButtons.cpp" line="+53"/>
         <source>Delete</source>
-        <translation>Ezabatu</translation>
+        <translation type="vanished">Ezabatu</translation>
+    </message>
+    <message>
+        <source>Delete the page shown</source>
+        <translation type="vanished">Ezabatu erakutsitako orria</translation>
+    </message>
+    <message>
+        <location filename="../../src/gui/UBPageButtons.cpp" line="+53"/>
+        <source>Delete page</source>
+        <translation>Ezabatu orria</translation>
     </message>
     <message>
         <location line="+0"/>
-        <source>Delete the page shown</source>
-        <translation>Ezabatu erakutsitako orria</translation>
+        <source>Deletes the page shown, with all it holds</source>
+        <translation>Erakutsitako orria ezabatzen du, duen guztiarekin</translation>
     </message>
 </context>
 <context>

@@ -425,17 +425,15 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Ctrl+B</translation>
     </message>
     <message>
-        <location line="+12"/>
         <source>Erase</source>
-        <translation>Esborra</translation>
+        <translation type="vanished">Esborra</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Erase Content</source>
-        <translation>Esborra el contingut</translation>
+        <translation type="vanished">Esborra el contingut</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+29"/>
         <source>Preferences</source>
         <translation>Preferències</translation>
     </message>
@@ -1020,7 +1018,17 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Desplaça la pàgina</translation>
     </message>
     <message>
-        <location line="-73"/>
+        <location line="-829"/>
+        <source>Clear page</source>
+        <translation>Neteja la pàgina</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Takes away everything added to the page; a PDF stays. Hold the button for more ways to erase.</source>
+        <translation>Treu tot el que s&apos;ha afegit a la pàgina; un PDF es queda. Mantén premut el botó per a més maneres d&apos;esborrar.</translation>
+    </message>
+    <message>
+        <location line="+753"/>
         <source>Ctrl+P</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3736,14 +3744,22 @@ Voleu ignorar aquests errors per a aquest amfitrió?</translation>
 <context>
     <name>UBPageButtons</name>
     <message>
-        <location filename="../../src/gui/UBPageButtons.cpp" line="+53"/>
         <source>Delete</source>
-        <translation>Esborra</translation>
+        <translation type="vanished">Esborra</translation>
+    </message>
+    <message>
+        <source>Delete the page shown</source>
+        <translation type="vanished">Esborra la pàgina mostrada</translation>
+    </message>
+    <message>
+        <location filename="../../src/gui/UBPageButtons.cpp" line="+53"/>
+        <source>Delete page</source>
+        <translation>Esborra la pàgina</translation>
     </message>
     <message>
         <location line="+0"/>
-        <source>Delete the page shown</source>
-        <translation>Esborra la pàgina mostrada</translation>
+        <source>Deletes the page shown, with all it holds</source>
+        <translation>Esborra la pàgina mostrada, amb tot el que conté</translation>
     </message>
 </context>
 <context>

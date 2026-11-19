@@ -326,12 +326,11 @@ Felülírja a biztonsági ellenőrzést, és folytatja?</translation>
         <translation>Ctrl+B</translation>
     </message>
     <message>
-        <location line="+12"/>
         <source>Erase</source>
-        <translation>Törlés</translation>
+        <translation type="vanished">Törlés</translation>
     </message>
     <message>
-        <location line="+17"/>
+        <location line="+29"/>
         <source>Preferences</source>
         <translation>Beállítások</translation>
     </message>
@@ -788,12 +787,11 @@ Felülírja a biztonsági ellenőrzést, és folytatja?</translation>
         <translation type="vanished">Tábla megjelenítése</translation>
     </message>
     <message>
-        <location line="+35"/>
         <source>Erase Content</source>
-        <translation>Tartalom törlése</translation>
+        <translation type="vanished">Tartalom törlése</translation>
     </message>
     <message>
-        <location line="+17"/>
+        <location line="+52"/>
         <source>Display Preferences</source>
         <translation>Tulajdonágok megjelenítése</translation>
     </message>
@@ -1317,7 +1315,17 @@ Felülírja a biztonsági ellenőrzést, és folytatja?</translation>
         <translation>Tábla üzemmód</translation>
     </message>
     <message>
-        <location line="+93"/>
+        <location line="+20"/>
+        <source>Clear page</source>
+        <translation>Oldal kiürítése</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Takes away everything added to the page; a PDF stays. Hold the button for more ways to erase.</source>
+        <translation>Eltávolít mindent, amit az oldalhoz adtak; a PDF megmarad. Tartsa lenyomva a gombot a további törlési módokhoz.</translation>
+    </message>
+    <message>
+        <location line="+70"/>
         <source>Desktop</source>
         <translation>Asztali</translation>
     </message>
@@ -3840,14 +3848,22 @@ Figyelmen kívül hagyja ezeket a hibákat ennél a hosztnál?</translation>
 <context>
     <name>UBPageButtons</name>
     <message>
-        <location filename="../../src/gui/UBPageButtons.cpp" line="+53"/>
         <source>Delete</source>
-        <translation>Törlés</translation>
+        <translation type="vanished">Törlés</translation>
+    </message>
+    <message>
+        <source>Delete the page shown</source>
+        <translation type="vanished">A megjelenített oldal törlése</translation>
+    </message>
+    <message>
+        <location filename="../../src/gui/UBPageButtons.cpp" line="+53"/>
+        <source>Delete page</source>
+        <translation>Oldal törlése</translation>
     </message>
     <message>
         <location line="+0"/>
-        <source>Delete the page shown</source>
-        <translation>A megjelenített oldal törlése</translation>
+        <source>Deletes the page shown, with all it holds</source>
+        <translation>Törli a megjelenített oldalt mindazzal, amit tartalmaz</translation>
     </message>
 </context>
 <context>

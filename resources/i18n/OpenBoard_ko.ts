@@ -389,17 +389,15 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Ctrl+B</translation>
     </message>
     <message>
-        <location line="+12"/>
         <source>Erase</source>
-        <translation>지우기</translation>
+        <translation type="vanished">지우기</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Erase Content</source>
-        <translation>콘텐츠 지우기</translation>
+        <translation type="vanished">콘텐츠 지우기</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+29"/>
         <source>Preferences</source>
         <translation>기본 설정</translation>
     </message>
@@ -1310,7 +1308,17 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+93"/>
+        <location line="+20"/>
+        <source>Clear page</source>
+        <translation>페이지 비우기</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Takes away everything added to the page; a PDF stays. Hold the button for more ways to erase.</source>
+        <translation>페이지에 추가한 것을 모두 지웁니다. PDF는 남습니다. 다른 지우기 방법은 버튼을 길게 누르세요.</translation>
+    </message>
+    <message>
+        <location line="+70"/>
         <source>Desktop</source>
         <translation type="unfinished">바탕 화면</translation>
     </message>
@@ -3733,14 +3741,22 @@ Do you want to ignore these errors for this host?</source>
 <context>
     <name>UBPageButtons</name>
     <message>
-        <location filename="../../src/gui/UBPageButtons.cpp" line="+53"/>
         <source>Delete</source>
-        <translation>삭제</translation>
+        <translation type="vanished">삭제</translation>
+    </message>
+    <message>
+        <source>Delete the page shown</source>
+        <translation type="vanished">표시된 페이지 삭제</translation>
+    </message>
+    <message>
+        <location filename="../../src/gui/UBPageButtons.cpp" line="+53"/>
+        <source>Delete page</source>
+        <translation>페이지 삭제</translation>
     </message>
     <message>
         <location line="+0"/>
-        <source>Delete the page shown</source>
-        <translation>표시된 페이지 삭제</translation>
+        <source>Deletes the page shown, with all it holds</source>
+        <translation>표시된 페이지를 내용과 함께 삭제합니다</translation>
     </message>
 </context>
 <context>

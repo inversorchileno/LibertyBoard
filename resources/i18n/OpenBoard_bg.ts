@@ -324,12 +324,11 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Натиснете Ctrl+B</translation>
     </message>
     <message>
-        <location line="+12"/>
         <source>Erase</source>
-        <translation>Заличи</translation>
+        <translation type="vanished">Заличи</translation>
     </message>
     <message>
-        <location line="+17"/>
+        <location line="+29"/>
         <source>Preferences</source>
         <translation>Опции</translation>
     </message>
@@ -781,12 +780,11 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="vanished">Покажи дъската</translation>
     </message>
     <message>
-        <location line="+35"/>
         <source>Erase Content</source>
-        <translation>Изтрий съдържанието</translation>
+        <translation type="vanished">Изтрий съдържанието</translation>
     </message>
     <message>
-        <location line="+17"/>
+        <location line="+52"/>
         <source>Display Preferences</source>
         <translation>Покажи опциите</translation>
     </message>
@@ -1315,7 +1313,17 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+93"/>
+        <location line="+20"/>
+        <source>Clear page</source>
+        <translation>Изчисти страницата</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Takes away everything added to the page; a PDF stays. Hold the button for more ways to erase.</source>
+        <translation>Премахва всичко добавено към страницата; PDF остава. Задръжте бутона за още начини за изтриване.</translation>
+    </message>
+    <message>
+        <location line="+70"/>
         <source>Desktop</source>
         <translation type="unfinished">Десктоп</translation>
     </message>
@@ -3721,14 +3729,22 @@ Do you want to ignore these errors for this host?</source>
 <context>
     <name>UBPageButtons</name>
     <message>
-        <location filename="../../src/gui/UBPageButtons.cpp" line="+53"/>
         <source>Delete</source>
-        <translation>Изтрий</translation>
+        <translation type="vanished">Изтрий</translation>
+    </message>
+    <message>
+        <source>Delete the page shown</source>
+        <translation type="vanished">Изтрий показаната страница</translation>
+    </message>
+    <message>
+        <location filename="../../src/gui/UBPageButtons.cpp" line="+53"/>
+        <source>Delete page</source>
+        <translation>Изтрий страницата</translation>
     </message>
     <message>
         <location line="+0"/>
-        <source>Delete the page shown</source>
-        <translation>Изтрий показаната страница</translation>
+        <source>Deletes the page shown, with all it holds</source>
+        <translation>Изтрива показаната страница с цялото ѝ съдържание</translation>
     </message>
 </context>
 <context>

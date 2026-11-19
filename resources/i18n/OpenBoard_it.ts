@@ -391,17 +391,15 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Ctrl+B</translation>
     </message>
     <message>
-        <location line="+12"/>
         <source>Erase</source>
-        <translation>Cancella</translation>
+        <translation type="vanished">Cancella</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Erase Content</source>
-        <translation>Cancella contenuto</translation>
+        <translation type="vanished">Cancella contenuto</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+29"/>
         <source>Preferences</source>
         <translation>Preferenze</translation>
     </message>
@@ -1316,7 +1314,17 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Modalità lavagna</translation>
     </message>
     <message>
-        <location line="+93"/>
+        <location line="+20"/>
+        <source>Clear page</source>
+        <translation>Pulisci pagina</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Takes away everything added to the page; a PDF stays. Hold the button for more ways to erase.</source>
+        <translation>Toglie tutto ciò che è stato aggiunto alla pagina; un PDF resta. Tieni premuto il pulsante per altri modi di cancellare.</translation>
+    </message>
+    <message>
+        <location line="+70"/>
         <source>Desktop</source>
         <translation>Desktop</translation>
     </message>
@@ -3821,14 +3829,22 @@ Vuoi ignorare gli errori per questo host?</translation>
 <context>
     <name>UBPageButtons</name>
     <message>
-        <location filename="../../src/gui/UBPageButtons.cpp" line="+53"/>
         <source>Delete</source>
-        <translation>Elimina</translation>
+        <translation type="vanished">Elimina</translation>
+    </message>
+    <message>
+        <source>Delete the page shown</source>
+        <translation type="vanished">Elimina la pagina mostrata</translation>
+    </message>
+    <message>
+        <location filename="../../src/gui/UBPageButtons.cpp" line="+53"/>
+        <source>Delete page</source>
+        <translation>Elimina pagina</translation>
     </message>
     <message>
         <location line="+0"/>
-        <source>Delete the page shown</source>
-        <translation>Elimina la pagina mostrata</translation>
+        <source>Deletes the page shown, with all it holds</source>
+        <translation>Elimina la pagina mostrata, con tutto ciò che contiene</translation>
     </message>
 </context>
 <context>

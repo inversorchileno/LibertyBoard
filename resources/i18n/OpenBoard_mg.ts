@@ -359,12 +359,11 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="vanished">Aseho ny solaitra</translation>
     </message>
     <message>
-        <location line="+35"/>
         <source>Erase Content</source>
-        <translation>Fafana ny mpiatiny</translation>
+        <translation type="vanished">Fafana ny mpiatiny</translation>
     </message>
     <message>
-        <location line="+17"/>
+        <location line="+52"/>
         <source>Display Preferences</source>
         <translation>Aseho ny safidy nofaritana</translation>
     </message>
@@ -806,12 +805,11 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Safidy nofaritana</translation>
     </message>
     <message>
-        <location line="-17"/>
         <source>Erase</source>
-        <translation>Fafana</translation>
+        <translation type="vanished">Fafana</translation>
     </message>
     <message>
-        <location line="+32"/>
+        <location line="+15"/>
         <source>Library</source>
         <translation>Tahirim-boky</translation>
     </message>
@@ -1315,7 +1313,17 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+93"/>
+        <location line="+20"/>
+        <source>Clear page</source>
+        <translation>Diovy ny pejy</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Takes away everything added to the page; a PDF stays. Hold the button for more ways to erase.</source>
+        <translation>Esoriny izay rehetra nampiana tamin&apos;ny pejy; mijanona ny PDF. Tazony ny bokotra raha mila fomba hafa hamafana.</translation>
+    </message>
+    <message>
+        <location line="+70"/>
         <source>Desktop</source>
         <translation type="unfinished">Sehatr&apos;asa</translation>
     </message>
@@ -3728,14 +3736,22 @@ Tena tsy te hiraharaha an&apos;ireo tsy mety ho an&apos;ilay milina ve ianao?</t
 <context>
     <name>UBPageButtons</name>
     <message>
-        <location filename="../../src/gui/UBPageButtons.cpp" line="+53"/>
         <source>Delete</source>
-        <translation>Fafao</translation>
+        <translation type="vanished">Fafao</translation>
+    </message>
+    <message>
+        <source>Delete the page shown</source>
+        <translation type="vanished">Fafao ny pejy aseho</translation>
+    </message>
+    <message>
+        <location filename="../../src/gui/UBPageButtons.cpp" line="+53"/>
+        <source>Delete page</source>
+        <translation>Fafao ny pejy</translation>
     </message>
     <message>
         <location line="+0"/>
-        <source>Delete the page shown</source>
-        <translation>Fafao ny pejy aseho</translation>
+        <source>Deletes the page shown, with all it holds</source>
+        <translation>Fafany ny pejy aseho sy izay rehetra ao aminy</translation>
     </message>
 </context>
 <context>
