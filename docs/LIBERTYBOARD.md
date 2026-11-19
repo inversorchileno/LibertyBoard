@@ -179,6 +179,14 @@ En modo escritorio son paneles emergentes; en modo pizarra, un panel fijo a la d
 - **Español completo:** el archivo de traducción no tiene textos sin traducir (incluidos 180 heredados de OpenBoard) y la ventana de consejos tiene versión en español (`resources/startupHints/locales/es`). Otros idiomas aún tienen textos de OpenBoard sin traducir.
 - **Modo → Pizarra** sale de la doble pizarra; ambos documentos quedan en sus pestañas.
 
+## Impresión, OCR y pestañas (compilación 18)
+
+- **Imprimir** (`src/board/UBDocumentPrinter`, clase `UBPrintDialog`): ventana propia con vista previa hoja por hoja. Impresora (las del sistema o «Archivo PDF») y botón «Ajustes de la impresora» (el diálogo del sistema para bandeja, calidad…); copias e intercalar; todas, actual o rangos («1-3, 5, 8-»); papel (Carta, Oficio, A4, A3, A5); orientación automática por página, vertical u horizontal; ajustar a la hoja o tamaño real; 1, 2 o 4 páginas por hoja; color o escala de grises; una o dos caras (si la impresora puede); imprimir o no las anotaciones. Recuerda impresora, papel, escala, color y caras.
+- **OCR** (`src/pdf/UBOcrEngine*`, `src/pdf/UBPdfOcr`, `src/gui/UBOcrRunner`): **Inicio → Reconocer texto (OCR)** lee las páginas sin texto del documento (300 ppp), con avance y botón Detener; al abrir un PDF cuyas primeras páginas son solo imágenes, ofrece hacerlo (un «No» se recuerda para ese PDF). En Windows usa el lector de Windows (Windows.Media.Ocr, C++/WinRT, `windowsapp.lib`) en los idiomas del usuario; en Linux, `tesseract` si está instalado (`tesseract-ocr` y `tesseract-ocr-spa`). Las palabras quedan en `objects/<pdf>.ocr.json` junto al PDF del documento; Buscar y Copiar texto (recuadro o lazo) las usan. Al guardar/extraer, el PDF lleva el texto invisible bajo cada página escaneada (`UBPdfAnnotations::writeTextLayer`), también con la página girada.
+- **Índice y Buscar** se cierran al volver a apretar su botón (o Ctrl+F).
+- **Pestañas:** espacio bajo los nombres y una línea blanca continua de 1 px entre pestañas y barra de opciones.
+- **Lazo:** rodear texto sin objetos también lo copia.
+
 ## Forma de trabajo
 
 - El dueño es **Luis** (Chile), analista financiero, sin experiencia en programación. Habla en español; se le responde en español, claro y sin jerga. Usa Windows 11, pantalla ancha (unos 2540 px) y lápiz digital.
@@ -198,7 +206,6 @@ En modo escritorio son paneles emergentes; en modo pizarra, un panel fijo a la d
 
 - **Instalador** (Inno Setup, hay un script de OpenBoard en `release_scripts/windows`): por ahora el dueño prefiere el portable.
 - Importar un PDF con el mismo nombre que uno ya importado, pero cambiado por otro programa, sigue preguntando si reemplazar (si no cambió, se retoma su documento desde la compilación 17).
-- **OCR** (reconocer texto de páginas escaneadas): Windows 10/11 trae un motor OCR propio (Windows.Media.Ocr) que se podría usar sin instalar nada, pero no se puede probar desde Linux; queda para una tanda propia.
 - Firmas y formularios PDF: descartado por Luis.
 - La grabación y la reproducción de sonido no se pudieron probar en Linux (sin dispositivo de audio).
 - Se vio una vez que el programa se cerraba al abrir un segundo PDF mientras aparecía esa pregunta de reemplazo (viene de OpenBoard); revisar.
