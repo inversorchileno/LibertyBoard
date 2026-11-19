@@ -155,6 +155,12 @@ UBBoardView::~UBBoardView ()
 
 void UBBoardView::init ()
 {
+    // The fingers on a touch screen zoom and move the board.
+    if (bIsControl && !bIsDesktop)
+    {
+        viewport()->setAttribute(Qt::WA_AcceptTouchEvents);
+    }
+
     connect (UBSettings::settings ()->boardPenPressureSensitive, SIGNAL (changed (QVariant)),
              this, SLOT (settingChanged (QVariant)));
 
@@ -313,6 +319,12 @@ void UBBoardView::keyPressEvent (QKeyEvent *event)
 
 bool UBBoardView::event (QEvent * e)
 {
+    // The pen writing: the touches of the hand that holds it are left out.
+    if (e->type() == QEvent::TabletPress || e->type() == QEvent::TabletMove || e->type() == QEvent::TabletRelease)
+    {
+        mPenTime.start();
+    }
+
     if (e->type () == QEvent::Gesture)
     {
         QGestureEvent *gestureEvent = dynamic_cast<QGestureEvent *> (e);
@@ -337,6 +349,189 @@ bool UBBoardView::event (QEvent * e)
     }
 
     return QGraphicsView::event (e);
+}
+
+bool UBBoardView::viewportEvent(QEvent* event)
+{
+    switch (event->type())
+    {
+    case QEvent::TouchBegin:
+    case QEvent::TouchUpdate:
+    case QEvent::TouchEnd:
+    case QEvent::TouchCancel:
+    {
+        auto touch = static_cast<QTouchEvent*>(event);
+
+        // Only the fingers on the screen of the board; a touchpad scrolls as a wheel.
+        if (bIsControl && !bIsDesktop && touch->device() && touch->device()->type() == QInputDevice::DeviceType::TouchScreen)
+        {
+            return handleTouch(touch);
+        }
+
+        break;
+    }
+
+    case QEvent::MouseButtonPress:
+    case QEvent::MouseMove:
+    {
+        auto mouse = static_cast<QMouseEvent*>(event);
+
+        if (mouse->device() && mouse->device()->type() == QInputDevice::DeviceType::Stylus)
+        {
+            mPenTime.start();
+        }
+
+        break;
+    }
+
+    default:
+        break;
+    }
+
+    return QGraphicsView::viewportEvent(event);
+}
+
+bool UBBoardView::handleTouch(QTouchEvent* event)
+{
+    event->accept();
+
+    // The fingers, without a palm: a palm touches the screen with a large area.
+    const qreal palmSize = 60;
+    QList<QPointF> fingers;
+
+    for (const QEventPoint& point : event->points())
+    {
+        const QSizeF size = point.ellipseDiameters();
+
+        if (point.state() != QEventPoint::Released && qMax(size.width(), size.height()) < palmSize)
+        {
+            fingers << point.position();
+        }
+    }
+
+    const bool ending = event->type() == QEvent::TouchEnd || event->type() == QEvent::TouchCancel;
+
+    // While the pen writes, and a moment after, the screen is for the pen only.
+    const bool penWriting = mPenTime.isValid() && mPenTime.elapsed() < 800;
+
+    if (event->type() == QEvent::TouchBegin)
+    {
+        mTouchMode = penWriting ? TouchMode::Ignored : TouchMode::None;
+    }
+
+    if (mTouchMode == TouchMode::Ignored)
+    {
+        if (ending)
+        {
+            mTouchMode = TouchMode::None;
+        }
+
+        return true;
+    }
+
+    if (fingers.size() >= 2)
+    {
+        const QPointF center = (fingers.at(0) + fingers.at(1)) / 2;
+        const qreal span = QLineF(fingers.at(0), fingers.at(1)).length();
+
+        if (mTouchMode == TouchMode::OneFinger)
+        {
+            // The first finger had begun to draw or select: that ends here,
+            // and a stroke of a very short moment is taken back.
+            sendFingerAsMouse(QEvent::MouseButtonRelease, mTouchCenter);
+
+            if (mOneFingerTime.elapsed() < 300 && UBDrawingController::drawingController()->isDrawingTool())
+            {
+                UBApplication::mainWindow->actionUndo->trigger();
+            }
+        }
+
+        if (mTouchMode != TouchMode::TwoFingers)
+        {
+            mTouchMode = TouchMode::TwoFingers;
+        }
+        else
+        {
+            // The page follows the fingers: it grows as they open and moves with them.
+            if (mTouchSpan > 10 && span > 10)
+            {
+                qreal ratio = span / mTouchSpan;
+                const qreal zoom = mController->currentZoom();
+
+                if (zoom * ratio < 0.2)
+                {
+                    ratio = 0.2 / zoom;
+                }
+
+                if (qAbs(ratio - 1) > 0.002)
+                {
+                    mController->zoom(ratio, mapToScene(center.toPoint()));
+                }
+            }
+
+            const QPointF move = center - mTouchCenter;
+            mController->handScroll(move.x(), move.y());
+            switchToNeighbourPage();
+        }
+
+        mTouchCenter = center;
+        mTouchSpan = span;
+    }
+    else if (fingers.size() == 1 && (mTouchMode == TouchMode::None || mTouchMode == TouchMode::OneFinger))
+    {
+        // One finger works as the mouse, with the tool chosen.
+        const QPointF position = fingers.first();
+
+        if (mTouchMode == TouchMode::None)
+        {
+            mTouchMode = TouchMode::OneFinger;
+            mOneFingerTime.start();
+            sendFingerAsMouse(QEvent::MouseButtonPress, position);
+        }
+        else
+        {
+            sendFingerAsMouse(QEvent::MouseMove, position);
+        }
+
+        mTouchCenter = position;
+    }
+
+    if (ending)
+    {
+        if (mTouchMode == TouchMode::OneFinger)
+        {
+            sendFingerAsMouse(QEvent::MouseButtonRelease, mTouchCenter);
+        }
+
+        mTouchMode = TouchMode::None;
+    }
+    else if (fingers.isEmpty() && mTouchMode == TouchMode::OneFinger)
+    {
+        sendFingerAsMouse(QEvent::MouseButtonRelease, mTouchCenter);
+        mTouchMode = TouchMode::None;
+    }
+
+    return true;
+}
+
+void UBBoardView::sendFingerAsMouse(QEvent::Type type, const QPointF& position)
+{
+    const Qt::MouseButton button = type == QEvent::MouseMove ? Qt::NoButton : Qt::LeftButton;
+    const Qt::MouseButtons buttons = type == QEvent::MouseButtonRelease ? Qt::NoButton : Qt::LeftButton;
+    QMouseEvent mouse(type, position, viewport()->mapToGlobal(position), button, buttons, Qt::NoModifier);
+
+    switch (type)
+    {
+    case QEvent::MouseButtonPress:
+        mousePressEvent(&mouse);
+        break;
+    case QEvent::MouseMove:
+        mouseMoveEvent(&mouse);
+        break;
+    default:
+        mouseReleaseEvent(&mouse);
+        break;
+    }
 }
 
 void UBBoardView::tabletEvent (QTabletEvent * event)

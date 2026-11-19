@@ -121,6 +121,13 @@ protected:
 
     virtual bool event (QEvent * e);
 
+    /**
+     * @brief Fingers on a touch screen: one finger works as the mouse, two
+     * fingers zoom and move the page. A palm, or a touch while the pen
+     * writes, is left out.
+     */
+    bool viewportEvent(QEvent* event) override;
+
     virtual void keyPressEvent(QKeyEvent *event);
     virtual void tabletEvent(QTabletEvent * event);
     virtual void mouseDoubleClickEvent(QMouseEvent *event);
@@ -196,6 +203,15 @@ private:
         int mNeighbourRepaints{0};
         int mWheelTurn{0};
         bool mSelectorOnNothing{false};
+
+        enum class TouchMode { None, OneFinger, TwoFingers, Ignored };
+        bool handleTouch(QTouchEvent* event);
+        void sendFingerAsMouse(QEvent::Type type, const QPointF& position);
+        TouchMode mTouchMode{TouchMode::None};
+        QElapsedTimer mOneFingerTime;
+        QElapsedTimer mPenTime;
+        QPointF mTouchCenter;
+        qreal mTouchSpan{0};
         QPolygon mLassoPoints;
         QGraphicsPathItem* mLassoItem{nullptr};
         bool mOverPdfLink{false};
