@@ -348,7 +348,17 @@ void UBMainMenu::createCornerButtons()
     mMainWindow->actionSelector->setShortcut(QKeySequence());
     searchAction->setToolTip(tr("Find words in the PDF"));
     mMainWindow->addAction(searchAction);
-    connect(searchAction, &QAction::triggered, searchBar, &UBSearchBar::open);
+    // A second press closes the search.
+    connect(searchAction, &QAction::triggered, searchBar, [searchBar]() {
+        if (searchBar->isVisible())
+        {
+            searchBar->hide();
+        }
+        else
+        {
+            searchBar->open();
+        }
+    });
 
     auto searchButton = new QToolButton(corner);
     searchButton->setDefaultAction(searchAction);
@@ -361,8 +371,17 @@ void UBMainMenu::createCornerButtons()
     auto outlinePanel = new UBPdfOutlinePanel(mMainWindow);
     auto outlineAction = new QAction(QIcon(":/images/toolbar/outline.svg"), tr("Index"), mMainWindow);
     outlineAction->setToolTip(tr("The index of the PDF: a click on a title goes to its page"));
-    connect(outlineAction, &QAction::triggered, searchBar, &QWidget::hide);
-    connect(outlineAction, &QAction::triggered, outlinePanel, &UBPdfOutlinePanel::open);
+    connect(outlineAction, &QAction::triggered, outlinePanel, [outlinePanel, searchBar]() {
+        // A second press closes the index.
+        if (outlinePanel->isVisible())
+        {
+            outlinePanel->hide();
+            return;
+        }
+
+        searchBar->hide();
+        outlinePanel->open();
+    });
     connect(searchAction, &QAction::triggered, outlinePanel, &QWidget::hide);
 
     auto outlineButton = new QToolButton(corner);
