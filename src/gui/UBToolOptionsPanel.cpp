@@ -242,7 +242,7 @@ UBPenOptionsPanel::UBPenOptionsPanel(QWidget* parent)
     addRow(mOpacity);
 
     mRecognizeShapes = new QCheckBox(tr("Recognize shapes"), this);
-    mRecognizeShapes->setToolTip(tr("A line, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one."));
+    mRecognizeShapes->setToolTip(tr("A line, arrow, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one."));
     addRow(mRecognizeShapes);
 
     connect(mRecognizeShapes, &QCheckBox::toggled, this, [settings](bool on) {

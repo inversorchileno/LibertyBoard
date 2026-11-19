@@ -104,6 +104,78 @@ namespace
         return end;
     }
 
+    // An arrow drawn in one stroke: the shaft, then the head at its end,
+    // its two sides drawn as they come (tip, side, tip, side, or side to side).
+    bool arrowAtEnd(const QList<QPointF>& points, qreal diagonal, QPointF* start, QPointF* tip, qreal* headLength)
+    {
+        QList<int> kept{ 0 };
+        simplify(points, 0, points.size() - 1, 0.06 * diagonal, kept);
+        kept << points.size() - 1;
+
+        if (kept.size() < 4)
+        {
+            return false;
+        }
+
+        const QPointF s = points.at(kept.at(0));
+        const QPointF t = points.at(kept.at(1));
+        const qreal shaft = QLineF(s, t).length();
+
+        if (shaft < 0.6 * diagonal)
+        {
+            return false;
+        }
+
+        // The head stays near the tip, and at least one side goes back along the shaft.
+        const QPointF back = (s - t) / shaft;
+        qreal farthest = 0;
+        bool sideBack = false;
+
+        for (int i = 2; i < kept.size(); ++i)
+        {
+            const QPointF p = points.at(kept.at(i));
+            const QPointF v = p - t;
+            const qreal distance = QLineF(t, p).length();
+
+            if (distance > 0.5 * shaft)
+            {
+                return false;
+            }
+
+            farthest = qMax(farthest, distance);
+
+            // Between 10 and 75 degrees from the shaft, pointing back.
+            if (distance > 0.08 * shaft)
+            {
+                const qreal cosine = QPointF::dotProduct(v / distance, back);
+
+                if (cosine > qCos(qDegreesToRadians(75.0)) && cosine < qCos(qDegreesToRadians(8.0)))
+                {
+                    sideBack = true;
+                }
+            }
+        }
+
+        // Every point of the head is near the tip.
+        for (int i = kept.at(1); i < points.size(); ++i)
+        {
+            if (QLineF(t, points.at(i)).length() > 0.55 * shaft)
+            {
+                return false;
+            }
+        }
+
+        if (!sideBack || farthest < 0.1 * shaft)
+        {
+            return false;
+        }
+
+        *start = s;
+        *tip = t;
+        *headLength = qBound(0.12 * shaft, farthest, 0.35 * shaft);
+        return true;
+    }
+
     // How far the points are, on average, from the ellipse that fills the rectangle,
     // as a part of its size: 0 on the ellipse.
     qreal ellipseError(const QList<QPointF>& points, const QRectF& box)
@@ -174,6 +246,31 @@ UBShapeRecognizer::Shape UBShapeRecognizer::recognize(const QList<QPointF>& poin
     {
         shape.points = { start, straighten(start, end) };
         return shape;
+    }
+
+    // An arrow: the head at the end of the stroke, or at its start.
+    {
+        QPointF arrowStart;
+        QPointF arrowTip;
+        qreal head = 0;
+        QList<QPointF> reversed(points.crbegin(), points.crend());
+
+        if (arrowAtEnd(points, diagonal, &arrowStart, &arrowTip, &head)
+            || arrowAtEnd(reversed, diagonal, &arrowStart, &arrowTip, &head))
+        {
+            arrowTip = straighten(arrowStart, arrowTip);
+
+            // Two sides of the same length, 28 degrees from the shaft.
+            QLineF side(arrowTip, arrowStart);
+            side.setLength(head);
+            QLineF left = side;
+            left.setAngle(side.angle() + 28);
+            QLineF right = side;
+            right.setAngle(side.angle() - 28);
+
+            shape.points = { arrowStart, arrowTip, left.p2(), arrowTip, right.p2() };
+            return shape;
+        }
     }
 
     // The other shapes are closed: the line ends near where it started.

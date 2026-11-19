@@ -26,9 +26,9 @@
 #include <QPointF>
 
 /**
- * @brief Recognises a shape drawn by hand with the pen: a straight line, a
- * circle, an oval, a triangle, a square, a rectangle or another polygon of
- * few sides, and gives it drawn cleanly.
+ * @brief Recognises a shape drawn by hand with the pen: a straight line, an
+ * arrow, a circle, an oval, a triangle, a square, a rectangle or another
+ * polygon of few sides, and gives it drawn cleanly.
  */
 namespace UBShapeRecognizer
 {
