@@ -189,11 +189,15 @@ public:
     void setChoice(int index);
     int choice() const;
 
+    /** @brief Shows only the chosen picture; a click on it drops down the others. */
+    void setDropDown();
+
 signals:
     void choiceChanged(int index);
 
 private:
     QButtonGroup* mGroup{nullptr};
+    QToolButton* mDropDown{nullptr};
 };
 
 /**

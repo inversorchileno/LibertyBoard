@@ -26,10 +26,13 @@
 #include <QButtonGroup>
 #include <QColorDialog>
 #include <QComboBox>
+#include <QFrame>
 #include <QGridLayout>
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QLineEdit>
+#include <QVBoxLayout>
+#include <QMenu>
 #include <QPainter>
 #include <QPainterPath>
 #include <QSlider>
@@ -972,6 +975,64 @@ void UBPictureChoice::setChoice(int index)
     if (auto button = mGroup->button(index))
     {
         button->setChecked(true);
+
+        if (mDropDown)
+        {
+            mDropDown->setIcon(button->icon());
+        }
+    }
+}
+
+void UBPictureChoice::setDropDown()
+{
+    if (mDropDown)
+    {
+        return;
+    }
+
+    mDropDown = new QToolButton(this);
+    mDropDown->setIconSize(QSize(40, 24));
+    mDropDown->setToolButtonStyle(Qt::ToolButtonIconOnly);
+    mDropDown->setArrowType(Qt::NoArrow);
+
+    // The other pictures, one under the other, in a small dark window.
+    auto popup = new QFrame(this, Qt::Popup);
+    popup->setStyleSheet("QFrame { background: #2c313a; border: 1px solid #4a5160; }"
+                         "QToolButton { background: transparent; border: none; border-radius: 4px; padding: 3px; }"
+                         "QToolButton:hover { background: #3d4452; }"
+                         "QToolButton:checked { background: #4a5160; }");
+    auto column = new QVBoxLayout(popup);
+    column->setContentsMargins(3, 3, 3, 3);
+    column->setSpacing(1);
+
+    for (QAbstractButton* button : mGroup->buttons())
+    {
+        const int id = mGroup->id(button);
+        auto item = new QToolButton(popup);
+        item->setIcon(button->icon());
+        item->setIconSize(QSize(40, 24));
+        item->setFixedSize(52, 32);
+        item->setToolTip(button->toolTip());
+        column->addWidget(item);
+        connect(item, &QToolButton::clicked, this, [this, popup, id]() {
+            popup->hide();
+            setChoice(id);
+            emit choiceChanged(id);
+        });
+        button->hide();
+    }
+
+    connect(mDropDown, &QToolButton::clicked, this, [this, popup]() {
+        popup->adjustSize();
+        popup->move(mDropDown->mapToGlobal(QPoint(0, mDropDown->height())));
+        popup->show();
+    });
+
+    layout()->addWidget(mDropDown);
+
+    if (QAbstractButton* checked = mGroup->checkedButton())
+    {
+        mDropDown->setIcon(checked->icon());
     }
 }
 

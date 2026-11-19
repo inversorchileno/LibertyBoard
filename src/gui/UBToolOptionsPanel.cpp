@@ -756,6 +756,43 @@ void UBShapeOptionsPanel::refresh()
     }
 }
 
+void UBShapeOptionsPanel::layOutForToolbar()
+{
+    if (mTool != UBStylusTool::Arrow)
+    {
+        return;
+    }
+
+    // In the toolbar each choice of the line shows only the chosen picture
+    // and drops the others down, with a short caption.
+    for (UBPictureChoice* choice : { mDash, mStartEnding, mEndEnding })
+    {
+        choice->setDropDown();
+    }
+
+    const QMap<QString, QString> captions = { { tr("Line style"), tr("Line") }, { tr("Line start"), tr("Start") },
+                                              { tr("Line end"), tr("End") } };
+
+    for (QLabel* label : findChildren<QLabel*>("section"))
+    {
+        if (captions.contains(label->text()))
+        {
+            label->setToolTip(label->text());
+            label->setText(captions.value(label->text()));
+        }
+        else if (label->text() == tr("Opacity"))
+        {
+            label->hide();
+        }
+    }
+
+    // Tapered and the opacity at the left, before the colors.
+    mLayout->removeWidget(mTapered);
+    mLayout->removeWidget(mOpacity);
+    mLayout->insertWidget(0, mTapered);
+    mLayout->insertWidget(1, mOpacity);
+}
+
 void UBShapeOptionsPanel::showColorTarget(int target)
 {
     if (!mColorTarget)

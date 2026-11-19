@@ -163,6 +163,9 @@ public:
     UBShapeOptionsPanel(int tool, QWidget* parent = nullptr);
     void refresh() override;
 
+protected:
+    void layOutForToolbar() override;
+
 private:
     void showColorTarget(int target);
 
