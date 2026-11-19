@@ -25,7 +25,11 @@
 #include <QDateTime>
 #include <QList>
 #include <QPointF>
+#include <QRectF>
+#include <QSizeF>
 #include <QString>
+
+#include "pdf/UBOcrEngine.h"
 
 /**
  * @brief Writes into a PDF file the quick notes and the files of the pages
@@ -52,4 +56,29 @@ namespace UBPdfAnnotations
 
     /** @brief Adds the marks to the PDF file. Returns false when the file could not be written. */
     bool write(const QString& pdfFile, const QList<Mark>& marks);
+
+    /** @brief The words read on a scanned page of the original PDF, and where that page is in the PDF written. */
+    struct TextPage
+    {
+        /** @brief The page of the PDF written, from 1. */
+        int page{0};
+
+        /** @brief The words, in points of the original page as it is shown. */
+        QList<UBOcrEngine::Word> words;
+
+        /** @brief The size of the original page as it is shown, in points. */
+        QSizeF sourceSize;
+
+        /** @brief The turn of the page on the board, clockwise: 0, 90, 180 or 270 degrees. */
+        int turn{0};
+
+        /** @brief Where the turned page is on the page written, from 0 to 1 across and down. */
+        QRectF placement{0, 0, 1, 1};
+    };
+
+    /**
+     * @brief Writes the words under the pictures of the pages as invisible
+     * text, so that other PDF readers find, select and copy it.
+     */
+    bool writeTextLayer(const QString& pdfFile, const QList<TextPage>& pages);
 }

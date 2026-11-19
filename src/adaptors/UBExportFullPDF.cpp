@@ -57,6 +57,7 @@
 #include "domain/UBGraphicsAttachmentItem.h"
 #include "domain/UBGraphicsCommentItem.h"
 #include "domain/UBGraphicsSoundItem.h"
+#include "pdf/UBPdfOcr.h"
 #include <Exception.h>
 #include <Transformation.h>
 
@@ -291,6 +292,8 @@ bool UBExportFullPDF::persistsDocument(std::shared_ptr<UBDocumentProxy> pDocumen
             merger.addOverlayDocument(QFile::encodeName(overlayName).constData());
 
             MergeDescription mergeInfo;
+            QHash<QString, UBPdfOcr::Pages> ocrOfFile;
+            QList<UBPdfAnnotations::TextPage> textPages;
 
             // factor between scene coordinates and PDF coordinates
             double dpiScale = 72. / pDocumentProxy->pageDpi();
@@ -362,6 +365,29 @@ bool UBExportFullPDF::persistsDocument(std::shared_ptr<UBDocumentProxy> pDocumen
                     mergeInfo.push_back(pageDescription);
 
                     merger.addBaseDocument(QFile::encodeName(backgroundPath).constData());
+
+                    // The words read on a scanned page go under its picture, as text.
+                    if (!ocrOfFile.contains(backgroundPath))
+                    {
+                        ocrOfFile.insert(backgroundPath, UBPdfOcr::load(backgroundPath));
+                    }
+
+                    const QList<UBOcrEngine::Word> words = ocrOfFile.value(backgroundPath).value(pdfItem->pageNumber());
+
+                    if (!words.isEmpty())
+                    {
+                        UBPdfAnnotations::TextPage textPage;
+                        textPage.page = written + 1;
+                        textPage.words = words;
+                        textPage.sourceSize = pdfItem->pageSize();
+                        textPage.turn = turn;
+                        // The page of the PDF fills the page written, smaller when
+                        // annotations stand out of it, at its top left.
+                        textPage.placement = QRectF((xPdf - xAnnotation) * scaleFactor / pdfSceneRect.width(),
+                                                    (yPdf - yAnnotation) * scaleFactor / pdfSceneRect.height(),
+                                                    scaleFactor, scaleFactor);
+                        textPages << textPage;
+                    }
                 }
                 else
                 {
@@ -383,6 +409,11 @@ bool UBExportFullPDF::persistsDocument(std::shared_ptr<UBDocumentProxy> pDocumen
             merger.merge(QFile::encodeName(overlayName).constData(), mergeInfo);
 
             merger.saveMergedDocumentsAs(QFile::encodeName(filename).constData());
+
+            if (!UBPdfAnnotations::writeTextLayer(filename, textPages))
+            {
+                qWarning() << "The recognized text could not be written into" << filename;
+            }
 
         }
         catch(const std::exception& e)

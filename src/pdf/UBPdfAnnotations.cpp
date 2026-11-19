@@ -26,6 +26,8 @@
 #include <QFileInfo>
 #include <QTransform>
 
+#include <cstring>
+
 // PDFDoc first: it brings the objects of poppler in the order they need.
 #include <poppler/PDFDoc.h>
 #include <poppler/Array.h>
@@ -242,6 +244,269 @@ bool UBPdfAnnotations::write(const QString& pdfFile, const QList<Mark>& marks)
             }
 
             pageObject.dictSet("Annots", Object(annotations));
+            xref->setModifiedObject(&pageObject, *pageRef);
+        }
+
+        QFile::remove(partial);
+
+        if (document.saveAs(GooString(partial.toLocal8Bit().constData())) != errNone)
+        {
+            QFile::remove(partial);
+            return false;
+        }
+    }
+
+    return QFile::remove(pdfFile) && QFile::rename(partial, pdfFile);
+}
+
+namespace
+{
+    // The width of the letters of Helvetica, in thousandths of the size: close
+    // enough to stretch each word over its place.
+    qreal letterWidth(QChar c)
+    {
+        if (c == QLatin1Char(' ')) return 278;
+        if (QStringLiteral("ijlI.,:;'!|").contains(c)) return 250;
+        if (QStringLiteral("frt()-").contains(c)) return 333;
+        if (QStringLiteral("mwMW").contains(c)) return 850;
+        if (c.isUpper()) return 690;
+        if (c.isDigit()) return 556;
+        return 520;
+    }
+
+    // A text of the PDF in the encoding of its standard fonts, with its signs escaped.
+    QByteArray winAnsi(const QString& text)
+    {
+        QByteArray bytes;
+
+        for (const QChar c : text)
+        {
+            const ushort code = c.unicode();
+            const char byte = (code >= 32 && code < 256 && !(code >= 127 && code < 160)) ? char(code) : '?';
+
+            if (byte == '(' || byte == ')' || byte == '\\')
+            {
+                bytes.append('\\');
+            }
+
+            bytes.append(byte);
+        }
+
+        return bytes;
+    }
+
+    // A point of the original page, from 0 to 1, as it is on the page written.
+    QPointF placed(QPointF relative, const UBPdfAnnotations::TextPage& page)
+    {
+        switch (page.turn)
+        {
+        case 90:
+            relative = QPointF(1 - relative.y(), relative.x());
+            break;
+        case 180:
+            relative = QPointF(1 - relative.x(), 1 - relative.y());
+            break;
+        case 270:
+            relative = QPointF(relative.y(), 1 - relative.x());
+            break;
+        default:
+            break;
+        }
+
+        return QPointF(page.placement.left() + relative.x() * page.placement.width(),
+                       page.placement.top() + relative.y() * page.placement.height());
+    }
+
+    QString number(qreal value)
+    {
+        return QString::number(value, 'f', 3);
+    }
+}
+
+bool UBPdfAnnotations::writeTextLayer(const QString& pdfFile, const QList<TextPage>& pages)
+{
+    bool anyWord = false;
+
+    for (const TextPage& page : pages)
+    {
+        anyWord = anyWord || !page.words.isEmpty();
+    }
+
+    if (!anyWord)
+    {
+        return true;
+    }
+
+    if (!globalParams)
+    {
+        return false;
+    }
+
+    const QString partial = pdfFile + ".text";
+
+    {
+#if POPPLER_VERSION_MAJOR > 25 || (POPPLER_VERSION_MAJOR == 25 && POPPLER_VERSION_MINOR >= 12)
+        PDFDoc document(std::make_unique<GooString>(static_cast<std::string_view>(pdfFile.toLocal8Bit())));
+#elif POPPLER_VERSION_MAJOR > 22 || (POPPLER_VERSION_MAJOR == 22 && POPPLER_VERSION_MINOR >= 3)
+        PDFDoc document(std::make_unique<GooString>(pdfFile.toLocal8Bit()));
+#else
+        PDFDoc document(new GooString(pdfFile.toLocal8Bit()), nullptr, nullptr, nullptr);
+#endif
+
+        if (!document.isOk())
+        {
+            return false;
+        }
+
+        XRef* xref = document.getXRef();
+
+        // One font for all the pages: the words are invisible, any font reads them.
+        auto font = new Dict(xref);
+        font->add("Type", Object(objName, "Font"));
+        font->add("Subtype", Object(objName, "Type1"));
+        font->add("BaseFont", Object(objName, "Helvetica"));
+        font->add("Encoding", Object(objName, "WinAnsiEncoding"));
+        const Ref fontRef = xref->addIndirectObject(Object(font));
+
+        for (const TextPage& textPage : pages)
+        {
+            Page* page = textPage.page >= 1 && textPage.page <= document.getNumPages() ? document.getPage(textPage.page) : nullptr;
+            Ref* pageRef = page ? document.getCatalog()->getPageRef(textPage.page) : nullptr;
+
+            if (!page || !pageRef || textPage.words.isEmpty() || textPage.sourceSize.isEmpty())
+            {
+                continue;
+            }
+
+            // From the page as it is shown to the coordinates of the PDF.
+            GfxState state(72, 72, page->getMediaBox(), page->getRotate(), true);
+            const double* ctm = state.getCTM();
+            const QTransform toPdf = QTransform(ctm[0], ctm[1], ctm[2], ctm[3], ctm[4], ctm[5]).inverted();
+            const QSizeF shown(state.getPageWidth(), state.getPageHeight());
+
+            auto onPdf = [&](QPointF point) {
+                const QPointF relative(point.x() / textPage.sourceSize.width(), point.y() / textPage.sourceSize.height());
+                const QPointF there = placed(relative, textPage);
+                return toPdf.map(QPointF(there.x() * shown.width(), there.y() * shown.height()));
+            };
+
+            // Text drawn in the mode that neither fills nor strokes: invisible.
+            QString text = QStringLiteral("Q\nBT\n3 Tr\n");
+
+            for (const UBOcrEngine::Word& word : textPage.words)
+            {
+                const QByteArray encoded = winAnsi(word.text);
+                qreal units = 0;
+
+                for (const QChar c : word.text)
+                {
+                    units += letterWidth(c) / 1000.0;
+                }
+
+                if (encoded.isEmpty() || units <= 0)
+                {
+                    continue;
+                }
+
+                // The line under the letters, a fifth of the height above the bottom.
+                const QRectF r = word.rect;
+                const QPointF bottomLeft = onPdf(QPointF(r.left(), r.bottom() - r.height() * 0.2));
+                const QPointF bottomRight = onPdf(QPointF(r.right(), r.bottom() - r.height() * 0.2));
+                const QPointF topLeft = onPdf(QPointF(r.left(), r.top()));
+                const QPointF across = (bottomRight - bottomLeft) / units;
+                const QPointF up = (topLeft - bottomLeft) / 0.8;
+
+                text += QStringLiteral("/LBOcr 1 Tf %1 %2 %3 %4 %5 %6 Tm (")
+                            .arg(number(across.x()), number(across.y()), number(up.x()), number(up.y()),
+                                 number(bottomLeft.x()), number(bottomLeft.y()));
+                text += QString::fromLatin1(encoded) + QStringLiteral(") Tj\n");
+            }
+
+            text += QStringLiteral("ET\n");
+
+            // The drawing of the page in its own state, then the words.
+            const QByteArray before("q\n");
+            const QByteArray after = text.toLatin1();
+            char* beforeBuffer = static_cast<char*>(gmalloc(size_t(before.size())));
+            memcpy(beforeBuffer, before.constData(), size_t(before.size()));
+            char* afterBuffer = static_cast<char*>(gmalloc(size_t(after.size())));
+            memcpy(afterBuffer, after.constData(), size_t(after.size()));
+            const Ref beforeRef = addStream(xref, new Dict(xref), beforeBuffer, before.size(), 0);
+            const Ref afterRef = addStream(xref, new Dict(xref), afterBuffer, after.size(), 0);
+
+            Object pageObject = xref->fetch(*pageRef);
+
+            if (!pageObject.isDict())
+            {
+                continue;
+            }
+
+            auto contents = new Array(xref);
+            contents->add(Object(beforeRef));
+            const Object& existing = pageObject.dictLookupNF("Contents");
+
+            if (existing.isArray())
+            {
+                for (int i = 0; i < existing.arrayGetLength(); ++i)
+                {
+                    contents->add(existing.arrayGetNF(i).copy());
+                }
+            }
+            else if (existing.isRef())
+            {
+                // A reference may name a list of streams as well as one stream.
+                Object resolved = xref->fetch(existing.getRef());
+
+                if (resolved.isArray())
+                {
+                    for (int i = 0; i < resolved.arrayGetLength(); ++i)
+                    {
+                        contents->add(resolved.arrayGetNF(i).copy());
+                    }
+                }
+                else
+                {
+                    contents->add(existing.copy());
+                }
+            }
+
+            contents->add(Object(afterRef));
+
+            // The resources of the page, inherited ones included, with the font.
+            auto resources = new Dict(xref);
+            Dict* oldResources = page->getResourceDict();
+            auto fonts = new Dict(xref);
+
+            if (oldResources)
+            {
+                for (int i = 0; i < oldResources->getLength(); ++i)
+                {
+                    const char* key = oldResources->getKey(i);
+
+                    if (strcmp(key, "Font") == 0)
+                    {
+                        Object oldFonts = oldResources->getVal(i);
+
+                        if (oldFonts.isDict())
+                        {
+                            for (int f = 0; f < oldFonts.dictGetLength(); ++f)
+                            {
+                                fonts->add(oldFonts.dictGetKey(f), oldFonts.dictGetValNF(f).copy());
+                            }
+                        }
+                    }
+                    else
+                    {
+                        resources->add(key, oldResources->getValNF(i).copy());
+                    }
+                }
+            }
+
+            fonts->add("LBOcr", Object(fontRef));
+            resources->add("Font", Object(fonts));
+
+            pageObject.dictSet("Contents", Object(contents));
+            pageObject.dictSet("Resources", Object(resources));
             xref->setModifiedObject(&pageObject, *pageRef);
         }
 
