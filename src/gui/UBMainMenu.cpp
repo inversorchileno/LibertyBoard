@@ -292,7 +292,7 @@ void UBMainMenu::createMenus()
     // The same dark gray as the tool palettes.
     menuBar->setStyleSheet(
         "QMenuBar { background: #323232; color: #f0f0f0; }"
-        "QMenuBar::item { padding: 4px 10px; background: transparent; }"
+        "QMenuBar::item { padding: 4px 10px 2px 10px; background: transparent; }"
         "QMenuBar::item:selected { background: #4a4a4a; }");
 }
 
@@ -582,7 +582,7 @@ void UBMainMenu::createDocumentTabs()
     mDocumentTabsToolBar->setIconSize(QSize(16, 16));
     mDocumentTabsToolBar->layout()->setContentsMargins(0, 0, 0, 0);
     mDocumentTabsToolBar->layout()->setSpacing(0);
-    mDocumentTabsToolBar->setFixedHeight(33);
+    mDocumentTabsToolBar->setFixedHeight(26);
 
     mMainWindow->insertToolBar(mMainWindow->boardToolBar, mDocumentTabsToolBar);
     mMainWindow->insertToolBarBreak(mMainWindow->boardToolBar);

@@ -52,7 +52,7 @@ UBDocumentTabs::UBDocumentTabs(QWidget* parent)
     setObjectName("documentTabs");
     setStyleSheet(
         "#documentTabs { background: #20242b; }"
-        "QTabBar::tab { background: #323842; color: #d8d8d8; padding: 3px 10px 6px 10px; margin-right: 2px;"
+        "QTabBar::tab { background: #323842; color: #d8d8d8; padding: 3px 10px 5px 10px; margin-right: 2px; margin-top: 2px; margin-bottom: 0px;"
         " border-top-left-radius: 4px; border-top-right-radius: 4px; min-width: 120px; max-width: 320px; }"
         "QTabBar::tab:selected { background: #f6d77a; color: #111111; }"
         "QTabBar::tab:hover:!selected { background: #444b57; }"
@@ -65,8 +65,8 @@ UBDocumentTabs::UBDocumentTabs(QWidget* parent)
     mTabBar->setElideMode(Qt::ElideMiddle);
     mTabBar->setDocumentMode(true);
     mTabBar->setDrawBase(false);
-    // As high as the tabs, with room under their names.
-    setFixedHeight(32);
+    // As high as the tabs, with room under their names and little above them.
+    setFixedHeight(25);
 
     auto newButton = new QToolButton(this);
     newButton->setText("+");
@@ -74,9 +74,9 @@ UBDocumentTabs::UBDocumentTabs(QWidget* parent)
     newButton->setFixedSize(26, 22);
 
     auto layout = new QHBoxLayout(this);
-    layout->setContentsMargins(4, 3, 4, 0);
+    layout->setContentsMargins(4, 0, 4, 0);
     layout->setSpacing(2);
-    layout->addWidget(mTabBar);
+    layout->addWidget(mTabBar, 0, Qt::AlignTop);
     layout->addWidget(newButton);
     layout->addStretch(1);
 
