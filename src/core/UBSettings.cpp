@@ -298,10 +298,10 @@ void UBSettings::init()
     laserColor = new UBSetting(this, "Laser", "Color", QString("#ff2828"));
     laserRainbow = new UBSetting(this, "Laser", "LibertyBoardRainbow", false);
 
-    // Half as wide as the widest border, red, as in Drawpen.
+    // A thin red border, as in Drawpen; it can be up to 12 px wide.
     desktopBorderEnabled = new UBSetting(this, "Desktop", "LibertyBoardBorder", true);
     desktopBorderColor = new UBSetting(this, "Desktop", "LibertyBoardBorderColor", QString("#ff0000"));
-    desktopBorderWidth = new UBSetting(this, "Desktop", "LibertyBoardBorderWidth", 6);
+    desktopBorderWidth = new UBSetting(this, "Desktop", "LibertyBoardBorderWidth", 1);
     noteColor = new UBSetting(this, "Board", "LibertyBoardNoteColor", QString("#f5b400"));
     laserWidth = new UBSetting(this, "Laser", "Width", 8.0);
     laserFadeDelay = new UBSetting(this, "Laser", "FadeDelay", 0.1);
