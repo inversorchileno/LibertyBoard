@@ -33,6 +33,8 @@
 class QGraphicsPathItem;
 class QLabel;
 class QLineEdit;
+class QListWidget;
+class QTimer;
 class UBDocumentProxy;
 class UBGraphicsPDFItem;
 class UBGraphicsScene;
@@ -41,7 +43,8 @@ class UBGraphicsScene;
  * @brief The search box of the board: finds a text in the PDF shown and
  * goes from one place to the next, marking each place on its page.
  *
- * It floats at the top right of the main window, under the menu.
+ * It floats at the top right of the main window, under the menu, with the
+ * list of the places found under it: the page and the line of each one.
  */
 class UBSearchBar : public QFrame
 {
@@ -63,6 +66,7 @@ private:
     {
         int pdfPage{0};
         QRectF rect;
+        QString line;
     };
 
     void search();
@@ -70,12 +74,16 @@ private:
     void step(int direction);
     void clearMark();
     void updateCount();
+    void fillList();
+    QString shownLine(const QString& line) const;
     void placeInWindow();
     int sceneIndexOf(int pdfPage) const;
     static UBGraphicsPDFItem* pdfItemOf(UBGraphicsScene* scene);
 
     QLineEdit* mText{nullptr};
     QLabel* mCount{nullptr};
+    QListWidget* mList{nullptr};
+    QTimer* mTyping{nullptr};
     QList<Place> mPlaces;
     int mCurrent{-1};
     QString mSearchedText;

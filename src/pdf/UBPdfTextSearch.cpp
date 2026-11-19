@@ -58,9 +58,39 @@ int UBPdfTextSearch::pageCount() const
     return isValid() ? mDocument->getNumPages() : 0;
 }
 
+// The versions of poppler give the text in different ways.
+static QString takeText(GooString* text)
+{
+    const QString result = text ? QString::fromUtf8(text->c_str()) : QString();
+    delete text;
+    return result;
+}
+
+[[maybe_unused]] static QString takeText(std::unique_ptr<GooString> text)
+{
+    return text ? QString::fromUtf8(text->c_str()) : QString();
+}
+
+[[maybe_unused]] static QString takeText(const GooString& text)
+{
+    return QString::fromUtf8(text.c_str());
+}
+
 QList<QRectF> UBPdfTextSearch::find(int pageNumber, const QString& text) const
 {
     QList<QRectF> places;
+
+    for (const Found& found : findWithLines(pageNumber, text))
+    {
+        places << found.rect;
+    }
+
+    return places;
+}
+
+QList<UBPdfTextSearch::Found> UBPdfTextSearch::findWithLines(int pageNumber, const QString& text) const
+{
+    QList<Found> places;
 
     if (!isValid() || text.isEmpty() || pageNumber < 1 || pageNumber > pageCount())
     {
@@ -94,7 +124,26 @@ QList<QRectF> UBPdfTextSearch::find(int pageNumber, const QString& text) const
     while (output.findText(letters.data(), letters.size(), first, true, !first, false,
                            false, false, false, &xMin, &yMin, &xMax, &yMax))
     {
-        places << QRectF(QPointF(xMin, yMin), QPointF(xMax, yMax));
+        // The words in line with the place, across the page: a text that
+        // reads upwards or downwards, on a turned page, is taller than wide.
+        QString line;
+
+        if (yMax - yMin > (xMax - xMin) * 1.5 && letters.size() > 1)
+        {
+            const double middle = (xMin + xMax) / 2;
+            const double half = qMax(1.0, (xMax - xMin) / 4);
+            line = takeText(output.getText(middle - half, -1e5, middle + half, 1e5));
+        }
+        else
+        {
+            const double middle = (yMin + yMax) / 2;
+            const double half = qMax(1.0, (yMax - yMin) / 4);
+            line = takeText(output.getText(-1e5, middle - half, 1e5, middle + half));
+        }
+
+        line = line.simplified();
+
+        places << Found{ QRectF(QPointF(xMin, yMin), QPointF(xMax, yMax)), line };
         first = false;
     }
 

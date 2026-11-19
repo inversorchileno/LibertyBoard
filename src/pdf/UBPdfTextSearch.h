@@ -50,6 +50,16 @@ public:
      */
     QList<QRectF> find(int pageNumber, const QString& text) const;
 
+    /** @brief A place of the text and the line where it is. */
+    struct Found
+    {
+        QRectF rect;
+        QString line;
+    };
+
+    /** @brief As find, with the line of each place, to show it in a list. */
+    QList<Found> findWithLines(int pageNumber, const QString& text) const;
+
 private:
     std::unique_ptr<PDFDoc> mDocument;
 };

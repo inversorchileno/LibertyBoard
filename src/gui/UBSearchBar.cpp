@@ -29,12 +29,15 @@
 #include <QKeyEvent>
 #include <QLabel>
 #include <QLineEdit>
+#include <QListWidget>
 #include <QMenuBar>
 #include <QMessageBox>
+#include <QTimer>
 #include <QToolButton>
 #include <QVBoxLayout>
 
 #include "board/UBBoardController.h"
+#include "board/UBBoardPaletteManager.h"
 #include "board/UBBoardView.h"
 #include "core/UBApplication.h"
 #include "core/UBPersistenceManager.h"
@@ -42,6 +45,7 @@
 #include "domain/UBGraphicsPDFItem.h"
 #include "domain/UBGraphicsScene.h"
 #include "gui/UBMainWindow.h"
+#include "gui/UBStylusPalette.h"
 #include "pdf/UBPdfTextSearch.h"
 
 UBSearchBar::UBSearchBar(QWidget* parent)
@@ -53,7 +57,11 @@ UBSearchBar::UBSearchBar(QWidget* parent)
         "QLineEdit { background: #111317; color: #f0f0f0; border: 1px solid #3a404b; border-radius: 4px; padding: 3px 6px; }"
         "QLabel { color: #c8ccd2; }"
         "QToolButton { color: #f0f0f0; background: transparent; border: none; font-size: 15px; padding: 2px 6px; }"
-        "QToolButton:hover { background: #4a505b; border-radius: 3px; }");
+        "QToolButton:hover { background: #4a505b; border-radius: 3px; }"
+        "QListWidget { background: #1d2026; color: #e8e8e8; border: 1px solid #3a404b; border-radius: 4px; outline: none; }"
+        "QListWidget::item { padding: 5px 4px; border-bottom: 1px solid #2f343c; }"
+        "QListWidget::item:selected { background: #3d5a80; color: #ffffff; }"
+        "QListWidget::item:hover:!selected { background: #2b3038; }");
 
     mText = new QLineEdit(this);
     mText->setPlaceholderText(tr("Search..."));
@@ -87,6 +95,32 @@ UBSearchBar::UBSearchBar(QWidget* parent)
     layout->setSpacing(3);
     layout->addLayout(row);
     layout->addWidget(mCount);
+
+    // Every place found, to go to any of them.
+    mList = new QListWidget(this);
+    mList->setWordWrap(true);
+    mList->setTextElideMode(Qt::ElideNone);
+    mList->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    mList->setVerticalScrollMode(QAbstractItemView::ScrollPerPixel);
+    mList->hide();
+    layout->addWidget(mList, 1);
+
+    connect(mList, &QListWidget::itemClicked, this, [this](QListWidgetItem* item) { showPlace(mList->row(item)); });
+
+    // The list follows the text while it is written.
+    mTyping = new QTimer(this);
+    mTyping->setSingleShot(true);
+    mTyping->setInterval(400);
+    connect(mText, &QLineEdit::textEdited, mTyping, qOverload<>(&QTimer::start));
+    connect(mTyping, &QTimer::timeout, this, [this]() {
+        const QString text = mText->text().trimmed();
+
+        if (text != mSearchedText && (text.size() >= 2 || text.isEmpty()))
+        {
+            mSearchedText = text;
+            search();
+        }
+    });
 
     connect(mText, &QLineEdit::returnPressed, this, [this]() { step(+1); });
     connect(previous, &QToolButton::clicked, this, [this]() { step(-1); });
@@ -151,9 +185,43 @@ void UBSearchBar::hideEvent(QHideEvent* event)
 void UBSearchBar::placeInWindow()
 {
     auto window = qobject_cast<QMainWindow*>(parentWidget());
-    const int top = window && window->menuBar() ? window->menuBar()->geometry().bottom() + 6 : 6;
-    adjustSize();
-    move(parentWidget()->width() - width() - 12, top);
+    int top = window && window->menuBar() ? window->menuBar()->geometry().bottom() + 6 : 6;
+    UBBoardController* board = UBApplication::boardController;
+
+    // Under the toolbar, on the board, so that no button is hidden.
+    if (board && board->controlView() && board->controlView()->isVisible())
+    {
+        top = qMax(top, board->controlView()->mapTo(parentWidget(), QPoint()).y() + 8);
+    }
+
+    int right = parentWidget()->width() - 12;
+
+    // Beside the tools when they stand on the right of the board, not over them.
+    QWidget* tools = board && board->paletteManager() ? board->paletteManager()->stylusPalette() : nullptr;
+
+    if (tools && tools->isVisible() && mList->isVisible())
+    {
+        const QRect toolsRect(tools->mapTo(parentWidget(), QPoint()), tools->size());
+
+        if (toolsRect.left() > parentWidget()->width() / 2)
+        {
+            right = toolsRect.left() - 8;
+        }
+    }
+
+    if (mList->isVisible())
+    {
+        // A panel down to the bottom of the board.
+        setFixedSize(360, qMax(220, parentWidget()->height() - top - 60));
+    }
+    else
+    {
+        setMinimumSize(0, 0);
+        setMaximumSize(QWIDGETSIZE_MAX, QWIDGETSIZE_MAX);
+        adjustSize();
+    }
+
+    move(right - width(), top);
 }
 
 void UBSearchBar::step(int direction)
@@ -166,16 +234,22 @@ void UBSearchBar::step(int direction)
         return;
     }
 
+    mTyping->stop();
+
     // A new text, or another document: search again.
     if (text != mSearchedText || board->selectedDocument() != mDocument)
     {
         mSearchedText = text;
         search();
+    }
 
-        if (mPlaces.isEmpty())
-        {
-            return;
-        }
+    if (mPlaces.isEmpty())
+    {
+        return;
+    }
+
+    if (mCurrent < 0)
+    {
 
         // The first place from the page shown on.
         std::shared_ptr<UBGraphicsScene> scene = board->activeScene();
@@ -189,11 +263,6 @@ void UBSearchBar::step(int direction)
         }
 
         showPlace(first < mPlaces.size() ? first : 0);
-        return;
-    }
-
-    if (mPlaces.isEmpty())
-    {
         return;
     }
 
@@ -211,9 +280,10 @@ void UBSearchBar::search()
     std::shared_ptr<UBGraphicsScene> scene = board->activeScene();
     UBGraphicsPDFItem* item = scene ? pdfItemOf(scene.get()) : nullptr;
 
-    if (!mDocument || !item)
+    if (!mDocument || !item || mSearchedText.isEmpty())
     {
         updateCount();
+        fillList();
         return;
     }
 
@@ -225,14 +295,58 @@ void UBSearchBar::search()
 
     for (int page = 1; page <= pdf.pageCount(); ++page)
     {
-        for (const QRectF& rect : pdf.find(page, mSearchedText))
+        for (const UBPdfTextSearch::Found& found : pdf.findWithLines(page, mSearchedText))
         {
-            mPlaces << Place{ page, rect };
+            mPlaces << Place{ page, found.rect, found.line };
         }
     }
 
     QApplication::restoreOverrideCursor();
     updateCount();
+    fillList();
+}
+
+void UBSearchBar::fillList()
+{
+    mList->clear();
+
+    for (const Place& place : std::as_const(mPlaces))
+    {
+        auto item = new QListWidgetItem(tr("Page %1").arg(place.pdfPage) + "\n" + shownLine(place.line));
+        item->setToolTip(place.line);
+        mList->addItem(item);
+    }
+
+    mList->setVisible(!mPlaces.isEmpty());
+    placeInWindow();
+}
+
+QString UBSearchBar::shownLine(const QString& line) const
+{
+    // Some words before and after the text, enough to recognise the place.
+    const int around = 45;
+    const int at = line.indexOf(mSearchedText, 0, Qt::CaseInsensitive);
+
+    if (line.isEmpty() || at < 0)
+    {
+        return line.isEmpty() ? QStringLiteral("\u2026") : line;
+    }
+
+    const int start = qMax(0, at - around);
+    const int end = qMin(line.size(), at + mSearchedText.size() + around);
+    QString shown = line.mid(start, end - start);
+
+    if (start > 0)
+    {
+        shown.prepend(QStringLiteral("\u2026"));
+    }
+
+    if (end < line.size())
+    {
+        shown.append(QStringLiteral("\u2026"));
+    }
+
+    return shown;
 }
 
 void UBSearchBar::showPlace(int index)
@@ -249,6 +363,12 @@ void UBSearchBar::showPlace(int index)
     mCurrent = index;
     updateCount();
     clearMark();
+
+    {
+        const QSignalBlocker blocker(mList);
+        mList->setCurrentRow(index);
+        mList->scrollToItem(mList->currentItem());
+    }
 
     if (sceneIndex != board->activeSceneIndex())
     {
