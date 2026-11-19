@@ -543,7 +543,9 @@ void UBMainMenu::createDocumentTabs()
     mDocumentTabsToolBar->setFloatable(false);
     mDocumentTabsToolBar->toggleViewAction()->setVisible(false);
     mDocumentTabsToolBar->setContextMenuPolicy(Qt::PreventContextMenu);
-    mDocumentTabsToolBar->setStyleSheet("QToolBar { background: #20242b; border: none; padding: 0px; margin: 0px; spacing: 0px; }");
+    // A thin white line under the tabs parts them from the options of the tools.
+    mDocumentTabsToolBar->setStyleSheet("QToolBar { background: #20242b; border: none; border-bottom: 1px solid #e8e8e8;"
+                                        " padding: 0px; margin: 0px; spacing: 0px; }");
     mDocumentTabsToolBar->addWidget(mDocumentTabs);
 
     // In full screen the menu is hidden: the way back is at the right of the tabs.
@@ -566,7 +568,7 @@ void UBMainMenu::createDocumentTabs()
     mDocumentTabsToolBar->setIconSize(QSize(16, 16));
     mDocumentTabsToolBar->layout()->setContentsMargins(0, 0, 0, 0);
     mDocumentTabsToolBar->layout()->setSpacing(0);
-    mDocumentTabsToolBar->setFixedHeight(30);
+    mDocumentTabsToolBar->setFixedHeight(33);
 
     mMainWindow->insertToolBar(mMainWindow->boardToolBar, mDocumentTabsToolBar);
     mMainWindow->insertToolBarBreak(mMainWindow->boardToolBar);
