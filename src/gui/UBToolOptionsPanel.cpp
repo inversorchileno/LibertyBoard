@@ -538,6 +538,24 @@ void UBLaserOptionsPanel::refresh()
     updatePreview();
 }
 
+void UBLaserOptionsPanel::layOutForToolbar()
+{
+    // The two times take half the width they would take, with short
+    // captions; the whole caption is the tooltip.
+    const QList<QPair<UBValueSlider*, QString>> times = { { mDelay, tr("Wait") }, { mDuration, tr("Fading") } };
+
+    for (const auto& time : times)
+    {
+        if (auto caption = time.first->findChild<QLabel*>("section"))
+        {
+            time.first->setToolTip(caption->text());
+            caption->setText(time.second);
+        }
+
+        time.first->setMaximumWidth(time.first->sizeHint().width() / 2 + 40);
+    }
+}
+
 void UBLaserOptionsPanel::updatePreview()
 {
     mPreview->setStroke(mColors->currentColor(), mWidth->value(), mOpacity->value() / 100, true);

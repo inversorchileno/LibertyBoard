@@ -138,6 +138,7 @@ public:
 
 protected:
     bool stacksSlidersInToolbar() const override { return true; }
+    void layOutForToolbar() override;
 
 private:
     void updatePreview();
