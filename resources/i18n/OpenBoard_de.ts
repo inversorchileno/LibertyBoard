@@ -1544,7 +1544,7 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
 <context>
     <name>UBApplicationController</name>
     <message>
-        <location filename="../../src/core/UBApplicationController.cpp" line="+339"/>
+        <location filename="../../src/core/UBApplicationController.cpp" line="+341"/>
         <source>Web</source>
         <translation>Browser</translation>
     </message>
@@ -1740,7 +1740,36 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+2009"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+2111"/>
+        <source>That page is not in the document any more.</source>
+        <translation>Diese Seite ist nicht mehr im Dokument.</translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <source>Open link</source>
+        <translation>Link öffnen</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Open this address?
+
+%1</source>
+        <translation>Diese Adresse öffnen?
+
+%1</translation>
+    </message>
+    <message>
+        <location line="+44"/>
+        <source>No text to copy here: a scanned page is only a picture.</source>
+        <translation>Hier gibt es keinen Text zu kopieren: Eine gescannte Seite ist nur ein Bild.</translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <source>Text copied: %1</source>
+        <translation>Text kopiert: %1</translation>
+    </message>
+    <message>
+        <location line="+321"/>
         <source>Is it for Board or Widget ?</source>
         <translation>Ist das für das Board oder das Widget?</translation>
     </message>
@@ -1799,7 +1828,7 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
 <context>
     <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+898"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+956"/>
         <source>Quick note</source>
         <translation>Kurznotiz</translation>
     </message>
@@ -2329,12 +2358,12 @@ Wenn Sie einen neuen Namen wählen, wird ein neues Dokument erstellt.</translati
         <translation type="vanished">Neues Dokument</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBDocumentTabs.cpp" line="+66"/>
+        <location filename="../../src/gui/UBDocumentTabs.cpp" line="+73"/>
         <source>New board</source>
         <translation>Neue Tafel</translation>
     </message>
     <message>
-        <location line="+114"/>
+        <location line="+125"/>
         <source>Save</source>
         <translation>Speichern</translation>
     </message>
@@ -2344,7 +2373,7 @@ Wenn Sie einen neuen Namen wählen, wird ein neues Dokument erstellt.</translati
         <translation>%1 konnte nicht gespeichert werden. Prüfen Sie, ob die Datei in einem anderen Programm geöffnet ist.</translation>
     </message>
     <message>
-        <location line="+185"/>
+        <location line="+189"/>
         <source>Save the changes to the PDF before closing?</source>
         <translation>Die Änderungen vor dem Schließen im PDF speichern?</translation>
     </message>
@@ -2357,6 +2386,16 @@ Wenn Sie einen neuen Namen wählen, wird ein neues Dokument erstellt.</translati
         <location line="+1"/>
         <source>Close document</source>
         <translation>Dokument schließen</translation>
+    </message>
+    <message>
+        <location line="+160"/>
+        <source>Recover documents</source>
+        <translation>Dokumente wiederherstellen</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>LibertyBoard stopped without closing. Open again the %1 documents that were open?</source>
+        <translation>LibertyBoard wurde nicht ordnungsgemäß beendet. Die %1 geöffneten Dokumente wieder öffnen?</translation>
     </message>
 </context>
 <context>
@@ -2535,7 +2574,7 @@ Möchten Sie fortfahren?</translation>
 <context>
     <name>UBEraserOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-667"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-710"/>
         <source>Eraser</source>
         <translation>Löschen</translation>
     </message>
@@ -2687,17 +2726,17 @@ Möchten Sie fortfahren?</translation>
 <context>
     <name>UBExportFullPDF</name>
     <message>
-        <location filename="../../src/adaptors/UBExportFullPDF.cpp" line="+201"/>
+        <location filename="../../src/adaptors/UBExportFullPDF.cpp" line="+261"/>
         <source>Export as PDF File</source>
         <translation>Als PDF-Datei exportieren</translation>
     </message>
     <message>
-        <location line="+182"/>
+        <location line="+189"/>
         <source>Export to PDF</source>
         <translation>In PDF-Datei exportieren</translation>
     </message>
     <message>
-        <location line="-50"/>
+        <location line="-56"/>
         <location line="+14"/>
         <source>The original PDF imported in LibertyBoard seems not valid and could not be merged with your annotations. Please repair it and then reimport it in LibertyBoard. The current export will be done with detailed (heavy) images of the pages of the original PDF instead, to avoid complete export failure.</source>
         <translatorcomment>&quot;heavy&quot; cannot be translated in a short word.</translatorcomment>
@@ -2712,7 +2751,7 @@ Möchten Sie fortfahren?</translation>
         <translation>Export als PDF-Datei</translation>
     </message>
     <message>
-        <location line="+38"/>
+        <location line="+63"/>
         <source>Exporting page %1 of %2</source>
         <translation>Seite %1 von %2 wird exportiert</translation>
     </message>
@@ -3072,7 +3111,7 @@ Jetzt herunterladen und installieren? LibertyBoard speichert Ihre Dokumente, sch
 <context>
     <name>UBGraphicsPageMarkItem</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsPageMarkItem.cpp" line="+161"/>
+        <location filename="../../src/domain/UBGraphicsPageMarkItem.cpp" line="+168"/>
         <source>Delete</source>
         <translation>Löschen</translation>
     </message>
@@ -3102,7 +3141,7 @@ Jetzt herunterladen und installieren? LibertyBoard speichert Ihre Dokumente, sch
 <context>
     <name>UBGraphicsScene</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsScene.cpp" line="+1031"/>
+        <location filename="../../src/domain/UBGraphicsScene.cpp" line="+1038"/>
         <location line="+11"/>
         <source>Attach a file</source>
         <translation>Datei anhängen</translation>
@@ -3442,19 +3481,19 @@ Jetzt herunterladen und installieren? LibertyBoard speichert Ihre Dokumente, sch
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+83"/>
-        <location line="+109"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+93"/>
+        <location line="+147"/>
         <source>Page Size</source>
         <translation>Seitengröße</translation>
     </message>
     <message>
-        <location line="-85"/>
-        <location line="+49"/>
+        <location line="-123"/>
+        <location line="+80"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
     </message>
     <message>
-        <location line="-33"/>
+        <location line="-64"/>
         <source>&amp;Home</source>
         <translation>&amp;Start</translation>
     </message>
@@ -3472,22 +3511,22 @@ Jetzt herunterladen und installieren? LibertyBoard speichert Ihre Dokumente, sch
         <translation>Öffnen/Importieren</translation>
     </message>
     <message>
-        <location line="+36"/>
+        <location line="+67"/>
         <source>&amp;Mode</source>
         <translation>&amp;Modus</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+27"/>
         <source>&amp;Edit</source>
         <translation>&amp;Bearbeiten</translation>
     </message>
     <message>
-        <location line="-27"/>
+        <location line="-34"/>
         <source>Close document</source>
         <translation>Dokument schließen</translation>
     </message>
     <message>
-        <location line="-34"/>
+        <location line="-65"/>
         <source>New board</source>
         <translation>Neue Tafel</translation>
     </message>
@@ -3512,7 +3551,27 @@ Jetzt herunterladen und installieren? LibertyBoard speichert Ihre Dokumente, sch
         <translation>Eine Kopie als PDF, PNG oder JPEG speichern</translation>
     </message>
     <message>
-        <location line="+28"/>
+        <location line="+8"/>
+        <source>Recent files</source>
+        <translation>Zuletzt verwendete Dateien</translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <source>No recent files</source>
+        <translation>Keine zuletzt verwendeten Dateien</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Print...</source>
+        <translation>Drucken...</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Extract pages...</source>
+        <translation>Seiten extrahieren...</translation>
+    </message>
+    <message>
+        <location line="+30"/>
         <source>Double board</source>
         <translation>Doppeltafel</translation>
     </message>
@@ -3547,13 +3606,13 @@ Jetzt herunterladen und installieren? LibertyBoard speichert Ihre Dokumente, sch
         <translation>Neueste Version von GitHub herunterladen und installieren</translation>
     </message>
     <message>
-        <location line="+60"/>
-        <location line="+226"/>
+        <location line="+66"/>
+        <location line="+278"/>
         <source>Saved</source>
         <translation>Gespeichert</translation>
     </message>
     <message>
-        <location line="-220"/>
+        <location line="-272"/>
         <source>Search...</source>
         <translation>Suchen...</translation>
     </message>
@@ -3563,12 +3622,22 @@ Jetzt herunterladen und installieren? LibertyBoard speichert Ihre Dokumente, sch
         <translation>Wörter im PDF suchen</translation>
     </message>
     <message>
-        <location line="+21"/>
+        <location line="+13"/>
+        <source>Index</source>
+        <translation>Inhaltsverzeichnis</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>The index of the PDF: a click on a title goes to its page</source>
+        <translation>Das Inhaltsverzeichnis des PDF: Ein Klick auf einen Titel führt zu seiner Seite</translation>
+    </message>
+    <message>
+        <location line="+22"/>
         <source>Hide or show the toolbar</source>
         <translation>Werkzeugleiste ein- oder ausblenden</translation>
     </message>
     <message>
-        <location line="+114"/>
+        <location line="+151"/>
         <source>Exit full screen</source>
         <translation>Vollbild beenden</translation>
     </message>
@@ -3713,7 +3782,7 @@ Möchten Sie diese Fehler für diesen Computer ignorieren?</translation>
 <context>
     <name>UBNoteOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+623"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+666"/>
         <source>Note</source>
         <translation>Notiz</translation>
     </message>
@@ -3759,6 +3828,152 @@ Möchten Sie diese Fehler für diesen Computer ignorieren?</translation>
     </message>
 </context>
 <context>
+    <name>UBPageButtons</name>
+    <message>
+        <location filename="../../src/gui/UBPageButtons.cpp" line="+53"/>
+        <source>Delete</source>
+        <translation>Löschen</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Delete the page shown</source>
+        <translation>Die angezeigte Seite löschen</translation>
+    </message>
+</context>
+<context>
+    <name>UBPageExtractor</name>
+    <message>
+        <location filename="../../src/board/UBPageExtractor.cpp" line="+137"/>
+        <source>Extract pages</source>
+        <translation>Seiten extrahieren</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Current page (%1)</source>
+        <translation>Aktuelle Seite (%1)</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>All pages (%1)</source>
+        <translation>Alle Seiten (%1)</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Pages:</source>
+        <translation>Seiten:</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>For example 1-3, 5, 8-</source>
+        <translation>Zum Beispiel 1-3, 5, 8-</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Page numbers and ranges, separated by commas. &quot;8-&quot; goes to the last page.</source>
+        <translation>Seitenzahlen und Bereiche, durch Kommas getrennt. „8-“ geht bis zur letzten Seite.</translation>
+    </message>
+    <message>
+        <location line="+21"/>
+        <source>PDF, all the pages in one file</source>
+        <translation>PDF, alle Seiten in einer Datei</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>PDF, one file for each page</source>
+        <translation>PDF, eine Datei pro Seite</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>PNG pictures, one for each page</source>
+        <translation>PNG-Bilder, eines pro Seite</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>JPEG pictures, one for each page</source>
+        <translation>JPEG-Bilder, eines pro Seite</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>%1 - pages</source>
+        <translation>%1 - Seiten</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Browse...</source>
+        <translation>Durchsuchen...</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Open when done</source>
+        <translation>Nach Abschluss öffnen</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Pages</source>
+        <translation>Seiten</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Format</source>
+        <translation>Format</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>File name</source>
+        <translation>Dateiname</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <location line="+62"/>
+        <source>Folder</source>
+        <translation>Ordner</translation>
+    </message>
+    <message>
+        <location line="-58"/>
+        <source>Extract</source>
+        <translation>Extrahieren</translation>
+    </message>
+    <message>
+        <location line="+50"/>
+        <source>%1 - page %2</source>
+        <translation>%1 - Seite %2</translation>
+    </message>
+    <message>
+        <location line="+22"/>
+        <source>Write the pages as numbers from 1 to %1, for example 1-3, 5.</source>
+        <translation>Geben Sie die Seiten als Zahlen von 1 bis %1 ein, zum Beispiel 1-3, 5.</translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <source>Write a file name without the signs \ / : * ? &quot; &lt; &gt; |.</source>
+        <translation>Geben Sie einen Dateinamen ohne die Zeichen \ / : * ? &quot; &lt; &gt; | ein.</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>The folder could not be created. Choose another one.</source>
+        <translation>Der Ordner konnte nicht erstellt werden. Wählen Sie einen anderen.</translation>
+    </message>
+    <message>
+        <location line="+17"/>
+        <source>%1 files</source>
+        <translation>%1 Dateien</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Replace the files that already exist?
+
+%1</source>
+        <translation>Die bereits vorhandenen Dateien ersetzen?
+
+%1</translation>
+    </message>
+    <message>
+        <location line="+50"/>
+        <source>The pages could not be extracted. Check that the folder can be written and that the files are not open in another program.</source>
+        <translation>Die Seiten konnten nicht extrahiert werden. Prüfen Sie, ob in den Ordner geschrieben werden kann und ob die Dateien nicht in einem anderen Programm geöffnet sind.</translation>
+    </message>
+</context>
+<context>
     <name>UBPageIndicator</name>
     <message>
         <location filename="../../src/gui/UBPageIndicator.cpp" line="+49"/>
@@ -3790,9 +4005,39 @@ Möchten Sie diese Fehler für diesen Computer ignorieren?</translation>
     </message>
 </context>
 <context>
+    <name>UBPdfOutlinePanel</name>
+    <message>
+        <location filename="../../src/gui/UBPdfOutlinePanel.cpp" line="+59"/>
+        <location line="+58"/>
+        <location line="+9"/>
+        <source>Index</source>
+        <translation>Inhaltsverzeichnis</translation>
+    </message>
+    <message>
+        <location line="-63"/>
+        <source>Close</source>
+        <translation>Schließen</translation>
+    </message>
+    <message>
+        <location line="+54"/>
+        <source>The index is only for a PDF.</source>
+        <translation>Das Inhaltsverzeichnis gibt es nur für ein PDF.</translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>This PDF has no index.</source>
+        <translation>Dieses PDF hat kein Inhaltsverzeichnis.</translation>
+    </message>
+    <message>
+        <location line="+43"/>
+        <source>That page is not in the document any more.</source>
+        <translation>Diese Seite ist nicht mehr im Dokument.</translation>
+    </message>
+</context>
+<context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-754"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-806"/>
         <source>Pen</source>
         <translation>Stift</translation>
     </message>
@@ -3831,6 +4076,16 @@ Dynamische Breite</translation>
         <location line="+4"/>
         <source> %</source>
         <translation> %</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Recognize shapes</source>
+        <translation>Formen erkennen</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>A line, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
+        <translation>Eine von Hand gezeichnete Linie, ein Kreis, Oval, Dreieck, Quadrat oder Rechteck wird sauber.</translation>
     </message>
 </context>
 <context>
@@ -4075,7 +4330,7 @@ Dynamische Breite</translation>
 <context>
     <name>UBSearchBar</name>
     <message>
-        <location filename="../../src/gui/UBSearchBar.cpp" line="+59"/>
+        <location filename="../../src/gui/UBSearchBar.cpp" line="+67"/>
         <source>Search...</source>
         <translation>Suchen...</translation>
     </message>
@@ -4095,7 +4350,7 @@ Dynamische Breite</translation>
         <translation>Schließen</translation>
     </message>
     <message>
-        <location line="+34"/>
+        <location line="+60"/>
         <source>Search</source>
         <translation>Suchen</translation>
     </message>
@@ -4105,7 +4360,12 @@ Dynamische Breite</translation>
         <translation>Die Suche funktioniert nur in einem PDF mit Text.</translation>
     </message>
     <message>
-        <location line="+207"/>
+        <location line="+181"/>
+        <source>Page %1</source>
+        <translation>Seite %1</translation>
+    </message>
+    <message>
+        <location line="+119"/>
         <source>Not found</source>
         <translation>Nicht gefunden</translation>
     </message>
@@ -4113,6 +4373,44 @@ Dynamische Breite</translation>
         <location line="+4"/>
         <source>%1 of %2</source>
         <translation>%1 von %2</translation>
+    </message>
+</context>
+<context>
+    <name>UBSelectorOptionsPanel</name>
+    <message>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+668"/>
+        <source>Select</source>
+        <translation>Auswählen</translation>
+    </message>
+    <message>
+        <location line="+29"/>
+        <source>Arrow</source>
+        <translation>Pfeil</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Select with a rectangle again</source>
+        <translation>Wieder mit einem Rechteck auswählen</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Draw a line around what to select.</source>
+        <translation>Zeichnen Sie eine Linie um das, was ausgewählt werden soll.</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Lasso</source>
+        <translation>Lasso</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Select by drawing a free line around the objects</source>
+        <translation>Auswählen durch eine freie Linie um die Objekte</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Drag a rectangle, or over a PDF to copy its text.</source>
+        <translation>Ziehen Sie ein Rechteck, oder über einem PDF, um dessen Text zu kopieren.</translation>
     </message>
 </context>
 <context>
@@ -4126,7 +4424,7 @@ Dynamische Breite</translation>
 <context>
     <name>UBShapeOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+240"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-461"/>
         <source>Rectangle</source>
         <translation>Rechteck</translation>
     </message>
@@ -4607,7 +4905,7 @@ Miniaturansicht der Seite %1 wird geladen</translation>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-532"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-544"/>
         <source>Color</source>
         <translation>Farbe</translation>
     </message>
@@ -4827,7 +5125,7 @@ Bitte starten Sie die Anwendung erneut, um auf die aktualisierten Dokumente zugr
 <context>
     <name>UBZLayerController</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsScene.cpp" line="-842"/>
+        <location filename="../../src/domain/UBGraphicsScene.cpp" line="-848"/>
         <source>Bottom layer limit reached</source>
         <translation>Untere Ebenengrenze erreicht</translation>
     </message>

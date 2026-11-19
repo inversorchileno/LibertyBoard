@@ -1530,7 +1530,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBApplicationController</name>
     <message>
-        <location filename="../../src/core/UBApplicationController.cpp" line="+339"/>
+        <location filename="../../src/core/UBApplicationController.cpp" line="+341"/>
         <source>Web</source>
         <translation>Nät</translation>
     </message>
@@ -1720,7 +1720,36 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+2009"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+2111"/>
+        <source>That page is not in the document any more.</source>
+        <translation>Den sidan finns inte längre i dokumentet.</translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <source>Open link</source>
+        <translation>Öppna länk</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Open this address?
+
+%1</source>
+        <translation>Öppna den här adressen?
+
+%1</translation>
+    </message>
+    <message>
+        <location line="+44"/>
+        <source>No text to copy here: a scanned page is only a picture.</source>
+        <translation>Ingen text att kopiera här: en skannad sida är bara en bild.</translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <source>Text copied: %1</source>
+        <translation>Text kopierad: %1</translation>
+    </message>
+    <message>
+        <location line="+321"/>
         <source>Is it for Board or Widget ?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1779,7 +1808,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+898"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+956"/>
         <source>Quick note</source>
         <translation>Snabbanteckning</translation>
     </message>
@@ -2271,12 +2300,12 @@ Providing a new name will create a new document.</source>
         <translation type="vanished">Nytt dokument</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBDocumentTabs.cpp" line="+66"/>
+        <location filename="../../src/gui/UBDocumentTabs.cpp" line="+73"/>
         <source>New board</source>
         <translation>Ny tavla</translation>
     </message>
     <message>
-        <location line="+114"/>
+        <location line="+125"/>
         <source>Save</source>
         <translation>Spara</translation>
     </message>
@@ -2286,7 +2315,7 @@ Providing a new name will create a new document.</source>
         <translation>%1 kunde inte sparas. Kontrollera att den inte är öppen i ett annat program.</translation>
     </message>
     <message>
-        <location line="+185"/>
+        <location line="+189"/>
         <source>Save the changes to the PDF before closing?</source>
         <translation>Spara ändringarna i PDF:en innan du stänger?</translation>
     </message>
@@ -2299,6 +2328,16 @@ Providing a new name will create a new document.</source>
         <location line="+1"/>
         <source>Close document</source>
         <translation>Stäng dokument</translation>
+    </message>
+    <message>
+        <location line="+160"/>
+        <source>Recover documents</source>
+        <translation>Återställ dokument</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>LibertyBoard stopped without closing. Open again the %1 documents that were open?</source>
+        <translation>LibertyBoard stannade utan att stängas. Öppna igen de %1 dokument som var öppna?</translation>
     </message>
 </context>
 <context>
@@ -2455,7 +2494,7 @@ Do you want to continue?</source>
 <context>
     <name>UBEraserOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-667"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-710"/>
         <source>Eraser</source>
         <translation>Sudd</translation>
     </message>
@@ -2607,17 +2646,17 @@ Do you want to continue?</source>
 <context>
     <name>UBExportFullPDF</name>
     <message>
-        <location filename="../../src/adaptors/UBExportFullPDF.cpp" line="+201"/>
+        <location filename="../../src/adaptors/UBExportFullPDF.cpp" line="+261"/>
         <source>Export as PDF File</source>
         <translation>Exportera som PDF fil</translation>
     </message>
     <message>
-        <location line="+182"/>
+        <location line="+189"/>
         <source>Export to PDF</source>
         <translation>Exportera till PDF</translation>
     </message>
     <message>
-        <location line="-50"/>
+        <location line="-56"/>
         <location line="+14"/>
         <source>The original PDF imported in LibertyBoard seems not valid and could not be merged with your annotations. Please repair it and then reimport it in LibertyBoard. The current export will be done with detailed (heavy) images of the pages of the original PDF instead, to avoid complete export failure.</source>
         <translation type="unfinished"></translation>
@@ -2631,7 +2670,7 @@ Do you want to continue?</source>
         <translation>Exportera som PDF fil</translation>
     </message>
     <message>
-        <location line="+38"/>
+        <location line="+63"/>
         <source>Exporting page %1 of %2</source>
         <translation>Exporterar sida %1 av %2</translation>
     </message>
@@ -2991,7 +3030,7 @@ Ladda ner och installera nu? LibertyBoard sparar dina dokument, stängs och öpp
 <context>
     <name>UBGraphicsPageMarkItem</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsPageMarkItem.cpp" line="+161"/>
+        <location filename="../../src/domain/UBGraphicsPageMarkItem.cpp" line="+168"/>
         <source>Delete</source>
         <translation>Ta bort</translation>
     </message>
@@ -3021,7 +3060,7 @@ Ladda ner och installera nu? LibertyBoard sparar dina dokument, stängs och öpp
 <context>
     <name>UBGraphicsScene</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsScene.cpp" line="+1031"/>
+        <location filename="../../src/domain/UBGraphicsScene.cpp" line="+1038"/>
         <location line="+11"/>
         <source>Attach a file</source>
         <translation>Bifoga en fil</translation>
@@ -3361,19 +3400,19 @@ Ladda ner och installera nu? LibertyBoard sparar dina dokument, stängs och öpp
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+83"/>
-        <location line="+109"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+93"/>
+        <location line="+147"/>
         <source>Page Size</source>
         <translation>Sidstorlek</translation>
     </message>
     <message>
-        <location line="-85"/>
-        <location line="+49"/>
+        <location line="-123"/>
+        <location line="+80"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
     </message>
     <message>
-        <location line="-33"/>
+        <location line="-64"/>
         <source>&amp;Home</source>
         <translation>&amp;Start</translation>
     </message>
@@ -3391,22 +3430,22 @@ Ladda ner och installera nu? LibertyBoard sparar dina dokument, stängs och öpp
         <translation>Öppna/Importera</translation>
     </message>
     <message>
-        <location line="+36"/>
+        <location line="+67"/>
         <source>&amp;Mode</source>
         <translation>&amp;Läge</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+27"/>
         <source>&amp;Edit</source>
         <translation>&amp;Redigera</translation>
     </message>
     <message>
-        <location line="-27"/>
+        <location line="-34"/>
         <source>Close document</source>
         <translation>Stäng dokument</translation>
     </message>
     <message>
-        <location line="-34"/>
+        <location line="-65"/>
         <source>New board</source>
         <translation>Ny tavla</translation>
     </message>
@@ -3431,7 +3470,27 @@ Ladda ner och installera nu? LibertyBoard sparar dina dokument, stängs och öpp
         <translation>Spara en kopia som PDF-, PNG- eller JPEG-fil</translation>
     </message>
     <message>
-        <location line="+28"/>
+        <location line="+8"/>
+        <source>Recent files</source>
+        <translation>Senaste filer</translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <source>No recent files</source>
+        <translation>Inga senaste filer</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Print...</source>
+        <translation>Skriv ut...</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Extract pages...</source>
+        <translation>Extrahera sidor...</translation>
+    </message>
+    <message>
+        <location line="+30"/>
         <source>Double board</source>
         <translation>Dubbel tavla</translation>
     </message>
@@ -3466,13 +3525,13 @@ Ladda ner och installera nu? LibertyBoard sparar dina dokument, stängs och öpp
         <translation>Ladda ner och installera den senaste versionen från GitHub</translation>
     </message>
     <message>
-        <location line="+60"/>
-        <location line="+226"/>
+        <location line="+66"/>
+        <location line="+278"/>
         <source>Saved</source>
         <translation>Sparad</translation>
     </message>
     <message>
-        <location line="-220"/>
+        <location line="-272"/>
         <source>Search...</source>
         <translation>Sök...</translation>
     </message>
@@ -3482,12 +3541,22 @@ Ladda ner och installera nu? LibertyBoard sparar dina dokument, stängs och öpp
         <translation>Sök efter ord i PDF:en</translation>
     </message>
     <message>
-        <location line="+21"/>
+        <location line="+13"/>
+        <source>Index</source>
+        <translation>Innehållsförteckning</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>The index of the PDF: a click on a title goes to its page</source>
+        <translation>PDF:ens innehållsförteckning: ett klick på en rubrik går till dess sida</translation>
+    </message>
+    <message>
+        <location line="+22"/>
         <source>Hide or show the toolbar</source>
         <translation>Dölj eller visa verktygsfältet</translation>
     </message>
     <message>
-        <location line="+114"/>
+        <location line="+151"/>
         <source>Exit full screen</source>
         <translation>Avsluta helskärm</translation>
     </message>
@@ -3632,7 +3701,7 @@ Vill du ignorera felen för den här värden?</translation>
 <context>
     <name>UBNoteOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+623"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+666"/>
         <source>Note</source>
         <translation>Anteckning</translation>
     </message>
@@ -3655,6 +3724,152 @@ Vill du ignorera felen för den här värden?</translation>
         <location filename="../../src/board/UBDualBoard.cpp" line="-214"/>
         <source>Click to work on this side</source>
         <translation>Klicka för att arbeta på den här sidan</translation>
+    </message>
+</context>
+<context>
+    <name>UBPageButtons</name>
+    <message>
+        <location filename="../../src/gui/UBPageButtons.cpp" line="+53"/>
+        <source>Delete</source>
+        <translation>Ta bort</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Delete the page shown</source>
+        <translation>Ta bort sidan som visas</translation>
+    </message>
+</context>
+<context>
+    <name>UBPageExtractor</name>
+    <message>
+        <location filename="../../src/board/UBPageExtractor.cpp" line="+137"/>
+        <source>Extract pages</source>
+        <translation>Extrahera sidor</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Current page (%1)</source>
+        <translation>Aktuell sida (%1)</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>All pages (%1)</source>
+        <translation>Alla sidor (%1)</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Pages:</source>
+        <translation>Sidor:</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>For example 1-3, 5, 8-</source>
+        <translation>Till exempel 1-3, 5, 8-</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Page numbers and ranges, separated by commas. &quot;8-&quot; goes to the last page.</source>
+        <translation>Sidnummer och intervall, åtskilda med kommatecken. &quot;8-&quot; går till sista sidan.</translation>
+    </message>
+    <message>
+        <location line="+21"/>
+        <source>PDF, all the pages in one file</source>
+        <translation>PDF, alla sidor i en fil</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>PDF, one file for each page</source>
+        <translation>PDF, en fil per sida</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>PNG pictures, one for each page</source>
+        <translation>PNG-bilder, en per sida</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>JPEG pictures, one for each page</source>
+        <translation>JPEG-bilder, en per sida</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>%1 - pages</source>
+        <translation>%1 - sidor</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Browse...</source>
+        <translation>Bläddra...</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Open when done</source>
+        <translation>Öppna när klart</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Pages</source>
+        <translation>Sidor</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Format</source>
+        <translation>Format</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>File name</source>
+        <translation>Filnamn</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <location line="+62"/>
+        <source>Folder</source>
+        <translation>Mapp</translation>
+    </message>
+    <message>
+        <location line="-58"/>
+        <source>Extract</source>
+        <translation>Extrahera</translation>
+    </message>
+    <message>
+        <location line="+50"/>
+        <source>%1 - page %2</source>
+        <translation>%1 - sida %2</translation>
+    </message>
+    <message>
+        <location line="+22"/>
+        <source>Write the pages as numbers from 1 to %1, for example 1-3, 5.</source>
+        <translation>Skriv sidorna som tal från 1 till %1, till exempel 1-3, 5.</translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <source>Write a file name without the signs \ / : * ? &quot; &lt; &gt; |.</source>
+        <translation>Skriv ett filnamn utan tecknen \ / : * ? &quot; &lt; &gt; |.</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>The folder could not be created. Choose another one.</source>
+        <translation>Mappen kunde inte skapas. Välj en annan.</translation>
+    </message>
+    <message>
+        <location line="+17"/>
+        <source>%1 files</source>
+        <translation>%1 filer</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Replace the files that already exist?
+
+%1</source>
+        <translation>Ersätta filerna som redan finns?
+
+%1</translation>
+    </message>
+    <message>
+        <location line="+50"/>
+        <source>The pages could not be extracted. Check that the folder can be written and that the files are not open in another program.</source>
+        <translation>Sidorna kunde inte extraheras. Kontrollera att det går att skriva i mappen och att filerna inte är öppna i ett annat program.</translation>
     </message>
 </context>
 <context>
@@ -3689,9 +3904,39 @@ Vill du ignorera felen för den här värden?</translation>
     </message>
 </context>
 <context>
+    <name>UBPdfOutlinePanel</name>
+    <message>
+        <location filename="../../src/gui/UBPdfOutlinePanel.cpp" line="+59"/>
+        <location line="+58"/>
+        <location line="+9"/>
+        <source>Index</source>
+        <translation>Innehållsförteckning</translation>
+    </message>
+    <message>
+        <location line="-63"/>
+        <source>Close</source>
+        <translation>Stäng</translation>
+    </message>
+    <message>
+        <location line="+54"/>
+        <source>The index is only for a PDF.</source>
+        <translation>Innehållsförteckningen finns bara för en PDF.</translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>This PDF has no index.</source>
+        <translation>Den här PDF:en har ingen innehållsförteckning.</translation>
+    </message>
+    <message>
+        <location line="+43"/>
+        <source>That page is not in the document any more.</source>
+        <translation>Den sidan finns inte längre i dokumentet.</translation>
+    </message>
+</context>
+<context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-754"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-806"/>
         <source>Pen</source>
         <translation>Penna</translation>
     </message>
@@ -3730,6 +3975,16 @@ Dynamisk bredd</translation>
         <location line="+4"/>
         <source> %</source>
         <translation> %</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Recognize shapes</source>
+        <translation>Känn igen former</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>A line, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
+        <translation>En handritad linje, cirkel, oval, triangel, kvadrat eller rektangel blir prydlig.</translation>
     </message>
 </context>
 <context>
@@ -3974,7 +4229,7 @@ Dynamisk bredd</translation>
 <context>
     <name>UBSearchBar</name>
     <message>
-        <location filename="../../src/gui/UBSearchBar.cpp" line="+59"/>
+        <location filename="../../src/gui/UBSearchBar.cpp" line="+67"/>
         <source>Search...</source>
         <translation>Sök...</translation>
     </message>
@@ -3994,7 +4249,7 @@ Dynamisk bredd</translation>
         <translation>Stäng</translation>
     </message>
     <message>
-        <location line="+34"/>
+        <location line="+60"/>
         <source>Search</source>
         <translation>Sök</translation>
     </message>
@@ -4004,7 +4259,12 @@ Dynamisk bredd</translation>
         <translation>Sökningen fungerar bara i en PDF med text.</translation>
     </message>
     <message>
-        <location line="+207"/>
+        <location line="+181"/>
+        <source>Page %1</source>
+        <translation>Sida %1</translation>
+    </message>
+    <message>
+        <location line="+119"/>
         <source>Not found</source>
         <translation>Hittades inte</translation>
     </message>
@@ -4012,6 +4272,44 @@ Dynamisk bredd</translation>
         <location line="+4"/>
         <source>%1 of %2</source>
         <translation>%1 av %2</translation>
+    </message>
+</context>
+<context>
+    <name>UBSelectorOptionsPanel</name>
+    <message>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+668"/>
+        <source>Select</source>
+        <translation>Markera</translation>
+    </message>
+    <message>
+        <location line="+29"/>
+        <source>Arrow</source>
+        <translation>Pil</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Select with a rectangle again</source>
+        <translation>Markera med en rektangel igen</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Draw a line around what to select.</source>
+        <translation>Rita en linje runt det som ska markeras.</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Lasso</source>
+        <translation>Lasso</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Select by drawing a free line around the objects</source>
+        <translation>Markera genom att rita en fri linje runt objekten</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Drag a rectangle, or over a PDF to copy its text.</source>
+        <translation>Dra en rektangel, eller över en PDF för att kopiera dess text.</translation>
     </message>
 </context>
 <context>
@@ -4025,7 +4323,7 @@ Dynamisk bredd</translation>
 <context>
     <name>UBShapeOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+240"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-461"/>
         <source>Rectangle</source>
         <translation>Rektangel</translation>
     </message>
@@ -4497,7 +4795,7 @@ Dynamisk bredd</translation>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-532"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-544"/>
         <source>Color</source>
         <translation>Färg</translation>
     </message>
@@ -4717,7 +5015,7 @@ Vänligen starta om programmet för att komma åt uppdaterade dokument.</transla
 <context>
     <name>UBZLayerController</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsScene.cpp" line="-842"/>
+        <location filename="../../src/domain/UBGraphicsScene.cpp" line="-848"/>
         <source>Bottom layer limit reached</source>
         <translation type="unfinished"></translation>
     </message>

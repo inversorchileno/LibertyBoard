@@ -1536,7 +1536,7 @@ Felülírja a biztonsági ellenőrzést, és folytatja?</translation>
 <context>
     <name>UBApplicationController</name>
     <message>
-        <location filename="../../src/core/UBApplicationController.cpp" line="+339"/>
+        <location filename="../../src/core/UBApplicationController.cpp" line="+341"/>
         <source>Web</source>
         <translation>Web</translation>
     </message>
@@ -1732,7 +1732,36 @@ Felülírja a biztonsági ellenőrzést, és folytatja?</translation>
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+2009"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+2111"/>
+        <source>That page is not in the document any more.</source>
+        <translation>Az az oldal már nincs a dokumentumban.</translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <source>Open link</source>
+        <translation>Hivatkozás megnyitása</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Open this address?
+
+%1</source>
+        <translation>Megnyitja ezt a címet?
+
+%1</translation>
+    </message>
+    <message>
+        <location line="+44"/>
+        <source>No text to copy here: a scanned page is only a picture.</source>
+        <translation>Itt nincs másolható szöveg: a beszkennelt oldal csak egy kép.</translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <source>Text copied: %1</source>
+        <translation>Szöveg másolva: %1</translation>
+    </message>
+    <message>
+        <location line="+321"/>
         <source>Is it for Board or Widget ?</source>
         <translation>Táblára vagy vezérlőre való?</translation>
     </message>
@@ -1791,7 +1820,7 @@ Felülírja a biztonsági ellenőrzést, és folytatja?</translation>
 <context>
     <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+898"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+956"/>
         <source>Quick note</source>
         <translation>Gyors jegyzet</translation>
     </message>
@@ -2356,12 +2385,12 @@ Ennek a névnek a megtartása helyettesíti a dokumentumot.
         <translation type="vanished">Új dokumentum</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBDocumentTabs.cpp" line="+66"/>
+        <location filename="../../src/gui/UBDocumentTabs.cpp" line="+73"/>
         <source>New board</source>
         <translation>Új tábla</translation>
     </message>
     <message>
-        <location line="+114"/>
+        <location line="+125"/>
         <source>Save</source>
         <translation>Mentés</translation>
     </message>
@@ -2371,7 +2400,7 @@ Ennek a névnek a megtartása helyettesíti a dokumentumot.
         <translation>%1 nem menthető. Ellenőrizze, hogy nincs-e megnyitva egy másik programban.</translation>
     </message>
     <message>
-        <location line="+185"/>
+        <location line="+189"/>
         <source>Save the changes to the PDF before closing?</source>
         <translation>Menti a változásokat a PDF-be bezárás előtt?</translation>
     </message>
@@ -2384,6 +2413,16 @@ Ennek a névnek a megtartása helyettesíti a dokumentumot.
         <location line="+1"/>
         <source>Close document</source>
         <translation>Dokumentum bezárása</translation>
+    </message>
+    <message>
+        <location line="+160"/>
+        <source>Recover documents</source>
+        <translation>Dokumentumok helyreállítása</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>LibertyBoard stopped without closing. Open again the %1 documents that were open?</source>
+        <translation>A LibertyBoard bezárás nélkül leállt. Újra megnyitja a(z) %1 megnyitott dokumentumot?</translation>
     </message>
 </context>
 <context>
@@ -2546,7 +2585,7 @@ Do you want to continue?</source>
 <context>
     <name>UBEraserOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-667"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-710"/>
         <source>Eraser</source>
         <translation>Radír</translation>
     </message>
@@ -2698,17 +2737,17 @@ Do you want to continue?</source>
 <context>
     <name>UBExportFullPDF</name>
     <message>
-        <location filename="../../src/adaptors/UBExportFullPDF.cpp" line="+201"/>
+        <location filename="../../src/adaptors/UBExportFullPDF.cpp" line="+261"/>
         <source>Export as PDF File</source>
         <translation>Exportálás PDF fájlként</translation>
     </message>
     <message>
-        <location line="+182"/>
+        <location line="+189"/>
         <source>Export to PDF</source>
         <translation>Exportálás PDFbe</translation>
     </message>
     <message>
-        <location line="-50"/>
+        <location line="-56"/>
         <location line="+14"/>
         <source>The original PDF imported in LibertyBoard seems not valid and could not be merged with your annotations. Please repair it and then reimport it in LibertyBoard. The current export will be done with detailed (heavy) images of the pages of the original PDF instead, to avoid complete export failure.</source>
         <translation>Úgy tűnik, hogy az LibertyBoardba importált eredeti PDF érvénytelen, és nem egyesíthető a megjegyzésekkel. Kérjük, javítsa meg, majd importálja újra az LibertyBoardba. A teljes exportálási hiba elkerülése érdekében az aktuális exportálás az eredeti PDF oldalainak részletes (súlyos) képeivel történik.</translation>
@@ -2722,7 +2761,7 @@ Do you want to continue?</source>
         <translation>Exportálás PDF fájlként</translation>
     </message>
     <message>
-        <location line="+38"/>
+        <location line="+63"/>
         <source>Exporting page %1 of %2</source>
         <translation>Oldal exportálása: %1/%2</translation>
     </message>
@@ -3082,7 +3121,7 @@ Letölti és telepíti most? A LibertyBoard menti a dokumentumait, bezárul, maj
 <context>
     <name>UBGraphicsPageMarkItem</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsPageMarkItem.cpp" line="+161"/>
+        <location filename="../../src/domain/UBGraphicsPageMarkItem.cpp" line="+168"/>
         <source>Delete</source>
         <translation>Törlés</translation>
     </message>
@@ -3112,7 +3151,7 @@ Letölti és telepíti most? A LibertyBoard menti a dokumentumait, bezárul, maj
 <context>
     <name>UBGraphicsScene</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsScene.cpp" line="+1031"/>
+        <location filename="../../src/domain/UBGraphicsScene.cpp" line="+1038"/>
         <location line="+11"/>
         <source>Attach a file</source>
         <translation>Fájl csatolása</translation>
@@ -3452,19 +3491,19 @@ Letölti és telepíti most? A LibertyBoard menti a dokumentumait, bezárul, maj
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+83"/>
-        <location line="+109"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+93"/>
+        <location line="+147"/>
         <source>Page Size</source>
         <translation>Oldalméret</translation>
     </message>
     <message>
-        <location line="-85"/>
-        <location line="+49"/>
+        <location line="-123"/>
+        <location line="+80"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
     </message>
     <message>
-        <location line="-33"/>
+        <location line="-64"/>
         <source>&amp;Home</source>
         <translation>&amp;Kezdőlap</translation>
     </message>
@@ -3482,22 +3521,22 @@ Letölti és telepíti most? A LibertyBoard menti a dokumentumait, bezárul, maj
         <translation>Megnyitás/Importálás</translation>
     </message>
     <message>
-        <location line="+36"/>
+        <location line="+67"/>
         <source>&amp;Mode</source>
         <translation>&amp;Mód</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+27"/>
         <source>&amp;Edit</source>
         <translation>S&amp;zerkesztés</translation>
     </message>
     <message>
-        <location line="-27"/>
+        <location line="-34"/>
         <source>Close document</source>
         <translation>Dokumentum bezárása</translation>
     </message>
     <message>
-        <location line="-34"/>
+        <location line="-65"/>
         <source>New board</source>
         <translation>Új tábla</translation>
     </message>
@@ -3522,7 +3561,27 @@ Letölti és telepíti most? A LibertyBoard menti a dokumentumait, bezárul, maj
         <translation>Másolat mentése PDF-, PNG- vagy JPEG-fájlként</translation>
     </message>
     <message>
-        <location line="+28"/>
+        <location line="+8"/>
+        <source>Recent files</source>
+        <translation>Legutóbbi fájlok</translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <source>No recent files</source>
+        <translation>Nincsenek legutóbbi fájlok</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Print...</source>
+        <translation>Nyomtatás...</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Extract pages...</source>
+        <translation>Oldalak kibontása...</translation>
+    </message>
+    <message>
+        <location line="+30"/>
         <source>Double board</source>
         <translation>Kettős tábla</translation>
     </message>
@@ -3557,13 +3616,13 @@ Letölti és telepíti most? A LibertyBoard menti a dokumentumait, bezárul, maj
         <translation>A legújabb verzió letöltése és telepítése a GitHubról</translation>
     </message>
     <message>
-        <location line="+60"/>
-        <location line="+226"/>
+        <location line="+66"/>
+        <location line="+278"/>
         <source>Saved</source>
         <translation>Mentve</translation>
     </message>
     <message>
-        <location line="-220"/>
+        <location line="-272"/>
         <source>Search...</source>
         <translation>Keresés...</translation>
     </message>
@@ -3573,12 +3632,22 @@ Letölti és telepíti most? A LibertyBoard menti a dokumentumait, bezárul, maj
         <translation>Szavak keresése a PDF-ben</translation>
     </message>
     <message>
-        <location line="+21"/>
+        <location line="+13"/>
+        <source>Index</source>
+        <translation>Tartalomjegyzék</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>The index of the PDF: a click on a title goes to its page</source>
+        <translation>A PDF tartalomjegyzéke: egy címre kattintva az oldalára ugrik</translation>
+    </message>
+    <message>
+        <location line="+22"/>
         <source>Hide or show the toolbar</source>
         <translation>Eszköztár elrejtése vagy megjelenítése</translation>
     </message>
     <message>
-        <location line="+114"/>
+        <location line="+151"/>
         <source>Exit full screen</source>
         <translation>Kilépés a teljes képernyőből</translation>
     </message>
@@ -3723,7 +3792,7 @@ Figyelmen kívül hagyja ezeket a hibákat ennél a hosztnál?</translation>
 <context>
     <name>UBNoteOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+623"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+666"/>
         <source>Note</source>
         <translation>Jegyzet</translation>
     </message>
@@ -3769,6 +3838,152 @@ Figyelmen kívül hagyja ezeket a hibákat ennél a hosztnál?</translation>
     </message>
 </context>
 <context>
+    <name>UBPageButtons</name>
+    <message>
+        <location filename="../../src/gui/UBPageButtons.cpp" line="+53"/>
+        <source>Delete</source>
+        <translation>Törlés</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Delete the page shown</source>
+        <translation>A megjelenített oldal törlése</translation>
+    </message>
+</context>
+<context>
+    <name>UBPageExtractor</name>
+    <message>
+        <location filename="../../src/board/UBPageExtractor.cpp" line="+137"/>
+        <source>Extract pages</source>
+        <translation>Oldalak kibontása</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Current page (%1)</source>
+        <translation>Aktuális oldal (%1)</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>All pages (%1)</source>
+        <translation>Minden oldal (%1)</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Pages:</source>
+        <translation>Oldalak:</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>For example 1-3, 5, 8-</source>
+        <translation>Például 1-3, 5, 8-</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Page numbers and ranges, separated by commas. &quot;8-&quot; goes to the last page.</source>
+        <translation>Oldalszámok és tartományok vesszővel elválasztva. A „8-” az utolsó oldalig tart.</translation>
+    </message>
+    <message>
+        <location line="+21"/>
+        <source>PDF, all the pages in one file</source>
+        <translation>PDF, minden oldal egy fájlban</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>PDF, one file for each page</source>
+        <translation>PDF, oldalanként egy fájl</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>PNG pictures, one for each page</source>
+        <translation>PNG képek, oldalanként egy</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>JPEG pictures, one for each page</source>
+        <translation>JPEG képek, oldalanként egy</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>%1 - pages</source>
+        <translation>%1 - oldalak</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Browse...</source>
+        <translation>Tallózás...</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Open when done</source>
+        <translation>Megnyitás befejezéskor</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Pages</source>
+        <translation>Oldalak</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Format</source>
+        <translation>Formátum</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>File name</source>
+        <translation>Fájlnév</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <location line="+62"/>
+        <source>Folder</source>
+        <translation>Mappa</translation>
+    </message>
+    <message>
+        <location line="-58"/>
+        <source>Extract</source>
+        <translation>Kibontás</translation>
+    </message>
+    <message>
+        <location line="+50"/>
+        <source>%1 - page %2</source>
+        <translation>%1 - %2. oldal</translation>
+    </message>
+    <message>
+        <location line="+22"/>
+        <source>Write the pages as numbers from 1 to %1, for example 1-3, 5.</source>
+        <translation>Írja be az oldalakat 1 és %1 közötti számokként, például 1-3, 5.</translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <source>Write a file name without the signs \ / : * ? &quot; &lt; &gt; |.</source>
+        <translation>Írjon be egy fájlnevet a \ / : * ? &quot; &lt; &gt; | jelek nélkül.</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>The folder could not be created. Choose another one.</source>
+        <translation>A mappát nem sikerült létrehozni. Válasszon másikat.</translation>
+    </message>
+    <message>
+        <location line="+17"/>
+        <source>%1 files</source>
+        <translation>%1 fájl</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Replace the files that already exist?
+
+%1</source>
+        <translation>Lecseréli a már létező fájlokat?
+
+%1</translation>
+    </message>
+    <message>
+        <location line="+50"/>
+        <source>The pages could not be extracted. Check that the folder can be written and that the files are not open in another program.</source>
+        <translation>Az oldalakat nem sikerült kibontani. Ellenőrizze, hogy a mappa írható-e, és hogy a fájlok nincsenek-e megnyitva egy másik programban.</translation>
+    </message>
+</context>
+<context>
     <name>UBPageIndicator</name>
     <message>
         <location filename="../../src/gui/UBPageIndicator.cpp" line="+49"/>
@@ -3800,9 +4015,39 @@ Figyelmen kívül hagyja ezeket a hibákat ennél a hosztnál?</translation>
     </message>
 </context>
 <context>
+    <name>UBPdfOutlinePanel</name>
+    <message>
+        <location filename="../../src/gui/UBPdfOutlinePanel.cpp" line="+59"/>
+        <location line="+58"/>
+        <location line="+9"/>
+        <source>Index</source>
+        <translation>Tartalomjegyzék</translation>
+    </message>
+    <message>
+        <location line="-63"/>
+        <source>Close</source>
+        <translation>Bezárás</translation>
+    </message>
+    <message>
+        <location line="+54"/>
+        <source>The index is only for a PDF.</source>
+        <translation>A tartalomjegyzék csak PDF-hez érhető el.</translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>This PDF has no index.</source>
+        <translation>Ennek a PDF-nek nincs tartalomjegyzéke.</translation>
+    </message>
+    <message>
+        <location line="+43"/>
+        <source>That page is not in the document any more.</source>
+        <translation>Az az oldal már nincs a dokumentumban.</translation>
+    </message>
+</context>
+<context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-754"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-806"/>
         <source>Pen</source>
         <translation>Toll</translation>
     </message>
@@ -3841,6 +4086,16 @@ Dinamikus szélesség</translation>
         <location line="+4"/>
         <source> %</source>
         <translation> %</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Recognize shapes</source>
+        <translation>Alakzatok felismerése</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>A line, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
+        <translation>A kézzel rajzolt vonal, kör, ovális, háromszög, négyzet vagy téglalap szabályossá válik.</translation>
     </message>
 </context>
 <context>
@@ -4093,7 +4348,7 @@ Dinamikus szélesség</translation>
 <context>
     <name>UBSearchBar</name>
     <message>
-        <location filename="../../src/gui/UBSearchBar.cpp" line="+59"/>
+        <location filename="../../src/gui/UBSearchBar.cpp" line="+67"/>
         <source>Search...</source>
         <translation>Keresés...</translation>
     </message>
@@ -4113,7 +4368,7 @@ Dinamikus szélesség</translation>
         <translation>Bezárás</translation>
     </message>
     <message>
-        <location line="+34"/>
+        <location line="+60"/>
         <source>Search</source>
         <translation>Keresés</translation>
     </message>
@@ -4123,7 +4378,12 @@ Dinamikus szélesség</translation>
         <translation>A keresés csak szöveget tartalmazó PDF-ben működik.</translation>
     </message>
     <message>
-        <location line="+207"/>
+        <location line="+181"/>
+        <source>Page %1</source>
+        <translation>%1. oldal</translation>
+    </message>
+    <message>
+        <location line="+119"/>
         <source>Not found</source>
         <translation>Nem található</translation>
     </message>
@@ -4131,6 +4391,44 @@ Dinamikus szélesség</translation>
         <location line="+4"/>
         <source>%1 of %2</source>
         <translation>%1 / %2</translation>
+    </message>
+</context>
+<context>
+    <name>UBSelectorOptionsPanel</name>
+    <message>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+668"/>
+        <source>Select</source>
+        <translation>Kijelölés</translation>
+    </message>
+    <message>
+        <location line="+29"/>
+        <source>Arrow</source>
+        <translation>Nyíl</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Select with a rectangle again</source>
+        <translation>Kijelölés ismét téglalappal</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Draw a line around what to select.</source>
+        <translation>Rajzoljon vonalat a kijelölendők köré.</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Lasso</source>
+        <translation>Lasszó</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Select by drawing a free line around the objects</source>
+        <translation>Kijelölés szabad vonal rajzolásával az objektumok köré</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Drag a rectangle, or over a PDF to copy its text.</source>
+        <translation>Húzzon egy téglalapot, vagy egy PDF fölött a szöveg másolásához.</translation>
     </message>
 </context>
 <context>
@@ -4144,7 +4442,7 @@ Dinamikus szélesség</translation>
 <context>
     <name>UBShapeOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+240"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-461"/>
         <source>Rectangle</source>
         <translation>Téglalap</translation>
     </message>
@@ -4620,7 +4918,7 @@ Dinamikus szélesség</translation>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-532"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-544"/>
         <source>Color</source>
         <translation>Szín</translation>
     </message>
@@ -4839,7 +5137,7 @@ Please reboot the application to access the updated documents.</source>
 <context>
     <name>UBZLayerController</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsScene.cpp" line="-842"/>
+        <location filename="../../src/domain/UBGraphicsScene.cpp" line="-848"/>
         <source>Bottom layer limit reached</source>
         <translation type="unfinished"></translation>
     </message>

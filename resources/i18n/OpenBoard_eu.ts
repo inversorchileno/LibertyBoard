@@ -1650,7 +1650,7 @@ Segurtasun egiaztapena gainidatzi eta jarraitu nahi duzu?</translation>
 <context>
     <name>UBApplicationController</name>
     <message>
-        <location filename="../../src/core/UBApplicationController.cpp" line="+339"/>
+        <location filename="../../src/core/UBApplicationController.cpp" line="+341"/>
         <source>Web</source>
         <translation>Web-a</translation>
     </message>
@@ -1843,7 +1843,36 @@ Segurtasun egiaztapena gainidatzi eta jarraitu nahi duzu?</translation>
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+2009"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+2111"/>
+        <source>That page is not in the document any more.</source>
+        <translation>Orri hori ez dago jada dokumentuan.</translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <source>Open link</source>
+        <translation>Ireki esteka</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Open this address?
+
+%1</source>
+        <translation>Helbide hau ireki?
+
+%1</translation>
+    </message>
+    <message>
+        <location line="+44"/>
+        <source>No text to copy here: a scanned page is only a picture.</source>
+        <translation>Hemen ez dago kopiatzeko testurik: eskaneatutako orri bat irudi bat besterik ez da.</translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <source>Text copied: %1</source>
+        <translation>Testua kopiatuta: %1</translation>
+    </message>
+    <message>
+        <location line="+321"/>
         <source>Is it for Board or Widget ?</source>
         <translation type="unfinished">Arbelerako edo trepetarako?</translation>
     </message>
@@ -1902,7 +1931,7 @@ Segurtasun egiaztapena gainidatzi eta jarraitu nahi duzu?</translation>
 <context>
     <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+898"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+956"/>
         <source>Quick note</source>
         <translation>Ohar azkarra</translation>
     </message>
@@ -2456,12 +2485,12 @@ Izen berria ematean dokumentu berri bat sortuko da.</translation>
         <translation type="vanished">Dokumentu berria</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBDocumentTabs.cpp" line="+66"/>
+        <location filename="../../src/gui/UBDocumentTabs.cpp" line="+73"/>
         <source>New board</source>
         <translation>Arbel berria</translation>
     </message>
     <message>
-        <location line="+114"/>
+        <location line="+125"/>
         <source>Save</source>
         <translation>Gorde</translation>
     </message>
@@ -2471,7 +2500,7 @@ Izen berria ematean dokumentu berri bat sortuko da.</translation>
         <translation>Ezin izan da %1 gorde. Egiaztatu ez dagoela beste programa batean irekita.</translation>
     </message>
     <message>
-        <location line="+185"/>
+        <location line="+189"/>
         <source>Save the changes to the PDF before closing?</source>
         <translation>Aldaketak PDFan gorde itxi aurretik?</translation>
     </message>
@@ -2484,6 +2513,16 @@ Izen berria ematean dokumentu berri bat sortuko da.</translation>
         <location line="+1"/>
         <source>Close document</source>
         <translation>Itxi dokumentua</translation>
+    </message>
+    <message>
+        <location line="+160"/>
+        <source>Recover documents</source>
+        <translation>Berreskuratu dokumentuak</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>LibertyBoard stopped without closing. Open again the %1 documents that were open?</source>
+        <translation>LibertyBoard itxi gabe gelditu da. Irekita zeuden %1 dokumentuak berriro ireki?</translation>
     </message>
 </context>
 <context>
@@ -2626,7 +2665,7 @@ Do you want to continue?</source>
 <context>
     <name>UBEraserOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-667"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-710"/>
         <source>Eraser</source>
         <translation>Borragoma</translation>
     </message>
@@ -2778,17 +2817,17 @@ Do you want to continue?</source>
 <context>
     <name>UBExportFullPDF</name>
     <message>
-        <location filename="../../src/adaptors/UBExportFullPDF.cpp" line="+201"/>
+        <location filename="../../src/adaptors/UBExportFullPDF.cpp" line="+261"/>
         <source>Export as PDF File</source>
         <translation>Esportatu PDF fitxategi gisa</translation>
     </message>
     <message>
-        <location line="+182"/>
+        <location line="+189"/>
         <source>Export to PDF</source>
         <translation>Esportatu PDF gisa</translation>
     </message>
     <message>
-        <location line="-50"/>
+        <location line="-56"/>
         <location line="+14"/>
         <source>The original PDF imported in LibertyBoard seems not valid and could not be merged with your annotations. Please repair it and then reimport it in LibertyBoard. The current export will be done with detailed (heavy) images of the pages of the original PDF instead, to avoid complete export failure.</source>
         <translation type="unfinished">LibertyBoard-en inportatutako jatorrizko PDFa ez da baliozkoa eta ezin izan da zure oharretara batu. Mesedez, konpondu eta gero berriro inportatu LibertyBoard-en. Uneko esportazioa jatorrizko PDFaren orrien irudi zehatzekin (astunekin) egingo da horren ordez, esportazio hutsegite osoa ekiditeko.</translation>
@@ -2802,7 +2841,7 @@ Do you want to continue?</source>
         <translation>Esportatu PDF gisa</translation>
     </message>
     <message>
-        <location line="+38"/>
+        <location line="+63"/>
         <source>Exporting page %1 of %2</source>
         <translation>%1 orria %2tik esportatzen</translation>
     </message>
@@ -3174,7 +3213,7 @@ Orain deskargatu eta instalatu? LibertyBoard-ek zure dokumentuak gordeko ditu, i
 <context>
     <name>UBGraphicsPageMarkItem</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsPageMarkItem.cpp" line="+161"/>
+        <location filename="../../src/domain/UBGraphicsPageMarkItem.cpp" line="+168"/>
         <source>Delete</source>
         <translation>Ezabatu</translation>
     </message>
@@ -3204,7 +3243,7 @@ Orain deskargatu eta instalatu? LibertyBoard-ek zure dokumentuak gordeko ditu, i
 <context>
     <name>UBGraphicsScene</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsScene.cpp" line="+1031"/>
+        <location filename="../../src/domain/UBGraphicsScene.cpp" line="+1038"/>
         <location line="+11"/>
         <source>Attach a file</source>
         <translation>Erantsi fitxategi bat</translation>
@@ -3544,19 +3583,19 @@ Orain deskargatu eta instalatu? LibertyBoard-ek zure dokumentuak gordeko ditu, i
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+83"/>
-        <location line="+109"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+93"/>
+        <location line="+147"/>
         <source>Page Size</source>
         <translation>Orriaren tamaina</translation>
     </message>
     <message>
-        <location line="-85"/>
-        <location line="+49"/>
+        <location line="-123"/>
+        <location line="+80"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
     </message>
     <message>
-        <location line="-33"/>
+        <location line="-64"/>
         <source>&amp;Home</source>
         <translation>&amp;Hasiera</translation>
     </message>
@@ -3574,22 +3613,22 @@ Orain deskargatu eta instalatu? LibertyBoard-ek zure dokumentuak gordeko ditu, i
         <translation>Ireki/Inportatu</translation>
     </message>
     <message>
-        <location line="+36"/>
+        <location line="+67"/>
         <source>&amp;Mode</source>
         <translation>&amp;Modua</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+27"/>
         <source>&amp;Edit</source>
         <translation>&amp;Edizioa</translation>
     </message>
     <message>
-        <location line="-27"/>
+        <location line="-34"/>
         <source>Close document</source>
         <translation>Itxi dokumentua</translation>
     </message>
     <message>
-        <location line="-34"/>
+        <location line="-65"/>
         <source>New board</source>
         <translation>Arbel berria</translation>
     </message>
@@ -3614,7 +3653,27 @@ Orain deskargatu eta instalatu? LibertyBoard-ek zure dokumentuak gordeko ditu, i
         <translation>Gorde kopia bat PDF, PNG edo JPEG fitxategi gisa</translation>
     </message>
     <message>
-        <location line="+28"/>
+        <location line="+8"/>
+        <source>Recent files</source>
+        <translation>Azken fitxategiak</translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <source>No recent files</source>
+        <translation>Ez dago azken fitxategirik</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Print...</source>
+        <translation>Inprimatu...</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Extract pages...</source>
+        <translation>Atera orriak...</translation>
+    </message>
+    <message>
+        <location line="+30"/>
         <source>Double board</source>
         <translation>Arbel bikoitza</translation>
     </message>
@@ -3649,13 +3708,13 @@ Orain deskargatu eta instalatu? LibertyBoard-ek zure dokumentuak gordeko ditu, i
         <translation>Deskargatu eta instalatu azken bertsioa GitHub-etik</translation>
     </message>
     <message>
-        <location line="+60"/>
-        <location line="+226"/>
+        <location line="+66"/>
+        <location line="+278"/>
         <source>Saved</source>
         <translation>Gordeta</translation>
     </message>
     <message>
-        <location line="-220"/>
+        <location line="-272"/>
         <source>Search...</source>
         <translation>Bilatu...</translation>
     </message>
@@ -3665,12 +3724,22 @@ Orain deskargatu eta instalatu? LibertyBoard-ek zure dokumentuak gordeko ditu, i
         <translation>Bilatu hitzak PDFan</translation>
     </message>
     <message>
-        <location line="+21"/>
+        <location line="+13"/>
+        <source>Index</source>
+        <translation>Aurkibidea</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>The index of the PDF: a click on a title goes to its page</source>
+        <translation>PDFaren aurkibidea: izenburu batean klik eginez gero, haren orrira joaten da</translation>
+    </message>
+    <message>
+        <location line="+22"/>
         <source>Hide or show the toolbar</source>
         <translation>Ezkutatu edo erakutsi tresna-barra</translation>
     </message>
     <message>
-        <location line="+114"/>
+        <location line="+151"/>
         <source>Exit full screen</source>
         <translation>Irten pantaila osotik</translation>
     </message>
@@ -3815,7 +3884,7 @@ Ostalari onentzako errore hauek ez-ikusi nahi dituzu?</translation>
 <context>
     <name>UBNoteOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+623"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+666"/>
         <source>Note</source>
         <translation>Oharra</translation>
     </message>
@@ -3861,6 +3930,152 @@ Ostalari onentzako errore hauek ez-ikusi nahi dituzu?</translation>
     </message>
 </context>
 <context>
+    <name>UBPageButtons</name>
+    <message>
+        <location filename="../../src/gui/UBPageButtons.cpp" line="+53"/>
+        <source>Delete</source>
+        <translation>Ezabatu</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Delete the page shown</source>
+        <translation>Ezabatu erakutsitako orria</translation>
+    </message>
+</context>
+<context>
+    <name>UBPageExtractor</name>
+    <message>
+        <location filename="../../src/board/UBPageExtractor.cpp" line="+137"/>
+        <source>Extract pages</source>
+        <translation>Atera orriak</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Current page (%1)</source>
+        <translation>Uneko orria (%1)</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>All pages (%1)</source>
+        <translation>Orri guztiak (%1)</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Pages:</source>
+        <translation>Orriak:</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>For example 1-3, 5, 8-</source>
+        <translation>Adibidez 1-3, 5, 8-</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Page numbers and ranges, separated by commas. &quot;8-&quot; goes to the last page.</source>
+        <translation>Orri-zenbakiak eta tarteak, komaz bereizita. «8-» azken orrira arte doa.</translation>
+    </message>
+    <message>
+        <location line="+21"/>
+        <source>PDF, all the pages in one file</source>
+        <translation>PDF, orri guztiak fitxategi batean</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>PDF, one file for each page</source>
+        <translation>PDF, fitxategi bat orri bakoitzeko</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>PNG pictures, one for each page</source>
+        <translation>PNG irudiak, bat orri bakoitzeko</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>JPEG pictures, one for each page</source>
+        <translation>JPEG irudiak, bat orri bakoitzeko</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>%1 - pages</source>
+        <translation>%1 - orriak</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Browse...</source>
+        <translation>Arakatu...</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Open when done</source>
+        <translation>Ireki amaitzean</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Pages</source>
+        <translation>Orriak</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Format</source>
+        <translation>Formatua</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>File name</source>
+        <translation>Fitxategiaren izena</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <location line="+62"/>
+        <source>Folder</source>
+        <translation>Karpeta</translation>
+    </message>
+    <message>
+        <location line="-58"/>
+        <source>Extract</source>
+        <translation>Atera</translation>
+    </message>
+    <message>
+        <location line="+50"/>
+        <source>%1 - page %2</source>
+        <translation>%1 - %2. orria</translation>
+    </message>
+    <message>
+        <location line="+22"/>
+        <source>Write the pages as numbers from 1 to %1, for example 1-3, 5.</source>
+        <translation>Idatzi orriak 1etik %1era bitarteko zenbaki gisa, adibidez 1-3, 5.</translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <source>Write a file name without the signs \ / : * ? &quot; &lt; &gt; |.</source>
+        <translation>Idatzi fitxategi-izen bat \ / : * ? &quot; &lt; &gt; | ikurrik gabe.</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>The folder could not be created. Choose another one.</source>
+        <translation>Ezin izan da karpeta sortu. Aukeratu beste bat.</translation>
+    </message>
+    <message>
+        <location line="+17"/>
+        <source>%1 files</source>
+        <translation>%1 fitxategi</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Replace the files that already exist?
+
+%1</source>
+        <translation>Lehendik dauden fitxategiak ordeztu?
+
+%1</translation>
+    </message>
+    <message>
+        <location line="+50"/>
+        <source>The pages could not be extracted. Check that the folder can be written and that the files are not open in another program.</source>
+        <translation>Ezin izan dira orriak atera. Egiaztatu karpetan idatz daitekeela eta fitxategiak ez daudela beste programa batean irekita.</translation>
+    </message>
+</context>
+<context>
     <name>UBPageIndicator</name>
     <message>
         <location filename="../../src/gui/UBPageIndicator.cpp" line="+49"/>
@@ -3892,9 +4107,39 @@ Ostalari onentzako errore hauek ez-ikusi nahi dituzu?</translation>
     </message>
 </context>
 <context>
+    <name>UBPdfOutlinePanel</name>
+    <message>
+        <location filename="../../src/gui/UBPdfOutlinePanel.cpp" line="+59"/>
+        <location line="+58"/>
+        <location line="+9"/>
+        <source>Index</source>
+        <translation>Aurkibidea</translation>
+    </message>
+    <message>
+        <location line="-63"/>
+        <source>Close</source>
+        <translation>Itxi</translation>
+    </message>
+    <message>
+        <location line="+54"/>
+        <source>The index is only for a PDF.</source>
+        <translation>Aurkibidea PDF baterako bakarrik da.</translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>This PDF has no index.</source>
+        <translation>PDF honek ez du aurkibiderik.</translation>
+    </message>
+    <message>
+        <location line="+43"/>
+        <source>That page is not in the document any more.</source>
+        <translation>Orri hori ez dago jada dokumentuan.</translation>
+    </message>
+</context>
+<context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-754"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-806"/>
         <source>Pen</source>
         <translation>Boligrafoa</translation>
     </message>
@@ -3933,6 +4178,16 @@ Zabalera dinamikoa</translation>
         <location line="+4"/>
         <source> %</source>
         <translation> %</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Recognize shapes</source>
+        <translation>Ezagutu formak</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>A line, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
+        <translation>Eskuz marraztutako lerro, zirkulu, obalo, triangelu, karratu edo laukizuzen bat garbi geratzen da.</translation>
     </message>
 </context>
 <context>
@@ -4215,7 +4470,7 @@ Zabalera dinamikoa</translation>
 <context>
     <name>UBSearchBar</name>
     <message>
-        <location filename="../../src/gui/UBSearchBar.cpp" line="+59"/>
+        <location filename="../../src/gui/UBSearchBar.cpp" line="+67"/>
         <source>Search...</source>
         <translation>Bilatu...</translation>
     </message>
@@ -4235,7 +4490,7 @@ Zabalera dinamikoa</translation>
         <translation>Itxi</translation>
     </message>
     <message>
-        <location line="+34"/>
+        <location line="+60"/>
         <source>Search</source>
         <translation>Bilatu</translation>
     </message>
@@ -4245,7 +4500,12 @@ Zabalera dinamikoa</translation>
         <translation>Bilaketak testua duen PDF batean bakarrik funtzionatzen du.</translation>
     </message>
     <message>
-        <location line="+207"/>
+        <location line="+181"/>
+        <source>Page %1</source>
+        <translation>%1. orria</translation>
+    </message>
+    <message>
+        <location line="+119"/>
         <source>Not found</source>
         <translation>Ez da aurkitu</translation>
     </message>
@@ -4253,6 +4513,44 @@ Zabalera dinamikoa</translation>
         <location line="+4"/>
         <source>%1 of %2</source>
         <translation>%1 / %2</translation>
+    </message>
+</context>
+<context>
+    <name>UBSelectorOptionsPanel</name>
+    <message>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+668"/>
+        <source>Select</source>
+        <translation>Hautatu</translation>
+    </message>
+    <message>
+        <location line="+29"/>
+        <source>Arrow</source>
+        <translation>Gezia</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Select with a rectangle again</source>
+        <translation>Hautatu berriro laukizuzen batekin</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Draw a line around what to select.</source>
+        <translation>Marraztu lerro bat hautatu nahi duzunaren inguruan.</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Lasso</source>
+        <translation>Lazoa</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Select by drawing a free line around the objects</source>
+        <translation>Hautatu objektuen inguruan lerro libre bat marraztuz</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Drag a rectangle, or over a PDF to copy its text.</source>
+        <translation>Arrastatu laukizuzen bat, edo PDF baten gainean haren testua kopiatzeko.</translation>
     </message>
 </context>
 <context>
@@ -4266,7 +4564,7 @@ Zabalera dinamikoa</translation>
 <context>
     <name>UBShapeOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+240"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-461"/>
         <source>Rectangle</source>
         <translation>Laukizuzena</translation>
     </message>
@@ -4735,7 +5033,7 @@ Zabalera dinamikoa</translation>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-532"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-544"/>
         <source>Color</source>
         <translation>Kolorea</translation>
     </message>
@@ -4969,7 +5267,7 @@ Berrabiarazi aplikazioa eguneratutako dokumentuak irekitzeko.</translation>
 <context>
     <name>UBZLayerController</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsScene.cpp" line="-842"/>
+        <location filename="../../src/domain/UBGraphicsScene.cpp" line="-848"/>
         <source>Bottom layer limit reached</source>
         <translation type="unfinished"></translation>
     </message>
