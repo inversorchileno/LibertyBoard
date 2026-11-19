@@ -4023,8 +4023,12 @@ Dinamik kalınlık</translation>
     </message>
     <message>
         <location line="+1"/>
+        <source>A line, arrow, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
+        <translation>Elle çizilen çizgi, ok, daire, oval, üçgen, kare veya dikdörtgen düzgün hâle gelir.</translation>
+    </message>
+    <message>
         <source>A line, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
-        <translation>Elle çizilen çizgi, daire, oval, üçgen, kare veya dikdörtgen düzgün hâle gelir.</translation>
+        <translation type="vanished">Elle çizilen çizgi, daire, oval, üçgen, kare veya dikdörtgen düzgün hâle gelir.</translation>
     </message>
 </context>
 <context>

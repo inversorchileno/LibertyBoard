@@ -3978,8 +3978,12 @@ Dynamic width</source>
     </message>
     <message>
         <location line="+1"/>
+        <source>A line, arrow, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
+        <translation>קו, חץ, עיגול, אליפסה, משולש, ריבוע או מלבן שצוירו ביד הופכים למסודרים.</translation>
+    </message>
+    <message>
         <source>A line, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
-        <translation>קו, עיגול, אליפסה, משולש, ריבוע או מלבן שצוירו ביד הופכים למסודרים.</translation>
+        <translation type="vanished">קו, עיגול, אליפסה, משולש, ריבוע או מלבן שצוירו ביד הופכים למסודרים.</translation>
     </message>
 </context>
 <context>

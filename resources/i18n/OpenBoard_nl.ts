@@ -3960,8 +3960,12 @@ Dynamische breedte</translation>
     </message>
     <message>
         <location line="+1"/>
+        <source>A line, arrow, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
+        <translation>Een met de hand getekende lijn, pijl, cirkel, ovaal, driehoek, vierkant of rechthoek wordt strak.</translation>
+    </message>
+    <message>
         <source>A line, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
-        <translation>Een met de hand getekende lijn, cirkel, ovaal, driehoek, vierkant of rechthoek wordt strak.</translation>
+        <translation type="vanished">Een met de hand getekende lijn, cirkel, ovaal, driehoek, vierkant of rechthoek wordt strak.</translation>
     </message>
 </context>
 <context>

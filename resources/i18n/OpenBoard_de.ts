@@ -4084,8 +4084,12 @@ Dynamische Breite</translation>
     </message>
     <message>
         <location line="+1"/>
+        <source>A line, arrow, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
+        <translation>Eine von Hand gezeichnete Linie, ein Pfeil, Kreis, Oval, Dreieck, Quadrat oder Rechteck wird sauber.</translation>
+    </message>
+    <message>
         <source>A line, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
-        <translation>Eine von Hand gezeichnete Linie, ein Kreis, Oval, Dreieck, Quadrat oder Rechteck wird sauber.</translation>
+        <translation type="vanished">Eine von Hand gezeichnete Linie, ein Kreis, Oval, Dreieck, Quadrat oder Rechteck wird sauber.</translation>
     </message>
 </context>
 <context>

@@ -4075,8 +4075,12 @@ Larghezza dinamica</translation>
     </message>
     <message>
         <location line="+1"/>
+        <source>A line, arrow, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
+        <translation>Una linea, una freccia, un cerchio, un ovale, un triangolo, un quadrato o un rettangolo disegnato a mano diventa preciso.</translation>
+    </message>
+    <message>
         <source>A line, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
-        <translation>Una linea, un cerchio, un ovale, un triangolo, un quadrato o un rettangolo disegnato a mano diventa preciso.</translation>
+        <translation type="vanished">Una linea, un cerchio, un ovale, un triangolo, un quadrato o un rettangolo disegnato a mano diventa preciso.</translation>
     </message>
 </context>
 <context>

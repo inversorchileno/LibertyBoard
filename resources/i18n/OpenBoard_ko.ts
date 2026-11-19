@@ -3987,8 +3987,12 @@ Dynamic width</source>
     </message>
     <message>
         <location line="+1"/>
+        <source>A line, arrow, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
+        <translation>손으로 그린 선, 화살표, 원, 타원, 삼각형, 정사각형, 직사각형이 깔끔한 도형이 됩니다.</translation>
+    </message>
+    <message>
         <source>A line, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
-        <translation>손으로 그린 선, 원, 타원, 삼각형, 정사각형, 직사각형이 깔끔한 도형이 됩니다.</translation>
+        <translation type="vanished">손으로 그린 선, 원, 타원, 삼각형, 정사각형, 직사각형이 깔끔한 도형이 됩니다.</translation>
     </message>
 </context>
 <context>

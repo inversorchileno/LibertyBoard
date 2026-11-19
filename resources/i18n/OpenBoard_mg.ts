@@ -3982,8 +3982,12 @@ Sakany miova</translation>
     </message>
     <message>
         <location line="+1"/>
+        <source>A line, arrow, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
+        <translation>Tsipika, zana-tsipìka, faribolana, oval, telozoro, efamira na efajoro nosoratana tanana dia lasa madio.</translation>
+    </message>
+    <message>
         <source>A line, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
-        <translation>Tsipika, faribolana, oval, telozoro, efamira na efajoro nosoratana tanana dia lasa madio.</translation>
+        <translation type="vanished">Tsipika, faribolana, oval, telozoro, efamira na efajoro nosoratana tanana dia lasa madio.</translation>
     </message>
 </context>
 <context>

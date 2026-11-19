@@ -3963,8 +3963,12 @@ Dynamic width</source>
     </message>
     <message>
         <location line="+1"/>
+        <source>A line, arrow, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
+        <translation>手書きの線、矢印、円、楕円、三角形、正方形、長方形がきれいな図形になります。</translation>
+    </message>
+    <message>
         <source>A line, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
-        <translation>手書きの線、円、楕円、三角形、正方形、長方形がきれいな図形になります。</translation>
+        <translation type="vanished">手書きの線、円、楕円、三角形、正方形、長方形がきれいな図形になります。</translation>
     </message>
 </context>
 <context>

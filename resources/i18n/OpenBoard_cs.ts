@@ -3987,8 +3987,12 @@ Dynamická šířka</translation>
     </message>
     <message>
         <location line="+1"/>
+        <source>A line, arrow, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
+        <translation>Ručně nakreslená čára, šipka, kruh, ovál, trojúhelník, čtverec nebo obdélník se stane úhledným.</translation>
+    </message>
+    <message>
         <source>A line, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
-        <translation>Ručně nakreslená čára, kruh, ovál, trojúhelník, čtverec nebo obdélník se stane úhledným.</translation>
+        <translation type="vanished">Ručně nakreslená čára, kruh, ovál, trojúhelník, čtverec nebo obdélník se stane úhledným.</translation>
     </message>
 </context>
 <context>

@@ -4028,8 +4028,12 @@ Dynamic width</source>
     </message>
     <message>
         <location line="+1"/>
+        <source>A line, arrow, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
+        <translation>Μια γραμμή, βέλος, κύκλος, οβάλ, τρίγωνο, τετράγωνο ή ορθογώνιο σχεδιασμένο με το χέρι γίνεται καθαρό.</translation>
+    </message>
+    <message>
         <source>A line, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
-        <translation>Μια γραμμή, κύκλος, οβάλ, τρίγωνο, τετράγωνο ή ορθογώνιο σχεδιασμένο με το χέρι γίνεται καθαρό.</translation>
+        <translation type="vanished">Μια γραμμή, κύκλος, οβάλ, τρίγωνο, τετράγωνο ή ορθογώνιο σχεδιασμένο με το χέρι γίνεται καθαρό.</translation>
     </message>
 </context>
 <context>

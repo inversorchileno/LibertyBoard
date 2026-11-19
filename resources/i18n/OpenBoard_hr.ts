@@ -4093,8 +4093,12 @@ Dinamična širina</translation>
     </message>
     <message>
         <location line="+1"/>
+        <source>A line, arrow, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
+        <translation>Rukom nacrtana linija, strelica, krug, oval, trokut, kvadrat ili pravokutnik postaje uredan.</translation>
+    </message>
+    <message>
         <source>A line, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
-        <translation>Rukom nacrtana linija, krug, oval, trokut, kvadrat ili pravokutnik postaje uredan.</translation>
+        <translation type="vanished">Rukom nacrtana linija, krug, oval, trokut, kvadrat ili pravokutnik postaje uredan.</translation>
     </message>
 </context>
 <context>

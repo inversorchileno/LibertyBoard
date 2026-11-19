@@ -3990,8 +3990,12 @@ Amplada dinàmica</translation>
     </message>
     <message>
         <location line="+1"/>
+        <source>A line, arrow, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
+        <translation>Una línia, una fletxa, un cercle, un oval, un triangle, un quadrat o un rectangle dibuixat a mà queda net.</translation>
+    </message>
+    <message>
         <source>A line, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
-        <translation>Una línia, un cercle, un oval, un triangle, un quadrat o un rectangle dibuixat a mà queda net.</translation>
+        <translation type="vanished">Una línia, un cercle, un oval, un triangle, un quadrat o un rectangle dibuixat a mà queda net.</translation>
     </message>
 </context>
 <context>

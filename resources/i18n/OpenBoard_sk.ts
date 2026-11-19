@@ -4013,8 +4013,12 @@ Dynamická šírka</translation>
     </message>
     <message>
         <location line="+1"/>
+        <source>A line, arrow, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
+        <translation>Ručne nakreslená čiara, šípka, kruh, ovál, trojuholník, štvorec alebo obdĺžnik sa stane úhľadným.</translation>
+    </message>
+    <message>
         <source>A line, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
-        <translation>Ručne nakreslená čiara, kruh, ovál, trojuholník, štvorec alebo obdĺžnik sa stane úhľadným.</translation>
+        <translation type="vanished">Ručne nakreslená čiara, kruh, ovál, trojuholník, štvorec alebo obdĺžnik sa stane úhľadným.</translation>
     </message>
 </context>
 <context>

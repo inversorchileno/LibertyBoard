@@ -4087,8 +4087,12 @@ Largeur dynamique</translation>
     </message>
     <message>
         <location line="+1"/>
+        <source>A line, arrow, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
+        <translation>Une ligne, une flèche, un cercle, un ovale, un triangle, un carré ou un rectangle dessiné à main levée devient net.</translation>
+    </message>
+    <message>
         <source>A line, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
-        <translation>Une ligne, un cercle, un ovale, un triangle, un carré ou un rectangle dessiné à main levée devient net.</translation>
+        <translation type="vanished">Une ligne, un cercle, un ovale, un triangle, un carré ou un rectangle dessiné à main levée devient net.</translation>
     </message>
 </context>
 <context>

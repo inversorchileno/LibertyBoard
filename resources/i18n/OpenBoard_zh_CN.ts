@@ -4041,8 +4041,12 @@ Dynamic width</source>
     </message>
     <message>
         <location line="+1"/>
+        <source>A line, arrow, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
+        <translation>手绘的直线、箭头、圆、椭圆、三角形、正方形或矩形会变得规整。</translation>
+    </message>
+    <message>
         <source>A line, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
-        <translation>手绘的直线、圆、椭圆、三角形、正方形或矩形会变得规整。</translation>
+        <translation type="vanished">手绘的直线、圆、椭圆、三角形、正方形或矩形会变得规整。</translation>
     </message>
 </context>
 <context>

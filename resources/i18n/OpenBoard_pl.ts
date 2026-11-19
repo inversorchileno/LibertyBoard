@@ -4042,8 +4042,12 @@ Dynamiczna szerokość</translation>
     </message>
     <message>
         <location line="+1"/>
+        <source>A line, arrow, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
+        <translation>Narysowana odręcznie linia, strzałka, okrąg, owal, trójkąt, kwadrat lub prostokąt staje się równy.</translation>
+    </message>
+    <message>
         <source>A line, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
-        <translation>Narysowana odręcznie linia, okrąg, owal, trójkąt, kwadrat lub prostokąt staje się równy.</translation>
+        <translation type="vanished">Narysowana odręcznie linia, okrąg, owal, trójkąt, kwadrat lub prostokąt staje się równy.</translation>
     </message>
 </context>
 <context>

@@ -4009,8 +4009,12 @@ Largura dinâmica</translation>
     </message>
     <message>
         <location line="+1"/>
+        <source>A line, arrow, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
+        <translation>Uma linha, seta, círculo, oval, triângulo, quadrado ou retângulo desenhado à mão fica limpo.</translation>
+    </message>
+    <message>
         <source>A line, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
-        <translation>Uma linha, círculo, oval, triângulo, quadrado ou retângulo desenhado à mão fica limpo.</translation>
+        <translation type="vanished">Uma linha, círculo, oval, triângulo, quadrado ou retângulo desenhado à mão fica limpo.</translation>
     </message>
 </context>
 <context>

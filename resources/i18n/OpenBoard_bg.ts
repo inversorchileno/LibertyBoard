@@ -3975,8 +3975,12 @@ Dynamic width</source>
     </message>
     <message>
         <location line="+1"/>
+        <source>A line, arrow, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
+        <translation>Начертана на ръка линия, стрелка, кръг, овал, триъгълник, квадрат или правоъгълник става изчистен.</translation>
+    </message>
+    <message>
         <source>A line, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
-        <translation>Начертана на ръка линия, кръг, овал, триъгълник, квадрат или правоъгълник става изчистен.</translation>
+        <translation type="vanished">Начертана на ръка линия, кръг, овал, триъгълник, квадрат или правоъгълник става изчистен.</translation>
     </message>
 </context>
 <context>

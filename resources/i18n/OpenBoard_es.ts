@@ -14,12 +14,12 @@
     <message>
         <location filename="../../src/web/simplebrowser/browserwindow.cpp" line="+151"/>
         <source>Navigation</source>
-        <translation type="unfinished"></translation>
+        <translation>Navegación</translation>
     </message>
     <message>
         <location line="+28"/>
         <source>Show downloads</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar descargas</translation>
     </message>
 </context>
 <context>
@@ -27,24 +27,26 @@
     <message>
         <location filename="../../src/web/simplebrowser/certificateerrordialog.ui" line="+14"/>
         <source>Dialog</source>
-        <translation type="unfinished">Diálogo</translation>
+        <translation>Diálogo</translation>
     </message>
     <message>
         <location line="+12"/>
         <source>Icon</source>
-        <translation type="unfinished"></translation>
+        <translation>Icono</translation>
     </message>
     <message>
         <location line="+16"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <location line="+19"/>
         <source>If you wish so, you may continue with an unverified certificate. Accepting an unverified certificate mean you may not be connected with the host you tried to connect to.
 
 Do you wish to override the security check and continue ?   </source>
-        <translation type="unfinished"></translation>
+        <translation>Si lo deseas, puedes continuar con un certificado no verificado. Aceptar un certificado no verificado significa que quizá no estés conectado al servidor al que intentabas conectarte.
+
+¿Quieres omitir la comprobación de seguridad y continuar?   </translation>
     </message>
 </context>
 <context>
@@ -52,12 +54,12 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location filename="../../src/web/simplebrowser/downloadmanagerwidget.ui" line="+14"/>
         <source>Downloads</source>
-        <translation type="unfinished">Descargas</translation>
+        <translation>Descargas</translation>
     </message>
     <message>
         <location line="+75"/>
         <source>No downloads</source>
-        <translation type="unfinished"></translation>
+        <translation>No hay descargas</translation>
     </message>
     <message>
         <location filename="../../src/web/simplebrowser/downloadmanagerwidget.cpp" line="+82"/>
@@ -71,68 +73,68 @@ Do you wish to override the security check and continue ?   </source>
         <location filename="../../src/web/simplebrowser/downloadwidget.ui" line="+31"/>
         <location line="+40"/>
         <source>TextLabel</source>
-        <translation type="unfinished"></translation>
+        <translation>TextLabel</translation>
     </message>
     <message>
         <location filename="../../src/web/simplebrowser/downloadwidget.cpp" line="+87"/>
         <location line="+40"/>
         <source>Open file</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir archivo</translation>
     </message>
     <message>
         <location line="+10"/>
         <source>%L1 B</source>
-        <translation type="unfinished"></translation>
+        <translation>%L1 B</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>%L1 KiB</source>
-        <translation type="unfinished"></translation>
+        <translation>%L1 KiB</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>%L1 MiB</source>
-        <translation type="unfinished"></translation>
+        <translation>%L1 MiB</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>%L1 GiB</source>
-        <translation type="unfinished"></translation>
+        <translation>%L1 GiB</translation>
     </message>
     <message>
         <location line="+25"/>
         <source>%p% - %1 of %2 downloaded - %3/s</source>
-        <translation type="unfinished"></translation>
+        <translation>%p% - %1 de %2 descargado - %3/s</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>unknown size - %1 downloaded - %2/s</source>
-        <translation type="unfinished"></translation>
+        <translation>tamaño desconocido - %1 descargado - %2/s</translation>
     </message>
     <message>
         <location line="+9"/>
         <source>completed - %1 downloaded - %2/s</source>
-        <translation type="unfinished"></translation>
+        <translation>completado - %1 descargado - %2/s</translation>
     </message>
     <message>
         <location line="+9"/>
         <source>cancelled - %1 downloaded - %2/s</source>
-        <translation type="unfinished"></translation>
+        <translation>cancelado - %1 descargado - %2/s</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>interrupted: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>interrumpido: %1</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>Stop downloading</source>
-        <translation type="unfinished"></translation>
+        <translation>Detener la descarga</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>Remove from list</source>
-        <translation type="unfinished"></translation>
+        <translation>Quitar de la lista</translation>
     </message>
 </context>
 <context>
@@ -144,7 +146,7 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location filename="../forms/intranetPodcastPublishingDialog.ui" line="+17"/>
         <source>Publish to Intranet</source>
-        <translation type="unfinished">Publicar en Intranet</translation>
+        <translation>Publicar en la intranet</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -878,12 +880,12 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="+399"/>
         <source>Snap to grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajustar a la cuadrícula</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Snap to grid and angle</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajustar a la cuadrícula y al ángulo</translation>
     </message>
     <message>
         <source>Ctrl+I</source>
@@ -1223,43 +1225,43 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="-1638"/>
         <source>Small Eraser</source>
-        <translation type="unfinished"></translation>
+        <translation>Goma pequeña</translation>
     </message>
     <message>
         <location line="+45"/>
         <location line="+3"/>
         <source>Color 1</source>
-        <translation type="unfinished"></translation>
+        <translation>Color 1</translation>
     </message>
     <message>
         <location line="+15"/>
         <location line="+3"/>
         <source>Color 2</source>
-        <translation type="unfinished"></translation>
+        <translation>Color 2</translation>
     </message>
     <message>
         <location line="+15"/>
         <location line="+3"/>
         <source>Color 3</source>
-        <translation type="unfinished"></translation>
+        <translation>Color 3</translation>
     </message>
     <message>
         <location line="+15"/>
         <location line="+3"/>
         <source>Color 4</source>
-        <translation type="unfinished"></translation>
+        <translation>Color 4</translation>
     </message>
     <message>
         <location line="+15"/>
         <location line="+3"/>
         <source>Color 5</source>
-        <translation type="unfinished"></translation>
+        <translation>Color 5</translation>
     </message>
     <message>
         <location line="+1531"/>
         <location line="+3"/>
         <source>Draw intermediate grid lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Dibujar líneas intermedias de la cuadrícula</translation>
     </message>
     <message>
         <location line="-184"/>
@@ -1267,57 +1269,57 @@ Do you wish to override the security check and continue ?   </source>
         <location line="+13"/>
         <location line="+3"/>
         <source>Capture Web Content</source>
-        <translation type="unfinished"></translation>
+        <translation>Capturar contenido web</translation>
     </message>
     <message>
         <location line="-1598"/>
         <source>Documents Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Modo Documentos</translation>
     </message>
     <message>
         <location line="+20"/>
         <source>Web Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Modo Web</translation>
     </message>
     <message>
         <location line="+140"/>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation>1</translation>
     </message>
     <message>
         <location line="+18"/>
         <source>2</source>
-        <translation type="unfinished"></translation>
+        <translation>2</translation>
     </message>
     <message>
         <location line="+18"/>
         <source>3</source>
-        <translation type="unfinished"></translation>
+        <translation>3</translation>
     </message>
     <message>
         <location line="+18"/>
         <source>4</source>
-        <translation type="unfinished"></translation>
+        <translation>4</translation>
     </message>
     <message>
         <location line="+18"/>
         <source>5</source>
-        <translation type="unfinished"></translation>
+        <translation>5</translation>
     </message>
     <message>
         <location line="+105"/>
         <source>Board Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Modo Pizarra</translation>
     </message>
     <message>
         <location line="+93"/>
         <source>Desktop</source>
-        <translation type="unfinished">Escritorio</translation>
+        <translation>Escritorio</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Desktop Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Modo Escritorio</translation>
     </message>
     <message>
         <location line="+182"/>
@@ -1328,23 +1330,23 @@ Do you wish to override the security check and continue ?   </source>
         <location line="+318"/>
         <location line="+6"/>
         <source>Seyes ruled Light Background</source>
-        <translation type="unfinished"></translation>
+        <translation>Fondo claro con pauta Seyès</translation>
     </message>
     <message>
         <location line="+70"/>
         <location line="+6"/>
         <source>Seyes ruled Dark Background</source>
-        <translation type="unfinished"></translation>
+        <translation>Fondo oscuro con pauta Seyès</translation>
     </message>
     <message>
         <location line="+98"/>
         <source>Ctrl+P</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+P</translation>
     </message>
     <message>
         <location line="+427"/>
         <source>Import one or more pages (supported formats : jpg, png, svg, ubz, pdf)</source>
-        <translation type="unfinished"></translation>
+        <translation>Importar una o más páginas (formatos admitidos: jpg, png, svg, ubz, pdf)</translation>
     </message>
     <message>
         <source>Add to favorites</source>
@@ -1353,7 +1355,7 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="+239"/>
         <source>Add Document to favorites</source>
-        <translation type="unfinished"></translation>
+        <translation>Añadir el documento a favoritos</translation>
     </message>
     <message>
         <location line="+14"/>
@@ -1391,12 +1393,12 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="-36"/>
         <source>Icon</source>
-        <translation type="unfinished"></translation>
+        <translation>Icono</translation>
     </message>
     <message>
         <location line="+16"/>
         <source>Info</source>
-        <translation type="unfinished"></translation>
+        <translation>Información</translation>
     </message>
 </context>
 <context>
@@ -1420,17 +1422,17 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location filename="../../src/adaptors/UBSvgSubsetAdaptor.cpp" line="+251"/>
         <source>Loading scene (%1/%2)</source>
-        <translation type="unfinished"></translation>
+        <translation>Cargando página (%1/%2)</translation>
     </message>
     <message>
         <location filename="../../src/core/UBSceneCache.cpp" line="+243"/>
         <source>Moving cached scenes (%1/%2)</source>
-        <translation type="unfinished"></translation>
+        <translation>Moviendo páginas en caché (%1/%2)</translation>
     </message>
     <message>
         <location filename="../../src/core/UBShortcutManager.cpp" line="+46"/>
         <source>Common</source>
-        <translation type="unfinished"></translation>
+        <translation>General</translation>
     </message>
     <message>
         <location filename="../../src/board/UBComments.cpp" line="+153"/>
@@ -1524,7 +1526,7 @@ Do you wish to override the security check and continue ?   </source>
         <location line="+47"/>
         <location line="+221"/>
         <source>Cannot open your UBX file directly. Please import it in Documents mode instead</source>
-        <translation type="unfinished"></translation>
+        <translation>No se puede abrir directamente tu archivo UBX. Impórtalo en el modo Documentos.</translation>
     </message>
 </context>
 <context>
@@ -1565,7 +1567,7 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="+1"/>
         <source>Draw intermediate grid lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Dibujar líneas intermedias de la cuadrícula</translation>
     </message>
 </context>
 <context>
@@ -1646,12 +1648,12 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="+1282"/>
         <source>Untitled</source>
-        <translation type="unfinished"></translation>
+        <translation>Sin título</translation>
     </message>
     <message>
         <location line="+27"/>
         <source>Could not find document.</source>
-        <translation type="unfinished"></translation>
+        <translation>No se encontró el documento.</translation>
     </message>
 </context>
 <context>
@@ -1757,12 +1759,12 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="+321"/>
         <source>Is it for Board or Widget ?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Es para la pizarra o para el widget?</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Are you trying to drop the object(s) inside the widget ?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Intentas soltar los objetos dentro del widget?</translation>
     </message>
 </context>
 <context>
@@ -1956,13 +1958,13 @@ Do you wish to override the security check and continue ?   </source>
         <location line="+12"/>
         <location line="+856"/>
         <source>Opening document in Board. Please wait...</source>
-        <translation type="unfinished"></translation>
+        <translation>Abriendo el documento en la pizarra. Espera...</translation>
     </message>
     <message>
         <location line="-850"/>
         <location line="+856"/>
         <source>Document opened successfully</source>
-        <translation type="unfinished"></translation>
+        <translation>Documento abierto correctamente</translation>
     </message>
     <message>
         <location line="-802"/>
@@ -1993,12 +1995,12 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="+8"/>
         <source>Broken document</source>
-        <translation type="unfinished"></translation>
+        <translation>Documento dañado</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Don&apos;t show this again</source>
-        <translation type="unfinished"></translation>
+        <translation>No volver a mostrar</translation>
     </message>
     <message>
         <location line="+1161"/>
@@ -2095,107 +2097,107 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="+57"/>
         <source>Complete deletion of %1 documents/folders</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminación definitiva de %1 documentos/carpetas</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>You are about to permanantly delete %1 documents and/or folders. Are you sure ?</source>
-        <translation type="unfinished"></translation>
+        <translation>Vas a eliminar definitivamente %1 documentos o carpetas. ¿Estás seguro?</translation>
     </message>
     <message>
         <location line="+84"/>
         <source>Complete deletion of folder &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminación definitiva de la carpeta «%1»</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>You are about to permanantly delete folder &quot;%1&quot;. Are you sure ?</source>
-        <translation type="unfinished"></translation>
+        <translation>Vas a eliminar definitivamente la carpeta «%1». ¿Estás seguro?</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>Complete deletion of document &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminación definitiva del documento «%1»</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>You are about to permanantly delete document &quot;%1&quot;. Are you sure ?</source>
-        <translation type="unfinished"></translation>
+        <translation>Vas a eliminar definitivamente el documento «%1». ¿Estás seguro?</translation>
     </message>
     <message>
         <location line="+17"/>
         <source>Emptying My Documents</source>
-        <translation type="unfinished"></translation>
+        <translation>Vaciar Mis documentos</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>You are about to entirely empty the folder &quot;My Documents&quot;. All your documents will be moved to trash. Are you sure ?</source>
-        <translation type="unfinished"></translation>
+        <translation>Vas a vaciar por completo la carpeta «Mis documentos». Todos tus documentos irán a la papelera. ¿Estás seguro?</translation>
     </message>
     <message>
         <location line="+36"/>
         <source>Emptying Trash</source>
-        <translation type="unfinished"></translation>
+        <translation>Vaciar la papelera</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>You are about to entirely empty the trash. All documents and folders in it will be permanently deleted. Are you sure ?</source>
-        <translation type="unfinished"></translation>
+        <translation>Vas a vaciar por completo la papelera. Todos los documentos y carpetas que contiene se eliminarán definitivamente. ¿Estás seguro?</translation>
     </message>
     <message>
         <location line="+16"/>
         <source>Moving %1 elements to trash</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover %1 elementos a la papelera</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>You are about to move %1 documents and/or folders to trash. Are you sure ?</source>
-        <translation type="unfinished"></translation>
+        <translation>Vas a mover %1 documentos o carpetas a la papelera. ¿Estás seguro?</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>Move folder &quot;%1&quot;to trash</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover la carpeta «%1» a la papelera</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>You are about to move folder &quot;%1&quot; to trash. Are you sure ?</source>
-        <translation type="unfinished"></translation>
+        <translation>Vas a mover la carpeta «%1» a la papelera. ¿Estás seguro?</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Move document &quot;%1&quot;to trash</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover el documento «%1» a la papelera</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>You are about to move document &quot;%1&quot; to trash. Are you sure ?</source>
-        <translation type="unfinished"></translation>
+        <translation>Vas a mover el documento «%1» a la papelera. ¿Estás seguro?</translation>
     </message>
     <message>
         <location line="+352"/>
         <source>Open Supported File(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir archivos compatibles</translation>
     </message>
     <message>
         <location filename="../../src/document/UBDocument.cpp" line="+64"/>
         <source>Moving %1 pages of the document &quot;%2&quot; to trash</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover %1 páginas del documento «%2» a la papelera</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>You are about to move %1 pages of the document &quot;%2&quot; to trash. Are you sure ?</source>
-        <translation type="unfinished"></translation>
+        <translation>Vas a mover %1 páginas del documento «%2» a la papelera. ¿Estás seguro?</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Remove page %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Quitar la página %1</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>You are about to remove page %1 of the document &quot;%2&quot;. Are you sure ?</source>
-        <translation type="unfinished"></translation>
+        <translation>Vas a quitar la página %1 del documento «%2». ¿Estás seguro?</translation>
     </message>
 </context>
 <context>
@@ -2228,7 +2230,7 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="+85"/>
         <source>Creating %1 pages. Please wait...</source>
-        <translation type="unfinished"></translation>
+        <translation>Creando %1 páginas. Espera...</translation>
     </message>
     <message>
         <location line="+131"/>
@@ -2299,22 +2301,22 @@ Proporcionar un nuevo nombre creará un nuevo documento.</translation>
     <message>
         <location line="-81"/>
         <source>Rename</source>
-        <translation type="unfinished">Cambiar nombre</translation>
+        <translation>Cambiar nombre</translation>
     </message>
     <message>
         <location line="+29"/>
         <source>Replace all</source>
-        <translation type="unfinished"></translation>
+        <translation>Reemplazar todo</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Skip</source>
-        <translation type="unfinished"></translation>
+        <translation>Omitir</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Skip all</source>
-        <translation type="unfinished"></translation>
+        <translation>Omitir todo</translation>
     </message>
 </context>
 <context>
@@ -2406,7 +2408,7 @@ Proporcionar un nuevo nombre creará un nuevo documento.</translation>
     <message>
         <location line="-40"/>
         <source>Copying page %1/%2</source>
-        <translation type="unfinished">Copiando página %1/%2</translation>
+        <translation>Copiando página %1/%2</translation>
     </message>
 </context>
 <context>
@@ -2419,14 +2421,14 @@ Proporcionar un nuevo nombre creará un nuevo documento.</translation>
     <message>
         <location line="+183"/>
         <source>Copying page %1/%2</source>
-        <translation type="unfinished">Copiando página %1/%2</translation>
+        <translation>Copiando página %1/%2</translation>
     </message>
     <message numerus="yes">
         <location line="+41"/>
         <source>%1 pages copied</source>
-        <translation type="unfinished">
+        <translation>
+            <numerusform>%1 página copiada</numerusform>
             <numerusform>%1 páginas copiadas</numerusform>
-            <numerusform></numerusform>
         </translation>
     </message>
 </context>
@@ -2435,7 +2437,7 @@ Proporcionar un nuevo nombre creará un nuevo documento.</translation>
     <message>
         <location filename="../../src/document/UBDocumentVersionConverter.cpp" line="+69"/>
         <source>This document was created using OpenBoard 1.8</source>
-        <translation type="unfinished"></translation>
+        <translation>Este documento se creó con OpenBoard 1.8</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2444,7 +2446,11 @@ Proporcionar un nuevo nombre creará un nuevo documento.</translation>
 If you wish to continue, the document will be converted to be compatible with version 1.7.7. This may take a few minutes. You will still be able to open it in OpenBoard 1.8, but it will then be converted again to the 1.8 format.
 
 Do you want to continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>Este documento se creó con OpenBoard 1.8 y su contenido se reorganizó. Recomendamos actualizar OpenBoard a la versión 1.8.
+
+Si quieres continuar, el documento se convertirá para ser compatible con la versión 1.7.7. Esto puede tardar unos minutos. Podrás seguir abriéndolo en OpenBoard 1.8, pero entonces se volverá a convertir al formato 1.8.
+
+¿Quieres continuar?</translation>
     </message>
 </context>
 <context>
@@ -2520,7 +2526,8 @@ Do you want to continue?</source>
         <location line="-71"/>
         <source>Application name can`t contain any of the following characters:<byte value="xd"/>
 </source>
-        <translation type="unfinished"></translation>
+        <translation>El nombre de la aplicación no puede contener ninguno de estos caracteres:<byte value="xd"/>
+</translation>
     </message>
 </context>
 <context>
@@ -2863,7 +2870,7 @@ Do you want to continue?</source>
         <location line="+394"/>
         <location line="+6"/>
         <source>Web</source>
-        <translation type="unfinished">Web</translation>
+        <translation>Web</translation>
     </message>
 </context>
 <context>
@@ -2989,7 +2996,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     <message>
         <location line="+8"/>
         <source>Hide on Extended Screen when selected</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocultar en la pantalla extendida cuando está seleccionado</translation>
     </message>
 </context>
 <context>
@@ -3012,27 +3019,27 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     <message>
         <location line="+10"/>
         <source>Web Inspector</source>
-        <translation type="unfinished"></translation>
+        <translation>Inspector web</translation>
     </message>
     <message>
         <location line="-18"/>
         <source>Hide on Extended Screen when selected</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocultar en la pantalla extendida cuando está seleccionado</translation>
     </message>
     <message>
         <location line="-599"/>
         <source>Duplicate</source>
-        <translation type="unfinished">Duplicar</translation>
+        <translation>Duplicar</translation>
     </message>
     <message>
         <location line="+14"/>
         <source>Layer up</source>
-        <translation type="unfinished"></translation>
+        <translation>Subir una capa</translation>
     </message>
     <message>
         <location line="+9"/>
         <source>Layer down</source>
-        <translation type="unfinished"></translation>
+        <translation>Bajar una capa</translation>
     </message>
 </context>
 <context>
@@ -3077,7 +3084,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     <message>
         <location filename="../../src/tools/UBGraphicsProtractor.cpp" line="+535"/>
         <source>use arrow keys for precise moves</source>
-        <translation type="unfinished"></translation>
+        <translation>usa las flechas del teclado para moverlo con precisión</translation>
     </message>
 </context>
 <context>
@@ -3086,7 +3093,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <location filename="../../src/tools/UBGraphicsRuler.cpp" line="+167"/>
         <location line="+4"/>
         <source>use arrow keys for precise moves</source>
-        <translation type="unfinished"></translation>
+        <translation>usa las flechas del teclado para moverlo con precisión</translation>
     </message>
 </context>
 <context>
@@ -3148,7 +3155,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <location filename="../../src/tools/UBGraphicsTriangle.cpp" line="+449"/>
         <location line="+4"/>
         <source>use arrow keys for precise moves</source>
-        <translation type="unfinished"></translation>
+        <translation>usa las flechas del teclado para moverlo con precisión</translation>
     </message>
 </context>
 <context>
@@ -3270,7 +3277,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     <message>
         <location line="+6"/>
         <source>Importing %1 PDF pages. Please wait...</source>
-        <translation type="unfinished"></translation>
+        <translation>Importando %1 páginas del PDF. Espera...</translation>
     </message>
     <message>
         <source>Importing page %1 of %2</source>
@@ -4036,8 +4043,12 @@ Ancho dinámico</translation>
     </message>
     <message>
         <location line="+1"/>
+        <source>A line, arrow, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
+        <translation>Una línea, flecha, círculo, óvalo, triángulo, cuadrado o rectángulo dibujado a mano se vuelve limpio.</translation>
+    </message>
+    <message>
         <source>A line, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
-        <translation>Una línea, círculo, óvalo, triángulo, cuadrado o rectángulo dibujado a mano se vuelve limpio.</translation>
+        <translation type="vanished">Una línea, círculo, óvalo, triángulo, cuadrado o rectángulo dibujado a mano se vuelve limpio.</translation>
     </message>
     <message>
         <source>Appearance</source>
@@ -4054,12 +4065,12 @@ Ancho dinámico</translation>
     <message>
         <location filename="../../src/core/UBPersistenceManager.cpp" line="+266"/>
         <source>Retrieved - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Recuperado - %1</translation>
     </message>
     <message>
         <location line="+14"/>
         <source>Broken - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Dañado - %1</translation>
     </message>
     <message>
         <location line="+468"/>
@@ -4079,12 +4090,12 @@ Ancho dinámico</translation>
     <message>
         <location line="-247"/>
         <source>Renaming pages (%1/%2)</source>
-        <translation type="unfinished"></translation>
+        <translation>Renombrando páginas (%1/%2)</translation>
     </message>
     <message>
         <location line="-945"/>
         <source>Retrieving all your documents (found : %1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Recuperando todos tus documentos (encontrados: %1)</translation>
     </message>
 </context>
 <context>
@@ -4267,7 +4278,7 @@ Ancho dinámico</translation>
     <message>
         <location line="-188"/>
         <source>Use all available displays</source>
-        <translation type="unfinished"></translation>
+        <translation>Usar todas las pantallas disponibles</translation>
     </message>
 </context>
 <context>
@@ -4466,29 +4477,29 @@ Ancho dinámico</translation>
     <message>
         <location filename="../../src/core/UBShortcutManager.cpp" line="+74"/>
         <source>Common</source>
-        <translation type="unfinished"></translation>
+        <translation>General</translation>
     </message>
     <message>
         <location line="+16"/>
         <source>Board</source>
-        <translation type="unfinished">Pizarra</translation>
+        <translation>Pizarra</translation>
     </message>
     <message>
         <location line="+15"/>
         <location line="+29"/>
         <location line="+3"/>
         <source>Stylus Palette</source>
-        <translation type="unfinished">Paleta del lápiz</translation>
+        <translation>Paleta del lápiz</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Lines and colours</source>
-        <translation type="unfinished"></translation>
+        <translation>Líneas y colores</translation>
     </message>
     <message>
         <location line="+14"/>
         <source>Background</source>
-        <translation type="unfinished"></translation>
+        <translation>Fondo</translation>
     </message>
     <message>
         <location line="+12"/>
@@ -4498,138 +4509,138 @@ Ancho dinámico</translation>
     <message>
         <location line="+23"/>
         <source>First scene</source>
-        <translation type="unfinished"></translation>
+        <translation>Primera página</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Show first scene</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar la primera página</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Last scene</source>
-        <translation type="unfinished"></translation>
+        <translation>Última página</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Show last scene</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar la última página</translation>
     </message>
     <message>
         <location line="+27"/>
         <source>Zoom reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Restablecer zoom</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Reset zoom factor</source>
-        <translation type="unfinished"></translation>
+        <translation>Volver al zoom normal</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Scroll left</source>
-        <translation type="unfinished"></translation>
+        <translation>Desplazar a la izquierda</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Scroll page left</source>
-        <translation type="unfinished"></translation>
+        <translation>Desplazar la página a la izquierda</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Scroll right</source>
-        <translation type="unfinished"></translation>
+        <translation>Desplazar a la derecha</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Scroll page right</source>
-        <translation type="unfinished"></translation>
+        <translation>Desplazar la página a la derecha</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Scroll up</source>
-        <translation type="unfinished"></translation>
+        <translation>Desplazar hacia arriba</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Scroll page up</source>
-        <translation type="unfinished"></translation>
+        <translation>Desplazar la página hacia arriba</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Scroll down</source>
-        <translation type="unfinished"></translation>
+        <translation>Desplazar hacia abajo</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Scroll page down</source>
-        <translation type="unfinished"></translation>
+        <translation>Desplazar la página hacia abajo</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>Built-in (not editable)</source>
-        <translation type="unfinished"></translation>
+        <translation>Incorporado (no editable)</translation>
     </message>
     <message>
         <location line="+173"/>
         <source>Command</source>
-        <translation type="unfinished"></translation>
+        <translation>Comando</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Description</source>
-        <translation type="unfinished">Descripción</translation>
+        <translation>Descripción</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Key Sequence</source>
-        <translation type="unfinished"></translation>
+        <translation>Combinación de teclas</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Mouse Button</source>
-        <translation type="unfinished"></translation>
+        <translation>Botón del mouse</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Tablet Button</source>
-        <translation type="unfinished"></translation>
+        <translation>Botón del lápiz</translation>
     </message>
     <message>
         <location line="+151"/>
         <source>Left</source>
         <comment>MouseButton</comment>
-        <translation type="unfinished">Izquierda</translation>
+        <translation>Izquierdo</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Right</source>
         <comment>MouseButton</comment>
-        <translation type="unfinished">Derecha</translation>
+        <translation>Derecho</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Middle</source>
         <comment>MouseButton</comment>
-        <translation type="unfinished"></translation>
+        <translation>Central</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Back</source>
         <comment>MouseButton</comment>
-        <translation type="unfinished">Atrás</translation>
+        <translation>Atrás</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Forward</source>
         <comment>MouseButton</comment>
-        <translation type="unfinished">Hacia delante</translation>
+        <translation>Adelante</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Task</source>
         <comment>MouseButton</comment>
-        <translation type="unfinished"></translation>
+        <translation>Tarea</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -4655,7 +4666,7 @@ Ancho dinámico</translation>
         <location line="+1"/>
         <source>Extra</source>
         <comment>MouseButton</comment>
-        <translation type="unfinished"></translation>
+        <translation>Extra</translation>
     </message>
 </context>
 <context>
@@ -4759,7 +4770,7 @@ Ancho dinámico</translation>
     <message>
         <location filename="../../src/gui/UBStartupHintsPalette.cpp" line="+67"/>
         <source>Visible next time</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar la próxima vez</translation>
     </message>
 </context>
 <context>
@@ -4835,7 +4846,7 @@ Ancho dinámico</translation>
     <message>
         <location line="+48"/>
         <source>Loading thumbnails (%1 pages)</source>
-        <translation type="unfinished"></translation>
+        <translation>Cargando miniaturas (%1 páginas)</translation>
     </message>
     <message>
         <source>loading thumbnail of page %1</source>
@@ -4906,7 +4917,7 @@ Ancho dinámico</translation>
     <message>
         <location line="-40"/>
         <source>Axes</source>
-        <translation type="unfinished"></translation>
+        <translation>Ejes</translation>
     </message>
 </context>
 <context>
@@ -4979,7 +4990,7 @@ Por favor, reinicie la aplicación para acceder a los documentos actualizados.</
     <message>
         <location filename="../../src/domain/UBWebEngineView.cpp" line="+109"/>
         <source>Open Web Inspector</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir el inspector web</translation>
     </message>
 </context>
 <context>
@@ -5083,7 +5094,7 @@ Por favor, reinicie la aplicación para acceder a los documentos actualizados.</
     <message>
         <location filename="../../src/domain/UBGraphicsScene.cpp" line="-848"/>
         <source>Bottom layer limit reached</source>
-        <translation type="unfinished"></translation>
+        <translation>Se alcanzó la capa más baja</translation>
     </message>
 </context>
 <context>
@@ -5142,63 +5153,63 @@ Por favor, reinicie la aplicación para acceder a los documentos actualizados.</
         <location line="+17"/>
         <location line="+4"/>
         <source>Certificate Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error de certificado</translation>
     </message>
     <message>
         <location line="+19"/>
         <source>Enter username and password for &quot;%1&quot; at %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Escribe el usuario y la contraseña para «%1» en %2</translation>
     </message>
     <message>
         <location line="+18"/>
         <source>Allow %1 to access your location information?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Permitir que %1 acceda a tu ubicación?</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Allow %1 to access your microphone?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Permitir que %1 acceda a tu micrófono?</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Allow %1 to access your webcam?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Permitir que %1 acceda a tu cámara?</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Allow %1 to access your microphone and webcam?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Permitir que %1 acceda a tu micrófono y tu cámara?</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Allow %1 to lock your mouse cursor?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Permitir que %1 bloquee el puntero del mouse?</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Allow %1 to capture video of your desktop?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Permitir que %1 capture video de tu escritorio?</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Allow %1 to capture audio and video of your desktop?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Permitir que %1 capture audio y video de tu escritorio?</translation>
     </message>
     <message>
         <location line="+13"/>
         <location line="+47"/>
         <source>Permission Request</source>
-        <translation type="unfinished"></translation>
+        <translation>Solicitud de permiso</translation>
     </message>
     <message>
         <location line="-19"/>
         <source>Connect to proxy &quot;%1&quot; using:</source>
-        <translation type="unfinished"></translation>
+        <translation>Conectar al proxy «%1» con:</translation>
     </message>
     <message>
         <location line="+20"/>
         <source>Allow %1 to open all %2 links?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Permitir que %1 abra todos los enlaces %2?</translation>
     </message>
 </context>
 <context>
@@ -5206,43 +5217,44 @@ Por favor, reinicie la aplicación para acceder a los documentos actualizados.</
     <message>
         <location filename="../../src/web/simplebrowser/webview.cpp" line="+107"/>
         <source>Render process normal exit</source>
-        <translation type="unfinished"></translation>
+        <translation>El proceso de la página terminó normalmente</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Render process abnormal exit</source>
-        <translation type="unfinished"></translation>
+        <translation>El proceso de la página terminó de forma anormal</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Render process crashed</source>
-        <translation type="unfinished"></translation>
+        <translation>El proceso de la página se bloqueó</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Render process killed</source>
-        <translation type="unfinished"></translation>
+        <translation>El proceso de la página fue detenido</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>Render process exited with code: %1
 Do you want to reload the page ?</source>
-        <translation type="unfinished"></translation>
+        <translation>El proceso de la página terminó con el código: %1
+¿Quieres volver a cargar la página?</translation>
     </message>
     <message>
         <location line="+121"/>
         <source>Open Web Inspector in new window</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir el inspector web en una ventana nueva</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Inspect element</source>
-        <translation type="unfinished"></translation>
+        <translation>Inspeccionar elemento</translation>
     </message>
     <message>
         <location line="+48"/>
         <source>Add to board</source>
-        <translation type="unfinished"></translation>
+        <translation>Añadir a la pizarra</translation>
     </message>
 </context>
 <context>
@@ -5250,12 +5262,12 @@ Do you want to reload the page ?</source>
     <message>
         <location filename="../../src/pdf/XPDFRenderer.cpp" line="+346"/>
         <source>Processing...</source>
-        <translation type="unfinished"></translation>
+        <translation>Procesando...</translation>
     </message>
     <message>
         <location line="-265"/>
         <source>an error occured while trying to open the PDF file</source>
-        <translation type="unfinished"></translation>
+        <translation>se produjo un error al intentar abrir el archivo PDF</translation>
     </message>
 </context>
 <context>
@@ -5640,47 +5652,47 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="-433"/>
         <source>Documents Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Modo Documentos</translation>
     </message>
     <message>
         <location line="+14"/>
         <source>Display date column on alphabetical sort</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar la columna de fecha al ordenar alfabéticamente</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Empty trash for documents older than</source>
-        <translation type="unfinished"></translation>
+        <translation>Vaciar la papelera de documentos con más de</translation>
     </message>
     <message>
         <location line="+10"/>
         <source>days</source>
-        <translation type="unfinished"></translation>
+        <translation>días</translation>
     </message>
     <message>
         <location line="-170"/>
         <source>PDF</source>
-        <translation type="unfinished"></translation>
+        <translation>PDF</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>Export background grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar la cuadrícula del fondo</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Export background color</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar el color del fondo</translation>
     </message>
     <message>
         <location line="+420"/>
         <source>Documents</source>
-        <translation type="unfinished">Documentos</translation>
+        <translation>Documentos</translation>
     </message>
     <message>
         <location line="+61"/>
         <source>List of screens used for Control, Display and Previous pages</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista de pantallas usadas para control, presentación y páginas anteriores</translation>
     </message>
 </context>
 <context>
@@ -5711,12 +5723,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="-91"/>
         <source>Select a content to capture</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecciona un contenido para capturar</translation>
     </message>
     <message>
         <location line="-8"/>
         <source>Capture Web Content</source>
-        <translation type="unfinished"></translation>
+        <translation>Capturar contenido web</translation>
     </message>
 </context>
 </TS>

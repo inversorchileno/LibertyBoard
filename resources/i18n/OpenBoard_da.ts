@@ -3982,8 +3982,12 @@ Dynamisk bredde</translation>
     </message>
     <message>
         <location line="+1"/>
+        <source>A line, arrow, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
+        <translation>En håndtegnet linje, pil, cirkel, oval, trekant, kvadrat eller rektangel bliver pæn.</translation>
+    </message>
+    <message>
         <source>A line, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
-        <translation>En håndtegnet linje, cirkel, oval, trekant, kvadrat eller rektangel bliver pæn.</translation>
+        <translation type="vanished">En håndtegnet linje, cirkel, oval, trekant, kvadrat eller rektangel bliver pæn.</translation>
     </message>
 </context>
 <context>

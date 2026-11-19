@@ -4186,8 +4186,12 @@ Zabalera dinamikoa</translation>
     </message>
     <message>
         <location line="+1"/>
+        <source>A line, arrow, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
+        <translation>Eskuz marraztutako lerro, gezi, zirkulu, obalo, triangelu, karratu edo laukizuzen bat garbi geratzen da.</translation>
+    </message>
+    <message>
         <source>A line, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
-        <translation>Eskuz marraztutako lerro, zirkulu, obalo, triangelu, karratu edo laukizuzen bat garbi geratzen da.</translation>
+        <translation type="vanished">Eskuz marraztutako lerro, zirkulu, obalo, triangelu, karratu edo laukizuzen bat garbi geratzen da.</translation>
     </message>
 </context>
 <context>

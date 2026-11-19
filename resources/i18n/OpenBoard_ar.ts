@@ -3993,8 +3993,12 @@ Dynamic width</source>
     </message>
     <message>
         <location line="+1"/>
+        <source>A line, arrow, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
+        <translation>يصبح الخط أو السهم أو الدائرة أو الشكل البيضاوي أو المثلث أو المربع أو المستطيل المرسوم باليد منتظمًا.</translation>
+    </message>
+    <message>
         <source>A line, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
-        <translation>يصبح الخط أو الدائرة أو الشكل البيضاوي أو المثلث أو المربع أو المستطيل المرسوم باليد منتظمًا.</translation>
+        <translation type="vanished">يصبح الخط أو الدائرة أو الشكل البيضاوي أو المثلث أو المربع أو المستطيل المرسوم باليد منتظمًا.</translation>
     </message>
 </context>
 <context>

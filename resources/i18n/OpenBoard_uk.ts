@@ -4013,8 +4013,12 @@ Dynamic width</source>
     </message>
     <message>
         <location line="+1"/>
+        <source>A line, arrow, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
+        <translation>Намальована від руки лінія, стрілка, коло, овал, трикутник, квадрат або прямокутник стає рівним.</translation>
+    </message>
+    <message>
         <source>A line, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
-        <translation>Намальована від руки лінія, коло, овал, трикутник, квадрат або прямокутник стає рівним.</translation>
+        <translation type="vanished">Намальована від руки лінія, коло, овал, трикутник, квадрат або прямокутник стає рівним.</translation>
     </message>
 </context>
 <context>

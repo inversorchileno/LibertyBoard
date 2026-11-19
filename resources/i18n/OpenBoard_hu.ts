@@ -4094,8 +4094,12 @@ Dinamikus szélesség</translation>
     </message>
     <message>
         <location line="+1"/>
+        <source>A line, arrow, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
+        <translation>A kézzel rajzolt vonal, nyíl, kör, ovális, háromszög, négyzet vagy téglalap szabályossá válik.</translation>
+    </message>
+    <message>
         <source>A line, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
-        <translation>A kézzel rajzolt vonal, kör, ovális, háromszög, négyzet vagy téglalap szabályossá válik.</translation>
+        <translation type="vanished">A kézzel rajzolt vonal, kör, ovális, háromszög, négyzet vagy téglalap szabályossá válik.</translation>
     </message>
 </context>
 <context>

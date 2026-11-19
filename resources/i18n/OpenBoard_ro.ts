@@ -3982,8 +3982,12 @@ Lățime dinamică</translation>
     </message>
     <message>
         <location line="+1"/>
+        <source>A line, arrow, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
+        <translation>O linie, o săgeată, un cerc, un oval, un triunghi, un pătrat sau un dreptunghi desenat de mână devine curat.</translation>
+    </message>
+    <message>
         <source>A line, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one.</source>
-        <translation>O linie, un cerc, un oval, un triunghi, un pătrat sau un dreptunghi desenat de mână devine curat.</translation>
+        <translation type="vanished">O linie, un cerc, un oval, un triunghi, un pătrat sau un dreptunghi desenat de mână devine curat.</translation>
     </message>
 </context>
 <context>
