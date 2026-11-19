@@ -18,6 +18,7 @@ HEADERS +=  \
     src/gui/UBDocumentTabs.h \
     src/gui/UBNoteToolIcon.h \
     src/gui/UBCommentPopup.h \
+    src/gui/UBOcrRunner.h \
     src/gui/UBPageButtons.h \
     src/gui/UBPageIndicator.h \
     src/gui/UBPdfOutlinePanel.h \
@@ -88,6 +89,7 @@ SOURCES +=  \
     src/gui/UBDocumentTabs.cpp \
     src/gui/UBNoteToolIcon.cpp \
     src/gui/UBCommentPopup.cpp \
+    src/gui/UBOcrRunner.cpp \
     src/gui/UBPageButtons.cpp \
     src/gui/UBPageIndicator.cpp \
     src/gui/UBPdfOutlinePanel.cpp \

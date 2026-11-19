@@ -51,6 +51,8 @@ target_sources(${PROJECT_NAME} PRIVATE
     UBNoteToolIcon.h
     UBCommentPopup.cpp
     UBCommentPopup.h
+    UBOcrRunner.cpp
+    UBOcrRunner.h
     UBPageButtons.cpp
     UBPageButtons.h
     UBPageIndicator.cpp

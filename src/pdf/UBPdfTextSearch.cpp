@@ -44,6 +44,8 @@ UBPdfTextSearch::UBPdfTextSearch(const QString& pdfFile)
 #else
     mDocument = std::make_unique<PDFDoc>(new GooString(pdfFile.toLocal8Bit()), nullptr, nullptr, nullptr);
 #endif
+
+    mOcr = UBPdfOcr::load(pdfFile);
 }
 
 UBPdfTextSearch::~UBPdfTextSearch() = default;
@@ -106,6 +108,11 @@ QString UBPdfTextSearch::textIn(int pageNumber, const QRectF& rect) const
         return QString();
     }
 
+    if (mOcr.contains(pageNumber))
+    {
+        return ocrTextIn(pageNumber, rect);
+    }
+
     // In reading order, as the words were written.
     TextOutputDev output(nullptr, false, 0, false, false);
 
@@ -154,6 +161,11 @@ QList<UBPdfTextSearch::Found> UBPdfTextSearch::findWithLines(int pageNumber, con
     if (!isValid() || text.isEmpty() || pageNumber < 1 || pageNumber > pageCount())
     {
         return places;
+    }
+
+    if (mOcr.contains(pageNumber))
+    {
+        return findInOcr(pageNumber, text);
     }
 
     TextOutputDev output(nullptr, true, 0, false, false);
@@ -207,4 +219,101 @@ QList<UBPdfTextSearch::Found> UBPdfTextSearch::findWithLines(int pageNumber, con
     }
 
     return places;
+}
+
+QList<UBPdfTextSearch::Found> UBPdfTextSearch::findInOcr(int pageNumber, const QString& text) const
+{
+    QList<Found> places;
+    const QList<UBPdfOcr::Word> words = mOcr.value(pageNumber);
+
+    // The words one after the other, each letter knowing its word.
+    QString all;
+    QList<int> wordOf;
+
+    for (int i = 0; i < words.size(); ++i)
+    {
+        if (!all.isEmpty())
+        {
+            all += QLatin1Char(' ');
+            wordOf << -1;
+        }
+
+        all += words.at(i).text;
+
+        for (int c = 0; c < words.at(i).text.size(); ++c)
+        {
+            wordOf << i;
+        }
+    }
+
+    const QString wanted = text.simplified();
+    int from = 0;
+
+    while (!wanted.isEmpty())
+    {
+        const int at = all.indexOf(wanted, from, Qt::CaseInsensitive);
+
+        if (at < 0)
+        {
+            break;
+        }
+
+        QRectF rect;
+        int line = -1;
+
+        for (int c = at; c < at + wanted.size(); ++c)
+        {
+            const int word = wordOf.at(c);
+
+            if (word >= 0)
+            {
+                rect |= words.at(word).rect;
+                line = line < 0 ? words.at(word).line : line;
+            }
+        }
+
+        QStringList lineWords;
+
+        for (const UBPdfOcr::Word& word : words)
+        {
+            if (word.line == line)
+            {
+                lineWords << word.text;
+            }
+        }
+
+        places << Found{ rect, lineWords.join(QLatin1Char(' ')) };
+        from = at + wanted.size();
+    }
+
+    return places;
+}
+
+QString UBPdfTextSearch::ocrTextIn(int pageNumber, const QRectF& rect) const
+{
+    QStringList lines;
+    int line = -1;
+
+    for (const UBPdfOcr::Word& word : mOcr.value(pageNumber))
+    {
+        // Most of the height of the word in the rectangle, as for the words of a PDF.
+        const QRectF common = word.rect.intersected(rect);
+
+        if (common.isEmpty() || common.height() <= word.rect.height() / 2)
+        {
+            continue;
+        }
+
+        if (word.line != line || lines.isEmpty())
+        {
+            lines << word.text;
+            line = word.line;
+        }
+        else
+        {
+            lines.last() += QLatin1Char(' ') + word.text;
+        }
+    }
+
+    return lines.join(QLatin1Char('\n'));
 }

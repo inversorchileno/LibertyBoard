@@ -52,6 +52,7 @@
 #include "gui/UBShapeToolIcon.h"
 #include "gui/UBToolColorIcon.h"
 #include "gui/UBToolOptionsArrows.h"
+#include "gui/UBOcrRunner.h"
 #include "gui/UBPageButtons.h"
 #include "gui/UBPageIndicator.h"
 #include "gui/UBPdfOutlinePanel.h"
@@ -67,6 +68,14 @@ UBMainMenu::UBMainMenu(UBMainWindow* mainWindow)
 
     // Once the window is shown, the documents left open by a stop can come back.
     QTimer::singleShot(1500, mDocumentTabs, &UBDocumentTabs::offerRecovery);
+
+    // A scanned PDF just opened: offer to read its text.
+    connect(UBApplication::applicationController, &UBApplicationController::fileImported, this, [this](auto, const QString& file) {
+        if (file.endsWith(QLatin1String(".pdf"), Qt::CaseInsensitive))
+        {
+            QTimer::singleShot(800, this, [this]() { UBOcrRunner::offerIfScanned(mMainWindow); });
+        }
+    });
     showColorsOnTools();
     setupDocumentShortcuts();
     arrangeBoardToolBar();
@@ -189,6 +198,11 @@ void UBMainMenu::createMenus()
     auto extractAction = new QAction(QIcon(":/images/toolbar/extractPages.svg"), tr("Extract pages..."), mMainWindow);
     connect(extractAction, &QAction::triggered, this, [this]() { UBPageExtractor::extract(mMainWindow); });
     homeMenu->addAction(extractAction);
+
+    auto ocrAction = new QAction(QIcon(":/images/toolbar/ocr.svg"), tr("Recognize text (OCR)..."), mMainWindow);
+    ocrAction->setToolTip(tr("Reads the text of the scanned pages, so that it can be searched and copied"));
+    connect(ocrAction, &QAction::triggered, this, [this]() { UBOcrRunner::run(mMainWindow); });
+    homeMenu->addAction(ocrAction);
     homeMenu->addSeparator();
     homeMenu->addAction(mMainWindow->actionPreferences);
     homeMenu->addAction(mMainWindow->actionMultiScreen);

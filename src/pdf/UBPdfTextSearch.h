@@ -28,11 +28,14 @@
 #include <QRectF>
 #include <QString>
 
+#include "pdf/UBPdfOcr.h"
+
 class PDFDoc;
 
 /**
  * @brief Finds a text in the pages of a PDF file, as the words written in
- * it: a scanned page, which is only a picture, has no text to find.
+ * it. A scanned page, which is only a picture, has the words read on it by
+ * the OCR, when it was read.
  */
 class UBPdfTextSearch
 {
@@ -67,5 +70,11 @@ public:
     QList<Found> findWithLines(int pageNumber, const QString& text) const;
 
 private:
+    QList<Found> findInOcr(int pageNumber, const QString& text) const;
+    QString ocrTextIn(int pageNumber, const QRectF& rect) const;
+
     std::unique_ptr<PDFDoc> mDocument;
+
+    // The words read on the scanned pages, which have no text of their own.
+    UBPdfOcr::Pages mOcr;
 };
