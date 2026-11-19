@@ -310,6 +310,12 @@ void UBPenOptionsPanel::refresh()
     updatePreview();
 }
 
+void UBPenOptionsPanel::layOutForToolbar()
+{
+    // Five pens: smaller tiles, so that they leave room in the toolbar.
+    mStrokeType->setSmall();
+}
+
 void UBPenOptionsPanel::updatePreview()
 {
     // The pens take the color they draw with.

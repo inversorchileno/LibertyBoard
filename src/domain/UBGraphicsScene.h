@@ -472,7 +472,15 @@ signals:
         void updatePenCircleColor();
         bool hasTextItemWithFocus(UBGraphicsGroupContainerItem* item);
         void simplifyCurrentStroke();
-        bool redrawCurrentStrokeWithChiselTip();
+        /** @brief Puts this stroke, drawn again from the current one, in its place. */
+        bool replaceCurrentStroke(UBGraphicsStroke* redrawn);
+
+        /** @brief Follows the speed of the pen, for the width of a ballpoint pen. */
+        void updateSpeedFactor(const QPointF& scenePos);
+
+        qreal mSpeedFactor{1.0};
+        QElapsedTimer mSpeedClock;
+        QPointF mSpeedPosition;
 
         // Where the pen was last, even if too close to the last point of the stroke to be kept.
         QPair<QPointF, qreal> mLastStrokePosition;

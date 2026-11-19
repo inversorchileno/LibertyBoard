@@ -453,6 +453,9 @@ bool UBGraphicsScene::inputDevicePress(const QPointF& scenePos, const qreal& pre
             // ---------------------------------------------------------------
             mCurrentStroke = new UBGraphicsStroke(shared_from_this());
             mLastStrokePosition = qMakePair(QPointF(), qreal(0));
+            mSpeedFactor = 1.0;
+            mSpeedClock.start();
+            mSpeedPosition = scenePos;
 
             width = strokeWidth(currentTool, pressure, std::nullopt);
 
@@ -574,6 +577,7 @@ bool UBGraphicsScene::inputDeviceMove(const QPointF& scenePos, const qreal& pres
         {
             qreal width = 0;
 
+            updateSpeedFactor(scenePos);
             width = strokeWidth(currentTool, qMax(pressure, 0.2), QLineF(mPreviousPoint, scenePos));
 
             width /= UBApplication::boardController->systemScaleFactor();
@@ -798,10 +802,25 @@ bool UBGraphicsScene::inputDeviceRelease(int tool, Qt::KeyboardModifiers modifie
                     && UBSettings::settings()->value("Board/LibertyBoardRecognizeShapes", false).toBool()
                     && recognizeCurrentStroke();
 
-            // A marker with a chisel tip: the stroke is drawn again by that tip.
-            const bool chiseled = !recognized && currentTool == UBStylusTool::Marker
-                    && UBSettings::settings()->markerChiselTip->get().toBool()
-                    && redrawCurrentStrokeWithChiselTip();
+            // A marker with a chisel tip, a fountain pen, a pencil or a felt
+            // marker: the stroke is drawn again as that tip leaves it.
+            const int penStyle = UBSettings::settings()->penStrokeType->get().toInt();
+            bool chiseled = false;
+
+            if (!recognized && currentTool == UBStylusTool::Marker && UBSettings::settings()->markerChiselTip->get().toBool())
+            {
+                chiseled = replaceCurrentStroke(mCurrentStroke->redrawnWithChiselTip(shared_from_this(), mLastStrokePosition, -65, 0.14));
+            }
+            else if (!recognized && currentTool == UBStylusTool::Pen && penStyle == UBPenStrokeType::Pro)
+            {
+                chiseled = replaceCurrentStroke(mCurrentStroke->redrawnWithChiselTip(shared_from_this(), mLastStrokePosition, -45, 0.1));
+            }
+            else if (!recognized && currentTool == UBStylusTool::Pen
+                     && (penStyle == UBPenStrokeType::Pencil || penStyle == UBPenStrokeType::Marker))
+            {
+                chiseled = replaceCurrentStroke(mCurrentStroke->redrawnTextured(shared_from_this(), mLastStrokePosition,
+                                                                                penStyle == UBPenStrokeType::Pencil));
+            }
 
             // replace the stroke by a simplified version of it
             if (!recognized && !chiseled
@@ -965,42 +984,64 @@ qreal UBGraphicsScene::strokeWidth(int tool, qreal pressure, std::optional<QLine
     switch (UBSettings::settings()->penStrokeType->get().toInt())
     {
         case UBPenStrokeType::Basic:
-            return width;
+        {
+            // A ballpoint pen: thicker when it goes slowly, thinner when
+            // fast, and a little thinner going up to the right.
+            qreal slant = 1.0;
+
+            if (direction && direction->length() >= 0.01)
+            {
+                slant = 0.75 + 0.25 * std::fabs(std::sin(qDegreesToRadians(direction->angle() - 45.0)));
+            }
+
+            return width * (0.7 + 0.3 * pressure) * mSpeedFactor * slant;
+        }
+
+        case UBPenStrokeType::Calligraphy:
+            // A smooth, even brush that follows the pressure.
+            return width * pressure;
 
         case UBPenStrokeType::Pencil:
-            // Thinner than the other pens, a little more with pressure.
-            return width * 0.7 * (0.6 + 0.4 * pressure);
+            // Thin graphite, a little wider with pressure.
+            return width * 0.5 * (0.6 + 0.4 * pressure);
 
         case UBPenStrokeType::Marker:
             // A wide felt tip.
-            return width * 1.8;
-
-        case UBPenStrokeType::Calligraphy:
-        {
-            // A flat nib held at 45 degrees: thin when the stroke follows
-            // the nib, wide when it crosses it.
-            if (!direction || direction->length() < 0.01)
-            {
-                return width * 0.6;
-            }
-
-            const qreal angle = qDegreesToRadians(direction->angle() - 45.0);
-            return width * (0.25 + 0.75 * std::fabs(std::sin(angle)));
-        }
+            return width * 1.8 * (0.8 + 0.2 * pressure);
 
         default:
         {
-            // A fountain pen: the pressure, and a nib a little wider across
-            // the stroke than along it, which shows even with a mouse.
+            // A fountain pen with a flat nib slanted up to the right: thin
+            // along it, wide across it. The stroke is redrawn by that nib
+            // when the pen is lifted.
             if (!direction || direction->length() < 0.01)
             {
-                return width * pressure * 0.85;
+                return width * pressure * 0.6;
             }
 
             const qreal angle = qDegreesToRadians(direction->angle() - 45.0);
-            return width * pressure * (0.6 + 0.4 * std::fabs(std::sin(angle)));
+            return width * pressure * (0.2 + 0.8 * std::fabs(std::sin(angle)));
         }
     }
+}
+
+void UBGraphicsScene::updateSpeedFactor(const QPointF& scenePos)
+{
+    const qint64 elapsed = mSpeedClock.restart();
+
+    if (elapsed <= 0)
+    {
+        return;
+    }
+
+    // Speed on the screen, in pixels per millisecond, smoothed so that the
+    // width changes gently.
+    const qreal zoom = UBApplication::boardController->currentZoom() * UBApplication::boardController->systemScaleFactor();
+    const qreal speed = QLineF(mSpeedPosition, scenePos).length() * zoom / elapsed;
+    mSpeedPosition = scenePos;
+
+    const qreal target = qBound(0.55, 1.25 - 0.3 * speed, 1.25);
+    mSpeedFactor = 0.8 * mSpeedFactor + 0.2 * target;
 }
 
 bool UBGraphicsScene::isShapeTool(int tool)
@@ -1736,10 +1777,11 @@ void UBGraphicsScene::initPolygonItem(UBGraphicsPolygonItem* polygonItem)
 
         qreal opacity = UBSettings::settings()->penOpacity->get().toDouble();
 
-        // Graphite leaves a lighter mark than ink.
+        // Graphite leaves a darker, duller mark than ink.
         if (UBSettings::settings()->penStrokeType->get().toInt() == UBPenStrokeType::Pencil)
         {
-            opacity *= 0.75;
+            colorOnDarkBG = colorOnDarkBG.darker(135);
+            colorOnLightBG = colorOnLightBG.darker(135);
         }
 
         if (opacity < 1.0)
@@ -3634,14 +3676,9 @@ bool UBGraphicsScene::recognizeCurrentStroke()
     return true;
 }
 
-bool UBGraphicsScene::redrawCurrentStrokeWithChiselTip()
+bool UBGraphicsScene::replaceCurrentStroke(UBGraphicsStroke* chiseled)
 {
-    if (!mCurrentStroke)
-        return false;
-
-    UBGraphicsStroke* chiseled = mCurrentStroke->redrawnWithChiselTip(shared_from_this(), mLastStrokePosition);
-
-    if (!chiseled)
+    if (!mCurrentStroke || !chiseled)
         return false;
 
     foreach(UBGraphicsPolygonItem* poly, mCurrentStroke->polygons()){

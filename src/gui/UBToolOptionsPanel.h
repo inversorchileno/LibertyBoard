@@ -82,6 +82,9 @@ public:
     explicit UBPenOptionsPanel(QWidget* parent = nullptr);
     void refresh() override;
 
+protected:
+    void layOutForToolbar() override;
+
 private:
     void updatePreview();
 

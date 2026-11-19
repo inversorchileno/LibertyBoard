@@ -402,11 +402,26 @@ void UBSegmentedChoice::setIcons(const QList<QIcon>& icons, Qt::ToolButtonStyle 
     {
         auto button = static_cast<QToolButton*>(buttons.at(i));
         button->setIcon(icons.at(i));
-        button->setIconSize(style == Qt::ToolButtonTextUnderIcon ? QSize(48, 28) : QSize(34, 20));
         button->setToolButtonStyle(style);
+
+        if (mSmall)
+        {
+            button->setIconSize(QSize(32, 18));
+        }
+        else if (mCompact)
+        {
+            button->setIconSize(style == Qt::ToolButtonTextUnderIcon ? QSize(34, 19) : QSize(28, 16));
+        }
+        else
+        {
+            button->setIconSize(style == Qt::ToolButtonTextUnderIcon ? QSize(48, 28) : QSize(34, 20));
+        }
     }
 
-    equalizeWidths();
+    if (!mSmall)
+    {
+        equalizeWidths();
+    }
 }
 
 void UBSegmentedChoice::equalizeWidths()
@@ -426,8 +441,31 @@ void UBSegmentedChoice::equalizeWidths()
     }
 }
 
+void UBSegmentedChoice::setSmall()
+{
+    mSmall = true;
+
+    for (QAbstractButton* button : mGroup->buttons())
+    {
+        QFont font = button->font();
+        font.setPointSizeF(font.pointSizeF() * 0.85);
+        button->setFont(font);
+        button->setStyleSheet("QToolButton { padding: 1px 2px; }");
+
+        if (!button->icon().isNull())
+        {
+            static_cast<QToolButton*>(button)->setIconSize(QSize(32, 18));
+        }
+
+        // Each as wide as its own name.
+        button->setMinimumWidth(0);
+    }
+}
+
 void UBSegmentedChoice::setCompact()
 {
+    mCompact = true;
+
     for (QAbstractButton* button : mGroup->buttons())
     {
         const QString label = button->text();

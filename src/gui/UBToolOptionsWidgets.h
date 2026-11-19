@@ -131,6 +131,9 @@ public:
     /** @brief Shows only the first line of each label, with the whole label as tooltip. */
     void setCompact();
 
+    /** @brief Smaller still: small drawings and text, for many choices in the toolbar. */
+    void setSmall();
+
 signals:
     void choiceChanged(int index);
 
@@ -138,6 +141,8 @@ private:
     void equalizeWidths();
 
     QButtonGroup* mGroup{nullptr};
+    bool mCompact{false};
+    bool mSmall{false};
 };
 
 /** @brief The drawings shown on the choices of the tool options. */

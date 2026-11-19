@@ -33,6 +33,7 @@
 #include <cmath>
 
 #include <QPainterPath>
+#include <QRandomGenerator>
 #include <QtMath>
 
 #include "UBGraphicsPolygonItem.h"
@@ -236,7 +237,8 @@ static QPolygonF convexHull(QList<QPointF> points)
     return QPolygonF(hull);
 }
 
-UBGraphicsStroke* UBGraphicsStroke::redrawnWithChiselTip(std::shared_ptr<UBGraphicsScene> scene, const QPair<QPointF, qreal>& lastPosition)
+UBGraphicsStroke* UBGraphicsStroke::redrawnWithChiselTip(std::shared_ptr<UBGraphicsScene> scene, const QPair<QPointF, qreal>& lastPosition,
+                                                         qreal nibAngle, qreal nibThickness)
 {
     if (mDrawnPoints.isEmpty() || !scene)
     {
@@ -251,15 +253,15 @@ UBGraphicsStroke* UBGraphicsStroke::redrawnWithChiselTip(std::shared_ptr<UBGraph
         points << lastPosition;
     }
 
-    // The tip is a flat rectangle as long as the width of the marker, tilted
-    // like a highlighter held in the right hand.
-    const qreal angle = qDegreesToRadians(-65.0);
+    // The tip is a flat rectangle as long as the width of the stroke,
+    // tilted like a nib or a highlighter held in the right hand.
+    const qreal angle = qDegreesToRadians(nibAngle);
     const QPointF along(std::cos(angle), std::sin(angle));
     const QPointF across(-along.y(), along.x());
 
     auto tipCorners = [&](const QPointF& center, qreal width) {
         const QPointF length = along * width / 2;
-        const QPointF thickness = across * width * 0.14;
+        const QPointF thickness = across * width * nibThickness;
         return QList<QPointF>{ center + length + thickness, center + length - thickness,
                                center - length - thickness, center - length + thickness };
     };
@@ -301,6 +303,118 @@ UBGraphicsStroke* UBGraphicsStroke::redrawnWithChiselTip(std::shared_ptr<UBGraph
     {
         delete newStroke;
         return nullptr;
+    }
+
+    return newStroke;
+}
+
+UBGraphicsStroke* UBGraphicsStroke::redrawnTextured(std::shared_ptr<UBGraphicsScene> scene, const QPair<QPointF, qreal>& lastPosition, bool pencil)
+{
+    if (mDrawnPoints.isEmpty() || !scene)
+    {
+        return nullptr;
+    }
+
+    QList<strokePoint> drawn = mDrawnPoints;
+
+    if (lastPosition.second > 0 && drawn.last().first != lastPosition.first)
+    {
+        drawn << lastPosition;
+    }
+
+    // Points close together, so that the grain is finer than the points
+    // the pen gave.
+    qreal meanWidth = 0;
+
+    for (const strokePoint& point : std::as_const(drawn))
+    {
+        meanWidth += point.second;
+    }
+
+    meanWidth /= drawn.size();
+    const qreal step = qMax(meanWidth * 0.35, 0.5);
+    QList<strokePoint> points{ drawn.first() };
+
+    for (int i = 1; i < drawn.size(); ++i)
+    {
+        const strokePoint& from = drawn.at(i - 1);
+        const strokePoint& to = drawn.at(i);
+        const int pieces = qMax(1, int(QLineF(from.first, to.first).length() / step));
+
+        for (int k = 1; k <= pieces; ++k)
+        {
+            const qreal t = qreal(k) / pieces;
+            points << strokePoint(from.first + (to.first - from.first) * t, from.second + (to.second - from.second) * t);
+        }
+    }
+
+    if (points.size() == 1)
+    {
+        points << strokePoint(points.first().first + QPointF(0.01, 0), points.first().second);
+    }
+
+    struct Strand
+    {
+        qreal offset;   // across the stroke, in widths
+        qreal width;    // in widths
+        qreal alpha;
+    };
+
+    // A pencil: a few thin strands; a marker: a body and rough strands around it.
+    const QList<Strand> strands = pencil
+            ? QList<Strand>{ { 0, 0.7, 0.5 }, { -0.25, 0.45, 0.45 }, { 0.25, 0.45, 0.45 }, { 0.08, 0.35, 0.4 } }
+            : QList<Strand>{ { 0, 0.75, 0.6 }, { -0.3, 0.45, 0.4 }, { 0.3, 0.45, 0.4 }, { -0.12, 0.5, 0.35 },
+                             { 0.15, 0.5, 0.35 }, { 0, 1.0, 0.25 } };
+    const qreal roughness = pencil ? 0.12 : 0.1;
+
+    // The same grain each time the same stroke is drawn again.
+    QRandomGenerator random(quint32(qHash(qRound(points.first().first.x() * 10)) ^ quint32(points.size())));
+
+    UBGraphicsStroke* newStroke = new UBGraphicsStroke(scene);
+    newStroke->mDrawnPoints = drawn;
+
+    for (const Strand& strand : strands)
+    {
+        QPolygonF left;
+        QPolygonF right;
+
+        // Noise that changes slowly along the strand, with a little fine
+        // grain on top: rough edges without spikes.
+        qreal driftOffset = 0;
+        qreal driftWidth = 0;
+
+        for (int i = 0; i < points.size(); ++i)
+        {
+            const QPointF before = points.at(qMax(0, i - 1)).first;
+            const QPointF after = points.at(qMin(points.size() - 1, i + 1)).first;
+            QPointF direction = after - before;
+            const qreal length = std::hypot(direction.x(), direction.y());
+            direction = length > 0 ? direction / length : QPointF(1, 0);
+            const QPointF normal(-direction.y(), direction.x());
+
+            const qreal width = points.at(i).second;
+            driftOffset = 0.85 * driftOffset + 0.15 * (random.generateDouble() * 2 - 1);
+            driftWidth = 0.85 * driftWidth + 0.15 * (random.generateDouble() * 2 - 1);
+            const qreal grain = (random.generateDouble() * 2 - 1) * 0.25;
+            const qreal jitter = (driftOffset * 2 + grain) * roughness * width;
+            const qreal half = strand.width * width / 2 * (1 + (driftWidth * 2 + grain) * roughness);
+            const QPointF center = points.at(i).first + normal * (strand.offset * width + jitter);
+
+            left << center + normal * half;
+            right.prepend(center - normal * half);
+        }
+
+        UBGraphicsPolygonItem* poly = scene->polygonToPolygonItem(left + right);
+        QColor dark = poly->colorOnDarkBackground();
+        QColor light = poly->colorOnLightBackground();
+        dark.setAlphaF(dark.alphaF() * strand.alpha);
+        light.setAlphaF(light.alphaF() * strand.alpha);
+        poly->setColorOnDarkBackground(dark);
+        poly->setColorOnLightBackground(light);
+        poly->setColor(scene->isDarkBackground() ? dark : light);
+        poly->setFillRule(Qt::WindingFill);
+        poly->setStroke(newStroke);
+        newStroke->mPolygons << poly;
     }
 
     return newStroke;

@@ -74,7 +74,15 @@ class UBGraphicsStroke
          * flat tip of a highlighter: wide across a horizontal line, thin
          * along a steep one, with straight ends.
          */
-        UBGraphicsStroke* redrawnWithChiselTip(std::shared_ptr<UBGraphicsScene> scene, const QPair<QPointF, qreal>& lastPosition);
+        UBGraphicsStroke* redrawnWithChiselTip(std::shared_ptr<UBGraphicsScene> scene, const QPair<QPointF, qreal>& lastPosition,
+                                               qreal nibAngle, qreal nibThickness);
+
+        /**
+         * @brief A new stroke along the same points, made of several rough
+         * translucent strands: the grain of a pencil, thin and dark, or of a
+         * felt marker, wide.
+         */
+        UBGraphicsStroke* redrawnTextured(std::shared_ptr<UBGraphicsScene> scene, const QPair<QPointF, qreal>& lastPosition, bool pencil);
 
         UBGraphicsStroke* redrawnAlong(std::shared_ptr<UBGraphicsScene> scene, const QList<QPointF>& outline, bool smooth);
 
