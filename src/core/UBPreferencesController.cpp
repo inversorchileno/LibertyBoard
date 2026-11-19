@@ -33,6 +33,10 @@
 #include "frameworks/UBPlatformUtils.h"
 
 #include <QButtonGroup>
+#include <QCheckBox>
+#include <QColorDialog>
+#include <QSpinBox>
+#include <QToolButton>
 #include <QComboBox>
 #include <QRadioButton>
 #include <QGroupBox>
@@ -56,6 +60,7 @@
 #include "board/UBBoardController.h"
 #include "board/UBBoardPaletteManager.h"
 #include "gui/UBStylusPalette.h"
+#include "desktop/UBDesktopFrame.h"
 #include "document/UBDocumentController.h"
 #include "domain/UBGraphicsScene.h"
 #include "board/UBDrawingController.h"
@@ -203,7 +208,8 @@ void UBPreferencesController::simplifyTabs()
     QGridLayout* displayLayout = mPreferencesUI->gridLayout_3;
     displayLayout->removeWidget(mPreferencesUI->scrollArea);
     displayLayout->addWidget(pressure, 1, 0);
-    displayLayout->addWidget(mPreferencesUI->scrollArea, 2, 0);
+    displayLayout->addWidget(desktopBorderChoice(), 2, 0);
+    displayLayout->addWidget(mPreferencesUI->scrollArea, 3, 0);
 
     tabs->removeTab(tabs->indexOf(mPreferencesUI->penTab));
     tabs->removeTab(tabs->indexOf(mPreferencesUI->markerTab));
@@ -211,6 +217,68 @@ void UBPreferencesController::simplifyTabs()
     // Credits and About in one tab: the credits under the copyright.
     mPreferencesUI->verticalLayout_2->insertWidget(1, mPreferencesUI->textBrowser);
     tabs->removeTab(tabs->indexOf(mPreferencesUI->creditsTab));
+}
+
+QWidget* UBPreferencesController::desktopBorderChoice()
+{
+    UBSettings* settings = UBSettings::settings();
+
+    // The border around the screen while the desktop mode is on.
+    auto group = new QGroupBox(tr("Border in desktop mode"), mPreferencesUI->displayTab);
+    auto layout = new QHBoxLayout(group);
+
+    auto shown = new QCheckBox(tr("Show a colored border around the screen"), group);
+    shown->setChecked(settings->desktopBorderEnabled->get().toBool());
+
+    auto colorButton = new QToolButton(group);
+    colorButton->setToolTip(tr("Color of the border"));
+    colorButton->setFixedSize(40, 22);
+
+    auto showColor = [colorButton](const QColor& color) {
+        colorButton->setStyleSheet(QString("QToolButton { background: %1; border: 1px solid #555555; border-radius: 3px; }").arg(color.name()));
+    };
+    showColor(QColor(settings->desktopBorderColor->get().toString()));
+
+    auto widthLabel = new QLabel(tr("Width"), group);
+    auto width = new QSpinBox(group);
+    width->setRange(1, UBDesktopFrame::sMaximumWidth);
+    width->setSuffix(tr(" px"));
+    width->setValue(settings->desktopBorderWidth->get().toInt());
+
+    layout->addWidget(shown);
+    layout->addSpacing(16);
+    layout->addWidget(colorButton);
+    layout->addSpacing(16);
+    layout->addWidget(widthLabel);
+    layout->addWidget(width);
+    layout->addStretch(1);
+
+    auto enable = [colorButton, widthLabel, width](bool on) {
+        colorButton->setEnabled(on);
+        widthLabel->setEnabled(on);
+        width->setEnabled(on);
+    };
+    enable(shown->isChecked());
+
+    connect(shown, &QCheckBox::toggled, this, [settings, enable](bool on) {
+        settings->desktopBorderEnabled->set(on);
+        enable(on);
+    });
+    connect(colorButton, &QToolButton::clicked, this, [this, settings, showColor]() {
+        const QColor color = QColorDialog::getColor(QColor(settings->desktopBorderColor->get().toString()),
+                                                    mPreferencesWindow, tr("Color of the border"));
+
+        if (color.isValid())
+        {
+            settings->desktopBorderColor->set(color.name());
+            showColor(color);
+        }
+    });
+    connect(width, qOverload<int>(&QSpinBox::valueChanged), this, [settings](int value) {
+        settings->desktopBorderWidth->set(value);
+    });
+
+    return group;
 }
 
 void UBPreferencesController::adjustScreensPreferences()

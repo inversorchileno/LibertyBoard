@@ -3,6 +3,8 @@ target_sources(${PROJECT_NAME} PRIVATE
     UBCustomCaptureWindow.h
     UBDesktopAnnotationController.cpp
     UBDesktopAnnotationController.h
+    UBDesktopFrame.cpp
+    UBDesktopFrame.h
     UBDesktopPalette.cpp
     UBDesktopPalette.h
 )

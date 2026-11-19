@@ -60,6 +60,7 @@
 #include "gui/UBKeyboardPalette.h"
 #include "gui/UBResources.h"
 #include "gui/UBToolOptionsPopup.h"
+#include "desktop/UBDesktopFrame.h"
 
 #include "core/memcheck.h"
 
@@ -140,6 +141,8 @@ UBDesktopAnnotationController::UBDesktopAnnotationController(QObject *parent, UB
 
     mDesktopPalette->setBackgroundBrush(UBSettings::settings()->opaquePaletteColor);
 
+    mFrame = new UBDesktopFrame();
+
     // The options of a tool open beside its button, in a popup over the desktop.
     mToolOptionsPopup = new UBToolOptionsPopup(mTransparentDrawingView);
 
@@ -159,6 +162,7 @@ UBDesktopAnnotationController::UBDesktopAnnotationController(QObject *parent, UB
 
 UBDesktopAnnotationController::~UBDesktopAnnotationController()
 {
+    delete mFrame;
     delete mTransparentDrawingView;
 }
 
@@ -208,6 +212,7 @@ void UBDesktopAnnotationController::showWindow()
             , mDesktopPalette, SLOT(setDisplaySelectButtonVisible(bool)));
 
     mDesktopPalette->show();
+    mFrame->showOn(UBApplication::displayManager->screen(ScreenRole::Desktop));
 
     bool showDisplay = UBSettings::settings()->webShowPageImmediatelyOnMirroredScreen->get().toBool();
 
@@ -254,6 +259,7 @@ void UBDesktopAnnotationController::close()
 
     mDesktopPalette->hide();
     mToolOptionsPopup->hide();
+    mFrame->hide();
 }
 
 
@@ -315,6 +321,7 @@ void UBDesktopAnnotationController::hideWindow()
         mTransparentDrawingView->hide();
 
     mDesktopPalette->hide();
+    mFrame->hide();
     mToolOptionsPopup->hide();
 
     mDesktopStylusTool = UBDrawingController::drawingController()->stylusTool();
@@ -383,9 +390,11 @@ void UBDesktopAnnotationController::screenCapture()
 
 void UBDesktopAnnotationController::saveScreenshot()
 {
-    // Without the palette, with the annotations. The palette is a child of
-    // the drawing window, so it is hidden rather than made transparent.
+    // Without the palette and the border, with the annotations. The palette
+    // is a child of the drawing window, so it is hidden rather than made
+    // transparent.
     mDesktopPalette->hide();
+    mFrame->hide();
 
     if (mToolOptionsPopup)
     {
@@ -402,6 +411,7 @@ void UBDesktopAnnotationController::saveScreenshot()
                                                 area.translated(-screen->geometry().topLeft()))
                                           : QPixmap();
         mDesktopPalette->show();
+        mFrame->showOn(UBApplication::displayManager->screen(ScreenRole::Desktop));
 
         if (screen)
         {

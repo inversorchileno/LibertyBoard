@@ -296,7 +296,11 @@ class UBSettings : public QObject
         UBSetting* laserEffect;
         UBSetting* laserOpacity;
         UBSetting* laserColor;
-        UBSetting* laserRainbow;    // the colors of the rainbow along the trail, instead of the color
+        UBSetting* laserRainbow;
+
+        UBSetting* desktopBorderEnabled;   // a colored border around the screen in desktop mode
+        UBSetting* desktopBorderColor;
+        UBSetting* desktopBorderWidth;    // the colors of the rainbow along the trail, instead of the color
         UBSetting* noteColor;
         UBSetting* laserWidth;
         UBSetting* laserFadeDelay;

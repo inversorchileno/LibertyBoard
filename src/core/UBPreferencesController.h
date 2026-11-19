@@ -110,6 +110,9 @@ class UBPreferencesController : public QObject
     private slots:
         void adjustScreensPreferences();
         void addLanguageChoice();
+
+        /** @brief The choices of the border shown around the screen in desktop mode. */
+        QWidget* desktopBorderChoice();
         void simplifyTabs();
 
     private:

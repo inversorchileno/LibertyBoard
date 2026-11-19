@@ -40,6 +40,7 @@ class UBDesktopPalette;
 class UBBoardView;
 class UBGraphicsScene;
 class UBToolOptionsPopup;
+class UBDesktopFrame;
 class UBActionPalette;
 class UBMainWindow;
 class UBRightPalette;
@@ -123,6 +124,7 @@ class UBDesktopAnnotationController : public QObject
         void updateMask(bool bTransparent);
 
         UBDesktopPalette *mDesktopPalette;
+        UBDesktopFrame* mFrame{nullptr};
         //UBKeyboardPalette *mKeyboardPalette;
         UBToolOptionsPopup* mToolOptionsPopup{nullptr};
 
