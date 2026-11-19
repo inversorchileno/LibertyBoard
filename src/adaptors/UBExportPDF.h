@@ -49,6 +49,18 @@ class UBExportPDF : public UBExportAdaptor
         virtual bool associatedActionactionAvailableFor(const QModelIndex &selectedIndex);
 
         virtual bool persistsDocument(std::shared_ptr<UBDocumentProxy> pDocument, const QString& filename);
+
+        /**
+         * @brief Only these pages (counted from 0), in this order, go to the
+         * next files written. Empty for all the pages.
+         */
+        void setPages(const QList<int>& pages) { mPages = pages; }
+
+        /** @brief The pages to write: those given to setPages, or all. */
+        QList<int> pagesToExport(std::shared_ptr<UBDocumentProxy> pDocument) const;
+
+    private:
+        QList<int> mPages;
 };
 
 #endif /* UBEXPORTPDF_H_ */

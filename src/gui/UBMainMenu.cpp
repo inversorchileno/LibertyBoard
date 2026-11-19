@@ -36,6 +36,7 @@
 #include <QToolButton>
 
 #include "board/UBDocumentPrinter.h"
+#include "board/UBPageExtractor.h"
 #include "board/UBDrawingController.h"
 #include "board/UBDualBoard.h"
 #include "core/UBApplication.h"
@@ -182,6 +183,10 @@ void UBMainMenu::createMenus()
     mMainWindow->addAction(printAction);
     connect(printAction, &QAction::triggered, this, [this]() { UBDocumentPrinter::print(mMainWindow); });
     homeMenu->addAction(printAction);
+
+    auto extractAction = new QAction(QIcon(":/images/toolbar/extractPages.svg"), tr("Extract pages..."), mMainWindow);
+    connect(extractAction, &QAction::triggered, this, [this]() { UBPageExtractor::extract(mMainWindow); });
+    homeMenu->addAction(extractAction);
     homeMenu->addSeparator();
     homeMenu->addAction(mMainWindow->actionPreferences);
     homeMenu->addAction(mMainWindow->actionMultiScreen);

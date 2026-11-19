@@ -78,6 +78,29 @@ bool UBExportPDF::associatedActionactionAvailableFor(const QModelIndex &selected
 }
 
 
+QList<int> UBExportPDF::pagesToExport(std::shared_ptr<UBDocumentProxy> pDocumentProxy) const
+{
+    QList<int> pages;
+
+    for (int page : mPages)
+    {
+        if (page >= 0 && page < pDocumentProxy->pageCount())
+        {
+            pages << page;
+        }
+    }
+
+    if (mPages.isEmpty())
+    {
+        for (int page = 0; page < pDocumentProxy->pageCount(); ++page)
+        {
+            pages << page;
+        }
+    }
+
+    return pages;
+}
+
 bool UBExportPDF::persistsDocument(std::shared_ptr<UBDocumentProxy> pDocumentProxy, const QString& filename)
 {
     QPdfWriter pdfWriter(filename);
@@ -97,12 +120,14 @@ bool UBExportPDF::persistsDocument(std::shared_ptr<UBDocumentProxy> pDocumentPro
     QPainter pdfPainter;
     bool painterNeedsBegin = true;
 
-    int existingPageCount = pDocumentProxy->pageCount();
+    const QList<int> pages = pagesToExport(pDocumentProxy);
+    int existingPageCount = pages.size();
 
-    for(int pageIndex = 0 ; pageIndex < existingPageCount; pageIndex++) {
+    for(int written = 0 ; written < existingPageCount; written++) {
 
+        const int pageIndex = pages.at(written);
         std::shared_ptr<UBGraphicsScene> scene = UBPersistenceManager::persistenceManager()->loadDocumentScene(pDocumentProxy, pageIndex);
-        UBApplication::showMessage(tr("Exporting page %1 of %2").arg(pageIndex + 1).arg(existingPageCount));
+        UBApplication::showMessage(tr("Exporting page %1 of %2").arg(written + 1).arg(existingPageCount));
 
         // set background to white, no crossing for PDF output
         bool isDark = scene->isDarkBackground();
@@ -135,7 +160,7 @@ bool UBExportPDF::persistsDocument(std::shared_ptr<UBDocumentProxy> pDocumentPro
         if(painterNeedsBegin)
             painterNeedsBegin = !pdfPainter.begin(&pdfWriter);
 
-        else if (pageIndex < existingPageCount)
+        else
             pdfWriter.newPage();
 
         // Render the scene

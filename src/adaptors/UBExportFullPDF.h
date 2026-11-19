@@ -51,6 +51,12 @@ class UBExportFullPDF : public UBExportAdaptor
 
         virtual bool persistsDocument(std::shared_ptr<UBDocumentProxy> pDocument, const QString& filename);
 
+        /**
+         * @brief Only these pages (counted from 0), in this order, go to the
+         * next files written. Empty for all the pages.
+         */
+        void setPages(const QList<int>& pages);
+
     protected:
         void saveOverlayPdf(std::shared_ptr<UBDocumentProxy> pDocumentProxy, const QString& filename);
 

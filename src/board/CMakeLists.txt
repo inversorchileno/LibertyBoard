@@ -7,6 +7,8 @@ target_sources(${PROJECT_NAME} PRIVATE
     UBBoardSaver.h
     UBDocumentPrinter.cpp
     UBDocumentPrinter.h
+    UBPageExtractor.cpp
+    UBPageExtractor.h
     UBDualBoard.cpp
     UBDualBoard.h
     UBComments.cpp
