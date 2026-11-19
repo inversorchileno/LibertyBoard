@@ -50,6 +50,7 @@
 #include "gui/UBShapeToolIcon.h"
 #include "gui/UBToolColorIcon.h"
 #include "gui/UBToolOptionsArrows.h"
+#include "gui/UBPageButtons.h"
 #include "gui/UBPageIndicator.h"
 #include "gui/UBSearchBar.h"
 #include "gui/UBToolOptionsBar.h"
@@ -304,6 +305,10 @@ void UBMainMenu::arrangeBoardToolBar()
     toolBar->insertWidget(mMainWindow->actionPages, new UBToolOptionsBar(toolBar));
     // The same line as after undo and redo, between the options and the pages.
     toolBar->insertSeparator(mMainWindow->actionPages);
+
+    // Pages and Delete, one above the other, where the Pages button was.
+    toolBar->insertWidget(mMainWindow->actionPages, new UBPageButtons(toolBar));
+    toolBar->removeAction(mMainWindow->actionPages);
     toolBar->insertWidget(mMainWindow->actionForward, new UBPageIndicator(toolBar));
 }
 
