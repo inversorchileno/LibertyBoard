@@ -22,14 +22,82 @@
 
 #pragma once
 
-class QWidget;
+#include <memory>
+
+#include <QDialog>
+#include <QImage>
+#include <QList>
+#include <QPageLayout>
+#include <QPageSize>
+
+class QButtonGroup;
+class QCheckBox;
+class QComboBox;
+class QLabel;
+class QLineEdit;
+class QPainter;
+class QPrinter;
+class QSpinBox;
+class QToolButton;
+class UBDocumentProxy;
 
 /**
- * @brief Prints the document of the board, all its pages or some of them,
- * with the printing dialog of the system. Each page fills the sheet,
- * keeping its proportions, in portrait or landscape like the page.
+ * @brief Prints the document of the board, through a dialog of its own with
+ * a preview of each sheet: the printer, the copies, the pages, the paper,
+ * the orientation, the scale, the pages on each sheet, color or gray, both
+ * sides, and whether the annotations are printed.
  */
 namespace UBDocumentPrinter
 {
     void print(QWidget* dialogParent);
 }
+
+class UBPrintDialog : public QDialog
+{
+    Q_OBJECT
+
+public:
+    explicit UBPrintDialog(QWidget* parent);
+    ~UBPrintDialog() override;
+
+private:
+    enum Orientation { Automatic, Portrait, Landscape };
+
+    QList<int> chosenPages() const;
+    int pagesPerSheet() const;
+    int sheetCount() const;
+    QPageSize paperSize() const;
+    QPageLayout::Orientation sheetOrientation(int sheet) const;
+    void drawSheet(QPainter* painter, const QRectF& area, int sheet) const;
+    void drawPage(QPainter* painter, const QRectF& cell, int page) const;
+    void updatePreview();
+    void showSheet(int sheet);
+    void setUpPrinter(QPrinter* printer) const;
+    void printerProperties();
+    void run();
+    void remember() const;
+
+    std::shared_ptr<UBDocumentProxy> mDocument;
+    int mPageCount{0};
+    int mCurrentPage{0};
+    int mShownSheet{0};
+
+    QComboBox* mPrinter{nullptr};
+    QSpinBox* mCopies{nullptr};
+    QCheckBox* mCollate{nullptr};
+    QButtonGroup* mRange{nullptr};
+    QLineEdit* mPagesText{nullptr};
+    QComboBox* mPaper{nullptr};
+    QComboBox* mOrientation{nullptr};
+    QComboBox* mScale{nullptr};
+    QComboBox* mPerSheet{nullptr};
+    QComboBox* mColor{nullptr};
+    QComboBox* mSides{nullptr};
+    QCheckBox* mAnnotations{nullptr};
+    QLabel* mPreview{nullptr};
+    QLabel* mSheetLabel{nullptr};
+    QToolButton* mPrevious{nullptr};
+    QToolButton* mNext{nullptr};
+    QLabel* mWarning{nullptr};
+    std::unique_ptr<QPrinter> mDriverSettings;
+};
