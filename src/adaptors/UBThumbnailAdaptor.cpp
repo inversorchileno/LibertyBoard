@@ -156,14 +156,7 @@ void UBThumbnailAdaptor::persistScene(std::shared_ptr<UBDocumentProxy> proxy, st
         painter.setRenderHint(QPainter::Antialiasing, true);
         painter.setRenderHint(QPainter::SmoothPixmapTransform, true);
 
-        if (pScene->isDarkBackground())
-        {
-            painter.fillRect(imageRect, Qt::black);
-        }
-        else
-        {
-            painter.fillRect(imageRect, Qt::white);
-        }
+        painter.fillRect(imageRect, pScene->backgroundColor());
 
         pScene->setRenderingContext(UBGraphicsScene::NonScreen);
         pScene->setRenderingQuality(UBItem::RenderingQualityHigh, UBItem::CacheNotAllowed);

@@ -229,6 +229,9 @@ class UBBoardController : public UBDocumentContainer
                                  QByteArray pData, QPointF pPos, QSize pSize,
                                  bool isBackground = false, bool internalData = false);
         void changeBackground(bool isDark, UBPageBackground pageBackground);
+
+        /** @brief Gives the page shown this color, keeping its pattern. */
+        void changeBackgroundColor(const QColor& color);
         void setToolCursor(int tool);
         void showMessage(const QString& message, bool showSpinningWheel = false);
         void hideMessage();

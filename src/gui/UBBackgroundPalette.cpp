@@ -1,6 +1,14 @@
 #include "UBBackgroundPalette.h"
 
 #include "gui/UBMainWindow.h"
+#include "gui/UBToolOptionsWidgets.h"
+
+static QList<QColor> pageColors()
+{
+    // White and black first, then light colors to write on and two dark ones.
+    return { QColor("#ffffff"), QColor("#000000"), QColor("#fdf6e3"), QColor("#fff7b0"), QColor("#dbeafe"),
+             QColor("#dcfce7"), QColor("#fde2ec"), QColor("#1e3a5f"), QColor("#1f4d2b") };
+}
 
 UBBackgroundPalette::UBBackgroundPalette(QList<QAction*> actions, QWidget * parent)
     : UBActionPalette(parent)
@@ -36,8 +44,27 @@ void UBBackgroundPalette::init()
     mTopLayout = new QHBoxLayout();
     mBottomLayout = new QHBoxLayout();
 
+    mColorLayout = new QHBoxLayout();
+
     mVLayout->addLayout(mTopLayout);
+    mVLayout->addLayout(mColorLayout);
     mVLayout->addLayout(mBottomLayout);
+
+    // Fully opaque, so that the page under it does not show through.
+    setBackgroundBrush(UBSettings::opaquePaletteColor);
+
+    // Any color for the page, with the pattern of the template chosen above.
+    mColorLabel = new QLabel(tr("Page color"));
+    mColorLabel->setStyleSheet("QLabel { color : white; }");
+    mPageColors = new UBColorSwatches(pageColors(), false, this);
+    mColorLayout->addSpacing(16);
+    mColorLayout->addWidget(mColorLabel);
+    mColorLayout->addWidget(mPageColors);
+    mColorLayout->addStretch(1);
+
+    connect(mPageColors, &UBColorSwatches::colorChosen, this, [](const QColor& color) {
+        UBApplication::boardController->changeBackgroundColor(color);
+    });
 
     mSlider = new QSlider(Qt::Horizontal);
 
@@ -134,6 +161,14 @@ void UBBackgroundPalette::clearLayout()
 
     delete mBottomLayout;
 
+    while(!mColorLayout->isEmpty()) {
+        QLayoutItem* pItem = mColorLayout->takeAt(0);
+        delete pItem->widget();
+        delete pItem;
+    }
+
+    delete mColorLayout;
+
     delete mVLayout;
 
     mActions.clear();
@@ -175,18 +210,10 @@ void UBBackgroundPalette::toggleIntermediateLines(bool checked)
 
 void UBBackgroundPalette::backgroundChanged()
 {
-    bool dark = UBApplication::boardController->activeScene()->isDarkBackground();
-
-    if (dark)
-    {
-        mSliderLabel->setStyleSheet("QLabel { color : white; }");
-        mIntermediateLinesLabel->setStyleSheet("QLabel { color : white; }");
-    }
-    else
-    {
-        mSliderLabel->setStyleSheet("QLabel { color : black; }");
-        mIntermediateLinesLabel->setStyleSheet("QLabel { color : black; }");
-    }
+    // The palette is opaque and dark, whatever the page under it.
+    mSliderLabel->setStyleSheet("QLabel { color : white; }");
+    mIntermediateLinesLabel->setStyleSheet("QLabel { color : white; }");
+    mPageColors->setCurrentColor(UBApplication::boardController->activeScene()->backgroundColor());
 }
 
 void UBBackgroundPalette::refresh()

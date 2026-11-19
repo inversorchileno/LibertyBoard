@@ -1917,6 +1917,13 @@ void UBBoardController::changeBackground(bool isDark, UBPageBackground pageBackg
     bool currentIsDark = mActiveScene->isDarkBackground();
     UBPageBackground currentBackgroundType = mActiveScene->pageBackground();
 
+    // A template of the palette is white or black: it replaces a chosen color.
+    if (mActiveScene->hasCustomBackgroundColor())
+    {
+        mActiveScene->setBackgroundColor(QColor());
+        currentIsDark = !isDark;
+    }
+
     if ((isDark != currentIsDark) || (currentBackgroundType != pageBackground))
     {
         UBSettings::settings()->setDarkBackground(isDark);
@@ -1926,6 +1933,21 @@ void UBBoardController::changeBackground(bool isDark, UBPageBackground pageBackg
 
         emit backgroundChanged();
     }
+}
+
+void UBBoardController::changeBackgroundColor(const QColor& color)
+{
+    if (!mActiveScene || !color.isValid())
+    {
+        return;
+    }
+
+    mActiveScene->setBackgroundColor(color);
+    mActiveScene->setModified(true);
+    UBSettings::settings()->setDarkBackground(mActiveScene->isDarkBackground());
+    updateBackgroundActionsState(mActiveScene->isDarkBackground(), mActiveScene->pageBackground());
+
+    emit backgroundChanged();
 }
 
 void UBBoardController::boardViewResized(QResizeEvent* event)

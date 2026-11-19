@@ -2341,7 +2341,7 @@ void UBBoardView::drawNeighbourPages(QPainter* painter, const QRectF& rect)
             }
 
             painter->save();
-            painter->fillRect(target, neighbour->isDarkBackground() ? Qt::black : Qt::white);
+            painter->fillRect(target, neighbour->backgroundColor());
             neighbour->render(painter, target, source);
 
             const qreal penWidth = 8.0 / transform().m11();

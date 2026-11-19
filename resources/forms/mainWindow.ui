@@ -196,10 +196,10 @@
      <normaloff>:/images/toolbar/background.png</normaloff>:/images/toolbar/background.png</iconset>
    </property>
    <property name="text">
-    <string>Backgrounds</string>
+    <string>Template style</string>
    </property>
    <property name="toolTip">
-    <string>Change Background</string>
+    <string>Change the template style of the page</string>
    </property>
    <property name="font">
     <font>

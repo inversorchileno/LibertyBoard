@@ -227,6 +227,21 @@ class UBGraphicsScene: public UBCoreGraphicsScene, public UBItem, public std::en
             return mPageBackground;
         }
 
+        /** @brief The color of the page: the chosen one, or else white or black. */
+        QColor backgroundColor() const;
+
+        /** @brief True when a color was chosen for the page instead of white or black. */
+        bool hasCustomBackgroundColor() const
+        {
+            return mBackgroundColor.isValid();
+        }
+
+        /**
+         * @brief Gives the page this color, or back plain white or black for an
+         * invalid color. A dark color makes the page dark for the strokes.
+         */
+        void setBackgroundColor(const QColor& color);
+
         int backgroundGridSize() const
         {
             return mBackgroundGridSize;
@@ -479,6 +494,7 @@ signals:
         std::shared_ptr<UBDocumentProxy> mDocument;
 
         bool mDarkBackground;
+        QColor mBackgroundColor;
         UBPageBackground mPageBackground;
         int mBackgroundGridSize;
         bool mIntermediateLines;

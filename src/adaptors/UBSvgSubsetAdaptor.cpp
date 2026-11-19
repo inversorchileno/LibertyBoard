@@ -541,6 +541,14 @@ void UBSvgSubsetAdaptor::UBSvgSubsetReader::processElement()
 
             mScene->setBackground(darkBackground, bg);
 
+            // A color chosen for the page, written by LibertyBoard only.
+            auto ubBackgroundColor = mXmlReader.attributes().value(mNamespaceUri, "background-color");
+
+            if (!ubBackgroundColor.isNull())
+            {
+                mScene->setBackgroundColor(QColor(ubBackgroundColor.toString()));
+            }
+
             auto pageNominalSize = mXmlReader.attributes().value(mNamespaceUri, "nominal-size");
             if (!pageNominalSize.isNull())
             {
@@ -1241,6 +1249,11 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::writeSvgElement(std::shared_ptr<UBDo
 
     mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "dark-background", mScene->isDarkBackground() ? xmlTrue : xmlFalse);
 
+    if (mScene->hasCustomBackgroundColor())
+    {
+        mXmlWriter.writeAttribute(UBSettings::uniboardDocumentNamespaceUri, "background-color", mScene->backgroundColor().name());
+    }
+
     bool crossedBackground = mScene->pageBackground() == UBPageBackground::crossed;
     bool ruledBackground = mScene->pageBackground() == UBPageBackground::ruled;
 
@@ -1263,7 +1276,8 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::writeSvgElement(std::shared_ptr<UBDo
 
 
     mXmlWriter.writeStartElement("rect");
-    mXmlWriter.writeAttribute("fill", mScene->isDarkBackground() ? "black" : "white");
+    mXmlWriter.writeAttribute("fill", mScene->hasCustomBackgroundColor() ? mScene->backgroundColor().name()
+                                                                         : (mScene->isDarkBackground() ? "black" : "white"));
     mXmlWriter.writeAttribute("x", QString::number(normalized.x()));
     mXmlWriter.writeAttribute("y", QString::number(normalized.y()));
     mXmlWriter.writeAttribute("width", QString::number(normalized.width()));

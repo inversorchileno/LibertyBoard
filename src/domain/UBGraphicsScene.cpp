@@ -1585,6 +1585,34 @@ void UBGraphicsScene::setBackground(bool pIsDark, UBPageBackground pBackground)
     }
 }
 
+QColor UBGraphicsScene::backgroundColor() const
+{
+    if (mBackgroundColor.isValid())
+    {
+        return mBackgroundColor;
+    }
+
+    return mDarkBackground ? QColor(Qt::black) : QColor(Qt::white);
+}
+
+void UBGraphicsScene::setBackgroundColor(const QColor& color)
+{
+    const QColor opaque = color.isValid() ? QColor(color.rgb()) : QColor();
+
+    if (opaque == mBackgroundColor)
+    {
+        return;
+    }
+
+    mBackgroundColor = opaque;
+
+    // The strokes take their colors for a dark page on a dark color.
+    const bool dark = opaque.isValid() ? opaque.lightness() < 128 : mDarkBackground;
+    setBackground(dark, mPageBackground);
+    updateBackground();
+    setDocumentUpdated();
+}
+
 void UBGraphicsScene::setBackgroundZoomFactor(qreal zoom)
 {
     mZoomFactor = zoom;
@@ -1819,6 +1847,7 @@ std::shared_ptr<UBGraphicsScene> UBGraphicsScene::sceneDeepCopy() const
     std::shared_ptr<UBGraphicsScene> copy = std::make_shared<UBGraphicsScene>(this->document(), this->mUndoRedoStackEnabled);
 
     copy->setBackground(this->isDarkBackground(), mPageBackground);
+    copy->setBackgroundColor(mBackgroundColor);
     copy->setBackgroundGridSize(mBackgroundGridSize);
     copy->setSceneRect(this->sceneRect());
 
@@ -3341,14 +3370,7 @@ void UBGraphicsScene::drawBackground(QPainter *painter, const QRectF &rect)
 
     bool darkBackground = isDarkBackground ();
 
-    if (darkBackground)
-    {
-        painter->fillRect (rect, QBrush (QColor (Qt::black)));
-    }
-    else
-    {
-        painter->fillRect (rect, QBrush (QColor (Qt::white)));
-    }
+    painter->fillRect (rect, QBrush (backgroundColor ()));
 
     if (mZoomFactor > 0.5)
     {

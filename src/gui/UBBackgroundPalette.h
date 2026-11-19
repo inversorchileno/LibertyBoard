@@ -6,6 +6,8 @@
 #include "board/UBBoardController.h"
 #include "domain/UBGraphicsScene.h"
 
+class UBColorSwatches;
+
 class UBBackgroundPalette : public UBActionPalette
 {
     Q_OBJECT
@@ -38,6 +40,9 @@ class UBBackgroundPalette : public UBActionPalette
         QVBoxLayout* mVLayout;
         QHBoxLayout* mTopLayout;
         QHBoxLayout* mBottomLayout;
+        QHBoxLayout* mColorLayout{nullptr};
+        QLabel* mColorLabel{nullptr};
+        UBColorSwatches* mPageColors{nullptr};
 
         QSlider* mSlider;
         QLabel* mSliderLabel;
