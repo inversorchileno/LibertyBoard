@@ -22,6 +22,7 @@
 
 #include "UBDocumentTabs.h"
 
+#include <QCoreApplication>
 #include <QDir>
 #include <QFileInfo>
 #include <QHBoxLayout>
@@ -36,8 +37,13 @@
 #include "core/UBApplicationController.h"
 #include "core/UBOpenedFiles.h"
 #include "core/UBPersistenceManager.h"
+#include "core/UBSettings.h"
+#include "document/UBDocumentController.h"
 #include "document/UBDocumentProxy.h"
 #include "domain/UBGraphicsScene.h"
+
+static const QString sRunningKey = QStringLiteral("App/LibertyBoardRunning");
+static const QString sSessionKey = QStringLiteral("App/LibertyBoardSession");
 
 UBDocumentTabs::UBDocumentTabs(QWidget* parent)
     : QWidget(parent)
@@ -84,6 +90,17 @@ UBDocumentTabs::UBDocumentTabs(QWidget* parent)
     {
         connect(UBApplication::undoStack.data(), &QUndoStack::indexChanged, this, &UBDocumentTabs::onUndoStackChanged);
     }
+
+    // Set while LibertyBoard runs: still set at the next start, it stopped without closing.
+    UBSettings* settings = UBSettings::settings();
+    mStoppedUnexpectedly = settings->value(sRunningKey, false).toBool();
+    settings->setValue(sRunningKey, true);
+    settings->save();
+    connect(qApp, &QCoreApplication::aboutToQuit, this, []() {
+        UBSettings::settings()->setValue(sRunningKey, false);
+        UBSettings::settings()->save();
+    });
+    connect(this, &UBDocumentTabs::countChanged, this, &UBDocumentTabs::saveSession);
 
     onActiveSceneChanged();
 }
@@ -283,6 +300,7 @@ void UBDocumentTabs::rememberSavedFile(const QString& filename)
 
     open.modified = false;
     updateTabText(index);
+    saveSession();
     emit saved();
 }
 
@@ -413,6 +431,7 @@ void UBDocumentTabs::onActiveSceneChanged()
 
     mDocuments[index].page = board->activeSceneIndex();
     mTabBar->setCurrentIndex(index);
+    saveSession();
 }
 
 void UBDocumentTabs::onFileImported(std::shared_ptr<UBDocumentProxy> document, const QString& filePath)
@@ -477,4 +496,79 @@ void UBDocumentTabs::onUndoStackChanged()
         mDocuments[index].modified = true;
         updateTabText(index);
     }
+}
+
+void UBDocumentTabs::saveSession() const
+{
+    // While the recovery is offered, the tabs of the stopped session are kept.
+    if (mStoppedUnexpectedly)
+    {
+        return;
+    }
+
+    QStringList session;
+
+    for (const OpenDocument& open : mDocuments)
+    {
+        session << QStringList{ open.document->documentFolderName(), open.pdfFile, QString::number(open.page) }.join('\n');
+    }
+
+    // Written at once: it is needed after a stop, when nothing else is written.
+    UBSettings::settings()->setValue(sSessionKey, session);
+    UBSettings::settings()->save();
+}
+
+void UBDocumentTabs::offerRecovery()
+{
+    if (!mStoppedUnexpectedly)
+    {
+        saveSession();
+        return;
+    }
+
+    mStoppedUnexpectedly = false;
+    const QStringList session = UBSettings::settings()->value(sSessionKey).toStringList();
+    QList<QStringList> documents;
+    UBDocumentTreeModel* library = UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel;
+
+    for (const QString& entry : session)
+    {
+        const QStringList fields = entry.split('\n');
+
+        if (fields.size() == 3 && library->findDocumentByFolderName(fields.at(0)))
+        {
+            documents << fields;
+        }
+    }
+
+    if (documents.isEmpty())
+    {
+        saveSession();
+        return;
+    }
+
+    const auto answer = QMessageBox::question(window(), tr("Recover documents"),
+        tr("LibertyBoard stopped without closing. Open again the %1 documents that were open?").arg(documents.size()));
+
+    if (answer == QMessageBox::Yes)
+    {
+        for (const QStringList& fields : std::as_const(documents))
+        {
+            std::shared_ptr<UBDocumentProxy> document = library->findDocumentByFolderName(fields.at(0));
+            UBApplication::boardController->persistCurrentScene(false, true);
+            UBApplication::boardController->setActiveDocumentScene(document, qBound(0, fields.at(2).toInt(), document->pageCount() - 1));
+
+            const int index = indexOf(document);
+
+            if (index >= 0 && !fields.at(1).isEmpty())
+            {
+                mDocuments[index].pdfFile = fields.at(1);
+                updateTabText(index);
+            }
+        }
+
+        UBApplication::applicationController->showBoard();
+    }
+
+    saveSession();
 }

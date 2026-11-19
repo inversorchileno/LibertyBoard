@@ -60,6 +60,9 @@ UBMainMenu::UBMainMenu(UBMainWindow* mainWindow)
 {
     createDocumentTabs();
     createMenus();
+
+    // Once the window is shown, the documents left open by a stop can come back.
+    QTimer::singleShot(1500, mDocumentTabs, &UBDocumentTabs::offerRecovery);
     showColorsOnTools();
     setupDocumentShortcuts();
     arrangeBoardToolBar();

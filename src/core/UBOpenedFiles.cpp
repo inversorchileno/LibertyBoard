@@ -68,6 +68,7 @@ void UBOpenedFiles::remember(const QString& filePath, const std::shared_ptr<UBDo
     }
 
     settings->setValue(sRecentKey, recent);
+    settings->save();
 }
 
 std::shared_ptr<UBDocumentProxy> UBOpenedFiles::documentOf(const QString& filePath)

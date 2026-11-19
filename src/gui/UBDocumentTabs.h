@@ -82,6 +82,13 @@ public:
      */
     void setShowHandler(std::function<bool(const std::shared_ptr<UBDocumentProxy>&)> handler);
 
+    /**
+     * @brief After LibertyBoard stopped without closing, offers to open again
+     * the documents that were in the tabs. Their content is saved as they
+     * are worked on.
+     */
+    void offerRecovery();
+
 public slots:
     /** @brief Opens a new blank board in a new tab. */
     void newDocument();
@@ -119,6 +126,9 @@ private:
     bool isBlank(const OpenDocument& open) const;
     void updateTabText(int index);
 
+    /** Remembers the tabs, to open them again after LibertyBoard stops without closing. */
+    void saveSession() const;
+
     void onActiveSceneChanged();
     void onFileImported(std::shared_ptr<UBDocumentProxy> document, const QString& filePath);
     void onTabClicked(int index);
@@ -128,5 +138,6 @@ private:
     UBBoardSaver* mSaver{nullptr};
     QList<OpenDocument> mDocuments;
     bool mSwitching{false};
+    bool mStoppedUnexpectedly{false};
     std::function<bool(const std::shared_ptr<UBDocumentProxy>&)> mShowHandler;
 };
