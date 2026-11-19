@@ -650,10 +650,10 @@
      <normaloff>:/images/toolbar/clearPage.png</normaloff>:/images/toolbar/clearPage.png</iconset>
    </property>
    <property name="text">
-    <string>Erase</string>
+    <string>Clear page</string>
    </property>
    <property name="toolTip">
-    <string>Erase Content</string>
+    <string>Takes away everything added to the page; a PDF stays. Hold the button for more ways to erase.</string>
    </property>
    <property name="font">
     <font>

@@ -50,7 +50,7 @@ UBPageButtons::UBPageButtons(QWidget* parent)
 
     UBMainWindow* window = UBApplication::mainWindow;
     auto add = makeButton(window->actionPages->icon(), window->actionPages->text(), window->actionNewPage->toolTip());
-    auto remove = makeButton(QIcon(":/images/toolbar/deletePage.svg"), tr("Delete"), tr("Delete the page shown"));
+    auto remove = makeButton(QIcon(":/images/toolbar/deletePage.svg"), tr("Delete page"), tr("Deletes the page shown, with all it holds"));
 
     auto layout = new QVBoxLayout(this);
     layout->setContentsMargins(4, 0, 4, 0);
