@@ -108,7 +108,7 @@ UBApplication::UBApplication(const QString &id, int &argc, char **argv) : Single
     staticMemoryCleaner = new QObject(0); // deleted in UBApplication destructor
 
     setOrganizationName("LibertyBoard");
-    setOrganizationDomain("github.com/noteimportaaaa");
+    setOrganizationDomain("github.com/inversorchileno");
     setApplicationName("LibertyBoard");
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 8, 0))

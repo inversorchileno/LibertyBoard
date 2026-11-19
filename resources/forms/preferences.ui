@@ -3223,7 +3223,7 @@ hr { height: 1px; border-width: 0; }
 &lt;p style=&quot;font-size:11pt; color:#555555;&quot;&gt;Pizarra digital y lector PDF con anotaciones a mano alzada.&lt;/p&gt;&lt;/td&gt;
 &lt;/tr&gt;&lt;/table&gt;
 &lt;p&gt;LibertyBoard es un programa para leer y anotar documentos PDF con lápiz, presentar con puntero láser y dibujar sobre el escritorio. Incluye paneles de herramientas, formas, resaltador, notas y miniaturas de páginas.&lt;/p&gt;
-&lt;p&gt;Código fuente de LibertyBoard: &lt;a href=&quot;https://github.com/noteimportaaaa/LibertyBoard&quot;&gt;github.com/noteimportaaaa/LibertyBoard&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Código fuente de LibertyBoard: &lt;a href=&quot;https://github.com/inversorchileno/LibertyBoard&quot;&gt;github.com/inversorchileno/LibertyBoard&lt;/a&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;&lt;b&gt;Versión modificada de OpenBoard&lt;/b&gt;&lt;/p&gt;
 &lt;p&gt;LibertyBoard es una versión modificada de OpenBoard. Se distribuye bajo los mismos términos de la Licencia Pública General de GNU, versión 3 (GPLv3), con la excepción de enlace para la biblioteca OpenSSL. LibertyBoard no está afiliado ni respaldado por el proyecto OpenBoard ni por sus autores.&lt;/p&gt;

@@ -46,8 +46,8 @@
 #define LIBERTYBOARD_BUILD 0
 #endif
 
-static const char* sLatestReleaseUrl = "https://api.github.com/repos/noteimportaaaa/LibertyBoard/releases/latest";
-static const char* sReleasesPage = "https://github.com/noteimportaaaa/LibertyBoard/releases/latest";
+static const char* sLatestReleaseUrl = "https://api.github.com/repos/inversorchileno/LibertyBoard/releases/latest";
+static const char* sReleasesPage = "https://github.com/inversorchileno/LibertyBoard/releases/latest";
 
 static QNetworkRequest gitHubRequest(const QUrl& url)
 {

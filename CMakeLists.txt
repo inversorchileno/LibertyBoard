@@ -33,7 +33,7 @@ include(cmake/Version.cmake)
 project(openboard
     VERSION ${VERSION_NUMBER}
     DESCRIPTION "LibertyBoard is a whiteboard and PDF annotation app. It is a modified version of OpenBoard (GPLv3), which was forked from Open-Sankore and Uniboard."
-    HOMEPAGE_URL "https://github.com/noteimportaaaa/LibertyBoard"
+    HOMEPAGE_URL "https://github.com/inversorchileno/LibertyBoard"
     LANGUAGES CXX
 )
 

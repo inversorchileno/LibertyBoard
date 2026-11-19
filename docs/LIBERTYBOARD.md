@@ -89,7 +89,7 @@ En modo escritorio son paneles emergentes; en modo pizarra, un panel fijo a la d
 - Cada compilación de `master` se publica como release `build-<número de ejecución>` con `LibertyBoard-windows.zip`, y ese número queda compilado en el programa (`LIBERTYBOARD_BUILD`). El menú **Acerca → Actualización** (`src/core/UBGitHubUpdater`) compara ese número con el último release, descarga el zip y lo instala con un script de PowerShell que espera a que LibertyBoard se cierre, copia los archivos y lo vuelve a abrir.
 - Las traducciones se generan con `lrelease` **antes** de `qmake`; si no, los `.qm` no se instalan y el programa queda en inglés. La compilación falla si falta `OpenBoard_es.qm`.
 - Los archivos nuevos se registran en **los dos** sistemas: qmake (`src/*/*.pri`, para Windows) y CMake (`src/*/CMakeLists.txt`, para las pruebas en Linux). Los recursos nuevos van en `resources/OpenBoard.qrc`.
-- Una compilación tarda unos 15 a 20 minutos. Se sigue con `gh api repos/noteimportaaaa/LibertyBoard/actions/runs`.
+- Una compilación tarda unos 15 a 20 minutos. Se sigue con `gh api repos/inversorchileno/LibertyBoard/actions/runs`.
 
 ## Identidad de LibertyBoard
 
