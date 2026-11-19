@@ -1917,13 +1917,6 @@ void UBBoardController::changeBackground(bool isDark, UBPageBackground pageBackg
     bool currentIsDark = mActiveScene->isDarkBackground();
     UBPageBackground currentBackgroundType = mActiveScene->pageBackground();
 
-    // A template of the palette is white or black: it replaces a chosen color.
-    if (mActiveScene->hasCustomBackgroundColor())
-    {
-        mActiveScene->setBackgroundColor(QColor());
-        currentIsDark = !isDark;
-    }
-
     if ((isDark != currentIsDark) || (currentBackgroundType != pageBackground))
     {
         UBSettings::settings()->setDarkBackground(isDark);
@@ -2807,6 +2800,10 @@ void UBBoardController::moveToolWidgetToScene(UBToolWidget* toolWidget)
 
 void UBBoardController::updateBackgroundActionsState(bool isDark, UBPageBackground pageBackground)
 {
+    // The template style offers the light templates only: the color of the
+    // page, black included, is chosen apart.
+    isDark = false;
+
     switch (pageBackground) {
 
         case UBPageBackground::crossed:
