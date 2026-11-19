@@ -65,6 +65,12 @@ class UBGraphicsStroke
 
         UBGraphicsStroke* simplify();
 
+        /**
+         * @brief A new stroke along the given points, of the mean width of
+         * this one: smooth for a round shape, with sharp corners otherwise.
+         */
+        UBGraphicsStroke* redrawnAlong(std::shared_ptr<UBGraphicsScene> scene, const QList<QPointF>& outline, bool smooth);
+
     protected:
         void addPolygon(UBGraphicsPolygonItem* pol);
 

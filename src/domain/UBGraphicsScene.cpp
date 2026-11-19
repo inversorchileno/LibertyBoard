@@ -91,6 +91,7 @@
 #include "domain/UBGraphicsGroupContainerItem.h"
 
 #include "UBGraphicsStroke.h"
+#include "UBShapeRecognizer.h"
 
 #include "core/memcheck.h"
 
@@ -790,9 +791,15 @@ bool UBGraphicsScene::inputDeviceRelease(int tool, Qt::KeyboardModifiers modifie
                 addPolygonItemToCurrentStroke(poly);
             }
 
+            // A line, a circle, a rectangle... drawn by hand becomes a clean one.
+            const bool recognized = currentTool == UBStylusTool::Pen
+                    && UBSettings::settings()->value("Board/LibertyBoardRecognizeShapes", false).toBool()
+                    && recognizeCurrentStroke();
+
             // replace the stroke by a simplified version of it
-            if ((currentTool == UBStylusTool::Pen && UBSettings::settings()->boardSimplifyPenStrokes->get().toBool())
-                || (currentTool == UBStylusTool::Marker && UBSettings::settings()->boardSimplifyMarkerStrokes->get().toBool()))
+            if (!recognized
+                && ((currentTool == UBStylusTool::Pen && UBSettings::settings()->boardSimplifyPenStrokes->get().toBool())
+                    || (currentTool == UBStylusTool::Marker && UBSettings::settings()->boardSimplifyMarkerStrokes->get().toBool())))
             {
                 simplifyCurrentStroke();
             }
@@ -3535,6 +3542,43 @@ bool UBGraphicsScene::hasTextItemWithFocus(UBGraphicsGroupContainerItem *item){
     return bHasFocus;
 }
 
+
+bool UBGraphicsScene::recognizeCurrentStroke()
+{
+    if (!mCurrentStroke)
+        return false;
+
+    QList<QPointF> points;
+
+    for (const auto& point : mCurrentStroke->points())
+    {
+        points << point.first;
+    }
+
+    const UBShapeRecognizer::Shape shape = UBShapeRecognizer::recognize(points);
+
+    if (!shape.isValid())
+        return false;
+
+    UBGraphicsStroke* cleanStroke = mCurrentStroke->redrawnAlong(shared_from_this(), shape.points, shape.smooth);
+
+    if (!cleanStroke)
+        return false;
+
+    foreach(UBGraphicsPolygonItem* poly, mCurrentStroke->polygons()){
+        mPreviousPolygonItems.removeAll(poly);
+        removeItem(poly);
+    }
+
+    mCurrentStroke = cleanStroke;
+
+    foreach(UBGraphicsPolygonItem* poly, mCurrentStroke->polygons()) {
+        addItem(poly);
+        mPreviousPolygonItems.append(poly);
+    }
+
+    return true;
+}
 
 void UBGraphicsScene::simplifyCurrentStroke()
 {

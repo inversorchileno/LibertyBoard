@@ -201,6 +201,74 @@ void UBGraphicsStroke::clear()
  * @brief Return a simplified version of the stroke, with less points and polygons.
  *
  */
+UBGraphicsStroke* UBGraphicsStroke::redrawnAlong(std::shared_ptr<UBGraphicsScene> scene, const QList<QPointF>& outline, bool smooth)
+{
+    if (outline.size() < 2 || mDrawnPoints.isEmpty() || !scene)
+    {
+        return nullptr;
+    }
+
+    qreal width = 0;
+
+    for (const strokePoint& point : std::as_const(mDrawnPoints))
+    {
+        width += point.second;
+    }
+
+    width /= mDrawnPoints.size();
+
+    UBGraphicsStroke* newStroke = new UBGraphicsStroke(scene);
+
+    for (const QPointF& point : outline)
+    {
+        newStroke->mDrawnPoints << strokePoint(point, width);
+    }
+
+    // A round shape is one curve; a shape of straight sides has one piece
+    // for each side, with round ends that make its corners.
+    QList<QList<strokePoint>> pieces;
+
+    if (smooth)
+    {
+        pieces << newStroke->mDrawnPoints;
+    }
+    else
+    {
+        for (int i = 1; i < newStroke->mDrawnPoints.size(); ++i)
+        {
+            pieces << QList<strokePoint>{ newStroke->mDrawnPoints.at(i - 1), newStroke->mDrawnPoints.at(i) };
+        }
+    }
+
+    QList<UBGraphicsPolygonItem*> newPolygons;
+
+    for (const QList<strokePoint>& piece : std::as_const(pieces))
+    {
+        UBGraphicsPolygonItem* poly = scene->polygonToPolygonItem(UBGeometryUtils::curveToPolygon(piece, true, true));
+
+        // Translucent pieces do not cover each other twice.
+        if (!poly->brush().isOpaque())
+        {
+            for (UBGraphicsPolygonItem* previous : std::as_const(newPolygons))
+            {
+                poly->subtract(previous);
+            }
+        }
+
+        newPolygons << poly;
+    }
+
+    newStroke->mPolygons = newPolygons;
+
+    for (UBGraphicsPolygonItem* poly : std::as_const(newStroke->mPolygons))
+    {
+        poly->setFillRule(Qt::WindingFill);
+        poly->setStroke(newStroke);
+    }
+
+    return newStroke;
+}
+
 UBGraphicsStroke* UBGraphicsStroke::simplify()
 {
     if (mDrawnPoints.size() < 3)

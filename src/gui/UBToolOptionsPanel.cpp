@@ -21,6 +21,7 @@
 
 #include "UBToolOptionsPanel.h"
 
+#include <QCheckBox>
 #include <QFileDialog>
 #include <QFontComboBox>
 #include <QGridLayout>
@@ -214,6 +215,9 @@ void UBToolOptionsPanel::addSection(const QString& title)
 // ---------------------------------------------------------------------------
 // Pen
 
+// Read by the scene when a stroke of the pen ends.
+static const QString sRecognizeShapesKey = QStringLiteral("Board/LibertyBoardRecognizeShapes");
+
 UBPenOptionsPanel::UBPenOptionsPanel(QWidget* parent)
     : UBToolOptionsPanel(tr("Pen"), parent)
 {
@@ -236,6 +240,14 @@ UBPenOptionsPanel::UBPenOptionsPanel(QWidget* parent)
 
     mOpacity = new UBValueSlider(opacityMarks(), tr(" %"), 0, this);
     addRow(mOpacity);
+
+    mRecognizeShapes = new QCheckBox(tr("Recognize shapes"), this);
+    mRecognizeShapes->setToolTip(tr("A line, circle, oval, triangle, square or rectangle drawn by hand becomes a clean one."));
+    addRow(mRecognizeShapes);
+
+    connect(mRecognizeShapes, &QCheckBox::toggled, this, [settings](bool on) {
+        settings->setValue(sRecognizeShapesKey, on);
+    });
 
     connect(mStrokeType, &UBSegmentedChoice::choiceChanged, this, [this, settings](int type) {
         settings->penStrokeType->set(type);
@@ -267,6 +279,7 @@ void UBPenOptionsPanel::refresh()
     mWidth->setValue(settings->currentPenWidth());
     mColors->setCurrentColor(settings->currentPenColor());
     mOpacity->setValue(settings->penOpacity->get().toDouble() * 100);
+    mRecognizeShapes->setChecked(settings->value(sRecognizeShapesKey, false).toBool());
     updatePreview();
 }
 

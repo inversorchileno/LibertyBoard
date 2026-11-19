@@ -69,6 +69,8 @@ target_sources(${PROJECT_NAME} PRIVATE
     UBSelectionFrame.h
     UBShapeGeometry.cpp
     UBShapeGeometry.h
+    UBShapeRecognizer.cpp
+    UBShapeRecognizer.h
     UBUndoCommand.cpp
     UBUndoCommand.h
     UBWebEngineView.cpp

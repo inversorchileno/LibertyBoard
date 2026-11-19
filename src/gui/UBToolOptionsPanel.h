@@ -90,6 +90,7 @@ private:
     UBValueSlider* mWidth{nullptr};
     UBColorSwatches* mColors{nullptr};
     UBValueSlider* mOpacity{nullptr};
+    QCheckBox* mRecognizeShapes{nullptr};
 };
 
 class UBEraserOptionsPanel : public UBToolOptionsPanel
