@@ -160,6 +160,24 @@ En modo escritorio son paneles emergentes; en modo pizarra, un panel fijo a la d
 - La fila de pestañas tiene la misma holgura arriba y abajo.
 - **Inicio → Nueva pizarra** (antes «Nuevo documento»), rotulador con dibujo de destacador tipo Stabilo.
 
+## Lector de PDF completo (compilación 17)
+
+- **Reabrir y recientes** (`src/core/UBOpenedFiles`): abrir de nuevo un PDF ya trabajado (mismo archivo, sin cambios desde que se guardó) retoma su documento de LibertyBoard, con notas, adjuntos y sonidos, sin preguntar si reemplazar. **Inicio → Archivos recientes** muestra los 10 últimos.
+- **Inicio → Imprimir** (Ctrl+P, `src/board/UBDocumentPrinter`): diálogo del sistema con rango de páginas o página actual; cada página con su orientación. Ctrl+P ya no elige el bolígrafo.
+- **Recuperación** (`UBDocumentTabs`): si el programa se cierra sin terminar, al abrir pregunta si recuperar los documentos que estaban en las pestañas. El autoguardado es cada minuto.
+- **Páginas / Borrar** (`src/gui/UBPageButtons`): dos botones uno sobre otro donde estaba «Páginas», con una línea punteada a su izquierda. Borrar pregunta antes y no funciona con una sola página. (El «Borrar» de la derecha sigue siendo borrar las anotaciones.)
+- **Inicio → Extraer páginas** (`src/board/UBPageExtractor`): página actual, todas o rangos («1-3, 5, 8-»); PDF en un archivo, PDF por página, PNG o JPEG por página; nombre, carpeta y abrir al terminar. El PDF sale con el mismo motor que Guardar (texto y giro del original, anotaciones encima). Los exportadores PDF aceptan una lista de páginas (`setPages`).
+- **Búsqueda con lista** (`UBSearchBar`): con Buscar abierto, un recuadro a la derecha lista cada resultado con su página y la línea donde aparece; clic para ir. Se actualiza mientras se escribe.
+- **Vista continua real** (`UBBoardView::drawNeighbourPages`): se dibujan todas las páginas que caben (hasta 8 a cada lado); con zoom pequeño la rueda avanza página a página con las demás alrededor.
+- **Copiar texto del PDF**: con la flecha de selección, un recuadro donde no hay objetos copia el texto del PDF (palabras completas) al portapapeles.
+- **Índice y enlaces** (`src/pdf/UBPdfNavigation`, `src/gui/UBPdfOutlinePanel`): botón **Índice** junto a Buscar con el índice del PDF; con la flecha, clic en un enlace del PDF lleva a la página, o pregunta antes de abrir una dirección web. Buscar e Índice se turnan el mismo lugar.
+- **Lazo** (`UBDrawingController::isLassoSelection`): la flecha tiene opciones; el botón «Lazo» cambia a selección a mano alzada y el ícono de la paleta pasa a ser un lazo; entonces el botón ofrece «Flecha». En el escritorio la flecha sigue sin opciones.
+- **Reconocer formas** (`src/domain/UBShapeRecognizer`): casilla en las opciones del bolígrafo; línea, círculo, óvalo, triángulo, cuadrado, rectángulo y polígonos de hasta 6 lados se vuelven limpios al levantar el lápiz.
+- **Pantalla táctil** (`UBBoardView::viewportEvent`): dos dedos hacen zoom y desplazan; un dedo funciona como el mouse; se ignora la palma (contacto grande) y todo toque mientras se usa el lápiz y un momento después. **No probado en Linux** (sin pantalla táctil).
+- **Notas y adjuntos dentro del PDF** (`src/pdf/UBPdfAnnotations`): al guardar o extraer, las notas rápidas quedan como comentarios del PDF y los archivos y sonidos como adjuntos del PDF, en su lugar; otros lectores los muestran. Los íconos de LibertyBoard ya no se dibujan en el PDF (sí al imprimir y en imágenes).
+- **Compatibilidad con poppler:** la compilación de Windows usa poppler 23.01 (OpenBoard-ThirdParty) y Linux 24.02; lo que difiere entre versiones se resuelve con sobrecargas (ver `UBPdfNavigation.cpp`, `UBPdfTextSearch.cpp`, `UBPdfAnnotations.cpp`).
+- **Modo → Pizarra** sale de la doble pizarra; ambos documentos quedan en sus pestañas.
+
 ## Forma de trabajo
 
 - El dueño es **Luis** (Chile), analista financiero, sin experiencia en programación. Habla en español; se le responde en español, claro y sin jerga. Usa Windows 11, pantalla ancha (unos 2540 px) y lápiz digital.
@@ -178,9 +196,9 @@ En modo escritorio son paneles emergentes; en modo pizarra, un panel fijo a la d
 ## Ideas pendientes
 
 - **Instalador** (Inno Setup, hay un script de OpenBoard en `release_scripts/windows`): por ahora el dueño prefiere el portable.
-- **Vista continua** de las páginas del PDF (todas una debajo de otra), en vez de pasar página a página.
-- Importar un PDF con el mismo nombre que uno ya importado pregunta si reemplazar; para un lector de PDF debería abrirlo sin preguntar. **Importante desde la compilación 14:** si se responde Reemplazar, se borra el documento anterior de LibertyBoard con sus notas rápidas, adjuntos y sonidos. Lo ideal es que abrir de nuevo un PDF ya trabajado retome su documento.
-- El archivo de cada pestaña (para Guardar sin preguntar) se olvida al cerrar el programa.
+- Importar un PDF con el mismo nombre que uno ya importado, pero cambiado por otro programa, sigue preguntando si reemplazar (si no cambió, se retoma su documento desde la compilación 17).
+- **OCR** (reconocer texto de páginas escaneadas): Windows 10/11 trae un motor OCR propio (Windows.Media.Ocr) que se podría usar sin instalar nada, pero no se puede probar desde Linux; queda para una tanda propia.
+- Firmas y formularios PDF: descartado por Luis.
 - La grabación y la reproducción de sonido no se pudieron probar en Linux (sin dispositivo de audio).
 - Se vio una vez que el programa se cerraba al abrir un segundo PDF mientras aparecía esa pregunta de reemplazo (viene de OpenBoard); revisar.
 - La ventana de bienvenida (consejos) se abre al inicio hasta que se desmarca.
