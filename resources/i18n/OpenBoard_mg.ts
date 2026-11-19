@@ -194,12 +194,11 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Ctrl + T</translation>
     </message>
     <message>
-        <location line="+12"/>
         <source>Backgrounds</source>
-        <translation>Sary ambadika</translation>
+        <translation type="vanished">Sary ambadika</translation>
     </message>
     <message>
-        <location line="+1520"/>
+        <location line="+1532"/>
         <source>Text</source>
         <translation>Lahabolana</translation>
     </message>
@@ -240,12 +239,11 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Tsy atao indray</translation>
     </message>
     <message>
-        <location line="-14"/>
         <source>Change Background</source>
-        <translation>Ovaina ny sary ambadika</translation>
+        <translation type="vanished">Ovaina ny sary ambadika</translation>
     </message>
     <message>
-        <location line="+22"/>
+        <location line="+8"/>
         <source>Ctrl+Z</source>
         <translation>Ctrl + Z</translation>
     </message>
@@ -1273,7 +1271,17 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-1598"/>
+        <location line="-1695"/>
+        <source>Template style</source>
+        <translation>Endrika modely</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Change the template style of the page</source>
+        <translation>Manova ny endrika modelin&apos;ny pejy</translation>
+    </message>
+    <message>
+        <location line="+94"/>
         <source>Documents Mode</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1410,12 +1418,14 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>QObject</name>
     <message>
+        <location filename="../../plugins/cffadaptor/src/UBCFFAdaptor.cpp" line="+1181"/>
         <source>Element ID = </source>
-        <translation type="vanished">Isa famantaranaan&apos;ilay zavatra =</translation>
+        <translation>Isa famantaranaan&apos;ilay zavatra =</translation>
     </message>
     <message>
+        <location line="+2"/>
         <source>Content is not supported in destination format.</source>
-        <translation type="vanished">Tsy zakan&apos;ny andrefy tanjona ilay mpiatiny.</translation>
+        <translation>Tsy zakan&apos;ny andrefy tanjona ilay mpiatiny.</translation>
     </message>
     <message>
         <source>Remove Page</source>
@@ -1566,7 +1576,12 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBackgroundPalette</name>
     <message>
-        <location filename="../../src/gui/UBBackgroundPalette.cpp" line="+49"/>
+        <location filename="../../src/gui/UBBackgroundPalette.cpp" line="+57"/>
+        <source>Page color</source>
+        <translation>Lokon&apos;ny taratasy</translation>
+    </message>
+    <message>
+        <location line="+19"/>
         <source>Grid size</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1594,7 +1609,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Fitaovana tsy fantatra karazana %1</translation>
     </message>
     <message>
-        <location line="+1199"/>
+        <location line="+1221"/>
         <source>Add Item</source>
         <translation>Ampiana zavatra</translation>
     </message>
@@ -1604,7 +1619,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Zaka daholo (%1)</translation>
     </message>
     <message>
-        <location line="-1156"/>
+        <location line="-1178"/>
         <source>Unknown content type %1</source>
         <translation>Mpiatiny tsy fantatra karazana %1</translation>
     </message>
@@ -1616,13 +1631,13 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="+506"/>
         <location line="+45"/>
-        <location line="+942"/>
+        <location line="+964"/>
         <location line="+36"/>
         <source>Add file operation failed: file copying error</source>
         <translation>Fanampiana rakitra tsy nety: nisy tsy fetezana tamin&apos;ny fandikana ny rakitra</translation>
     </message>
     <message>
-        <location line="-2352"/>
+        <location line="-2374"/>
         <source>Group</source>
         <translation>Atokony</translation>
     </message>
@@ -1815,7 +1830,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+956"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1017"/>
         <source>Quick note</source>
         <translation>Naoty haingana</translation>
     </message>
@@ -1886,7 +1901,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBDesktopPalette</name>
     <message>
-        <location filename="../../src/desktop/UBDesktopPalette.cpp" line="+74"/>
+        <location filename="../../src/desktop/UBDesktopPalette.cpp" line="+88"/>
         <source>Save a screenshot</source>
         <translation>Hitahiry sarin&apos;efijery</translation>
     </message>
@@ -1896,7 +1911,17 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Hitahiry sarin&apos;efijery misy ny fanamarihana ao amin&apos;ny lahatahiry Sary</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+4"/>
+        <source>Erase all</source>
+        <translation>Fafao daholo</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Erase everything drawn on the screen</source>
+        <translation>Mamafa izay rehetra voasoritra eo amin&apos;ny efijery</translation>
+    </message>
+    <message>
+        <location line="+8"/>
         <source>Capture Part of the Screen</source>
         <translation>Maka ampahan&apos;ny efijery</translation>
     </message>
@@ -1906,12 +1931,12 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Maka ny efijery</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+26"/>
         <source>Show the stylus palette</source>
         <translation>Aseho ny fanovana haingony</translation>
     </message>
     <message>
-        <location line="+55"/>
+        <location line="+337"/>
         <source>Show Board on Secondary Screen</source>
         <translation>Aseho ny solaitra amin&apos;ny efijery faharoa</translation>
     </message>
@@ -1921,7 +1946,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Aseho ny sehatr&apos;asa amin&apos;ny efijery faharoa</translation>
     </message>
     <message>
-        <location line="-95"/>
+        <location line="-387"/>
         <source>Show LibertyBoard</source>
         <translation>Haneho ny LibertyBoard</translation>
     </message>
@@ -2244,16 +2269,8 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBDocumentNavigator</name>
     <message>
-        <location filename="../../src/gui/UBDocumentNavigator.cpp" line="+139"/>
-        <source>Generating thumbnails for board (%1/%2)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+33"/>
-        <location line="+89"/>
-        <location line="+11"/>
         <source>Page %0</source>
-        <translation>Pejy %0</translation>
+        <translation type="vanished">Pejy %0</translation>
     </message>
 </context>
 <context>
@@ -2387,19 +2404,16 @@ Providing a new name will create a new document.</source>
 <context>
     <name>UBDocumentTreeWidget</name>
     <message>
-        <location filename="../../src/gui/UBDocumentTreeWidget.cpp" line="+87"/>
         <source>%1 (copy)</source>
-        <translation>%1 (dika)</translation>
+        <translation type="vanished">%1 (dika)</translation>
     </message>
     <message>
-        <location line="+183"/>
         <source>Copying page %1/%2</source>
-        <translation>Mandika ny pejy %1/%2</translation>
+        <translation type="vanished">Mandika ny pejy %1/%2</translation>
     </message>
     <message numerus="yes">
-        <location line="+41"/>
         <source>%1 pages copied</source>
-        <translation type="unfinished">
+        <translation type="obsolete">
             <numerusform>%1 pejy voadika</numerusform>
             <numerusform></numerusform>
         </translation>
@@ -2501,7 +2515,7 @@ Do you want to continue?</source>
 <context>
     <name>UBEraserOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-710"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-747"/>
         <source>Eraser</source>
         <translation>Fafotse</translation>
     </message>
@@ -3067,7 +3081,7 @@ Alaina sy apetraka izao ve? Hotehirizin&apos;ny LibertyBoard ny antontan-taratas
 <context>
     <name>UBGraphicsScene</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsScene.cpp" line="+1038"/>
+        <location filename="../../src/domain/UBGraphicsScene.cpp" line="+1046"/>
         <location line="+11"/>
         <source>Attach a file</source>
         <translation>Hampiditra rakitra</translation>
@@ -3285,7 +3299,7 @@ Alaina sy apetraka izao ve? Hotehirizin&apos;ny LibertyBoard ny antontan-taratas
 <context>
     <name>UBLaserOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+93"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+102"/>
         <source>Laser pointer</source>
         <translation>Tondro laser</translation>
     </message>
@@ -3310,7 +3324,17 @@ Alaina sy apetraka izao ve? Hotehirizin&apos;ny LibertyBoard ny antontan-taratas
         <translation>Loko</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+5"/>
+        <source>Rainbow</source>
+        <translation>Avana</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>The trail takes the colors of the rainbow, one after the other.</source>
+        <translation>Maka ny lokon&apos;ny avana misesy ny dian&apos;ny tara-pahazavana.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
         <source>Standard</source>
         <translation>Mahazatra</translation>
     </message>
@@ -3609,7 +3633,7 @@ Alaina sy apetraka izao ve? Hotehirizin&apos;ny LibertyBoard ny antontan-taratas
 <context>
     <name>UBMarkerOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-85"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-101"/>
         <source>Marker</source>
         <translation>Penina lehibe</translation>
     </message>
@@ -3617,6 +3641,21 @@ Alaina sy apetraka izao ve? Hotehirizin&apos;ny LibertyBoard ny antontan-taratas
         <location line="+10"/>
         <source> pt</source>
         <translation> pt</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Round tip</source>
+        <translation>Tendro boribory</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Straight tip</source>
+        <translation>Tendro mahitsy</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Round: the stroke has round ends. Straight: like a highlighter, wide across the lines of text, with straight ends.</source>
+        <translation>Boribory: boribory ny tendron&apos;ny tsipika. Mahitsy: toy ny penina manasongadina, malalaka eo amin&apos;ny andalan-tsoratra, mahitsy ny tendrony.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -3718,7 +3757,7 @@ Tena tsy te hiraharaha an&apos;ireo tsy mety ho an&apos;ilay milina ve ianao?</t
 <context>
     <name>UBNoteOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+666"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+698"/>
         <source>Note</source>
         <translation>Naoty</translation>
     </message>
@@ -3807,7 +3846,12 @@ Azo atao any aoriana ihany koa amin&apos;ny Fandraisana &gt; Fantaro ny lahatsor
         <translation type="vanished">Fafao ny pejy aseho</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBPageButtons.cpp" line="+53"/>
+        <location filename="../../src/gui/UBPageButtons.cpp" line="+52"/>
+        <source>Add page</source>
+        <translation>Ampio pejy</translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>Delete page</source>
         <translation>Fafao ny pejy</translation>
     </message>
@@ -4014,7 +4058,7 @@ Azo atao any aoriana ihany koa amin&apos;ny Fandraisana &gt; Fantaro ny lahatsor
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-806"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-843"/>
         <source>Pen</source>
         <translation>Penina</translation>
     </message>
@@ -4221,7 +4265,7 @@ Sakany miova</translation>
 <context>
     <name>UBPreferencesController</name>
     <message>
-        <location filename="../../src/core/UBPreferencesController.cpp" line="+132"/>
+        <location filename="../../src/core/UBPreferencesController.cpp" line="+137"/>
         <source>Language</source>
         <translation>Fiteny</translation>
     </message>
@@ -4246,7 +4290,33 @@ Sakany miova</translation>
         <translation>Tsindry penina</translation>
     </message>
     <message>
-        <location line="+67"/>
+        <location line="+24"/>
+        <source>Border in desktop mode</source>
+        <translation>Sisiny amin&apos;ny fomba birao</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Show a colored border around the screen</source>
+        <translation>Asehoy sisiny miloko manodidina ny efijery</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <location line="+35"/>
+        <source>Color of the border</source>
+        <translation>Lokon&apos;ny sisiny</translation>
+    </message>
+    <message>
+        <location line="-27"/>
+        <source>Width</source>
+        <translation>Hateviny</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source> px</source>
+        <translation> px</translation>
+    </message>
+    <message>
+        <location line="+88"/>
         <source>version: </source>
         <translation>kinova:</translation>
     </message>
@@ -4565,7 +4635,7 @@ Sakany miova</translation>
 <context>
     <name>UBSelectorOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+668"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+705"/>
         <source>Select</source>
         <translation>Mifidy</translation>
     </message>
@@ -4603,7 +4673,7 @@ Sakany miova</translation>
 <context>
     <name>UBSettings</name>
     <message>
-        <location filename="../../src/core/UBSettings.cpp" line="+1125"/>
+        <location filename="../../src/core/UBSettings.cpp" line="+1133"/>
         <source>My Movies</source>
         <translation>Ny sarimietsiko</translation>
     </message>
@@ -4611,7 +4681,7 @@ Sakany miova</translation>
 <context>
     <name>UBShapeOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-461"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-477"/>
         <source>Rectangle</source>
         <translation>Efajoro</translation>
     </message>
@@ -4677,7 +4747,17 @@ Sakany miova</translation>
         <translation>Fiafaran&apos;ny tsipika</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location line="+4"/>
+        <source>Tapered</source>
+        <translation>Mihalehibe</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>The line grows from its start to the tip of the arrow.</source>
+        <translation>Mihalehibe ny tsipika manomboka eo am-piandohany ka hatramin&apos;ny tendron&apos;ny zana-tsipika.</translation>
+    </message>
+    <message>
+        <location line="+6"/>
         <source>Opacity</source>
         <translation>Hateviny</translation>
     </message>
@@ -4955,7 +5035,7 @@ Sakany miova</translation>
 <context>
     <name>UBStampOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+187"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+199"/>
         <source>Stamp</source>
         <translation>Tombokase</translation>
     </message>
@@ -5083,7 +5163,7 @@ Sakany miova</translation>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-544"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-581"/>
         <source>Color</source>
         <translation>Loko</translation>
     </message>
@@ -5303,7 +5383,7 @@ Avereno alefa ny rindr&apos;asa ahafahana mampiasa ny rakitra novoazana azafady.
 <context>
     <name>UBZLayerController</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsScene.cpp" line="-848"/>
+        <location filename="../../src/domain/UBGraphicsScene.cpp" line="-856"/>
         <source>Bottom layer limit reached</source>
         <translation type="unfinished"></translation>
     </message>

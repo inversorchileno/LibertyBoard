@@ -179,12 +179,11 @@ Voulez-vous continuer quand-même ?   </translation>
         <translation>Stylets</translation>
     </message>
     <message>
-        <location line="+20"/>
         <source>Backgrounds</source>
-        <translation>Fonds</translation>
+        <translation type="vanished">Fonds</translation>
     </message>
     <message>
-        <location line="+17"/>
+        <location line="+37"/>
         <source>Undo</source>
         <translation>Annuler</translation>
     </message>
@@ -378,12 +377,11 @@ Voulez-vous continuer quand-même ?   </translation>
         <translation>Gomme</translation>
     </message>
     <message>
-        <location line="-1220"/>
         <source>Change Background</source>
-        <translation>Changer le fond d&apos;écran</translation>
+        <translation type="vanished">Changer le fond d&apos;écran</translation>
     </message>
     <message>
-        <location line="+51"/>
+        <location line="-1169"/>
         <location line="+287"/>
         <source>Previous Page</source>
         <translation>Page précédente</translation>
@@ -549,7 +547,17 @@ Voulez-vous continuer quand-même ?   </translation>
         <translation>Bureau</translation>
     </message>
     <message>
-        <location line="-70"/>
+        <location line="-524"/>
+        <source>Template style</source>
+        <translation>Style de modèle</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Change the template style of the page</source>
+        <translation>Change le style de modèle de la page</translation>
+    </message>
+    <message>
+        <location line="+451"/>
         <source>Clear page</source>
         <translation>Nettoyer la page</translation>
     </message>
@@ -1421,12 +1429,14 @@ Voulez-vous continuer quand-même ?   </translation>
 <context>
     <name>QObject</name>
     <message>
+        <location filename="../../plugins/cffadaptor/src/UBCFFAdaptor.cpp" line="+1181"/>
         <source>Element ID = </source>
-        <translation type="vanished">ID de l&apos;élément = </translation>
+        <translation>ID de l&apos;élément = </translation>
     </message>
     <message>
+        <location line="+2"/>
         <source>Content is not supported in destination format.</source>
-        <translation type="vanished">Contenu non supporté dans le format souhaité.</translation>
+        <translation>Contenu non supporté dans le format souhaité.</translation>
     </message>
     <message>
         <source>Remove Page</source>
@@ -1581,7 +1591,12 @@ Voulez-vous continuer quand-même ?   </translation>
 <context>
     <name>UBBackgroundPalette</name>
     <message>
-        <location filename="../../src/gui/UBBackgroundPalette.cpp" line="+49"/>
+        <location filename="../../src/gui/UBBackgroundPalette.cpp" line="+57"/>
+        <source>Page color</source>
+        <translation>Couleur de la page</translation>
+    </message>
+    <message>
+        <location line="+19"/>
         <source>Grid size</source>
         <translation>Taille du quadrillage</translation>
     </message>
@@ -1609,7 +1624,7 @@ Voulez-vous continuer quand-même ?   </translation>
         <translation>Type d&apos;outil inconnu %1</translation>
     </message>
     <message>
-        <location line="+1199"/>
+        <location line="+1221"/>
         <source>Add Item</source>
         <translation>Ajouter un élément</translation>
     </message>
@@ -1619,7 +1634,7 @@ Voulez-vous continuer quand-même ?   </translation>
         <translation>Tous (%1)</translation>
     </message>
     <message>
-        <location line="-1156"/>
+        <location line="-1178"/>
         <source>Unknown content type %1</source>
         <translation>Type de contenu inconnu (%1)</translation>
     </message>
@@ -1631,13 +1646,13 @@ Voulez-vous continuer quand-même ?   </translation>
     <message>
         <location line="+506"/>
         <location line="+45"/>
-        <location line="+942"/>
+        <location line="+964"/>
         <location line="+36"/>
         <source>Add file operation failed: file copying error</source>
         <translation>Echec d&apos;ajout de document : erreur de copie</translation>
     </message>
     <message>
-        <location line="-2352"/>
+        <location line="-2374"/>
         <source>Group</source>
         <translation>Grouper</translation>
     </message>
@@ -1837,7 +1852,7 @@ Voulez-vous continuer quand-même ?   </translation>
 <context>
     <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+956"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1017"/>
         <source>Quick note</source>
         <translation>Note rapide</translation>
     </message>
@@ -1908,7 +1923,7 @@ Voulez-vous continuer quand-même ?   </translation>
 <context>
     <name>UBDesktopPalette</name>
     <message>
-        <location filename="../../src/desktop/UBDesktopPalette.cpp" line="+74"/>
+        <location filename="../../src/desktop/UBDesktopPalette.cpp" line="+88"/>
         <source>Save a screenshot</source>
         <translation>Enregistrer une capture d&apos;écran</translation>
     </message>
@@ -1918,7 +1933,17 @@ Voulez-vous continuer quand-même ?   </translation>
         <translation>Enregistrer une capture d&apos;écran avec les annotations dans le dossier Images</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+4"/>
+        <source>Erase all</source>
+        <translation>Tout effacer</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Erase everything drawn on the screen</source>
+        <translation>Efface tout ce qui est dessiné à l&apos;écran</translation>
+    </message>
+    <message>
+        <location line="+8"/>
         <source>Capture Part of the Screen</source>
         <translation>Capturer une partie de l&apos;écran</translation>
     </message>
@@ -1928,12 +1953,12 @@ Voulez-vous continuer quand-même ?   </translation>
         <translation>Capturer l&apos;écran</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+26"/>
         <source>Show the stylus palette</source>
         <translation>Afficher la barre d&apos;outils du stylet</translation>
     </message>
     <message>
-        <location line="+55"/>
+        <location line="+337"/>
         <source>Show Board on Secondary Screen</source>
         <translation>Afficher le tableau sur l&apos;écran secondaire</translation>
     </message>
@@ -1943,7 +1968,7 @@ Voulez-vous continuer quand-même ?   </translation>
         <translation>Afficher le bureau sur l&apos;écran secondaire</translation>
     </message>
     <message>
-        <location line="-95"/>
+        <location line="-387"/>
         <source>Show LibertyBoard</source>
         <translation>Afficher LibertyBoard</translation>
     </message>
@@ -2303,16 +2328,12 @@ Voulez-vous continuer quand-même ?   </translation>
 <context>
     <name>UBDocumentNavigator</name>
     <message>
-        <location filename="../../src/gui/UBDocumentNavigator.cpp" line="+172"/>
-        <location line="+89"/>
-        <location line="+11"/>
         <source>Page %0</source>
-        <translation>Page %0</translation>
+        <translation type="vanished">Page %0</translation>
     </message>
     <message>
-        <location line="-133"/>
         <source>Generating thumbnails for board (%1/%2)</source>
-        <translation>Création des aperçus du mode Tableau (%1/%2)</translation>
+        <translation type="vanished">Création des aperçus du mode Tableau (%1/%2)</translation>
     </message>
 </context>
 <context>
@@ -2456,19 +2477,16 @@ Un nouveau nom vous permettra de conserver l&apos;ancien document.</translation>
 <context>
     <name>UBDocumentTreeWidget</name>
     <message>
-        <location filename="../../src/gui/UBDocumentTreeWidget.cpp" line="+87"/>
         <source>%1 (copy)</source>
-        <translation>%1 (copie)</translation>
+        <translation type="vanished">%1 (copie)</translation>
     </message>
     <message>
-        <location line="+183"/>
         <source>Copying page %1/%2</source>
-        <translation>Copie de la page %1/%2</translation>
+        <translation type="vanished">Copie de la page %1/%2</translation>
     </message>
     <message numerus="yes">
-        <location line="+41"/>
         <source>%1 pages copied</source>
-        <translation type="unfinished">
+        <translation type="obsolete">
             <numerusform>%1 page copiée</numerusform>
             <numerusform>%1 pages copiées</numerusform>
         </translation>
@@ -2584,7 +2602,7 @@ Voulez-vous continuer ?</translation>
 <context>
     <name>UBEraserOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-710"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-747"/>
         <source>Eraser</source>
         <translation>Gomme</translation>
     </message>
@@ -3152,7 +3170,7 @@ La télécharger et l&apos;installer maintenant ? LibertyBoard enregistre vos do
 <context>
     <name>UBGraphicsScene</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsScene.cpp" line="+1038"/>
+        <location filename="../../src/domain/UBGraphicsScene.cpp" line="+1046"/>
         <location line="+11"/>
         <source>Attach a file</source>
         <translation>Joindre un fichier</translation>
@@ -3370,7 +3388,7 @@ La télécharger et l&apos;installer maintenant ? LibertyBoard enregistre vos do
 <context>
     <name>UBLaserOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+93"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+102"/>
         <source>Laser pointer</source>
         <translation>Pointeur laser</translation>
     </message>
@@ -3395,7 +3413,17 @@ La télécharger et l&apos;installer maintenant ? LibertyBoard enregistre vos do
         <translation>Couleur</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+5"/>
+        <source>Rainbow</source>
+        <translation>Arc-en-ciel</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>The trail takes the colors of the rainbow, one after the other.</source>
+        <translation>La traînée prend les couleurs de l&apos;arc-en-ciel, l&apos;une après l&apos;autre.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
         <source>Standard</source>
         <translation>Standard</translation>
     </message>
@@ -3694,7 +3722,7 @@ La télécharger et l&apos;installer maintenant ? LibertyBoard enregistre vos do
 <context>
     <name>UBMarkerOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-85"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-101"/>
         <source>Marker</source>
         <translation>Surligneur</translation>
     </message>
@@ -3702,6 +3730,21 @@ La télécharger et l&apos;installer maintenant ? LibertyBoard enregistre vos do
         <location line="+10"/>
         <source> pt</source>
         <translation> pt</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Round tip</source>
+        <translation>Pointe ronde</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Straight tip</source>
+        <translation>Pointe biseautée</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Round: the stroke has round ends. Straight: like a highlighter, wide across the lines of text, with straight ends.</source>
+        <translation>Ronde : le trait a des extrémités rondes. Biseautée : comme un surligneur, large sur les lignes de texte, avec des extrémités droites.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -3803,7 +3846,7 @@ Voulez-vous ignorer les erreurs pour ce serveur ?</translation>
 <context>
     <name>UBNoteOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+666"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+698"/>
         <source>Note</source>
         <translation>Note</translation>
     </message>
@@ -3912,7 +3955,12 @@ On peut aussi le faire plus tard avec Accueil &gt; Reconnaître le texte.</trans
         <translation type="vanished">Supprimer la page affichée</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBPageButtons.cpp" line="+53"/>
+        <location filename="../../src/gui/UBPageButtons.cpp" line="+52"/>
+        <source>Add page</source>
+        <translation>Ajouter une page</translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>Delete page</source>
         <translation>Supprimer la page</translation>
     </message>
@@ -4119,7 +4167,7 @@ On peut aussi le faire plus tard avec Accueil &gt; Reconnaître le texte.</trans
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-806"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-843"/>
         <source>Pen</source>
         <translation>Stylo</translation>
     </message>
@@ -4330,7 +4378,7 @@ Largeur dynamique</translation>
 <context>
     <name>UBPreferencesController</name>
     <message>
-        <location filename="../../src/core/UBPreferencesController.cpp" line="+411"/>
+        <location filename="../../src/core/UBPreferencesController.cpp" line="+479"/>
         <source>Marker is pressure sensitive</source>
         <translation>Stylet sensible à la pression</translation>
     </message>
@@ -4340,7 +4388,7 @@ Largeur dynamique</translation>
         <translation>version : </translation>
     </message>
     <message>
-        <location line="-133"/>
+        <location line="-196"/>
         <source>Language</source>
         <translation>Langue</translation>
     </message>
@@ -4365,7 +4413,33 @@ Largeur dynamique</translation>
         <translation>Pression du stylet</translation>
     </message>
     <message>
-        <location line="+25"/>
+        <location line="+24"/>
+        <source>Border in desktop mode</source>
+        <translation>Bordure en mode bureau</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Show a colored border around the screen</source>
+        <translation>Afficher une bordure de couleur autour de l&apos;écran</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <location line="+35"/>
+        <source>Color of the border</source>
+        <translation>Couleur de la bordure</translation>
+    </message>
+    <message>
+        <location line="-27"/>
+        <source>Width</source>
+        <translation>Épaisseur</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source> px</source>
+        <translation> px</translation>
+    </message>
+    <message>
+        <location line="+46"/>
         <source>Use all available displays</source>
         <translation>Utiliser tous les écrans disponibles</translation>
     </message>
@@ -4674,7 +4748,7 @@ Largeur dynamique</translation>
 <context>
     <name>UBSelectorOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+668"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+705"/>
         <source>Select</source>
         <translation>Sélectionner</translation>
     </message>
@@ -4712,7 +4786,7 @@ Largeur dynamique</translation>
 <context>
     <name>UBSettings</name>
     <message>
-        <location filename="../../src/core/UBSettings.cpp" line="+1125"/>
+        <location filename="../../src/core/UBSettings.cpp" line="+1133"/>
         <source>My Movies</source>
         <translation>Mes films</translation>
     </message>
@@ -4720,7 +4794,7 @@ Largeur dynamique</translation>
 <context>
     <name>UBShapeOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-461"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-477"/>
         <source>Rectangle</source>
         <translation>Rectangle</translation>
     </message>
@@ -4786,7 +4860,17 @@ Largeur dynamique</translation>
         <translation>Fin de ligne</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location line="+4"/>
+        <source>Tapered</source>
+        <translation>Effilée</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>The line grows from its start to the tip of the arrow.</source>
+        <translation>Le trait s&apos;élargit de son début jusqu&apos;à la pointe de la flèche.</translation>
+    </message>
+    <message>
+        <location line="+6"/>
         <source>Opacity</source>
         <translation>Opacité</translation>
     </message>
@@ -5064,7 +5148,7 @@ Largeur dynamique</translation>
 <context>
     <name>UBStampOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+187"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+199"/>
         <source>Stamp</source>
         <translation>Tampon</translation>
     </message>
@@ -5200,7 +5284,7 @@ Largeur dynamique</translation>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-544"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-581"/>
         <source>Color</source>
         <translation>Couleur</translation>
     </message>
@@ -5420,7 +5504,7 @@ Veuillez redémarrer l&apos;application pour accéder aux documents mis à jour.
 <context>
     <name>UBZLayerController</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsScene.cpp" line="-848"/>
+        <location filename="../../src/domain/UBGraphicsScene.cpp" line="-856"/>
         <source>Bottom layer limit reached</source>
         <translation>Limite de couche inférieure atteinte</translation>
     </message>

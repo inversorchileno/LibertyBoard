@@ -256,17 +256,15 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Ctrl+T</translation>
     </message>
     <message>
-        <location line="+12"/>
         <source>Backgrounds</source>
-        <translation>Fondos</translation>
+        <translation type="vanished">Fondos</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Change Background</source>
-        <translation>Cambiar Fondo</translation>
+        <translation type="vanished">Cambiar Fondo</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+29"/>
         <source>Undo</source>
         <translation>Deshacer</translation>
     </message>
@@ -1270,7 +1268,17 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Capturar contenido web</translation>
     </message>
     <message>
-        <location line="-1598"/>
+        <location line="-1695"/>
+        <source>Template style</source>
+        <translation>Estilo plantilla</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Change the template style of the page</source>
+        <translation>Cambia el estilo de plantilla de la página</translation>
+    </message>
+    <message>
+        <location line="+94"/>
         <source>Documents Mode</source>
         <translation>Modo Documentos</translation>
     </message>
@@ -1412,12 +1420,14 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>QObject</name>
     <message>
+        <location filename="../../plugins/cffadaptor/src/UBCFFAdaptor.cpp" line="+1181"/>
         <source>Element ID = </source>
-        <translation type="vanished">Elemento ID = </translation>
+        <translation>Elemento ID = </translation>
     </message>
     <message>
+        <location line="+2"/>
         <source>Content is not supported in destination format.</source>
-        <translation type="vanished">El formato de destino no permite este contenido</translation>
+        <translation>El formato de destino no permite este contenido</translation>
     </message>
     <message>
         <source>Remove Page</source>
@@ -1568,7 +1578,12 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBackgroundPalette</name>
     <message>
-        <location filename="../../src/gui/UBBackgroundPalette.cpp" line="+49"/>
+        <location filename="../../src/gui/UBBackgroundPalette.cpp" line="+57"/>
+        <source>Page color</source>
+        <translation>Color de la hoja</translation>
+    </message>
+    <message>
+        <location line="+19"/>
         <source>Grid size</source>
         <translation>Tamaño de la cuadrícula</translation>
     </message>
@@ -1601,7 +1616,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Tipo de contenido desconocido %1</translation>
     </message>
     <message>
-        <location line="+1154"/>
+        <location line="+1176"/>
         <source>Add Item</source>
         <translation>Añadir elemento</translation>
     </message>
@@ -1611,20 +1626,20 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Todos compatibles (%1)</translation>
     </message>
     <message>
-        <location line="-1903"/>
+        <location line="-1925"/>
         <source>Page %1 deleted</source>
         <translation>Página %1 eliminada</translation>
     </message>
     <message>
         <location line="+506"/>
         <location line="+45"/>
-        <location line="+942"/>
+        <location line="+964"/>
         <location line="+36"/>
         <source>Add file operation failed: file copying error</source>
         <translation>Todas las operaciones con ficheros han fallado. Error al copiar los ficheros</translation>
     </message>
     <message>
-        <location line="-2352"/>
+        <location line="-2374"/>
         <source>Group</source>
         <translation>Agrupar</translation>
     </message>
@@ -1824,7 +1839,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+956"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1017"/>
         <source>Quick note</source>
         <translation>Nota rápida</translation>
     </message>
@@ -1895,7 +1910,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBDesktopPalette</name>
     <message>
-        <location filename="../../src/desktop/UBDesktopPalette.cpp" line="+74"/>
+        <location filename="../../src/desktop/UBDesktopPalette.cpp" line="+88"/>
         <source>Save a screenshot</source>
         <translation>Guardar captura de pantalla</translation>
     </message>
@@ -1905,7 +1920,17 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Guardar una captura de pantalla con las anotaciones en la carpeta Imágenes</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+4"/>
+        <source>Erase all</source>
+        <translation>Borrar todo</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Erase everything drawn on the screen</source>
+        <translation>Borra todo lo dibujado en la pantalla</translation>
+    </message>
+    <message>
+        <location line="+8"/>
         <source>Capture Part of the Screen</source>
         <translation>Capturar parte de la pantalla</translation>
     </message>
@@ -1915,12 +1940,12 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Capturar la pantalla</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+26"/>
         <source>Show the stylus palette</source>
         <translation>Mostrar la paleta del lápiz</translation>
     </message>
     <message>
-        <location line="+55"/>
+        <location line="+337"/>
         <source>Show Board on Secondary Screen</source>
         <translation>Mostrar la pizarra en la pantalla secundaria</translation>
     </message>
@@ -1930,7 +1955,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Mostrar escritorio en la pantalla secundaria</translation>
     </message>
     <message>
-        <location line="-95"/>
+        <location line="-387"/>
         <source>Show LibertyBoard</source>
         <translation>Mostrar LibertyBoard</translation>
     </message>
@@ -2269,16 +2294,12 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBDocumentNavigator</name>
     <message>
-        <location filename="../../src/gui/UBDocumentNavigator.cpp" line="+139"/>
         <source>Generating thumbnails for board (%1/%2)</source>
-        <translation>Generando miniaturas de la pizarra (%1/%2)</translation>
+        <translation type="vanished">Generando miniaturas de la pizarra (%1/%2)</translation>
     </message>
     <message>
-        <location line="+33"/>
-        <location line="+89"/>
-        <location line="+11"/>
         <source>Page %0</source>
-        <translation>Página %0</translation>
+        <translation type="vanished">Página %0</translation>
     </message>
 </context>
 <context>
@@ -2422,19 +2443,16 @@ Proporcionar un nuevo nombre creará un nuevo documento.</translation>
 <context>
     <name>UBDocumentTreeWidget</name>
     <message>
-        <location filename="../../src/gui/UBDocumentTreeWidget.cpp" line="+87"/>
         <source>%1 (copy)</source>
-        <translation>%1 (copia)</translation>
+        <translation type="vanished">%1 (copia)</translation>
     </message>
     <message>
-        <location line="+183"/>
         <source>Copying page %1/%2</source>
-        <translation>Copiando página %1/%2</translation>
+        <translation type="vanished">Copiando página %1/%2</translation>
     </message>
     <message numerus="yes">
-        <location line="+41"/>
         <source>%1 pages copied</source>
-        <translation>
+        <translation type="vanished">
             <numerusform>%1 página copiada</numerusform>
             <numerusform>%1 páginas copiadas</numerusform>
         </translation>
@@ -2541,7 +2559,7 @@ Si quieres continuar, el documento se convertirá para ser compatible con la ver
 <context>
     <name>UBEraserOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-710"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-747"/>
         <source>Eraser</source>
         <translation>Goma</translation>
     </message>
@@ -3107,7 +3125,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
 <context>
     <name>UBGraphicsScene</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsScene.cpp" line="+1038"/>
+        <location filename="../../src/domain/UBGraphicsScene.cpp" line="+1046"/>
         <location line="+11"/>
         <source>Attach a file</source>
         <translation>Adjuntar un archivo</translation>
@@ -3325,7 +3343,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
 <context>
     <name>UBLaserOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+93"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+102"/>
         <source>Laser pointer</source>
         <translation>Puntero láser</translation>
     </message>
@@ -3354,7 +3372,17 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>Color</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+5"/>
+        <source>Rainbow</source>
+        <translation>Arcoíris</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>The trail takes the colors of the rainbow, one after the other.</source>
+        <translation>La estela toma los colores del arcoíris, uno tras otro.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
         <source>Standard</source>
         <translation>Estándar</translation>
     </message>
@@ -3661,7 +3689,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
 <context>
     <name>UBMarkerOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-85"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-101"/>
         <source>Marker</source>
         <translation>Rotulador</translation>
     </message>
@@ -3669,6 +3697,21 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <location line="+10"/>
         <source> pt</source>
         <translation> pt</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Round tip</source>
+        <translation>Punta circular</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Straight tip</source>
+        <translation>Punta recta</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Round: the stroke has round ends. Straight: like a highlighter, wide across the lines of text, with straight ends.</source>
+        <translation>Circular: el trazo tiene extremos redondos. Recta: como un destacador, ancho sobre las líneas de texto, con extremos rectos.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -3764,7 +3807,7 @@ Do you want to ignore these errors for this host?</source>
 <context>
     <name>UBNoteOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+666"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+698"/>
         <source>Note</source>
         <translation>Nota</translation>
     </message>
@@ -3873,7 +3916,12 @@ También se puede hacer después con Inicio &gt; Reconocer texto.</translation>
         <translation type="vanished">Borrar la página mostrada</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBPageButtons.cpp" line="+53"/>
+        <location filename="../../src/gui/UBPageButtons.cpp" line="+52"/>
+        <source>Add page</source>
+        <translation>Agregar página</translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>Delete page</source>
         <translation>Borrar página</translation>
     </message>
@@ -4080,7 +4128,7 @@ También se puede hacer después con Inicio &gt; Reconocer texto.</translation>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-806"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-843"/>
         <source>Pen</source>
         <translation>Bolígrafo</translation>
     </message>
@@ -4295,12 +4343,12 @@ Ancho dinámico</translation>
         <translation type="vanished">Puntero láser</translation>
     </message>
     <message>
-        <location filename="../../src/core/UBPreferencesController.cpp" line="+265"/>
+        <location filename="../../src/core/UBPreferencesController.cpp" line="+333"/>
         <source>version: </source>
         <translation>versión:</translation>
     </message>
     <message>
-        <location line="-133"/>
+        <location line="-196"/>
         <source>Language</source>
         <translation>Idioma</translation>
     </message>
@@ -4325,7 +4373,33 @@ Ancho dinámico</translation>
         <translation>Presión del lápiz</translation>
     </message>
     <message>
-        <location line="+68"/>
+        <location line="+24"/>
+        <source>Border in desktop mode</source>
+        <translation>Borde en modo escritorio</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Show a colored border around the screen</source>
+        <translation>Mostrar un borde de color alrededor de la pantalla</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <location line="+35"/>
+        <source>Color of the border</source>
+        <translation>Color del borde</translation>
+    </message>
+    <message>
+        <location line="-27"/>
+        <source>Width</source>
+        <translation>Grosor</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source> px</source>
+        <translation> px</translation>
+    </message>
+    <message>
+        <location line="+89"/>
         <source> (build %1)</source>
         <translation> (compilación %1)</translation>
     </message>
@@ -4635,7 +4709,7 @@ Ancho dinámico</translation>
 <context>
     <name>UBSelectorOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+672"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+709"/>
         <source>Select</source>
         <translation>Seleccionar</translation>
     </message>
@@ -4673,7 +4747,7 @@ Ancho dinámico</translation>
 <context>
     <name>UBSettings</name>
     <message>
-        <location filename="../../src/core/UBSettings.cpp" line="+1125"/>
+        <location filename="../../src/core/UBSettings.cpp" line="+1133"/>
         <source>My Movies</source>
         <translation>Mis películas</translation>
     </message>
@@ -4681,7 +4755,7 @@ Ancho dinámico</translation>
 <context>
     <name>UBShapeOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-455"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-471"/>
         <source>Text highlight</source>
         <translation>Resaltado del texto</translation>
     </message>
@@ -4747,7 +4821,17 @@ Ancho dinámico</translation>
         <translation>Fin de la línea</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location line="+4"/>
+        <source>Tapered</source>
+        <translation>Cónica</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>The line grows from its start to the tip of the arrow.</source>
+        <translation>La línea se va agrandando desde su inicio hasta la punta de la flecha.</translation>
+    </message>
+    <message>
+        <location line="+6"/>
         <source>Opacity</source>
         <translation>Opacidad</translation>
     </message>
@@ -5025,7 +5109,7 @@ Ancho dinámico</translation>
 <context>
     <name>UBStampOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+187"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+199"/>
         <source>Stamp</source>
         <translation>Sello</translation>
     </message>
@@ -5157,7 +5241,7 @@ Ancho dinámico</translation>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-544"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-581"/>
         <source>Color</source>
         <translation>Color</translation>
     </message>
@@ -5377,7 +5461,7 @@ Por favor, reinicie la aplicación para acceder a los documentos actualizados.</
 <context>
     <name>UBZLayerController</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsScene.cpp" line="-848"/>
+        <location filename="../../src/domain/UBGraphicsScene.cpp" line="-856"/>
         <source>Bottom layer limit reached</source>
         <translation>Se alcanzó la capa más baja</translation>
     </message>

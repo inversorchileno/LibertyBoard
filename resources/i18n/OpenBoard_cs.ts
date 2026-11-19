@@ -941,12 +941,11 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Používat běžnou velikost dokumentu (4/3)</translation>
     </message>
     <message>
-        <location line="-840"/>
         <source>Change Background</source>
-        <translation>Změnit pozadí</translation>
+        <translation type="vanished">Změnit pozadí</translation>
     </message>
     <message>
-        <location line="+471"/>
+        <location line="-369"/>
         <source>Display Preferences</source>
         <translation>Zobrazit předvolby</translation>
     </message>
@@ -1022,12 +1021,11 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="vanished">Prohlížet web</translation>
     </message>
     <message>
-        <location line="-1581"/>
         <source>Backgrounds</source>
-        <translation>Pozadí</translation>
+        <translation type="vanished">Pozadí</translation>
     </message>
     <message>
-        <location line="+1557"/>
+        <location line="-24"/>
         <source>Add Item To Current Page</source>
         <translation>Přidat položku na aktuální stránku</translation>
     </message>
@@ -1159,7 +1157,17 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-1598"/>
+        <location line="-1695"/>
+        <source>Template style</source>
+        <translation>Styl šablony</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Change the template style of the page</source>
+        <translation>Změní styl šablony stránky</translation>
+    </message>
+    <message>
+        <location line="+94"/>
         <source>Documents Mode</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1411,12 +1419,14 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>QObject</name>
     <message>
+        <location filename="../../plugins/cffadaptor/src/UBCFFAdaptor.cpp" line="+1181"/>
         <source>Element ID = </source>
-        <translation type="obsolete">ID objektu = </translation>
+        <translation type="unfinished">ID objektu = </translation>
     </message>
     <message>
+        <location line="+2"/>
         <source>Content is not supported in destination format.</source>
-        <translation type="vanished">Obsah není podporován v cílovém formátu.</translation>
+        <translation>Obsah není podporován v cílovém formátu.</translation>
     </message>
     <message>
         <source>Remove Page</source>
@@ -1567,7 +1577,12 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBackgroundPalette</name>
     <message>
-        <location filename="../../src/gui/UBBackgroundPalette.cpp" line="+49"/>
+        <location filename="../../src/gui/UBBackgroundPalette.cpp" line="+57"/>
+        <source>Page color</source>
+        <translation>Barva listu</translation>
+    </message>
+    <message>
+        <location line="+19"/>
         <source>Grid size</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1580,12 +1595,12 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBoardController</name>
     <message>
-        <location filename="../../src/board/UBBoardController.cpp" line="+2838"/>
+        <location filename="../../src/board/UBBoardController.cpp" line="+2860"/>
         <source>All Supported (%1)</source>
         <translation>Všechny podporované (%1)</translation>
     </message>
     <message>
-        <location line="-1537"/>
+        <location line="-1559"/>
         <source>Downloading content %1 failed</source>
         <translation>Nepodařilo se stáhnout %1</translation>
     </message>
@@ -1595,12 +1610,12 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Neznámy typ obsahu (%1)</translation>
     </message>
     <message>
-        <location line="+1154"/>
+        <location line="+1176"/>
         <source>Add Item</source>
         <translation>Přidat položku</translation>
     </message>
     <message>
-        <location line="-1199"/>
+        <location line="-1221"/>
         <source>Unknown tool type %1</source>
         <translation>Neznámý typ nástroje %1</translation>
     </message>
@@ -1617,13 +1632,13 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="+506"/>
         <location line="+45"/>
-        <location line="+942"/>
+        <location line="+964"/>
         <location line="+36"/>
         <source>Add file operation failed: file copying error</source>
         <translation>Přidání souboru selhalo: chyba při kopírování</translation>
     </message>
     <message>
-        <location line="-2352"/>
+        <location line="-2374"/>
         <source>Group</source>
         <translation>Seskupit</translation>
     </message>
@@ -1816,7 +1831,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+956"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1017"/>
         <source>Quick note</source>
         <translation>Rychlá poznámka</translation>
     </message>
@@ -1887,17 +1902,17 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBDesktopPalette</name>
     <message>
-        <location filename="../../src/desktop/UBDesktopPalette.cpp" line="+164"/>
+        <location filename="../../src/desktop/UBDesktopPalette.cpp" line="+470"/>
         <source>Show Desktop on Secondary Screen</source>
         <translation>Zobrazit plochu na druhé obrazovce</translation>
     </message>
     <message>
-        <location line="-77"/>
+        <location line="-365"/>
         <source>Capture the Screen</source>
         <translation>Zachytit obrazovku</translation>
     </message>
     <message>
-        <location line="-13"/>
+        <location line="-17"/>
         <source>Save a screenshot</source>
         <translation>Uložit snímek obrazovky</translation>
     </message>
@@ -1907,22 +1922,32 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Uložit snímek obrazovky s anotacemi do složky Obrázky</translation>
     </message>
     <message>
-        <location line="+32"/>
+        <location line="+4"/>
+        <source>Erase all</source>
+        <translation>Smazat vše</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Erase everything drawn on the screen</source>
+        <translation>Smaže vše, co je nakresleno na obrazovce</translation>
+    </message>
+    <message>
+        <location line="+37"/>
         <source>Show the stylus palette</source>
         <translation>Zobrazit paletu pro stylus</translation>
     </message>
     <message>
-        <location line="-23"/>
+        <location line="-29"/>
         <source>Capture Part of the Screen</source>
         <translation>Zachytit část obrazovky</translation>
     </message>
     <message>
-        <location line="+78"/>
+        <location line="+366"/>
         <source>Show Board on Secondary Screen</source>
         <translation>Zobrazit tabuli na druhé obrazovce</translation>
     </message>
     <message>
-        <location line="-93"/>
+        <location line="-385"/>
         <source>Show LibertyBoard</source>
         <translation>Zobrazit LibertyBoard</translation>
     </message>
@@ -2246,16 +2271,8 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBDocumentNavigator</name>
     <message>
-        <location filename="../../src/gui/UBDocumentNavigator.cpp" line="+139"/>
-        <source>Generating thumbnails for board (%1/%2)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+33"/>
-        <location line="+89"/>
-        <location line="+11"/>
         <source>Page %0</source>
-        <translation>Stránka %0</translation>
+        <translation type="vanished">Stránka %0</translation>
     </message>
 </context>
 <context>
@@ -2391,19 +2408,16 @@ Providing a new name will create a new document.</source>
 <context>
     <name>UBDocumentTreeWidget</name>
     <message>
-        <location filename="../../src/gui/UBDocumentTreeWidget.cpp" line="+87"/>
         <source>%1 (copy)</source>
-        <translation>%1 (kopie)</translation>
+        <translation type="vanished">%1 (kopie)</translation>
     </message>
     <message>
-        <location line="+183"/>
         <source>Copying page %1/%2</source>
-        <translation>Kopírování stránky %1/%2</translation>
+        <translation type="vanished">Kopírování stránky %1/%2</translation>
     </message>
     <message numerus="yes">
-        <location line="+41"/>
         <source>%1 pages copied</source>
-        <translation type="unfinished">
+        <translation type="obsolete">
             <numerusform>%1 zkopírovaná stránka</numerusform>
             <numerusform>%1 zkopírované stránky</numerusform>
             <numerusform>%1 zkopírovaných stránek</numerusform>
@@ -2506,7 +2520,7 @@ Do you want to continue?</source>
 <context>
     <name>UBEraserOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-710"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-747"/>
         <source>Eraser</source>
         <translation>Vygumovat</translation>
     </message>
@@ -3072,7 +3086,7 @@ Stáhnout a nainstalovat nyní? LibertyBoard uloží vaše dokumenty, zavře se 
 <context>
     <name>UBGraphicsScene</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsScene.cpp" line="+1038"/>
+        <location filename="../../src/domain/UBGraphicsScene.cpp" line="+1046"/>
         <location line="+11"/>
         <source>Attach a file</source>
         <translation>Připojit soubor</translation>
@@ -3290,7 +3304,7 @@ Stáhnout a nainstalovat nyní? LibertyBoard uloží vaše dokumenty, zavře se 
 <context>
     <name>UBLaserOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+93"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+102"/>
         <source>Laser pointer</source>
         <translation>Laserové ukazovátko</translation>
     </message>
@@ -3315,7 +3329,17 @@ Stáhnout a nainstalovat nyní? LibertyBoard uloží vaše dokumenty, zavře se 
         <translation>Barva</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+5"/>
+        <source>Rainbow</source>
+        <translation>Duha</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>The trail takes the colors of the rainbow, one after the other.</source>
+        <translation>Stopa postupně nabývá barev duhy.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
         <source>Standard</source>
         <translation>Standardní</translation>
     </message>
@@ -3614,7 +3638,7 @@ Stáhnout a nainstalovat nyní? LibertyBoard uloží vaše dokumenty, zavře se 
 <context>
     <name>UBMarkerOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-85"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-101"/>
         <source>Marker</source>
         <translation>Zvýrazňovač</translation>
     </message>
@@ -3622,6 +3646,21 @@ Stáhnout a nainstalovat nyní? LibertyBoard uloží vaše dokumenty, zavře se 
         <location line="+10"/>
         <source> pt</source>
         <translation> pt</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Round tip</source>
+        <translation>Kulatý hrot</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Straight tip</source>
+        <translation>Seříznutý hrot</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Round: the stroke has round ends. Straight: like a highlighter, wide across the lines of text, with straight ends.</source>
+        <translation>Kulatý: tah má kulaté konce. Seříznutý: jako zvýrazňovač, široký přes řádky textu, s rovnými konci.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -3723,7 +3762,7 @@ Chcete ignorovat tyto chyby na tomto serveru?</translation>
 <context>
     <name>UBNoteOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+666"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+698"/>
         <source>Note</source>
         <translation>Poznámka</translation>
     </message>
@@ -3812,7 +3851,12 @@ Lze to udělat i později přes Domů &gt; Rozpoznat text.</translation>
         <translation type="vanished">Smazat zobrazenou stranu</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBPageButtons.cpp" line="+53"/>
+        <location filename="../../src/gui/UBPageButtons.cpp" line="+52"/>
+        <source>Add page</source>
+        <translation>Přidat stránku</translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>Delete page</source>
         <translation>Smazat stranu</translation>
     </message>
@@ -4019,7 +4063,7 @@ Lze to udělat i později přes Domů &gt; Rozpoznat text.</translation>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-806"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-843"/>
         <source>Pen</source>
         <translation>Pero</translation>
     </message>
@@ -4226,7 +4270,7 @@ Dynamická šířka</translation>
 <context>
     <name>UBPreferencesController</name>
     <message>
-        <location filename="../../src/core/UBPreferencesController.cpp" line="+132"/>
+        <location filename="../../src/core/UBPreferencesController.cpp" line="+137"/>
         <source>Language</source>
         <translation>Jazyk</translation>
     </message>
@@ -4251,7 +4295,33 @@ Dynamická šířka</translation>
         <translation>Přítlak pera</translation>
     </message>
     <message>
-        <location line="+67"/>
+        <location line="+24"/>
+        <source>Border in desktop mode</source>
+        <translation>Rámeček v režimu plochy</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Show a colored border around the screen</source>
+        <translation>Zobrazit barevný rámeček kolem obrazovky</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <location line="+35"/>
+        <source>Color of the border</source>
+        <translation>Barva rámečku</translation>
+    </message>
+    <message>
+        <location line="-27"/>
+        <source>Width</source>
+        <translation>Tloušťka</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source> px</source>
+        <translation> px</translation>
+    </message>
+    <message>
+        <location line="+88"/>
         <source>version: </source>
         <translation>verze: </translation>
     </message>
@@ -4570,7 +4640,7 @@ Dynamická šířka</translation>
 <context>
     <name>UBSelectorOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+668"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+705"/>
         <source>Select</source>
         <translation>Vybrat</translation>
     </message>
@@ -4608,7 +4678,7 @@ Dynamická šířka</translation>
 <context>
     <name>UBSettings</name>
     <message>
-        <location filename="../../src/core/UBSettings.cpp" line="+1125"/>
+        <location filename="../../src/core/UBSettings.cpp" line="+1133"/>
         <source>My Movies</source>
         <translation>Moje filmy</translation>
     </message>
@@ -4616,7 +4686,7 @@ Dynamická šířka</translation>
 <context>
     <name>UBShapeOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-461"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-477"/>
         <source>Rectangle</source>
         <translation>Obdélník</translation>
     </message>
@@ -4682,7 +4752,17 @@ Dynamická šířka</translation>
         <translation>Konec čáry</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location line="+4"/>
+        <source>Tapered</source>
+        <translation>Zužující se</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>The line grows from its start to the tip of the arrow.</source>
+        <translation>Čára se rozšiřuje od začátku až ke hrotu šipky.</translation>
+    </message>
+    <message>
+        <location line="+6"/>
         <source>Opacity</source>
         <translation>Průhlednost</translation>
     </message>
@@ -4960,7 +5040,7 @@ Dynamická šířka</translation>
 <context>
     <name>UBStampOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+187"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+199"/>
         <source>Stamp</source>
         <translation>Razítko</translation>
     </message>
@@ -5088,7 +5168,7 @@ Dynamická šířka</translation>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-544"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-581"/>
         <source>Color</source>
         <translation>Barva</translation>
     </message>
@@ -5308,7 +5388,7 @@ Znovu spusťte aplikaci, abyste mohli pracovat s aktualizovanými dokumenty.</tr
 <context>
     <name>UBZLayerController</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsScene.cpp" line="-848"/>
+        <location filename="../../src/domain/UBGraphicsScene.cpp" line="-856"/>
         <source>Bottom layer limit reached</source>
         <translation type="unfinished"></translation>
     </message>

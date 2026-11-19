@@ -194,17 +194,15 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Ctrl+T</translation>
     </message>
     <message>
-        <location line="+12"/>
         <source>Backgrounds</source>
-        <translation>Fundaluri</translation>
+        <translation type="vanished">Fundaluri</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Change Background</source>
-        <translation>Schimbare fundal</translation>
+        <translation type="vanished">Schimbare fundal</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+29"/>
         <source>Undo</source>
         <translation>Anulare</translation>
     </message>
@@ -1268,7 +1266,17 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-1598"/>
+        <location line="-1695"/>
+        <source>Template style</source>
+        <translation>Stil șablon</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Change the template style of the page</source>
+        <translation>Schimbă stilul șablonului paginii</translation>
+    </message>
+    <message>
+        <location line="+94"/>
         <source>Documents Mode</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1410,12 +1418,14 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>QObject</name>
     <message>
+        <location filename="../../plugins/cffadaptor/src/UBCFFAdaptor.cpp" line="+1181"/>
         <source>Element ID = </source>
-        <translation type="vanished">ID element =</translation>
+        <translation>ID element =</translation>
     </message>
     <message>
+        <location line="+2"/>
         <source>Content is not supported in destination format.</source>
-        <translation type="vanished">Conținutul nu este suportat în formatul de destinație.</translation>
+        <translation>Conținutul nu este suportat în formatul de destinație.</translation>
     </message>
     <message>
         <source>Remove Page</source>
@@ -1566,7 +1576,12 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBackgroundPalette</name>
     <message>
-        <location filename="../../src/gui/UBBackgroundPalette.cpp" line="+49"/>
+        <location filename="../../src/gui/UBBackgroundPalette.cpp" line="+57"/>
+        <source>Page color</source>
+        <translation>Culoarea foii</translation>
+    </message>
+    <message>
+        <location line="+19"/>
         <source>Grid size</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1599,7 +1614,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Tip de conţinut necunoscut %1</translation>
     </message>
     <message>
-        <location line="+1154"/>
+        <location line="+1176"/>
         <source>Add Item</source>
         <translation>Adăugare articol</translation>
     </message>
@@ -1609,20 +1624,20 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Tot ce se suportă (%1)</translation>
     </message>
     <message>
-        <location line="-1903"/>
+        <location line="-1925"/>
         <source>Page %1 deleted</source>
         <translation>Pagina %1 ștearsă</translation>
     </message>
     <message>
         <location line="+506"/>
         <location line="+45"/>
-        <location line="+942"/>
+        <location line="+964"/>
         <location line="+36"/>
         <source>Add file operation failed: file copying error</source>
         <translation>Operațiunea de adăugare fișier nu a reușit: eroare copiere fișier</translation>
     </message>
     <message>
-        <location line="-2352"/>
+        <location line="-2374"/>
         <source>Group</source>
         <translation>Grupare</translation>
     </message>
@@ -1815,7 +1830,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+956"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1017"/>
         <source>Quick note</source>
         <translation>Notă rapidă</translation>
     </message>
@@ -1886,7 +1901,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBDesktopPalette</name>
     <message>
-        <location filename="../../src/desktop/UBDesktopPalette.cpp" line="+74"/>
+        <location filename="../../src/desktop/UBDesktopPalette.cpp" line="+88"/>
         <source>Save a screenshot</source>
         <translation>Salvează o captură de ecran</translation>
     </message>
@@ -1896,7 +1911,17 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Salvează o captură de ecran cu adnotările în dosarul Imagini</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+4"/>
+        <source>Erase all</source>
+        <translation>Șterge tot</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Erase everything drawn on the screen</source>
+        <translation>Șterge tot ce este desenat pe ecran</translation>
+    </message>
+    <message>
+        <location line="+8"/>
         <source>Capture Part of the Screen</source>
         <translation>Capturare parte de ecran</translation>
     </message>
@@ -1906,12 +1931,12 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Capturare ecran</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+26"/>
         <source>Show the stylus palette</source>
         <translation>Afişare paletă stilou</translation>
     </message>
     <message>
-        <location line="+55"/>
+        <location line="+337"/>
         <source>Show Board on Secondary Screen</source>
         <translation>Afişare tablă pe ecran secundar</translation>
     </message>
@@ -1921,7 +1946,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Afişare desktop pe ecran secundar</translation>
     </message>
     <message>
-        <location line="-95"/>
+        <location line="-387"/>
         <source>Show LibertyBoard</source>
         <translation>Afișează LibertyBoard</translation>
     </message>
@@ -2244,16 +2269,8 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBDocumentNavigator</name>
     <message>
-        <location filename="../../src/gui/UBDocumentNavigator.cpp" line="+139"/>
-        <source>Generating thumbnails for board (%1/%2)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+33"/>
-        <location line="+89"/>
-        <location line="+11"/>
         <source>Page %0</source>
-        <translation>Pagina %0</translation>
+        <translation type="vanished">Pagina %0</translation>
     </message>
 </context>
 <context>
@@ -2387,19 +2404,16 @@ Providing a new name will create a new document.</source>
 <context>
     <name>UBDocumentTreeWidget</name>
     <message>
-        <location filename="../../src/gui/UBDocumentTreeWidget.cpp" line="+87"/>
         <source>%1 (copy)</source>
-        <translation>%1 (copie)</translation>
+        <translation type="vanished">%1 (copie)</translation>
     </message>
     <message>
-        <location line="+183"/>
         <source>Copying page %1/%2</source>
-        <translation>Se copiază pagina %1/%2</translation>
+        <translation type="vanished">Se copiază pagina %1/%2</translation>
     </message>
     <message numerus="yes">
-        <location line="+41"/>
         <source>%1 pages copied</source>
-        <translation type="unfinished">
+        <translation type="obsolete">
             <numerusform>%1 pagini copiate</numerusform>
             <numerusform></numerusform>
         </translation>
@@ -2501,7 +2515,7 @@ Do you want to continue?</source>
 <context>
     <name>UBEraserOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-710"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-747"/>
         <source>Eraser</source>
         <translation>Gumă</translation>
     </message>
@@ -3067,7 +3081,7 @@ O descărcați și o instalați acum? LibertyBoard vă salvează documentele, se
 <context>
     <name>UBGraphicsScene</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsScene.cpp" line="+1038"/>
+        <location filename="../../src/domain/UBGraphicsScene.cpp" line="+1046"/>
         <location line="+11"/>
         <source>Attach a file</source>
         <translation>Atașați un fișier</translation>
@@ -3285,7 +3299,7 @@ O descărcați și o instalați acum? LibertyBoard vă salvează documentele, se
 <context>
     <name>UBLaserOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+93"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+102"/>
         <source>Laser pointer</source>
         <translation>Indicator laser</translation>
     </message>
@@ -3310,7 +3324,17 @@ O descărcați și o instalați acum? LibertyBoard vă salvează documentele, se
         <translation>Culoare</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+5"/>
+        <source>Rainbow</source>
+        <translation>Curcubeu</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>The trail takes the colors of the rainbow, one after the other.</source>
+        <translation>Urma ia culorile curcubeului, una după alta.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
         <source>Standard</source>
         <translation>Standard</translation>
     </message>
@@ -3609,7 +3633,7 @@ O descărcați și o instalați acum? LibertyBoard vă salvează documentele, se
 <context>
     <name>UBMarkerOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-85"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-101"/>
         <source>Marker</source>
         <translation>Marker</translation>
     </message>
@@ -3617,6 +3641,21 @@ O descărcați și o instalați acum? LibertyBoard vă salvează documentele, se
         <location line="+10"/>
         <source> pt</source>
         <translation> pt</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Round tip</source>
+        <translation>Vârf rotund</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Straight tip</source>
+        <translation>Vârf drept</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Round: the stroke has round ends. Straight: like a highlighter, wide across the lines of text, with straight ends.</source>
+        <translation>Rotund: linia are capete rotunde. Drept: ca un marker, lată peste rândurile de text, cu capete drepte.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -3718,7 +3757,7 @@ Doriţi să ignoraţi aceste erori pentru acest host?</translation>
 <context>
     <name>UBNoteOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+666"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+698"/>
         <source>Note</source>
         <translation>Notă</translation>
     </message>
@@ -3807,7 +3846,12 @@ Se poate face și mai târziu cu Acasă &gt; Recunoaște textul.</translation>
         <translation type="vanished">Șterge pagina afișată</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBPageButtons.cpp" line="+53"/>
+        <location filename="../../src/gui/UBPageButtons.cpp" line="+52"/>
+        <source>Add page</source>
+        <translation>Adaugă pagină</translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>Delete page</source>
         <translation>Șterge pagina</translation>
     </message>
@@ -4014,7 +4058,7 @@ Se poate face și mai târziu cu Acasă &gt; Recunoaște textul.</translation>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-806"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-843"/>
         <source>Pen</source>
         <translation>Stilou</translation>
     </message>
@@ -4221,7 +4265,7 @@ Lățime dinamică</translation>
 <context>
     <name>UBPreferencesController</name>
     <message>
-        <location filename="../../src/core/UBPreferencesController.cpp" line="+132"/>
+        <location filename="../../src/core/UBPreferencesController.cpp" line="+137"/>
         <source>Language</source>
         <translation>Limbă</translation>
     </message>
@@ -4246,7 +4290,33 @@ Lățime dinamică</translation>
         <translation>Presiunea stiloului</translation>
     </message>
     <message>
-        <location line="+67"/>
+        <location line="+24"/>
+        <source>Border in desktop mode</source>
+        <translation>Chenar în modul desktop</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Show a colored border around the screen</source>
+        <translation>Afișează un chenar colorat în jurul ecranului</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <location line="+35"/>
+        <source>Color of the border</source>
+        <translation>Culoarea chenarului</translation>
+    </message>
+    <message>
+        <location line="-27"/>
+        <source>Width</source>
+        <translation>Grosime</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source> px</source>
+        <translation> px</translation>
+    </message>
+    <message>
+        <location line="+88"/>
         <source>version: </source>
         <translation>versiune:</translation>
     </message>
@@ -4565,7 +4635,7 @@ Lățime dinamică</translation>
 <context>
     <name>UBSelectorOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+668"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+705"/>
         <source>Select</source>
         <translation>Selectează</translation>
     </message>
@@ -4603,7 +4673,7 @@ Lățime dinamică</translation>
 <context>
     <name>UBSettings</name>
     <message>
-        <location filename="../../src/core/UBSettings.cpp" line="+1125"/>
+        <location filename="../../src/core/UBSettings.cpp" line="+1133"/>
         <source>My Movies</source>
         <translation>Filmele mele</translation>
     </message>
@@ -4611,7 +4681,7 @@ Lățime dinamică</translation>
 <context>
     <name>UBShapeOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-461"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-477"/>
         <source>Rectangle</source>
         <translation>Dreptunghi</translation>
     </message>
@@ -4677,7 +4747,17 @@ Lățime dinamică</translation>
         <translation>Sfârșitul liniei</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location line="+4"/>
+        <source>Tapered</source>
+        <translation>Conică</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>The line grows from its start to the tip of the arrow.</source>
+        <translation>Linia se lățește de la început până la vârful săgeții.</translation>
+    </message>
+    <message>
+        <location line="+6"/>
         <source>Opacity</source>
         <translation>Opacitate</translation>
     </message>
@@ -4955,7 +5035,7 @@ Lățime dinamică</translation>
 <context>
     <name>UBStampOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+187"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+199"/>
         <source>Stamp</source>
         <translation>Ștampilă</translation>
     </message>
@@ -5083,7 +5163,7 @@ Lățime dinamică</translation>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-544"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-581"/>
         <source>Color</source>
         <translation>Culoare</translation>
     </message>
@@ -5303,7 +5383,7 @@ Vă rugăm să reporniţi aplicaţia pentru a accesa documentele actualizate.</t
 <context>
     <name>UBZLayerController</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsScene.cpp" line="-848"/>
+        <location filename="../../src/domain/UBGraphicsScene.cpp" line="-856"/>
         <source>Bottom layer limit reached</source>
         <translation type="unfinished"></translation>
     </message>

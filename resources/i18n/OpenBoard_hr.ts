@@ -239,17 +239,15 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Ctrl+T</translation>
     </message>
     <message>
-        <location line="+12"/>
         <source>Backgrounds</source>
-        <translation>Pozadine</translation>
+        <translation type="vanished">Pozadine</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Change Background</source>
-        <translation>Promijeni pozadinu</translation>
+        <translation type="vanished">Promijeni pozadinu</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+29"/>
         <source>Undo</source>
         <translation>Poništi</translation>
     </message>
@@ -1298,7 +1296,17 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Snimi web sadržaj</translation>
     </message>
     <message>
-        <location line="-1598"/>
+        <location line="-1695"/>
+        <source>Template style</source>
+        <translation>Stil predloška</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Change the template style of the page</source>
+        <translation>Mijenja stil predloška stranice</translation>
+    </message>
+    <message>
+        <location line="+94"/>
         <source>Documents Mode</source>
         <translation type="unfinished">Modus „Dokumenti”</translation>
     </message>
@@ -1463,12 +1471,14 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>QObject</name>
     <message>
+        <location filename="../../plugins/cffadaptor/src/UBCFFAdaptor.cpp" line="+1181"/>
         <source>Element ID = </source>
-        <translation type="vanished">Element ID = </translation>
+        <translation>Element ID = </translation>
     </message>
     <message>
+        <location line="+2"/>
         <source>Content is not supported in destination format.</source>
-        <translation type="vanished">Sadržaj nije podržan u ciljanom formatu.</translation>
+        <translation>Sadržaj nije podržan u ciljanom formatu.</translation>
     </message>
     <message>
         <source>Remove Page</source>
@@ -1619,7 +1629,12 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBackgroundPalette</name>
     <message>
-        <location filename="../../src/gui/UBBackgroundPalette.cpp" line="+49"/>
+        <location filename="../../src/gui/UBBackgroundPalette.cpp" line="+57"/>
+        <source>Page color</source>
+        <translation>Boja lista</translation>
+    </message>
+    <message>
+        <location line="+19"/>
         <source>Grid size</source>
         <translation>Veličina mreže</translation>
     </message>
@@ -1674,13 +1689,13 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="+131"/>
         <location line="+45"/>
-        <location line="+942"/>
+        <location line="+964"/>
         <location line="+36"/>
         <source>Add file operation failed: file copying error</source>
         <translation>Postupak dodavanja datoteke neuspio: greška tijekom kopiranja datoteke</translation>
     </message>
     <message>
-        <location line="-827"/>
+        <location line="-849"/>
         <source>Unknown tool type %1</source>
         <translation>Nepoznata vrsta alata %1</translation>
     </message>
@@ -1690,7 +1705,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Nepoznata vrsta sadržaja %1</translation>
     </message>
     <message>
-        <location line="+1154"/>
+        <location line="+1176"/>
         <source>Add Item</source>
         <translation>Dodaj element</translation>
     </message>
@@ -1700,7 +1715,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Sve podržane (%1)</translation>
     </message>
     <message>
-        <location line="-2470"/>
+        <location line="-2492"/>
         <source>Color</source>
         <translation>Boja</translation>
     </message>
@@ -1875,7 +1890,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+956"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1017"/>
         <source>Quick note</source>
         <translation>Brza bilješka</translation>
     </message>
@@ -1946,7 +1961,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBDesktopPalette</name>
     <message>
-        <location filename="../../src/desktop/UBDesktopPalette.cpp" line="+69"/>
+        <location filename="../../src/desktop/UBDesktopPalette.cpp" line="+83"/>
         <source>Show LibertyBoard</source>
         <translation>Prikaži LibertyBoard</translation>
     </message>
@@ -1961,7 +1976,17 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Spremi snimku zaslona s bilješkama u mapu Slike</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+4"/>
+        <source>Erase all</source>
+        <translation>Izbriši sve</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Erase everything drawn on the screen</source>
+        <translation>Briše sve što je nacrtano na zaslonu</translation>
+    </message>
+    <message>
+        <location line="+8"/>
         <source>Capture Part of the Screen</source>
         <translation>Snimi dio ekrana</translation>
     </message>
@@ -1971,12 +1996,12 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Snimi ekran</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+26"/>
         <source>Show the stylus palette</source>
         <translation>Prikaži paletu alata</translation>
     </message>
     <message>
-        <location line="+55"/>
+        <location line="+337"/>
         <source>Show Board on Secondary Screen</source>
         <translation>Prikaži ploču na sekundarnom ekranu</translation>
     </message>
@@ -2325,16 +2350,12 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBDocumentNavigator</name>
     <message>
-        <location filename="../../src/gui/UBDocumentNavigator.cpp" line="+172"/>
-        <location line="+89"/>
-        <location line="+11"/>
         <source>Page %0</source>
-        <translation>Stranica %1</translation>
+        <translation type="vanished">Stranica %1</translation>
     </message>
     <message>
-        <location line="-133"/>
         <source>Generating thumbnails for board (%1/%2)</source>
-        <translation>Generiranje minijatura za ploču (%1/%2)</translation>
+        <translation type="vanished">Generiranje minijatura za ploču (%1/%2)</translation>
     </message>
 </context>
 <context>
@@ -2480,23 +2501,12 @@ Davanjem novog imena stvorit će se novi dokument.</translation>
 <context>
     <name>UBDocumentTreeWidget</name>
     <message>
-        <location filename="../../src/gui/UBDocumentTreeWidget.cpp" line="+87"/>
         <source>%1 (copy)</source>
-        <translation>%1 (kopija)</translation>
+        <translation type="vanished">%1 (kopija)</translation>
     </message>
     <message>
-        <location line="+183"/>
         <source>Copying page %1/%2</source>
-        <translation>Kopiranje stranice %1/%2</translation>
-    </message>
-    <message numerus="yes">
-        <location line="+41"/>
-        <source>%1 pages copied</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-        </translation>
+        <translation type="vanished">Kopiranje stranice %1/%2</translation>
     </message>
 </context>
 <context>
@@ -2588,7 +2598,7 @@ Do you want to continue?</source>
 <context>
     <name>UBEraserOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-710"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-747"/>
         <source>Eraser</source>
         <translation>Gumica</translation>
     </message>
@@ -3158,7 +3168,7 @@ Preuzeti i instalirati sada? LibertyBoard sprema tvoje dokumente, zatvara se i p
 <context>
     <name>UBGraphicsScene</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsScene.cpp" line="+1038"/>
+        <location filename="../../src/domain/UBGraphicsScene.cpp" line="+1046"/>
         <location line="+11"/>
         <source>Attach a file</source>
         <translation>Priloži datoteku</translation>
@@ -3376,7 +3386,7 @@ Preuzeti i instalirati sada? LibertyBoard sprema tvoje dokumente, zatvara se i p
 <context>
     <name>UBLaserOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+93"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+102"/>
         <source>Laser pointer</source>
         <translation>Laserski pokazivač</translation>
     </message>
@@ -3401,7 +3411,17 @@ Preuzeti i instalirati sada? LibertyBoard sprema tvoje dokumente, zatvara se i p
         <translation>Boja</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+5"/>
+        <source>Rainbow</source>
+        <translation>Duga</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>The trail takes the colors of the rainbow, one after the other.</source>
+        <translation>Trag poprima boje duge, jednu za drugom.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
         <source>Standard</source>
         <translation>Standardno</translation>
     </message>
@@ -3700,7 +3720,7 @@ Preuzeti i instalirati sada? LibertyBoard sprema tvoje dokumente, zatvara se i p
 <context>
     <name>UBMarkerOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-85"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-101"/>
         <source>Marker</source>
         <translation>Marker</translation>
     </message>
@@ -3708,6 +3728,21 @@ Preuzeti i instalirati sada? LibertyBoard sprema tvoje dokumente, zatvara se i p
         <location line="+10"/>
         <source> pt</source>
         <translation> pt</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Round tip</source>
+        <translation>Okrugli vrh</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Straight tip</source>
+        <translation>Kosi vrh</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Round: the stroke has round ends. Straight: like a highlighter, wide across the lines of text, with straight ends.</source>
+        <translation>Okrugli: potez ima okrugle krajeve. Kosi: kao marker, širok preko redaka teksta, s ravnim krajevima.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -3809,7 +3844,7 @@ Do you want to ignore these errors for this host?</source>
 <context>
     <name>UBNoteOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+666"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+698"/>
         <source>Note</source>
         <translation>Bilješka</translation>
     </message>
@@ -3918,7 +3953,12 @@ To se može učiniti i kasnije putem Početna &gt; Prepoznaj tekst.</translation
         <translation type="vanished">Izbriši prikazanu stranicu</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBPageButtons.cpp" line="+53"/>
+        <location filename="../../src/gui/UBPageButtons.cpp" line="+52"/>
+        <source>Add page</source>
+        <translation>Dodaj stranicu</translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>Delete page</source>
         <translation>Izbriši stranicu</translation>
     </message>
@@ -4125,7 +4165,7 @@ To se može učiniti i kasnije putem Početna &gt; Prepoznaj tekst.</translation
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-806"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-843"/>
         <source>Pen</source>
         <translation>Pisaljka</translation>
     </message>
@@ -4332,7 +4372,7 @@ Dinamična širina</translation>
 <context>
     <name>UBPreferencesController</name>
     <message>
-        <location filename="../../src/core/UBPreferencesController.cpp" line="+132"/>
+        <location filename="../../src/core/UBPreferencesController.cpp" line="+137"/>
         <source>Language</source>
         <translation>Jezik</translation>
     </message>
@@ -4357,7 +4397,33 @@ Dinamična širina</translation>
         <translation>Pritisak olovke</translation>
     </message>
     <message>
-        <location line="+67"/>
+        <location line="+24"/>
+        <source>Border in desktop mode</source>
+        <translation>Okvir u načinu radne površine</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Show a colored border around the screen</source>
+        <translation>Prikaži obojeni okvir oko zaslona</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <location line="+35"/>
+        <source>Color of the border</source>
+        <translation>Boja okvira</translation>
+    </message>
+    <message>
+        <location line="-27"/>
+        <source>Width</source>
+        <translation>Debljina</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source> px</source>
+        <translation> px</translation>
+    </message>
+    <message>
+        <location line="+88"/>
         <source>version: </source>
         <translation>verzija: </translation>
     </message>
@@ -4676,7 +4742,7 @@ Dinamična širina</translation>
 <context>
     <name>UBSelectorOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+668"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+705"/>
         <source>Select</source>
         <translation>Odaberi</translation>
     </message>
@@ -4714,7 +4780,7 @@ Dinamična širina</translation>
 <context>
     <name>UBSettings</name>
     <message>
-        <location filename="../../src/core/UBSettings.cpp" line="+1125"/>
+        <location filename="../../src/core/UBSettings.cpp" line="+1133"/>
         <source>My Movies</source>
         <translation>Moji filmovi</translation>
     </message>
@@ -4722,7 +4788,7 @@ Dinamična širina</translation>
 <context>
     <name>UBShapeOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-461"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-477"/>
         <source>Rectangle</source>
         <translation>Pravokutnik</translation>
     </message>
@@ -4788,7 +4854,17 @@ Dinamična širina</translation>
         <translation>Kraj linije</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location line="+4"/>
+        <source>Tapered</source>
+        <translation>Suženo</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>The line grows from its start to the tip of the arrow.</source>
+        <translation>Linija se širi od početka do vrha strelice.</translation>
+    </message>
+    <message>
+        <location line="+6"/>
         <source>Opacity</source>
         <translation>Neprozirnost</translation>
     </message>
@@ -5066,7 +5142,7 @@ Dinamična širina</translation>
 <context>
     <name>UBStampOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+187"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+199"/>
         <source>Stamp</source>
         <translation>Pečat</translation>
     </message>
@@ -5198,7 +5274,7 @@ Dinamična širina</translation>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-544"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-581"/>
         <source>Color</source>
         <translation>Boja</translation>
     </message>
@@ -5443,7 +5519,7 @@ Za pristup aktualiziranim dokumentima ponovo pokreni program.</translation>
 <context>
     <name>UBZLayerController</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsScene.cpp" line="-848"/>
+        <location filename="../../src/domain/UBGraphicsScene.cpp" line="-856"/>
         <source>Bottom layer limit reached</source>
         <translation type="unfinished"></translation>
     </message>
