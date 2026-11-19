@@ -34,6 +34,8 @@
 #include "UBExportAdaptor.h"
 #include "UBExportPDF.h"
 
+#include "pdf/UBPdfAnnotations.h"
+
 class UBDocumentProxy;
 
 class UBExportFullPDF : public UBExportAdaptor
@@ -58,6 +60,9 @@ class UBExportFullPDF : public UBExportAdaptor
         void setPages(const QList<int>& pages);
 
     protected:
+        /** @brief The quick notes and the files of the pages written, with their places. */
+        QList<UBPdfAnnotations::Mark> pageMarks(std::shared_ptr<UBDocumentProxy> pDocumentProxy) const;
+
         void saveOverlayPdf(std::shared_ptr<UBDocumentProxy> pDocumentProxy, const QString& filename);
 
     private:

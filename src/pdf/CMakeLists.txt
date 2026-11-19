@@ -3,6 +3,8 @@ target_sources(${PROJECT_NAME} PRIVATE
     GraphicsPDFItem.h
     PDFRenderer.cpp
     PDFRenderer.h
+    UBPdfAnnotations.cpp
+    UBPdfAnnotations.h
     UBPdfNavigation.cpp
     UBPdfNavigation.h
     UBPdfTextSearch.cpp

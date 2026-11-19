@@ -75,6 +75,13 @@ void UBGraphicsPageMarkItem::paint(QPainter* painter, const QStyleOptionGraphics
     // keeps its size relative to the page, as it looks on the board.
     UBGraphicsScene* scene = boardScene();
 
+    // A PDF gets the mark as an annotation of its own, which its readers show.
+    if (scene && scene->renderingContext() == UBGraphicsScene::PdfExport)
+    {
+        painter->restore();
+        return;
+    }
+
     if (scene && scene->renderingContext() != UBGraphicsScene::Screen && painter->device())
     {
         const qreal factor = painter->device()->width() / 600.0;

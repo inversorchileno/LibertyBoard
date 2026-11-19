@@ -53,6 +53,10 @@
 #include "UBExportPDF.h"
 
 #include <Merger.h>
+
+#include "domain/UBGraphicsAttachmentItem.h"
+#include "domain/UBGraphicsCommentItem.h"
+#include "domain/UBGraphicsSoundItem.h"
 #include <Exception.h>
 #include <Transformation.h>
 
@@ -91,6 +95,54 @@ static QSizeF turnedPageSize(const UBGraphicsPDFItem* pdfItem)
 {
     QSizeF size = pdfItem->pageSize();
     return quarterTurns(pdfItem) % 180 == 0 ? size : size.transposed();
+}
+
+QList<UBPdfAnnotations::Mark> UBExportFullPDF::pageMarks(std::shared_ptr<UBDocumentProxy> pDocumentProxy) const
+{
+    QList<UBPdfAnnotations::Mark> marks;
+    const QList<int> pages = mSimpleExporter->pagesToExport(pDocumentProxy);
+
+    for (int written = 0; written < pages.size(); ++written)
+    {
+        std::shared_ptr<UBGraphicsScene> scene = UBPersistenceManager::persistenceManager()->loadDocumentScene(pDocumentProxy, pages.at(written));
+
+        if (!scene)
+        {
+            continue;
+        }
+
+        const QRectF page = scene->normalizedSceneRect();
+
+        for (QGraphicsItem* item : scene->items())
+        {
+            UBPdfAnnotations::Mark mark;
+            mark.page = written + 1;
+            mark.place = QPointF((item->scenePos().x() - page.left()) / page.width(),
+                                 (item->scenePos().y() - page.top()) / page.height());
+
+            if (auto comment = qgraphicsitem_cast<UBGraphicsCommentItem*>(item))
+            {
+                mark.text = comment->text();
+                mark.date = comment->date();
+            }
+            else if (auto attachment = qgraphicsitem_cast<UBGraphicsAttachmentItem*>(item))
+            {
+                mark.file = pDocumentProxy->persistencePath() + "/" + attachment->file();
+            }
+            else if (auto sound = qgraphicsitem_cast<UBGraphicsSoundItem*>(item))
+            {
+                mark.file = pDocumentProxy->persistencePath() + "/" + sound->file();
+            }
+            else
+            {
+                continue;
+            }
+
+            marks << mark;
+        }
+    }
+
+    return marks;
 }
 
 void UBExportFullPDF::setPages(const QList<int>& pages)
@@ -368,6 +420,12 @@ bool UBExportFullPDF::persistsDocument(std::shared_ptr<UBDocumentProxy> pDocumen
         }
     }
 
+
+    // The quick notes and the files of the pages, as annotations other PDF readers show.
+    if (!UBPdfAnnotations::write(filename, pageMarks(pDocumentProxy)))
+    {
+        qWarning() << "The quick notes and the files could not be written into" << filename;
+    }
     return true;
 }
 
