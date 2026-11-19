@@ -207,6 +207,20 @@ private:
     QGridLayout* mGallery{nullptr};
 };
 
+/** @brief The selector: a rectangle or a lasso, the other one offered by a button. */
+class UBSelectorOptionsPanel : public UBToolOptionsPanel
+{
+    Q_OBJECT
+
+public:
+    explicit UBSelectorOptionsPanel(QWidget* parent = nullptr);
+    void refresh() override;
+
+private:
+    QToolButton* mSwitch{nullptr};
+    QLabel* mHint{nullptr};
+};
+
 /** @brief The quick notes of the document: previous, next, list, show or hide, merge. */
 class UBCommentOptionsPanel : public UBToolOptionsPanel
 {

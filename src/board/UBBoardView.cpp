@@ -1332,20 +1332,49 @@ void UBBoardView::mouseMoveEvent (QMouseEvent *event)
                 && (mMouseButtonIsPressed || mTabletStylusIsPressed)
                 && !getMovingItem();
 
+        const bool lasso = rubberMove && currentTool == UBStylusTool::Selector
+                && UBDrawingController::drawingController()->isLassoSelection();
+
         if (rubberMove) {
             QRect bandRect(mMouseDownPos, event->pos());
 
             bandRect = bandRect.normalized();
+            QPainterPath lassoPath;
 
-            if (!mUBRubberBand) {
-                mUBRubberBand = new UBRubberBand(QRubberBand::Rectangle, this);
+            if (lasso) {
+                // A free line from where the press was, closed back to it.
+                if (mLassoPoints.isEmpty()) {
+                    mLassoPoints << mMouseDownPos;
+                }
+
+                mLassoPoints << event->pos();
+                lassoPath.addPolygon(QPolygonF(mLassoPoints));
+                lassoPath.closeSubpath();
+
+                if (!mLassoItem) {
+                    mLassoItem = new QGraphicsPathItem;
+                    QPen pen(QColor(61, 90, 128), 0, Qt::DashLine);
+                    pen.setCosmetic(true);
+                    pen.setWidth(2);
+                    mLassoItem->setPen(pen);
+                    mLassoItem->setBrush(QColor(61, 90, 128, 30));
+                    mLassoItem->setZValue(1e9);
+                    mLassoItem->setAcceptedMouseButtons(Qt::NoButton);
+                    scene()->addItem(mLassoItem);
+                }
+
+                mLassoItem->setPath(mapToScene(lassoPath));
+            } else {
+                if (!mUBRubberBand) {
+                    mUBRubberBand = new UBRubberBand(QRubberBand::Rectangle, this);
+                }
+                mUBRubberBand->setGeometry(bandRect);
+                mUBRubberBand->show();
             }
-            mUBRubberBand->setGeometry(bandRect);
-            mUBRubberBand->show();
 
             //          QTime startTime = QTime::currentTime();
             //          QTime testTime = QTime::currentTime();
-            QList<QGraphicsItem *> rubberItems = items(bandRect);
+            QList<QGraphicsItem *> rubberItems = lasso ? items(lassoPath) : items(bandRect);
             //          qDebug() << "==================";
             //          qDebug() << "| ====rubber items" << testTime.msecsTo(QTime::currentTime());
             //          testTime = QTime::currentTime();
@@ -1360,7 +1389,7 @@ void UBBoardView::mouseMoveEvent (QMouseEvent *event)
 
             int counter = 0;
             if (currentTool == UBStylusTool::Selector) {
-                foreach (QGraphicsItem *item, items(bandRect)) {
+                foreach (QGraphicsItem *item, rubberItems) {
 
                     if(item->type() == UBGraphicsItemType::PolygonItemType && item->parentItem())
                         item = item->parentItem();
@@ -1692,6 +1721,7 @@ void UBBoardView::mouseReleaseEvent (QMouseEvent *event)
     }
 
     mSelectorOnNothing = false;
+    removeLasso();
 
     if (mUBRubberBand) {
         mUBRubberBand->hide();
@@ -1802,6 +1832,22 @@ bool UBBoardView::turnPageWithWheel(QWheelEvent* wheelEvent)
     switchToNeighbourPage();
     UBApplication::applicationController->adjustDisplayView();
     return true;
+}
+
+void UBBoardView::removeLasso()
+{
+    if (mLassoItem)
+    {
+        if (mLassoItem->scene())
+        {
+            mLassoItem->scene()->removeItem(mLassoItem);
+        }
+
+        delete mLassoItem;
+        mLassoItem = nullptr;
+    }
+
+    mLassoPoints.clear();
 }
 
 bool UBBoardView::pdfPointAt(const QPoint& viewPoint, UBGraphicsPDFItem** item, QPointF* onPage)

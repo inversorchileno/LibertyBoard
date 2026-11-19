@@ -107,6 +107,8 @@ UBToolOptionsPanel* UBToolOptionsPanel::create(int tool, QWidget* parent)
             return new UBStampOptionsPanel(parent);
         case UBStylusTool::Comment:
             return new UBCommentOptionsPanel(parent);
+        case UBStylusTool::Selector:
+            return new UBSelectorOptionsPanel(parent);
         default:
             return nullptr;
     }
@@ -892,6 +894,49 @@ QIcon UBStampOptionsPanel::iconFor(int index) const
     }
 
     return QIcon(QPixmap::fromImage(picture));
+}
+
+UBSelectorOptionsPanel::UBSelectorOptionsPanel(QWidget* parent)
+    : UBToolOptionsPanel(tr("Select"), parent)
+{
+    mSwitch = new QToolButton(this);
+    mSwitch->setIconSize(QSize(26, 26));
+    mSwitch->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+    mSwitch->setStyleSheet("QToolButton { color: #e8e8e8; background: #3a404b; border: 1px solid #4a5260; border-radius: 4px; padding: 3px 10px; }"
+                           "QToolButton:hover { background: #4a5260; }");
+    addRow(mSwitch);
+
+    mHint = new QLabel(this);
+    mHint->setStyleSheet("QLabel { color: #9aa3b2; }");
+    addRow(mHint);
+
+    connect(mSwitch, &QToolButton::clicked, this, []() {
+        UBDrawingController* drawing = UBDrawingController::drawingController();
+        drawing->setLassoSelection(!drawing->isLassoSelection());
+    });
+    connect(UBDrawingController::drawingController(), &UBDrawingController::lassoSelectionChanged,
+            this, &UBSelectorOptionsPanel::refresh);
+
+    refresh();
+}
+
+void UBSelectorOptionsPanel::refresh()
+{
+    // The button offers the other way of selecting.
+    if (UBDrawingController::drawingController()->isLassoSelection())
+    {
+        mSwitch->setIcon(QIcon(":/images/stylusPalette/arrow.png"));
+        mSwitch->setText(tr("Arrow"));
+        mSwitch->setToolTip(tr("Select with a rectangle again"));
+        mHint->setText(tr("Draw a line around what to select."));
+    }
+    else
+    {
+        mSwitch->setIcon(QIcon(":/images/toolbar/lasso.svg"));
+        mSwitch->setText(tr("Lasso"));
+        mSwitch->setToolTip(tr("Select by drawing a free line around the objects"));
+        mHint->setText(tr("Drag a rectangle, or over a PDF to copy its text."));
+    }
 }
 
 UBCommentOptionsPanel::UBCommentOptionsPanel(QWidget* parent)

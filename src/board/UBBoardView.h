@@ -43,6 +43,7 @@
 #include "pdf/UBPdfNavigation.h"
 
 class UBBoardController;
+class QGraphicsPathItem;
 class UBGraphicsPDFItem;
 class UBGraphicsScene;
 class UBGraphicsWidgetItem;
@@ -180,6 +181,9 @@ private:
         /** @brief The link of the PDF under a point of the view, or none. */
         std::optional<UBPdfNavigation::Link> pdfLinkAt(const QPoint& viewPoint);
 
+        /** @brief Takes away the line of the lasso once the selection is done. */
+        void removeLasso();
+
         /** @brief Goes to the page, or opens the address, of a link of the PDF. */
         void followPdfLink(const UBPdfNavigation::Link& link);
 
@@ -192,6 +196,8 @@ private:
         int mNeighbourRepaints{0};
         int mWheelTurn{0};
         bool mSelectorOnNothing{false};
+        QPolygon mLassoPoints;
+        QGraphicsPathItem* mLassoItem{nullptr};
         bool mOverPdfLink{false};
         QString mPdfLinksOf;
         QList<UBPdfNavigation::Link> mPdfLinks;

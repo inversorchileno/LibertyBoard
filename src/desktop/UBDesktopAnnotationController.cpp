@@ -515,7 +515,8 @@ void UBDesktopAnnotationController::toolButtonPressed()
     mPressTime = QTime::currentTime();
     mbArrowClicked = false;
 
-    if (!UBToolOptionsPopup::hasOptions(tool))
+    // The selector lets the clicks through on the desktop: its lasso is for the board.
+    if (!UBToolOptionsPopup::hasOptions(tool) || tool == UBStylusTool::Selector)
     {
         return;
     }
@@ -552,7 +553,7 @@ void UBDesktopAnnotationController::toolButtonReleased()
     const int tool = toolOf(action);
     const bool held = mPressTime.msecsTo(QTime::currentTime()) > PROPERTY_PALETTE_TIMER - 100;
 
-    if (UBToolOptionsPopup::hasOptions(tool) && (mbArrowClicked || held))
+    if (UBToolOptionsPopup::hasOptions(tool) && tool != UBStylusTool::Selector && (mbArrowClicked || held))
     {
         showToolOptions(action);
     }

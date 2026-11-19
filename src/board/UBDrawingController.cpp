@@ -491,3 +491,18 @@ void UBDrawingController::captureToolSelected(bool checked)
         setStylusTool(UBStylusTool::Capture);
 }
 
+static const QString sLassoKey = QStringLiteral("Board/LibertyBoardLassoSelection");
+
+bool UBDrawingController::isLassoSelection() const
+{
+    return UBSettings::settings()->value(sLassoKey, false).toBool();
+}
+
+void UBDrawingController::setLassoSelection(bool lasso)
+{
+    if (lasso != isLassoSelection())
+    {
+        UBSettings::settings()->setValue(sLassoKey, lasso);
+        emit lassoSelectionChanged(lasso);
+    }
+}

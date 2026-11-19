@@ -76,6 +76,10 @@ class UBDrawingController : public QObject
             return mIsDesktopMode;
         }
 
+        /** @brief True when the selector draws a free line around what it selects (lasso), not a rectangle. */
+        bool isLassoSelection() const;
+        void setLassoSelection(bool lasso);
+
     public slots:
 
         void setStylusTool(int tool);
@@ -86,6 +90,7 @@ class UBDrawingController : public QObject
     signals:
         void stylusToolChanged(int tool, int previousTool = -1);
         void colorPaletteChanged();
+        void lassoSelectionChanged(bool lasso);
 
         void lineWidthIndexChanged(int index);
         void colorIndexChanged(int index);

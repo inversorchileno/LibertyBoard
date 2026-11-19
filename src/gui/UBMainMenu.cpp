@@ -29,6 +29,7 @@
 #include <QLabel>
 #include <QMenu>
 #include <QMenuBar>
+#include <QPainter>
 #include <QLayout>
 #include <QToolBar>
 #include <QStandardPaths>
@@ -473,6 +474,43 @@ void UBMainMenu::showColorsOnTools()
 
     UBDrawingController* drawing = UBDrawingController::drawingController();
     connect(drawing, &UBDrawingController::colorPaletteChanged, this, updatePenAndMarker);
+
+    // The selector shows a lasso while it selects with one.
+    const QIcon arrowIcon = mMainWindow->actionSelector->icon();
+    QIcon lassoIcon;
+    {
+        const QSize size(84, 84);
+        QPixmap off(size);
+        off.fill(Qt::transparent);
+        QPixmap on(size);
+        on.fill(Qt::transparent);
+
+        {
+            QPainter painter(&on);
+            painter.setRenderHint(QPainter::Antialiasing);
+            // The light disc of the chosen tool, as on the arrow.
+            painter.setPen(QPen(QColor(150, 150, 150, 200), 2));
+            painter.setBrush(QColor(255, 255, 255, 215));
+            painter.drawEllipse(QRectF(3, 3, 78, 78));
+        }
+
+        for (QPixmap* pixmap : { &off, &on })
+        {
+            QPainter painter(pixmap);
+            painter.setRenderHint(QPainter::Antialiasing);
+            QIcon(":/images/toolbar/lasso.svg").paint(&painter, QRect(14, 14, 56, 56));
+        }
+
+        lassoIcon.addPixmap(off, QIcon::Normal, QIcon::Off);
+        lassoIcon.addPixmap(on, QIcon::Normal, QIcon::On);
+    }
+
+    auto updateSelector = [this, arrowIcon, lassoIcon](bool lasso) {
+        UBToolOptionsArrows::setIcon(mMainWindow->actionSelector, lasso ? lassoIcon : arrowIcon);
+    };
+
+    updateSelector(drawing->isLassoSelection());
+    connect(drawing, &UBDrawingController::lassoSelectionChanged, this, updateSelector);
     connect(drawing, &UBDrawingController::colorIndexChanged, this, updatePenAndMarker);
 }
 
