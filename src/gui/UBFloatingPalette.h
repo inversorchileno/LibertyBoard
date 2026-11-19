@@ -96,6 +96,9 @@ class UBFloatingPalette : public QWidget
 
         eMinimizedLocation minimizedLocation(){return mMinimizedLocation;}
 
+        /** @brief Minimizes the palette at this border, as if it had been pushed against it. */
+        void minimizeAt(eMinimizedLocation location);
+
     private:
         void removeAllAssociatedPalette();
         void minimizePalette(const QPoint& pos);

@@ -305,6 +305,13 @@ void UBFloatingPalette::minimizePalette(const QPoint& pos)
 
     if(mMinimizedLocation == eMinimizedLocation_None)
     {
+    //  A horizontal palette, at the top or the bottom, touches the sides
+    //  while it is moved along them: it is minimized only on request.
+    if (width() > height())
+    {
+        return;
+    }
+
     //  Verify if we have to minimize this palette
     if(pos.x() == 5)
     {
@@ -341,6 +348,17 @@ void UBFloatingPalette::minimizePalette(const QPoint& pos)
         emit maximizeStart();
     }
     }
+}
+
+void UBFloatingPalette::minimizeAt(eMinimizedLocation location)
+{
+    if (!mCanBeMinimized || location == eMinimizedLocation_None)
+    {
+        return;
+    }
+
+    mMinimizedLocation = location;
+    emit minimizeStart(location);
 }
 
 void UBFloatingPalette::setMinimizePermission(bool permission)

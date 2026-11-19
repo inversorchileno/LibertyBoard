@@ -51,8 +51,14 @@ class UBDesktopPalette : public UBActionPalette
         void appear();
         QPoint buttonPos(QAction* action);
 
-        /** @brief The edge of the screen the palette stands at, left or right. */
+        /**
+         * @brief The edge of the screen the palette stands at: left or right
+         * when it is vertical, top or bottom when it is horizontal.
+         */
         Qt::Edge screenEdge() const;
+
+        /** @brief Places the palette along the edge where it was last left. */
+        void placeAtSavedEdge();
 
         /** @brief The tools of the palette, in their order. */
         static QList<QAction*> toolActions();
@@ -62,6 +68,7 @@ class UBDesktopPalette : public UBActionPalette
         void customClick();
         void screenClick();
         void screenshotClick();
+        void clearClick();
 
 //#ifdef Q_OS_LINUX //TODO: check why this produces an error on linux if uncommented
         void refreshMask();
@@ -80,7 +87,9 @@ class UBDesktopPalette : public UBActionPalette
 protected:
         void showEvent(QShowEvent *event);
         void hideEvent(QHideEvent *event);
+        void mousePressEvent(QMouseEvent* event) override;
         void mouseReleaseEvent(QMouseEvent* event) override;
+        void paintEvent(QPaintEvent* event) override;
 
         virtual int getParentRightOffset();
 
@@ -91,6 +100,16 @@ private:
         QAction *mActionUniboard;
         QAction *mActionCustomSelect;
         QAction* mScreenshotAction{nullptr};
+        QAction* mClearAction{nullptr};
+        Qt::Orientation mOrientation{Qt::Vertical};
+        bool mMinimized{false};
+
+        QList<QAction*> fullActions() const;
+        void setOrientation(Qt::Orientation orientation);
+        void updateMargins(bool resizeToFit = true);
+        QRect minimizeTriangleArea() const;
+        void minimizeToEdge();
+        void snapToEdge(const QPoint& pointer);
 
         void updateOptionArrows();
         QAction* mActionTest;

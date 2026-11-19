@@ -29,6 +29,8 @@
 
 #include "UBDesktopPalette.h"
 
+#include <QBoxLayout>
+#include <QPainter>
 #include <QScreen>
 
 #include "gui/UBToolOptionsArrows.h"
@@ -46,6 +48,18 @@
 #include "gui/UBMainWindow.h"
 
 #include "core/memcheck.h"
+
+static const QString sHorizontalKey = QStringLiteral("Desktop/LibertyBoardPaletteHorizontal");
+static const QString sEdgeKey = QStringLiteral("Desktop/LibertyBoardPaletteEdge");
+
+// The strip along the outer side of the palette that holds the red triangle.
+static constexpr int sTriangleStrip = 12;
+
+// Dropped this close to a border of the screen, the palette lies along it.
+static constexpr int sSnapDistance = 120;
+
+// Distance kept from the border; at the margin itself the palette minimizes.
+static constexpr int sEdgeGap = 12;
 
 QList<QAction*> UBDesktopPalette::toolActions()
 {
@@ -75,6 +89,10 @@ UBDesktopPalette::UBDesktopPalette(QWidget *parent, UBRightPalette* _rightPalett
     mScreenshotAction->setToolTip(tr("Save a screenshot with the annotations in the Pictures folder"));
     connect(mScreenshotAction, &QAction::triggered, this, &UBDesktopPalette::screenshotClick);
 
+    // Erases everything drawn on the desktop in one click.
+    mClearAction = new QAction(QIcon(":/images/stylusPalette/trash.svg"), tr("Erase all"), this);
+    mClearAction->setToolTip(tr("Erase everything drawn on the screen"));
+    connect(mClearAction, &QAction::triggered, this, &UBDesktopPalette::clearClick);
 
     actions << toolActions();
     actions << mScreenshotAction;
@@ -95,9 +113,15 @@ UBDesktopPalette::UBDesktopPalette(QWidget *parent, UBRightPalette* _rightPalett
 
     connect(mShowHideAction, SIGNAL(triggered(bool)), this, SLOT(showHideClick(bool)));
     actions << mShowHideAction;
+    actions << mClearAction;
 
     setActions(actions);
     setButtonIconSize(QSize(42, 42));
+
+    if (UBSettings::settings()->value(sHorizontalKey, false).toBool())
+    {
+        setOrientation(Qt::Horizontal);
+    }
 
     adjustSizeAndPosition();
 
@@ -120,19 +144,301 @@ UBDesktopPalette::~UBDesktopPalette()
 }
 
 
+QList<QAction*> UBDesktopPalette::fullActions() const
+{
+    QList<QAction*> actions;
+
+    actions << mActionUniboard;
+    actions << toolActions();
+    actions << mScreenshotAction;
+    actions << mShowHideAction;
+    actions << mClearAction;
+
+    return actions;
+}
+
 void UBDesktopPalette::adjustPosition()
 {
-    // All the tools are seen, whatever the height of the screen.
+    // All the tools are seen, whatever the size of the screen.
     if (const QScreen* paletteScreen = screen())
     {
-        fitInLength(paletteScreen->availableGeometry().height() - 40, Qt::Vertical, 42);
+        const QRect area = paletteScreen->availableGeometry();
+        fitInLength((mOrientation == Qt::Vertical ? area.height() : area.width()) - 40, mOrientation, 42);
     }
 
     QPoint pos = this->pos();
-    if(this->pos().y() < 30){
+    if (mOrientation == Qt::Vertical && this->pos().y() < 30)
+    {
         pos.setY(30);
         moveInsideParent(pos);
     }
+}
+
+void UBDesktopPalette::setOrientation(Qt::Orientation orientation)
+{
+    mOrientation = orientation;
+
+    if (auto box = qobject_cast<QBoxLayout*>(layout()))
+    {
+        box->setDirection(orientation == Qt::Horizontal ? QBoxLayout::LeftToRight : QBoxLayout::TopToBottom);
+    }
+
+    UBSettings::settings()->setValue(sHorizontalKey, orientation == Qt::Horizontal);
+
+    // The buttons take their preferred size again before fitting the new length.
+    setButtonIconSize(QSize(42, 42));
+    updateMargins();
+    adjustSizeAndPosition();
+    adjustPosition();
+}
+
+void UBDesktopPalette::updateMargins(bool resizeToFit)
+{
+    if (!layout())
+    {
+        return;
+    }
+
+    const int margin = sLayoutContentMargin / 2 + border();
+    QMargins margins(margin, margin, margin, margin);
+
+    // Room for the red triangle on the side facing the border of the screen.
+    if (!mMinimized)
+    {
+        switch (screenEdge())
+        {
+            case Qt::LeftEdge:
+                margins.setLeft(margin + sTriangleStrip);
+                break;
+            case Qt::RightEdge:
+                margins.setRight(margin + sTriangleStrip);
+                break;
+            case Qt::TopEdge:
+                margins.setTop(margin + sTriangleStrip);
+                break;
+            case Qt::BottomEdge:
+                margins.setBottom(margin + sTriangleStrip);
+                break;
+        }
+    }
+
+    if (layout()->contentsMargins() != margins)
+    {
+        layout()->setContentsMargins(margins);
+
+        if (resizeToFit)
+        {
+            adjustSizeAndPosition();
+        }
+    }
+
+    update();
+}
+
+QRect UBDesktopPalette::minimizeTriangleArea() const
+{
+    const int margin = sLayoutContentMargin / 2 + 5;
+    const int length = 2 * sTriangleStrip;
+
+    switch (screenEdge())
+    {
+        case Qt::LeftEdge:
+            return QRect(margin / 2, height() / 2 - length / 2, sTriangleStrip, length);
+        case Qt::RightEdge:
+            return QRect(width() - margin / 2 - sTriangleStrip, height() / 2 - length / 2, sTriangleStrip, length);
+        case Qt::TopEdge:
+            return QRect(width() / 2 - length / 2, margin / 2, length, sTriangleStrip);
+        default:
+            return QRect(width() / 2 - length / 2, height() - margin / 2 - sTriangleStrip, length, sTriangleStrip);
+    }
+}
+
+void UBDesktopPalette::paintEvent(QPaintEvent* event)
+{
+    UBActionPalette::paintEvent(event);
+
+    if (mMinimized)
+    {
+        return;
+    }
+
+    // A small red triangle pointing to the border: a click minimizes the palette there.
+    const QRectF area = minimizeTriangleArea();
+    const qreal inset = 2;
+    QPolygonF triangle;
+
+    switch (screenEdge())
+    {
+        case Qt::LeftEdge:
+            triangle << QPointF(area.left() + inset, area.center().y()) << QPointF(area.right() - inset, area.top() + inset)
+                     << QPointF(area.right() - inset, area.bottom() - inset);
+            break;
+        case Qt::RightEdge:
+            triangle << QPointF(area.right() - inset, area.center().y()) << QPointF(area.left() + inset, area.top() + inset)
+                     << QPointF(area.left() + inset, area.bottom() - inset);
+            break;
+        case Qt::TopEdge:
+            triangle << QPointF(area.center().x(), area.top() + inset) << QPointF(area.left() + inset, area.bottom() - inset)
+                     << QPointF(area.right() - inset, area.bottom() - inset);
+            break;
+        default:
+            triangle << QPointF(area.center().x(), area.bottom() - inset) << QPointF(area.left() + inset, area.top() + inset)
+                     << QPointF(area.right() - inset, area.top() + inset);
+            break;
+    }
+
+    QPainter painter(this);
+    painter.setRenderHint(QPainter::Antialiasing);
+    painter.setPen(QPen(QColor("#7a0f0f"), 1));
+    painter.setBrush(QColor("#e53935"));
+    painter.drawPolygon(triangle);
+}
+
+void UBDesktopPalette::mousePressEvent(QMouseEvent* event)
+{
+    if (!mMinimized && event->button() == Qt::LeftButton
+        && minimizeTriangleArea().adjusted(-4, -4, 4, 4).contains(event->pos()))
+    {
+        event->accept();
+        minimizeToEdge();
+        return;
+    }
+
+    UBActionPalette::mousePressEvent(event);
+}
+
+void UBDesktopPalette::minimizeToEdge()
+{
+    QWidget* parent = parentWidget();
+
+    if (!parent)
+    {
+        return;
+    }
+
+    // Against the border, where pushing the palette also minimizes it.
+    const int margin = UBSettings::boardMargin - border();
+    QPoint position = pos();
+    eMinimizedLocation location = eMinimizedLocation_Left;
+
+    switch (screenEdge())
+    {
+        case Qt::LeftEdge:
+            position.setX(margin);
+            break;
+        case Qt::RightEdge:
+            position.setX(parent->width() - getParentRightOffset() - width() - margin);
+            location = eMinimizedLocation_Right;
+            break;
+        case Qt::TopEdge:
+            position.setY(margin);
+            location = eMinimizedLocation_Top;
+            break;
+        default:
+            position.setY(parent->height() - height() - margin);
+            location = eMinimizedLocation_Bottom;
+            break;
+    }
+
+    move(position);
+    minimizeAt(location);
+}
+
+void UBDesktopPalette::placeAtSavedEdge()
+{
+    QWidget* parent = parentWidget();
+
+    if (!parent)
+    {
+        return;
+    }
+
+    setCustomPosition(true);
+
+    const int edge = UBSettings::settings()->value(sEdgeKey, int(Qt::LeftEdge)).toInt();
+
+    if (mOrientation == Qt::Horizontal)
+    {
+        const int x = (parent->width() - width()) / 2;
+        move(x, edge == Qt::BottomEdge ? parent->height() - height() - sEdgeGap : sEdgeGap);
+    }
+    else
+    {
+        // Away from the border, where the palette would minimize itself.
+        move(edge == Qt::RightEdge ? parent->width() - width() - 20 : 20, 150);
+    }
+
+    updateMargins();
+}
+
+void UBDesktopPalette::snapToEdge(const QPoint& pointer)
+{
+    QWidget* parent = parentWidget();
+
+    if (!parent || mMinimized)
+    {
+        return;
+    }
+
+    // The pointer tells which border: a long palette may touch several.
+    const QRect area = parent->rect();
+    const QList<QPair<int, Qt::Edge>> distances = {
+        { pointer.x() - area.left(), Qt::LeftEdge },
+        { area.right() - pointer.x(), Qt::RightEdge },
+        { pointer.y() - area.top(), Qt::TopEdge },
+        { area.bottom() - pointer.y(), Qt::BottomEdge },
+    };
+
+    int shortestDistance = sSnapDistance;
+    int chosenEdge = 0;
+
+    for (const auto& distance : distances)
+    {
+        if (distance.first < shortestDistance)
+        {
+            shortestDistance = distance.first;
+            chosenEdge = distance.second;
+        }
+    }
+
+    if (!chosenEdge)
+    {
+        return;
+    }
+
+    const bool horizontal = (chosenEdge == Qt::TopEdge || chosenEdge == Qt::BottomEdge);
+    const Qt::Orientation orientation = horizontal ? Qt::Horizontal : Qt::Vertical;
+
+    if (orientation != mOrientation)
+    {
+        setOrientation(orientation);
+
+        // Along the chosen border, centered on the pointer.
+        QPoint position;
+
+        switch (chosenEdge)
+        {
+            case Qt::LeftEdge:
+                position = QPoint(sEdgeGap, pointer.y() - height() / 2);
+                break;
+            case Qt::RightEdge:
+                position = QPoint(area.width() - getParentRightOffset() - width() - sEdgeGap, pointer.y() - height() / 2);
+                break;
+            case Qt::TopEdge:
+                position = QPoint(pointer.x() - width() / 2, sEdgeGap);
+                break;
+            default:
+                position = QPoint(pointer.x() - width() / 2, area.height() - height() - sEdgeGap);
+                break;
+        }
+
+        // Kept inside the screen, without touching the border.
+        position.setX(qBound(sEdgeGap, position.x(), qMax(sEdgeGap, area.width() - width() - sEdgeGap)));
+        position.setY(qBound(sEdgeGap, position.y(), qMax(sEdgeGap, area.height() - height() - sEdgeGap)));
+        move(position);
+    }
+
+    UBSettings::settings()->setValue(sEdgeKey, chosenEdge);
 }
 
 void UBDesktopPalette::disappearForCapture()
@@ -182,12 +488,31 @@ void UBDesktopPalette::setDisplaySelectButtonVisible(bool visible)
 //  Called when the palette is near the border and must be minimized
 void UBDesktopPalette::minimizeMe(eMinimizedLocation location)
 {
-    Q_UNUSED(location);
     QList<QAction*> actions;
     clearLayout();
 
     actions << mMaximizeAction;
     setActions(actions);
+
+    mMinimized = true;
+    updateMargins(false);
+
+    // The single button stays against the border where the palette was:
+    // away from it, the palette would open again.
+    if (QWidget* parent = parentWidget())
+    {
+        const int margin = UBSettings::boardMargin - border();
+        resize(preferredSize());
+
+        if (location == eMinimizedLocation_Right)
+        {
+            move(parent->width() - getParentRightOffset() - width() - margin, pos().y());
+        }
+        else if (location == eMinimizedLocation_Bottom)
+        {
+            move(pos().x(), parent->height() - height() - margin);
+        }
+    }
 
     adjustSizeAndPosition();
 
@@ -199,17 +524,13 @@ void UBDesktopPalette::minimizeMe(eMinimizedLocation location)
 //  Called when the user wants to maximize the palette
 void UBDesktopPalette::maximizeMe()
 {
-    QList<QAction*> actions;
     clearLayout();
+    setActions(fullActions());
 
-    actions << mActionUniboard;
-    actions << toolActions();
-    actions << mScreenshotAction;
-    actions << mShowHideAction;
-
-    setActions(actions);
-
+    mMinimized = false;
+    updateMargins();
     adjustSizeAndPosition();
+    adjustPosition();
 
     // Notify that the maximization has been done
     emit maximized();
@@ -220,10 +541,16 @@ void UBDesktopPalette::maximizeMe()
 
 Qt::Edge UBDesktopPalette::screenEdge() const
 {
-    // The palette stands vertically on the left or the right half of its screen.
+    // Vertical: on the left or the right half of its screen; horizontal: on
+    // the top or the bottom half.
     const QScreen* paletteScreen = screen();
     const QRect area = paletteScreen ? paletteScreen->geometry() : QRect();
     const QPoint center = mapToGlobal(rect().center());
+
+    if (mOrientation == Qt::Horizontal)
+    {
+        return (area.isValid() && center.y() > area.center().y()) ? Qt::BottomEdge : Qt::TopEdge;
+    }
 
     return (area.isValid() && center.x() > area.center().x()) ? Qt::RightEdge : Qt::LeftEdge;
 }
@@ -239,6 +566,7 @@ void UBDesktopPalette::showEvent(QShowEvent *event)
 
     updateOptionArrows();
     adjustPosition();
+    updateMargins();
 }
 
 void UBDesktopPalette::hideEvent(QHideEvent *event)
@@ -251,10 +579,26 @@ void UBDesktopPalette::hideEvent(QHideEvent *event)
 
 void UBDesktopPalette::mouseReleaseEvent(QMouseEvent* event)
 {
+    const bool wasMoving = mIsMoving;
+
     UBActionPalette::mouseReleaseEvent(event);
 
-    // Moved to the other half of the screen: the triangles turn.
+    if (wasMoving && parentWidget())
+    {
+        // Dropped close to a border: horizontal at the top and the bottom,
+        // vertical at the left and the right.
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+        snapToEdge(parentWidget()->mapFromGlobal(event->globalPosition().toPoint()));
+#else
+        snapToEdge(parentWidget()->mapFromGlobal(event->globalPos()));
+#endif
+    }
+
+    // Moved to the other half of the screen: the triangles turn, and the
+    // red triangle goes to the other side.
     updateOptionArrows();
+    updateMargins();
+    emit refreshMask();
 }
 
 QPoint UBDesktopPalette::buttonPos(QAction *action)

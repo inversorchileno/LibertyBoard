@@ -124,6 +124,7 @@ UBDesktopAnnotationController::UBDesktopAnnotationController(QObject *parent, UB
     connect(mDesktopPalette, SIGNAL(customClick()), this, SLOT(customCapture()));
     connect(mDesktopPalette, SIGNAL(screenClick()), this, SLOT(screenCapture()));
     connect(mDesktopPalette, &UBDesktopPalette::screenshotClick, this, &UBDesktopAnnotationController::saveScreenshot);
+    connect(mDesktopPalette, &UBDesktopPalette::clearClick, this, &UBDesktopAnnotationController::eraseDesktopAnnotations);
     connect(UBApplication::mainWindow->actionPointer, SIGNAL(triggered()), this, SLOT(onToolClicked()));
     connect(UBApplication::mainWindow->actionSelector, SIGNAL(triggered()), this, SLOT(onToolClicked()));
     connect(mDesktopPalette, SIGNAL(maximized()), this, SLOT(onDesktopPaletteMaximized()));
@@ -215,14 +216,12 @@ void UBDesktopAnnotationController::showWindow()
 
     if (!mWindowPositionInitialized)
     {
-        QRect desktopRect = UBApplication::displayManager->screenGeometry(ScreenRole::Desktop);
-
-        // Away from the border, where the palette would minimize itself.
-        mDesktopPalette->setCustomPosition(true);
-        mDesktopPalette->move(20, desktopRect.top() + 150);
-
+        // Placed first away from the border, where it would minimize itself,
+        // then again once it has its full size.
         mWindowPositionInitialized = true;
+        mDesktopPalette->placeAtSavedEdge();
         mDesktopPalette->maximizeMe();
+        mDesktopPalette->placeAtSavedEdge();
     }
 
     updateBackground();
