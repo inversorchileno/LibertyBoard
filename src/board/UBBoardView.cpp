@@ -1915,6 +1915,13 @@ void UBBoardView::mouseReleaseEvent (QMouseEvent *event)
         }
     }
 
+    // A lasso around nothing to select copies the text under it, as a frame does.
+    if (mLassoItem && mLassoPoints.size() > 2 && currentTool == UBStylusTool::Selector
+            && !bIsDesktop && scene() && scene()->selectedItems().isEmpty())
+    {
+        copyPdfText(mLassoPoints.boundingRect());
+    }
+
     mSelectorOnNothing = false;
     removeLasso();
 
