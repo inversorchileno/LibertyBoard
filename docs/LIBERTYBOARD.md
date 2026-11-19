@@ -11,6 +11,7 @@ LibertyBoard es una pizarra digital y lector PDF con puntero láser estilo Drawb
 5. **Menús, guardar, actualización, zoom, notas de colores, idiomas y triángulos de opciones.** *(hecha, compilaciones 9 a 13)*
 6. **Pestañas, Guardar/Guardar como, girar, sellos, buscar, notas rápidas, adjuntos y sonidos.** *(hecha, compilación 14)*
 7. **Logo nuevo, íconos a color, scroll continuo, pantalla completa, barra que cabe en la pantalla.** *(hecha, compilación 15)*
+8. **Mejoras del Word de Luis, en 5 versiones.** *(Versión 1 hecha, compilación 20)*
 
 ## 1. Barras de herramientas
 
@@ -186,6 +187,20 @@ En modo escritorio son paneles emergentes; en modo pizarra, un panel fijo a la d
 - **Índice y Buscar** se cierran al volver a apretar su botón (o Ctrl+F).
 - **Pestañas:** espacio bajo los nombres y una línea blanca continua de 1 px entre pestañas y barra de opciones.
 - **Lazo:** rodear texto sin objetos también lo copia.
+
+## Versión 1 de las mejoras del Word (compilación 20)
+
+Luis entregó un Word con 26 mejoras («mejoras liberty.docx», con capturas de referencia) y se acordó hacerlas en versiones: 1) funciones nuevas y simples, 2) consumo medio, 3) consumo alto, 4) menús Herramientas y Personalización, atajos e IA, 5) vista continua. No se pasa a la siguiente versión hasta que Luis pruebe la anterior y lo pida.
+
+- **Cuenta nueva:** el repositorio pasó de `noteimportaaaa` a `inversorchileno`. El actualizador, los enlaces y la documentación usan la dirección nueva; las versiones antiguas siguen encontrando las nuevas porque GitHub responde con una redirección 301 que el actualizador sigue.
+- **Barra de escritorio** (`UBDesktopPalette`): soltada cerca del borde de arriba o de abajo queda horizontal (triángulos de opciones abajo o arriba de los íconos); cerca de la izquierda o la derecha, vertical. Recuerda orientación y borde. Un **triangulito rojo** en el lado que mira al borde de la pantalla la reduce al ícono comprimido con un clic (empujarla contra el borde izquierdo o derecho sigue comprimiéndola). Al final, una **papelera** que borra todo lo dibujado en la pantalla.
+- **Borde en modo escritorio** (`src/desktop/UBDesktopFrame`): ventana propia, transparente a los clics, con un borde alrededor de la pantalla. Preferencias → General → «Borde en modo escritorio»: mostrar o no, color y grosor de 1 a 12 px (por defecto rojo, 6 px). Se oculta al volver a la pizarra y al sacar pantallazos.
+- **Pestañas:** la franja entre el menú y las pestañas bajó de 18 a 11 px (las pestañas heredaban un margen de 6 px del estilo de OpenBoard). El espacio bajo los nombres y la línea blanca siguen igual.
+- **Agregar página:** el botón «Páginas», sobre «Borrar página», se llama «Agregar página».
+- **Estilo plantilla** (antes «Fondos», `UBBackgroundPalette`): ventana opaca; las 6 plantillas blancas y negras siguen, y debajo una fila «Color de la hoja» (blanco, negro, crema, amarillo, celeste, verde, rosado, azul oscuro, verde oscuro y «…» para cualquier color) que pinta la hoja manteniendo su patrón liso, cuadriculado o rayado. Un color oscuro hace la hoja «oscura» para los trazos y la cuadrícula. Elegir una plantilla devuelve el blanco o negro. Se guarda en la página como `ub:background-color` y como relleno del rectángulo de fondo; OpenBoard la abre blanca o negra.
+- **Flecha cónica:** casilla «Cónica» en las opciones de la flecha (barra superior en pizarra, triángulo en escritorio). La línea crece de fina a 2,4 veces su grosor en la punta, con una cabeza mayor, en un solo contorno.
+- **Láser arcoíris:** casilla «Arcoíris» aparte de los colores; la estela toma los colores del arcoíris a lo largo de su recorrido, con su brillo; en modo Punto los colores cambian con el tiempo. Elegir un color la apaga.
+- **Rotulador:** «Punta circular» o «Punta recta», con dibujo. Con la recta, al levantar el lápiz el trazo se rehace como con la punta biselada de un destacador: ancho en líneas horizontales, más fino en las verticales, con extremos rectos.
 
 ## Forma de trabajo
 
