@@ -92,9 +92,11 @@ struct UBPenStrokeType
 {
     enum Enum
     {
-        Basic = 0,      // constant width
-        Pro,            // width follows the pressure of the pen
-        Calligraphy     // width follows the direction of the stroke
+        Basic = 0,      // ballpoint pen: constant width
+        Pro,            // fountain pen: width follows the pressure of the pen
+        Calligraphy,    // calligraphy pen: width follows the direction of the stroke
+        Pencil,         // pencil: thinner, a little transparent, like graphite
+        Marker          // felt marker: wide and even
     };
 };
 

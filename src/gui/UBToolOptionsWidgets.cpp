@@ -485,7 +485,16 @@ static void drawStroke(QPainter& painter, const QPainterPath& path, qreal width,
 
         if (type == UBPenStrokeType::Pro)
         {
-            w = width * (0.2 + 0.8 * std::sin(M_PI * t));
+            const qreal angle = std::atan2(direction.y(), direction.x());
+            w = width * (0.35 + 0.65 * std::sin(M_PI * t)) * (0.6 + 0.4 * std::abs(std::sin(angle - M_PI / 4)));
+        }
+        else if (type == UBPenStrokeType::Pencil)
+        {
+            w = width * 0.6;
+        }
+        else if (type == UBPenStrokeType::Marker)
+        {
+            w = width * 1.6;
         }
         else if (type == UBPenStrokeType::Calligraphy)
         {
@@ -520,6 +529,98 @@ static QPainterPath wavePath(const QRectF& box)
                  box.left() + box.width() * 0.7, middle + 2 * amplitude,
                  box.right(), middle);
     return wave;
+}
+
+QIcon penStyleIcon(int strokeType, const QColor& color)
+{
+    // Drawn at twice the size, sharp on high resolution screens.
+    const QSize size(48, 28);
+    const qreal ratio = 2;
+    QPixmap pixmap(size * ratio);
+    pixmap.setDevicePixelRatio(ratio);
+    pixmap.fill(Qt::transparent);
+
+    const QColor ink = color.isValid() ? QColor(color.rgb()) : QColor("#ff5468");
+    const QColor body("#5f646c");
+    const QColor dark("#3d4148");
+    const QColor outline("#1c1d20");
+
+    QPainter painter(&pixmap);
+    painter.setRenderHint(QPainter::Antialiasing);
+
+    // The pen lies across the icon, its tip down at the left. Along x, the
+    // tip is at -20 and the end at +22; across, the body is 9 high.
+    painter.translate(24, 14);
+    painter.rotate(-22);
+    painter.scale(1.1, 1.25);
+    painter.setPen(QPen(outline, 0.7));
+
+    auto polygon = [&painter](const QColor& fill, std::initializer_list<QPointF> points) {
+        painter.setBrush(fill);
+        painter.drawPolygon(QPolygonF(points));
+    };
+
+    switch (strokeType)
+    {
+        case UBPenStrokeType::Pro:
+            // Fountain pen: dark body, a band of the color, a metal nib.
+            painter.setBrush(dark);
+            painter.drawRoundedRect(QRectF(-6, -4.5, 28, 9), 2, 2);
+            painter.setBrush(ink);
+            painter.drawRect(QRectF(-6, -4.5, 3, 9));
+            polygon(QColor("#e3e7ec"), { QPointF(-6, -4), QPointF(-20, 0), QPointF(-6, 4) });
+            painter.drawLine(QPointF(-17, 0), QPointF(-9, 0));
+            painter.setBrush(ink);
+            painter.drawEllipse(QPointF(-9.5, 0), 1, 1);
+            break;
+
+        case UBPenStrokeType::Calligraphy:
+            // Calligraphy pen or brush: body of the color, a flat brush tip.
+            painter.setBrush(ink);
+            painter.drawRoundedRect(QRectF(-4, -4, 26, 8), 2, 2);
+            polygon(body, { QPointF(-4, -4.5), QPointF(-9, -3.5), QPointF(-9, 3.5), QPointF(-4, 4.5) });
+            polygon(ink.darker(120), { QPointF(-9, -3.5), QPointF(-20, -1.5), QPointF(-20, 1.5), QPointF(-9, 3.5) });
+            break;
+
+        case UBPenStrokeType::Pencil:
+            // Pencil: hexagonal body of the color, wood, and a graphite point.
+            painter.setBrush(ink);
+            painter.drawRect(QRectF(-6, -4, 26, 8));
+            painter.setPen(QPen(ink.darker(140), 0.7));
+            painter.drawLine(QPointF(-6, 0), QPointF(20, 0));
+            painter.setPen(QPen(outline, 0.7));
+            painter.setBrush(QColor("#f2a7b8"));
+            painter.drawRoundedRect(QRectF(20, -4, 4, 8), 1.5, 1.5);
+            polygon(QColor("#e8c58a"), { QPointF(-6, -4), QPointF(-17, -1.2), QPointF(-17, 1.2), QPointF(-6, 4) });
+            polygon(QColor("#3b3b3b"), { QPointF(-17, -1.2), QPointF(-20, 0), QPointF(-17, 1.2) });
+            break;
+
+        case UBPenStrokeType::Marker:
+            // Felt marker: thick grey body, a cap ring and a wide felt tip of the color.
+            painter.setBrush(body);
+            painter.drawRoundedRect(QRectF(-8, -5.5, 30, 11), 2.5, 2.5);
+            painter.setBrush(ink);
+            painter.drawRect(QRectF(-8, -5.5, 4, 11));
+            painter.drawRect(QRectF(16, -5.5, 6, 11));
+            polygon(QColor("#8d929a"), { QPointF(-8, -4.5), QPointF(-13, -3.5), QPointF(-13, 3.5), QPointF(-8, 4.5) });
+            painter.setBrush(ink);
+            painter.drawRoundedRect(QRectF(-19, -3, 7, 6), 2.5, 2.5);
+            break;
+
+        default:
+            // Ballpoint pen: grey body, a band of the color, a cone and a tip of the color.
+            painter.setBrush(body);
+            painter.drawRoundedRect(QRectF(-8, -4, 30, 8), 2, 2);
+            painter.setBrush(ink);
+            painter.drawRect(QRectF(-8, -4, 4, 8));
+            painter.drawRect(QRectF(18, -4, 2, 8));
+            polygon(QColor("#9aa0a8"), { QPointF(-8, -4), QPointF(-18, -1), QPointF(-18, 1), QPointF(-8, 4) });
+            painter.setBrush(ink);
+            painter.drawEllipse(QPointF(-19, 0), 1.6, 1.6);
+            break;
+    }
+
+    return QIcon(pixmap);
 }
 
 QIcon optionIcon(UBOptionIcon kind)
@@ -898,6 +999,11 @@ void UBStrokePreview::paintEvent(QPaintEvent* event)
     }
 
     color.setAlphaF(mOpacity);
+
+    if (mStrokeType == UBPenStrokeType::Pencil)
+    {
+        color.setAlphaF(mOpacity * 0.75);
+    }
 
     if (mStrokeType == UBPenStrokeType::Basic)
     {

@@ -160,6 +160,9 @@ enum class UBOptionIcon
 
 QIcon optionIcon(UBOptionIcon kind);
 
+/** @brief The drawing of a pen of this UBPenStrokeType, its colored parts in this color. */
+QIcon penStyleIcon(int strokeType, const QColor& color);
+
 /**
  * @brief A choice among small drawings, for line dashes and line endings.
  */

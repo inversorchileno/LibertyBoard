@@ -250,9 +250,12 @@ UBPenOptionsPanel::UBPenOptionsPanel(QWidget* parent)
     mPreview = new UBStrokePreview(this);
     addRow(mPreview);
 
-    mStrokeType = new UBSegmentedChoice({ tr("Basic\nFixed width"), tr("Pro\nVariable width"), tr("Calligraphy\nDynamic width") }, this);
-    mStrokeType->setIcons({ optionIcon(UBOptionIcon::BasicStroke), optionIcon(UBOptionIcon::ProStroke),
-                            optionIcon(UBOptionIcon::CalligraphyStroke) });
+    // The pens of Samsung Notes, in the order of UBPenStrokeType.
+    mStrokeType = new UBSegmentedChoice({ tr("Ballpoint pen"), tr("Fountain pen"), tr("Calligraphy pen"),
+                                          tr("Pencil"), tr("Marker") }, this);
+    mStrokeType->setToolTip(tr("Ballpoint pen: even width. Fountain pen: width follows the pressure. "
+                               "Calligraphy pen: width follows the direction. Pencil: thin and light, like graphite. "
+                               "Marker: wide and even."));
     addRow(mStrokeType);
 
     mWidth = new UBValueSlider({ 1, 2, 3, 6, 10, 50 }, tr(" pt"), 1, this);
@@ -309,6 +312,16 @@ void UBPenOptionsPanel::refresh()
 
 void UBPenOptionsPanel::updatePreview()
 {
+    // The pens take the color they draw with.
+    QList<QIcon> icons;
+
+    for (int type = UBPenStrokeType::Basic; type <= UBPenStrokeType::Marker; ++type)
+    {
+        icons << penStyleIcon(type, mColors->currentColor());
+    }
+
+    mStrokeType->setIcons(icons);
+
     mPreview->setStrokeType(mStrokeType->choice());
     mPreview->setStroke(mColors->currentColor(), mWidth->value(), mOpacity->value() / 100, false);
 }

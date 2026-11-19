@@ -967,6 +967,14 @@ qreal UBGraphicsScene::strokeWidth(int tool, qreal pressure, std::optional<QLine
         case UBPenStrokeType::Basic:
             return width;
 
+        case UBPenStrokeType::Pencil:
+            // Thinner than the other pens, a little more with pressure.
+            return width * 0.7 * (0.6 + 0.4 * pressure);
+
+        case UBPenStrokeType::Marker:
+            // A wide felt tip.
+            return width * 1.8;
+
         case UBPenStrokeType::Calligraphy:
         {
             // A flat nib held at 45 degrees: thin when the stroke follows
@@ -981,7 +989,17 @@ qreal UBGraphicsScene::strokeWidth(int tool, qreal pressure, std::optional<QLine
         }
 
         default:
-            return width * pressure;
+        {
+            // A fountain pen: the pressure, and a nib a little wider across
+            // the stroke than along it, which shows even with a mouse.
+            if (!direction || direction->length() < 0.01)
+            {
+                return width * pressure * 0.85;
+            }
+
+            const qreal angle = qDegreesToRadians(direction->angle() - 45.0);
+            return width * pressure * (0.6 + 0.4 * std::fabs(std::sin(angle)));
+        }
     }
 }
 
@@ -1716,7 +1734,13 @@ void UBGraphicsScene::initPolygonItem(UBGraphicsPolygonItem* polygonItem)
         colorOnDarkBG = UBApplication::boardController->penColorOnDarkBackground();
         colorOnLightBG = UBApplication::boardController->penColorOnLightBackground();
 
-        const qreal opacity = UBSettings::settings()->penOpacity->get().toDouble();
+        qreal opacity = UBSettings::settings()->penOpacity->get().toDouble();
+
+        // Graphite leaves a lighter mark than ink.
+        if (UBSettings::settings()->penStrokeType->get().toInt() == UBPenStrokeType::Pencil)
+        {
+            opacity *= 0.75;
+        }
 
         if (opacity < 1.0)
         {
