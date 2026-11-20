@@ -140,6 +140,7 @@ class UBDesktopAnnotationController : public QObject
         bool mIsFullyTransparent;
         bool mDesktopToolsPalettePositioned;
         bool mbArrowClicked;
+        bool mSpotlightWasOn{false};
         bool mCustomCaptureClicked;
 
         int mBoardStylusTool;

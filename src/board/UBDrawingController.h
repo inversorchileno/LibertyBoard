@@ -82,11 +82,14 @@ class UBDrawingController : public QObject
 
         /**
          * @brief A locked canvas cannot be drawn, written or highlighted on:
-         * only the laser pointer, the hand and the selector work, and the
-         * selector neither moves nor deletes.
+         * only the laser pointer, the hand and the spotlight work; the
+         * selector stays chosen but does nothing.
          */
         bool isCanvasLocked() const { return mCanvasLocked; }
         void setCanvasLocked(bool locked);
+
+        /** @brief Goes back from the spotlight to the tool chosen before it. */
+        void turnOffSpotlight();
 
         /** @brief True for the tools that work on a locked canvas. */
         static bool worksOnLockedCanvas(int tool);
@@ -113,6 +116,7 @@ class UBDrawingController : public QObject
         UBStylusTool::Enum mLatestDrawingTool;
         bool mIsDesktopMode;
         bool mCanvasLocked{false};
+        UBStylusTool::Enum mToolBeforeSpotlight{UBStylusTool::Pen};
 
         static UBDrawingController* sDrawingController;
 

@@ -452,8 +452,8 @@ void UBMainMenu::createCornerButtons()
     // Locks the canvas against changes, left of the index.
     auto lockAction = new QAction(QIcon(":/images/toolbar/lockOpen.svg"), tr("Lock canvas"), mMainWindow);
     lockAction->setCheckable(true);
-    lockAction->setToolTip(tr("Lock the canvas: nothing can be drawn, written, highlighted, moved or deleted; "
-                              "the laser pointer, the hand and the selector still work"));
+    lockAction->setToolTip(tr("Lock the canvas: nothing can be drawn, written, highlighted, selected, moved or deleted; "
+                              "the laser pointer and the hand still work"));
     connect(lockAction, &QAction::toggled, UBDrawingController::drawingController(), &UBDrawingController::setCanvasLocked);
     connect(UBDrawingController::drawingController(), &UBDrawingController::canvasLockedChanged, this,
             [this, lockAction](bool locked) {
@@ -470,6 +470,7 @@ void UBMainMenu::createCornerButtons()
         UBAttachmentOptionsPanel::updateToolIcon(desktop);
     });
     UBAttachmentOptionsPanel::updateToolIcon(false);
+    UBSpotlightOptionsPanel::updateToolIcon();
 
     auto lockButton = new QToolButton(corner);
     lockButton->setDefaultAction(lockAction);

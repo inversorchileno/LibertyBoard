@@ -1366,12 +1366,12 @@ void UBBoardView::mousePressEvent (QMouseEvent *event)
             if (scene()->backgroundObject() == getMovingItem())
                 setMovingItem(NULL);
 
-            // On a locked canvas the selector only selects: the items, their
-            // frames and their buttons do not get the click.
+            // On a locked canvas the selector does nothing: no selection, no
+            // move, nothing deleted.
             if (!bIsDesktop && UBDrawingController::drawingController()->isCanvasLocked())
             {
                 setMovingItem(NULL);
-                mSelectorOnNothing = true;
+                mMouseButtonIsPressed = false;
                 event->accept();
                 break;
             }
@@ -1488,6 +1488,14 @@ void UBBoardView::mouseMoveEvent (QMouseEvent *event)
     //    }
 
     //  QTime mouseMoveTime = QTime::currentTime();
+
+    // On a locked canvas the selector does nothing.
+    if (!bIsDesktop && UBDrawingController::drawingController()->isCanvasLocked()
+        && UBDrawingController::drawingController()->stylusTool() == UBStylusTool::Selector)
+    {
+        event->accept();
+        return;
+    }
 
     // A hand over a link of the PDF with the selector, to show it can be followed.
     if (event->buttons() == Qt::NoButton && bIsControl && !bIsDesktop
@@ -1673,6 +1681,13 @@ void UBBoardView::movingItemDestroyed(QObject*)
 void UBBoardView::mouseReleaseEvent (QMouseEvent *event)
 {
     UBStylusTool::Enum currentTool = (UBStylusTool::Enum)UBDrawingController::drawingController ()->stylusTool ();
+
+    if (!bIsDesktop && UBDrawingController::drawingController()->isCanvasLocked()
+        && currentTool == UBStylusTool::Selector)
+    {
+        event->accept();
+        return;
+    }
 
     setToolCursor (currentTool);
     // first/ propagate device release to the scene

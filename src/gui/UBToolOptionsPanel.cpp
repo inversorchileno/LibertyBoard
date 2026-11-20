@@ -638,6 +638,7 @@ UBSpotlightOptionsPanel::UBSpotlightOptionsPanel(QWidget* parent)
     connect(mMode, &UBSegmentedChoice::choiceChanged, this, [this, settings](int mode) {
         settings->spotlightMode->set(mode);
         showModeOptions();
+        updateToolIcon();
     });
     connect(mRadius, &UBValueSlider::valueChanged, this, [settings](qreal radius) {
         settings->spotlightRadius->set(qRound(radius));
@@ -661,6 +662,18 @@ void UBSpotlightOptionsPanel::refresh()
     mDarkness->setValue(settings->spotlightDarkness->get().toDouble() * 100);
     mZoom->setValue(settings->magnifierZoom->get().toDouble() * 100);
     showModeOptions();
+}
+
+void UBSpotlightOptionsPanel::updateToolIcon()
+{
+    // The tool shows a flashlight or a magnifying glass, as chosen.
+    const bool magnifier = UBSettings::settings()->spotlightMode->get().toInt() == 1;
+    QIcon icon;
+    icon.addFile(magnifier ? ":/images/stylusPalette/magnifier.svg" : ":/images/stylusPalette/spotlight.svg",
+                 QSize(), QIcon::Normal, QIcon::Off);
+    icon.addFile(magnifier ? ":/images/stylusPalette/magnifierOn.svg" : ":/images/stylusPalette/spotlightOn.svg",
+                 QSize(), QIcon::Normal, QIcon::On);
+    UBToolOptionsArrows::setIcon(UBApplication::mainWindow->actionSpotlight, icon);
 }
 
 void UBSpotlightOptionsPanel::showModeOptions()

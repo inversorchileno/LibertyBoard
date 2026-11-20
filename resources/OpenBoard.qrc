@@ -158,6 +158,8 @@
         <file>images/stylusPalette/trash.svg</file>
         <file>images/stylusPalette/spotlight.svg</file>
         <file>images/stylusPalette/spotlightOn.svg</file>
+        <file>images/stylusPalette/magnifier.svg</file>
+        <file>images/stylusPalette/magnifierOn.svg</file>
         <file>images/stylusPalette/hyperlink.svg</file>
         <file>images/stylusPalette/hyperlinkOn.svg</file>
         <file>images/toolbar/closeDocument.svg</file>

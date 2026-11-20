@@ -223,6 +223,9 @@ public:
     explicit UBSpotlightOptionsPanel(QWidget* parent = nullptr);
     void refresh() override;
 
+    /** @brief Shows on the tool a flashlight or a magnifying glass. */
+    static void updateToolIcon();
+
 private:
     void showModeOptions();
 
