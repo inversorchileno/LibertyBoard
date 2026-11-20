@@ -553,12 +553,12 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
     </message>
     <message>
         <location line="+12"/>
-        <location line="+601"/>
+        <location line="+617"/>
         <source>Erase Annotations</source>
         <translation>Açıklamaları Sil</translation>
     </message>
     <message>
-        <location line="-589"/>
+        <location line="-605"/>
         <source>Clear Page</source>
         <translation>Sayfayı Temizle</translation>
     </message>
@@ -644,6 +644,16 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
     </message>
     <message>
         <location line="+13"/>
+        <source>Spotlight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Spotlight and magnifier: darken the screen but around the pointer, or magnify under it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+13"/>
         <source>Quick note</source>
         <translation>Hızlı not</translation>
     </message>
@@ -693,7 +703,7 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-1706"/>
+        <location line="-1722"/>
         <location line="+18"/>
         <location line="+15"/>
         <location line="+987"/>
@@ -978,7 +988,7 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
         <translation>Ctrl+J</translation>
     </message>
     <message>
-        <location line="+173"/>
+        <location line="+189"/>
         <source>Text</source>
         <translation>Metin</translation>
     </message>
@@ -1154,7 +1164,7 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
         <translation>Ekranda Göster</translation>
     </message>
     <message>
-        <location line="-1932"/>
+        <location line="-1948"/>
         <location line="+686"/>
         <location line="+3"/>
         <source>LibertyBoard</source>
@@ -1166,7 +1176,7 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
         <translation>LibertyBoardʼdan Çık</translation>
     </message>
     <message>
-        <location line="+1601"/>
+        <location line="+1617"/>
         <source>Hide LibertyBoard</source>
         <translation>LibertyBoardʼu Gizle</translation>
     </message>
@@ -1196,7 +1206,7 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
         <translation>Arkaplanı kaldır</translation>
     </message>
     <message>
-        <location line="-809"/>
+        <location line="-825"/>
         <location line="+6"/>
         <source>Ruled Light Background</source>
         <translation>Çizgili Açık Arkaplan</translation>
@@ -1208,7 +1218,7 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
         <translation>Çizgili Koyu Arkaplan</translation>
     </message>
     <message>
-        <location line="+736"/>
+        <location line="+752"/>
         <source>Open Tutorial</source>
         <translation>Eğitimi Aç</translation>
     </message>
@@ -1224,7 +1234,7 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
         <translation>Izgara boyutunu sıfırla</translation>
     </message>
     <message>
-        <location line="-1638"/>
+        <location line="-1654"/>
         <source>Small Eraser</source>
         <translation>Küçük Silgi</translation>
     </message>
@@ -1259,7 +1269,7 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
         <translation>Renk 5</translation>
     </message>
     <message>
-        <location line="+1531"/>
+        <location line="+1547"/>
         <location line="+3"/>
         <source>Draw intermediate grid lines</source>
         <translation>Ara ızgara çizgileri çiz</translation>
@@ -1273,7 +1283,7 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
         <translation>Web İçeriğini Yakala</translation>
     </message>
     <message>
-        <location line="-1695"/>
+        <location line="-1711"/>
         <source>Template style</source>
         <translation>Şablon stili</translation>
     </message>
@@ -1360,7 +1370,7 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
         <translation>Seyes çizgili Koyu Arkaplan</translation>
     </message>
     <message>
-        <location line="+525"/>
+        <location line="+541"/>
         <source>Import one or more pages (supported formats : jpg, png, svg, ubz, pdf)</source>
         <translation>Bir veya daha fazla sayfayı içe aktar (desteklenen biçimler: jpg, png, svg, ubz, pdf)</translation>
     </message>
@@ -1438,7 +1448,7 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
         <translation type="vanished">Seçili &apos;%0&apos; belgesinden 1 sayfayı kaldırmak istediğinizden emin misiniz?</translation>
     </message>
     <message>
-        <location filename="../../src/adaptors/UBSvgSubsetAdaptor.cpp" line="+251"/>
+        <location filename="../../src/adaptors/UBSvgSubsetAdaptor.cpp" line="+252"/>
         <source>Loading scene (%1/%2)</source>
         <translation>Sahne yükleniyor (%1/%2)</translation>
     </message>
@@ -1545,7 +1555,7 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
     </message>
     <message>
         <location filename="../../src/core/UBApplication.cpp" line="+384"/>
-        <location line="+47"/>
+        <location line="+48"/>
         <location line="+221"/>
         <source>Cannot open your UBX file directly. Please import it in Documents mode instead</source>
         <translation>UBX dosyanız doğrudan açılamıyor. Lütfen bunun yerine Belgeler kipinde içe aktarın</translation>
@@ -1580,6 +1590,39 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
     </message>
 </context>
 <context>
+    <name>UBAttachmentOptionsPanel</name>
+    <message>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+576"/>
+        <source>Insert file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Hyperlink</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>File: a click on the page attaches a file. Hyperlink: a click on the page asks for the address of a web page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+27"/>
+        <source>Add a hyperlink to a web page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Attach a file to the page</source>
+        <translation type="unfinished">Sayfaya dosya ekle</translation>
+    </message>
+</context>
+<context>
     <name>UBBackgroundPalette</name>
     <message>
         <location filename="../../src/gui/UBBackgroundPalette.cpp" line="+57"/>
@@ -1600,7 +1643,7 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
 <context>
     <name>UBBoardController</name>
     <message>
-        <location filename="../../src/board/UBBoardController.cpp" line="+1301"/>
+        <location filename="../../src/board/UBBoardController.cpp" line="+1309"/>
         <source>Downloading content %1 failed</source>
         <translation>%1 içeriği indirilemedi</translation>
     </message>
@@ -1620,7 +1663,42 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
         <translation>Bilinmeyen içerik türü %1</translation>
     </message>
     <message>
-        <location line="+1176"/>
+        <location line="+627"/>
+        <source>Page/canvas size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source> px</source>
+        <translation type="unfinished"> px</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Half as wide again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Half as tall again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Width</source>
+        <translation type="unfinished">Kalınlık</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Height</source>
+        <translation type="unfinished">Yükseklik</translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>The size of this page. The drawings stay where they are; a bigger canvas leaves room around them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+577"/>
         <source>Add Item</source>
         <translation>Öge Ekle</translation>
     </message>
@@ -1630,20 +1708,20 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
         <translation>Tüm Desteklenler (%1)</translation>
     </message>
     <message>
-        <location line="-1925"/>
+        <location line="-1987"/>
         <source>Page %1 deleted</source>
         <translation>Sayfa %1 silindi</translation>
     </message>
     <message>
         <location line="+506"/>
         <location line="+45"/>
-        <location line="+964"/>
+        <location line="+1022"/>
         <location line="+36"/>
         <source>Add file operation failed: file copying error</source>
         <translation>Dosya ekleme işlemi başarısız oldu: dosya kopyalama hatası</translation>
     </message>
     <message>
-        <location line="-2374"/>
+        <location line="-2432"/>
         <source>Group</source>
         <translation>Grupla</translation>
     </message>
@@ -1686,7 +1764,7 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
 <context>
     <name>UBBoardPaletteManager</name>
     <message>
-        <location filename="../../src/board/UBBoardPaletteManager.cpp" line="+948"/>
+        <location filename="../../src/board/UBBoardPaletteManager.cpp" line="+933"/>
         <source>Error Adding Image to Library</source>
         <translation>Kütüphaneye Resim Eklerken Hata Oluştu</translation>
     </message>
@@ -1748,7 +1826,7 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+2118"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+2143"/>
         <source>That page is not in the document any more.</source>
         <translation>Bu sayfa artık belgede değil.</translation>
     </message>
@@ -1818,7 +1896,7 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
 <context>
     <name>UBColorSwatches</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsWidgets.cpp" line="+97"/>
+        <location filename="../../src/gui/UBToolOptionsWidgets.cpp" line="+152"/>
         <source>No color</source>
         <translation>Renk yok</translation>
     </message>
@@ -1828,7 +1906,12 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
         <translation>Başka renk</translation>
     </message>
     <message>
-        <location line="+86"/>
+        <location line="+8"/>
+        <source>Eyedropper: take a color on the screen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+173"/>
         <source>Choose a color</source>
         <translation>Bir renk seçin</translation>
     </message>
@@ -1836,7 +1919,7 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
 <context>
     <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1017"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+606"/>
         <source>Quick note</source>
         <translation>Hızlı not</translation>
     </message>
@@ -1907,7 +1990,7 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
 <context>
     <name>UBDesktopPalette</name>
     <message>
-        <location filename="../../src/desktop/UBDesktopPalette.cpp" line="+88"/>
+        <location filename="../../src/desktop/UBDesktopPalette.cpp" line="+89"/>
         <source>Save a screenshot</source>
         <translation>Ekran görüntüsü kaydet</translation>
     </message>
@@ -2536,7 +2619,7 @@ Do you want to continue?</source>
 <context>
     <name>UBEraserOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-747"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-921"/>
         <source>Eraser</source>
         <translation>Silgi</translation>
     </message>
@@ -2688,7 +2771,7 @@ Do you want to continue?</source>
 <context>
     <name>UBExportFullPDF</name>
     <message>
-        <location filename="../../src/adaptors/UBExportFullPDF.cpp" line="+262"/>
+        <location filename="../../src/adaptors/UBExportFullPDF.cpp" line="+268"/>
         <source>Export as PDF File</source>
         <translation>PDF Dosyası Olarak Dışa Aktar</translation>
     </message>
@@ -3003,6 +3086,29 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     </message>
 </context>
 <context>
+    <name>UBGraphicsHyperlinkItem</name>
+    <message>
+        <location filename="../../src/domain/UBGraphicsHyperlinkItem.cpp" line="+48"/>
+        <source>Hyperlink</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>%1 could not be opened.</source>
+        <translation type="unfinished">%1 açılamadı.</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Add a hyperlink</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Address of the web page:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>UBGraphicsItemDelegate</name>
     <message>
         <location filename="../../src/domain/UBGraphicsItemDelegate.cpp" line="+788"/>
@@ -3102,7 +3208,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
 <context>
     <name>UBGraphicsScene</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsScene.cpp" line="+1046"/>
+        <location filename="../../src/domain/UBGraphicsScene.cpp" line="+1150"/>
         <location line="+11"/>
         <source>Attach a file</source>
         <translation>Dosya ekle</translation>
@@ -3335,6 +3441,16 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>Nokta</translation>
     </message>
     <message>
+        <location line="+0"/>
+        <source>Follow</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Trail: draws while pressed. Point: shows only the point. Follow: follows the mouse without a click, its trail fading with the times below.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location line="+4"/>
         <source> pt</source>
         <translation> pt</translation>
@@ -3384,6 +3500,16 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <location line="-1"/>
         <source>Fading duration</source>
         <translation>Solma süresi</translation>
+    </message>
+    <message>
+        <location line="+55"/>
+        <source>Wait</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Fading</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3452,13 +3578,11 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+102"/>
-        <location line="+152"/>
         <source>Page Size</source>
-        <translation>Sayfa boyutu</translation>
+        <translation type="vanished">Sayfa boyutu</translation>
     </message>
     <message>
-        <location line="-128"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+131"/>
         <location line="+85"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -3497,7 +3621,13 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>Belgeyi kapat</translation>
     </message>
     <message>
-        <location line="-70"/>
+        <location line="-112"/>
+        <location line="+152"/>
+        <source>Page/canvas size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-110"/>
         <source>New board</source>
         <translation>Yeni tahta</translation>
     </message>
@@ -3562,7 +3692,63 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>Yan yana iki belge: üzerinde çalışmak için bir tarafa tıklayın</translation>
     </message>
     <message>
-        <location line="+31"/>
+        <location line="+26"/>
+        <source>Custom size...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Read and dictate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <location line="+6"/>
+        <source>Read aloud</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-4"/>
+        <source>Reads the texts selected, or the text of the page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Stop reading</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Dictate (Windows + H)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Opens the dictation of Windows: what is said is written where the cursor of text is</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Dictate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>The dictation of the system is not available here. On Windows, press Windows + H in a text.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Transcribe an audio (coming with the AI)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Writes what is said in a recording; it will come with the AI of LibertyBoard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
         <source>Full screen</source>
         <translation>Tam ekran</translation>
     </message>
@@ -3588,12 +3774,12 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     </message>
     <message>
         <location line="+66"/>
-        <location line="+299"/>
+        <location line="+357"/>
         <source>Saved</source>
         <translation>Kaydedildi</translation>
     </message>
     <message>
-        <location line="-293"/>
+        <location line="-351"/>
         <source>Search...</source>
         <translation>Ara...</translation>
     </message>
@@ -3613,7 +3799,25 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>PDF&apos;nin içindekileri: bir başlığa tıklamak sayfasına götürür</translation>
     </message>
     <message>
-        <location line="+31"/>
+        <location line="+28"/>
+        <location line="+9"/>
+        <location line="+22"/>
+        <source>Lock canvas</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-29"/>
+        <source>Lock the canvas: nothing can be drawn, written, highlighted, moved or deleted; the laser pointer, the hand and the selector still work</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <location line="+20"/>
+        <source>Unlock canvas</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+15"/>
         <source>Hide or show the toolbar</source>
         <translation>Araç çubuğunu gizle veya göster</translation>
     </message>
@@ -3628,7 +3832,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>Menüyle pencereye dön (F11)</translation>
     </message>
     <message>
-        <location line="+62"/>
+        <location line="+79"/>
         <source>Open</source>
         <translation>Aç</translation>
     </message>
@@ -3654,7 +3858,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
 <context>
     <name>UBMarkerOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-101"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-159"/>
         <source>Marker</source>
         <translation>Fosforlu Kalem</translation>
     </message>
@@ -3777,7 +3981,7 @@ Bu ana bilgisayar için yukarıdaki hatalar yok sayılsın mı?</translation>
 <context>
     <name>UBNoteOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+698"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+872"/>
         <source>Note</source>
         <translation>Not</translation>
     </message>
@@ -4099,30 +4303,57 @@ Bu daha sonra Giriş &gt; Metni tanı ile de yapılabilir.</translation>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-843"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1036"/>
         <source>Pen</source>
         <translation>Kalem</translation>
     </message>
     <message>
-        <location line="+7"/>
         <source>Basic
 Fixed width</source>
-        <translation>Temel
+        <translation type="vanished">Temel
 Sabit kalınlık</translation>
     </message>
     <message>
-        <location line="+0"/>
         <source>Pro
 Variable width</source>
-        <translation>Pro
+        <translation type="vanished">Pro
 Değişken kalınlık</translation>
     </message>
     <message>
-        <location line="+0"/>
         <source>Calligraphy
 Dynamic width</source>
-        <translation>Hat sanatı
+        <translation type="vanished">Hat sanatı
 Dinamik kalınlık</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Ballpoint pen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Fountain pen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Calligraphy pen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Pencil</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Marker</source>
+        <translation type="unfinished">Fosforlu Kalem</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Ballpoint pen: even width. Fountain pen: width follows the pressure. Calligraphy pen: width follows the direction. Pencil: thin and light, like graphite. Marker: wide and even.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+5"/>
@@ -4611,6 +4842,24 @@ Dinamik kalınlık</translation>
     </message>
 </context>
 <context>
+    <name>UBReadAloud</name>
+    <message>
+        <location filename="../../src/gui/UBReadAloud.cpp" line="+58"/>
+        <source>There is no text to read on this page: write or select a text, or open a PDF with text.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+23"/>
+        <source>Read aloud</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>The voices of the system could not be used to read aloud.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>UBScreenshot</name>
     <message>
         <location filename="../../src/gui/UBScreenshot.cpp" line="+36"/>
@@ -4679,7 +4928,7 @@ Dinamik kalınlık</translation>
 <context>
     <name>UBSelectorOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+705"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+895"/>
         <source>Select</source>
         <translation>Seç</translation>
     </message>
@@ -4717,7 +4966,7 @@ Dinamik kalınlık</translation>
 <context>
     <name>UBSettings</name>
     <message>
-        <location filename="../../src/core/UBSettings.cpp" line="+1133"/>
+        <location filename="../../src/core/UBSettings.cpp" line="+1141"/>
         <source>My Movies</source>
         <translation>Filimlerim</translation>
     </message>
@@ -4725,7 +4974,7 @@ Dinamik kalınlık</translation>
 <context>
     <name>UBShapeOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-477"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-525"/>
         <source>Rectangle</source>
         <translation>Dikdörtgen</translation>
     </message>
@@ -4772,26 +5021,29 @@ Dinamik kalınlık</translation>
     </message>
     <message>
         <location line="+7"/>
+        <location line="+160"/>
         <source>Line style</source>
         <translation>Çizgi stili</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="-160"/>
         <source>Border styles</source>
         <translation>Kenarlık stilleri</translation>
     </message>
     <message>
         <location line="+13"/>
+        <location line="+147"/>
         <source>Line start</source>
         <translation>Çizgi başı</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="-143"/>
+        <location line="+144"/>
         <source>Line end</source>
         <translation>Çizgi sonu</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="-140"/>
         <source>Tapered</source>
         <translation>Sivrilen</translation>
     </message>
@@ -4802,13 +5054,39 @@ Dinamik kalınlık</translation>
     </message>
     <message>
         <location line="+6"/>
+        <source>Fit to the text size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>On a PDF, the band takes the height of the line of text, with a little margin.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <location line="+131"/>
         <source>Opacity</source>
         <translation>Matlık</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="-130"/>
         <source> %</source>
         <translation> %</translation>
+    </message>
+    <message>
+        <location line="+120"/>
+        <source>Line</source>
+        <translation type="unfinished">Çizgi</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Start</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>End</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4825,7 +5103,7 @@ Dinamik kalınlık</translation>
     </message>
     <message>
         <location line="+15"/>
-        <location line="+29"/>
+        <location line="+30"/>
         <location line="+3"/>
         <source>Stylus Palette</source>
         <translation type="unfinished">Kalemler Paleti</translation>
@@ -5077,9 +5355,54 @@ Dinamik kalınlık</translation>
     </message>
 </context>
 <context>
+    <name>UBSpotlightOptionsPanel</name>
+    <message>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-282"/>
+        <location line="+4"/>
+        <source>Spotlight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Magnifier</source>
+        <translation type="unfinished">Büyüteç</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Spotlight: darkens all but a circle around the pointer. Magnifier: magnifies what is under the pointer.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Radius</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source> px</source>
+        <translation type="unfinished"> px</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Darkness</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <location line="+5"/>
+        <source> %</source>
+        <translation type="unfinished"> %</translation>
+    </message>
+    <message>
+        <location line="-2"/>
+        <source>Zoom</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>UBStampOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+199"/>
+        <location line="+379"/>
         <source>Stamp</source>
         <translation>Damga</translation>
     </message>
@@ -5115,7 +5438,7 @@ Dinamik kalınlık</translation>
 <context>
     <name>UBStylusPalette</name>
     <message>
-        <location filename="../../src/gui/UBStylusPalette.cpp" line="+80"/>
+        <location filename="../../src/gui/UBStylusPalette.cpp" line="+82"/>
         <source>Save a screenshot</source>
         <translation>Ekran görüntüsü kaydet</translation>
     </message>
@@ -5211,7 +5534,7 @@ Dinamik kalınlık</translation>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-581"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-774"/>
         <source>Color</source>
         <translation>Renk</translation>
     </message>
@@ -5434,7 +5757,7 @@ Güncellenen belgelere erişmek için uygulamayı yeniden başlatın.</translati
 <context>
     <name>UBZLayerController</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsScene.cpp" line="-856"/>
+        <location filename="../../src/domain/UBGraphicsScene.cpp" line="-958"/>
         <source>Bottom layer limit reached</source>
         <translation type="unfinished"></translation>
     </message>

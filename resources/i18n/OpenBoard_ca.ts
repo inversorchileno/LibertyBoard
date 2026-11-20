@@ -198,7 +198,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="vanished">Fons</translation>
     </message>
     <message>
-        <location line="+1532"/>
+        <location line="+1548"/>
         <source>Text</source>
         <translation>Text</translation>
     </message>
@@ -238,7 +238,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="vanished">Canvia el fons</translation>
     </message>
     <message>
-        <location line="-1593"/>
+        <location line="-1609"/>
         <source>Undo</source>
         <translation>Desfés</translation>
     </message>
@@ -778,12 +778,12 @@ Do you wish to override the security check and continue ?   </source>
     </message>
     <message>
         <location line="+9"/>
-        <location line="+601"/>
+        <location line="+617"/>
         <source>Erase Annotations</source>
         <translation>Esborra les anotacions</translation>
     </message>
     <message>
-        <location line="-598"/>
+        <location line="-614"/>
         <source>Erase All Annotations</source>
         <translation>Esborra totes les anotacions</translation>
     </message>
@@ -879,6 +879,16 @@ Do you wish to override the security check and continue ?   </source>
     </message>
     <message>
         <location line="+13"/>
+        <source>Spotlight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Spotlight and magnifier: darken the screen but around the pointer, or magnify under it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+13"/>
         <source>Quick note</source>
         <translation>Nota ràpida</translation>
     </message>
@@ -922,7 +932,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="vanished">Ctrl+I</translation>
     </message>
     <message>
-        <location line="-683"/>
+        <location line="-699"/>
         <source>Erase Annotation</source>
         <translation>Esborra l&apos;anotació</translation>
     </message>
@@ -967,7 +977,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Mà</translation>
     </message>
     <message>
-        <location line="+262"/>
+        <location line="+278"/>
         <location line="+165"/>
         <source>Capture Part of the Screen</source>
         <translation>Captura part de la pantalla</translation>
@@ -1011,7 +1021,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Comprova si hi ha actualitzacions</translation>
     </message>
     <message>
-        <location line="-494"/>
+        <location line="-510"/>
         <source>Scroll Page</source>
         <translation>Desplaça la pàgina</translation>
     </message>
@@ -1066,7 +1076,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Ctrl+J</translation>
     </message>
     <message>
-        <location line="+176"/>
+        <location line="+192"/>
         <source>Write Text</source>
         <translation>Escriu text</translation>
     </message>
@@ -1162,7 +1172,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Mostra a la pantalla</translation>
     </message>
     <message>
-        <location line="-1932"/>
+        <location line="-1948"/>
         <location line="+686"/>
         <location line="+3"/>
         <source>LibertyBoard</source>
@@ -1174,7 +1184,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Surt de l&apos;LibertyBoard</translation>
     </message>
     <message>
-        <location line="+1583"/>
+        <location line="+1599"/>
         <source>Erase all Annotations</source>
         <translation>Esborra totes les anotacions</translation>
     </message>
@@ -1214,7 +1224,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Elimina el fons</translation>
     </message>
     <message>
-        <location line="-809"/>
+        <location line="-825"/>
         <location line="+6"/>
         <source>Ruled Light Background</source>
         <translation type="unfinished"></translation>
@@ -1226,7 +1236,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+736"/>
+        <location line="+752"/>
         <source>Open Tutorial</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1242,7 +1252,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-1638"/>
+        <location line="-1654"/>
         <source>Small Eraser</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1277,7 +1287,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1531"/>
+        <location line="+1547"/>
         <location line="+3"/>
         <source>Draw intermediate grid lines</source>
         <translation type="unfinished"></translation>
@@ -1291,7 +1301,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-1598"/>
+        <location line="-1614"/>
         <source>Documents Mode</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1358,7 +1368,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+525"/>
+        <location line="+541"/>
         <source>Import one or more pages (supported formats : jpg, png, svg, ubz, pdf)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1436,7 +1446,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="vanished">Esteu segur que voleu eliminar 1 pàgina del document seleccionat &apos;%0&apos;?</translation>
     </message>
     <message>
-        <location filename="../../src/adaptors/UBSvgSubsetAdaptor.cpp" line="+251"/>
+        <location filename="../../src/adaptors/UBSvgSubsetAdaptor.cpp" line="+252"/>
         <source>Loading scene (%1/%2)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1539,7 +1549,7 @@ Do you wish to override the security check and continue ?   </source>
     </message>
     <message>
         <location filename="../../src/core/UBApplication.cpp" line="+384"/>
-        <location line="+47"/>
+        <location line="+48"/>
         <location line="+221"/>
         <source>Cannot open your UBX file directly. Please import it in Documents mode instead</source>
         <translation type="unfinished"></translation>
@@ -1574,6 +1584,39 @@ Do you wish to override the security check and continue ?   </source>
     </message>
 </context>
 <context>
+    <name>UBAttachmentOptionsPanel</name>
+    <message>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+576"/>
+        <source>Insert file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Hyperlink</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>File: a click on the page attaches a file. Hyperlink: a click on the page asks for the address of a web page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+27"/>
+        <source>Add a hyperlink to a web page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Attach a file to the page</source>
+        <translation type="unfinished">Adjunta un fitxer a la pàgina</translation>
+    </message>
+</context>
+<context>
     <name>UBBackgroundPalette</name>
     <message>
         <location filename="../../src/gui/UBBackgroundPalette.cpp" line="+57"/>
@@ -1594,7 +1637,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBoardController</name>
     <message>
-        <location filename="../../src/board/UBBoardController.cpp" line="+1301"/>
+        <location filename="../../src/board/UBBoardController.cpp" line="+1309"/>
         <source>Downloading content %1 failed</source>
         <translation>Ha fallat la baixada del contingut %1</translation>
     </message>
@@ -1609,7 +1652,42 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Tipus desconegut d&apos;eina %1</translation>
     </message>
     <message>
-        <location line="+1221"/>
+        <location line="+672"/>
+        <source>Page/canvas size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source> px</source>
+        <translation type="unfinished"> px</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Half as wide again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Half as tall again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Width</source>
+        <translation type="unfinished">Gruix</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Height</source>
+        <translation type="unfinished">Alçada</translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>The size of this page. The drawings stay where they are; a bigger canvas leaves room around them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+577"/>
         <source>Add Item</source>
         <translation>Afegeix un element</translation>
     </message>
@@ -1619,7 +1697,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Tots els acceptats (%1)</translation>
     </message>
     <message>
-        <location line="-1178"/>
+        <location line="-1240"/>
         <source>Unknown content type %1</source>
         <translation>Tipus desconegut de contingut %1</translation>
     </message>
@@ -1631,13 +1709,13 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="+506"/>
         <location line="+45"/>
-        <location line="+964"/>
+        <location line="+1022"/>
         <location line="+36"/>
         <source>Add file operation failed: file copying error</source>
         <translation>Ha fallat l&apos;operació d&apos;afegir un fitxer: error en copiar el fitxer</translation>
     </message>
     <message>
-        <location line="-2374"/>
+        <location line="-2432"/>
         <source>Group</source>
         <translation>Agrupa</translation>
     </message>
@@ -1680,7 +1758,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBoardPaletteManager</name>
     <message>
-        <location filename="../../src/board/UBBoardPaletteManager.cpp" line="+948"/>
+        <location filename="../../src/board/UBBoardPaletteManager.cpp" line="+933"/>
         <source>Error Adding Image to Library</source>
         <translation>No s&apos;ha pogut afegir la imatge a la llibreria</translation>
     </message>
@@ -1742,7 +1820,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+2118"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+2143"/>
         <source>That page is not in the document any more.</source>
         <translation>Aquesta pàgina ja no és al document.</translation>
     </message>
@@ -1812,7 +1890,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBColorSwatches</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsWidgets.cpp" line="+97"/>
+        <location filename="../../src/gui/UBToolOptionsWidgets.cpp" line="+152"/>
         <source>No color</source>
         <translation>Sense color</translation>
     </message>
@@ -1822,7 +1900,12 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Un altre color</translation>
     </message>
     <message>
-        <location line="+86"/>
+        <location line="+8"/>
+        <source>Eyedropper: take a color on the screen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+173"/>
         <source>Choose a color</source>
         <translation>Trieu un color</translation>
     </message>
@@ -1830,7 +1913,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1017"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+606"/>
         <source>Quick note</source>
         <translation>Nota ràpida</translation>
     </message>
@@ -1901,7 +1984,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBDesktopPalette</name>
     <message>
-        <location filename="../../src/desktop/UBDesktopPalette.cpp" line="+88"/>
+        <location filename="../../src/desktop/UBDesktopPalette.cpp" line="+89"/>
         <source>Save a screenshot</source>
         <translation>Desa una captura de pantalla</translation>
     </message>
@@ -2523,7 +2606,7 @@ Do you want to continue?</source>
 <context>
     <name>UBEraserOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-747"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-921"/>
         <source>Eraser</source>
         <translation>Esborrador</translation>
     </message>
@@ -2675,7 +2758,7 @@ Do you want to continue?</source>
 <context>
     <name>UBExportFullPDF</name>
     <message>
-        <location filename="../../src/adaptors/UBExportFullPDF.cpp" line="+262"/>
+        <location filename="../../src/adaptors/UBExportFullPDF.cpp" line="+268"/>
         <source>Export as PDF File</source>
         <translation>Exporta com a fitxer PDF</translation>
     </message>
@@ -2990,6 +3073,29 @@ Voleu baixar-la i instal·lar-la ara? LibertyBoard desa els documents, es tanca 
     </message>
 </context>
 <context>
+    <name>UBGraphicsHyperlinkItem</name>
+    <message>
+        <location filename="../../src/domain/UBGraphicsHyperlinkItem.cpp" line="+48"/>
+        <source>Hyperlink</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>%1 could not be opened.</source>
+        <translation type="unfinished">No s&apos;ha pogut obrir %1.</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Add a hyperlink</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Address of the web page:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>UBGraphicsItemDelegate</name>
     <message>
         <location filename="../../src/domain/UBGraphicsItemDelegate.cpp" line="+788"/>
@@ -3089,7 +3195,7 @@ Voleu baixar-la i instal·lar-la ara? LibertyBoard desa els documents, es tanca 
 <context>
     <name>UBGraphicsScene</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsScene.cpp" line="+1046"/>
+        <location filename="../../src/domain/UBGraphicsScene.cpp" line="+1150"/>
         <location line="+11"/>
         <source>Attach a file</source>
         <translation>Adjunta un fitxer</translation>
@@ -3322,6 +3428,16 @@ Voleu baixar-la i instal·lar-la ara? LibertyBoard desa els documents, es tanca 
         <translation>Punt</translation>
     </message>
     <message>
+        <location line="+0"/>
+        <source>Follow</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Trail: draws while pressed. Point: shows only the point. Follow: follows the mouse without a click, its trail fading with the times below.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location line="+4"/>
         <source> pt</source>
         <translation> pt</translation>
@@ -3371,6 +3487,16 @@ Voleu baixar-la i instal·lar-la ara? LibertyBoard desa els documents, es tanca 
         <location line="-1"/>
         <source>Fading duration</source>
         <translation>Durada de l&apos;esvaïment</translation>
+    </message>
+    <message>
+        <location line="+55"/>
+        <source>Wait</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Fading</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3439,13 +3565,11 @@ Voleu baixar-la i instal·lar-la ara? LibertyBoard desa els documents, es tanca 
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+102"/>
-        <location line="+152"/>
         <source>Page Size</source>
-        <translation>Mida de la pàgina</translation>
+        <translation type="vanished">Mida de la pàgina</translation>
     </message>
     <message>
-        <location line="-128"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+131"/>
         <location line="+85"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -3484,7 +3608,13 @@ Voleu baixar-la i instal·lar-la ara? LibertyBoard desa els documents, es tanca 
         <translation>Tanca el document</translation>
     </message>
     <message>
-        <location line="-70"/>
+        <location line="-112"/>
+        <location line="+152"/>
+        <source>Page/canvas size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-110"/>
         <source>New board</source>
         <translation>Pissarra nova</translation>
     </message>
@@ -3549,7 +3679,63 @@ Voleu baixar-la i instal·lar-la ara? LibertyBoard desa els documents, es tanca 
         <translation>Dos documents un al costat de l&apos;altre: feu clic en un costat per treballar-hi</translation>
     </message>
     <message>
-        <location line="+31"/>
+        <location line="+26"/>
+        <source>Custom size...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Read and dictate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <location line="+6"/>
+        <source>Read aloud</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-4"/>
+        <source>Reads the texts selected, or the text of the page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Stop reading</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Dictate (Windows + H)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Opens the dictation of Windows: what is said is written where the cursor of text is</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Dictate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>The dictation of the system is not available here. On Windows, press Windows + H in a text.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Transcribe an audio (coming with the AI)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Writes what is said in a recording; it will come with the AI of LibertyBoard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
         <source>Full screen</source>
         <translation>Pantalla completa</translation>
     </message>
@@ -3575,12 +3761,12 @@ Voleu baixar-la i instal·lar-la ara? LibertyBoard desa els documents, es tanca 
     </message>
     <message>
         <location line="+66"/>
-        <location line="+299"/>
+        <location line="+357"/>
         <source>Saved</source>
         <translation>Desat</translation>
     </message>
     <message>
-        <location line="-293"/>
+        <location line="-351"/>
         <source>Search...</source>
         <translation>Cerca...</translation>
     </message>
@@ -3600,7 +3786,25 @@ Voleu baixar-la i instal·lar-la ara? LibertyBoard desa els documents, es tanca 
         <translation>L&apos;índex del PDF: un clic en un títol porta a la seva pàgina</translation>
     </message>
     <message>
-        <location line="+31"/>
+        <location line="+28"/>
+        <location line="+9"/>
+        <location line="+22"/>
+        <source>Lock canvas</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-29"/>
+        <source>Lock the canvas: nothing can be drawn, written, highlighted, moved or deleted; the laser pointer, the hand and the selector still work</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <location line="+20"/>
+        <source>Unlock canvas</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+15"/>
         <source>Hide or show the toolbar</source>
         <translation>Amaga o mostra la barra d&apos;eines</translation>
     </message>
@@ -3615,7 +3819,7 @@ Voleu baixar-la i instal·lar-la ara? LibertyBoard desa els documents, es tanca 
         <translation>Torna a la finestra, amb el menú (F11)</translation>
     </message>
     <message>
-        <location line="+62"/>
+        <location line="+79"/>
         <source>Open</source>
         <translation>Obre</translation>
     </message>
@@ -3641,7 +3845,7 @@ Voleu baixar-la i instal·lar-la ara? LibertyBoard desa els documents, es tanca 
 <context>
     <name>UBMarkerOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-101"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-159"/>
         <source>Marker</source>
         <translation>Marcador</translation>
     </message>
@@ -3765,7 +3969,7 @@ Voleu ignorar aquests errors per a aquest amfitrió?</translation>
 <context>
     <name>UBNoteOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+698"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+872"/>
         <source>Note</source>
         <translation>Nota</translation>
     </message>
@@ -4066,30 +4270,57 @@ També es pot fer després amb Inici &gt; Reconeix el text.</translation>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-843"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1036"/>
         <source>Pen</source>
         <translation>Bolígraf</translation>
     </message>
     <message>
-        <location line="+7"/>
         <source>Basic
 Fixed width</source>
-        <translation>Bàsic
+        <translation type="vanished">Bàsic
 Amplada fixa</translation>
     </message>
     <message>
-        <location line="+0"/>
         <source>Pro
 Variable width</source>
-        <translation>Pro
+        <translation type="vanished">Pro
 Amplada variable</translation>
     </message>
     <message>
-        <location line="+0"/>
         <source>Calligraphy
 Dynamic width</source>
-        <translation>Cal·ligrafia
+        <translation type="vanished">Cal·ligrafia
 Amplada dinàmica</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Ballpoint pen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Fountain pen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Calligraphy pen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Pencil</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Marker</source>
+        <translation type="unfinished">Marcador</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Ballpoint pen: even width. Fountain pen: width follows the pressure. Calligraphy pen: width follows the direction. Pencil: thin and light, like graphite. Marker: wide and even.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+5"/>
@@ -4575,6 +4806,24 @@ Amplada dinàmica</translation>
     </message>
 </context>
 <context>
+    <name>UBReadAloud</name>
+    <message>
+        <location filename="../../src/gui/UBReadAloud.cpp" line="+58"/>
+        <source>There is no text to read on this page: write or select a text, or open a PDF with text.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+23"/>
+        <source>Read aloud</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>The voices of the system could not be used to read aloud.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>UBScreenshot</name>
     <message>
         <location filename="../../src/gui/UBScreenshot.cpp" line="+36"/>
@@ -4643,7 +4892,7 @@ Amplada dinàmica</translation>
 <context>
     <name>UBSelectorOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+705"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+895"/>
         <source>Select</source>
         <translation>Selecciona</translation>
     </message>
@@ -4681,7 +4930,7 @@ Amplada dinàmica</translation>
 <context>
     <name>UBSettings</name>
     <message>
-        <location filename="../../src/core/UBSettings.cpp" line="+1133"/>
+        <location filename="../../src/core/UBSettings.cpp" line="+1141"/>
         <source>My Movies</source>
         <translation>Les meves pel·lícules</translation>
     </message>
@@ -4689,7 +4938,7 @@ Amplada dinàmica</translation>
 <context>
     <name>UBShapeOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-477"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-525"/>
         <source>Rectangle</source>
         <translation>Rectangle</translation>
     </message>
@@ -4736,26 +4985,29 @@ Amplada dinàmica</translation>
     </message>
     <message>
         <location line="+7"/>
+        <location line="+160"/>
         <source>Line style</source>
         <translation>Estil de línia</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="-160"/>
         <source>Border styles</source>
         <translation>Estils de vora</translation>
     </message>
     <message>
         <location line="+13"/>
+        <location line="+147"/>
         <source>Line start</source>
         <translation>Inici de la línia</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="-143"/>
+        <location line="+144"/>
         <source>Line end</source>
         <translation>Final de la línia</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="-140"/>
         <source>Tapered</source>
         <translation>Cònica</translation>
     </message>
@@ -4766,13 +5018,39 @@ Amplada dinàmica</translation>
     </message>
     <message>
         <location line="+6"/>
+        <source>Fit to the text size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>On a PDF, the band takes the height of the line of text, with a little margin.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <location line="+131"/>
         <source>Opacity</source>
         <translation>Opacitat</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="-130"/>
         <source> %</source>
         <translation> %</translation>
+    </message>
+    <message>
+        <location line="+120"/>
+        <source>Line</source>
+        <translation type="unfinished">Línia</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Start</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>End</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4789,7 +5067,7 @@ Amplada dinàmica</translation>
     </message>
     <message>
         <location line="+15"/>
-        <location line="+29"/>
+        <location line="+30"/>
         <location line="+3"/>
         <source>Stylus Palette</source>
         <translation type="unfinished">Barra d&apos;estris</translation>
@@ -5041,9 +5319,54 @@ Amplada dinàmica</translation>
     </message>
 </context>
 <context>
+    <name>UBSpotlightOptionsPanel</name>
+    <message>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-282"/>
+        <location line="+4"/>
+        <source>Spotlight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Magnifier</source>
+        <translation type="unfinished">Lupa</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Spotlight: darkens all but a circle around the pointer. Magnifier: magnifies what is under the pointer.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Radius</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source> px</source>
+        <translation type="unfinished"> px</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Darkness</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <location line="+5"/>
+        <source> %</source>
+        <translation type="unfinished"> %</translation>
+    </message>
+    <message>
+        <location line="-2"/>
+        <source>Zoom</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>UBStampOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+199"/>
+        <location line="+379"/>
         <source>Stamp</source>
         <translation>Segell</translation>
     </message>
@@ -5079,7 +5402,7 @@ Amplada dinàmica</translation>
 <context>
     <name>UBStylusPalette</name>
     <message>
-        <location filename="../../src/gui/UBStylusPalette.cpp" line="+80"/>
+        <location filename="../../src/gui/UBStylusPalette.cpp" line="+82"/>
         <source>Save a screenshot</source>
         <translation>Desa una captura de pantalla</translation>
     </message>
@@ -5164,7 +5487,7 @@ Amplada dinàmica</translation>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-581"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-774"/>
         <source>Color</source>
         <translation>Color</translation>
     </message>
@@ -5384,7 +5707,7 @@ Reinicieu l&apos;aplicació per accedir als documents actualitzats.</translation
 <context>
     <name>UBZLayerController</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsScene.cpp" line="-856"/>
+        <location filename="../../src/domain/UBGraphicsScene.cpp" line="-958"/>
         <source>Bottom layer limit reached</source>
         <translation type="unfinished"></translation>
     </message>

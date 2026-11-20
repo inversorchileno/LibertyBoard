@@ -258,9 +258,8 @@ UBPenOptionsPanel::UBPenOptionsPanel(QWidget* parent)
     // The pens of Samsung Notes, in the order of UBPenStrokeType.
     mStrokeType = new UBSegmentedChoice({ tr("Ballpoint pen"), tr("Fountain pen"), tr("Calligraphy pen"),
                                           tr("Pencil"), tr("Marker") }, this);
-    mStrokeType->setToolTip(tr("Ballpoint pen: even width. Fountain pen: width follows the pressure. "
-                               "Calligraphy pen: width follows the direction. Pencil: thin and light, like graphite. "
-                               "Marker: wide and even."));
+    mStrokeType->setToolTip(tr("Ballpoint pen: thicker when slow, thinner when fast. Fountain pen: a slanted flat nib. "
+                               "Calligraphy pen: smooth and even. Pencil: thin and dark, with grain. Marker: wide, with a felt texture."));
     addRow(mStrokeType);
 
     mWidth = new UBValueSlider({ 1, 2, 3, 6, 10, 50 }, tr(" pt"), 1, this);

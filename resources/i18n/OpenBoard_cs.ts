@@ -254,12 +254,12 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Ukončit</translation>
     </message>
     <message>
-        <location line="+1338"/>
+        <location line="+1354"/>
         <source>Text</source>
         <translation>Text</translation>
     </message>
     <message>
-        <location line="-1503"/>
+        <location line="-1519"/>
         <source>Undo</source>
         <translation>Zpět</translation>
     </message>
@@ -292,7 +292,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Světlá</translation>
     </message>
     <message>
-        <location line="+698"/>
+        <location line="+714"/>
         <source>Embed Web Content</source>
         <translation>Vložit obsah z webu</translation>
     </message>
@@ -302,17 +302,17 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Stránky</translation>
     </message>
     <message>
-        <location line="-673"/>
+        <location line="-689"/>
         <source>Paste</source>
         <translation>Vložit</translation>
     </message>
     <message>
-        <location line="+732"/>
+        <location line="+748"/>
         <source>Pause</source>
         <translation>Pozastavit</translation>
     </message>
     <message>
-        <location line="-1283"/>
+        <location line="-1299"/>
         <source>Right</source>
         <translation>Vpravo</translation>
     </message>
@@ -349,7 +349,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Černé pozadí</translation>
     </message>
     <message>
-        <location line="+609"/>
+        <location line="+625"/>
         <source>Podcast Config</source>
         <translation>Nastavení podcastu</translation>
     </message>
@@ -359,7 +359,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Vyhledat aktualizace</translation>
     </message>
     <message>
-        <location line="-910"/>
+        <location line="-926"/>
         <source>Use Custom Document Size</source>
         <translation>Použít vlastní velikost dokumentu</translation>
     </message>
@@ -392,7 +392,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Mřížka s bílým pozadím</translation>
     </message>
     <message>
-        <location line="+791"/>
+        <location line="+807"/>
         <source>Hide LibertyBoard Application</source>
         <translation>Skrýt aplikaci LibertyBoard</translation>
     </message>
@@ -401,7 +401,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="vanished">Otevřít externí stránku</translation>
     </message>
     <message>
-        <location line="-1367"/>
+        <location line="-1383"/>
         <source>Add Bookmark</source>
         <translation>Přidat záložku</translation>
     </message>
@@ -433,12 +433,12 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Knihovna</translation>
     </message>
     <message>
-        <location line="+1181"/>
+        <location line="+1197"/>
         <source>Configure Podcast Recording</source>
         <translation>Nastavit záznam podastu</translation>
     </message>
     <message>
-        <location line="-1009"/>
+        <location line="-1025"/>
         <source>Open Page in Board</source>
         <translation>Otevřít stránku na tabuli</translation>
     </message>
@@ -483,7 +483,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Ctrl+G</translation>
     </message>
     <message>
-        <location line="+464"/>
+        <location line="+480"/>
         <source>Ctrl+H</source>
         <translation>Ctrl+H</translation>
     </message>
@@ -492,17 +492,17 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="vanished">Ctrl+I</translation>
     </message>
     <message>
-        <location line="-445"/>
+        <location line="-461"/>
         <source>Ctrl+J</source>
         <translation>Ctrl+J</translation>
     </message>
     <message>
-        <location line="+179"/>
+        <location line="+195"/>
         <source>Ctrl+K</source>
         <translation>Ctrl+K</translation>
     </message>
     <message>
-        <location line="-1034"/>
+        <location line="-1050"/>
         <source>Ctrl+L</source>
         <translation>Ctrl+L</translation>
     </message>
@@ -569,12 +569,12 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Otevřít</translation>
     </message>
     <message>
-        <location line="+1083"/>
+        <location line="+1099"/>
         <source>Custom Capture</source>
         <translation>Vlastní způsob zachytávání</translation>
     </message>
     <message>
-        <location line="-462"/>
+        <location line="-478"/>
         <source>Marker</source>
         <translation>Zvýrazňovač</translation>
     </message>
@@ -637,12 +637,12 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Nahrát domovskou stránku</translation>
     </message>
     <message>
-        <location line="+1224"/>
+        <location line="+1240"/>
         <source>Duplicate Page</source>
         <translation>Duplikovat stránku</translation>
     </message>
     <message>
-        <location line="-944"/>
+        <location line="-960"/>
         <source>Duplicate Selected Content</source>
         <translation>Duplikovat vybraný obsah</translation>
     </message>
@@ -673,7 +673,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Záložka</translation>
     </message>
     <message>
-        <location line="+1132"/>
+        <location line="+1148"/>
         <location line="+3"/>
         <source>Add To Current Page</source>
         <translation>Přidat na aktuální stránku</translation>
@@ -690,7 +690,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Skrýt LibertyBoard</translation>
     </message>
     <message>
-        <location line="-631"/>
+        <location line="-647"/>
         <source>Erase All Items</source>
         <translation>Odstranit všechny položky</translation>
     </message>
@@ -739,7 +739,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Zastavit nahrávání stránky</translation>
     </message>
     <message>
-        <location line="+743"/>
+        <location line="+759"/>
         <source>Duplicate the Current Page</source>
         <translation>Duplikovat aktuální stránku</translation>
     </message>
@@ -749,7 +749,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Pozastavit nahrávání podcastu</translation>
     </message>
     <message>
-        <location line="-1065"/>
+        <location line="-1081"/>
         <source>Create a New Folder</source>
         <translation>Vytvořit novou složku </translation>
     </message>
@@ -759,12 +759,12 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Vymazat stránku</translation>
     </message>
     <message>
-        <location line="+402"/>
+        <location line="+418"/>
         <source>Add To Library</source>
         <translation>Přidat do knihovny</translation>
     </message>
     <message>
-        <location line="-1527"/>
+        <location line="-1543"/>
         <source>Previous</source>
         <translation>Předchozí</translation>
     </message>
@@ -779,17 +779,17 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Obnovit aktuální stránku</translation>
     </message>
     <message>
-        <location line="+1253"/>
+        <location line="+1269"/>
         <source>Import Page</source>
         <translation>Otevřít stránku</translation>
     </message>
     <message>
-        <location line="-290"/>
+        <location line="-306"/>
         <source>Draw Lines</source>
         <translation>Nakreslit čáry</translation>
     </message>
     <message>
-        <location line="+195"/>
+        <location line="+211"/>
         <source>Capture</source>
         <translation>Zachytit</translation>
     </message>
@@ -808,17 +808,17 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Zachytit okno</translation>
     </message>
     <message>
-        <location line="-1021"/>
+        <location line="-1037"/>
         <source>Delete Selected Content</source>
         <translation>Odstranit vybraný obsah</translation>
     </message>
     <message>
-        <location line="+874"/>
+        <location line="+890"/>
         <source>Add Item To New Page</source>
         <translation>Přidat položku na novou stránku</translation>
     </message>
     <message>
-        <location line="-837"/>
+        <location line="-853"/>
         <source>Add Content to Document</source>
         <translation>Přidat obsah do dokumentu</translation>
     </message>
@@ -828,7 +828,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Menší</translation>
     </message>
     <message>
-        <location line="+1167"/>
+        <location line="+1183"/>
         <source>Capture Embeddable Web Content</source>
         <translation>Zachytit část webové stránky</translation>
     </message>
@@ -838,18 +838,18 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Napsat text</translation>
     </message>
     <message>
-        <location line="-1589"/>
+        <location line="-1605"/>
         <location line="+160"/>
         <source>Documents</source>
         <translation>Dokumenty</translation>
     </message>
     <message>
-        <location line="+1472"/>
+        <location line="+1488"/>
         <source>Add To New Page</source>
         <translation>Přidat na novou stránku</translation>
     </message>
     <message>
-        <location line="-729"/>
+        <location line="-745"/>
         <location line="+3"/>
         <source>Regular Size (4/3)</source>
         <translation>Bežná velikost (4/3)</translation>
@@ -902,12 +902,12 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Oddělovač</translation>
     </message>
     <message>
-        <location line="+507"/>
+        <location line="+523"/>
         <source>Erase all Annotations</source>
         <translation>Vymazat všechny anotace</translation>
     </message>
     <message>
-        <location line="-601"/>
+        <location line="-617"/>
         <source>Erase All Annotations</source>
         <translation>Vymazat všechny anotace</translation>
     </message>
@@ -922,12 +922,12 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Spustit nahrávání obrazovky</translation>
     </message>
     <message>
-        <location line="+467"/>
+        <location line="+483"/>
         <source>New Page</source>
         <translation>Nová stránka</translation>
     </message>
     <message>
-        <location line="-986"/>
+        <location line="-1002"/>
         <source>Import a Document</source>
         <translation>Otevřít dokument</translation>
     </message>
@@ -955,13 +955,13 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Předvolby</translation>
     </message>
     <message>
-        <location line="+1071"/>
+        <location line="+1087"/>
         <location line="+165"/>
         <source>Capture Part of the Screen</source>
         <translation>Zachytit část obrazovky</translation>
     </message>
     <message>
-        <location line="-1169"/>
+        <location line="-1185"/>
         <source>Ctrl+Shift+H</source>
         <translation>Ctrl+Shift+H</translation>
     </message>
@@ -981,7 +981,7 @@ Do you wish to override the security check and continue ?   </source>
     </message>
     <message>
         <location line="+991"/>
-        <location line="+601"/>
+        <location line="+617"/>
         <source>Erase Annotations</source>
         <translation>Vymazat anotace</translation>
     </message>
@@ -991,17 +991,17 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Zobrazit při projekcii</translation>
     </message>
     <message>
-        <location line="-483"/>
+        <location line="-499"/>
         <source>Select And Modify Objects</source>
         <translation>Vybrat a upravit objekty</translation>
     </message>
     <message>
-        <location line="+455"/>
+        <location line="+471"/>
         <source>Capture a Window</source>
         <translation>Zachytit okno</translation>
     </message>
     <message>
-        <location line="-394"/>
+        <location line="-410"/>
         <source>Virtual Laser Pointer</source>
         <translation>Virtuální laserové ukazovátko</translation>
     </message>
@@ -1012,7 +1012,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Bílé pozadí</translation>
     </message>
     <message>
-        <location line="+602"/>
+        <location line="+618"/>
         <source>Add Item To Library</source>
         <translation>Přidat položku do knihovny</translation>
     </message>
@@ -1034,7 +1034,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="vanished">Přidat do aktuálního dokumentu</translation>
     </message>
     <message>
-        <location line="-312"/>
+        <location line="-328"/>
         <source>Highlight </source>
         <translation>Zvýraznit </translation>
     </message>
@@ -1060,7 +1060,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Vymazat anotaci</translation>
     </message>
     <message>
-        <location line="+579"/>
+        <location line="+595"/>
         <source>Play</source>
         <translation>Přehrát</translation>
     </message>
@@ -1080,7 +1080,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Odstranit pozadí</translation>
     </message>
     <message>
-        <location line="-809"/>
+        <location line="-825"/>
         <location line="+6"/>
         <source>Ruled Light Background</source>
         <translation type="unfinished"></translation>
@@ -1092,7 +1092,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+736"/>
+        <location line="+752"/>
         <source>Open Tutorial</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1108,7 +1108,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-1638"/>
+        <location line="-1654"/>
         <source>Small Eraser</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1143,7 +1143,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1531"/>
+        <location line="+1547"/>
         <location line="+3"/>
         <source>Draw intermediate grid lines</source>
         <translation type="unfinished"></translation>
@@ -1157,7 +1157,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-1695"/>
+        <location line="-1711"/>
         <source>Template style</source>
         <translation>Styl šablony</translation>
     </message>
@@ -1320,6 +1320,16 @@ Do you wish to override the security check and continue ?   </source>
     </message>
     <message>
         <location line="+13"/>
+        <source>Spotlight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Spotlight and magnifier: darken the screen but around the pointer, or magnify under it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+13"/>
         <source>Quick note</source>
         <translation>Rychlá poznámka</translation>
     </message>
@@ -1437,7 +1447,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="vanished">Opravdu chcete odstranit 1 stránku z vybraného dokumentu &apos;%0&apos;?</translation>
     </message>
     <message>
-        <location filename="../../src/adaptors/UBSvgSubsetAdaptor.cpp" line="+251"/>
+        <location filename="../../src/adaptors/UBSvgSubsetAdaptor.cpp" line="+252"/>
         <source>Loading scene (%1/%2)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1540,7 +1550,7 @@ Do you wish to override the security check and continue ?   </source>
     </message>
     <message>
         <location filename="../../src/core/UBApplication.cpp" line="+384"/>
-        <location line="+47"/>
+        <location line="+48"/>
         <location line="+221"/>
         <source>Cannot open your UBX file directly. Please import it in Documents mode instead</source>
         <translation type="unfinished"></translation>
@@ -1575,6 +1585,39 @@ Do you wish to override the security check and continue ?   </source>
     </message>
 </context>
 <context>
+    <name>UBAttachmentOptionsPanel</name>
+    <message>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+576"/>
+        <source>Insert file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Hyperlink</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>File: a click on the page attaches a file. Hyperlink: a click on the page asks for the address of a web page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+27"/>
+        <source>Add a hyperlink to a web page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Attach a file to the page</source>
+        <translation type="unfinished">Připojit soubor ke stránce</translation>
+    </message>
+</context>
+<context>
     <name>UBBackgroundPalette</name>
     <message>
         <location filename="../../src/gui/UBBackgroundPalette.cpp" line="+57"/>
@@ -1595,12 +1638,12 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBoardController</name>
     <message>
-        <location filename="../../src/board/UBBoardController.cpp" line="+2860"/>
+        <location filename="../../src/board/UBBoardController.cpp" line="+2930"/>
         <source>All Supported (%1)</source>
         <translation>Všechny podporované (%1)</translation>
     </message>
     <message>
-        <location line="-1559"/>
+        <location line="-1621"/>
         <source>Downloading content %1 failed</source>
         <translation>Nepodařilo se stáhnout %1</translation>
     </message>
@@ -1610,12 +1653,47 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Neznámy typ obsahu (%1)</translation>
     </message>
     <message>
-        <location line="+1176"/>
+        <location line="+627"/>
+        <source>Page/canvas size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source> px</source>
+        <translation type="unfinished"> px</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Half as wide again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Half as tall again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Width</source>
+        <translation type="unfinished">Tloušťka</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Height</source>
+        <translation type="unfinished">Výška</translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>The size of this page. The drawings stay where they are; a bigger canvas leaves room around them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+577"/>
         <source>Add Item</source>
         <translation>Přidat položku</translation>
     </message>
     <message>
-        <location line="-1221"/>
+        <location line="-1283"/>
         <source>Unknown tool type %1</source>
         <translation>Neznámý typ nástroje %1</translation>
     </message>
@@ -1632,13 +1710,13 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="+506"/>
         <location line="+45"/>
-        <location line="+964"/>
+        <location line="+1022"/>
         <location line="+36"/>
         <source>Add file operation failed: file copying error</source>
         <translation>Přidání souboru selhalo: chyba při kopírování</translation>
     </message>
     <message>
-        <location line="-2374"/>
+        <location line="-2432"/>
         <source>Group</source>
         <translation>Seskupit</translation>
     </message>
@@ -1681,7 +1759,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBoardPaletteManager</name>
     <message>
-        <location filename="../../src/board/UBBoardPaletteManager.cpp" line="+948"/>
+        <location filename="../../src/board/UBBoardPaletteManager.cpp" line="+933"/>
         <source>Error Adding Image to Library</source>
         <translation>Chyba při přidávání obrázku do knihovny</translation>
     </message>
@@ -1743,7 +1821,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+2118"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+2143"/>
         <source>That page is not in the document any more.</source>
         <translation>Tato strana už v dokumentu není.</translation>
     </message>
@@ -1813,7 +1891,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBColorSwatches</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsWidgets.cpp" line="+97"/>
+        <location filename="../../src/gui/UBToolOptionsWidgets.cpp" line="+152"/>
         <source>No color</source>
         <translation>Bez barvy</translation>
     </message>
@@ -1823,7 +1901,12 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Jiná barva</translation>
     </message>
     <message>
-        <location line="+86"/>
+        <location line="+8"/>
+        <source>Eyedropper: take a color on the screen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+173"/>
         <source>Choose a color</source>
         <translation>Vyberte barvu</translation>
     </message>
@@ -1831,7 +1914,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1017"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+606"/>
         <source>Quick note</source>
         <translation>Rychlá poznámka</translation>
     </message>
@@ -1902,7 +1985,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBDesktopPalette</name>
     <message>
-        <location filename="../../src/desktop/UBDesktopPalette.cpp" line="+470"/>
+        <location filename="../../src/desktop/UBDesktopPalette.cpp" line="+471"/>
         <source>Show Desktop on Secondary Screen</source>
         <translation>Zobrazit plochu na druhé obrazovce</translation>
     </message>
@@ -2520,7 +2603,7 @@ Do you want to continue?</source>
 <context>
     <name>UBEraserOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-747"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-921"/>
         <source>Eraser</source>
         <translation>Vygumovat</translation>
     </message>
@@ -2672,7 +2755,7 @@ Do you want to continue?</source>
 <context>
     <name>UBExportFullPDF</name>
     <message>
-        <location filename="../../src/adaptors/UBExportFullPDF.cpp" line="+262"/>
+        <location filename="../../src/adaptors/UBExportFullPDF.cpp" line="+268"/>
         <source>Export as PDF File</source>
         <translation>Exportovat jako soubor PDF</translation>
     </message>
@@ -2987,6 +3070,29 @@ Stáhnout a nainstalovat nyní? LibertyBoard uloží vaše dokumenty, zavře se 
     </message>
 </context>
 <context>
+    <name>UBGraphicsHyperlinkItem</name>
+    <message>
+        <location filename="../../src/domain/UBGraphicsHyperlinkItem.cpp" line="+48"/>
+        <source>Hyperlink</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>%1 could not be opened.</source>
+        <translation type="unfinished">%1 nelze otevřít.</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Add a hyperlink</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Address of the web page:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>UBGraphicsItemDelegate</name>
     <message>
         <location filename="../../src/domain/UBGraphicsItemDelegate.cpp" line="+788"/>
@@ -3086,7 +3192,7 @@ Stáhnout a nainstalovat nyní? LibertyBoard uloží vaše dokumenty, zavře se 
 <context>
     <name>UBGraphicsScene</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsScene.cpp" line="+1046"/>
+        <location filename="../../src/domain/UBGraphicsScene.cpp" line="+1150"/>
         <location line="+11"/>
         <source>Attach a file</source>
         <translation>Připojit soubor</translation>
@@ -3319,6 +3425,16 @@ Stáhnout a nainstalovat nyní? LibertyBoard uloží vaše dokumenty, zavře se 
         <translation>Bod</translation>
     </message>
     <message>
+        <location line="+0"/>
+        <source>Follow</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Trail: draws while pressed. Point: shows only the point. Follow: follows the mouse without a click, its trail fading with the times below.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location line="+4"/>
         <source> pt</source>
         <translation> pt</translation>
@@ -3368,6 +3484,16 @@ Stáhnout a nainstalovat nyní? LibertyBoard uloží vaše dokumenty, zavře se 
         <location line="-1"/>
         <source>Fading duration</source>
         <translation>Doba mizení</translation>
+    </message>
+    <message>
+        <location line="+55"/>
+        <source>Wait</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Fading</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3436,13 +3562,11 @@ Stáhnout a nainstalovat nyní? LibertyBoard uloží vaše dokumenty, zavře se 
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+102"/>
-        <location line="+152"/>
         <source>Page Size</source>
-        <translation>Velikost stránky</translation>
+        <translation type="vanished">Velikost stránky</translation>
     </message>
     <message>
-        <location line="-128"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+131"/>
         <location line="+85"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -3481,7 +3605,13 @@ Stáhnout a nainstalovat nyní? LibertyBoard uloží vaše dokumenty, zavře se 
         <translation>Zavřít dokument</translation>
     </message>
     <message>
-        <location line="-70"/>
+        <location line="-112"/>
+        <location line="+152"/>
+        <source>Page/canvas size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-110"/>
         <source>New board</source>
         <translation>Nová tabule</translation>
     </message>
@@ -3546,7 +3676,63 @@ Stáhnout a nainstalovat nyní? LibertyBoard uloží vaše dokumenty, zavře se 
         <translation>Dva dokumenty vedle sebe: klepnutím na stranu na ní budete pracovat</translation>
     </message>
     <message>
-        <location line="+31"/>
+        <location line="+26"/>
+        <source>Custom size...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Read and dictate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <location line="+6"/>
+        <source>Read aloud</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-4"/>
+        <source>Reads the texts selected, or the text of the page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Stop reading</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Dictate (Windows + H)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Opens the dictation of Windows: what is said is written where the cursor of text is</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Dictate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>The dictation of the system is not available here. On Windows, press Windows + H in a text.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Transcribe an audio (coming with the AI)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Writes what is said in a recording; it will come with the AI of LibertyBoard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
         <source>Full screen</source>
         <translation>Celá obrazovka</translation>
     </message>
@@ -3572,12 +3758,12 @@ Stáhnout a nainstalovat nyní? LibertyBoard uloží vaše dokumenty, zavře se 
     </message>
     <message>
         <location line="+66"/>
-        <location line="+299"/>
+        <location line="+357"/>
         <source>Saved</source>
         <translation>Uloženo</translation>
     </message>
     <message>
-        <location line="-293"/>
+        <location line="-351"/>
         <source>Search...</source>
         <translation>Hledat...</translation>
     </message>
@@ -3597,7 +3783,25 @@ Stáhnout a nainstalovat nyní? LibertyBoard uloží vaše dokumenty, zavře se 
         <translation>Obsah PDF: kliknutím na nadpis přejdete na jeho stranu</translation>
     </message>
     <message>
-        <location line="+31"/>
+        <location line="+28"/>
+        <location line="+9"/>
+        <location line="+22"/>
+        <source>Lock canvas</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-29"/>
+        <source>Lock the canvas: nothing can be drawn, written, highlighted, moved or deleted; the laser pointer, the hand and the selector still work</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <location line="+20"/>
+        <source>Unlock canvas</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+15"/>
         <source>Hide or show the toolbar</source>
         <translation>Skrýt nebo zobrazit panel nástrojů</translation>
     </message>
@@ -3612,7 +3816,7 @@ Stáhnout a nainstalovat nyní? LibertyBoard uloží vaše dokumenty, zavře se 
         <translation>Zpět do okna s nabídkou (F11)</translation>
     </message>
     <message>
-        <location line="+62"/>
+        <location line="+79"/>
         <source>Open</source>
         <translation>Otevřít</translation>
     </message>
@@ -3638,7 +3842,7 @@ Stáhnout a nainstalovat nyní? LibertyBoard uloží vaše dokumenty, zavře se 
 <context>
     <name>UBMarkerOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-101"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-159"/>
         <source>Marker</source>
         <translation>Zvýrazňovač</translation>
     </message>
@@ -3762,7 +3966,7 @@ Chcete ignorovat tyto chyby na tomto serveru?</translation>
 <context>
     <name>UBNoteOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+698"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+872"/>
         <source>Note</source>
         <translation>Poznámka</translation>
     </message>
@@ -4063,30 +4267,57 @@ Lze to udělat i později přes Domů &gt; Rozpoznat text.</translation>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-843"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1036"/>
         <source>Pen</source>
         <translation>Pero</translation>
     </message>
     <message>
-        <location line="+7"/>
         <source>Basic
 Fixed width</source>
-        <translation>Základní
+        <translation type="vanished">Základní
 Pevná šířka</translation>
     </message>
     <message>
-        <location line="+0"/>
         <source>Pro
 Variable width</source>
-        <translation>Pro
+        <translation type="vanished">Pro
 Proměnná šířka</translation>
     </message>
     <message>
-        <location line="+0"/>
         <source>Calligraphy
 Dynamic width</source>
-        <translation>Kaligrafie
+        <translation type="vanished">Kaligrafie
 Dynamická šířka</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Ballpoint pen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Fountain pen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Calligraphy pen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Pencil</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Marker</source>
+        <translation type="unfinished">Zvýrazňovač</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Ballpoint pen: even width. Fountain pen: width follows the pressure. Calligraphy pen: width follows the direction. Pencil: thin and light, like graphite. Marker: wide and even.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+5"/>
@@ -4572,6 +4803,24 @@ Dynamická šířka</translation>
     </message>
 </context>
 <context>
+    <name>UBReadAloud</name>
+    <message>
+        <location filename="../../src/gui/UBReadAloud.cpp" line="+58"/>
+        <source>There is no text to read on this page: write or select a text, or open a PDF with text.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+23"/>
+        <source>Read aloud</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>The voices of the system could not be used to read aloud.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>UBScreenshot</name>
     <message>
         <location filename="../../src/gui/UBScreenshot.cpp" line="+36"/>
@@ -4640,7 +4889,7 @@ Dynamická šířka</translation>
 <context>
     <name>UBSelectorOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+705"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+895"/>
         <source>Select</source>
         <translation>Vybrat</translation>
     </message>
@@ -4678,7 +4927,7 @@ Dynamická šířka</translation>
 <context>
     <name>UBSettings</name>
     <message>
-        <location filename="../../src/core/UBSettings.cpp" line="+1133"/>
+        <location filename="../../src/core/UBSettings.cpp" line="+1141"/>
         <source>My Movies</source>
         <translation>Moje filmy</translation>
     </message>
@@ -4686,7 +4935,7 @@ Dynamická šířka</translation>
 <context>
     <name>UBShapeOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-477"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-525"/>
         <source>Rectangle</source>
         <translation>Obdélník</translation>
     </message>
@@ -4733,26 +4982,29 @@ Dynamická šířka</translation>
     </message>
     <message>
         <location line="+7"/>
+        <location line="+160"/>
         <source>Line style</source>
         <translation>Styl čáry</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="-160"/>
         <source>Border styles</source>
         <translation>Styly okraje</translation>
     </message>
     <message>
         <location line="+13"/>
+        <location line="+147"/>
         <source>Line start</source>
         <translation>Začátek čáry</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="-143"/>
+        <location line="+144"/>
         <source>Line end</source>
         <translation>Konec čáry</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="-140"/>
         <source>Tapered</source>
         <translation>Zužující se</translation>
     </message>
@@ -4763,13 +5015,39 @@ Dynamická šířka</translation>
     </message>
     <message>
         <location line="+6"/>
+        <source>Fit to the text size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>On a PDF, the band takes the height of the line of text, with a little margin.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <location line="+131"/>
         <source>Opacity</source>
         <translation>Průhlednost</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="-130"/>
         <source> %</source>
         <translation> %</translation>
+    </message>
+    <message>
+        <location line="+120"/>
+        <source>Line</source>
+        <translation type="unfinished">Čára</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Start</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>End</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4786,7 +5064,7 @@ Dynamická šířka</translation>
     </message>
     <message>
         <location line="+15"/>
-        <location line="+29"/>
+        <location line="+30"/>
         <location line="+3"/>
         <source>Stylus Palette</source>
         <translation type="unfinished">Paleta pro stylus</translation>
@@ -5038,9 +5316,54 @@ Dynamická šířka</translation>
     </message>
 </context>
 <context>
+    <name>UBSpotlightOptionsPanel</name>
+    <message>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-282"/>
+        <location line="+4"/>
+        <source>Spotlight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Magnifier</source>
+        <translation type="unfinished">Lupa</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Spotlight: darkens all but a circle around the pointer. Magnifier: magnifies what is under the pointer.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Radius</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source> px</source>
+        <translation type="unfinished"> px</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Darkness</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <location line="+5"/>
+        <source> %</source>
+        <translation type="unfinished"> %</translation>
+    </message>
+    <message>
+        <location line="-2"/>
+        <source>Zoom</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>UBStampOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+199"/>
+        <location line="+379"/>
         <source>Stamp</source>
         <translation>Razítko</translation>
     </message>
@@ -5076,7 +5399,7 @@ Dynamická šířka</translation>
 <context>
     <name>UBStylusPalette</name>
     <message>
-        <location filename="../../src/gui/UBStylusPalette.cpp" line="+80"/>
+        <location filename="../../src/gui/UBStylusPalette.cpp" line="+82"/>
         <source>Save a screenshot</source>
         <translation>Uložit snímek obrazovky</translation>
     </message>
@@ -5168,7 +5491,7 @@ Dynamická šířka</translation>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-581"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-774"/>
         <source>Color</source>
         <translation>Barva</translation>
     </message>
@@ -5388,7 +5711,7 @@ Znovu spusťte aplikaci, abyste mohli pracovat s aktualizovanými dokumenty.</tr
 <context>
     <name>UBZLayerController</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsScene.cpp" line="-856"/>
+        <location filename="../../src/domain/UBGraphicsScene.cpp" line="-958"/>
         <source>Bottom layer limit reached</source>
         <translation type="unfinished"></translation>
     </message>
