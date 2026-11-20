@@ -238,29 +238,58 @@ void UBDesktopPalette::updateMargins(bool resizeToFit)
 
 QRect UBDesktopPalette::minimizeTriangleArea() const
 {
-    const int margin = sLayoutContentMargin / 2 + 5;
+    // In the strip outside the bar, on the side of the border of the screen.
     const int length = 2 * sTriangleStrip;
 
     switch (screenEdge())
     {
         case Qt::LeftEdge:
-            return QRect(margin / 2, height() / 2 - length / 2, sTriangleStrip, length);
+            return QRect(0, height() / 2 - length / 2, sTriangleStrip, length);
         case Qt::RightEdge:
-            return QRect(width() - margin / 2 - sTriangleStrip, height() / 2 - length / 2, sTriangleStrip, length);
+            return QRect(width() - sTriangleStrip, height() / 2 - length / 2, sTriangleStrip, length);
         case Qt::TopEdge:
-            return QRect(width() / 2 - length / 2, margin / 2, length, sTriangleStrip);
+            return QRect(width() / 2 - length / 2, 0, length, sTriangleStrip);
         default:
-            return QRect(width() / 2 - length / 2, height() - margin / 2 - sTriangleStrip, length, sTriangleStrip);
+            return QRect(width() / 2 - length / 2, height() - sTriangleStrip, length, sTriangleStrip);
     }
 }
 
 void UBDesktopPalette::paintEvent(QPaintEvent* event)
 {
-    UBActionPalette::paintEvent(event);
-
     if (mMinimized)
     {
+        UBActionPalette::paintEvent(event);
         return;
+    }
+
+    // The bar keeps its width: the strip of the red triangle is outside it,
+    // left transparent.
+    QRect bar = rect();
+
+    switch (screenEdge())
+    {
+        case Qt::LeftEdge:
+            bar.setLeft(sTriangleStrip);
+            break;
+        case Qt::RightEdge:
+            bar.setRight(width() - 1 - sTriangleStrip);
+            break;
+        case Qt::TopEdge:
+            bar.setTop(sTriangleStrip);
+            break;
+        default:
+            bar.setBottom(height() - 1 - sTriangleStrip);
+            break;
+    }
+
+    {
+        QPainter painter(this);
+        painter.setRenderHint(QPainter::Antialiasing);
+        painter.setPen(Qt::NoPen);
+        painter.setBrush(QColor(170, 170, 170));
+        painter.drawRoundedRect(bar, radius(), radius());
+        painter.setBrush(mBackgroundBrush);
+        painter.drawRoundedRect(bar.adjusted(border(), border(), -border(), -border()), radius(), radius());
     }
 
     // A small red triangle pointing to the border: a click minimizes the palette there.
