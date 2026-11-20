@@ -243,9 +243,11 @@ void UBBoardView::keyPressEvent (QKeyEvent *event)
         return;
     }
 
-    // Enter ends the polyline being drawn, Escape drops it.
-    if (scene() && scene()->isDrawingPolyline()
-        && (event->key() == Qt::Key_Return || event->key() == Qt::Key_Enter || event->key() == Qt::Key_Escape))
+    // Any key ends the polyline being drawn, Escape drops it. Shift,
+    // Ctrl and Alt alone are kept: Shift keeps the segments at 15 degrees.
+    const QList<int> modifierKeys = { Qt::Key_Shift, Qt::Key_Control, Qt::Key_Alt, Qt::Key_Meta, Qt::Key_AltGr };
+
+    if (scene() && scene()->isDrawingPolyline() && !modifierKeys.contains(event->key()))
     {
         if (event->key() == Qt::Key_Escape)
         {
@@ -363,6 +365,14 @@ void UBBoardView::keyPressEvent (QKeyEvent *event)
 
 bool UBBoardView::event (QEvent * e)
 {
+    // While a polyline is drawn, every key comes to the board to end it,
+    // also the keys of the shortcuts of the tools.
+    if (e->type() == QEvent::ShortcutOverride && scene() && scene()->isDrawingPolyline())
+    {
+        e->accept();
+        return true;
+    }
+
     // The pen writing: the touches of the hand that holds it are left out.
     if (e->type() == QEvent::TabletPress || e->type() == QEvent::TabletMove || e->type() == QEvent::TabletRelease)
     {

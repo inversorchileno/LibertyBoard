@@ -40,7 +40,8 @@ class QPainter;
  * page color. The calendars and planners are built for the date given:
  * the days fall on their real weekdays, every year. Their words are in
  * English, Spanish, German, French, Chinese or Japanese; any other
- * language gets the English ones.
+ * language gets the English ones. Their weeks start on Monday, or on
+ * Sunday when asked.
  */
 class UBPageTemplates
 {
@@ -78,6 +79,9 @@ public:
      * LibertyBoard: "es", "de", "fr", "zh", "ja" or else English.
      */
     explicit UBPageTemplates(const QString& language);
+
+    /** @brief The first day of the week of the calendars: Monday unless Sunday is asked for. */
+    void setWeekStartsOnSunday(bool sunday);
 
     /** @brief The name of the template, in the language of the templates. */
     QString name(Template pageTemplate) const;
@@ -124,4 +128,5 @@ private:
     void drawStoryboard(QPainter* painter, const QRectF& rect) const;
 
     QString mLanguage;
+    Qt::DayOfWeek mFirstDay{Qt::Monday};
 };

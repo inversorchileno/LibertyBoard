@@ -1,5 +1,6 @@
 #include "UBBackgroundPalette.h"
 
+#include <QCheckBox>
 #include <QDateEdit>
 #include <QGridLayout>
 #include <QPainter>
@@ -145,8 +146,20 @@ QWidget* UBBackgroundPalette::createTemplates()
     mTemplateDate->setCalendarPopup(true);
     mTemplateDate->setDisplayFormat("dd/MM/yyyy");
     mTemplateDate->setToolTip(tr("The calendars and planners are made for this day, its week, its month or its year"));
+    // Monday first, as in most of the world; Sunday for those who use it.
+    mSundayFirst = new QCheckBox(tr("Weeks start on Sunday"), templates);
+    mSundayFirst->setStyleSheet("QCheckBox { color : white; }");
+    mSundayFirst->setChecked(UBSettings::settings()->weekStartsOnSunday->get().toBool());
+    mSundayFirst->setToolTip(tr("The calendars start their weeks on Monday, or on Sunday when this is ticked"));
+    connect(mSundayFirst, &QCheckBox::toggled, this, [this](bool sunday) {
+        UBSettings::settings()->weekStartsOnSunday->set(sunday);
+        drawTemplatePictures();
+    });
+
     dateRow->addWidget(dateLabel);
     dateRow->addWidget(mTemplateDate);
+    dateRow->addSpacing(16);
+    dateRow->addWidget(mSundayFirst);
     dateRow->addStretch(1);
     layout->addLayout(dateRow);
 
@@ -157,22 +170,14 @@ QWidget* UBBackgroundPalette::createTemplates()
     // A picture of each template on a white page, with its name under it.
     const UBPageTemplates pageTemplates(applicationLanguage());
     const QSize thumbnail(120, 68);
-    const qreal ratio = 2;
     const QList<UBPageTemplates::Template> all = UBPageTemplates::all();
 
     for (int i = 0; i < all.size(); ++i)
     {
         const UBPageTemplates::Template pageTemplate = all.at(i);
-        QPixmap picture(thumbnail * ratio);
-        picture.setDevicePixelRatio(ratio);
-        picture.fill(Qt::white);
-        QPainter painter(&picture);
-        pageTemplates.draw(&painter, QRectF(QPointF(0, 0), thumbnail), pageTemplate, QDate::currentDate());
-        painter.end();
-
         auto button = new QToolButton(templates);
         const QString name = pageTemplates.name(pageTemplate);
-        button->setIcon(QIcon(picture));
+        mTemplateButtons.insert(pageTemplate, button);
         button->setIconSize(thumbnail);
         button->setText(button->fontMetrics().elidedText(name, Qt::ElideRight, thumbnail.width()));
         button->setToolTip(UBPageTemplates::isDated(pageTemplate)
@@ -193,7 +198,27 @@ QWidget* UBBackgroundPalette::createTemplates()
     hint->setStyleSheet("QLabel { color : #c9ced6; }");
     layout->addWidget(hint);
 
+    drawTemplatePictures();
     return templates;
+}
+
+void UBBackgroundPalette::drawTemplatePictures()
+{
+    UBPageTemplates pageTemplates(applicationLanguage());
+    pageTemplates.setWeekStartsOnSunday(UBSettings::settings()->weekStartsOnSunday->get().toBool());
+    const QSize thumbnail(120, 68);
+    const qreal ratio = 2;
+
+    for (auto it = mTemplateButtons.cbegin(); it != mTemplateButtons.cend(); ++it)
+    {
+        QPixmap picture(thumbnail * ratio);
+        picture.setDevicePixelRatio(ratio);
+        picture.fill(Qt::white);
+        QPainter painter(&picture);
+        pageTemplates.draw(&painter, QRectF(QPointF(0, 0), thumbnail), it.key(), QDate::currentDate());
+        painter.end();
+        it.value()->setIcon(QIcon(picture));
+    }
 }
 
 void UBBackgroundPalette::showTemplates(bool shown)

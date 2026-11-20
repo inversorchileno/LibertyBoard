@@ -1972,7 +1972,9 @@ void UBBoardController::applyPageTemplate(UBPageTemplates::Template pageTemplate
     }
 
     const QSizeF size = mActiveScene->nominalSize();
-    const QByteArray svg = UBPageTemplates(language).svg(pageTemplate, size, date);
+    UBPageTemplates templates(language);
+    templates.setWeekStartsOnSunday(UBSettings::settings()->weekStartsOnSunday->get().toBool());
+    const QByteArray svg = templates.svg(pageTemplate, size, date);
 
     // On a plain page of its color; not a step of undo, like the patterns.
     mActiveScene->setBackground(mActiveScene->isDarkBackground(), UBPageBackground::plain);

@@ -134,6 +134,11 @@ UBPageTemplates::UBPageTemplates(const QString& language)
     mLanguage = known.contains(code) ? code : QStringLiteral("en");
 }
 
+void UBPageTemplates::setWeekStartsOnSunday(bool sunday)
+{
+    mFirstDay = sunday ? Qt::Sunday : Qt::Monday;
+}
+
 QString UBPageTemplates::word(const char* english) const
 {
     const auto found = words().constFind(QString::fromUtf8(english));
@@ -219,8 +224,7 @@ QString UBPageTemplates::dayName(int dayOfWeek, bool shortName) const
 
 QList<QDate> UBPageTemplates::weekOf(const QDate& date) const
 {
-    // The week starts on the first day of the week of the language.
-    const int firstDay = localeOf(mLanguage).firstDayOfWeek();
+    const int firstDay = mFirstDay;
     const QDate start = date.addDays(-((date.dayOfWeek() - firstDay + 7) % 7));
     QList<QDate> days;
 
@@ -329,7 +333,7 @@ void UBPageTemplates::drawGrid(QPainter* painter, const QRectF& area, int column
 void UBPageTemplates::drawMonth(QPainter* painter, const QRectF& area, const QDate& month, bool small) const
 {
     const QDate first(month.year(), month.month(), 1);
-    const int firstDay = localeOf(mLanguage).firstDayOfWeek();
+    const int firstDay = mFirstDay;
     const int offset = (first.dayOfWeek() - firstDay + 7) % 7;
     const int weeks = (offset + first.daysInMonth() + 6) / 7;
 

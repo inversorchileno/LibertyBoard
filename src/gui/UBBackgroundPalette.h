@@ -5,8 +5,11 @@
 #include "core/UBApplication.h"
 #include "board/UBBoardController.h"
 #include "domain/UBGraphicsScene.h"
+#include "domain/UBPageTemplates.h"
 
+class QCheckBox;
 class QDateEdit;
+class QToolButton;
 class UBColorSwatches;
 class UBSegmentedChoice;
 
@@ -40,6 +43,7 @@ class UBBackgroundPalette : public UBActionPalette
 
     private:
         QWidget* createTemplates();
+        void drawTemplatePictures();
         void showTemplates(bool shown);
 
 
@@ -55,6 +59,8 @@ class UBBackgroundPalette : public UBActionPalette
         QWidget* mPatterns{nullptr};
         QWidget* mTemplates{nullptr};
         QDateEdit* mTemplateDate{nullptr};
+        QCheckBox* mSundayFirst{nullptr};
+        QMap<UBPageTemplates::Template, QToolButton*> mTemplateButtons;
 
         QSlider* mSlider;
         QLabel* mSliderLabel;

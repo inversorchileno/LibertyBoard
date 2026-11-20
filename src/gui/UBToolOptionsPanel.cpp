@@ -942,7 +942,7 @@ UBShapeOptionsPanel::UBShapeOptionsPanel(int tool, QWidget* parent)
     if (tool == UBStylusTool::Rectangle)
     {
         mShapes = new UBShapeChoice(this);
-        mShapes->setToolTip(tr("The shape to draw. The polyline: a click for each corner, Enter to end it."));
+        mShapes->setToolTip(tr("The shape to draw. The polyline: a click for each corner, any key to end it, Escape to drop it."));
         addRow(mShapes);
         connect(mShapes, &UBShapeChoice::choiceChanged, this, [](int kind) {
             UBSettings::settings()->shapeKind->set(kind);
