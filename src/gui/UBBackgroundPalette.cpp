@@ -1,5 +1,11 @@
 #include "UBBackgroundPalette.h"
 
+#include <QDateEdit>
+#include <QGridLayout>
+#include <QPainter>
+
+#include "domain/UBPageTemplates.h"
+#include "frameworks/UBPlatformUtils.h"
 #include "gui/UBMainWindow.h"
 #include "gui/UBToolOptionsWidgets.h"
 
@@ -46,9 +52,25 @@ void UBBackgroundPalette::init()
 
     mColorLayout = new QHBoxLayout();
 
-    mVLayout->addLayout(mTopLayout);
+    // Two tabs: the patterns of the page, and the templates. The page color is for both.
+    mTabs = new UBSegmentedChoice({ tr("Page"), tr("Templates") }, this);
+    mTabs->setChoice(0);
+    connect(mTabs, &UBSegmentedChoice::choiceChanged, this, [this](int tab) { showTemplates(tab == 1); });
+    mVLayout->addWidget(mTabs);
     mVLayout->addLayout(mColorLayout);
-    mVLayout->addLayout(mBottomLayout);
+
+    // The patterns and the grid size, in a box of their own: their buttons
+    // follow the state of their actions, the box follows the tab.
+    mPatterns = new QWidget(this);
+    auto patternsLayout = new QVBoxLayout(mPatterns);
+    patternsLayout->setContentsMargins(0, 0, 0, 0);
+    patternsLayout->addLayout(mTopLayout);
+    patternsLayout->addLayout(mBottomLayout);
+    mVLayout->addWidget(mPatterns);
+
+    mTemplates = createTemplates();
+    mTemplates->hide();
+    mVLayout->addWidget(mTemplates);
 
     // Fully opaque, so that the page under it does not show through.
     setBackgroundBrush(UBSettings::opaquePaletteColor);
@@ -102,9 +124,88 @@ void UBBackgroundPalette::init()
     updateLayout();
 }
 
+// The language of LibertyBoard: the one chosen in the preferences, or the one of the system.
+static QString applicationLanguage()
+{
+    const QString language = UBSettings::settings()->appPreferredLanguage->get().toString();
+    return language.isEmpty() ? UBPlatformUtils::systemLanguage() : language;
+}
+
+QWidget* UBBackgroundPalette::createTemplates()
+{
+    auto templates = new QWidget(this);
+    auto layout = new QVBoxLayout(templates);
+    layout->setContentsMargins(16, 0, 16, 0);
+
+    // The date of the calendars and planners.
+    auto dateRow = new QHBoxLayout();
+    auto dateLabel = new QLabel(tr("Date of the calendars"), templates);
+    dateLabel->setStyleSheet("QLabel { color : white; }");
+    mTemplateDate = new QDateEdit(QDate::currentDate(), templates);
+    mTemplateDate->setCalendarPopup(true);
+    mTemplateDate->setDisplayFormat("dd/MM/yyyy");
+    mTemplateDate->setToolTip(tr("The calendars and planners are made for this day, its week, its month or its year"));
+    dateRow->addWidget(dateLabel);
+    dateRow->addWidget(mTemplateDate);
+    dateRow->addStretch(1);
+    layout->addLayout(dateRow);
+
+    auto grid = new QGridLayout();
+    grid->setSpacing(6);
+    layout->addLayout(grid);
+
+    // A picture of each template on a white page, with its name under it.
+    const UBPageTemplates pageTemplates(applicationLanguage());
+    const QSize thumbnail(120, 68);
+    const qreal ratio = 2;
+    const QList<UBPageTemplates::Template> all = UBPageTemplates::all();
+
+    for (int i = 0; i < all.size(); ++i)
+    {
+        const UBPageTemplates::Template pageTemplate = all.at(i);
+        QPixmap picture(thumbnail * ratio);
+        picture.setDevicePixelRatio(ratio);
+        picture.fill(Qt::white);
+        QPainter painter(&picture);
+        pageTemplates.draw(&painter, QRectF(QPointF(0, 0), thumbnail), pageTemplate, QDate::currentDate());
+        painter.end();
+
+        auto button = new QToolButton(templates);
+        const QString name = pageTemplates.name(pageTemplate);
+        button->setIcon(QIcon(picture));
+        button->setIconSize(thumbnail);
+        button->setText(button->fontMetrics().elidedText(name, Qt::ElideRight, thumbnail.width()));
+        button->setToolTip(UBPageTemplates::isDated(pageTemplate)
+                               ? tr("%1, for the date chosen above").arg(name)
+                               : name);
+        button->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
+        button->setFixedWidth(thumbnail.width() + 12);
+        button->setStyleSheet("QToolButton { color: white; border: 1px solid transparent; border-radius: 4px; padding: 2px; }"
+                              "QToolButton:hover { border-color: #8a8f99; background: rgba(255, 255, 255, 30); }");
+        grid->addWidget(button, i / 7, i % 7);
+
+        connect(button, &QToolButton::clicked, this, [this, pageTemplate]() {
+            UBApplication::boardController->applyPageTemplate(pageTemplate, mTemplateDate->date());
+        });
+    }
+
+    auto hint = new QLabel(tr("On a page of a PDF, the template goes on a new page after it."), templates);
+    hint->setStyleSheet("QLabel { color : #c9ced6; }");
+    layout->addWidget(hint);
+
+    return templates;
+}
+
+void UBBackgroundPalette::showTemplates(bool shown)
+{
+    mPatterns->setVisible(!shown);
+    mTemplates->setVisible(shown);
+    adjustSize();
+}
+
 void UBBackgroundPalette::addAction(QAction* action)
 {
-    UBActionPaletteButton* button = createPaletteButton(action, this);
+    UBActionPaletteButton* button = createPaletteButton(action, mPatterns);
 
     mTopLayout->addWidget(button);
     mActions << action;
@@ -168,6 +269,13 @@ void UBBackgroundPalette::clearLayout()
     }
 
     delete mColorLayout;
+
+    delete mTabs;
+    mTabs = nullptr;
+    delete mPatterns;
+    mPatterns = nullptr;
+    delete mTemplates;
+    mTemplates = nullptr;
 
     delete mVLayout;
 

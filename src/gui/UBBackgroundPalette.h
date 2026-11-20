@@ -6,7 +6,9 @@
 #include "board/UBBoardController.h"
 #include "domain/UBGraphicsScene.h"
 
+class QDateEdit;
 class UBColorSwatches;
+class UBSegmentedChoice;
 
 class UBBackgroundPalette : public UBActionPalette
 {
@@ -36,6 +38,10 @@ class UBBackgroundPalette : public UBActionPalette
         virtual void updateLayout();
         void init();
 
+    private:
+        QWidget* createTemplates();
+        void showTemplates(bool shown);
+
 
         QVBoxLayout* mVLayout;
         QHBoxLayout* mTopLayout;
@@ -43,6 +49,12 @@ class UBBackgroundPalette : public UBActionPalette
         QHBoxLayout* mColorLayout{nullptr};
         QLabel* mColorLabel{nullptr};
         UBColorSwatches* mPageColors{nullptr};
+
+        // The tabs: the patterns of the page, or the templates.
+        UBSegmentedChoice* mTabs{nullptr};
+        QWidget* mPatterns{nullptr};
+        QWidget* mTemplates{nullptr};
+        QDateEdit* mTemplateDate{nullptr};
 
         QSlider* mSlider;
         QLabel* mSliderLabel;

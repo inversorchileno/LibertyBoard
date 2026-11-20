@@ -18,6 +18,7 @@ HEADERS += src/domain/UBGraphicsScene.h \
     src/domain/UBShapeGeometry.h \
     src/domain/UBGraphicsNoteItem.h \
     src/domain/UBStamps.h \
+    src/domain/UBPageTemplates.h \
     src/domain/UBGraphicsAttachmentItem.h \
     src/domain/UBGraphicsHyperlinkItem.h \
     src/domain/UBGraphicsCommentItem.h \
@@ -58,6 +59,7 @@ SOURCES += src/domain/UBGraphicsScene.cpp \
     src/domain/UBShapeGeometry.cpp \
     src/domain/UBGraphicsNoteItem.cpp \
     src/domain/UBStamps.cpp \
+    src/domain/UBPageTemplates.cpp \
     src/domain/UBGraphicsAttachmentItem.cpp \
     src/domain/UBGraphicsHyperlinkItem.cpp \
     src/domain/UBGraphicsCommentItem.cpp \

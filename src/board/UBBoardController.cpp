@@ -1920,6 +1920,13 @@ int UBBoardController::autosaveTimeoutFromSettings() const
     return value * minute;
 }
 
+// The template behind the page, if it has one.
+static UBGraphicsSvgItem* pageTemplateOf(const std::shared_ptr<UBGraphicsScene>& scene)
+{
+    auto svg = scene ? qgraphicsitem_cast<UBGraphicsSvgItem*>(scene->backgroundObject()) : nullptr;
+    return svg && UBPageTemplates::isTemplate(svg->fileData()) ? svg : nullptr;
+}
+
 void UBBoardController::changeBackground(bool isDark, UBPageBackground pageBackground)
 {
     bool currentIsDark = mActiveScene->isDarkBackground();
@@ -1934,6 +1941,55 @@ void UBBoardController::changeBackground(bool isDark, UBPageBackground pageBackg
 
         emit backgroundChanged();
     }
+
+    // A pattern chosen replaces the template of the page.
+    if (pageTemplateOf(mActiveScene))
+    {
+        mActiveScene->setAsBackgroundObject(nullptr);
+        mActiveScene->setModified(true);
+    }
+}
+
+void UBBoardController::applyPageTemplate(UBPageTemplates::Template pageTemplate, const QDate& date)
+{
+    if (!mActiveScene)
+    {
+        return;
+    }
+
+    // Nothing behind a PDF page or a picture is lost: the template goes on a new page.
+    if (mActiveScene->backgroundObject() && !pageTemplateOf(mActiveScene))
+    {
+        addScene();
+    }
+
+    // The words of the templates follow the language of LibertyBoard.
+    QString language = UBSettings::settings()->appPreferredLanguage->get().toString();
+
+    if (language.isEmpty())
+    {
+        language = UBPlatformUtils::systemLanguage();
+    }
+
+    const QSizeF size = mActiveScene->nominalSize();
+    const QByteArray svg = UBPageTemplates(language).svg(pageTemplate, size, date);
+
+    // On a plain page of its color; not a step of undo, like the patterns.
+    mActiveScene->setBackground(mActiveScene->isDarkBackground(), UBPageBackground::plain);
+    const bool undoEnabled = mActiveScene->isURStackIsEnabled();
+    mActiveScene->setURStackEnable(false);
+    UBGraphicsSvgItem* item = mActiveScene->addSvg(QUrl(), QPointF(0, 0), svg);
+    mActiveScene->setURStackEnable(undoEnabled);
+
+    // Exactly over the page, whatever size the SVG says it has.
+    const QRectF bounds = item->boundingRect();
+    item->setTransform(QTransform::fromScale(size.width() / bounds.width(), size.height() / bounds.height()));
+    item->setPos(-size.width() / 2, -size.height() / 2);
+    mActiveScene->setAsBackgroundObject(item);
+    mActiveScene->setModified(true);
+
+    updateBackgroundActionsState(mActiveScene->isDarkBackground(), mActiveScene->pageBackground());
+    emit backgroundChanged();
 }
 
 void UBBoardController::changeBackgroundColor(const QColor& color)

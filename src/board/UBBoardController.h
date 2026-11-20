@@ -39,6 +39,7 @@
 #include "core/UB.h"
 #include "core/UBApplicationController.h"
 #include "document/UBDocumentContainer.h"
+#include "domain/UBPageTemplates.h"
 
 class UBMainWindow;
 class UBApplication;
@@ -232,6 +233,13 @@ class UBBoardController : public UBDocumentContainer
 
         /** @brief Gives the page shown this color, keeping its pattern. */
         void changeBackgroundColor(const QColor& color);
+
+        /**
+         * @brief Puts the template behind the page, for the date given. A page
+         * of a PDF or with a picture behind keeps it: the template goes on a
+         * new page after it.
+         */
+        void applyPageTemplate(UBPageTemplates::Template pageTemplate, const QDate& date);
         void setToolCursor(int tool);
         void showMessage(const QString& message, bool showSpinningWheel = false);
         void hideMessage();
