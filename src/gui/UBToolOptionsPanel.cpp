@@ -771,8 +771,7 @@ UBAttachmentOptionsPanel::UBAttachmentOptionsPanel(QWidget* parent)
     : UBToolOptionsPanel(tr("Insert file"), parent)
 {
     mKind = new UBSegmentedChoice({ tr("File"), tr("Hyperlink") }, this);
-    mKind->setIcons({ QIcon(":/images/stylusPalette/attachment.svg"), QIcon(":/images/stylusPalette/hyperlink.svg") },
-                    Qt::ToolButtonTextBesideIcon);
+    mKind->setIcons({ optionIcon(":/images/stylusPalette/attachment.svg"), optionIcon(":/images/stylusPalette/hyperlink.svg") });
     mKind->setToolTip(tr("File: a click on the page attaches a file. Hyperlink: a click on the page asks for the address of a web page."));
     addRow(mKind);
 
@@ -1494,20 +1493,18 @@ QIcon UBStampOptionsPanel::iconFor(int index) const
 UBSelectorOptionsPanel::UBSelectorOptionsPanel(QWidget* parent)
     : UBToolOptionsPanel(tr("Select"), parent)
 {
-    mSwitch = new QToolButton(this);
-    mSwitch->setIconSize(QSize(26, 26));
-    mSwitch->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
-    mSwitch->setStyleSheet("QToolButton { color: #e8e8e8; background: #3a404b; border: 1px solid #4a5260; border-radius: 4px; padding: 3px 10px; }"
-                           "QToolButton:hover { background: #4a5260; }");
-    addRow(mSwitch);
+    // Two tiles, the drawing above the name, as for the laser.
+    mMode = new UBSegmentedChoice({ tr("Arrow"), tr("Lasso") }, this);
+    mMode->setIcons({ optionIcon(UBOptionIcon::SelectArrow), optionIcon(UBOptionIcon::SelectLasso) });
+    mMode->setToolTip(tr("Arrow: select with a rectangle. Lasso: select by drawing a free line around the objects."));
+    addRow(mMode);
 
     mHint = new QLabel(this);
     mHint->setStyleSheet("QLabel { color: #9aa3b2; }");
     addRow(mHint);
 
-    connect(mSwitch, &QToolButton::clicked, this, []() {
-        UBDrawingController* drawing = UBDrawingController::drawingController();
-        drawing->setLassoSelection(!drawing->isLassoSelection());
+    connect(mMode, &UBSegmentedChoice::choiceChanged, this, [](int mode) {
+        UBDrawingController::drawingController()->setLassoSelection(mode == 1);
     });
     connect(UBDrawingController::drawingController(), &UBDrawingController::lassoSelectionChanged,
             this, &UBSelectorOptionsPanel::refresh);
@@ -1517,21 +1514,9 @@ UBSelectorOptionsPanel::UBSelectorOptionsPanel(QWidget* parent)
 
 void UBSelectorOptionsPanel::refresh()
 {
-    // The button offers the other way of selecting.
-    if (UBDrawingController::drawingController()->isLassoSelection())
-    {
-        mSwitch->setIcon(QIcon(":/images/stylusPalette/arrow.png"));
-        mSwitch->setText(tr("Arrow"));
-        mSwitch->setToolTip(tr("Select with a rectangle again"));
-        mHint->setText(tr("Draw a line around what to select."));
-    }
-    else
-    {
-        mSwitch->setIcon(QIcon(":/images/toolbar/lasso.svg"));
-        mSwitch->setText(tr("Lasso"));
-        mSwitch->setToolTip(tr("Select by drawing a free line around the objects"));
-        mHint->setText(tr("Drag a rectangle, or over a PDF to copy its text."));
-    }
+    const bool lasso = UBDrawingController::drawingController()->isLassoSelection();
+    mMode->setChoice(lasso ? 1 : 0);
+    mHint->setText(lasso ? tr("Draw a line around what to select.") : tr("Drag a rectangle, or over a PDF to copy its text."));
 }
 
 UBCommentOptionsPanel::UBCommentOptionsPanel(QWidget* parent)

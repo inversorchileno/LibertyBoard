@@ -191,6 +191,8 @@ enum class UBOptionIcon
     Stop,
     NextPage,
     Microphone,
+    SelectArrow,
+    SelectLasso,
     Checklist,
     Bullets,
     Numbers,
@@ -198,6 +200,9 @@ enum class UBOptionIcon
 };
 
 QIcon optionIcon(UBOptionIcon kind);
+
+/** @brief A picture of the tools as a drawing of the choices, as tall as the others. */
+QIcon optionIcon(const QString& picture);
 
 /** @brief The drawing of a pen of this UBPenStrokeType, its colored parts in this color. */
 QIcon penStyleIcon(int strokeType, const QColor& color);

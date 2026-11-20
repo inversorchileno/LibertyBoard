@@ -1317,6 +1317,33 @@ QIcon optionIcon(UBOptionIcon kind)
             }
             break;
         }
+        case UBOptionIcon::SelectArrow:
+        case UBOptionIcon::SelectLasso:
+        {
+            // What is selected, in a dashed line, and the pointer that selects.
+            painter.setPen(QPen(QColor("#e8e8e8"), 1.5, Qt::DashLine));
+            painter.setBrush(QColor(91, 141, 239, 60));
+
+            if (kind == UBOptionIcon::SelectArrow)
+            {
+                painter.drawRect(QRectF(6, 3, 28, 18));
+            }
+            else
+            {
+                QPainterPath loop(QPointF(8, 12));
+                loop.cubicTo(QPointF(6, 0), QPointF(30, -2), QPointF(34, 9));
+                loop.cubicTo(QPointF(38, 20), QPointF(20, 26), QPointF(12, 21));
+                loop.cubicTo(QPointF(6, 18), QPointF(9, 14), QPointF(8, 12));
+                painter.drawPath(loop);
+            }
+
+            const QPointF tip(30, 13);
+            painter.setPen(QPen(QColor("#1c1d20"), 0.8));
+            painter.setBrush(Qt::white);
+            painter.drawPolygon(QPolygonF({ tip, tip + QPointF(0, 13), tip + QPointF(3.2, 9.8), tip + QPointF(5.8, 14.6),
+                                            tip + QPointF(7.4, 13.8), tip + QPointF(5, 9.2), tip + QPointF(9, 9.2) }));
+            break;
+        }
         case UBOptionIcon::Microphone:
         {
             // A red microphone on its stand.
@@ -1624,4 +1651,22 @@ void UBStrokePreview::paintEvent(QPaintEvent* event)
         // At least a few pixels wide, so that the change of width shows.
         drawStroke(painter, wave, qMax(penWidth, 4.0), mStrokeType, color);
     }
+}
+
+QIcon optionIcon(const QString& picture)
+{
+    // The picture as tall as the drawings of the other choices, in their width.
+    const QSize size(48, 28);
+    const qreal ratio = 2;
+    QPixmap pixmap(size * ratio);
+    pixmap.setDevicePixelRatio(ratio);
+    pixmap.fill(Qt::transparent);
+
+    QPainter painter(&pixmap);
+    painter.setRenderHint(QPainter::Antialiasing);
+    // The pictures of the tools have wide margins: drawn larger than the tile.
+    QIcon(picture).paint(&painter, QRect(3, -8, 42, 44));
+    painter.end();
+
+    return QIcon(pixmap);
 }

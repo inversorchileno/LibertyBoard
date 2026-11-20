@@ -76,7 +76,7 @@ UBStylusPalette::UBStylusPalette(QWidget *parent, Qt::Orientation orient)
     actions << UBApplication::mainWindow->actionText;
     // Only on the board: reading and dictation.
     actions << UBApplication::mainWindow->actionVoice;
-    actions << UBApplication::mainWindow->actionLine;
+    // The line is one of the shapes: no tool of its own in the toolbar.
     actions << UBApplication::mainWindow->actionArrowShape;
     // The shapes tool draws the ellipse too, with all the other shapes.
     actions << UBApplication::mainWindow->actionRectangle;

@@ -317,7 +317,7 @@ public:
     void refresh() override;
 
 private:
-    QToolButton* mSwitch{nullptr};
+    UBSegmentedChoice* mMode{nullptr};
     QLabel* mHint{nullptr};
 };
 
