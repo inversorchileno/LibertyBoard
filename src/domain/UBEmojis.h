@@ -27,12 +27,12 @@
 #include <QStringList>
 
 /**
- * @brief The emojis and GIFs of the emoji tool: the emojis offered, the
- * one or the GIF chosen to put on the page, and its size there.
+ * @brief The emojis of the emoji tool: the emojis offered, the one chosen
+ * to put on the page, and its size there.
  *
  * An emoji is put on the page as a picture drawn with the color emoji
  * font of the system, so that it is saved, exported and printed like a
- * picture. A GIF is put with its frames, and moves on the board.
+ * picture.
  */
 class UBEmojis
 {
@@ -43,15 +43,9 @@ public:
     /** @brief The emoji drawn in color on a square picture of this side. */
     static QImage image(const QString& emoji, int side);
 
-    /** @brief Whether the tool puts the GIF chosen, rather than the emoji. */
-    static bool putsGif();
-
     /** @brief The emoji chosen. */
     static QString emoji();
 
-    /** @brief The file of the GIF chosen, kept among the data of LibertyBoard; empty when none. */
-    static QString gifFile();
-
-    /** @brief The width on the page of an emoji or a GIF put, in points of the page. */
+    /** @brief The width on the page of an emoji put, in points of the page. */
     static int size();
 };

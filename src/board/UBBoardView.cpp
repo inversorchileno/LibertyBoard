@@ -2608,6 +2608,20 @@ void UBBoardView::dragMoveEvent(QDragMoveEvent *event)
     event->acceptProposedAction();
 }
 
+// The page of a web view gives its drags from a widget inside the view.
+static bool isInWebView(QObject* source)
+{
+    for (QObject* object = source; object; object = object->parent())
+    {
+        if (qobject_cast<QWebEngineView*>(object))
+        {
+            return true;
+        }
+    }
+
+    return false;
+}
+
 void UBBoardView::dropEvent (QDropEvent *event)
 {
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
@@ -2629,7 +2643,7 @@ void UBBoardView::dropEvent (QDropEvent *event)
         {
             if (!event->source()
                         || qobject_cast<UBDocumentThumbnailsView *>(event->source())
-                        || qobject_cast<QWebEngineView*>(event->source())
+                        || isInWebView(event->source())
                         || qobject_cast<QListView *>(event->source()))
             {
                     mController->processMimeData (event->mimeData(), mapToScene (eventPosition.toPoint()));
@@ -2641,7 +2655,7 @@ void UBBoardView::dropEvent (QDropEvent *event)
     {
         if (!event->source()
                     || qobject_cast<UBDocumentThumbnailsView *>(event->source())
-                    || qobject_cast<QWebEngineView*>(event->source())
+                    || isInWebView(event->source())
                     || qobject_cast<QListView *>(event->source()))
         {
                 mController->processMimeData (event->mimeData(), mapToScene (eventPosition.toPoint()));

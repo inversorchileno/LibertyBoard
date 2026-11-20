@@ -22,9 +22,6 @@
 #include "UBToolOptionsPanel.h"
 
 #include <QButtonGroup>
-#include <QDesktopServices>
-#include <QLineEdit>
-#include <QListWidget>
 #include <QCheckBox>
 #include <QFileDialog>
 #include <QFontComboBox>
@@ -54,6 +51,7 @@
 #include "frameworks/UBPlatformUtils.h"
 #include "board/UBBoardController.h"
 #include "gui/UBDictation.h"
+#include "gui/UBGifWindow.h"
 #include "gui/UBTextBoxes.h"
 #include "gui/UBReadAloud.h"
 #include <QTimer>
@@ -600,11 +598,12 @@ void UBLaserOptionsPanel::updatePreview()
 
 UBEmojiOptionsPanel::UBEmojiOptionsPanel(QWidget* parent)
     : UBToolOptionsPanel(tr("Emojis and GIFs"), parent)
-    , mGifSearch(new UBGifSearch(this))
 {
     UBSettings* settings = UBSettings::settings();
 
     mMode = new UBSegmentedChoice({ tr("Emojis"), tr("GIFs") }, this);
+    mMode->setToolTip(tr("GIFs: opens the page of klipy.com beside the board, without an account; "
+                         "drag a GIF from it to the page. A second click on GIFs closes it."));
     addRow(mMode);
 
     // The emojis: a click chooses one, a click on the page puts it.
@@ -630,135 +629,37 @@ UBEmojiOptionsPanel::UBEmojiOptionsPanel(QWidget* parent)
     layOutEmojis(8);
     addRow(mEmojis);
 
-    // The GIFs: the key of the user, once, then the search.
-    mKeyBox = new QWidget(this);
-    auto keyLayout = new QHBoxLayout(mKeyBox);
-    keyLayout->setContentsMargins(0, 0, 0, 0);
-    auto explanation = new QLabel(tr("To use GIFs, make a free account at klipy.com, only once, and paste your key (API key) here. "
-                                     "From then on, the GIF search is always ready. Without it, the emojis work as always."), mKeyBox);
-    explanation->setWordWrap(true);
-    explanation->setObjectName("section");
-    explanation->setFixedWidth(560);
-    keyLayout->addWidget(explanation);
-    auto keyColumn = new QVBoxLayout();
-    keyColumn->setSpacing(2);
-    mKey = new QLineEdit(mKeyBox);
-    mKey->setPlaceholderText(tr("Paste your key here"));
-    mKey->setMinimumWidth(220);
-    auto keyButtons = new QHBoxLayout();
-    auto saveKey = new QToolButton(mKeyBox);
-    saveKey->setText(tr("Save"));
-    auto openSite = new QToolButton(mKeyBox);
-    openSite->setText(tr("Open klipy.com"));
-    // Small buttons, under the field, within the height of the toolbar.
-    for (QToolButton* button : { saveKey, openSite })
-    {
-        button->setFixedHeight(24);
-        button->setStyleSheet("QToolButton { padding: 1px 8px; margin: 0px; }");
-    }
-
-    keyButtons->addWidget(saveKey);
-    keyButtons->addWidget(openSite);
-    keyButtons->addStretch();
-    keyColumn->addWidget(mKey);
-    keyColumn->addLayout(keyButtons);
-    keyLayout->addLayout(keyColumn);
-    addRow(mKeyBox);
-
-    mSearchBox = new QWidget(this);
-    auto searchLayout = new QHBoxLayout(mSearchBox);
-    searchLayout->setContentsMargins(0, 0, 0, 0);
-    auto searchColumn = new QVBoxLayout();
-    mSearch = new QLineEdit(mSearchBox);
-    mSearch->setPlaceholderText(tr("Search GIFs"));
-    mSearch->setMinimumWidth(160);
-    mSearch->setClearButtonEnabled(true);
-    auto changeKey = new QToolButton(mSearchBox);
-    changeKey->setText(tr("Change the key"));
-    changeKey->setFixedHeight(20);
-    changeKey->setStyleSheet("QToolButton { padding: 0px 6px; margin: 0px; }");
-    auto credit = new QLabel(tr("Powered by KLIPY"), mSearchBox);
-    credit->setObjectName("section");
-    auto creditRow = new QHBoxLayout();
-    creditRow->addWidget(credit);
-    creditRow->addWidget(changeKey);
-    creditRow->addStretch();
-    searchColumn->setSpacing(4);
-    searchColumn->addWidget(mSearch);
-    searchColumn->addLayout(creditRow);
-    searchLayout->addLayout(searchColumn);
-    mResults = new QListWidget(mSearchBox);
-    mResults->setViewMode(QListView::IconMode);
-    mResults->setFlow(QListView::LeftToRight);
-    mResults->setWrapping(false);
-    mResults->setIconSize(QSize(80, 56));
-    mResults->setFixedHeight(68);
-    mResults->setMinimumWidth(420);
-    mResults->setMovement(QListView::Static);
-    mResults->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
-    mResults->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    mResults->setStyleSheet("QListWidget { background: #2b2f36; border: none; }");
-    searchLayout->addWidget(mResults, 1);
-    addRow(mSearchBox);
-
-    mGifStatus = new QLabel(this);
-    mGifStatus->setObjectName("section");
-    mGifStatus->setWordWrap(true);
-    mGifStatus->setFixedWidth(340);
-    addRow(mGifStatus);
+    // While the window of the GIFs is open.
+    mDragHint = new QLabel(tr("Drag a GIF from the window at the right to the page."), this);
+    mDragHint->setObjectName("section");
+    mDragHint->setStyleSheet("QLabel { color: white; font-size: 14px; }");
+    addRow(mDragHint);
 
     addSection(tr("Size"));
+    mSizeTitle = findChildren<QLabel*>("section").last();
     mSize = new UBValueSlider({ 32, 48, 64, 80, 120, 160, 240 }, tr(" pt"), 0, this);
     addRow(mSize);
 
-    connect(mMode, &UBSegmentedChoice::choiceChanged, this, [this, settings](int mode) {
-        settings->emojiPutsGif->set(mode == 1);
-        showMode();
+    connect(mMode, &UBSegmentedChoice::choiceChanged, this, [this](int mode) {
+        // GIFs opens the window, and closes it when it is open.
+        if (mode == 1)
+        {
+            UBGifWindow::toggle(this);
+
+            if (UBGifWindow::isOpen())
+            {
+                connect(UBGifWindow::instance(), &UBGifWindow::closed, this, &UBEmojiOptionsPanel::onGifWindowClosed,
+                        Qt::UniqueConnection);
+            }
+        }
+
+        showGifs(mode == 1 && UBGifWindow::isOpen());
     });
     connect(mEmojiButtons, &QButtonGroup::buttonClicked, this, [settings](QAbstractButton* button) {
         settings->emojiChoice->set(button->text());
     });
     connect(mSize, &UBValueSlider::valueChanged, this, [settings](qreal size) {
         settings->emojiSize->set(qRound(size));
-    });
-    connect(saveKey, &QToolButton::clicked, this, [this, settings]() {
-        settings->gifKey->set(mKey->text().trimmed());
-        showGifKey();
-    });
-    connect(mKey, &QLineEdit::returnPressed, saveKey, &QToolButton::click);
-    connect(openSite, &QToolButton::clicked, this, []() { QDesktopServices::openUrl(QUrl("https://klipy.com/developers")); });
-    connect(changeKey, &QToolButton::clicked, this, [this, settings]() {
-        mKey->setText(settings->gifKey->get().toString());
-        settings->gifKey->set(QString());
-        showGifKey();
-    });
-    connect(mSearch, &QLineEdit::returnPressed, this, &UBEmojiOptionsPanel::search);
-    connect(mGifSearch, &UBGifSearch::found, this, &UBEmojiOptionsPanel::showGifs);
-    connect(mGifSearch, &UBGifSearch::failed, this, [this]() {
-        mGifStatus->setText(tr("The GIF search did not answer: check your key and the internet connection."));
-    });
-    connect(mGifSearch, &UBGifSearch::previewReady, this, [this](const QString& id, const QByteArray& data) {
-        for (int i = 0; i < mResults->count(); ++i)
-        {
-            if (mResults->item(i)->data(Qt::UserRole).toString() == id)
-            {
-                mResults->item(i)->setIcon(QIcon(QPixmap::fromImage(QImage::fromData(data))));
-            }
-        }
-    });
-    connect(mResults, &QListWidget::itemClicked, this, [this](QListWidgetItem* item) {
-        const int index = mResults->row(item);
-
-        if (index >= 0 && index < mGifs.size())
-        {
-            mGifStatus->setText(tr("Downloading the GIF..."));
-            mGifSearch->downloadGif(mGifs.at(index));
-        }
-    });
-    connect(mGifSearch, &UBGifSearch::gifReady, this, [this, settings](const QString& file) {
-        settings->gifFile->set(file);
-        settings->emojiPutsGif->set(true);
-        mGifStatus->setText(tr("GIF chosen: click on the page to put it."));
     });
 
     refresh();
@@ -787,8 +688,6 @@ void UBEmojiOptionsPanel::layOutForToolbar()
 
 void UBEmojiOptionsPanel::refresh()
 {
-    UBSettings* settings = UBSettings::settings();
-    mMode->setChoice(settings->emojiPutsGif->get().toBool() ? 1 : 0);
     mSize->setValue(UBEmojis::size());
 
     for (QAbstractButton* button : mEmojiButtons->buttons())
@@ -796,68 +695,22 @@ void UBEmojiOptionsPanel::refresh()
         button->setChecked(button->text() == UBEmojis::emoji());
     }
 
-    showMode();
+    showGifs(UBGifWindow::isOpen());
 }
 
-void UBEmojiOptionsPanel::showMode()
+void UBEmojiOptionsPanel::onGifWindowClosed()
 {
-    const bool gifs = mMode->choice() == 1;
-    mEmojis->setVisible(!gifs);
-    mGifStatus->setVisible(gifs);
-
-    if (gifs)
-    {
-        showGifKey();
-    }
-    else
-    {
-        mKeyBox->hide();
-        mSearchBox->hide();
-    }
+    showGifs(false);
 }
 
-void UBEmojiOptionsPanel::showGifKey()
+void UBEmojiOptionsPanel::showGifs(bool shown)
 {
-    const bool hasKey = !UBSettings::settings()->gifKey->get().toString().isEmpty();
-    mKeyBox->setVisible(!hasKey);
-    mSearchBox->setVisible(hasKey);
-
-    if (hasKey && UBEmojis::gifFile().isEmpty())
-    {
-        mGifStatus->setText(tr("Search a GIF, then click on it and on the page."));
-    }
-    else if (!hasKey)
-    {
-        mGifStatus->clear();
-    }
-}
-
-void UBEmojiOptionsPanel::search()
-{
-    const QString words = mSearch->text().trimmed();
-
-    if (words.isEmpty())
-    {
-        return;
-    }
-
-    mGifStatus->setText(tr("Searching..."));
-    mGifSearch->search(words, UBSettings::settings()->gifKey->get().toString());
-}
-
-void UBEmojiOptionsPanel::showGifs(const QList<UBGifSearch::Gif>& gifs)
-{
-    mGifs = gifs;
-    mResults->clear();
-    mGifStatus->setText(gifs.isEmpty() ? tr("No GIF found.") : tr("Click on a GIF, then on the page."));
-
-    for (const UBGifSearch::Gif& gif : gifs)
-    {
-        auto item = new QListWidgetItem(mResults);
-        item->setData(Qt::UserRole, gif.id);
-        item->setSizeHint(QSize(84, 60));
-        mGifSearch->downloadPreview(gif);
-    }
+    // The emojis, or the hint to drag the GIFs.
+    mMode->setChoice(shown ? 1 : 0);
+    mEmojis->setVisible(!shown);
+    mSizeTitle->setVisible(!shown);
+    mSize->setVisible(!shown);
+    mDragHint->setVisible(shown);
 }
 
 UBVoiceOptionsPanel::UBVoiceOptionsPanel(QWidget* parent)

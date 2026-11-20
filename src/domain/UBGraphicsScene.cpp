@@ -1274,30 +1274,9 @@ void UBGraphicsScene::addStamp(const QPointF& position)
 
 void UBGraphicsScene::addEmoji(const QPointF& position)
 {
-    // Centered where the page was clicked: the GIF chosen, moving, or the emoji.
-    const qreal width = UBEmojis::size();
-    UBGraphicsPixmapItem* item = nullptr;
-
-    if (UBEmojis::putsGif())
-    {
-        QFile file(UBEmojis::gifFile());
-
-        if (file.open(QIODevice::ReadOnly))
-        {
-            const QByteArray data = file.readAll();
-            const QImage first = QImage::fromData(data);
-
-            if (!first.isNull())
-            {
-                item = addImage(data, nullptr, position, width / first.width());
-            }
-        }
-    }
-    else
-    {
-        const QImage emoji = UBEmojis::image(UBEmojis::emoji(), 160);
-        item = addPixmap(QPixmap::fromImage(emoji), nullptr, position, width / emoji.width());
-    }
+    // Centered where the page was clicked, at the size chosen.
+    const QImage emoji = UBEmojis::image(UBEmojis::emoji(), 160);
+    UBGraphicsPixmapItem* item = addPixmap(QPixmap::fromImage(emoji), nullptr, position, qreal(UBEmojis::size()) / emoji.width());
 
     if (item)
     {

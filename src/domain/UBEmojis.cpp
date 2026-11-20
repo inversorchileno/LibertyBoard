@@ -22,7 +22,6 @@
 
 #include "UBEmojis.h"
 
-#include <QFile>
 #include <QFont>
 #include <QPainter>
 
@@ -61,21 +60,10 @@ QImage UBEmojis::image(const QString& emoji, int side)
     return picture;
 }
 
-bool UBEmojis::putsGif()
-{
-    return UBSettings::settings()->emojiPutsGif->get().toBool() && !gifFile().isEmpty();
-}
-
 QString UBEmojis::emoji()
 {
     const QString chosen = UBSettings::settings()->emojiChoice->get().toString();
     return chosen.isEmpty() ? all().first() : chosen;
-}
-
-QString UBEmojis::gifFile()
-{
-    const QString file = UBSettings::settings()->gifFile->get().toString();
-    return QFile::exists(file) ? file : QString();
 }
 
 int UBEmojis::size()

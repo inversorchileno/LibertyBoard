@@ -24,12 +24,9 @@
 #include <QWidget>
 
 #include "core/UBSettings.h"
-#include "gui/UBGifSearch.h"
 
 class QButtonGroup;
 class QCheckBox;
-class QLineEdit;
-class QListWidget;
 class QGridLayout;
 class QFontComboBox;
 class QLabel;
@@ -208,8 +205,8 @@ private:
 };
 
 /**
- * @brief Options of the emoji tool: the emoji to put, or a GIF found with
- * the search of KLIPY, and their size on the page.
+ * @brief Options of the emoji tool: the emoji to put and its size, or the
+ * GIFs of klipy.com in a window beside the board, to drag to the page.
  */
 class UBEmojiOptionsPanel : public UBToolOptionsPanel
 {
@@ -224,23 +221,15 @@ protected:
 
 private:
     void layOutEmojis(int columns);
-    void showMode();
-    void showGifKey();
-    void search();
-    void showGifs(const QList<UBGifSearch::Gif>& gifs);
+    void showGifs(bool shown);
+    void onGifWindowClosed();
 
     UBSegmentedChoice* mMode{nullptr};
     QWidget* mEmojis{nullptr};
     QButtonGroup* mEmojiButtons{nullptr};
+    QLabel* mSizeTitle{nullptr};
     UBValueSlider* mSize{nullptr};
-    QWidget* mKeyBox{nullptr};
-    QLineEdit* mKey{nullptr};
-    QWidget* mSearchBox{nullptr};
-    QLineEdit* mSearch{nullptr};
-    QListWidget* mResults{nullptr};
-    QLabel* mGifStatus{nullptr};
-    UBGifSearch* mGifSearch{nullptr};
-    QList<UBGifSearch::Gif> mGifs;
+    QLabel* mDragHint{nullptr};
 };
 
 /** @brief Options of the read aloud tool: where to read from, play, pause, stop and next page. */
