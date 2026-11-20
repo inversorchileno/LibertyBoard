@@ -100,7 +100,7 @@ QMenu* UBMainMenu::createApplicationMenu(UBMainWindow* mainWindow, QWidget* pare
     pageSizeGroup->addAction(mainWindow->actionRegularPageSize);
     pageSizeGroup->addAction(mainWindow->actionCustomPageSize);
 
-    QMenu* documentSizeMenu = menu->addMenu(QIcon(":/images/toolbar/pageSize.png"), tr("Page Size"));
+    QMenu* documentSizeMenu = menu->addMenu(QIcon(":/images/toolbar/pageSize.png"), tr("Page/canvas size"));
     documentSizeMenu->addAction(mainWindow->actionWidePageSize);
     documentSizeMenu->addAction(mainWindow->actionRegularPageSize);
     documentSizeMenu->addAction(mainWindow->actionCustomPageSize);
@@ -252,10 +252,14 @@ void UBMainMenu::createMenus()
     pageSizeGroup->addAction(mMainWindow->actionRegularPageSize);
     pageSizeGroup->addAction(mMainWindow->actionCustomPageSize);
 
-    QMenu* pageSizeMenu = editMenu->addMenu(QIcon(":/images/toolbar/pageSize.png"), tr("Page Size"));
+    QMenu* pageSizeMenu = editMenu->addMenu(QIcon(":/images/toolbar/pageSize.png"), tr("Page/canvas size"));
     pageSizeMenu->addAction(mMainWindow->actionWidePageSize);
     pageSizeMenu->addAction(mMainWindow->actionRegularPageSize);
     pageSizeMenu->addAction(mMainWindow->actionCustomPageSize);
+
+    // Any size, always: also a bigger canvas to go on drawing.
+    mMainWindow->actionCustomPageSize->setEnabled(true);
+    mMainWindow->actionCustomPageSize->setText(tr("Custom size..."));
     editMenu->addAction(mMainWindow->actionCut);
     editMenu->addAction(mMainWindow->actionCopy);
     editMenu->addAction(mMainWindow->actionPaste);

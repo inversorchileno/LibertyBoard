@@ -242,6 +242,9 @@ class UBBoardController : public UBDocumentContainer
         void show();
         void setWidePageSize(bool checked);
         void setRegularPageSize(bool checked);
+
+        /** @brief Asks for any size of the page, or a bigger canvas to go on drawing. */
+        void setCustomPageSize();
         void stylusToolChanged(int tool);
         void grabScene(const QRectF& pSceneRect);
         UBGraphicsMediaItem* addVideo(const QUrl& pUrl, bool startPlay, const QPointF& pos, bool bUseSource = false);

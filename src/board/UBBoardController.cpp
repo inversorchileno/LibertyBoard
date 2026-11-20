@@ -28,6 +28,14 @@
 
 
 #include "UBBoardController.h"
+#include <QLabel>
+#include <QHBoxLayout>
+#include <QVBoxLayout>
+#include <QPushButton>
+#include <QSpinBox>
+#include <QFormLayout>
+#include <QDialogButtonBox>
+#include <QDialog>
 
 #include <QtWidgets>
 
@@ -2299,6 +2307,71 @@ void UBBoardController::setRegularPageSize(bool checked)
     }
 }
 
+
+void UBBoardController::setCustomPageSize()
+{
+    const QSize current = mActiveScene->nominalSize().isValid() ? mActiveScene->nominalSize()
+                                                                 : UBSettings::settings()->pageSize->get().toSize();
+
+    QDialog dialog(mMainWindow);
+    dialog.setWindowTitle(tr("Page/canvas size"));
+
+    auto width = new QSpinBox(&dialog);
+    auto height = new QSpinBox(&dialog);
+
+    for (QSpinBox* box : { width, height })
+    {
+        box->setRange(200, 20000);
+        box->setSingleStep(100);
+        box->setSuffix(tr(" px"));
+    }
+
+    width->setValue(current.width());
+    height->setValue(current.height());
+
+    // A bigger canvas in one click, to go on drawing.
+    auto wider = new QPushButton(tr("Half as wide again"), &dialog);
+    auto taller = new QPushButton(tr("Half as tall again"), &dialog);
+    connect(wider, &QPushButton::clicked, &dialog, [width]() { width->setValue(width->value() * 3 / 2); });
+    connect(taller, &QPushButton::clicked, &dialog, [height]() { height->setValue(height->value() * 3 / 2); });
+
+    auto form = new QFormLayout();
+    form->addRow(tr("Width"), width);
+    form->addRow(tr("Height"), height);
+
+    auto growLayout = new QHBoxLayout();
+    growLayout->addWidget(wider);
+    growLayout->addWidget(taller);
+
+    auto buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, &dialog);
+    connect(buttons, &QDialogButtonBox::accepted, &dialog, &QDialog::accept);
+    connect(buttons, &QDialogButtonBox::rejected, &dialog, &QDialog::reject);
+
+    auto layout = new QVBoxLayout(&dialog);
+    layout->addWidget(new QLabel(tr("The size of this page. The drawings stay where they are; a bigger canvas leaves room around them."), &dialog));
+    layout->itemAt(0)->widget()->setProperty("wordWrap", true);
+    layout->addLayout(form);
+    layout->addLayout(growLayout);
+    layout->addWidget(buttons);
+
+    if (dialog.exec() != QDialog::Accepted)
+    {
+        updatePageSizeState();
+        return;
+    }
+
+    const QSize newSize(width->value(), height->value());
+
+    if (mActiveScene->nominalSize() != newSize)
+    {
+        UBPageSizeUndoCommand* uc = new UBPageSizeUndoCommand(mActiveScene, mActiveScene->nominalSize(), newSize);
+        UBApplication::undoStack->push(uc);
+
+        setPageSize(newSize);
+    }
+
+    updatePageSizeState();
+}
 
 void UBBoardController::setPageSize(QSize newSize)
 {
