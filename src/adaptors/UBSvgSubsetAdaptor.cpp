@@ -44,6 +44,7 @@
 #include "domain/UBGraphicsWidgetItem.h"
 #include "domain/UBGraphicsPDFItem.h"
 #include "domain/UBGraphicsAttachmentItem.h"
+#include "domain/UBGraphicsHyperlinkItem.h"
 #include "domain/UBGraphicsCommentItem.h"
 #include "domain/UBGraphicsNoteItem.h"
 #include "domain/UBGraphicsSoundItem.h"
@@ -3142,13 +3143,16 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::pageMarkToSvg(UBGraphicsPageMarkItem
       <ub:comment x="250" y="150" ub:z-value="12" ub:date="2026-11-18T12:00:00">The text</ub:comment>
       <ub:attachment x="250" y="150" ub:z-value="12" xlink:href="attachments/{uuid}/Budget.xlsx"/>
       <ub:sound x="250" y="150" ub:z-value="12" xlink:href="sounds/{uuid}/Recording.m4a"/>
+      <ub:hyperlink x="250" y="150" ub:z-value="12" xlink:href="https://example.org"/>
      */
 
     const auto comment = qgraphicsitem_cast<UBGraphicsCommentItem*>(mark);
     const auto attachment = qgraphicsitem_cast<UBGraphicsAttachmentItem*>(mark);
     const auto sound = qgraphicsitem_cast<UBGraphicsSoundItem*>(mark);
+    const auto hyperlink = qgraphicsitem_cast<UBGraphicsHyperlinkItem*>(mark);
 
-    mXmlWriter.writeStartElement(UBSettings::uniboardDocumentNamespaceUri, comment ? "comment" : attachment ? "attachment" : "sound");
+    mXmlWriter.writeStartElement(UBSettings::uniboardDocumentNamespaceUri,
+                                 comment ? "comment" : attachment ? "attachment" : hyperlink ? "hyperlink" : "sound");
     mXmlWriter.writeAttribute("x", QString::number(mark->scenePos().x()));
     mXmlWriter.writeAttribute("y", QString::number(mark->scenePos().y()));
 
@@ -3163,7 +3167,7 @@ void UBSvgSubsetAdaptor::UBSvgSubsetWriter::pageMarkToSvg(UBGraphicsPageMarkItem
     }
     else
     {
-        mXmlWriter.writeAttribute(nsXLink, "href", attachment ? attachment->file() : sound->file());
+        mXmlWriter.writeAttribute(nsXLink, "href", attachment ? attachment->file() : hyperlink ? hyperlink->address() : sound->file());
     }
 
     mXmlWriter.writeEndElement();
@@ -3193,6 +3197,10 @@ UBGraphicsPageMarkItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::pageMarkFromSvg(c
     else if (name == "sound" && !file.isEmpty())
     {
         mark = new UBGraphicsSoundItem(file);
+    }
+    else if (name == "hyperlink" && !file.isEmpty())
+    {
+        mark = new UBGraphicsHyperlinkItem(file);
     }
 
     if (mark)

@@ -55,7 +55,7 @@ bool UBGraphicsPageMarkItem::isPageMark(const QGraphicsItem* item)
 {
     const int type = item ? item->type() : 0;
     return type == UBGraphicsItemType::CommentItemType || type == UBGraphicsItemType::AttachmentItemType
-           || type == UBGraphicsItemType::SoundItemType;
+           || type == UBGraphicsItemType::SoundItemType || type == UBGraphicsItemType::HyperlinkItemType;
 }
 
 QRectF UBGraphicsPageMarkItem::boundingRect() const

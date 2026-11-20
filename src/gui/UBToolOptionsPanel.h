@@ -198,6 +198,22 @@ private:
 };
 
 /** @brief The stamps to choose from, as a gallery of pictures with their names. */
+/** @brief Options of the attachment tool: a file, or a hyperlink to a web page. */
+class UBAttachmentOptionsPanel : public UBToolOptionsPanel
+{
+    Q_OBJECT
+
+public:
+    explicit UBAttachmentOptionsPanel(QWidget* parent = nullptr);
+    void refresh() override;
+
+    /** @brief Shows on the tool the kind it puts: a paper clip or a link. */
+    static void updateToolIcon(bool desktop);
+
+private:
+    UBSegmentedChoice* mKind{nullptr};
+};
+
 /** @brief Options of the spotlight and the magnifier. */
 class UBSpotlightOptionsPanel : public UBToolOptionsPanel
 {

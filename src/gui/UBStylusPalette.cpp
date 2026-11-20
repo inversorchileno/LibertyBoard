@@ -66,7 +66,8 @@ UBStylusPalette::UBStylusPalette(QWidget *parent, Qt::Orientation orient)
     actions << UBApplication::mainWindow->actionHand;
     actions << UBApplication::mainWindow->actionNote;
     actions << UBApplication::mainWindow->actionStamp;
-    // Only on the board: they put files and sounds in the document.
+    // Only on the board: they put notes, files and sounds in the document.
+    // On the desktop the attachment tool puts hyperlinks.
     actions << UBApplication::mainWindow->actionComment;
     actions << UBApplication::mainWindow->actionAttachment;
     actions << UBApplication::mainWindow->actionSound;

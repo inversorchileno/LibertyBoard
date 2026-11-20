@@ -27,6 +27,8 @@ target_sources(${PROJECT_NAME} PRIVATE
     UBStamps.h
     UBGraphicsAttachmentItem.cpp
     UBGraphicsAttachmentItem.h
+    UBGraphicsHyperlinkItem.cpp
+    UBGraphicsHyperlinkItem.h
     UBGraphicsCommentItem.cpp
     UBGraphicsCommentItem.h
     UBGraphicsPageMarkItem.cpp

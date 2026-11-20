@@ -36,6 +36,7 @@
 #include "UBGraphicsNoteItem.h"
 #include "UBStamps.h"
 #include "UBGraphicsAttachmentItem.h"
+#include "UBGraphicsHyperlinkItem.h"
 #include "UBGraphicsCommentItem.h"
 #include "UBGraphicsSoundItem.h"
 #include "gui/UBSoundDialog.h"
@@ -1129,6 +1130,20 @@ void UBGraphicsScene::addPageMark(int tool, const QPointF& position)
     if (tool == UBStylusTool::Comment)
     {
         mark = new UBGraphicsCommentItem();
+    }
+    else if (tool == UBStylusTool::Attachment
+             && (mIsDesktopMode || UBSettings::settings()->attachmentHyperlink->get().toBool()))
+    {
+        // A link to a web page; on the desktop, where there is no document
+        // to keep a file, the only kind.
+        const QString address = UBGraphicsHyperlinkItem::askAddress(UBApplication::mainWindow);
+
+        if (address.isEmpty())
+        {
+            return;
+        }
+
+        mark = new UBGraphicsHyperlinkItem(address);
     }
     else if (tool == UBStylusTool::Attachment)
     {

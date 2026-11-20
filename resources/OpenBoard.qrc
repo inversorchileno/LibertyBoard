@@ -158,6 +158,8 @@
         <file>images/stylusPalette/trash.svg</file>
         <file>images/stylusPalette/spotlight.svg</file>
         <file>images/stylusPalette/spotlightOn.svg</file>
+        <file>images/stylusPalette/hyperlink.svg</file>
+        <file>images/stylusPalette/hyperlinkOn.svg</file>
         <file>images/toolbar/closeDocument.svg</file>
         <file>images/toolbar/rotateLeft.svg</file>
         <file>images/toolbar/rotateRight.svg</file>
@@ -186,6 +188,7 @@
         <file>images/stylusPalette/soundOn.svg</file>
         <file>images/marks/comment.svg</file>
         <file>images/marks/attachment.svg</file>
+        <file>images/marks/hyperlink.svg</file>
         <file>images/marks/sound.svg</file>
         <file>images/stylusPalette/zoomOut.png</file>
         <file>images/stylusPalette/zoomOutOn.png</file>

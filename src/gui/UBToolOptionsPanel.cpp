@@ -44,6 +44,7 @@
 #include "domain/UBGraphicsTextItem.h"
 #include "domain/UBStamps.h"
 #include "gui/UBMainWindow.h"
+#include "gui/UBToolOptionsArrows.h"
 #include "gui/UBToolOptionsWidgets.h"
 
 // Width of the eraser on screen for each point of its size
@@ -132,6 +133,8 @@ UBToolOptionsPanel* UBToolOptionsPanel::create(int tool, QWidget* parent)
             return new UBStampOptionsPanel(parent);
         case UBStylusTool::Spotlight:
             return new UBSpotlightOptionsPanel(parent);
+        case UBStylusTool::Attachment:
+            return new UBAttachmentOptionsPanel(parent);
         case UBStylusTool::Comment:
             return new UBCommentOptionsPanel(parent);
         case UBStylusTool::Selector:
@@ -564,6 +567,46 @@ void UBLaserOptionsPanel::layOutForToolbar()
 void UBLaserOptionsPanel::updatePreview()
 {
     mPreview->setStroke(mColors->currentColor(), mWidth->value(), mOpacity->value() / 100, true);
+}
+
+// ---------------------------------------------------------------------------
+// Attachment: a file or a hyperlink
+
+UBAttachmentOptionsPanel::UBAttachmentOptionsPanel(QWidget* parent)
+    : UBToolOptionsPanel(tr("Insert file"), parent)
+{
+    mKind = new UBSegmentedChoice({ tr("File"), tr("Hyperlink") }, this);
+    mKind->setIcons({ QIcon(":/images/stylusPalette/attachment.svg"), QIcon(":/images/stylusPalette/hyperlink.svg") },
+                    Qt::ToolButtonTextBesideIcon);
+    mKind->setToolTip(tr("File: a click on the page attaches a file. Hyperlink: a click on the page asks for the address of a web page."));
+    addRow(mKind);
+
+    connect(mKind, &UBSegmentedChoice::choiceChanged, this, [](int kind) {
+        UBSettings::settings()->attachmentHyperlink->set(kind == 1);
+        updateToolIcon(UBDrawingController::drawingController()->isInDesktopMode());
+    });
+
+    refresh();
+}
+
+void UBAttachmentOptionsPanel::refresh()
+{
+    // On the desktop there is no document to keep a file: only hyperlinks.
+    const bool desktop = UBDrawingController::drawingController()->isInDesktopMode();
+    const bool hyperlink = desktop || UBSettings::settings()->attachmentHyperlink->get().toBool();
+    mKind->setChoice(hyperlink ? 1 : 0);
+    mKind->setEnabled(!desktop);
+}
+
+void UBAttachmentOptionsPanel::updateToolIcon(bool desktop)
+{
+    const bool hyperlink = desktop || UBSettings::settings()->attachmentHyperlink->get().toBool();
+    QIcon icon;
+    icon.addFile(hyperlink ? ":/images/stylusPalette/hyperlink.svg" : ":/images/stylusPalette/attachment.svg", QSize(), QIcon::Normal, QIcon::Off);
+    icon.addFile(hyperlink ? ":/images/stylusPalette/hyperlinkOn.svg" : ":/images/stylusPalette/attachmentOn.svg", QSize(), QIcon::Normal, QIcon::On);
+    UBToolOptionsArrows::setIcon(UBApplication::mainWindow->actionAttachment, icon);
+    UBApplication::mainWindow->actionAttachment->setToolTip(hyperlink ? tr("Add a hyperlink to a web page")
+                                                                       : tr("Attach a file to the page"));
 }
 
 // ---------------------------------------------------------------------------

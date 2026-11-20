@@ -265,6 +265,7 @@ struct UBGraphicsItemType
         CommentItemType,                                //65560
         AttachmentItemType,                             //65561
         SoundItemType,                                  //65562
+        HyperlinkItemType,                              //65563
         SelectionFrameType                              // this line must be the last line in this enum because it is types counter.
     };
 };

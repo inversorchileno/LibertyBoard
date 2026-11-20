@@ -353,6 +353,7 @@ void UBSettings::init()
 
     boardMarkerAlpha = new UBSetting(this, "Board", "MarkerAlpha", 0.5);
     markerChiselTip = new UBSetting(this, "Board", "LibertyBoardMarkerChiselTip", false);
+    attachmentHyperlink = new UBSetting(this, "Board", "LibertyBoardAttachmentHyperlink", false);
     highlightFitText = new UBSetting(this, "Board", "LibertyBoardHighlightFitText", false);
 
     QStringList markerLightBackgroundColors;

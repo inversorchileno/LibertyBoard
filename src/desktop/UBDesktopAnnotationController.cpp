@@ -498,6 +498,7 @@ int UBDesktopAnnotationController::toolOf(QAction* action) const
         { mainWindow->actionNote, UBStylusTool::Note },
         { mainWindow->actionStamp, UBStylusTool::Stamp },
         { mainWindow->actionSpotlight, UBStylusTool::Spotlight },
+        { mainWindow->actionAttachment, UBStylusTool::Attachment },
     };
 
     return tools.value(action, -1);

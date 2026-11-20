@@ -52,6 +52,7 @@
 #include "gui/UBNoteToolIcon.h"
 #include "gui/UBShapeToolIcon.h"
 #include "gui/UBSpotlight.h"
+#include "gui/UBToolOptionsPanel.h"
 #include "gui/UBToolColorIcon.h"
 #include "gui/UBToolOptionsArrows.h"
 #include "gui/UBOcrRunner.h"
@@ -431,10 +432,13 @@ void UBMainMenu::createCornerButtons()
                 updateLockedTools(locked);
             });
 
-    // The lock is for the board: the desktop keeps all its tools.
+    // The lock is for the board: the desktop keeps all its tools. The
+    // attachment tool puts files on the board, hyperlinks on the desktop.
     connect(UBApplication::applicationController, &UBApplicationController::desktopMode, this, [this](bool desktop) {
         updateLockedTools(UBDrawingController::drawingController()->isCanvasLocked() && !desktop);
+        UBAttachmentOptionsPanel::updateToolIcon(desktop);
     });
+    UBAttachmentOptionsPanel::updateToolIcon(false);
 
     auto lockButton = new QToolButton(corner);
     lockButton->setDefaultAction(lockAction);

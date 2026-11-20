@@ -55,6 +55,7 @@
 #include <Merger.h>
 
 #include "domain/UBGraphicsAttachmentItem.h"
+#include "domain/UBGraphicsHyperlinkItem.h"
 #include "domain/UBGraphicsCommentItem.h"
 #include "domain/UBGraphicsSoundItem.h"
 #include "pdf/UBPdfOcr.h"
@@ -133,6 +134,11 @@ QList<UBPdfAnnotations::Mark> UBExportFullPDF::pageMarks(std::shared_ptr<UBDocum
             else if (auto sound = qgraphicsitem_cast<UBGraphicsSoundItem*>(item))
             {
                 mark.file = pDocumentProxy->persistencePath() + "/" + sound->file();
+            }
+            else if (auto hyperlink = qgraphicsitem_cast<UBGraphicsHyperlinkItem*>(item))
+            {
+                // Other readers show a comment with the address.
+                mark.text = hyperlink->address();
             }
             else
             {
