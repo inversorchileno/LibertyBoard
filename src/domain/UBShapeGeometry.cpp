@@ -464,10 +464,59 @@ QList<UBShapePart> buildArrow(const QPointF& start, const QPointF& end, const UB
 
         QPainterPath outline;
         outline.setFillRule(Qt::WindingFill);
-        outline.addPolygon(QPolygonF({ shaftStart + across * startHalf, shaftEnd + across * endHalf,
-                                       shaftEnd - across * endHalf, shaftStart - across * startHalf }));
-        outline.addEllipse(shaftStart, startHalf, startHalf);
-        outline.closeSubpath();
+        if (style.dash == UBLineDash::Solid)
+        {
+            outline.addPolygon(QPolygonF({ shaftStart + across * startHalf, shaftEnd + across * endHalf,
+                                           shaftEnd - across * endHalf, shaftStart - across * startHalf }));
+            outline.addEllipse(shaftStart, startHalf, startHalf);
+            outline.closeSubpath();
+        }
+        else
+        {
+            // Dashes or dots, each as wide as the line is at its place.
+            const qreal shaftLength = QLineF(shaftStart, shaftEnd).length();
+            auto halfAt = [&](const QPointF& point) {
+                const qreal t = shaftLength > 0 ? QLineF(shaftStart, point).length() / shaftLength : 0;
+                return startHalf + (endHalf - startHalf) * qBound(0.0, t, 1.0);
+            };
+
+            const qreal meanWidth = startHalf + endHalf;
+
+            for (const Piece& piece : dashPieces(QPolygonF({ shaftStart, shaftEnd }), style.dash, meanWidth))
+            {
+                const QPointF a = piece.points.first();
+                const QPointF b = piece.points.last();
+                const qreal halfA = halfAt(a);
+                const qreal halfB = halfAt(b);
+
+                // Each part is added as a shape of its own, so that the round
+                // ends and the body join instead of cancelling each other.
+                QPainterPath part;
+
+                if (QLineF(a, b).length() < 0.01)
+                {
+                    // A dot.
+                    part.addEllipse(a, halfA, halfA);
+                    outline = outline.united(part);
+                    continue;
+                }
+
+                part.addPolygon(QPolygonF({ a + across * halfA, b + across * halfB, b - across * halfB, a - across * halfA }));
+                part.closeSubpath();
+
+                if (piece.cap == Qt::RoundCap)
+                {
+                    QPainterPath ends;
+                    ends.addEllipse(a, halfA, halfA);
+                    part = part.united(ends);
+                    ends = QPainterPath();
+                    ends.addEllipse(b, halfB, halfB);
+                    part = part.united(ends);
+                }
+
+                outline = outline.united(part);
+            }
+        }
 
         if (!wings.isEmpty())
         {
