@@ -31,6 +31,7 @@
 #include <QtSvg>
 
 #include "core/UBApplication.h"
+#include "gui/UBDictation.h"
 #include "UBGraphicsGroupContainerItem.h"
 #include "UBGraphicsTextItemDelegate.h"
 #include "UBGraphicsScene.h"
@@ -129,6 +130,13 @@ void UBGraphicsTextItemDelegate::createControls()
 {
     UBGraphicsItemDelegate::createControls();
 
+    // Dictation into this text box, left of the font.
+    if (!mDictateButton) {
+        mDictateButton = new DelegateButton(":/images/microphone.svg", mDelegated, mFrame, Qt::TitleBarArea);
+        connect(mDictateButton, &DelegateButton::clicked, this, [this]() { UBDictation::start(delegated()); });
+        mButtons << mDictateButton;
+    }
+
     if (!mFontButton) {
         mFontButton = new DelegateButton(":/images/font.svg", mDelegated, mFrame, Qt::TitleBarArea);
         connect(mFontButton, SIGNAL(clicked(bool)), this, SLOT(pickFont()));
@@ -199,6 +207,10 @@ qreal UBGraphicsTextItemDelegate::titleBarWidth()
 
 void UBGraphicsTextItemDelegate::freeButtons()
 {
+    mButtons.removeOne(mDictateButton);
+    delete mDictateButton;
+    mDictateButton = nullptr;
+
     mButtons.removeOne(mFontButton);
     delete mFontButton;
     mFontButton = 0;

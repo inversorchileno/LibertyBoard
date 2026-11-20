@@ -22,6 +22,7 @@
 #pragma once
 
 #include <QObject>
+#include <QPointF>
 #include <QRectF>
 
 class QTextToSpeech;
@@ -30,8 +31,9 @@ class QTextToSpeech;
  * @brief Reads the pages aloud with the voices of the system.
  *
  * It reads from the start of the page shown and goes on with the next
- * pages, or reads the text inside a rectangle dragged on the page, or
- * the texts selected. It can pause, go on, stop and skip to the next page.
+ * pages, or from the word clicked on, or reads the text inside a rectangle
+ * dragged on the page, which is marked while it is read, or the texts
+ * selected. It can pause, go on, stop and skip to the next page.
  */
 class UBReadAloud : public QObject
 {
@@ -59,20 +61,30 @@ public:
     /** @brief Reads the text inside a rectangle of the page shown, in the coordinates of the scene. */
     void readArea(const QRectF& sceneRect);
 
+    /** @brief Reads from the word at this point of the page shown, then the next pages. */
+    void readFrom(const QPointF& scenePoint);
+
+    /** @brief The rectangle being read, in the coordinates of the scene; empty when none. */
+    QRectF readingArea() const { return mReadingArea; }
+
 signals:
     void readingChanged(bool reading);
+    void readingAreaChanged();
 
 private:
     explicit UBReadAloud(QObject* parent = nullptr);
 
     void say(const QString& text);
     void onStateChanged();
+    void setReadingArea(const QRectF& sceneRect);
     static QString pageText(bool selectionFirst);
     static QString areaText(const QRectF& sceneRect);
+    static QString textFrom(const QPointF& scenePoint);
 
     QTextToSpeech* mSpeech{nullptr};
     QString mPendingText;
     bool mContinuous{false};    // goes on with the next pages
     bool mStopping{false};
     bool mWasSpeaking{false};
+    QRectF mReadingArea;
 };

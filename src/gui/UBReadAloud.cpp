@@ -96,6 +96,7 @@ void UBReadAloud::stop()
 {
     mContinuous = false;
     mPendingText.clear();
+    setReadingArea(QRectF());
 
     if (mSpeech && (isReading() || isPaused()))
     {
@@ -138,7 +139,27 @@ void UBReadAloud::readArea(const QRectF& sceneRect)
         return;
     }
 
+    // Marked while it is read, so that one sees what is read.
+    setReadingArea(sceneRect);
     say(text);
+}
+
+void UBReadAloud::readFrom(const QPointF& scenePoint)
+{
+    stop();
+    mContinuous = true;
+    say(textFrom(scenePoint));
+}
+
+void UBReadAloud::setReadingArea(const QRectF& sceneRect)
+{
+    if (sceneRect == mReadingArea)
+    {
+        return;
+    }
+
+    mReadingArea = sceneRect;
+    emit readingAreaChanged();
 }
 
 void UBReadAloud::say(const QString& text)
@@ -178,6 +199,7 @@ void UBReadAloud::say(const QString& text)
     if (mSpeech->state() == QTextToSpeech::Error)
     {
         mContinuous = false;
+        setReadingArea(QRectF());
         UBApplication::mainWindow->warning(tr("Read aloud"), tr("The voices of the system could not be used to read aloud."));
         return;
     }
@@ -202,6 +224,7 @@ void UBReadAloud::onStateChanged()
     {
         mPendingText.clear();
         mContinuous = false;
+        setReadingArea(QRectF());
         UBApplication::mainWindow->warning(tr("Read aloud"), tr("The voices of the system could not be used to read aloud."));
         emit readingChanged(false);
         return;
@@ -224,6 +247,7 @@ void UBReadAloud::onStateChanged()
     if (state == QTextToSpeech::Ready && mWasSpeaking)
     {
         mWasSpeaking = false;
+        setReadingArea(QRectF());
 
         if (mContinuous && !mStopping)
         {
@@ -306,6 +330,46 @@ QString UBReadAloud::pageText(bool selectionFirst)
     return parts.join("\n").trimmed();
 }
 
+// The PDF page under the scene, as a file and a page of it, and the
+// rectangle of the scene in points of that page.
+struct PdfPlace
+{
+    QString file;
+    int page{0};
+    QSizeF pageSize;
+    QRectF onPage;
+};
+
+static bool pdfPlace(const std::shared_ptr<UBGraphicsScene>& scene, const QRectF& sceneRect, PdfPlace& place)
+{
+    auto pdf = qgraphicsitem_cast<UBGraphicsPDFItem*>(scene->backgroundObject());
+    std::shared_ptr<UBDocumentProxy> document = scene->document();
+
+    if (!pdf || !document)
+    {
+        return false;
+    }
+
+    const QRectF onItem = pdf->mapFromScene(sceneRect).boundingRect();
+    const QRectF bounds = pdf->boundingRect();
+    const QSizeF points = pdf->pageSize();
+
+    if (bounds.isEmpty() || points.isEmpty())
+    {
+        return false;
+    }
+
+    const qreal sx = points.width() / bounds.width();
+    const qreal sy = points.height() / bounds.height();
+    place.onPage = QRectF((onItem.left() - bounds.left()) * sx, (onItem.top() - bounds.top()) * sy,
+                          onItem.width() * sx, onItem.height() * sy);
+    place.file = document->persistencePath() + "/" + UBPersistenceManager::objectDirectory + "/"
+                 + pdf->fileUuid().toString() + ".pdf";
+    place.page = pdf->pageNumber();
+    place.pageSize = points;
+    return true;
+}
+
 QString UBReadAloud::areaText(const QRectF& sceneRect)
 {
     std::shared_ptr<UBGraphicsScene> scene = UBApplication::boardController ? UBApplication::boardController->activeScene() : nullptr;
@@ -316,26 +380,11 @@ QString UBReadAloud::areaText(const QRectF& sceneRect)
     }
 
     QStringList parts;
-    auto pdf = qgraphicsitem_cast<UBGraphicsPDFItem*>(scene->backgroundObject());
-    std::shared_ptr<UBDocumentProxy> document = scene->document();
+    PdfPlace place;
 
-    if (pdf && document)
+    if (pdfPlace(scene, sceneRect, place))
     {
-        // From the scene to points of the page.
-        const QRectF onItem = pdf->mapFromScene(sceneRect).boundingRect();
-        const QRectF bounds = pdf->boundingRect();
-        const QSizeF points = pdf->pageSize();
-
-        if (!bounds.isEmpty() && !points.isEmpty())
-        {
-            const qreal sx = points.width() / bounds.width();
-            const qreal sy = points.height() / bounds.height();
-            const QRectF onPage((onItem.left() - bounds.left()) * sx, (onItem.top() - bounds.top()) * sy,
-                                onItem.width() * sx, onItem.height() * sy);
-            const QString pdfFile = document->persistencePath() + "/" + UBPersistenceManager::objectDirectory + "/"
-                                    + pdf->fileUuid().toString() + ".pdf";
-            parts << UBPdfTextSearch(pdfFile).textIn(pdf->pageNumber(), onPage);
-        }
+        parts << UBPdfTextSearch(place.file).textIn(place.page, place.onPage);
     }
 
     for (QGraphicsItem* item : scene->items(sceneRect, Qt::IntersectsItemShape, Qt::AscendingOrder))
@@ -344,6 +393,58 @@ QString UBReadAloud::areaText(const QRectF& sceneRect)
         {
             parts << text->toPlainText();
         }
+    }
+
+    parts.removeAll(QString());
+    return parts.join("\n").trimmed();
+}
+
+QString UBReadAloud::textFrom(const QPointF& scenePoint)
+{
+    std::shared_ptr<UBGraphicsScene> scene = UBApplication::boardController ? UBApplication::boardController->activeScene() : nullptr;
+
+    if (!scene)
+    {
+        return QString();
+    }
+
+    QStringList parts;
+    PdfPlace place;
+
+    if (pdfPlace(scene, QRectF(scenePoint, QSizeF(0, 0)), place))
+    {
+        // The line clicked from the word clicked, then all below it.
+        const UBPdfTextSearch search(place.file);
+        const QPointF point = place.onPage.topLeft();
+        const QList<QRectF> words = search.wordsIn(place.page, QRectF(point - QPointF(2, 2), QSizeF(4, 4)));
+        const QRectF word = words.isEmpty() ? QRectF(point.x(), point.y() - 6, 1, 12) : words.first();
+        const qreal width = place.pageSize.width();
+        const qreal height = place.pageSize.height();
+
+        parts << search.textIn(place.page, QRectF(word.left(), word.top(), width - word.left(), word.height()));
+        parts << search.textIn(place.page, QRectF(0, word.bottom() + 1, width, height - word.bottom() - 1));
+    }
+
+    // The texts written that end below the click, from the top.
+    QList<UBGraphicsTextItem*> texts;
+
+    for (QGraphicsItem* item : scene->items(Qt::AscendingOrder))
+    {
+        auto text = dynamic_cast<UBGraphicsTextItem*>(item);
+
+        if (text && text->sceneBoundingRect().bottom() > scenePoint.y())
+        {
+            texts << text;
+        }
+    }
+
+    std::sort(texts.begin(), texts.end(), [](UBGraphicsTextItem* a, UBGraphicsTextItem* b) {
+        return a->scenePos().y() < b->scenePos().y();
+    });
+
+    for (UBGraphicsTextItem* text : std::as_const(texts))
+    {
+        parts << text->toPlainText();
     }
 
     parts.removeAll(QString());

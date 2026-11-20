@@ -131,6 +131,16 @@ struct UBLaserEffect
     };
 };
 
+struct UBReadFrom
+{
+    enum Enum
+    {
+        Start = 0,  // the page shown, then the next pages
+        Selection,  // the text inside a rectangle dragged on the page
+        Click       // from the word clicked, then the next pages
+    };
+};
+
 struct UBLineDash
 {
     enum Enum

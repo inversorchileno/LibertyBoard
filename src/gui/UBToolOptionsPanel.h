@@ -196,8 +196,7 @@ private:
     UBColorSwatches* mColors{nullptr};
 };
 
-/** @brief The stamps to choose from, as a gallery of pictures with their names. */
-/** @brief Options of the voice tool: reading the page aloud, or dictating. */
+/** @brief Options of the read aloud tool: where to read from, play, pause, stop and next page. */
 class UBVoiceOptionsPanel : public UBToolOptionsPanel
 {
     Q_OBJECT
@@ -206,19 +205,8 @@ public:
     explicit UBVoiceOptionsPanel(QWidget* parent = nullptr);
     void refresh() override;
 
-    /** @brief Shows on the tool a speaker or a microphone. */
-    static void updateToolIcon();
-
-    /** @brief Opens the dictation of the system, or says why it cannot. */
-    static void dictate();
-
 private:
-    void showModeOptions();
-
-    UBSegmentedChoice* mMode{nullptr};
     UBSegmentedChoice* mFrom{nullptr};
-    QList<QWidget*> mReadWidgets;
-    QList<QWidget*> mDictateWidgets;
 };
 
 /** @brief Options of the attachment tool: a file, or a hyperlink to a web page. */

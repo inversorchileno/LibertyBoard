@@ -138,6 +138,7 @@ class UBGraphicsTextItemDelegate : public UBGraphicsItemDelegate
     private:
         UBGraphicsTextItem* delegated();
 
+        DelegateButton* mDictateButton{nullptr};
         DelegateButton* mFontButton;
         DelegateButton* mColorButton;
         DelegateButton* mDecreaseSizeButton;

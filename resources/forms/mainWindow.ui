@@ -1684,10 +1684,10 @@
      <normalon>:/images/stylusPalette/voiceReadOn.svg</normalon>:/images/stylusPalette/voiceRead.svg</iconset>
    </property>
    <property name="text">
-    <string>Read and dictate</string>
+    <string>Read aloud</string>
    </property>
    <property name="toolTip">
-    <string>Read the page aloud, or dictate with the voice</string>
+    <string>Read the page aloud, from its start, from a word clicked or a rectangle dragged on the text</string>
    </property>
   </action>
   <action name="actionComment">

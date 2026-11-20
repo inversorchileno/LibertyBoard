@@ -330,6 +330,17 @@ void UBGraphicsTextItem::paint(QPainter *painter, const QStyleOptionGraphicsItem
     styleOption.state &= ~QStyle::State_Selected;
     styleOption.state &= ~QStyle::State_HasFocus;
 
+    // While it is written or selected, the text box hides almost all of
+    // the page under it, so that its text is easy to read.
+    std::shared_ptr<UBGraphicsScene> board = scene();
+
+    if (board && isSelected() && widget == UBApplication::boardController->controlView()->viewport())
+    {
+        QColor page = board->backgroundColor();
+        page.setAlpha(235);
+        painter->fillRect(boundingRect(), page);
+    }
+
     QGraphicsTextItem::paint(painter, &styleOption, widget);
 
     if (widget == UBApplication::boardController->controlView()->viewport() && !isSelected())

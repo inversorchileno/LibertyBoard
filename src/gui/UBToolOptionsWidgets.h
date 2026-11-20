@@ -178,7 +178,15 @@ enum class UBOptionIcon
     EraserWhole,
     EraserPartial,
     MarkerRoundTip,
-    MarkerChiselTip
+    MarkerChiselTip,
+    ReadFromStart,
+    ReadSelection,
+    ReadFromClick,
+    Play,
+    Pause,
+    Stop,
+    NextPage,
+    Microphone
 };
 
 QIcon optionIcon(UBOptionIcon kind);

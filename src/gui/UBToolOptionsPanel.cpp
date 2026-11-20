@@ -47,6 +47,7 @@
 #include "gui/UBToolOptionsArrows.h"
 #include "gui/UBToolOptionsWidgets.h"
 #include "frameworks/UBPlatformUtils.h"
+#include "gui/UBDictation.h"
 #include "gui/UBReadAloud.h"
 #include <QTimer>
 
@@ -589,107 +590,53 @@ void UBLaserOptionsPanel::updatePreview()
 // Voice: reading aloud and dictation
 
 UBVoiceOptionsPanel::UBVoiceOptionsPanel(QWidget* parent)
-    : UBToolOptionsPanel(tr("Read and dictate"), parent)
+    : UBToolOptionsPanel(tr("Read aloud"), parent)
 {
     UBSettings* settings = UBSettings::settings();
     UBReadAloud* voice = UBReadAloud::instance();
 
-    mMode = new UBSegmentedChoice({ tr("Read"), tr("Dictate") }, this);
-    mMode->setIcons({ QIcon(":/images/stylusPalette/voiceRead.svg"), QIcon(":/images/stylusPalette/voiceDictate.svg") },
-                    Qt::ToolButtonTextBesideIcon);
-    addRow(mMode);
-
-    // Reading: from the start of the page, or a rectangle dragged on the text.
-    mFrom = new UBSegmentedChoice({ tr("From the start"), tr("Selected text") }, this);
+    // Every element is a tile with its drawing above its name. Reading:
+    // from the start of the page, a rectangle dragged on the text, or the
+    // word clicked.
+    mFrom = new UBSegmentedChoice({ tr("From the start"), tr("Selected text"), tr("From the click") }, this);
+    mFrom->setIcons({ optionIcon(UBOptionIcon::ReadFromStart), optionIcon(UBOptionIcon::ReadSelection),
+                      optionIcon(UBOptionIcon::ReadFromClick) });
     mFrom->setToolTip(tr("From the start: reads the page shown, then the next pages. "
-                         "Selected text: drag a rectangle over the text to read it."));
+                         "Selected text: drag a rectangle over the text to read it. "
+                         "From the click: click on a word to read from it, then the next pages."));
     addRow(mFrom);
-    mReadWidgets << mFrom;
 
-    auto addButton = [this](const QString& text, const QString& tip, QList<QWidget*>& group) {
+    auto addButton = [this](const QString& text, UBOptionIcon icon, const QString& tip) {
         auto button = new QToolButton(this);
         button->setText(text);
+        button->setIcon(optionIcon(icon));
+        button->setIconSize(QSize(34, 19));
         button->setToolTip(tip);
-        button->setToolButtonStyle(Qt::ToolButtonTextOnly);
+        button->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
+        button->setMinimumWidth(64);
         addRow(button);
-        group << button;
         return button;
     };
 
-    QToolButton* play = addButton(tr("\u25B6 Play"), tr("Reads the page from its start, or goes on after a pause"), mReadWidgets);
-    QToolButton* pause = addButton(tr("\u23F8 Pause"), tr("Pauses the reading"), mReadWidgets);
-    QToolButton* stop = addButton(tr("\u23F9 Stop"), tr("Stops the reading"), mReadWidgets);
-    QToolButton* next = addButton(tr("\u23ED Next page"), tr("Goes to the next page and reads it"), mReadWidgets);
+    QToolButton* play = addButton(tr("Play"), UBOptionIcon::Play, tr("Reads the page from its start, or goes on after a pause"));
+    QToolButton* pause = addButton(tr("Pause"), UBOptionIcon::Pause, tr("Pauses the reading"));
+    QToolButton* stop = addButton(tr("Stop"), UBOptionIcon::Stop, tr("Stops the reading"));
+    QToolButton* next = addButton(tr("Next page"), UBOptionIcon::NextPage, tr("Goes to the next page and reads it"));
 
-    QToolButton* dictateButton = addButton(tr("Dictate"), tr("Opens the dictation of Windows (Windows + H)"), mDictateWidgets);
-    dictateButton->setIcon(QIcon(":/images/stylusPalette/voiceDictate.svg"));
-    dictateButton->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
-    auto hint = new QLabel(tr("Click in a text box, then on Dictate: what you say is written there."), this);
-    hint->setObjectName("section");
-    addRow(hint);
-    mDictateWidgets << hint;
-
-    connect(mMode, &UBSegmentedChoice::choiceChanged, this, [this, settings](int mode) {
-        settings->voiceDictate->set(mode == 1);
-        showModeOptions();
-        updateToolIcon();
-    });
     connect(mFrom, &UBSegmentedChoice::choiceChanged, this, [settings](int from) {
-        settings->readSelection->set(from == 1);
+        settings->readFrom->set(from);
     });
     connect(play, &QToolButton::clicked, voice, &UBReadAloud::play);
     connect(pause, &QToolButton::clicked, voice, &UBReadAloud::pause);
     connect(stop, &QToolButton::clicked, voice, &UBReadAloud::stop);
     connect(next, &QToolButton::clicked, voice, &UBReadAloud::nextPage);
-    connect(dictateButton, &QToolButton::clicked, this, &UBVoiceOptionsPanel::dictate);
 
     refresh();
 }
 
 void UBVoiceOptionsPanel::refresh()
 {
-    UBSettings* settings = UBSettings::settings();
-    mMode->setChoice(settings->voiceDictate->get().toBool() ? 1 : 0);
-    mFrom->setChoice(settings->readSelection->get().toBool() ? 1 : 0);
-    showModeOptions();
-}
-
-void UBVoiceOptionsPanel::showModeOptions()
-{
-    const bool dictating = mMode->choice() == 1;
-
-    for (QWidget* widget : std::as_const(mReadWidgets))
-    {
-        widget->setVisible(!dictating);
-    }
-
-    for (QWidget* widget : std::as_const(mDictateWidgets))
-    {
-        widget->setVisible(dictating);
-    }
-}
-
-void UBVoiceOptionsPanel::updateToolIcon()
-{
-    const bool dictating = UBSettings::settings()->voiceDictate->get().toBool();
-    QIcon icon;
-    icon.addFile(dictating ? ":/images/stylusPalette/voiceDictate.svg" : ":/images/stylusPalette/voiceRead.svg",
-                 QSize(), QIcon::Normal, QIcon::Off);
-    icon.addFile(dictating ? ":/images/stylusPalette/voiceDictateOn.svg" : ":/images/stylusPalette/voiceReadOn.svg",
-                 QSize(), QIcon::Normal, QIcon::On);
-    UBToolOptionsArrows::setIcon(UBApplication::mainWindow->actionVoice, icon);
-}
-
-void UBVoiceOptionsPanel::dictate()
-{
-    // After the click, so that the text box keeps the cursor.
-    QTimer::singleShot(200, UBApplication::mainWindow, []() {
-        if (!UBPlatformUtils::startDictation())
-        {
-            UBApplication::mainWindow->information(tr("Dictate"), tr("The dictation of the system is not available here. "
-                                                                    "On Windows, press Windows + H in a text."));
-        }
-    });
+    mFrom->setChoice(qBound(0, UBSettings::settings()->readFrom->get().toInt(), 2));
 }
 
 // ---------------------------------------------------------------------------
@@ -1134,6 +1081,19 @@ UBTextOptionsPanel::UBTextOptionsPanel(QWidget* parent)
     addSection(tr("Color"));
     mColors = new UBColorSwatches(penColors(), false, this);
     addRow(mColors);
+
+    // Dictation into the text box being written: the button takes no
+    // focus, so that the text box keeps its cursor.
+    auto dictate = new QToolButton(this);
+    dictate->setText(tr("Dictate"));
+    dictate->setIcon(optionIcon(UBOptionIcon::Microphone));
+    dictate->setIconSize(QSize(34, 19));
+    dictate->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
+    dictate->setFocusPolicy(Qt::NoFocus);
+    dictate->setToolTip(tr("Makes a text box and writes in it what you say (the dictation of Windows, Windows + H). "
+                           "In a text box, the microphone left of F does the same."));
+    addRow(dictate);
+    connect(dictate, &QToolButton::clicked, this, []() { UBDictation::start(); });
 
     connect(mFont, &QFontComboBox::currentFontChanged, this, [settings](const QFont& font) {
         settings->setFontFamily(font.family());

@@ -1048,6 +1048,102 @@ QIcon optionIcon(UBOptionIcon kind)
             painter.restore();
             break;
         }
+        case UBOptionIcon::ReadFromStart:
+        case UBOptionIcon::ReadSelection:
+        case UBOptionIcon::ReadFromClick:
+        {
+            // A page with lines of text; what is read is in blue.
+            const QColor page("#e8e8e8");
+            const QColor line("#8a8f99");
+            painter.setPen(QPen(page, 1.2));
+            painter.setBrush(Qt::NoBrush);
+            painter.drawRoundedRect(QRectF(12, 2, 24, 24), 2, 2);
+
+            for (int i = 0; i < 5; ++i)
+            {
+                const qreal y = 7 + i * 4;
+                const bool read = kind == UBOptionIcon::ReadFromStart
+                                  || (kind == UBOptionIcon::ReadSelection && (i == 1 || i == 2))
+                                  || (kind == UBOptionIcon::ReadFromClick && i >= 2);
+                const qreal left = (kind == UBOptionIcon::ReadFromClick && i == 2) ? 24 : 16;
+                painter.setPen(QPen(read ? blue : line, 2, Qt::SolidLine, Qt::RoundCap));
+                painter.drawLine(QPointF(left, y), QPointF(32, y));
+
+                if (kind == UBOptionIcon::ReadFromClick && i == 2)
+                {
+                    painter.setPen(QPen(line, 2, Qt::SolidLine, Qt::RoundCap));
+                    painter.drawLine(QPointF(16, y), QPointF(21, y));
+                }
+            }
+
+            if (kind == UBOptionIcon::ReadFromStart)
+            {
+                // An arrow at the first line.
+                painter.setPen(Qt::NoPen);
+                painter.setBrush(blue);
+                painter.drawPolygon(QPolygonF({ QPointF(4, 3.5), QPointF(10, 7), QPointF(4, 10.5) }));
+            }
+            else if (kind == UBOptionIcon::ReadSelection)
+            {
+                painter.setPen(QPen(QColor("#ffc400"), 1.2, Qt::DashLine));
+                painter.setBrush(QColor(255, 214, 0, 50));
+                painter.drawRect(QRectF(14, 8.5, 20, 10));
+            }
+            else
+            {
+                // The pointer clicking on the middle line.
+                const QPointF tip(23, 14);
+                painter.setPen(QPen(QColor("#1c1d20"), 0.8));
+                painter.setBrush(Qt::white);
+                painter.drawPolygon(QPolygonF({ tip, tip + QPointF(0, 12), tip + QPointF(3, 9), tip + QPointF(5.5, 13.5),
+                                                tip + QPointF(7, 12.8), tip + QPointF(4.8, 8.5), tip + QPointF(8.5, 8.5) }));
+            }
+            break;
+        }
+        case UBOptionIcon::Play:
+        case UBOptionIcon::Pause:
+        case UBOptionIcon::Stop:
+        case UBOptionIcon::NextPage:
+        {
+            // The usual signs of players.
+            const QColor sign("#e8e8e8");
+            painter.setPen(Qt::NoPen);
+            painter.setBrush(sign);
+
+            if (kind == UBOptionIcon::Play)
+            {
+                painter.drawPolygon(QPolygonF({ QPointF(18, 4), QPointF(33, 14), QPointF(18, 24) }));
+            }
+            else if (kind == UBOptionIcon::Pause)
+            {
+                painter.drawRoundedRect(QRectF(16, 4, 5.5, 20), 1, 1);
+                painter.drawRoundedRect(QRectF(26.5, 4, 5.5, 20), 1, 1);
+            }
+            else if (kind == UBOptionIcon::Stop)
+            {
+                painter.drawRoundedRect(QRectF(15, 5, 18, 18), 2, 2);
+            }
+            else
+            {
+                painter.drawPolygon(QPolygonF({ QPointF(13, 5), QPointF(26, 14), QPointF(13, 23) }));
+                painter.drawRoundedRect(QRectF(28, 5, 4.5, 18), 1, 1);
+            }
+            break;
+        }
+        case UBOptionIcon::Microphone:
+        {
+            // A red microphone on its stand.
+            const QColor mic("#ff5468");
+            painter.setPen(Qt::NoPen);
+            painter.setBrush(mic);
+            painter.drawRoundedRect(QRectF(20, 2, 8, 15), 4, 4);
+            painter.setPen(QPen(QColor("#e8e8e8"), 1.8, Qt::SolidLine, Qt::RoundCap));
+            painter.setBrush(Qt::NoBrush);
+            painter.drawArc(QRectF(16, 5, 16, 15), 180 * 16, 180 * 16);
+            painter.drawLine(QPointF(24, 20), QPointF(24, 24));
+            painter.drawLine(QPointF(19.5, 25), QPointF(28.5, 25));
+            break;
+        }
     }
 
     return QIcon(pixmap);

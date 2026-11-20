@@ -52,6 +52,7 @@
 #include "gui/UBNoteToolIcon.h"
 #include "gui/UBShapeToolIcon.h"
 #include "frameworks/UBPlatformUtils.h"
+#include "gui/UBDictation.h"
 #include "gui/UBReadAloud.h"
 #include "gui/UBSpotlight.h"
 #include "gui/UBToolOptionsPanel.h"
@@ -281,7 +282,7 @@ void UBMainMenu::createMenus()
 
     QAction* dictateAction = voiceMenu->addAction(tr("Dictate (Windows + H)"));
     dictateAction->setToolTip(tr("Opens the dictation of Windows: what is said is written where the cursor of text is"));
-    connect(dictateAction, &QAction::triggered, this, &UBVoiceOptionsPanel::dictate);
+    connect(dictateAction, &QAction::triggered, this, []() { UBDictation::start(); });
 
     QAction* transcribeAction = voiceMenu->addAction(tr("Transcribe an audio (coming with the AI)"));
     transcribeAction->setEnabled(false);
@@ -466,7 +467,6 @@ void UBMainMenu::createCornerButtons()
     });
     UBAttachmentOptionsPanel::updateToolIcon(false);
     UBSpotlightOptionsPanel::updateToolIcon();
-    UBVoiceOptionsPanel::updateToolIcon();
 
     auto lockButton = new QToolButton(corner);
     lockButton->setDefaultAction(lockAction);

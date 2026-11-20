@@ -172,6 +172,12 @@ void UBBoardView::init ()
     connect (UBSettings::settings ()->boardUseHighResTabletEvent, SIGNAL (changed (QVariant)),
              this, SLOT (settingChanged (QVariant)));
 
+    // The rectangle being read aloud is marked on the board.
+    if (bIsControl && !bIsDesktop)
+    {
+        connect(UBReadAloud::instance(), &UBReadAloud::readingAreaChanged, this, [this]() { viewport()->update(); });
+    }
+
     connect(mController, &UBBoardController::controlViewportChanged, this, [this](){
         if (scene())
         {
@@ -1412,7 +1418,7 @@ void UBBoardView::mousePressEvent (QMouseEvent *event)
 
         case UBStylusTool::Voice :
             // With "Selected text", a rectangle dragged over the text is read.
-            if (UBSettings::settings()->readSelection->get().toBool() && !UBSettings::settings()->voiceDictate->get().toBool())
+            if (UBSettings::settings()->readFrom->get().toInt() == UBReadFrom::Selection)
             {
                 if (!mRubberBand)
                     mRubberBand = new UBRubberBand (QRubberBand::Rectangle, this);
@@ -1933,6 +1939,10 @@ void UBBoardView::mouseReleaseEvent (QMouseEvent *event)
         {
             const QRect rect = mRubberBand->geometry();
             UBReadAloud::instance()->readArea(QRectF(mapToScene(rect.topLeft()), mapToScene(rect.bottomRight())).normalized());
+        }
+        else if (UBSettings::settings()->readFrom->get().toInt() == UBReadFrom::Click)
+        {
+            UBReadAloud::instance()->readFrom(mapToScene(event->pos()));
         }
 
         if (mRubberBand)
@@ -2690,6 +2700,20 @@ void UBBoardView::drawForeground(QPainter* painter, const QRectF& rect)
     // The pages before and after, so that scrolling goes on from page to page.
     // Drawn over the background, which is cached, and outside the page.
     drawNeighbourPages(painter, rect);
+
+    // The text being read aloud, marked until it is read.
+    const QRectF readingArea = UBReadAloud::instance()->readingArea();
+
+    if (bIsControl && !bIsDesktop && !readingArea.isEmpty())
+    {
+        painter->save();
+        QPen border(QColor(230, 160, 0), 2, Qt::DashLine);
+        border.setCosmetic(true);
+        painter->setPen(border);
+        painter->setBrush(QColor(255, 214, 0, 60));
+        painter->drawRect(readingArea);
+        painter->restore();
+    }
 
     if (mActiveFrameShown)
     {

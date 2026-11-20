@@ -18,6 +18,7 @@ HEADERS +=  \
     src/gui/UBEyedropper.h \
     src/gui/UBSpotlight.h \
     src/gui/UBReadAloud.h \
+    src/gui/UBDictation.h \
     src/gui/UBDocumentTabs.h \
     src/gui/UBNoteToolIcon.h \
     src/gui/UBCommentPopup.h \
@@ -92,6 +93,7 @@ SOURCES +=  \
     src/gui/UBEyedropper.cpp \
     src/gui/UBSpotlight.cpp \
     src/gui/UBReadAloud.cpp \
+    src/gui/UBDictation.cpp \
     src/gui/UBDocumentTabs.cpp \
     src/gui/UBNoteToolIcon.cpp \
     src/gui/UBCommentPopup.cpp \
