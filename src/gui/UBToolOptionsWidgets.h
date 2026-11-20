@@ -45,6 +45,13 @@ class UBColorSwatches : public QWidget
 public:
     UBColorSwatches(const QList<QColor>& colors, bool offerNone, QWidget* parent = nullptr);
 
+    /**
+     * @brief The thirteen colors of the pen, also offered for the marker
+     * and the notes: with the other color and the eyedropper, three full
+     * rows of five in the toolbar.
+     */
+    static QList<QColor> standardColors();
+
     void setCurrentColor(const QColor& color);
     QColor currentColor() const;
 

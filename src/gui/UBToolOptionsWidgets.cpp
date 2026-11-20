@@ -247,9 +247,10 @@ static QIcon roundSwatchIcon(const QColor& color, int size)
 
 void UBColorSwatches::setThreeRows()
 {
-    // Round swatches in three rows, as high as the toolbar. The style of
-    // the toolbar gives its buttons margins, which would shrink the circles.
-    const int size = 22;
+    // Round swatches in three rows, within the height of the toolbar. The
+    // style of the toolbar gives its buttons margins, which would shrink
+    // the circles.
+    const int size = 20;
     const QString flat = QStringLiteral("QToolButton, QToolButton:checked, QToolButton:hover, QToolButton:pressed "
                                         "{ background: transparent; border: none; padding: 0px; margin: 0px; }");
     QList<QWidget*> buttons;
@@ -296,6 +297,18 @@ void UBColorSwatches::setThreeRows()
     }
 
     grid->setColumnStretch(columns, 1);
+
+    // Exactly three rows high, so that a taller toolbar does not spread
+    // the rows until the last one is cut.
+    setFixedHeight(3 * size + 2 * grid->verticalSpacing());
+    setSizePolicy(sizePolicy().horizontalPolicy(), QSizePolicy::Fixed);
+}
+
+QList<QColor> UBColorSwatches::standardColors()
+{
+    return { QColor("#ff3b30"), QColor("#2f54ff"), QColor("#000000"), QColor("#14b85a"), QColor("#9a46f0"),
+             QColor("#ff9a1f"), QColor("#12b5e8"), QColor("#ff1fd2"), QColor("#ffee1f"), QColor("#ffffff"),
+             QColor("#8e8e93"), QColor("#8b5a2b"), QColor("#1a237e") };
 }
 
 void UBColorSwatches::setCurrentColor(const QColor& color)
@@ -433,15 +446,16 @@ void UBValueSlider::setStacked(const QString& caption)
     grid->setHorizontalSpacing(8);
     grid->setVerticalSpacing(0);
 
+    // The caption above, the slider and its value side by side under it.
     if (!caption.isEmpty())
     {
         auto label = new QLabel(caption, this);
         label->setObjectName("section");
-        grid->addWidget(label, 0, 0, Qt::AlignLeft | Qt::AlignVCenter);
+        grid->addWidget(label, 0, 0, 1, 2, Qt::AlignLeft | Qt::AlignBottom);
     }
 
-    grid->addWidget(mValueBox, 0, 1, Qt::AlignRight | Qt::AlignVCenter);
-    grid->addWidget(mSlider, 1, 0, 1, 2);
+    grid->addWidget(mSlider, 1, 0, Qt::AlignVCenter);
+    grid->addWidget(mValueBox, 1, 1, Qt::AlignVCenter);
     grid->setColumnStretch(0, 1);
 
     mValueBox->setFixedHeight(22);

@@ -65,8 +65,7 @@ UBNoteDialog::UBNoteDialog(const QString& text, const QColor& color, bool isNewN
     mText->setFixedHeight(100);
 
     // The color of the marker left on the page.
-    mColors = new UBColorSwatches(UBGraphicsNoteItem::colors(), false, this);
-    mColors->hideOtherColorButton();
+    mColors = new UBColorSwatches(UBColorSwatches::standardColors(), false, this);
     mColors->setCurrentColor(color);
 
     auto secondary = new QPushButton(isNewNote ? tr("Cancel") : tr("Delete"), this);

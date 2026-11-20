@@ -53,13 +53,9 @@
 // Width of the eraser on screen for each point of its size
 static constexpr qreal sEraserPixelsPerPoint = 3.0;
 
-// Thirteen colors: with the other color and the eyedropper, three full
-// rows of five in the toolbar.
 static QList<QColor> penColors()
 {
-    return { QColor("#ff3b30"), QColor("#2f54ff"), QColor("#000000"), QColor("#14b85a"), QColor("#9a46f0"),
-             QColor("#ff9a1f"), QColor("#12b5e8"), QColor("#ff1fd2"), QColor("#ffee1f"), QColor("#ffffff"),
-             QColor("#8e8e93"), QColor("#8b5a2b"), QColor("#1a237e") };
+    return UBColorSwatches::standardColors();
 }
 
 // The same colors as the pen, as Luis asked.
@@ -493,6 +489,7 @@ UBLaserOptionsPanel::UBLaserOptionsPanel(QWidget* parent)
     mEffect->setToolTip(tr("Rainbow: the trail takes the colors of the rainbow, one after the other."));
     addRow(mEffect);
 
+    addSection(tr("Opacity"));
     mOpacity = new UBValueSlider(opacityMarks(), tr(" %"), 0, this);
     addRow(mOpacity);
 
@@ -574,9 +571,12 @@ void UBLaserOptionsPanel::layOutForToolbar()
             time.first->setToolTip(caption->text());
             caption->setText(time.second);
         }
+    }
 
-        // The slider itself is shorter, so that its handle is always seen.
-        time.first->setSliderWidth(110);
+    // The sliders are all as wide, short enough for their handle to be seen.
+    for (UBValueSlider* slider : { mWidth, mOpacity, mDelay, mDuration })
+    {
+        slider->setSliderWidth(110);
     }
 }
 
@@ -1448,8 +1448,7 @@ UBNoteOptionsPanel::UBNoteOptionsPanel(QWidget* parent)
     : UBToolOptionsPanel(tr("Note"), parent)
 {
     addSection(tr("Marker color"));
-    mColors = new UBColorSwatches(UBGraphicsNoteItem::colors(), false, this);
-    mColors->hideOtherColorButton();
+    mColors = new UBColorSwatches(UBColorSwatches::standardColors(), false, this);
     addRow(mColors);
 
     connect(mColors, &UBColorSwatches::colorChosen, this, [](const QColor& color) {
