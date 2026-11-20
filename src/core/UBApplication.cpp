@@ -265,11 +265,15 @@ void UBApplication::setupTranslators(QStringList args)
         if (mApplicationTranslator->load(UBPlatformUtils::translationPath(QString("OpenBoard_"),language)))
             installTranslator(mApplicationTranslator);
 
-        QString qtGuiTranslationPath = UBPlatformUtils::translationPath("qt_", language);
+        // The texts of Qt itself, like the buttons Save, Discard and Cancel
+        // of the questions. qtbase holds them all; qt_ only lists the
+        // catalogues of every Qt module and fails to load when one is not
+        // shipped, as on Windows.
+        QString qtGuiTranslationPath = UBPlatformUtils::translationPath("qtbase_", language);
 
         if(!QFile(qtGuiTranslationPath).exists())
         {
-            qtGuiTranslationPath = UBPlatformUtils::translationPath("qt_", language.left(2));
+            qtGuiTranslationPath = UBPlatformUtils::translationPath("qtbase_", language.left(2));
 
             if(!QFile(qtGuiTranslationPath).exists())
             {
@@ -287,11 +291,11 @@ void UBApplication::setupTranslators(QStringList args)
 
         if (qtGuiTranslationPath.isEmpty())
         {
-            loaded = mQtGuiTranslator->load(locale, "qt", "_", qtTranslationPath, ".qm");
+            loaded = mQtGuiTranslator->load(locale, "qtbase", "_", qtTranslationPath, ".qm");
         }
         else
         {
-            loaded = mQtGuiTranslator->load(qtGuiTranslationPath, UBPlatformUtils::applicationResourcesDirectory() + "/" + "i18n", "_", ".qm");
+            loaded = mQtGuiTranslator->load(qtGuiTranslationPath);
         }
 
         if (loaded)
