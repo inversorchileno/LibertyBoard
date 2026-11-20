@@ -1656,7 +1656,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBackgroundPalette</name>
     <message>
-        <location filename="../../src/gui/UBBackgroundPalette.cpp" line="+56"/>
+        <location filename="../../src/gui/UBBackgroundPalette.cpp" line="+57"/>
         <source>Page</source>
         <translation type="unfinished">Stránka</translation>
     </message>
@@ -1691,7 +1691,17 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+32"/>
+        <location line="+2"/>
+        <source>Weeks start on Sunday</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>The calendars start their weeks on Monday, or on Sunday when this is ticked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+31"/>
         <source>%1, for the date chosen above</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1704,12 +1714,12 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBoardController</name>
     <message>
-        <location filename="../../src/board/UBBoardController.cpp" line="+2986"/>
+        <location filename="../../src/board/UBBoardController.cpp" line="+2988"/>
         <source>All Supported (%1)</source>
         <translation>Všechny podporované (%1)</translation>
     </message>
     <message>
-        <location line="-1677"/>
+        <location line="-1679"/>
         <source>Downloading content %1 failed</source>
         <translation>Nepodařilo se stáhnout %1</translation>
     </message>
@@ -1719,7 +1729,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Neznámy typ obsahu (%1)</translation>
     </message>
     <message>
-        <location line="+683"/>
+        <location line="+685"/>
         <source>Page/canvas size</source>
         <translation>Velikost stránky/plátna</translation>
     </message>
@@ -1759,7 +1769,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Přidat položku</translation>
     </message>
     <message>
-        <location line="-1339"/>
+        <location line="-1341"/>
         <source>Unknown tool type %1</source>
         <translation>Neznámý typ nástroje %1</translation>
     </message>
@@ -1776,13 +1786,13 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="+506"/>
         <location line="+45"/>
-        <location line="+1078"/>
+        <location line="+1080"/>
         <location line="+36"/>
         <source>Add file operation failed: file copying error</source>
         <translation>Přidání souboru selhalo: chyba při kopírování</translation>
     </message>
     <message>
-        <location line="-2488"/>
+        <location line="-2490"/>
         <source>Group</source>
         <translation>Seskupit</translation>
     </message>
@@ -1887,7 +1897,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+2231"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+2241"/>
         <source>That page is not in the document any more.</source>
         <translation>Tato strana už v dokumentu není.</translation>
     </message>
@@ -5169,7 +5179,7 @@ Dynamická šířka</translation>
 <context>
     <name>UBSettings</name>
     <message>
-        <location filename="../../src/core/UBSettings.cpp" line="+1145"/>
+        <location filename="../../src/core/UBSettings.cpp" line="+1146"/>
         <source>My Movies</source>
         <translation>Moje filmy</translation>
     </message>
@@ -5207,7 +5217,7 @@ Dynamická šířka</translation>
     </message>
     <message>
         <location line="+18"/>
-        <source>The shape to draw. The polyline: a click for each corner, Enter to end it.</source>
+        <source>The shape to draw. The polyline: a click for each corner, any key to end it, Escape to drop it.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

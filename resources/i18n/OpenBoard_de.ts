@@ -1669,7 +1669,7 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
 <context>
     <name>UBBackgroundPalette</name>
     <message>
-        <location filename="../../src/gui/UBBackgroundPalette.cpp" line="+56"/>
+        <location filename="../../src/gui/UBBackgroundPalette.cpp" line="+57"/>
         <source>Page</source>
         <translation>Seite</translation>
     </message>
@@ -1704,7 +1704,17 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
         <translation>Die Kalender und Planer werden für diesen Tag, seine Woche, seinen Monat oder sein Jahr erstellt</translation>
     </message>
     <message>
-        <location line="+32"/>
+        <location line="+2"/>
+        <source>Weeks start on Sunday</source>
+        <translation>Wochen beginnen am Sonntag</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>The calendars start their weeks on Monday, or on Sunday when this is ticked</source>
+        <translation>Die Kalender beginnen die Woche am Montag, oder am Sonntag, wenn dies angekreuzt ist</translation>
+    </message>
+    <message>
+        <location line="+31"/>
         <source>%1, for the date chosen above</source>
         <translation>%1, für das oben gewählte Datum</translation>
     </message>
@@ -1737,7 +1747,7 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
         <translation>Unbekannter Inhalt %1</translation>
     </message>
     <message>
-        <location line="+683"/>
+        <location line="+685"/>
         <source>Page/canvas size</source>
         <translation>Seiten-/Leinwandgröße</translation>
     </message>
@@ -1782,20 +1792,20 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
         <translation>Alle unterstützt (%1)</translation>
     </message>
     <message>
-        <location line="-2043"/>
+        <location line="-2045"/>
         <source>Page %1 deleted</source>
         <translation>Seite %1 gelöscht</translation>
     </message>
     <message>
         <location line="+506"/>
         <location line="+45"/>
-        <location line="+1078"/>
+        <location line="+1080"/>
         <location line="+36"/>
         <source>Add file operation failed: file copying error</source>
         <translation>Dokument hinzufügen fehlgeschlagen: Fehler beim Kopieren</translation>
     </message>
     <message>
-        <location line="-2488"/>
+        <location line="-2490"/>
         <source>Group</source>
         <translation>Gruppieren</translation>
     </message>
@@ -1907,7 +1917,7 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+2231"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+2241"/>
         <source>That page is not in the document any more.</source>
         <translation>Diese Seite ist nicht mehr im Dokument.</translation>
     </message>
@@ -5322,7 +5332,7 @@ Dynamische Breite</translation>
 <context>
     <name>UBSettings</name>
     <message>
-        <location filename="../../src/core/UBSettings.cpp" line="+1145"/>
+        <location filename="../../src/core/UBSettings.cpp" line="+1146"/>
         <source>My Movies</source>
         <translation>Meine Filme</translation>
     </message>
@@ -5359,9 +5369,13 @@ Dynamische Breite</translation>
         <translation>Unterstreichen</translation>
     </message>
     <message>
-        <location line="+18"/>
         <source>The shape to draw. The polyline: a click for each corner, Enter to end it.</source>
-        <translation>Die zu zeichnende Form. Die Polylinie: ein Klick für jede Ecke, Enter zum Beenden.</translation>
+        <translation type="vanished">Die zu zeichnende Form. Die Polylinie: ein Klick für jede Ecke, Enter zum Beenden.</translation>
+    </message>
+    <message>
+        <location line="+18"/>
+        <source>The shape to draw. The polyline: a click for each corner, any key to end it, Escape to drop it.</source>
+        <translation>Die zu zeichnende Form. Die Polylinie: ein Klick für jede Ecke, eine beliebige Taste zum Beenden, Esc zum Verwerfen.</translation>
     </message>
     <message>
         <location line="+9"/>

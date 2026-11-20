@@ -1655,7 +1655,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBackgroundPalette</name>
     <message>
-        <location filename="../../src/gui/UBBackgroundPalette.cpp" line="+56"/>
+        <location filename="../../src/gui/UBBackgroundPalette.cpp" line="+57"/>
         <source>Page</source>
         <translation type="unfinished">페이지</translation>
     </message>
@@ -1690,7 +1690,17 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+32"/>
+        <location line="+2"/>
+        <source>Weeks start on Sunday</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>The calendars start their weeks on Monday, or on Sunday when this is ticked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+31"/>
         <source>%1, for the date chosen above</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1723,7 +1733,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>알 수 없는 콘텐츠 유형 %1</translation>
     </message>
     <message>
-        <location line="+683"/>
+        <location line="+685"/>
         <source>Page/canvas size</source>
         <translation>페이지/캔버스 크기</translation>
     </message>
@@ -1768,20 +1778,20 @@ Do you wish to override the security check and continue ?   </source>
         <translation>모든 지원 형식 (%1)</translation>
     </message>
     <message>
-        <location line="-2043"/>
+        <location line="-2045"/>
         <source>Page %1 deleted</source>
         <translation type="unfinished">%1페이지 삭제됨</translation>
     </message>
     <message>
         <location line="+506"/>
         <location line="+45"/>
-        <location line="+1078"/>
+        <location line="+1080"/>
         <location line="+36"/>
         <source>Add file operation failed: file copying error</source>
         <translation type="unfinished">파일 추가 작업 실패: 파일을 복사하는 도중 오류 발생</translation>
     </message>
     <message>
-        <location line="-2488"/>
+        <location line="-2490"/>
         <source>Group</source>
         <translation type="unfinished">그룹화</translation>
     </message>
@@ -1886,7 +1896,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+2231"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+2241"/>
         <source>That page is not in the document any more.</source>
         <translation>그 페이지는 더 이상 문서에 없습니다.</translation>
     </message>
@@ -5169,7 +5179,7 @@ Dynamic width</source>
 <context>
     <name>UBSettings</name>
     <message>
-        <location filename="../../src/core/UBSettings.cpp" line="+1145"/>
+        <location filename="../../src/core/UBSettings.cpp" line="+1146"/>
         <source>My Movies</source>
         <translation>내 동영상</translation>
     </message>
@@ -5207,7 +5217,7 @@ Dynamic width</source>
     </message>
     <message>
         <location line="+18"/>
-        <source>The shape to draw. The polyline: a click for each corner, Enter to end it.</source>
+        <source>The shape to draw. The polyline: a click for each corner, any key to end it, Escape to drop it.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

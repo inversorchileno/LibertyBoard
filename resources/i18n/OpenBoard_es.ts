@@ -1657,7 +1657,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBackgroundPalette</name>
     <message>
-        <location filename="../../src/gui/UBBackgroundPalette.cpp" line="+56"/>
+        <location filename="../../src/gui/UBBackgroundPalette.cpp" line="+57"/>
         <source>Page</source>
         <translation>Hoja</translation>
     </message>
@@ -1692,7 +1692,17 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Los calendarios y planificadores se hacen para este día, su semana, su mes o su año</translation>
     </message>
     <message>
-        <location line="+32"/>
+        <location line="+2"/>
+        <source>Weeks start on Sunday</source>
+        <translation>Semanas desde el domingo</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>The calendars start their weeks on Monday, or on Sunday when this is ticked</source>
+        <translation>Los calendarios empiezan la semana el lunes, o el domingo si esto está marcado</translation>
+    </message>
+    <message>
+        <location line="+31"/>
         <source>%1, for the date chosen above</source>
         <translation>%1, para la fecha elegida arriba</translation>
     </message>
@@ -1725,7 +1735,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Tipo de contenido desconocido %1</translation>
     </message>
     <message>
-        <location line="+683"/>
+        <location line="+685"/>
         <source>Page/canvas size</source>
         <translation>Tamaño página/lienzo</translation>
     </message>
@@ -1770,20 +1780,20 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Todos compatibles (%1)</translation>
     </message>
     <message>
-        <location line="-2043"/>
+        <location line="-2045"/>
         <source>Page %1 deleted</source>
         <translation>Página %1 eliminada</translation>
     </message>
     <message>
         <location line="+506"/>
         <location line="+45"/>
-        <location line="+1078"/>
+        <location line="+1080"/>
         <location line="+36"/>
         <source>Add file operation failed: file copying error</source>
         <translation>Todas las operaciones con ficheros han fallado. Error al copiar los ficheros</translation>
     </message>
     <message>
-        <location line="-2488"/>
+        <location line="-2490"/>
         <source>Group</source>
         <translation>Agrupar</translation>
     </message>
@@ -1895,7 +1905,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+2231"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+2241"/>
         <source>That page is not in the document any more.</source>
         <translation>Esa página ya no está en el documento.</translation>
     </message>
@@ -5290,7 +5300,7 @@ Ancho dinámico</translation>
 <context>
     <name>UBSettings</name>
     <message>
-        <location filename="../../src/core/UBSettings.cpp" line="+1145"/>
+        <location filename="../../src/core/UBSettings.cpp" line="+1146"/>
         <source>My Movies</source>
         <translation>Mis películas</translation>
     </message>
@@ -5303,7 +5313,12 @@ Ancho dinámico</translation>
         <translation>Resaltado del texto</translation>
     </message>
     <message>
-        <location line="+45"/>
+        <location line="+20"/>
+        <source>The shape to draw. The polyline: a click for each corner, any key to end it, Escape to drop it.</source>
+        <translation>La forma que se dibuja. La polilínea: un clic por cada esquina, cualquier tecla para terminarla, Esc para borrarla.</translation>
+    </message>
+    <message>
+        <location line="+25"/>
         <source>Height</source>
         <translation>Alto</translation>
     </message>
@@ -5332,12 +5347,11 @@ Ancho dinámico</translation>
         <translation>Subrayar</translation>
     </message>
     <message>
-        <location line="+18"/>
         <source>The shape to draw. The polyline: a click for each corner, Enter to end it.</source>
-        <translation>La forma que se dibuja. La polilínea: un clic por cada esquina, Enter para terminarla.</translation>
+        <translation type="vanished">La forma que se dibuja. La polilínea: un clic por cada esquina, Enter para terminarla.</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+27"/>
         <source>Border</source>
         <translation>Borde</translation>
     </message>

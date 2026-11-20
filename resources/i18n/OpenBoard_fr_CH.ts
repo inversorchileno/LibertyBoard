@@ -1670,7 +1670,7 @@ Voulez-vous continuer quand-même ?   </translation>
 <context>
     <name>UBBackgroundPalette</name>
     <message>
-        <location filename="../../src/gui/UBBackgroundPalette.cpp" line="+56"/>
+        <location filename="../../src/gui/UBBackgroundPalette.cpp" line="+57"/>
         <source>Page</source>
         <translation>Page</translation>
     </message>
@@ -1705,7 +1705,17 @@ Voulez-vous continuer quand-même ?   </translation>
         <translation>Les calendriers et agendas sont faits pour ce jour, sa semaine, son mois ou son année</translation>
     </message>
     <message>
-        <location line="+32"/>
+        <location line="+2"/>
+        <source>Weeks start on Sunday</source>
+        <translation>Semaines commençant le dimanche</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>The calendars start their weeks on Monday, or on Sunday when this is ticked</source>
+        <translation>Les calendriers commencent la semaine le lundi, ou le dimanche si cette case est cochée</translation>
+    </message>
+    <message>
+        <location line="+31"/>
         <source>%1, for the date chosen above</source>
         <translation>%1, pour la date choisie ci-dessus</translation>
     </message>
@@ -1733,7 +1743,7 @@ Voulez-vous continuer quand-même ?   </translation>
         <translation>Type d&apos;outil inconnu %1</translation>
     </message>
     <message>
-        <location line="+728"/>
+        <location line="+730"/>
         <source>Page/canvas size</source>
         <translation>Taille de la page/du canevas</translation>
     </message>
@@ -1778,7 +1788,7 @@ Voulez-vous continuer quand-même ?   </translation>
         <translation>Tous (%1)</translation>
     </message>
     <message>
-        <location line="-1296"/>
+        <location line="-1298"/>
         <source>Unknown content type %1</source>
         <translation>Type de contenu inconnu (%1)</translation>
     </message>
@@ -1790,13 +1800,13 @@ Voulez-vous continuer quand-même ?   </translation>
     <message>
         <location line="+506"/>
         <location line="+45"/>
-        <location line="+1078"/>
+        <location line="+1080"/>
         <location line="+36"/>
         <source>Add file operation failed: file copying error</source>
         <translation>Echec d&apos;ajout de document : erreur de copie</translation>
     </message>
     <message>
-        <location line="-2488"/>
+        <location line="-2490"/>
         <source>Group</source>
         <translation>Grouper</translation>
     </message>
@@ -1908,7 +1918,7 @@ Voulez-vous continuer quand-même ?   </translation>
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+2231"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+2241"/>
         <source>That page is not in the document any more.</source>
         <translation>Cette page n&apos;est plus dans le document.</translation>
     </message>
@@ -5329,7 +5339,7 @@ Largeur dynamique</translation>
 <context>
     <name>UBSettings</name>
     <message>
-        <location filename="../../src/core/UBSettings.cpp" line="+1145"/>
+        <location filename="../../src/core/UBSettings.cpp" line="+1146"/>
         <source>My Movies</source>
         <translation>Mes films</translation>
     </message>
@@ -5366,9 +5376,13 @@ Largeur dynamique</translation>
         <translation>Souligner</translation>
     </message>
     <message>
-        <location line="+18"/>
         <source>The shape to draw. The polyline: a click for each corner, Enter to end it.</source>
-        <translation>La forme à dessiner. La polyligne : un clic pour chaque coin, Entrée pour la terminer.</translation>
+        <translation type="vanished">La forme à dessiner. La polyligne : un clic pour chaque coin, Entrée pour la terminer.</translation>
+    </message>
+    <message>
+        <location line="+18"/>
+        <source>The shape to draw. The polyline: a click for each corner, any key to end it, Escape to drop it.</source>
+        <translation>La forme à dessiner. La polyligne : un clic pour chaque coin, n&apos;importe quelle touche pour la terminer, Échap pour l&apos;abandonner.</translation>
     </message>
     <message>
         <location line="+9"/>

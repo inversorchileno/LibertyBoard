@@ -1651,7 +1651,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBackgroundPalette</name>
     <message>
-        <location filename="../../src/gui/UBBackgroundPalette.cpp" line="+56"/>
+        <location filename="../../src/gui/UBBackgroundPalette.cpp" line="+57"/>
         <source>Page</source>
         <translation>ページ</translation>
     </message>
@@ -1686,7 +1686,17 @@ Do you wish to override the security check and continue ?   </source>
         <translation>カレンダーとプランナーは、この日、その週、その月、その年について作られます</translation>
     </message>
     <message>
-        <location line="+32"/>
+        <location line="+2"/>
+        <source>Weeks start on Sunday</source>
+        <translation>週を日曜日から始める</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>The calendars start their weeks on Monday, or on Sunday when this is ticked</source>
+        <translation>カレンダーは週を月曜日から始めます。チェックすると日曜日から始めます</translation>
+    </message>
+    <message>
+        <location line="+31"/>
         <source>%1, for the date chosen above</source>
         <translation>%1（上で選んだ日付）</translation>
     </message>
@@ -1719,7 +1729,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>不明のコンテンツタイプ%1 </translation>
     </message>
     <message>
-        <location line="+683"/>
+        <location line="+685"/>
         <source>Page/canvas size</source>
         <translation>ページ/キャンバスのサイズ</translation>
     </message>
@@ -1764,7 +1774,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>全てサポート(%1) </translation>
     </message>
     <message>
-        <location line="-2866"/>
+        <location line="-2868"/>
         <source>Group</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1796,13 +1806,13 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="+506"/>
         <location line="+45"/>
-        <location line="+1078"/>
+        <location line="+1080"/>
         <location line="+36"/>
         <source>Add file operation failed: file copying error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-2232"/>
+        <location line="-2234"/>
         <source>Color</source>
         <translation>色</translation>
     </message>
@@ -1882,7 +1892,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+2231"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+2241"/>
         <source>That page is not in the document any more.</source>
         <translation>そのページはもう文書にありません。</translation>
     </message>
@@ -5205,7 +5215,7 @@ Dynamic width</source>
 <context>
     <name>UBSettings</name>
     <message>
-        <location filename="../../src/core/UBSettings.cpp" line="+1145"/>
+        <location filename="../../src/core/UBSettings.cpp" line="+1146"/>
         <source>My Movies</source>
         <translation>マイ・ムービー </translation>
     </message>
@@ -5242,9 +5252,13 @@ Dynamic width</source>
         <translation>下線</translation>
     </message>
     <message>
-        <location line="+18"/>
         <source>The shape to draw. The polyline: a click for each corner, Enter to end it.</source>
-        <translation>描く図形。折れ線：角ごとにクリックし、Enter で終了します。</translation>
+        <translation type="vanished">描く図形。折れ線：角ごとにクリックし、Enter で終了します。</translation>
+    </message>
+    <message>
+        <location line="+18"/>
+        <source>The shape to draw. The polyline: a click for each corner, any key to end it, Escape to drop it.</source>
+        <translation>描く図形。折れ線：角ごとにクリックし、任意のキーで終了、Esc で取り消します。</translation>
     </message>
     <message>
         <location line="+9"/>

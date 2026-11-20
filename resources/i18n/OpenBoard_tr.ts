@@ -1661,7 +1661,7 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
 <context>
     <name>UBBackgroundPalette</name>
     <message>
-        <location filename="../../src/gui/UBBackgroundPalette.cpp" line="+56"/>
+        <location filename="../../src/gui/UBBackgroundPalette.cpp" line="+57"/>
         <source>Page</source>
         <translation type="unfinished">Sayfa</translation>
     </message>
@@ -1696,7 +1696,17 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+32"/>
+        <location line="+2"/>
+        <source>Weeks start on Sunday</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>The calendars start their weeks on Monday, or on Sunday when this is ticked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+31"/>
         <source>%1, for the date chosen above</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1729,7 +1739,7 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
         <translation>Bilinmeyen içerik türü %1</translation>
     </message>
     <message>
-        <location line="+683"/>
+        <location line="+685"/>
         <source>Page/canvas size</source>
         <translation>Sayfa/tuval boyutu</translation>
     </message>
@@ -1774,20 +1784,20 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
         <translation>Tüm Desteklenler (%1)</translation>
     </message>
     <message>
-        <location line="-2043"/>
+        <location line="-2045"/>
         <source>Page %1 deleted</source>
         <translation>Sayfa %1 silindi</translation>
     </message>
     <message>
         <location line="+506"/>
         <location line="+45"/>
-        <location line="+1078"/>
+        <location line="+1080"/>
         <location line="+36"/>
         <source>Add file operation failed: file copying error</source>
         <translation>Dosya ekleme işlemi başarısız oldu: dosya kopyalama hatası</translation>
     </message>
     <message>
-        <location line="-2488"/>
+        <location line="-2490"/>
         <source>Group</source>
         <translation>Grupla</translation>
     </message>
@@ -1892,7 +1902,7 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+2231"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+2241"/>
         <source>That page is not in the document any more.</source>
         <translation>Bu sayfa artık belgede değil.</translation>
     </message>
@@ -5208,7 +5218,7 @@ Dinamik kalınlık</translation>
 <context>
     <name>UBSettings</name>
     <message>
-        <location filename="../../src/core/UBSettings.cpp" line="+1145"/>
+        <location filename="../../src/core/UBSettings.cpp" line="+1146"/>
         <source>My Movies</source>
         <translation>Filimlerim</translation>
     </message>
@@ -5246,7 +5256,7 @@ Dinamik kalınlık</translation>
     </message>
     <message>
         <location line="+18"/>
-        <source>The shape to draw. The polyline: a click for each corner, Enter to end it.</source>
+        <source>The shape to draw. The polyline: a click for each corner, any key to end it, Escape to drop it.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

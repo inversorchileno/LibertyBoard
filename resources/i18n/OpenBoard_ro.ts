@@ -1655,7 +1655,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBackgroundPalette</name>
     <message>
-        <location filename="../../src/gui/UBBackgroundPalette.cpp" line="+56"/>
+        <location filename="../../src/gui/UBBackgroundPalette.cpp" line="+57"/>
         <source>Page</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1690,7 +1690,17 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+32"/>
+        <location line="+2"/>
+        <source>Weeks start on Sunday</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>The calendars start their weeks on Monday, or on Sunday when this is ticked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+31"/>
         <source>%1, for the date chosen above</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1723,7 +1733,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Tip de conţinut necunoscut %1</translation>
     </message>
     <message>
-        <location line="+683"/>
+        <location line="+685"/>
         <source>Page/canvas size</source>
         <translation>Dimensiunea paginii/pânzei</translation>
     </message>
@@ -1768,20 +1778,20 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Tot ce se suportă (%1)</translation>
     </message>
     <message>
-        <location line="-2043"/>
+        <location line="-2045"/>
         <source>Page %1 deleted</source>
         <translation>Pagina %1 ștearsă</translation>
     </message>
     <message>
         <location line="+506"/>
         <location line="+45"/>
-        <location line="+1078"/>
+        <location line="+1080"/>
         <location line="+36"/>
         <source>Add file operation failed: file copying error</source>
         <translation>Operațiunea de adăugare fișier nu a reușit: eroare copiere fișier</translation>
     </message>
     <message>
-        <location line="-2488"/>
+        <location line="-2490"/>
         <source>Group</source>
         <translation>Grupare</translation>
     </message>
@@ -1886,7 +1896,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+2231"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+2241"/>
         <source>That page is not in the document any more.</source>
         <translation>Pagina aceea nu mai este în document.</translation>
     </message>
@@ -5160,7 +5170,7 @@ Lățime dinamică</translation>
 <context>
     <name>UBSettings</name>
     <message>
-        <location filename="../../src/core/UBSettings.cpp" line="+1145"/>
+        <location filename="../../src/core/UBSettings.cpp" line="+1146"/>
         <source>My Movies</source>
         <translation>Filmele mele</translation>
     </message>
@@ -5198,7 +5208,7 @@ Lățime dinamică</translation>
     </message>
     <message>
         <location line="+18"/>
-        <source>The shape to draw. The polyline: a click for each corner, Enter to end it.</source>
+        <source>The shape to draw. The polyline: a click for each corner, any key to end it, Escape to drop it.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

@@ -1785,7 +1785,7 @@ Deseja substituir a verificação de segurança e continuar?</translation>
 <context>
     <name>UBBackgroundPalette</name>
     <message>
-        <location filename="../../src/gui/UBBackgroundPalette.cpp" line="+56"/>
+        <location filename="../../src/gui/UBBackgroundPalette.cpp" line="+57"/>
         <source>Page</source>
         <translation type="unfinished">Página</translation>
     </message>
@@ -1820,7 +1820,17 @@ Deseja substituir a verificação de segurança e continuar?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+32"/>
+        <location line="+2"/>
+        <source>Weeks start on Sunday</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>The calendars start their weeks on Monday, or on Sunday when this is ticked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+31"/>
         <source>%1, for the date chosen above</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1875,13 +1885,13 @@ Deseja substituir a verificação de segurança e continuar?</translation>
     <message>
         <location line="+131"/>
         <location line="+45"/>
-        <location line="+1078"/>
+        <location line="+1080"/>
         <location line="+36"/>
         <source>Add file operation failed: file copying error</source>
         <translation>Falha na operação de adição de arquivo: erro ao copiar arquivo</translation>
     </message>
     <message>
-        <location line="-963"/>
+        <location line="-965"/>
         <source>Unknown tool type %1</source>
         <translation>Tipo de ferramenta desconhecido %1</translation>
     </message>
@@ -1891,7 +1901,7 @@ Deseja substituir a verificação de segurança e continuar?</translation>
         <translation>Tipo de conteúdo desconhecido %1</translation>
     </message>
     <message>
-        <location line="+683"/>
+        <location line="+685"/>
         <source>Page/canvas size</source>
         <translation>Tamanho da página/tela</translation>
     </message>
@@ -1936,7 +1946,7 @@ Deseja substituir a verificação de segurança e continuar?</translation>
         <translation>Tudo Suportado (%1)</translation>
     </message>
     <message>
-        <location line="-2610"/>
+        <location line="-2612"/>
         <source>Color</source>
         <translation>Cor</translation>
     </message>
@@ -2023,7 +2033,7 @@ Deseja substituir a verificação de segurança e continuar?</translation>
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+2231"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+2241"/>
         <source>That page is not in the document any more.</source>
         <translation>Essa página não está mais no documento.</translation>
     </message>
@@ -5385,7 +5395,7 @@ Largura dinâmica</translation>
 <context>
     <name>UBSettings</name>
     <message>
-        <location filename="../../src/core/UBSettings.cpp" line="+1145"/>
+        <location filename="../../src/core/UBSettings.cpp" line="+1146"/>
         <source>My Movies</source>
         <translation>Meus Vídeos</translation>
     </message>
@@ -5423,7 +5433,7 @@ Largura dinâmica</translation>
     </message>
     <message>
         <location line="+18"/>
-        <source>The shape to draw. The polyline: a click for each corner, Enter to end it.</source>
+        <source>The shape to draw. The polyline: a click for each corner, any key to end it, Escape to drop it.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
