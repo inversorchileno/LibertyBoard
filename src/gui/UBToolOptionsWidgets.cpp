@@ -418,6 +418,11 @@ void UBValueSlider::setCompact()
     mSlider->setMaximumWidth(140);
 }
 
+void UBValueSlider::setSliderWidth(int width)
+{
+    mSlider->setFixedWidth(width);
+}
+
 void UBValueSlider::setStacked(const QString& caption)
 {
     delete layout();

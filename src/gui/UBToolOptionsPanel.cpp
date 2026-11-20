@@ -70,10 +70,13 @@ static QList<QColor> laserColors()
 
 static QIcon rainbowIcon()
 {
-    QPixmap pixmap(72, 28);
+    // A wave in the colors of the rainbow, like the drawings of the other effects.
+    const qreal ratio = 2;
+    QPixmap pixmap(QSize(48, 28) * ratio);
+    pixmap.setDevicePixelRatio(ratio);
     pixmap.fill(Qt::transparent);
 
-    QLinearGradient gradient(0, 0, pixmap.width(), 0);
+    QLinearGradient gradient(5, 0, 43, 0);
 
     for (int i = 0; i <= 6; ++i)
     {
@@ -82,10 +85,10 @@ static QIcon rainbowIcon()
 
     QPainter painter(&pixmap);
     painter.setRenderHint(QPainter::Antialiasing);
-    painter.setPen(QPen(QBrush(gradient), 8, Qt::SolidLine, Qt::RoundCap));
+    painter.setPen(QPen(QBrush(gradient), 4, Qt::SolidLine, Qt::RoundCap));
     QPainterPath wave;
-    wave.moveTo(6, 18);
-    wave.cubicTo(24, 2, 44, 28, 66, 10);
+    wave.moveTo(5, 14);
+    wave.cubicTo(16.4, -2.8, 31.6, 30.8, 43, 14);
     painter.drawPath(wave);
 
     return QIcon(pixmap);
@@ -476,15 +479,10 @@ UBLaserOptionsPanel::UBLaserOptionsPanel(QWidget* parent)
     mColors = new UBColorSwatches(laserColors(), false, this);
     addRow(mColors);
 
-    // Apart from the colors: the trail takes all the colors of the rainbow.
-    mRainbow = new QCheckBox(tr("Rainbow"), this);
-    mRainbow->setIcon(rainbowIcon());
-    mRainbow->setIconSize(QSize(36, 14));
-    mRainbow->setToolTip(tr("The trail takes the colors of the rainbow, one after the other."));
-    addRow(mRainbow);
-
-    mEffect = new UBSegmentedChoice({ tr("Standard"), tr("White burn") }, this);
-    mEffect->setIcons({ optionIcon(UBOptionIcon::LaserStandard), optionIcon(UBOptionIcon::LaserWhiteBurn) });
+    // The rainbow is an effect beside the others, apart from the colors.
+    mEffect = new UBSegmentedChoice({ tr("Standard"), tr("White burn"), tr("Rainbow") }, this);
+    mEffect->setIcons({ optionIcon(UBOptionIcon::LaserStandard), optionIcon(UBOptionIcon::LaserWhiteBurn), rainbowIcon() });
+    mEffect->setToolTip(tr("Rainbow: the trail takes the colors of the rainbow, one after the other."));
     addRow(mEffect);
 
     mOpacity = new UBValueSlider(opacityMarks(), tr(" %"), 0, this);
@@ -507,11 +505,15 @@ UBLaserOptionsPanel::UBLaserOptionsPanel(QWidget* parent)
     });
     connect(mColors, &UBColorSwatches::colorChosen, this, [this, settings](const QColor& color) {
         settings->laserColor->set(color.name());
-        mRainbow->setChecked(false);
+
+        // A color is for the standard trail, not for the rainbow.
+        if (settings->laserEffect->get().toInt() == UBLaserEffect::Rainbow)
+        {
+            settings->laserEffect->set(int(UBLaserEffect::Standard));
+            mEffect->setChoice(UBLaserEffect::Standard);
+        }
+
         updatePreview();
-    });
-    connect(mRainbow, &QCheckBox::toggled, this, [settings](bool on) {
-        settings->laserRainbow->set(on);
     });
     connect(mEffect, &UBSegmentedChoice::choiceChanged, this, [settings](int effect) {
         settings->laserEffect->set(effect);
@@ -537,8 +539,14 @@ void UBLaserOptionsPanel::refresh()
     mMode->setChoice(settings->laserMode->get().toInt());
     mWidth->setValue(settings->laserWidth->get().toDouble());
     mColors->setCurrentColor(settingColor(settings->laserColor));
+    // The rainbow was a box of its own in build 20: it becomes the effect.
+    if (settings->laserRainbow->get().toBool())
+    {
+        settings->laserEffect->set(int(UBLaserEffect::Rainbow));
+        settings->laserRainbow->set(false);
+    }
+
     mEffect->setChoice(settings->laserEffect->get().toInt());
-    mRainbow->setChecked(settings->laserRainbow->get().toBool());
     mOpacity->setValue(settings->laserOpacity->get().toDouble() * 100);
     mDelay->setValue(settings->laserFadeDelay->get().toDouble());
     mDuration->setValue(settings->laserFadeDuration->get().toDouble());
@@ -559,7 +567,8 @@ void UBLaserOptionsPanel::layOutForToolbar()
             caption->setText(time.second);
         }
 
-        time.first->setMaximumWidth(time.first->sizeHint().width() / 2 + 40);
+        // The slider itself is shorter, so that its handle is always seen.
+        time.first->setSliderWidth(110);
     }
 }
 

@@ -77,6 +77,8 @@ private:
     };
 
     void onFrame();
+    static void takeSettings(Trail& trail);
+    static QVector<QPair<QPointF, qint64>> smoothFollowing(const Trail& trail);
     void paintRainbow(QPainter* painter, const Trail& trail, qreal opacity, qint64 now) const;
     void paintFollowing(QPainter* painter, const Trail& trail, qint64 now) const;
     qreal opacityOfPoint(const Trail& trail, qint64 drawnAt, qint64 now) const;

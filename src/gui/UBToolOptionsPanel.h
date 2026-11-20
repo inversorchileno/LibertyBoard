@@ -147,7 +147,6 @@ private:
     UBSegmentedChoice* mMode{nullptr};
     UBValueSlider* mWidth{nullptr};
     UBColorSwatches* mColors{nullptr};
-    QCheckBox* mRainbow{nullptr};
     UBSegmentedChoice* mEffect{nullptr};
     UBValueSlider* mOpacity{nullptr};
     UBValueSlider* mDelay{nullptr};

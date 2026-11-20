@@ -54,18 +54,8 @@ void UBGraphicsLaserTrail::startTrail(const QPointF& point, qreal width)
     Trail trail;
     trail.points << point;
     trail.width = width;
-    trail.color = QColor(settings->laserColor->get().toString());
-    trail.fadeDelay = qRound64(settings->laserFadeDelay->get().toDouble() * 1000);
-    trail.fadeDuration = qRound64(settings->laserFadeDuration->get().toDouble() * 1000);
-    trail.opacity = qBound(0.0, settings->laserOpacity->get().toDouble(), 1.0);
     trail.pointOnly = settings->laserMode->get().toInt() == UBLaserMode::Point;
-    trail.whiteBurn = settings->laserEffect->get().toInt() == UBLaserEffect::WhiteBurn;
-    trail.rainbow = settings->laserRainbow->get().toBool();
-
-    if (!trail.color.isValid())
-    {
-        trail.color = Qt::red;
-    }
+    takeSettings(trail);
 
     mTrails << trail;
     updateBounds();
@@ -113,6 +103,24 @@ void UBGraphicsLaserTrail::extendTrail(const QPointF& point)
                                   .adjusted(-margin, -margin, margin, margin)));
 }
 
+void UBGraphicsLaserTrail::takeSettings(Trail& trail)
+{
+    UBSettings* settings = UBSettings::settings();
+    const int effect = settings->laserEffect->get().toInt();
+
+    trail.color = QColor(settings->laserColor->get().toString());
+    trail.fadeDelay = qRound64(settings->laserFadeDelay->get().toDouble() * 1000);
+    trail.fadeDuration = qRound64(settings->laserFadeDuration->get().toDouble() * 1000);
+    trail.opacity = qBound(0.0, settings->laserOpacity->get().toDouble(), 1.0);
+    trail.whiteBurn = (effect == UBLaserEffect::WhiteBurn);
+    trail.rainbow = (effect == UBLaserEffect::Rainbow);
+
+    if (!trail.color.isValid())
+    {
+        trail.color = Qt::red;
+    }
+}
+
 void UBGraphicsLaserTrail::follow(const QPointF& point, qreal width)
 {
     const qint64 now = mClock.elapsed();
@@ -127,8 +135,10 @@ void UBGraphicsLaserTrail::follow(const QPointF& point, qreal width)
         return;
     }
 
+    // The trail lasts as long as the mode: it takes the options chosen meanwhile.
     Trail& trail = mTrails.last();
     trail.width = width;
+    takeSettings(trail);
 
     if (trail.points.last() == point)
     {
@@ -170,6 +180,52 @@ qreal UBGraphicsLaserTrail::opacityOfPoint(const Trail& trail, qint64 drawnAt, q
     return qMax(0.0, 1.0 - qreal(fadingFor) / trail.fadeDuration);
 }
 
+QVector<QPair<QPointF, qint64>> UBGraphicsLaserTrail::smoothFollowing(const Trail& trail)
+{
+    QVector<QPair<QPointF, qint64>> smooth;
+    const QVector<QPointF>& points = trail.points;
+    const QVector<qint64>& times = trail.times;
+    const int count = qMin(points.size(), times.size());
+
+    if (count < 3)
+    {
+        for (int i = 0; i < count; ++i)
+        {
+            smooth << qMakePair(points.at(i), times.at(i));
+        }
+
+        return smooth;
+    }
+
+    // From the first point to the middle of the first segment, then a curve
+    // from middle to middle around each point, then to the last point.
+    smooth << qMakePair(points.first(), times.first());
+
+    for (int i = 1; i < count - 1; ++i)
+    {
+        const QPointF from = (points.at(i - 1) + points.at(i)) / 2;
+        const QPointF to = (points.at(i) + points.at(i + 1)) / 2;
+        const QPointF control = points.at(i);
+        const qreal length = QLineF(from, control).length() + QLineF(control, to).length();
+        const int steps = qBound(1, int(length / 3), 64);
+
+        for (int k = 0; k <= steps; ++k)
+        {
+            const qreal t = qreal(k) / steps;
+            const QPointF place = (1 - t) * (1 - t) * from + 2 * (1 - t) * t * control + t * t * to;
+            const qint64 time = t < 0.5 ? times.at(i) : times.at(i + 1);
+
+            if (smooth.last().first != place)
+            {
+                smooth << qMakePair(place, time);
+            }
+        }
+    }
+
+    smooth << qMakePair(points.at(count - 1), times.at(count - 1));
+    return smooth;
+}
+
 void UBGraphicsLaserTrail::paintFollowing(QPainter* painter, const Trail& trail, qint64 now) const
 {
     // Each segment fades from the moment it was drawn: the tail disappears
@@ -181,7 +237,11 @@ void UBGraphicsLaserTrail::paintFollowing(QPainter* painter, const Trail& trail,
     // opacity of each place as a shade of gray. Opaque segments cover each
     // other without adding up. The two pictures then make one translucent
     // layer, put on the screen at once.
-    if (trail.points.size() < 2)
+    // Curves through the middle of the segments, as for the other trails,
+    // so that a quick movement stays round.
+    const QVector<QPair<QPointF, qint64>> points = smoothFollowing(trail);
+
+    if (points.size() < 2)
     {
         return;
     }
@@ -206,9 +266,9 @@ void UBGraphicsLaserTrail::paintFollowing(QPainter* painter, const Trail& trail,
 
     QList<qreal> distances{ 0 };
 
-    for (int i = 1; i < trail.points.size(); ++i)
+    for (int i = 1; i < points.size(); ++i)
     {
-        distances << distances.last() + QLineF(trail.points.at(i - 1), trail.points.at(i)).length();
+        distances << distances.last() + QLineF(points.at(i - 1).first, points.at(i).first).length();
     }
 
     const QSize pixels = (QSizeF(area.size()) * ratio).toSize();
@@ -230,9 +290,9 @@ void UBGraphicsLaserTrail::paintFollowing(QPainter* painter, const Trail& trail,
             picture->setTransform(toPicture);
         }
 
-        for (int i = 1; i < trail.points.size(); ++i)
+        for (int i = 1; i < points.size(); ++i)
         {
-            const qreal opacity = opacityOfPoint(trail, trail.times.at(i), now) * trail.opacity;
+            const qreal opacity = opacityOfPoint(trail, points.at(i).second, now) * trail.opacity;
 
             if (opacity <= 0)
             {
@@ -247,7 +307,7 @@ void UBGraphicsLaserTrail::paintFollowing(QPainter* painter, const Trail& trail,
             }
 
             color.setAlpha(255);
-            const QLineF segment(trail.points.at(i - 1), trail.points.at(i));
+            const QLineF segment(points.at(i - 1).first, points.at(i).first);
             const qreal width = trail.width * layer[0];
 
             if (trail.rainbow && !(trail.whiteBurn && layer[1] >= 1.0))

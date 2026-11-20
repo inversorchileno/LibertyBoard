@@ -89,6 +89,9 @@ public:
     /** @brief A shorter slider, for the toolbar. */
     void setCompact();
 
+    /** @brief Gives the slider itself this width, its whole range seen. */
+    void setSliderWidth(int width);
+
     /**
      * @brief Puts the caption and the value above the slider, so that the
      * slider takes less room in the toolbar.

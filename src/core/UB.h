@@ -125,7 +125,8 @@ struct UBLaserEffect
     enum Enum
     {
         Standard = 0,
-        WhiteBurn
+        WhiteBurn,
+        Rainbow     // the colors of the rainbow one after the other
     };
 };
 
