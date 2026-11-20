@@ -647,6 +647,17 @@ UBShapeOptionsPanel::UBShapeOptionsPanel(int tool, QWidget* parent)
         addRow(mTapered);
     }
 
+    if (isHighlight)
+    {
+        mFitText = new QCheckBox(tr("Fit to the text size"), this);
+        mFitText->setToolTip(tr("On a PDF, the band takes the height of the line of text, with a little margin."));
+        mFitText->setChecked(UBSettings::settings()->highlightFitText->get().toBool());
+        addRow(mFitText);
+        connect(mFitText, &QCheckBox::toggled, this, [](bool on) {
+            UBSettings::settings()->highlightFitText->set(on);
+        });
+    }
+
     if (!isUnderline)
     {
         addSection(tr("Opacity"));

@@ -475,6 +475,11 @@ signals:
         /** @brief Puts this stroke, drawn again from the current one, in its place. */
         bool replaceCurrentStroke(UBGraphicsStroke* redrawn);
 
+        /** @brief The top and bottom, in the scene, of the line of text of the PDF at this point. */
+        bool textLineAt(const QPointF& scenePos, qreal* top, qreal* bottom) const;
+
+        qreal mFittedHighlightHeight{0};
+
         /** @brief Follows the speed of the pen, for the width of a ballpoint pen. */
         void updateSpeedFactor(const QPointF& scenePos);
 

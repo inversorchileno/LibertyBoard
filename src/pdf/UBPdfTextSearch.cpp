@@ -154,6 +154,57 @@ QString UBPdfTextSearch::textIn(int pageNumber, const QRectF& rect) const
     return text.trimmed();
 }
 
+QList<QRectF> UBPdfTextSearch::wordsIn(int pageNumber, const QRectF& rect) const
+{
+    QList<QRectF> boxes;
+
+    if (!isValid() || pageNumber < 1 || pageNumber > pageCount() || rect.isEmpty())
+    {
+        return boxes;
+    }
+
+    if (mOcr.contains(pageNumber))
+    {
+        for (const UBPdfOcr::Word& word : mOcr.value(pageNumber))
+        {
+            if (word.rect.intersects(rect))
+            {
+                boxes << word.rect;
+            }
+        }
+
+        return boxes;
+    }
+
+    TextOutputDev output(nullptr, false, 0, false, false);
+
+    if (!output.isOk())
+    {
+        return boxes;
+    }
+
+    mDocument->displayPage(&output, pageNumber, 72, 72, 0, true, false, false);
+    auto words = output.makeWordList();
+
+    for (int i = 0; words && i < words->getLength(); ++i)
+    {
+        double xMin = 0;
+        double yMin = 0;
+        double xMax = 0;
+        double yMax = 0;
+        words->get(i)->getBBox(&xMin, &yMin, &xMax, &yMax);
+        const QRectF word(QPointF(xMin, yMin), QPointF(xMax, yMax));
+
+        if (word.intersects(rect))
+        {
+            boxes << word;
+        }
+    }
+
+    releaseList(words);
+    return boxes;
+}
+
 QList<UBPdfTextSearch::Found> UBPdfTextSearch::findWithLines(int pageNumber, const QString& text) const
 {
     QList<Found> places;

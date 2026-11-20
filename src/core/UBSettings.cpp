@@ -347,6 +347,7 @@ void UBSettings::init()
 
     boardMarkerAlpha = new UBSetting(this, "Board", "MarkerAlpha", 0.5);
     markerChiselTip = new UBSetting(this, "Board", "LibertyBoardMarkerChiselTip", false);
+    highlightFitText = new UBSetting(this, "Board", "LibertyBoardHighlightFitText", false);
 
     QStringList markerLightBackgroundColors;
     markerLightBackgroundColors << "#E3FF00" << "#FF0000" <<"#004080" << "#008000" << "#C87400" << "#800040" << "#008080"  << "#000000";

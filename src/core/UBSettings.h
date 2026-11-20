@@ -357,7 +357,8 @@ class UBSettings : public QObject
         UBColorListSetting* boardPenDarkBackgroundSelectedColors;
 
         UBSetting* boardMarkerAlpha;
-        UBSetting* markerChiselTip;     // straight ends like a highlighter, instead of round ones
+        UBSetting* markerChiselTip;
+        UBSetting* highlightFitText;    // the highlight band as high as the line of text of the PDF     // straight ends like a highlighter, instead of round ones
 
         UBColorListSetting* boardMarkerLightBackgroundColors;
         UBColorListSetting* boardMarkerLightBackgroundSelectedColors;

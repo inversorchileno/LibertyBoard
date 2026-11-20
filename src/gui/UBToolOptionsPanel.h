@@ -180,6 +180,7 @@ private:
     UBPictureChoice* mStartEnding{nullptr};
     UBPictureChoice* mEndEnding{nullptr};
     QCheckBox* mTapered{nullptr};
+    QCheckBox* mFitText{nullptr};
     UBValueSlider* mOpacity{nullptr};
 };
 

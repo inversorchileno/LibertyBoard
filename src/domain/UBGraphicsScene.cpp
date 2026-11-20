@@ -83,6 +83,7 @@
 #include "UBGraphicsMediaItem.h"
 #include "UBGraphicsWidgetItem.h"
 #include "UBGraphicsPDFItem.h"
+#include "pdf/UBPdfTextSearch.h"
 #include "UBGraphicsTextItem.h"
 #include "UBGraphicsStrokesGroup.h"
 #include "UBSelectionFrame.h"
@@ -525,6 +526,19 @@ bool UBGraphicsScene::inputDevicePress(const QPointF& scenePos, const qreal& pre
             mShapeTool = currentTool;
             mShapeStart = scenePos;
             mShapeEnd = scenePos;
+            mFittedHighlightHeight = 0;
+
+            // On a line of text of the PDF, the band takes its height.
+            qreal top = 0;
+            qreal bottom = 0;
+
+            if (currentTool == UBStylusTool::Highlight && UBSettings::settings()->highlightFitText->get().toBool()
+                && textLineAt(scenePos, &top, &bottom))
+            {
+                mShapeStart.setY((top + bottom) / 2);
+                mFittedHighlightHeight = bottom - top;
+            }
+
             accepted = true;
         }
     }
@@ -1078,6 +1092,11 @@ UBShapeStyle UBGraphicsScene::shapeStyle(int tool) const
     style.tapered = (tool == UBStylusTool::Arrow) && settings->tapered->get().toBool();
     style.minimumHeadSize = 12 * screenToScene;
 
+    if (tool == UBStylusTool::Highlight && mFittedHighlightHeight > 0)
+    {
+        style.width = mFittedHighlightHeight;
+    }
+
     return style;
 }
 
@@ -1225,6 +1244,59 @@ void UBGraphicsScene::addOrEditNote(const QPointF& position)
     addItem(note);
     setModified(true);
     setDocumentUpdated();
+}
+
+bool UBGraphicsScene::textLineAt(const QPointF& scenePos, qreal* top, qreal* bottom) const
+{
+    auto item = qgraphicsitem_cast<UBGraphicsPDFItem*>(backgroundObject());
+
+    if (!item || !document())
+    {
+        return false;
+    }
+
+    // From the scene to points of the page.
+    const QRectF bounds = item->boundingRect();
+    const QSizeF points = item->pageSize();
+
+    if (bounds.isEmpty() || points.isEmpty())
+    {
+        return false;
+    }
+
+    const qreal sx = points.width() / bounds.width();
+    const qreal sy = points.height() / bounds.height();
+    const QPointF onItem = item->mapFromScene(scenePos);
+    const QPointF onPage((onItem.x() - bounds.left()) * sx, (onItem.y() - bounds.top()) * sy);
+
+    // The words across the page at the height of the pointer: its line.
+    const QString pdfFile = document()->persistencePath() + "/" + UBPersistenceManager::objectDirectory + "/"
+                            + item->fileUuid().toString() + ".pdf";
+    const QList<QRectF> words = UBPdfTextSearch(pdfFile).wordsIn(item->pageNumber(),
+                                                                  QRectF(0, onPage.y() - 0.5, points.width(), 1));
+
+    if (words.isEmpty())
+    {
+        return false;
+    }
+
+    qreal lineTop = words.first().top();
+    qreal lineBottom = words.first().bottom();
+
+    for (const QRectF& word : words)
+    {
+        lineTop = qMin(lineTop, word.top());
+        lineBottom = qMax(lineBottom, word.bottom());
+    }
+
+    // A little more than the letters, above and below.
+    const qreal margin = 2;
+    const QPointF sceneTop = item->mapToScene(QPointF(onItem.x(), bounds.top() + (lineTop - margin) / sy));
+    const QPointF sceneBottom = item->mapToScene(QPointF(onItem.x(), bounds.top() + (lineBottom + margin) / sy));
+
+    *top = qMin(sceneTop.y(), sceneBottom.y());
+    *bottom = qMax(sceneTop.y(), sceneBottom.y());
+    return *bottom > *top;
 }
 
 void UBGraphicsScene::finishShape()
