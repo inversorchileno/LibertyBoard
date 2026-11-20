@@ -90,6 +90,7 @@ UBDrawingController::UBDrawingController(QObject * parent)
         { UBApplication::mainWindow->actionComment, UBStylusTool::Comment },
         { UBApplication::mainWindow->actionAttachment, UBStylusTool::Attachment },
         { UBApplication::mainWindow->actionSound, UBStylusTool::Sound },
+        { UBApplication::mainWindow->actionSpotlight, UBStylusTool::Spotlight },
     };
 
     for (const auto& shapeTool : shapeTools)
@@ -126,7 +127,8 @@ int UBDrawingController::latestDrawingTool()
 
 bool UBDrawingController::worksOnLockedCanvas(int tool)
 {
-    return tool == UBStylusTool::Pointer || tool == UBStylusTool::Hand || tool == UBStylusTool::Selector;
+    return tool == UBStylusTool::Pointer || tool == UBStylusTool::Hand || tool == UBStylusTool::Selector
+            || tool == UBStylusTool::Spotlight;
 }
 
 void UBDrawingController::setCanvasLocked(bool locked)
@@ -223,6 +225,8 @@ void UBDrawingController::setStylusTool(int tool)
             UBApplication::mainWindow->actionAttachment->setChecked(true);
         else if (mStylusTool == UBStylusTool::Sound)
             UBApplication::mainWindow->actionSound->setChecked(true);
+        else if (mStylusTool == UBStylusTool::Spotlight)
+            UBApplication::mainWindow->actionSpotlight->setChecked(true);
 
 
         // workaround for #827

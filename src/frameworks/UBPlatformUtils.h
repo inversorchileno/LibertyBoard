@@ -211,6 +211,13 @@ public:
         static QStringList availableTranslations();
         static void setFrontProcess();
         static void showFullScreen(QWidget * pWidget);
+
+        /**
+         * @brief Leaves the window out of the pictures taken of the screen,
+         * so that it can show a picture of what is under it. False where
+         * the system cannot.
+         */
+        static bool hideFromScreenCapture(QWidget* widget);
         static void showOSK(bool show);
 
 #ifdef Q_OS_OSX

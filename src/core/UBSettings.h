@@ -298,6 +298,11 @@ class UBSettings : public QObject
         UBSetting* laserColor;
         UBSetting* laserRainbow;
 
+        UBSetting* spotlightMode;       // 0: spotlight, 1: magnifier
+        UBSetting* spotlightRadius;     // in pixels of the screen
+        UBSetting* spotlightDarkness;   // 0 to 1
+        UBSetting* magnifierZoom;       // 2 for 200 %
+
         UBSetting* desktopBorderEnabled;   // a colored border around the screen in desktop mode
         UBSetting* desktopBorderColor;
         UBSetting* desktopBorderWidth;    // the colors of the rainbow along the trail, instead of the color

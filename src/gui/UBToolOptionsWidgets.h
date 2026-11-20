@@ -158,6 +158,8 @@ enum class UBOptionIcon
     LaserTrail,
     LaserPoint,
     LaserFollow,
+    Spotlight,
+    Magnifier,
     LaserStandard,
     LaserWhiteBurn,
     EraserWhole,

@@ -67,7 +67,7 @@ QList<QAction*> UBDesktopPalette::toolActions()
 
     // Drawing first, then the tools which click on the screen, then the shapes.
     return { mainWindow->actionPen, mainWindow->actionEraser, mainWindow->actionMarker,
-             mainWindow->actionPointer, mainWindow->actionHighlight, mainWindow->actionSelector,
+             mainWindow->actionPointer, mainWindow->actionSpotlight, mainWindow->actionHighlight, mainWindow->actionSelector,
              mainWindow->actionNote, mainWindow->actionStamp, mainWindow->actionUnderline, mainWindow->actionText,
              mainWindow->actionArrowShape, mainWindow->actionRectangle, mainWindow->actionEllipse };
 }

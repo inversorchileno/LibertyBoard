@@ -454,6 +454,13 @@ void UBPlatformUtils::setFrontProcess()
 }
 
 
+bool UBPlatformUtils::hideFromScreenCapture(QWidget* widget)
+{
+    // WDA_EXCLUDEFROMCAPTURE, Windows 10 version 2004 and later.
+    const DWORD excludeFromCapture = 0x00000011;
+    return widget && SetWindowDisplayAffinity(reinterpret_cast<HWND>(widget->winId()), excludeFromCapture);
+}
+
 void UBPlatformUtils::showFullScreen(QWidget *pWidget)
 {
     if (UBSettings::settings()->appRunInWindow->get().toBool()

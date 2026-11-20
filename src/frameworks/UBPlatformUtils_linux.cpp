@@ -489,6 +489,12 @@ void UBPlatformUtils::setFrontProcess()
 }
 
 
+bool UBPlatformUtils::hideFromScreenCapture(QWidget* widget)
+{
+    Q_UNUSED(widget)
+    return false;
+}
+
 void UBPlatformUtils::showFullScreen(QWidget *pWidget)
 {
     if (UBSettings::settings()->appRunInWindow->get().toBool() &&

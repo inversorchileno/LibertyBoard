@@ -84,7 +84,8 @@ struct UBStylusTool
         Stamp,
         Comment,
         Attachment,
-        Sound
+        Sound,
+        Spotlight   // darkens the screen but around the pointer, or magnifies under it
     };
 };
 

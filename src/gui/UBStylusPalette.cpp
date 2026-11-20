@@ -60,6 +60,7 @@ UBStylusPalette::UBStylusPalette(QWidget *parent, Qt::Orientation orient)
     actions << UBApplication::mainWindow->actionEraser;
     actions << UBApplication::mainWindow->actionMarker;
     actions << UBApplication::mainWindow->actionPointer;
+    actions << UBApplication::mainWindow->actionSpotlight;
     actions << UBApplication::mainWindow->actionHighlight;
     actions << UBApplication::mainWindow->actionSelector;
     actions << UBApplication::mainWindow->actionHand;

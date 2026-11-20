@@ -1428,7 +1428,8 @@ void UBBoardView::mousePressEvent (QMouseEvent *event)
                     && currentTool != UBStylusTool::Stamp
                     && currentTool != UBStylusTool::Comment
                     && currentTool != UBStylusTool::Attachment
-                    && currentTool != UBStylusTool::Sound) {
+                    && currentTool != UBStylusTool::Sound
+                    && currentTool != UBStylusTool::Spotlight) {
                 viewport()->setCursor (QCursor (Qt::BlankCursor));
             }
             if (scene () && !mTabletStylusIsPressed) {

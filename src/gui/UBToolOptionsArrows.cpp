@@ -50,7 +50,7 @@ namespace
     QList<QAction*> toolsWithOptions()
     {
         UBMainWindow* w = UBApplication::mainWindow;
-        return { w->actionPen, w->actionEraser, w->actionMarker, w->actionPointer, w->actionHighlight,
+        return { w->actionPen, w->actionEraser, w->actionMarker, w->actionPointer, w->actionSpotlight, w->actionHighlight,
                  w->actionNote, w->actionStamp, w->actionUnderline, w->actionText, w->actionLine, w->actionArrowShape,
                  w->actionRectangle, w->actionEllipse };
     }

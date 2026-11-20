@@ -298,6 +298,12 @@ void UBSettings::init()
     laserColor = new UBSetting(this, "Laser", "Color", QString("#ff2828"));
     laserRainbow = new UBSetting(this, "Laser", "LibertyBoardRainbow", false);
 
+    // As in Repen: a spotlight of 150 px darkening 75 %, a magnifier of 200 %.
+    spotlightMode = new UBSetting(this, "Spotlight", "Mode", 0);
+    spotlightRadius = new UBSetting(this, "Spotlight", "Radius", 150);
+    spotlightDarkness = new UBSetting(this, "Spotlight", "Darkness", 0.75);
+    magnifierZoom = new UBSetting(this, "Spotlight", "MagnifierZoom", 2.0);
+
     // A thin red border, as in Drawpen; it can be up to 12 px wide.
     desktopBorderEnabled = new UBSetting(this, "Desktop", "LibertyBoardBorder", true);
     desktopBorderColor = new UBSetting(this, "Desktop", "LibertyBoardBorderColor", QString("#ff0000"));

@@ -79,12 +79,16 @@ static QIcon eyedropperIcon()
     painter.setRenderHint(QPainter::Antialiasing);
     painter.translate(24, 24);
     painter.rotate(45);
-    painter.setPen(QPen(QColor("#f0f0f0"), 3, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
-    painter.setBrush(Qt::NoBrush);
-    painter.drawLine(QPointF(0, -4), QPointF(0, 18));
-    painter.setBrush(QColor("#f0f0f0"));
-    painter.drawRoundedRect(QRectF(-6, -20, 12, 14), 4, 4);
-    painter.drawLine(QPointF(-8, -6), QPointF(8, -6));
+
+    // Dark under light, so that it shows on dark and light buttons.
+    for (const auto& pen : { QPair<QColor, qreal>(QColor("#1c1d20"), 7), QPair<QColor, qreal>(QColor("#f0f0f0"), 3) })
+    {
+        painter.setPen(QPen(pen.first, pen.second, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+        painter.setBrush(pen.first == QColor("#f0f0f0") ? pen.first : QColor("#1c1d20"));
+        painter.drawLine(QPointF(0, -4), QPointF(0, 18));
+        painter.drawRoundedRect(QRectF(-6, -20, 12, 14), 4, 4);
+        painter.drawLine(QPointF(-8, -6), QPointF(8, -6));
+    }
 
     return QIcon(pixmap);
 }
@@ -872,6 +876,30 @@ QIcon optionIcon(UBOptionIcon kind)
             painter.drawEllipse(QPointF(24, 14), 11, 11);
             painter.setBrush(red);
             painter.drawEllipse(QPointF(24, 14), 4, 4);
+            break;
+        }
+        case UBOptionIcon::Spotlight:
+        {
+            // A dark field with a light circle.
+            painter.setPen(Qt::NoPen);
+            painter.setBrush(QColor(0, 0, 0, 190));
+            QPainterPath shade;
+            shade.addRoundedRect(QRectF(4, 3, 40, 22), 4, 4);
+            shade.addEllipse(QPointF(24, 14), 8, 8);
+            painter.drawPath(shade);
+            painter.setPen(QPen(QColor("#ffd84a"), 1.5));
+            painter.setBrush(Qt::NoBrush);
+            painter.drawEllipse(QPointF(24, 14), 8, 8);
+            break;
+        }
+        case UBOptionIcon::Magnifier:
+        {
+            // A magnifying glass.
+            painter.setPen(QPen(QColor("#e8e8e8"), 2.2));
+            painter.setBrush(QColor(91, 141, 239, 90));
+            painter.drawEllipse(QPointF(21, 12), 7.5, 7.5);
+            painter.setPen(QPen(QColor("#e8e8e8"), 3.5, Qt::SolidLine, Qt::RoundCap));
+            painter.drawLine(QPointF(26.5, 17.5), QPointF(32, 23));
             break;
         }
         case UBOptionIcon::LaserFollow:

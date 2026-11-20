@@ -198,6 +198,26 @@ private:
 };
 
 /** @brief The stamps to choose from, as a gallery of pictures with their names. */
+/** @brief Options of the spotlight and the magnifier. */
+class UBSpotlightOptionsPanel : public UBToolOptionsPanel
+{
+    Q_OBJECT
+
+public:
+    explicit UBSpotlightOptionsPanel(QWidget* parent = nullptr);
+    void refresh() override;
+
+private:
+    void showModeOptions();
+
+    UBSegmentedChoice* mMode{nullptr};
+    UBValueSlider* mRadius{nullptr};
+    QLabel* mDarknessTitle{nullptr};
+    UBValueSlider* mDarkness{nullptr};
+    QLabel* mZoomTitle{nullptr};
+    UBValueSlider* mZoom{nullptr};
+};
+
 class UBStampOptionsPanel : public UBToolOptionsPanel
 {
     Q_OBJECT

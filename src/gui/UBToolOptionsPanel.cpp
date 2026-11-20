@@ -130,6 +130,8 @@ UBToolOptionsPanel* UBToolOptionsPanel::create(int tool, QWidget* parent)
             return new UBNoteOptionsPanel(parent);
         case UBStylusTool::Stamp:
             return new UBStampOptionsPanel(parent);
+        case UBStylusTool::Spotlight:
+            return new UBSpotlightOptionsPanel(parent);
         case UBStylusTool::Comment:
             return new UBCommentOptionsPanel(parent);
         case UBStylusTool::Selector:
@@ -562,6 +564,71 @@ void UBLaserOptionsPanel::layOutForToolbar()
 void UBLaserOptionsPanel::updatePreview()
 {
     mPreview->setStroke(mColors->currentColor(), mWidth->value(), mOpacity->value() / 100, true);
+}
+
+// ---------------------------------------------------------------------------
+// Spotlight and magnifier
+
+UBSpotlightOptionsPanel::UBSpotlightOptionsPanel(QWidget* parent)
+    : UBToolOptionsPanel(tr("Spotlight"), parent)
+{
+    UBSettings* settings = UBSettings::settings();
+
+    mMode = new UBSegmentedChoice({ tr("Spotlight"), tr("Magnifier") }, this);
+    mMode->setIcons({ optionIcon(UBOptionIcon::Spotlight), optionIcon(UBOptionIcon::Magnifier) });
+    mMode->setToolTip(tr("Spotlight: darkens all but a circle around the pointer. Magnifier: magnifies what is under the pointer."));
+    addRow(mMode);
+
+    addSection(tr("Radius"));
+    mRadius = new UBValueSlider({ 40, 80, 120, 150, 200, 300, 400 }, tr(" px"), 0, this);
+    addRow(mRadius);
+
+    addSection(tr("Darkness"));
+    mDarknessTitle = findChildren<QLabel*>("section").last();
+    mDarkness = new UBValueSlider(opacityMarks(), tr(" %"), 0, this);
+    addRow(mDarkness);
+
+    addSection(tr("Zoom"));
+    mZoomTitle = findChildren<QLabel*>("section").last();
+    mZoom = new UBValueSlider({ 150, 200, 300, 400, 600 }, tr(" %"), 0, this);
+    addRow(mZoom);
+
+    connect(mMode, &UBSegmentedChoice::choiceChanged, this, [this, settings](int mode) {
+        settings->spotlightMode->set(mode);
+        showModeOptions();
+    });
+    connect(mRadius, &UBValueSlider::valueChanged, this, [settings](qreal radius) {
+        settings->spotlightRadius->set(qRound(radius));
+    });
+    connect(mDarkness, &UBValueSlider::valueChanged, this, [settings](qreal darkness) {
+        settings->spotlightDarkness->set(darkness / 100);
+    });
+    connect(mZoom, &UBValueSlider::valueChanged, this, [settings](qreal zoom) {
+        settings->magnifierZoom->set(zoom / 100);
+    });
+
+    refresh();
+}
+
+void UBSpotlightOptionsPanel::refresh()
+{
+    UBSettings* settings = UBSettings::settings();
+
+    mMode->setChoice(settings->spotlightMode->get().toInt());
+    mRadius->setValue(settings->spotlightRadius->get().toInt());
+    mDarkness->setValue(settings->spotlightDarkness->get().toDouble() * 100);
+    mZoom->setValue(settings->magnifierZoom->get().toDouble() * 100);
+    showModeOptions();
+}
+
+void UBSpotlightOptionsPanel::showModeOptions()
+{
+    // The darkness is for the spotlight, the zoom for the magnifier.
+    const bool magnifier = mMode->choice() == 1;
+    mDarknessTitle->setVisible(!magnifier);
+    mDarkness->setVisible(!magnifier);
+    mZoomTitle->setVisible(magnifier);
+    mZoom->setVisible(magnifier);
 }
 
 // ---------------------------------------------------------------------------

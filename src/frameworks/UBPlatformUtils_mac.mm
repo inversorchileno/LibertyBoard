@@ -615,6 +615,12 @@ void UBPlatformUtils::setFrontProcess()
  * @brief Full-screen a QWidget. Specific behaviour is platform-dependent.
  * @param pWidget the QWidget to maximize
  */
+bool UBPlatformUtils::hideFromScreenCapture(QWidget* widget)
+{
+    Q_UNUSED(widget)
+    return false;
+}
+
 void UBPlatformUtils::showFullScreen(QWidget *pWidget)
 {
     /* OpenBoard is designed to be run in "kiosk mode", i.e full screen. 

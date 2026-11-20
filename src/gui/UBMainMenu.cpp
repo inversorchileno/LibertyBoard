@@ -51,6 +51,7 @@
 #include "gui/UBMainWindow.h"
 #include "gui/UBNoteToolIcon.h"
 #include "gui/UBShapeToolIcon.h"
+#include "gui/UBSpotlight.h"
 #include "gui/UBToolColorIcon.h"
 #include "gui/UBToolOptionsArrows.h"
 #include "gui/UBOcrRunner.h"
@@ -409,6 +410,12 @@ void UBMainMenu::createCornerButtons()
     outlineButton->setIconSize(QSize(18, 18));
     outlineButton->setStyleSheet(buttonStyle);
     layout->insertWidget(layout->indexOf(searchButton), outlineButton);
+
+    // The spotlight and the magnifier follow the pointer while their tool is chosen.
+    auto spotlight = new UBSpotlight();
+    connect(UBDrawingController::drawingController(), &UBDrawingController::stylusToolChanged, spotlight, [spotlight](int tool) {
+        spotlight->setActive(tool == UBStylusTool::Spotlight);
+    });
 
     // Locks the canvas against changes, left of the index.
     auto lockAction = new QAction(QIcon(":/images/toolbar/lockOpen.svg"), tr("Lock canvas"), mMainWindow);
