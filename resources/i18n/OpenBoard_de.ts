@@ -1636,7 +1636,7 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
 <context>
     <name>UBAttachmentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+770"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+771"/>
         <source>Insert file</source>
         <translation>Datei einfügen</translation>
     </message>
@@ -1727,7 +1727,7 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
 <context>
     <name>UBBoardController</name>
     <message>
-        <location filename="../../src/board/UBBoardController.cpp" line="+1309"/>
+        <location filename="../../src/board/UBBoardController.cpp" line="+1310"/>
         <source>Downloading content %1 failed</source>
         <translation>Fehler beim Herunterladen von %1</translation>
     </message>
@@ -1782,7 +1782,12 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
         <translation>Die Größe dieser Seite. Die Zeichnungen bleiben, wo sie sind; eine größere Leinwand lässt Platz darum herum.</translation>
     </message>
     <message>
-        <location line="+577"/>
+        <location line="+395"/>
+        <source>The GIF could not be found on its page. Try another one.</source>
+        <translation>Das GIF wurde auf seiner Seite nicht gefunden. Versuchen Sie ein anderes.</translation>
+    </message>
+    <message>
+        <location line="+199"/>
         <source>Add Item</source>
         <translation>Objekt hinzufügen</translation>
     </message>
@@ -1792,7 +1797,7 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
         <translation>Alle unterstützt (%1)</translation>
     </message>
     <message>
-        <location line="-2045"/>
+        <location line="-2062"/>
         <source>Page %1 deleted</source>
         <translation>Seite %1 gelöscht</translation>
     </message>
@@ -3236,7 +3241,7 @@ Möchten Sie fortfahren?</translation>
 <context>
     <name>UBGifWindow</name>
     <message>
-        <location filename="../../src/gui/UBGifWindow.cpp" line="+46"/>
+        <location filename="../../src/gui/UBGifWindow.cpp" line="+50"/>
         <source>GIFs of klipy.com: drag one to the page</source>
         <translation>GIFs von klipy.com: eines auf die Seite ziehen</translation>
     </message>

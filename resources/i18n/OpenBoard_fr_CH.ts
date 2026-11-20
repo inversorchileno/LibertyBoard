@@ -1637,7 +1637,7 @@ Voulez-vous continuer quand-même ?   </translation>
 <context>
     <name>UBAttachmentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+770"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+771"/>
         <source>Insert file</source>
         <translation>Insérer un fichier</translation>
     </message>
@@ -1728,7 +1728,7 @@ Voulez-vous continuer quand-même ?   </translation>
 <context>
     <name>UBBoardController</name>
     <message>
-        <location filename="../../src/board/UBBoardController.cpp" line="+1309"/>
+        <location filename="../../src/board/UBBoardController.cpp" line="+1310"/>
         <source>Downloading content %1 failed</source>
         <translation>Erreur de téléchargement du contenu %1</translation>
     </message>
@@ -1778,7 +1778,12 @@ Voulez-vous continuer quand-même ?   </translation>
         <translation>La taille de cette page. Les dessins restent où ils sont ; un canevas plus grand laisse de la place autour.</translation>
     </message>
     <message>
-        <location line="+577"/>
+        <location line="+395"/>
+        <source>The GIF could not be found on its page. Try another one.</source>
+        <translation>Le GIF n&apos;a pas été trouvé sur sa page. Essayez-en un autre.</translation>
+    </message>
+    <message>
+        <location line="+199"/>
         <source>Add Item</source>
         <translation>Ajouter un élément</translation>
     </message>
@@ -1788,7 +1793,7 @@ Voulez-vous continuer quand-même ?   </translation>
         <translation>Tous (%1)</translation>
     </message>
     <message>
-        <location line="-1298"/>
+        <location line="-1315"/>
         <source>Unknown content type %1</source>
         <translation>Type de contenu inconnu (%1)</translation>
     </message>
@@ -3239,7 +3244,7 @@ Voulez-vous continuer ?</translation>
 <context>
     <name>UBGifWindow</name>
     <message>
-        <location filename="../../src/gui/UBGifWindow.cpp" line="+46"/>
+        <location filename="../../src/gui/UBGifWindow.cpp" line="+50"/>
         <source>GIFs of klipy.com: drag one to the page</source>
         <translation>GIF de klipy.com : glissez-en un sur la page</translation>
     </message>

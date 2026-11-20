@@ -1622,7 +1622,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBAttachmentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+770"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+771"/>
         <source>Insert file</source>
         <translation>插入文件</translation>
     </message>
@@ -1713,7 +1713,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBoardController</name>
     <message>
-        <location filename="../../src/board/UBBoardController.cpp" line="+1309"/>
+        <location filename="../../src/board/UBBoardController.cpp" line="+1310"/>
         <source>Downloading content %1 failed</source>
         <translation>下载内容%1失败</translation>
     </message>
@@ -1768,7 +1768,12 @@ Do you wish to override the security check and continue ?   </source>
         <translation>此页面的大小。绘图保持原位；更大的画布会在周围留出空间。</translation>
     </message>
     <message>
-        <location line="+577"/>
+        <location line="+395"/>
+        <source>The GIF could not be found on its page. Try another one.</source>
+        <translation>在其页面上找不到该GIF。请换一个试试。</translation>
+    </message>
+    <message>
+        <location line="+199"/>
         <source>Add Item</source>
         <translation>添加项目</translation>
     </message>
@@ -1778,7 +1783,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>所有支持的（%1）</translation>
     </message>
     <message>
-        <location line="-2045"/>
+        <location line="-2062"/>
         <source>Page %1 deleted</source>
         <translation>已删除%1页</translation>
     </message>
@@ -3187,7 +3192,7 @@ Do you want to continue?</source>
 <context>
     <name>UBGifWindow</name>
     <message>
-        <location filename="../../src/gui/UBGifWindow.cpp" line="+46"/>
+        <location filename="../../src/gui/UBGifWindow.cpp" line="+50"/>
         <source>GIFs of klipy.com: drag one to the page</source>
         <translation>klipy.com 的GIF：拖一个到页面上</translation>
     </message>

@@ -1628,7 +1628,7 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
 <context>
     <name>UBAttachmentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+770"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+771"/>
         <source>Insert file</source>
         <translation>Dosya ekle</translation>
     </message>
@@ -1719,7 +1719,7 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
 <context>
     <name>UBBoardController</name>
     <message>
-        <location filename="../../src/board/UBBoardController.cpp" line="+1309"/>
+        <location filename="../../src/board/UBBoardController.cpp" line="+1310"/>
         <source>Downloading content %1 failed</source>
         <translation>%1 içeriği indirilemedi</translation>
     </message>
@@ -1774,7 +1774,12 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
         <translation>Bu sayfanın boyutu. Çizimler yerinde kalır; daha büyük bir tuval çevrelerinde yer bırakır.</translation>
     </message>
     <message>
-        <location line="+577"/>
+        <location line="+395"/>
+        <source>The GIF could not be found on its page. Try another one.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+199"/>
         <source>Add Item</source>
         <translation>Öge Ekle</translation>
     </message>
@@ -1784,7 +1789,7 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
         <translation>Tüm Desteklenler (%1)</translation>
     </message>
     <message>
-        <location line="-2045"/>
+        <location line="-2062"/>
         <source>Page %1 deleted</source>
         <translation>Sayfa %1 silindi</translation>
     </message>
@@ -3119,7 +3124,7 @@ Do you want to continue?</source>
 <context>
     <name>UBGifWindow</name>
     <message>
-        <location filename="../../src/gui/UBGifWindow.cpp" line="+46"/>
+        <location filename="../../src/gui/UBGifWindow.cpp" line="+50"/>
         <source>GIFs of klipy.com: drag one to the page</source>
         <translation type="unfinished"></translation>
     </message>

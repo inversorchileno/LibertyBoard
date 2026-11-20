@@ -1625,7 +1625,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBAttachmentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+770"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+771"/>
         <source>Insert file</source>
         <translation>Vložiť súbor</translation>
     </message>
@@ -1716,12 +1716,12 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBoardController</name>
     <message>
-        <location filename="../../src/board/UBBoardController.cpp" line="+2988"/>
+        <location filename="../../src/board/UBBoardController.cpp" line="+3006"/>
         <source>All Supported (%1)</source>
         <translation>Všetky podporované (%1)</translation>
     </message>
     <message>
-        <location line="-1679"/>
+        <location line="-1696"/>
         <source>Downloading content %1 failed</source>
         <translation>Nepodarilo sa stiahnuť %1</translation>
     </message>
@@ -1766,12 +1766,17 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Veľkosť tejto stránky. Kresby zostanú, kde sú; väčšie plátno nechá miesto okolo nich.</translation>
     </message>
     <message>
-        <location line="+577"/>
+        <location line="+395"/>
+        <source>The GIF could not be found on its page. Try another one.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+199"/>
         <source>Add Item</source>
         <translation>Pridať položku</translation>
     </message>
     <message>
-        <location line="-1341"/>
+        <location line="-1358"/>
         <source>Unknown tool type %1</source>
         <translation>Neznámy typ nástroja %1</translation>
     </message>
@@ -3109,7 +3114,7 @@ Do you want to continue?</source>
 <context>
     <name>UBGifWindow</name>
     <message>
-        <location filename="../../src/gui/UBGifWindow.cpp" line="+46"/>
+        <location filename="../../src/gui/UBGifWindow.cpp" line="+50"/>
         <source>GIFs of klipy.com: drag one to the page</source>
         <translation type="unfinished"></translation>
     </message>

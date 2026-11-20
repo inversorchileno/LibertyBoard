@@ -1622,7 +1622,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBAttachmentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+770"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+771"/>
         <source>Insert file</source>
         <translation>Ampidiro rakitra</translation>
     </message>
@@ -1713,7 +1713,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBoardController</name>
     <message>
-        <location filename="../../src/board/UBBoardController.cpp" line="+1309"/>
+        <location filename="../../src/board/UBBoardController.cpp" line="+1310"/>
         <source>Downloading content %1 failed</source>
         <translation>Fakana mpiatiny %1 tsy nety</translation>
     </message>
@@ -1763,7 +1763,12 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Ny haben&apos;ity pejy ity. Mijanona eo amin&apos;ny toerany ny sary; lamba lehibe kokoa dia mamela toerana manodidina azy.</translation>
     </message>
     <message>
-        <location line="+577"/>
+        <location line="+395"/>
+        <source>The GIF could not be found on its page. Try another one.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+199"/>
         <source>Add Item</source>
         <translation>Ampiana zavatra</translation>
     </message>
@@ -1773,7 +1778,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Zaka daholo (%1)</translation>
     </message>
     <message>
-        <location line="-1298"/>
+        <location line="-1315"/>
         <source>Unknown content type %1</source>
         <translation>Mpiatiny tsy fantatra karazana %1</translation>
     </message>
@@ -3094,7 +3099,7 @@ Do you want to continue?</source>
 <context>
     <name>UBGifWindow</name>
     <message>
-        <location filename="../../src/gui/UBGifWindow.cpp" line="+46"/>
+        <location filename="../../src/gui/UBGifWindow.cpp" line="+50"/>
         <source>GIFs of klipy.com: drag one to the page</source>
         <translation type="unfinished"></translation>
     </message>

@@ -1752,7 +1752,7 @@ Deseja substituir a verificação de segurança e continuar?</translation>
 <context>
     <name>UBAttachmentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+770"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+771"/>
         <source>Insert file</source>
         <translation>Inserir arquivo</translation>
     </message>
@@ -1843,7 +1843,7 @@ Deseja substituir a verificação de segurança e continuar?</translation>
 <context>
     <name>UBBoardController</name>
     <message>
-        <location filename="../../src/board/UBBoardController.cpp" line="+120"/>
+        <location filename="../../src/board/UBBoardController.cpp" line="+121"/>
         <source>Group</source>
         <translation>Agrupar</translation>
     </message>
@@ -1936,7 +1936,12 @@ Deseja substituir a verificação de segurança e continuar?</translation>
         <translation>O tamanho desta página. Os desenhos ficam onde estão; uma tela maior deixa espaço ao redor.</translation>
     </message>
     <message>
-        <location line="+577"/>
+        <location line="+395"/>
+        <source>The GIF could not be found on its page. Try another one.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+199"/>
         <source>Add Item</source>
         <translation>Adicionar Item</translation>
     </message>
@@ -1946,7 +1951,7 @@ Deseja substituir a verificação de segurança e continuar?</translation>
         <translation>Tudo Suportado (%1)</translation>
     </message>
     <message>
-        <location line="-2612"/>
+        <location line="-2629"/>
         <source>Color</source>
         <translation>Cor</translation>
     </message>
@@ -3273,7 +3278,7 @@ Do you want to continue?</source>
 <context>
     <name>UBGifWindow</name>
     <message>
-        <location filename="../../src/gui/UBGifWindow.cpp" line="+46"/>
+        <location filename="../../src/gui/UBGifWindow.cpp" line="+50"/>
         <source>GIFs of klipy.com: drag one to the page</source>
         <translation type="unfinished"></translation>
     </message>
