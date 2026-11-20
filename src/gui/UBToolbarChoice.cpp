@@ -23,6 +23,10 @@
 #include "UBToolbarChoice.h"
 
 #include <QAction>
+#include <QCheckBox>
+#include <QHBoxLayout>
+#include <QLabel>
+#include <QWidgetAction>
 #include <QEvent>
 #include <QMap>
 #include <QMenu>
@@ -52,6 +56,73 @@ namespace
         return palette == UBToolbarChoice::Palette::Board ? UBSettings::settings()->hiddenBoardTools
                                                            : UBSettings::settings()->hiddenDesktopTools;
     }
+
+    /*
+     * A line of the Customize menu: a box with the name of the tool, and its
+     * icon at the right. A click anywhere on the line ticks the box; the
+     * menu stays open, to tick several.
+     */
+    class ToolRow : public QWidget
+    {
+    public:
+        ToolRow(QAction* tool, bool shown, QWidget* parent)
+            : QWidget(parent)
+        {
+            setObjectName("toolRow");
+            setAttribute(Qt::WA_StyledBackground);
+            setAttribute(Qt::WA_Hover);
+            // Dark text on the light menu, white on the line under the mouse.
+            setStyleSheet("QWidget#toolRow { background: transparent; }"
+                          "QWidget#toolRow:hover { background: #308cc6; }");
+
+            mBox = new QCheckBox(tool->text(), this);
+            QPalette colors = mBox->palette();
+            colors.setColor(QPalette::Base, Qt::white);
+            colors.setColor(QPalette::Text, QColor("#1e1e1e"));
+            colors.setColor(QPalette::WindowText, QColor("#1e1e1e"));
+            mBox->setPalette(colors);
+            mBox->setStyleSheet("QCheckBox { color: #1e1e1e; }");
+            mBox->setChecked(shown);
+
+            auto icon = new QLabel(this);
+            icon->setPixmap(tool->icon().pixmap(QSize(22, 22)));
+
+            auto layout = new QHBoxLayout(this);
+            layout->setContentsMargins(8, 3, 10, 3);
+            layout->setSpacing(12);
+            layout->addWidget(mBox);
+            layout->addStretch(1);
+            layout->addWidget(icon);
+        }
+
+        QCheckBox* box() const
+        {
+            return mBox;
+        }
+
+    protected:
+        void enterEvent(QEnterEvent*) override
+        {
+            mBox->setStyleSheet("QCheckBox { color: #ffffff; }");
+        }
+
+        void leaveEvent(QEvent*) override
+        {
+            mBox->setStyleSheet("QCheckBox { color: #1e1e1e; }");
+        }
+
+        void mouseReleaseEvent(QMouseEvent* event) override
+        {
+            // On the name or the icon, as on the box.
+            if (event->button() == Qt::LeftButton)
+            {
+                mBox->toggle();
+            }
+        }
+
+    private:
+        QCheckBox* mBox;
+    };
 
     // A click on a box ticks it without closing the menu, to tick several.
     class KeepMenuOpen : public QObject
@@ -173,11 +244,14 @@ void UBToolbarChoice::fillCustomizeMenu(QMenu* menu)
 
         for (QAction* tool : palettes().value(palette).choosable)
         {
-            // No icon: the box shows whether the button is shown.
-            QAction* box = sub->addAction(tool->text());
-            box->setCheckable(true);
-            box->setChecked(isShown(palette, tool));
-            QObject::connect(box, &QAction::toggled, sub, [palette, tool](bool shown) { setShown(palette, tool, shown); });
+            // The box at the left shows whether the button is shown, its
+            // icon at the right which button it is.
+            auto row = new ToolRow(tool, isShown(palette, tool), sub);
+            QObject::connect(row->box(), &QCheckBox::toggled, sub, [palette, tool](bool shown) { setShown(palette, tool, shown); });
+
+            auto item = new QWidgetAction(sub);
+            item->setDefaultWidget(row);
+            sub->addAction(item);
         }
     }
 }

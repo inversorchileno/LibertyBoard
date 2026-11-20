@@ -1488,7 +1488,8 @@ QIcon UBStampOptionsPanel::iconFor(int index) const
     if (picture.isNull())
     {
         // The custom stamp before a picture is chosen: a dashed frame with
-        // a plus and its name, also in the toolbar where names are hidden.
+        // a large plus at the top and its name below, as large as it fits,
+        // also in the toolbar where names are hidden.
         picture = QImage(UBStamps::pageSize() * 2, QImage::Format_ARGB32_Premultiplied);
         picture.fill(Qt::transparent);
         QPainter painter(&picture);
@@ -1496,17 +1497,34 @@ QIcon UBStampOptionsPanel::iconFor(int index) const
         painter.setPen(QPen(QColor("#8a9099"), 6, Qt::DashLine));
         const QRectF frame = QRectF(picture.rect()).adjusted(6, 6, -6, -6);
         painter.drawRoundedRect(frame, 20, 20);
+
+        const QRectF plusArea(frame.left(), frame.top() + frame.height() * 0.06, frame.width(), frame.height() * 0.5);
+        const QRectF nameArea(frame.left() + 8, plusArea.bottom(), frame.width() - 16, frame.bottom() - plusArea.bottom() - 4);
+
+        // A thick plus, drawn rather than written, to fill its place.
+        const qreal arm = plusArea.height() * 0.9;
+        const QPointF center = plusArea.center();
+        painter.setPen(QPen(QColor("#5b6270"), arm * 0.22, Qt::SolidLine, Qt::RoundCap));
+        painter.drawLine(QPointF(center.x() - arm / 2, center.y()), QPointF(center.x() + arm / 2, center.y()));
+        painter.drawLine(QPointF(center.x(), center.y() - arm / 2), QPointF(center.x(), center.y() + arm / 2));
+
         QFont font = painter.font();
         font.setBold(true);
-        font.setPixelSize(picture.height() / 2);
-        painter.setFont(font);
-        const QRectF plus(frame.left() + 4, frame.top(), frame.height() * 0.8, frame.height());
-        painter.drawText(plus, Qt::AlignCenter, "+");
-        font.setPixelSize(picture.height() / 4.4);
+        font.setStretch(QFont::Condensed);
+
+        // The name on one line, as tall as the space left allows.
+        const QString name = UBStamps::name(index).toUpper();
+        int size = qRound(nameArea.height() * 0.9);
+        font.setPixelSize(size);
+
+        while (size > 8 && QFontMetricsF(font).horizontalAdvance(name) > nameArea.width())
+        {
+            font.setPixelSize(--size);
+        }
+
         painter.setFont(font);
         painter.setPen(QColor("#4a5160"));
-        painter.drawText(frame.adjusted(plus.width() + 4, 0, -8, 0), Qt::AlignCenter | Qt::TextWordWrap,
-                         UBStamps::name(index).toUpper());
+        painter.drawText(nameArea, Qt::AlignCenter, name);
     }
 
     return QIcon(QPixmap::fromImage(picture));
