@@ -23,6 +23,7 @@
 
 #include <algorithm>
 
+#include <QImage>
 #include <QPainter>
 #include <QPen>
 
@@ -172,55 +173,143 @@ qreal UBGraphicsLaserTrail::opacityOfPoint(const Trail& trail, qint64 drawnAt, q
 void UBGraphicsLaserTrail::paintFollowing(QPainter* painter, const Trail& trail, qint64 now) const
 {
     // Each segment fades from the moment it was drawn: the tail disappears
-    // while the head follows the pointer. Segments of nearly the same color
-    // and opacity are drawn as one line, so that their glow does not add up
-    // where they meet.
+    // while the head follows the pointer.
+    //
+    // The glow is translucent: segments drawn one over the other would add
+    // up where their round ends meet and show beads. So each layer is drawn
+    // apart, opaque, in two pictures: one with the colors, one with the
+    // opacity of each place as a shade of gray. Opaque segments cover each
+    // other without adding up. The two pictures then make one translucent
+    // layer, put on the screen at once.
+    if (trail.points.size() < 2)
+    {
+        return;
+    }
+
+    QPaintDevice* device = painter->device();
+    const QTransform toDevice = painter->worldTransform();
+    const qreal ratio = device ? device->devicePixelRatioF() : 1.0;
+    QRect area = toDevice.mapRect(boundsOf(trail)).toAlignedRect();
+
+    if (device)
+    {
+        area &= QRect(0, 0, device->width(), device->height());
+    }
+
+    if (area.isEmpty())
+    {
+        return;
+    }
+
     const qreal cycle = qMax(900.0, trail.width * 100);
     const qreal layers[][2] = { { sGlowWidthFactor, 0.15 }, { 2.0, 0.35 }, { 1.0, 1.0 } };
 
-    struct Run
-    {
-        QPolygonF points;
-        QColor color;
-        qreal opacity;
-    };
-
-    QList<Run> runs;
-    qreal distance = 0;
+    QList<qreal> distances{ 0 };
 
     for (int i = 1; i < trail.points.size(); ++i)
     {
-        distance += QLineF(trail.points.at(i - 1), trail.points.at(i)).length();
-        const qreal opacity = std::round(opacityOfPoint(trail, trail.times.at(i), now) * trail.opacity * 20) / 20;
-
-        if (opacity <= 0)
-        {
-            continue;
-        }
-
-        const qreal hue = std::round(std::fmod(distance / cycle, 1.0) * 36) / 36;
-        const QColor color = trail.rainbow ? QColor::fromHslF(hue, 0.85, 0.6) : trail.color;
-
-        if (!runs.isEmpty() && runs.last().color == color && qFuzzyCompare(runs.last().opacity, opacity)
-            && runs.last().points.last() == trail.points.at(i - 1))
-        {
-            runs.last().points << trail.points.at(i);
-        }
-        else
-        {
-            runs << Run{ QPolygonF({ trail.points.at(i - 1), trail.points.at(i) }), color, opacity };
-        }
+        distances << distances.last() + QLineF(trail.points.at(i - 1), trail.points.at(i)).length();
     }
+
+    const QSize pixels = (QSizeF(area.size()) * ratio).toSize();
+    QTransform toPicture = toDevice * QTransform::fromTranslate(-area.left(), -area.top()) * QTransform::fromScale(ratio, ratio);
 
     for (const auto& layer : layers)
     {
-        for (const Run& run : std::as_const(runs))
+        QImage colors(pixels, QImage::Format_ARGB32_Premultiplied);
+        QImage opacities(pixels, QImage::Format_RGB32);
+        colors.fill(Qt::transparent);
+        opacities.fill(Qt::black);
+
+        QPainter colorPainter(&colors);
+        QPainter opacityPainter(&opacities);
+
+        for (QPainter* picture : { &colorPainter, &opacityPainter })
         {
-            QColor color = (trail.whiteBurn && layer[1] >= 1.0) ? QColor(Qt::white) : run.color;
-            color.setAlphaF(layer[1] * run.opacity);
-            painter->setPen(QPen(color, trail.width * layer[0], Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
-            painter->drawPolyline(run.points);
+            picture->setRenderHint(QPainter::Antialiasing);
+            picture->setTransform(toPicture);
         }
+
+        for (int i = 1; i < trail.points.size(); ++i)
+        {
+            const qreal opacity = opacityOfPoint(trail, trail.times.at(i), now) * trail.opacity;
+
+            if (opacity <= 0)
+            {
+                continue;
+            }
+
+            QColor color = trail.rainbow ? QColor::fromHslF(std::fmod(distances.at(i) / cycle, 1.0), 0.85, 0.6) : trail.color;
+
+            if (trail.whiteBurn && layer[1] >= 1.0)
+            {
+                color = Qt::white;
+            }
+
+            color.setAlpha(255);
+            const QLineF segment(trail.points.at(i - 1), trail.points.at(i));
+            const qreal width = trail.width * layer[0];
+
+            if (trail.rainbow && !(trail.whiteBurn && layer[1] >= 1.0))
+            {
+                // Short pieces, so that the colors change smoothly even
+                // along a long segment.
+                const int pieces = qMax(1, int(segment.length() / qMax(2.0, trail.width / 2)));
+
+                for (int k = 0; k < pieces; ++k)
+                {
+                    const qreal t = (k + 0.5) / pieces;
+                    const qreal distance = distances.at(i - 1) + segment.length() * t;
+                    QColor piece = QColor::fromHslF(std::fmod(distance / cycle, 1.0), 0.85, 0.6);
+                    colorPainter.setPen(QPen(piece, width, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+                    colorPainter.drawLine(segment.pointAt(qreal(k) / pieces), segment.pointAt(qreal(k + 1) / pieces));
+                }
+            }
+            else
+            {
+                colorPainter.setPen(QPen(color, width, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+                colorPainter.drawLine(segment);
+            }
+
+            const int shade = qRound(255 * opacity);
+            opacityPainter.setPen(QPen(QColor(shade, shade, shade), width, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+            opacityPainter.drawLine(segment);
+        }
+
+        colorPainter.end();
+        opacityPainter.end();
+
+        // The colors, as translucent as the shade of gray says, times the
+        // transparency of the layer.
+        const qreal layerAlpha = layer[1];
+
+        for (int y = 0; y < pixels.height(); ++y)
+        {
+            QRgb* color = reinterpret_cast<QRgb*>(colors.scanLine(y));
+            const QRgb* shade = reinterpret_cast<const QRgb*>(opacities.constScanLine(y));
+
+            for (int x = 0; x < pixels.width(); ++x)
+            {
+                const int alpha = qRound(qGray(shade[x]) * layerAlpha);
+
+                if (alpha == 0 || qAlpha(color[x]) == 0)
+                {
+                    color[x] = 0;
+                    continue;
+                }
+
+                // The colors were drawn opaque: their alpha is the coverage of the edge.
+                const QColor straight = QColor::fromRgba(qUnpremultiply(color[x]));
+                color[x] = qPremultiply(qRgba(straight.red(), straight.green(), straight.blue(), alpha));
+            }
+        }
+
+        colors.setDevicePixelRatio(ratio);
+
+        painter->save();
+        painter->resetTransform();
+        painter->drawImage(area.topLeft(), colors);
+        painter->restore();
     }
 }
 
