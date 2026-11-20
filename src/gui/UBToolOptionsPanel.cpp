@@ -183,7 +183,7 @@ void UBToolOptionsPanel::setHorizontal()
 
     for (UBColorSwatches* swatches : findChildren<UBColorSwatches*>())
     {
-        swatches->setTwoRows();
+        swatches->setThreeRows();
     }
 
     // The swatches say what they are for: no "Color" title before them.

@@ -48,11 +48,11 @@ public:
     void setCurrentColor(const QColor& color);
     QColor currentColor() const;
 
-    /** @brief Offers only the swatches, without the button for any other color. */
+    /** @brief Offers only the swatches, without the buttons for any other color and the eyedropper. */
     void hideOtherColorButton();
 
-    /** @brief Lays the swatches out in two rows of smaller swatches, to save width in the toolbar. */
-    void setTwoRows();
+    /** @brief Lays the swatches out as small circles in three rows, to save width in the toolbar. */
+    void setThreeRows();
 
 signals:
     void colorChosen(const QColor& color);
@@ -60,10 +60,12 @@ signals:
 private:
     void selectSwatch(const QColor& color);
     void chooseOtherColor();
+    void takeColorOnScreen();
 
     QList<QColor> mColors;
     QList<QToolButton*> mSwatches;
     QToolButton* mOtherColorButton{nullptr};
+    QToolButton* mEyedropperButton{nullptr};
     QColor mCurrentColor;
 };
 

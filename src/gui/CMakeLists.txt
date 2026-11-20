@@ -45,6 +45,8 @@ target_sources(${PROJECT_NAME} PRIVATE
     UBNoteDialog.h
     UBDocumentScrollBar.cpp
     UBDocumentScrollBar.h
+    UBEyedropper.cpp
+    UBEyedropper.h
     UBDocumentTabs.cpp
     UBDocumentTabs.h
     UBNoteToolIcon.cpp

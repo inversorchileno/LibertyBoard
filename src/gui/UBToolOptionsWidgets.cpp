@@ -21,6 +21,10 @@
 
 #include "UBToolOptionsWidgets.h"
 
+#include <QPointer>
+
+#include "gui/UBEyedropper.h"
+
 #include <cmath>
 
 #include <QButtonGroup>
@@ -63,6 +67,50 @@ QString toolOptionsStyleSheet()
         "QSlider::handle:horizontal { background: #ffffff; width: 16px; height: 16px; margin: -6px 0; border-radius: 8px; }"
         "QCheckBox { color: #e8e8e8; }"
         "QFontComboBox { min-width: 140px; }");
+}
+
+static QIcon eyedropperIcon()
+{
+    // A pipette, tilted, with a drop at its tip.
+    QPixmap pixmap(48, 48);
+    pixmap.fill(Qt::transparent);
+
+    QPainter painter(&pixmap);
+    painter.setRenderHint(QPainter::Antialiasing);
+    painter.translate(24, 24);
+    painter.rotate(45);
+    painter.setPen(QPen(QColor("#f0f0f0"), 3, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+    painter.setBrush(Qt::NoBrush);
+    painter.drawLine(QPointF(0, -4), QPointF(0, 18));
+    painter.setBrush(QColor("#f0f0f0"));
+    painter.drawRoundedRect(QRectF(-6, -20, 12, 14), 4, 4);
+    painter.drawLine(QPointF(-8, -6), QPointF(8, -6));
+
+    return QIcon(pixmap);
+}
+
+static QIcon otherColorIcon(int size)
+{
+    // A wheel of all the colors, for any other color.
+    const qreal ratio = 2;
+    QPixmap pixmap(QSize(size, size) * ratio);
+    pixmap.setDevicePixelRatio(ratio);
+    pixmap.fill(Qt::transparent);
+
+    QPainter painter(&pixmap);
+    painter.setRenderHint(QPainter::Antialiasing);
+    QConicalGradient wheel(size / 2.0, size / 2.0, 0);
+
+    for (int i = 0; i <= 6; ++i)
+    {
+        wheel.setColorAt(i / 6.0, QColor::fromHsvF(std::fmod(i / 6.0, 1.0), 0.85, 1.0));
+    }
+
+    painter.setPen(Qt::NoPen);
+    painter.setBrush(wheel);
+    painter.drawEllipse(QRectF(0, 0, size, size).adjusted(2.5, 2.5, -2.5, -2.5));
+
+    return QIcon(pixmap);
 }
 
 static QString swatchStyle(const QColor& color)
@@ -112,38 +160,133 @@ UBColorSwatches::UBColorSwatches(const QList<QColor>& colors, bool offerNone, QW
     mOtherColorButton->setToolTip(tr("Other color"));
     mOtherColorButton->setFixedSize(sSwatchSize + 6, sSwatchSize);
     layout->addWidget(mOtherColorButton);
+
+    // Takes a color anywhere on the screen.
+    mEyedropperButton = new QToolButton(this);
+    mEyedropperButton->setIcon(eyedropperIcon());
+    mEyedropperButton->setIconSize(QSize(sSwatchSize - 4, sSwatchSize - 4));
+    mEyedropperButton->setToolTip(tr("Eyedropper: take a color on the screen"));
+    mEyedropperButton->setFixedSize(sSwatchSize + 6, sSwatchSize);
+    mEyedropperButton->setStyleSheet("QToolButton { padding: 0px; }");
+    layout->addWidget(mEyedropperButton);
     layout->addStretch();
 
     connect(mOtherColorButton, &QToolButton::clicked, this, &UBColorSwatches::chooseOtherColor);
+    connect(mEyedropperButton, &QToolButton::clicked, this, &UBColorSwatches::takeColorOnScreen);
 }
 
-void UBColorSwatches::setTwoRows()
+void UBColorSwatches::takeColorOnScreen()
 {
+    // A popup keeps the mouse for itself: it is closed first.
+    QWidget* topLevel = window();
+
+    if (topLevel && (topLevel->windowFlags() & Qt::Popup) == Qt::Popup)
+    {
+        topLevel->hide();
+    }
+
+    QPointer<UBColorSwatches> swatches(this);
+
+    UBEyedropper::pick([swatches](const QColor& color) {
+        if (swatches)
+        {
+            swatches->selectSwatch(color);
+            emit swatches->colorChosen(color);
+        }
+    });
+}
+
+static QIcon roundSwatchIcon(const QColor& color, int size)
+{
+    // A circle of the color; the chosen one has a white ring around it.
+    const qreal ratio = 2;
+    QIcon icon;
+
+    for (bool chosen : { false, true })
+    {
+        QPixmap pixmap(QSize(size, size) * ratio);
+        pixmap.setDevicePixelRatio(ratio);
+        pixmap.fill(Qt::transparent);
+
+        QPainter painter(&pixmap);
+        painter.setRenderHint(QPainter::Antialiasing);
+        const QRectF circle = QRectF(0, 0, size, size).adjusted(2, 2, -2, -2);
+
+        if (color.isValid())
+        {
+            painter.setPen(QPen(QColor("#5a6170"), 0.8));
+            painter.setBrush(color);
+            painter.drawEllipse(circle);
+        }
+        else
+        {
+            // No color: a white circle crossed by a red line.
+            painter.setPen(QPen(QColor("#5a6170"), 0.8));
+            painter.setBrush(QColor("#f0f0f0"));
+            painter.drawEllipse(circle);
+            painter.setPen(QPen(QColor("#e02020"), 1.4));
+            painter.drawLine(circle.bottomLeft() + QPointF(2, -2), circle.topRight() + QPointF(-2, 2));
+        }
+
+        if (chosen)
+        {
+            painter.setPen(QPen(Qt::white, 1.6));
+            painter.setBrush(Qt::NoBrush);
+            painter.drawEllipse(QRectF(0, 0, size, size).adjusted(0.8, 0.8, -0.8, -0.8));
+        }
+
+        icon.addPixmap(pixmap, QIcon::Normal, chosen ? QIcon::On : QIcon::Off);
+    }
+
+    return icon;
+}
+
+void UBColorSwatches::setThreeRows()
+{
+    // Round swatches in three rows, as high as the toolbar.
+    const int size = 20;
+    const QString flat = QStringLiteral("QToolButton, QToolButton:checked, QToolButton:hover "
+                                        "{ background: transparent; border: none; padding: 0px; }");
     QList<QWidget*> buttons;
 
-    for (QToolButton* swatch : std::as_const(mSwatches))
+    for (int i = 0; i < mSwatches.size(); ++i)
     {
+        QToolButton* swatch = mSwatches.at(i);
+        swatch->setObjectName("roundSwatch");
+        swatch->setStyleSheet(flat);
+        swatch->setIcon(roundSwatchIcon(mColors.at(i), size));
+        swatch->setIconSize(QSize(size, size));
         buttons << swatch;
     }
 
     if (!mOtherColorButton->isHidden())
     {
-        mOtherColorButton->setStyleSheet("QToolButton { padding: 0px; }");
+        mOtherColorButton->setText(QString());
+        mOtherColorButton->setIcon(otherColorIcon(size));
+        mOtherColorButton->setIconSize(QSize(size, size));
+        mOtherColorButton->setStyleSheet(flat);
         buttons << mOtherColorButton;
+    }
+
+    if (!mEyedropperButton->isHidden())
+    {
+        mEyedropperButton->setStyleSheet(flat);
+        mEyedropperButton->setIconSize(QSize(size - 3, size - 3));
+        buttons << mEyedropperButton;
     }
 
     delete layout();
 
     auto grid = new QGridLayout(this);
     grid->setContentsMargins(0, 0, 0, 0);
-    grid->setHorizontalSpacing(4);
-    grid->setVerticalSpacing(4);
+    grid->setHorizontalSpacing(2);
+    grid->setVerticalSpacing(1);
 
-    const int columns = (buttons.size() + 1) / 2;
+    const int columns = (buttons.size() + 2) / 3;
 
     for (int i = 0; i < buttons.size(); ++i)
     {
-        buttons.at(i)->setFixedSize(26, 18);
+        buttons.at(i)->setFixedSize(size, size);
         grid->addWidget(buttons.at(i), i / columns, i % columns);
     }
 
@@ -214,7 +357,9 @@ void UBColorSwatches::chooseOtherColor()
 
 void UBColorSwatches::hideOtherColorButton()
 {
+    // Only these colors: no other color, nor one taken on the screen.
     mOtherColorButton->hide();
+    mEyedropperButton->hide();
 }
 
 UBValueSlider::UBValueSlider(const QList<qreal>& marks, const QString& unit, int decimals, QWidget* parent)
