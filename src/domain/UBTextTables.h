@@ -77,6 +77,14 @@ public:
 
     static void setBorders(QTextTable* table, Borders borders);
 
+    /** @brief The color of the lines of the table, black at first. */
+    static void setLineColor(QTextTable* table, const QColor& color);
+    static QColor lineColor(QTextTable* table);
+
+    /** @brief The width of the lines of the table, in points of the page. */
+    static void setLineWidth(QTextTable* table, qreal width);
+    static qreal lineWidth(QTextTable* table);
+
     /** @brief The background of the cells of the cursor or of its selection; an invalid color clears it. */
     static void setCellBackground(const QTextCursor& cursor, const QColor& color);
 

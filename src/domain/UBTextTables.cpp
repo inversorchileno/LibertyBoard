@@ -33,6 +33,8 @@
 namespace
 {
     const QColor sHeaderColor(225, 229, 235);
+    const QColor sLineColor(Qt::black);
+    const qreal sLineWidth = 1.5;
     const qreal sPadding = 4;
     const qreal sGrip = 4;              // how near a line the pointer grabs it
     const qreal sMinimumColumn = 3;     // percent of the width of the table
@@ -150,9 +152,11 @@ QTextTable* UBTextTables::insert(QTextCursor& cursor, int rows, int columns)
     QTextTableFormat format;
     format.setCellPadding(sPadding);
     format.setCellSpacing(0);
-    format.setBorder(1);
+    // Black lines, wide enough to be seen at any zoom.
+    format.setBorder(sLineWidth);
+    format.setBorderStyle(QTextFrameFormat::BorderStyle_Solid);
     format.setBorderCollapse(true);
-    format.setBorderBrush(QColor(120, 128, 140));
+    format.setBorderBrush(sLineColor);
     format.setWidth(QTextLength(QTextLength::PercentageLength, 100));
 
     QList<QTextLength> widths;
@@ -163,7 +167,9 @@ QTextTable* UBTextTables::insert(QTextCursor& cursor, int rows, int columns)
     }
 
     format.setColumnWidthConstraints(widths);
-    return cursor.insertTable(rows, columns, format);
+    QTextTable* table = cursor.insertTable(rows, columns, format);
+    setBorders(table, Borders::All);
+    return table;
 }
 
 QTextTable* UBTextTables::tableAt(const QTextCursor& cursor)
@@ -259,8 +265,11 @@ bool UBTextTables::isFirstColumnHighlighted(QTextTable* table)
 
 void UBTextTables::setBorders(QTextTable* table, Borders borders)
 {
+    // The table keeps its width of lines while they are hidden.
+    const qreal width = lineWidth(table);
+    const QColor color = lineColor(table);
     QTextTableFormat format = table->format();
-    format.setBorder(borders == Borders::None ? 0 : 1);
+    format.setBorderStyle(borders == Borders::None ? QTextFrameFormat::BorderStyle_None : QTextFrameFormat::BorderStyle_Solid);
     table->setFormat(format);
 
     const QTextFrameFormat::BorderStyle none = QTextFrameFormat::BorderStyle_None;
@@ -296,8 +305,48 @@ void UBTextTables::setBorders(QTextTable* table, Borders borders)
         cellFormat.setBottomBorderStyle(bottom);
         cellFormat.setLeftBorderStyle(left);
         cellFormat.setRightBorderStyle(right);
+        cellFormat.setBorder(width);
+        cellFormat.setBorderBrush(color);
         cell.setFormat(cellFormat);
     });
+}
+
+void UBTextTables::setLineColor(QTextTable* table, const QColor& color)
+{
+    QTextTableFormat format = table->format();
+    format.setBorderBrush(color);
+    table->setFormat(format);
+
+    forEachCell(table, [color](QTextTableCell cell, int, int) {
+        QTextTableCellFormat cellFormat = cell.format().toTableCellFormat();
+        cellFormat.setBorderBrush(color);
+        cell.setFormat(cellFormat);
+    });
+}
+
+QColor UBTextTables::lineColor(QTextTable* table)
+{
+    const QColor color = table->format().borderBrush().color();
+    return table->format().borderBrush().style() == Qt::NoBrush ? sLineColor : color;
+}
+
+void UBTextTables::setLineWidth(QTextTable* table, qreal width)
+{
+    QTextTableFormat format = table->format();
+    format.setBorder(width);
+    table->setFormat(format);
+
+    forEachCell(table, [width](QTextTableCell cell, int, int) {
+        QTextTableCellFormat cellFormat = cell.format().toTableCellFormat();
+        cellFormat.setBorder(width);
+        cell.setFormat(cellFormat);
+    });
+}
+
+qreal UBTextTables::lineWidth(QTextTable* table)
+{
+    const qreal width = table->format().border();
+    return width > 0 ? width : sLineWidth;
 }
 
 void UBTextTables::setCellBackground(const QTextCursor& cursor, const QColor& color)

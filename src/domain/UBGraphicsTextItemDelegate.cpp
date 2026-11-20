@@ -950,6 +950,27 @@ void UBGraphicsTextItemDelegate::showTableMenu()
         }
 
         style->addSeparator();
+        style->addAction(tr("Color of the lines..."), this, [table]() {
+            const QColor color = QColorDialog::getColor(UBTextTables::lineColor(table), nullptr, tr("Color of the lines"));
+
+            if (color.isValid()) {
+                UBTextTables::setLineColor(table, color);
+            }
+        });
+
+        QMenu* widths = style->addMenu(tr("Width of the lines"));
+        const QList<QPair<QString, qreal>> lineWidths = {
+            { tr("Thin"), 1 }, { tr("Medium"), 1.5 }, { tr("Thick"), 3 }, { tr("Very thick"), 5 },
+        };
+
+        for (const auto& lineWidth : lineWidths) {
+            const qreal width = lineWidth.second;
+            QAction* action = widths->addAction(lineWidth.first, this, [table, width]() { UBTextTables::setLineWidth(table, width); });
+            action->setCheckable(true);
+            action->setChecked(qFuzzyCompare(UBTextTables::lineWidth(table), width));
+        }
+
+        style->addSeparator();
         style->addAction(tr("Color of the cells..."), this, [this, cursor]() {
             const QColor color = QColorDialog::getColor(Qt::white, nullptr, tr("Color of the cells"));
 
