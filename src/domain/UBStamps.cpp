@@ -33,7 +33,9 @@
 #include "frameworks/UBPlatformUtils.h"
 
 static const QString sCurrentKey = QStringLiteral("Board/LibertyBoardStamp");
-static const QString sCustomKey = QStringLiteral("Board/LibertyBoardCustomStamp");
+
+// The picture of the custom stamp, for this session only.
+static QString sCustomFile;
 
 // Marks the stamps among the pictures of a page, while LibertyBoard runs.
 static constexpr int sStampDataKey = 0x5354414d;
@@ -91,17 +93,17 @@ int UBStamps::count()
 
 bool UBStamps::isCustom(int index)
 {
-    return index == count() - 1;
+    return index == 0;
 }
 
 QString UBStamps::name(int index)
 {
     if (isCustom(index))
     {
-        return isSpanish() ? QString::fromUtf8("Personalizada") : QStringLiteral("Custom");
+        return isSpanish() ? QStringLiteral("PNG personalizado") : QStringLiteral("Custom PNG");
     }
 
-    const Standard stamp = standards().value(index);
+    const Standard stamp = standards().value(index - 1);
     return QString::fromUtf8(isSpanish() ? stamp.spanish : stamp.english);
 }
 
@@ -112,17 +114,19 @@ QImage UBStamps::image(int index)
         return drawCustom();
     }
 
-    if (index < 0 || index >= standards().size())
+    if (index < 1 || index > standards().size())
     {
         return QImage();
     }
 
-    return drawStandard(standards().at(index));
+    return drawStandard(standards().at(index - 1));
 }
 
 int UBStamps::current()
 {
-    return qBound(0, UBSettings::settings()->value(sCurrentKey, 0).toInt(), count() - 1);
+    // The custom stamp only once its picture is chosen in this session.
+    const int index = qBound(0, UBSettings::settings()->value(sCurrentKey, 1).toInt(), count() - 1);
+    return isCustom(index) && sCustomFile.isEmpty() ? 1 : index;
 }
 
 void UBStamps::setCurrent(int index)
@@ -152,12 +156,12 @@ bool UBStamps::isStamp(const QGraphicsItem* item)
 
 QString UBStamps::customFile()
 {
-    return UBSettings::settings()->value(sCustomKey).toString();
+    return sCustomFile;
 }
 
 void UBStamps::setCustomFile(const QString& file)
 {
-    UBSettings::settings()->setValue(sCustomKey, file);
+    sCustomFile = file;
 }
 
 QImage UBStamps::drawStandard(const Standard& stamp)

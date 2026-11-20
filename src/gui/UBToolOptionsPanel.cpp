@@ -1417,7 +1417,7 @@ void UBStampOptionsPanel::refresh()
         mStamps.at(i)->setAutoExclusive(true);
     }
 
-    mStamps.last()->setIcon(iconFor(mStamps.size() - 1));
+    mStamps.first()->setIcon(iconFor(0));
 }
 
 void UBStampOptionsPanel::layOutForToolbar()
@@ -1464,7 +1464,7 @@ void UBStampOptionsPanel::chooseCustomPicture()
         return;
     }
 
-    choose(UBStamps::count() - 1);
+    choose(0);
 }
 
 QIcon UBStampOptionsPanel::iconFor(int index) const
@@ -1473,18 +1473,26 @@ QIcon UBStampOptionsPanel::iconFor(int index) const
 
     if (picture.isNull())
     {
-        // The custom stamp before a picture is chosen: a frame with a plus.
+        // The custom stamp before a picture is chosen: a dashed frame with
+        // a plus and its name, also in the toolbar where names are hidden.
         picture = QImage(UBStamps::pageSize() * 2, QImage::Format_ARGB32_Premultiplied);
         picture.fill(Qt::transparent);
         QPainter painter(&picture);
         painter.setRenderHint(QPainter::Antialiasing);
         painter.setPen(QPen(QColor("#8a9099"), 6, Qt::DashLine));
-        painter.drawRoundedRect(QRectF(picture.rect()).adjusted(6, 6, -6, -6), 20, 20);
+        const QRectF frame = QRectF(picture.rect()).adjusted(6, 6, -6, -6);
+        painter.drawRoundedRect(frame, 20, 20);
         QFont font = painter.font();
-        font.setPixelSize(picture.height() / 2);
         font.setBold(true);
+        font.setPixelSize(picture.height() / 2);
         painter.setFont(font);
-        painter.drawText(picture.rect(), Qt::AlignCenter, "+");
+        const QRectF plus(frame.left() + 4, frame.top(), frame.height() * 0.8, frame.height());
+        painter.drawText(plus, Qt::AlignCenter, "+");
+        font.setPixelSize(picture.height() / 4.4);
+        painter.setFont(font);
+        painter.setPen(QColor("#4a5160"));
+        painter.drawText(frame.adjusted(plus.width() + 4, 0, -8, 0), Qt::AlignCenter | Qt::TextWordWrap,
+                         UBStamps::name(index).toUpper());
     }
 
     return QIcon(QPixmap::fromImage(picture));

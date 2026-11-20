@@ -44,10 +44,10 @@ public:
     /** @brief The size of a stamp on the page, in points of the page. */
     static QSize pageSize();
 
-    /** @brief The number of stamps, the custom one included, which is the last. */
+    /** @brief The number of stamps, the custom one included, which is the first. */
     static int count();
 
-    /** @brief True for the last stamp, made from a picture of the user. */
+    /** @brief True for the first stamp, made from a picture of the user. */
     static bool isCustom(int index);
 
     /** @brief The name of the stamp, as shown under its picture. */
@@ -68,7 +68,10 @@ public:
     static void markAsStamp(QGraphicsItem* item);
     static bool isStamp(const QGraphicsItem* item);
 
-    /** @brief The picture file of the custom stamp, empty until one is chosen. */
+    /**
+     * @brief The picture file of the custom stamp, empty until one is
+     * chosen: it is chosen again each time LibertyBoard starts.
+     */
     static QString customFile();
     static void setCustomFile(const QString& file);
 
