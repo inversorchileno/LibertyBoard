@@ -44,6 +44,9 @@
 #include <QLabel>
 #include <QLocale>
 #include <QTabWidget>
+#include <QHeaderView>
+#include <QPushButton>
+#include <QTableWidget>
 #include <QVBoxLayout>
 
 #include "UBSettings.h"
@@ -60,6 +63,7 @@
 #include "board/UBBoardController.h"
 #include "board/UBBoardPaletteManager.h"
 #include "gui/UBStylusPalette.h"
+#include "gui/UBAiPanel.h"
 #include "desktop/UBDesktopFrame.h"
 #include "document/UBDocumentController.h"
 #include "domain/UBGraphicsScene.h"
@@ -217,6 +221,93 @@ void UBPreferencesController::simplifyTabs()
     // Credits and About in one tab: the credits under the copyright.
     mPreferencesUI->verticalLayout_2->insertWidget(1, mPreferencesUI->textBrowser);
     tabs->removeTab(tabs->indexOf(mPreferencesUI->creditsTab));
+
+    tabs->insertTab(1, aiChoice(), tr("AI"));
+}
+
+QWidget* UBPreferencesController::aiChoice()
+{
+    // The AI offered by the AI panel: a name and the address of its page.
+    auto page = new QWidget(mPreferencesUI->mainTabWidget);
+    auto layout = new QVBoxLayout(page);
+
+    auto help = new QLabel(tr("The AI that the AI panel can show. Write a name and the address of its page; "
+                              "the first one is shown the first time."), page);
+    help->setWordWrap(true);
+    layout->addWidget(help);
+
+    auto table = new QTableWidget(0, 2, page);
+    table->setHorizontalHeaderLabels({ tr("Name"), tr("Address") });
+    table->horizontalHeader()->setSectionResizeMode(0, QHeaderView::ResizeToContents);
+    table->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Stretch);
+    table->verticalHeader()->hide();
+    layout->addWidget(table, 1);
+
+    auto fill = [table](const QStringList& services) {
+        const QSignalBlocker blocker(table);
+        table->setRowCount(0);
+
+        for (const QString& service : services)
+        {
+            const int row = table->rowCount();
+            table->insertRow(row);
+            table->setItem(row, 0, new QTableWidgetItem(service.section('|', 0, 0)));
+            table->setItem(row, 1, new QTableWidgetItem(service.section('|', 1)));
+        }
+    };
+
+    auto save = [table]() {
+        QStringList services;
+
+        for (int row = 0; row < table->rowCount(); ++row)
+        {
+            const QString name = table->item(row, 0) ? table->item(row, 0)->text().trimmed() : QString();
+            const QString address = table->item(row, 1) ? table->item(row, 1)->text().trimmed() : QString();
+
+            if (!name.isEmpty() && !address.isEmpty())
+            {
+                services << name + "|" + address;
+            }
+        }
+
+        UBSettings::settings()->aiServices->set(services);
+    };
+
+    fill(UBSettings::settings()->aiServices->get().toStringList());
+    connect(table, &QTableWidget::itemChanged, this, save);
+
+    auto buttons = new QHBoxLayout();
+    auto add = new QPushButton(tr("Add"), page);
+    auto remove = new QPushButton(tr("Remove"), page);
+    auto restore = new QPushButton(tr("Default list"), page);
+    buttons->addWidget(add);
+    buttons->addWidget(remove);
+    buttons->addStretch(1);
+    buttons->addWidget(restore);
+    layout->addLayout(buttons);
+
+    connect(add, &QPushButton::clicked, this, [table]() {
+        const int row = table->rowCount();
+        table->insertRow(row);
+        auto name = new QTableWidgetItem();
+        table->setItem(row, 0, name);
+        table->setItem(row, 1, new QTableWidgetItem("https://"));
+        table->setCurrentItem(name);
+        table->editItem(name);
+    });
+    connect(remove, &QPushButton::clicked, this, [table, save]() {
+        if (table->currentRow() >= 0)
+        {
+            table->removeRow(table->currentRow());
+            save();
+        }
+    });
+    connect(restore, &QPushButton::clicked, this, [fill]() {
+        UBSettings::settings()->aiServices->set(UBAiPanel::defaultServices());
+        fill(UBAiPanel::defaultServices());
+    });
+
+    return page;
 }
 
 QWidget* UBPreferencesController::desktopBorderChoice()

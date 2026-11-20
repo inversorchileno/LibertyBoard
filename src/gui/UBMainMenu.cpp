@@ -65,6 +65,7 @@
 #include "gui/UBPageButtons.h"
 #include "gui/UBPageIndicator.h"
 #include "gui/UBPdfOutlinePanel.h"
+#include "gui/UBAiPanel.h"
 #include "gui/UBSearchBar.h"
 #include "gui/UBShortcutsDialog.h"
 #include "gui/UBToolOptionsBar.h"
@@ -303,10 +304,12 @@ void UBMainMenu::createMenus()
     dictateAction->setToolTip(tr("Opens the dictation of Windows: what is said is written where the cursor of text is"));
     connect(dictateAction, &QAction::triggered, this, []() { UBDictation::start(); });
 
-    QAction* transcribeAction = voiceMenu->addAction(tr("Transcribe an audio (coming with the AI)"));
+    QAction* transcribeAction = voiceMenu->addAction(tr("Transcribe an audio..."));
     transcribeAction->setObjectName("actionLbTranscribe");
-    transcribeAction->setEnabled(false);
-    transcribeAction->setToolTip(tr("Writes what is said in a recording; it will come with the AI of LibertyBoard"));
+    transcribeAction->setToolTip(tr("Writes what is said in a recording, with an AI on the web"));
+    connect(transcribeAction, &QAction::triggered, this, [this]() {
+        UBAiPanel::startAction(UBAiPanel::Action::Transcription, mMainWindow);
+    });
 
     editMenu->addAction(mMainWindow->actionHideApplication);
     editMenu->addAction(mMainWindow->actionSleep);

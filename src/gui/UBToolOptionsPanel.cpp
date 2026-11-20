@@ -53,6 +53,7 @@
 #include "board/UBBoardController.h"
 #include "gui/UBDictation.h"
 #include "gui/UBGifWindow.h"
+#include "gui/UBAiPanel.h"
 #include "gui/UBTextBoxes.h"
 #include "gui/UBReadAloud.h"
 #include <QTimer>
@@ -1293,6 +1294,19 @@ UBTextOptionsPanel::UBTextOptionsPanel(QWidget* parent)
                            "In a text box, the microphone left of F does the same."));
     addRow(dictate);
     connect(dictate, &QToolButton::clicked, this, []() { UBDictation::start(); });
+
+    // The other way of dictation: an audio already recorded, written by an AI.
+    auto transcribe = new QToolButton(this);
+    transcribe->setText(tr("Transcribe"));
+    transcribe->setIcon(QIcon(":/images/stylusPalette/ai.svg"));
+    transcribe->setIconSize(QSize(34, 19));
+    transcribe->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
+    transcribe->setFocusPolicy(Qt::NoFocus);
+    transcribe->setToolTip(tr("Asks for an audio and gives it to an AI on the web, which writes what is said"));
+    addRow(transcribe);
+    connect(transcribe, &QToolButton::clicked, this, [this]() {
+        UBAiPanel::startAction(UBAiPanel::Action::Transcription, window());
+    });
 
     connect(mFont, &QFontComboBox::currentFontChanged, this, [settings](const QFont& font) {
         settings->setFontFamily(font.family());

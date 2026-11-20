@@ -109,6 +109,8 @@ namespace
             { "actionArrowShape", "Ctrl+Shift+A" },
             { "actionRectangle", "Ctrl+Shift+R" },
             { "actionBoardScreenshot", "Ctrl+Shift+C" },
+            { "actionBoardAi", "F9" },
+            { "actionLbTranscribe", "Ctrl+F11" },
             { "actionDesktopScreenshot", "Ctrl+Shift+X" },
             { "actionDesktopClear", "Ctrl+Shift+Backspace" },
             // Pages and board

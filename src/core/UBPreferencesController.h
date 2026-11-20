@@ -113,6 +113,7 @@ class UBPreferencesController : public QObject
 
         /** @brief The choices of the border shown around the screen in desktop mode. */
         QWidget* desktopBorderChoice();
+        QWidget* aiChoice();
         void simplifyTabs();
 
     private:

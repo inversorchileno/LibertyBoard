@@ -80,6 +80,7 @@
 #include "gui/UBKeyboardPalette.h"
 #include "gui/UBMagnifer.h"
 #include "gui/UBGifWindow.h"
+#include "gui/UBAiPanel.h"
 #include "gui/UBMainWindow.h"
 #include "gui/UBMessageWindow.h"
 #include "gui/UBThumbnailScene.h"
@@ -2766,6 +2767,17 @@ void UBBoardController::processMimeData(const QMimeData* pMimeData, const QPoint
 
             return;
         }
+    }
+
+    // A picture dragged from the AI panel: its address needs the session of the AI.
+    if (UBAiPanel::isAiDrag(pMimeData) && mActiveScene)
+    {
+        QByteArray png;
+        QBuffer buffer(&png);
+        buffer.open(QIODevice::WriteOnly);
+        qvariant_cast<QImage>(pMimeData->imageData()).save(&buffer, "PNG");
+        mActiveScene->addImage(png, nullptr, pPos, 1.);
+        return;
     }
 
     if(pMimeData->hasHtml())

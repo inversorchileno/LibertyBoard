@@ -37,6 +37,7 @@
 #include "core/UBSettings.h"
 #include "core/UBApplicationController.h"
 #include "core/UBShortcutManager.h"
+#include "gui/UBAiPanel.h"
 
 
 #include "board/UBBoardController.h"
@@ -81,6 +82,14 @@ UBStylusPalette::UBStylusPalette(QWidget *parent, Qt::Orientation orient)
     actions << UBApplication::mainWindow->actionArrowShape;
     // The shapes tool draws the ellipse too, with all the other shapes.
     actions << UBApplication::mainWindow->actionRectangle;
+
+    // The AI: what to do, on what, then the page of the AI at the right.
+    auto aiAction = new QAction(QIcon(":/images/stylusPalette/ai.svg"), tr("AI"), this);
+    aiAction->setToolTip(tr("Summary, translation, images and more with an AI on the web"));
+    aiAction->setObjectName("actionBoardAi");
+    aiAction->setProperty("ungrouped", true);
+    connect(aiAction, &QAction::triggered, this, [this]() { UBAiPanel::showActions(UBApplication::mainWindow); });
+    actions << aiAction;
 
     // Saves the board as it is seen, without the palettes, in one click.
     mScreenshotAction = new QAction(QIcon(":/images/stylusPalette/screenshot.svg"), tr("Save a screenshot"), this);
