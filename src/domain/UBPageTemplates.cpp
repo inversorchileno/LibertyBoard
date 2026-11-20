@@ -28,6 +28,7 @@
 #include <QPainter>
 #include <QPainterPath>
 #include <QSvgGenerator>
+#include <QtMath>
 
 #include <cmath>
 

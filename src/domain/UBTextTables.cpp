@@ -28,6 +28,8 @@
 #include <QTextFrame>
 #include <QTextTable>
 
+#include <cmath>
+
 namespace
 {
     const QColor sHeaderColor(225, 229, 235);

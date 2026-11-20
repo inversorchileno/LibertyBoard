@@ -22,6 +22,7 @@
 #include "UBToolOptionsPanel.h"
 
 #include <QButtonGroup>
+#include <tuple>
 #include <QCheckBox>
 #include <QFileDialog>
 #include <QFontComboBox>
