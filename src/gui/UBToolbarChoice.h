@@ -54,6 +54,9 @@ public:
      */
     static void registerPalette(Palette palette, UBActionPalette* actionPalette, const QList<QAction*>& choosable);
 
+    /** @brief The actions of the buttons of a palette the user may take out. */
+    static QList<QAction*> choosableActions(Palette palette);
+
     /** @brief Shows on the palette the buttons the user chose. */
     static void apply(Palette palette);
 

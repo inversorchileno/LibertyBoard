@@ -77,6 +77,12 @@ public:
     bool checkData(const QModelIndex &index, const QVariant &value) const;
     bool hasCtrlConflicts(const QKeySequence& additionalShortcut = QKeySequence()) const;
 
+    /** @brief The groups of actions with their names, the built-in ones last. */
+    const QList<QPair<QString,QList<QAction*>>>& actionGroups() const
+    {
+        return mActionGroups;
+    }
+
     static QString buttonName(Qt::MouseButton button);
     static Qt::MouseButton buttonIndex(QString button);
 

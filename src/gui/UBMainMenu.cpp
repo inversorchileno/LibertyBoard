@@ -66,6 +66,7 @@
 #include "gui/UBPageIndicator.h"
 #include "gui/UBPdfOutlinePanel.h"
 #include "gui/UBSearchBar.h"
+#include "gui/UBShortcutsDialog.h"
 #include "gui/UBToolOptionsBar.h"
 
 UBMainMenu::UBMainMenu(UBMainWindow* mainWindow)
@@ -97,6 +98,9 @@ UBMainMenu::UBMainMenu(UBMainWindow* mainWindow)
     mMainWindow->boardToolBar->setStyleSheet(toolBarStyle);
     mMainWindow->documentToolBar->setStyleSheet(toolBarStyle);
     mMainWindow->webToolBar->setStyleSheet(toolBarStyle);
+
+    // Once the palettes are made too: a shortcut for each function.
+    QTimer::singleShot(0, this, [this]() { UBShortcutsDialog::setup(mMainWindow); });
 }
 
 QMenu* UBMainMenu::createApplicationMenu(UBMainWindow* mainWindow, QWidget* parent)
@@ -151,22 +155,26 @@ void UBMainMenu::createMenus()
     QMenu* homeMenu = menuBar->addMenu(tr("&Home"));
 
     auto newAction = new QAction(mMainWindow->actionNewDocument->icon(), tr("New board"), mMainWindow);
+    newAction->setObjectName("actionLbNew");
     newAction->setShortcut(QKeySequence::New);
     mMainWindow->addAction(newAction);
     connect(newAction, &QAction::triggered, mDocumentTabs, &UBDocumentTabs::newDocument);
 
     auto openAction = new QAction(QIcon(":/images/toolbar/documents.png"), tr("Open/Import"), mMainWindow);
+    openAction->setObjectName("actionLbOpen");
     openAction->setShortcut(QKeySequence::Open);
     mMainWindow->addAction(openAction);
     connect(openAction, &QAction::triggered, this, &UBMainMenu::openFiles);
 
     auto saveAction = new QAction(QIcon(":/images/toolbar/export.png"), tr("Save"), mMainWindow);
+    saveAction->setObjectName("actionLbSave");
     saveAction->setShortcut(QKeySequence::Save);
     saveAction->setToolTip(tr("Save the annotations in the PDF, or the page as a picture"));
     mMainWindow->addAction(saveAction);
     connect(saveAction, &QAction::triggered, mDocumentTabs, &UBDocumentTabs::saveCurrent);
 
     auto saveAsAction = new QAction(QIcon(":/images/toolbar/saveAs.svg"), tr("Save as..."), mMainWindow);
+    saveAsAction->setObjectName("actionLbSaveAs");
     saveAsAction->setShortcut(QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_S));
     saveAsAction->setToolTip(tr("Save a copy as a PDF, PNG or JPEG file"));
     mMainWindow->addAction(saveAsAction);
@@ -197,6 +205,7 @@ void UBMainMenu::createMenus()
     homeMenu->addAction(saveAsAction);
 
     auto printAction = new QAction(QIcon(":/images/toolbar/print.svg"), tr("Print..."), mMainWindow);
+    printAction->setObjectName("actionLbPrint");
     printAction->setShortcut(QKeySequence::Print);
     // Ctrl+P prints, as in other programs, instead of choosing the pen.
     mMainWindow->actionPen->setShortcut(QKeySequence());
@@ -205,10 +214,12 @@ void UBMainMenu::createMenus()
     homeMenu->addAction(printAction);
 
     auto extractAction = new QAction(QIcon(":/images/toolbar/extractPages.svg"), tr("Extract pages..."), mMainWindow);
+    extractAction->setObjectName("actionLbExtract");
     connect(extractAction, &QAction::triggered, this, [this]() { UBPageExtractor::extract(mMainWindow); });
     homeMenu->addAction(extractAction);
 
     auto ocrAction = new QAction(QIcon(":/images/toolbar/ocr.svg"), tr("Recognize text (OCR)..."), mMainWindow);
+    ocrAction->setObjectName("actionLbOcr");
     ocrAction->setToolTip(tr("Reads the text of the scanned pages, so that it can be searched and copied"));
     connect(ocrAction, &QAction::triggered, this, [this]() { UBOcrRunner::run(mMainWindow); });
     homeMenu->addAction(ocrAction);
@@ -221,6 +232,7 @@ void UBMainMenu::createMenus()
     homeMenu->addSeparator();
 
     auto closeAction = new QAction(QIcon(":/images/toolbar/closeDocument.svg"), tr("Close document"), mMainWindow);
+    closeAction->setObjectName("actionLbClose");
     closeAction->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_F4));
     mMainWindow->addAction(closeAction);
     connect(closeAction, &QAction::triggered, mDocumentTabs, &UBDocumentTabs::closeCurrent);
@@ -234,12 +246,14 @@ void UBMainMenu::createMenus()
     // The board, single: also the way back from the double board, which
     // leaves both documents in their tabs.
     auto singleBoardAction = new QAction(mMainWindow->actionBoard->icon(), mMainWindow->actionBoard->text(), mMainWindow);
+    singleBoardAction->setObjectName("actionLbSingleBoard");
     connect(singleBoardAction, &QAction::triggered, this, [dualBoard]() {
         UBApplication::applicationController->showBoard();
         dualBoard->setEnabled(false);
     });
     modeMenu->addAction(singleBoardAction);
     auto dualBoardAction = new QAction(QIcon(":/images/toolbar/dualBoard.svg"), tr("Double board"), mMainWindow);
+    dualBoardAction->setObjectName("actionLbDualBoard");
     dualBoardAction->setCheckable(true);
     dualBoardAction->setToolTip(tr("Two documents side by side: click a side to work on it"));
     connect(dualBoardAction, &QAction::toggled, this, [dualBoard](bool enabled) {
@@ -275,6 +289,7 @@ void UBMainMenu::createMenus()
     QMenu* voiceMenu = editMenu->addMenu(QIcon(":/images/toolbar/readAloud.svg"), tr("Read and dictate"));
     UBReadAloud* readAloud = UBReadAloud::instance();
     QAction* readAction = voiceMenu->addAction(tr("Read aloud"));
+    readAction->setObjectName("actionLbRead");
     readAction->setShortcut(QKeySequence("Ctrl+Shift+L"));
     readAction->setToolTip(tr("Reads the texts selected, or the text of the page"));
     mMainWindow->addAction(readAction);
@@ -284,10 +299,12 @@ void UBMainMenu::createMenus()
     });
 
     QAction* dictateAction = voiceMenu->addAction(tr("Dictate (Windows + H)"));
+    dictateAction->setObjectName("actionLbDictate");
     dictateAction->setToolTip(tr("Opens the dictation of Windows: what is said is written where the cursor of text is"));
     connect(dictateAction, &QAction::triggered, this, []() { UBDictation::start(); });
 
     QAction* transcribeAction = voiceMenu->addAction(tr("Transcribe an audio (coming with the AI)"));
+    transcribeAction->setObjectName("actionLbTranscribe");
     transcribeAction->setEnabled(false);
     transcribeAction->setToolTip(tr("Writes what is said in a recording; it will come with the AI of LibertyBoard"));
 
@@ -297,6 +314,7 @@ void UBMainMenu::createMenus()
 
     // The whole screen for the board: no menu and no taskbar of the system.
     mFullScreenAction = new QAction(QIcon(":/images/toolbar/fullScreen.svg"), tr("Full screen"), mMainWindow);
+    mFullScreenAction->setObjectName("actionLbFullScreen");
     mFullScreenAction->setCheckable(true);
     mFullScreenAction->setShortcut(QKeySequence(Qt::Key_F11));
     mMainWindow->addAction(mFullScreenAction);
@@ -306,16 +324,25 @@ void UBMainMenu::createMenus()
     // Every tool, also those taken out of the palettes; and the choice of
     // the buttons of each palette.
     QMenu* toolsMenu = menuBar->addMenu(tr("&Tools"));
+    toolsMenu->setProperty("lbDynamicMenu", true);
     connect(toolsMenu, &QMenu::aboutToShow, this, [toolsMenu]() { UBToolbarChoice::fillToolsMenu(toolsMenu); });
     QMenu* customizeMenu = menuBar->addMenu(tr("&Customize"));
+    customizeMenu->setProperty("lbDynamicMenu", true);
     connect(customizeMenu, &QMenu::aboutToShow, this, [customizeMenu]() { UBToolbarChoice::fillCustomizeMenu(customizeMenu); });
 
     QMenu* aboutMenu = menuBar->addMenu(tr("&About"));
     aboutMenu->addAction(mMainWindow->actionOpenTutorial);
+
+    // The list of the keyboard shortcuts, which can be changed.
+    auto shortcutsAction = new QAction(QIcon(":/images/toolbar/keyboard.svg"), tr("Shortcuts"), mMainWindow);
+    shortcutsAction->setObjectName("actionLbShortcuts");
+    connect(shortcutsAction, &QAction::triggered, this, [this]() { UBShortcutsDialog::open(mMainWindow); });
+    aboutMenu->addAction(shortcutsAction);
     aboutMenu->addAction(mMainWindow->actionHintsAndTips);
     aboutMenu->addSeparator();
 
     auto gitHubAction = new QAction(QIcon(":/images/toolbar/github.svg"), tr("LibertyBoard on GitHub"), mMainWindow);
+    gitHubAction->setObjectName("actionLbGitHub");
     connect(gitHubAction, &QAction::triggered, this, []() {
         QDesktopServices::openUrl(QUrl("https://github.com/inversorchileno/LibertyBoard"));
     });
@@ -397,6 +424,7 @@ void UBMainMenu::createCornerButtons()
     // Finds a text in the PDF shown on the board.
     auto searchBar = new UBSearchBar(mMainWindow);
     auto searchAction = new QAction(QIcon(":/images/toolbar/search.svg"), tr("Search..."), mMainWindow);
+    searchAction->setObjectName("actionLbSearch");
     searchAction->setShortcut(QKeySequence::Find);
     // Ctrl+F is for the search, as in other programs, not for the selector.
     mMainWindow->actionSelector->setShortcut(QKeySequence());
@@ -424,6 +452,7 @@ void UBMainMenu::createCornerButtons()
     // The index of the PDF, beside the search; one panel at a time.
     auto outlinePanel = new UBPdfOutlinePanel(mMainWindow);
     auto outlineAction = new QAction(QIcon(":/images/toolbar/outline.svg"), tr("Index"), mMainWindow);
+    outlineAction->setObjectName("actionLbOutline");
     outlineAction->setToolTip(tr("The index of the PDF: a click on a title goes to its page"));
     connect(outlineAction, &QAction::triggered, outlinePanel, [outlinePanel, searchBar]() {
         // A second press closes the index.
@@ -457,6 +486,7 @@ void UBMainMenu::createCornerButtons()
 
     // Locks the canvas against changes, left of the index.
     auto lockAction = new QAction(QIcon(":/images/toolbar/lockOpen.svg"), tr("Lock canvas"), mMainWindow);
+    lockAction->setObjectName("actionLbLock");
     lockAction->setCheckable(true);
     lockAction->setToolTip(tr("Lock the canvas: nothing can be drawn, written, highlighted, selected, moved or deleted; "
                               "the laser pointer and the hand still work"));

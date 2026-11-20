@@ -31,6 +31,7 @@
 
 #include "core/UBSettings.h"
 #include "gui/UBActionPalette.h"
+#include "gui/UBShortcutsDialog.h"
 
 namespace
 {
@@ -83,6 +84,15 @@ void UBToolbarChoice::registerPalette(Palette palette, UBActionPalette* actionPa
 {
     palettes()[palette] = Registered{ actionPalette, choosable };
     apply(palette);
+
+    // Their shortcuts work also on the window of the palette, the desktop.
+    actionPalette->window()->addActions(choosable);
+    UBShortcutsDialog::adopt(choosable);
+}
+
+QList<QAction*> UBToolbarChoice::choosableActions(Palette palette)
+{
+    return palettes().value(palette).choosable;
 }
 
 bool UBToolbarChoice::isShown(Palette palette, QAction* action)

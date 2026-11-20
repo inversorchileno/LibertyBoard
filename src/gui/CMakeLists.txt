@@ -59,6 +59,8 @@ target_sources(${PROJECT_NAME} PRIVATE
     UBGifWindow.h
     UBToolbarChoice.cpp
     UBToolbarChoice.h
+    UBShortcutsDialog.cpp
+    UBShortcutsDialog.h
     UBDocumentTabs.cpp
     UBDocumentTabs.h
     UBNoteToolIcon.cpp
