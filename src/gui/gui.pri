@@ -20,6 +20,7 @@ HEADERS +=  \
     src/gui/UBReadAloud.h \
     src/gui/UBDictation.h \
     src/gui/UBTextBoxes.h \
+    src/gui/UBGifSearch.h \
     src/gui/UBDocumentTabs.h \
     src/gui/UBNoteToolIcon.h \
     src/gui/UBCommentPopup.h \
@@ -96,6 +97,7 @@ SOURCES +=  \
     src/gui/UBReadAloud.cpp \
     src/gui/UBDictation.cpp \
     src/gui/UBTextBoxes.cpp \
+    src/gui/UBGifSearch.cpp \
     src/gui/UBDocumentTabs.cpp \
     src/gui/UBNoteToolIcon.cpp \
     src/gui/UBCommentPopup.cpp \

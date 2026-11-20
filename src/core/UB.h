@@ -86,7 +86,8 @@ struct UBStylusTool
         Attachment,
         Sound,
         Spotlight,  // darkens the screen but around the pointer, or magnifies under it
-        Voice       // reads the page aloud, or opens the dictation of the system
+        Voice,      // reads the page aloud
+        Emoji       // puts an emoji or a GIF on the page
     };
 };
 

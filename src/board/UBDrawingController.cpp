@@ -87,6 +87,7 @@ UBDrawingController::UBDrawingController(QObject * parent)
         { UBApplication::mainWindow->actionHighlight, UBStylusTool::Highlight },
         { UBApplication::mainWindow->actionNote, UBStylusTool::Note },
         { UBApplication::mainWindow->actionStamp, UBStylusTool::Stamp },
+        { UBApplication::mainWindow->actionEmoji, UBStylusTool::Emoji },
         { UBApplication::mainWindow->actionComment, UBStylusTool::Comment },
         { UBApplication::mainWindow->actionAttachment, UBStylusTool::Attachment },
         { UBApplication::mainWindow->actionSound, UBStylusTool::Sound },
@@ -237,6 +238,8 @@ void UBDrawingController::setStylusTool(int tool)
             UBApplication::mainWindow->actionNote->setChecked(true);
         else if (mStylusTool == UBStylusTool::Stamp)
             UBApplication::mainWindow->actionStamp->setChecked(true);
+        else if (mStylusTool == UBStylusTool::Emoji)
+            UBApplication::mainWindow->actionEmoji->setChecked(true);
         else if (mStylusTool == UBStylusTool::Comment)
             UBApplication::mainWindow->actionComment->setChecked(true);
         else if (mStylusTool == UBStylusTool::Attachment)

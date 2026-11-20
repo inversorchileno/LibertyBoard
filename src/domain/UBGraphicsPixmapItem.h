@@ -31,6 +31,7 @@
 #define UBGRAPHICSPIXMAPITEM_H_
 
 #include <QtGui>
+#include <QMovie>
 
 #include "core/UB.h"
 
@@ -67,6 +68,16 @@ class UBGraphicsPixmapItem : public QObject, public QGraphicsPixmapItem, public 
 
         virtual void setUuid(const QUuid &pUuid);
 
+        /**
+         * @brief Plays this animated picture (a GIF) on the board. The
+         * picture stays the frame shown, for what is saved as a picture,
+         * a PDF or a print.
+         */
+        void setAnimation(const QByteArray& data);
+
+        /** @brief Whether this file holds a picture of several frames, like an animated GIF. */
+        static bool isAnimated(const QByteArray& data);
+
 protected:
 
         virtual void mousePressEvent(QGraphicsSceneMouseEvent *event);
@@ -76,6 +87,10 @@ protected:
         virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 
         virtual QVariant itemChange(GraphicsItemChange change, const QVariant &value);
+
+    private:
+        QByteArray mAnimationData;
+        QMovie* mAnimation{nullptr};
 };
 
 #endif /* UBGRAPHICSPIXMAPITEM_H_ */

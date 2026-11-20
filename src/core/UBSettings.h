@@ -365,6 +365,11 @@ class UBSettings : public QObject
         UBSetting* markerChiselTip;
         UBSetting* highlightFitText;
         UBSetting* attachmentHyperlink;
+        UBSetting* emojiChoice;        // the emoji the emoji tool puts
+        UBSetting* emojiPutsGif;       // the emoji tool puts the GIF chosen instead
+        UBSetting* emojiSize;          // the width of an emoji or a GIF put, in points of the page
+        UBSetting* gifFile;            // the GIF chosen, kept among the data of LibertyBoard
+        UBSetting* gifKey;             // the key of the user for the GIF search of KLIPY
         UBSetting* shapeKind;          // the shape drawn by the shapes tool (UBShapeKind)
         UBSetting* readFrom;           // where the voice tool reads from: the start, a rectangle or a click (UBReadFrom)
 

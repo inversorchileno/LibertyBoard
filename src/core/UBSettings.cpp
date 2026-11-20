@@ -355,6 +355,11 @@ void UBSettings::init()
     markerChiselTip = new UBSetting(this, "Board", "LibertyBoardMarkerChiselTip", false);
     readFrom = new UBSetting(this, "Board", "LibertyBoardReadFrom", 0);
     shapeKind = new UBSetting(this, "Board", "LibertyBoardShapeKind", 0);
+    emojiChoice = new UBSetting(this, "Board", "LibertyBoardEmoji", QString());
+    emojiPutsGif = new UBSetting(this, "Board", "LibertyBoardEmojiPutsGif", false);
+    emojiSize = new UBSetting(this, "Board", "LibertyBoardEmojiSize", 80);
+    gifFile = new UBSetting(this, "Board", "LibertyBoardGifFile", QString());
+    gifKey = new UBSetting(this, "Board", "LibertyBoardGifKey", QString());
     attachmentHyperlink = new UBSetting(this, "Board", "LibertyBoardAttachmentHyperlink", false);
     highlightFitText = new UBSetting(this, "Board", "LibertyBoardHighlightFitText", false);
 

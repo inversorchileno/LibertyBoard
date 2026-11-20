@@ -679,7 +679,7 @@ void UBMainMenu::updateLockedTools(bool locked)
     // On a locked canvas, the tools that would change the page are off.
     const QList<QAction*> changing = {
         mMainWindow->actionPen, mMainWindow->actionEraser, mMainWindow->actionMarker, mMainWindow->actionHighlight,
-        mMainWindow->actionNote, mMainWindow->actionStamp, mMainWindow->actionComment, mMainWindow->actionAttachment,
+        mMainWindow->actionNote, mMainWindow->actionStamp, mMainWindow->actionEmoji, mMainWindow->actionComment, mMainWindow->actionAttachment,
         mMainWindow->actionSound, mMainWindow->actionUnderline, mMainWindow->actionText, mMainWindow->actionLine,
         mMainWindow->actionArrowShape, mMainWindow->actionRectangle, mMainWindow->actionEllipse, mMainWindow->actionErase,
         mMainWindow->actionCut, mMainWindow->actionPaste,

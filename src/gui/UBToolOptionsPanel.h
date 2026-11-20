@@ -24,8 +24,12 @@
 #include <QWidget>
 
 #include "core/UBSettings.h"
+#include "gui/UBGifSearch.h"
 
+class QButtonGroup;
 class QCheckBox;
+class QLineEdit;
+class QListWidget;
 class QGridLayout;
 class QFontComboBox;
 class QLabel;
@@ -201,6 +205,42 @@ public:
 
 private:
     UBColorSwatches* mColors{nullptr};
+};
+
+/**
+ * @brief Options of the emoji tool: the emoji to put, or a GIF found with
+ * the search of KLIPY, and their size on the page.
+ */
+class UBEmojiOptionsPanel : public UBToolOptionsPanel
+{
+    Q_OBJECT
+
+public:
+    explicit UBEmojiOptionsPanel(QWidget* parent = nullptr);
+    void refresh() override;
+
+protected:
+    void layOutForToolbar() override;
+
+private:
+    void layOutEmojis(int columns);
+    void showMode();
+    void showGifKey();
+    void search();
+    void showGifs(const QList<UBGifSearch::Gif>& gifs);
+
+    UBSegmentedChoice* mMode{nullptr};
+    QWidget* mEmojis{nullptr};
+    QButtonGroup* mEmojiButtons{nullptr};
+    UBValueSlider* mSize{nullptr};
+    QWidget* mKeyBox{nullptr};
+    QLineEdit* mKey{nullptr};
+    QWidget* mSearchBox{nullptr};
+    QLineEdit* mSearch{nullptr};
+    QListWidget* mResults{nullptr};
+    QLabel* mGifStatus{nullptr};
+    UBGifSearch* mGifSearch{nullptr};
+    QList<UBGifSearch::Gif> mGifs;
 };
 
 /** @brief Options of the read aloud tool: where to read from, play, pause, stop and next page. */

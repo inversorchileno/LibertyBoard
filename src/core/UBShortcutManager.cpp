@@ -170,6 +170,7 @@ void UBShortcutManager::addMainActions(UBMainWindow *mainWindow)
                    mainWindow->actionHighlight,
                    mainWindow->actionNote,
                    mainWindow->actionStamp,
+                   mainWindow->actionEmoji,
                    mainWindow->actionComment,
                    mainWindow->actionAttachment,
                    mainWindow->actionSound,

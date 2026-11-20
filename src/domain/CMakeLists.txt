@@ -29,6 +29,8 @@ target_sources(${PROJECT_NAME} PRIVATE
     UBPageTemplates.h
     UBTextTables.cpp
     UBTextTables.h
+    UBEmojis.cpp
+    UBEmojis.h
     UBGraphicsAttachmentItem.cpp
     UBGraphicsAttachmentItem.h
     UBGraphicsHyperlinkItem.cpp

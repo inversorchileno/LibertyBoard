@@ -2236,6 +2236,22 @@ UBGraphicsPixmapItem* UBSvgSubsetAdaptor::UBSvgSubsetReader::pixmapItemFromSvg()
         QImage img = rdr.read();
         QPixmap pix = QPixmap::fromImage(img);
         pixmapItem->setPixmap(pix);
+
+        // An animated GIF moves again when the page is opened.
+        if (href.endsWith(".gif", Qt::CaseInsensitive))
+        {
+            QFile file(mDocumentPath + "/" + UBFileSystemUtils::normalizeFilePath(href));
+
+            if (file.open(QIODevice::ReadOnly))
+            {
+                const QByteArray data = file.readAll();
+
+                if (UBGraphicsPixmapItem::isAnimated(data))
+                {
+                    pixmapItem->setAnimation(data);
+                }
+            }
+        }
         graphicsItemFromSvg(pixmapItem);
     }
     else

@@ -55,6 +55,8 @@ target_sources(${PROJECT_NAME} PRIVATE
     UBDictation.h
     UBTextBoxes.cpp
     UBTextBoxes.h
+    UBGifSearch.cpp
+    UBGifSearch.h
     UBDocumentTabs.cpp
     UBDocumentTabs.h
     UBNoteToolIcon.cpp

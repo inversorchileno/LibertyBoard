@@ -32,6 +32,9 @@
 #include <QtGui>
 #include <QMimeData>
 #include <QDrag>
+#include <QBuffer>
+#include <QImageReader>
+#include <QMovie>
 
 #include "UBGraphicsScene.h"
 
@@ -166,6 +169,11 @@ void UBGraphicsPixmapItem::copyItemParameters(UBItem *copy) const
         cp->setData(UBGraphicsItemData::ItemOwnZValue, this->data(UBGraphicsItemData::ItemOwnZValue));
         cp->setSourceUrl(this->sourceUrl());
 
+        if (!mAnimationData.isEmpty())
+        {
+            cp->setAnimation(mAnimationData);
+        }
+
         cp->setZValue(this->zValue());
     }
 }
@@ -198,4 +206,32 @@ void UBGraphicsPixmapItem::clearSource()
     {
         UBFileSystemUtils::deleteFile(imageFile);
     }
+}
+
+bool UBGraphicsPixmapItem::isAnimated(const QByteArray& data)
+{
+    QBuffer buffer;
+    buffer.setData(data);
+    buffer.open(QIODevice::ReadOnly);
+    QImageReader reader(&buffer);
+    return reader.supportsAnimation() && reader.imageCount() > 1;
+}
+
+void UBGraphicsPixmapItem::setAnimation(const QByteArray& data)
+{
+    delete mAnimation;
+    mAnimationData = data;
+
+    // The movie reads its frames from the data kept by the item.
+    auto buffer = new QBuffer(&mAnimationData, this);
+    buffer->open(QIODevice::ReadOnly);
+    mAnimation = new QMovie(buffer, QByteArray(), this);
+    mAnimation->setCacheMode(QMovie::CacheAll);
+    buffer->setParent(mAnimation);
+
+    connect(mAnimation, &QMovie::frameChanged, this, [this]() {
+        setPixmap(mAnimation->currentPixmap());
+    });
+
+    mAnimation->start();
 }

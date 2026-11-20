@@ -1658,6 +1658,22 @@
     <string>Put a stamp on the page</string>
    </property>
   </action>
+  <action name="actionEmoji">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../OpenBoard.qrc">
+     <normaloff>:/images/stylusPalette/emoji.svg</normaloff>
+     <normalon>:/images/stylusPalette/emojiOn.svg</normalon>:/images/stylusPalette/emoji.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Emojis and GIFs</string>
+   </property>
+   <property name="toolTip">
+    <string>Put an emoji or a GIF on the page</string>
+   </property>
+  </action>
   <action name="actionSpotlight">
    <property name="checkable">
     <bool>true</bool>

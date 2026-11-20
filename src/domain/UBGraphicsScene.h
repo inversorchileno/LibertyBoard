@@ -442,6 +442,7 @@ signals:
         void addOrEditNote(const QPointF& position);
 
         /** @brief Puts the current stamp of the stamp tool on the page, centered on the position. */
+        void addEmoji(const QPointF& position);
         void addStamp(const QPointF& position);
 
         /** @brief Takes away the stamp at the position, if there is one. */
@@ -513,6 +514,7 @@ signals:
         QPolygonF mPolyline;            // the corners of the polyline being drawn, the last one following the pointer
         bool mPolylineDragging{false};  // the button is held on the last corner
         bool mNotePending{false};
+        bool mEmojiPending{false};
         bool mStampPending{false};
         int mPendingMarkTool{-1};
         QPointF mNotePosition;

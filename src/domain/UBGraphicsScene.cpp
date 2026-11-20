@@ -33,6 +33,7 @@
 #include "UBGraphicsLaserTrail.h"
 #include "UBGraphicsShapePreview.h"
 #include "UBShapeGeometry.h"
+#include "UBEmojis.h"
 #include "UBGraphicsNoteItem.h"
 #include "UBStamps.h"
 #include "UBGraphicsAttachmentItem.h"
@@ -512,6 +513,11 @@ bool UBGraphicsScene::inputDevicePress(const QPointF& scenePos, const qreal& pre
             removeStampAt(scenePos);
             accepted = true;
         }
+        else if (currentTool == UBStylusTool::Emoji) {
+            mEmojiPending = true;
+            mNotePosition = scenePos;
+            accepted = true;
+        }
         else if (currentTool == UBStylusTool::Stamp) {
             mStampPending = true;
             mNotePosition = scenePos;
@@ -940,6 +946,12 @@ bool UBGraphicsScene::inputDeviceRelease(int tool, Qt::KeyboardModifiers modifie
         addStamp(mNotePosition);
     }
 
+    if (mEmojiPending)
+    {
+        mEmojiPending = false;
+        addEmoji(mNotePosition);
+    }
+
     if (mPendingMarkTool >= 0)
     {
         const int tool = mPendingMarkTool;
@@ -1257,6 +1269,39 @@ void UBGraphicsScene::addStamp(const QPointF& position)
     {
         item->setSelected(false);
         UBStamps::markAsStamp(item);
+    }
+}
+
+void UBGraphicsScene::addEmoji(const QPointF& position)
+{
+    // Centered where the page was clicked: the GIF chosen, moving, or the emoji.
+    const qreal width = UBEmojis::size();
+    UBGraphicsPixmapItem* item = nullptr;
+
+    if (UBEmojis::putsGif())
+    {
+        QFile file(UBEmojis::gifFile());
+
+        if (file.open(QIODevice::ReadOnly))
+        {
+            const QByteArray data = file.readAll();
+            const QImage first = QImage::fromData(data);
+
+            if (!first.isNull())
+            {
+                item = addImage(data, nullptr, position, width / first.width());
+            }
+        }
+    }
+    else
+    {
+        const QImage emoji = UBEmojis::image(UBEmojis::emoji(), 160);
+        item = addPixmap(QPixmap::fromImage(emoji), nullptr, position, width / emoji.width());
+    }
+
+    if (item)
+    {
+        item->setSelected(false);
     }
 }
 
@@ -2303,6 +2348,12 @@ UBGraphicsPixmapItem* UBGraphicsScene::addImage(QByteArray pData, QGraphicsItem*
     pixmapItem->setFlag(QGraphicsItem::ItemIsSelectable, true);
 
     pixmapItem->setPixmap(pixmap);
+
+    // An animated GIF moves on the board.
+    if (UBGraphicsPixmapItem::isAnimated(pData))
+    {
+        pixmapItem->setAnimation(pData);
+    }
 
     QPointF half(pixmap.width() * pScaleFactor / 2, pixmap.height()  * pScaleFactor / 2);
     pixmapItem->setPos(pPos - half);

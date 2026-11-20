@@ -61,6 +61,7 @@ bool UBToolOptionsPopup::hasOptions(int tool)
         case UBStylusTool::Spotlight:
         case UBStylusTool::Attachment:
         case UBStylusTool::Voice:
+        case UBStylusTool::Emoji:
         case UBStylusTool::Comment:
         case UBStylusTool::Selector:
             return true;

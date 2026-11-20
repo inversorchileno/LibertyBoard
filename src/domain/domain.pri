@@ -20,6 +20,7 @@ HEADERS += src/domain/UBGraphicsScene.h \
     src/domain/UBStamps.h \
     src/domain/UBPageTemplates.h \
     src/domain/UBTextTables.h \
+    src/domain/UBEmojis.h \
     src/domain/UBGraphicsAttachmentItem.h \
     src/domain/UBGraphicsHyperlinkItem.h \
     src/domain/UBGraphicsCommentItem.h \
@@ -62,6 +63,7 @@ SOURCES += src/domain/UBGraphicsScene.cpp \
     src/domain/UBStamps.cpp \
     src/domain/UBPageTemplates.cpp \
     src/domain/UBTextTables.cpp \
+    src/domain/UBEmojis.cpp \
     src/domain/UBGraphicsAttachmentItem.cpp \
     src/domain/UBGraphicsHyperlinkItem.cpp \
     src/domain/UBGraphicsCommentItem.cpp \
