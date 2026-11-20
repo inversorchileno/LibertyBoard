@@ -553,12 +553,12 @@ Felülírja a biztonsági ellenőrzést, és folytatja?</translation>
     </message>
     <message>
         <location line="+12"/>
-        <location line="+617"/>
+        <location line="+633"/>
         <source>Erase Annotations</source>
         <translation>Jegyzetek törlése</translation>
     </message>
     <message>
-        <location line="-605"/>
+        <location line="-621"/>
         <source>Clear Page</source>
         <translation>Oldal törlése</translation>
     </message>
@@ -654,6 +654,16 @@ Felülírja a biztonsági ellenőrzést, és folytatja?</translation>
     </message>
     <message>
         <location line="+13"/>
+        <source>Read and dictate</source>
+        <translation>Felolvasás és diktálás</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Read the page aloud, or dictate with the voice</source>
+        <translation>Felolvassa az oldalt, vagy hanggal diktál</translation>
+    </message>
+    <message>
+        <location line="+13"/>
         <source>Quick note</source>
         <translation>Gyors jegyzet</translation>
     </message>
@@ -703,7 +713,7 @@ Felülírja a biztonsági ellenőrzést, és folytatja?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-1722"/>
+        <location line="-1738"/>
         <location line="+18"/>
         <location line="+15"/>
         <location line="+987"/>
@@ -988,7 +998,7 @@ Felülírja a biztonsági ellenőrzést, és folytatja?</translation>
         <translation>Ctrl+J</translation>
     </message>
     <message>
-        <location line="+189"/>
+        <location line="+205"/>
         <source>Text</source>
         <translation>Szöveg</translation>
     </message>
@@ -1164,7 +1174,7 @@ Felülírja a biztonsági ellenőrzést, és folytatja?</translation>
         <translation>Megjelenítés a kijelzőn</translation>
     </message>
     <message>
-        <location line="-1948"/>
+        <location line="-1964"/>
         <location line="+686"/>
         <location line="+3"/>
         <source>LibertyBoard</source>
@@ -1176,7 +1186,7 @@ Felülírja a biztonsági ellenőrzést, és folytatja?</translation>
         <translation>Kilépés az LibertyBoardból</translation>
     </message>
     <message>
-        <location line="+1617"/>
+        <location line="+1633"/>
         <source>Hide LibertyBoard</source>
         <translation>LibertyBoard elrejtése</translation>
     </message>
@@ -1216,7 +1226,7 @@ Felülírja a biztonsági ellenőrzést, és folytatja?</translation>
         <translation>Útmutató weboldal megnyitása</translation>
     </message>
     <message>
-        <location line="-837"/>
+        <location line="-853"/>
         <location line="+6"/>
         <source>Ruled Light Background</source>
         <translation>Vonalazott világos háttér</translation>
@@ -1228,13 +1238,13 @@ Felülírja a biztonsági ellenőrzést, és folytatja?</translation>
         <translation>Vonalazott sötét háttér</translation>
     </message>
     <message>
-        <location line="+764"/>
+        <location line="+780"/>
         <location line="+3"/>
         <source>Reset grid size</source>
         <translation>Rácsméret alaphelyzetbe állítása</translation>
     </message>
     <message>
-        <location line="-1654"/>
+        <location line="-1670"/>
         <source>Small Eraser</source>
         <translation>Kis radír</translation>
     </message>
@@ -1269,7 +1279,7 @@ Felülírja a biztonsági ellenőrzést, és folytatja?</translation>
         <translation>5. szín</translation>
     </message>
     <message>
-        <location line="+1547"/>
+        <location line="+1563"/>
         <location line="+3"/>
         <source>Draw intermediate grid lines</source>
         <translation>Köztes rácsvonalak rajzolása</translation>
@@ -1283,7 +1293,7 @@ Felülírja a biztonsági ellenőrzést, és folytatja?</translation>
         <translation>Webtartalom rögzítése</translation>
     </message>
     <message>
-        <location line="-1711"/>
+        <location line="-1727"/>
         <source>Template style</source>
         <translation>Sablonstílus</translation>
     </message>
@@ -1370,7 +1380,7 @@ Felülírja a biztonsági ellenőrzést, és folytatja?</translation>
         <translation>Seyes uralkodott sötét háttér</translation>
     </message>
     <message>
-        <location line="+541"/>
+        <location line="+557"/>
         <source>Import one or more pages (supported formats : jpg, png, svg, ubz, pdf)</source>
         <translation>Egy vagy több oldal importálása (támogatott formátumok: jpg, pdf, png, svg, ubz)</translation>
     </message>
@@ -1592,7 +1602,7 @@ Felülírja a biztonsági ellenőrzést, és folytatja?</translation>
 <context>
     <name>UBAttachmentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+575"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+699"/>
         <source>Insert file</source>
         <translation>Fájl beszúrása</translation>
     </message>
@@ -1833,7 +1843,7 @@ Felülírja a biztonsági ellenőrzést, és folytatja?</translation>
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+2143"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+2193"/>
         <source>That page is not in the document any more.</source>
         <translation>Az az oldal már nincs a dokumentumban.</translation>
     </message>
@@ -1918,7 +1928,7 @@ Felülírja a biztonsági ellenőrzést, és folytatja?</translation>
         <translation>Pipetta: szín felvétele a képernyőről</translation>
     </message>
     <message>
-        <location line="+173"/>
+        <location line="+174"/>
         <source>Choose a color</source>
         <translation>Szín kiválasztása</translation>
     </message>
@@ -1926,7 +1936,7 @@ Felülírja a biztonsági ellenőrzést, és folytatja?</translation>
 <context>
     <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+606"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+619"/>
         <source>Quick note</source>
         <translation>Gyors jegyzet</translation>
     </message>
@@ -2032,7 +2042,7 @@ Felülírja a biztonsági ellenőrzést, és folytatja?</translation>
         <translation>Képernyőeszköztár megjelenítése</translation>
     </message>
     <message>
-        <location line="+337"/>
+        <location line="+366"/>
         <source>Show Board on Secondary Screen</source>
         <translation>Tábla megjelenítése a második kijelzőn</translation>
     </message>
@@ -2042,7 +2052,7 @@ Felülírja a biztonsági ellenőrzést, és folytatja?</translation>
         <translation>Asztal  megjelenítése a második kijelzőn</translation>
     </message>
     <message>
-        <location line="-387"/>
+        <location line="-416"/>
         <source>Show LibertyBoard</source>
         <translation>LibertyBoard megjelenítése</translation>
     </message>
@@ -2690,7 +2700,7 @@ Do you want to continue?</source>
 <context>
     <name>UBEraserOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-921"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1047"/>
         <source>Eraser</source>
         <translation>Radír</translation>
     </message>
@@ -3537,12 +3547,11 @@ Letölti és telepíti most? A LibertyBoard menti a dokumentumait, bezárul, maj
         <translation>Szivárvány</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>The trail takes the colors of the rainbow, one after the other.</source>
-        <translation>A nyom egymás után felveszi a szivárvány színeit.</translation>
+        <translation type="vanished">A nyom egymás után felveszi a szivárvány színeit.</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+0"/>
         <source>Standard</source>
         <translation>Normál</translation>
     </message>
@@ -3552,7 +3561,12 @@ Letölti és telepíti most? A LibertyBoard menti a dokumentumait, bezárul, maj
         <translation>Fehér ragyogás</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+2"/>
+        <source>Rainbow: the trail takes the colors of the rainbow, one after the other.</source>
+        <translation>Szivárvány: a nyom egymás után felveszi a szivárvány színeit.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
         <source> %</source>
         <translation> %</translation>
     </message>
@@ -3573,7 +3587,7 @@ Letölti és telepíti most? A LibertyBoard menti a dokumentumait, bezárul, maj
         <translation>Elhalványulás időtartama</translation>
     </message>
     <message>
-        <location line="+55"/>
+        <location line="+65"/>
         <source>Wait</source>
         <translation>Várakozás</translation>
     </message>
@@ -3799,17 +3813,20 @@ Letölti és telepíti most? A LibertyBoard menti a dokumentumait, bezárul, maj
         <translation>Megnyitja a Windows diktálását: amit mond, oda íródik, ahol a szövegkurzor van</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+163"/>
+        <source>Lock the canvas: nothing can be drawn, written, highlighted, selected, moved or deleted; the laser pointer and the hand still work</source>
+        <translation>Vászon zárolása: semmit sem lehet rajzolni, írni, kiemelni, kijelölni, mozgatni vagy törölni; a lézer és a kéz továbbra is működik</translation>
+    </message>
+    <message>
         <source>Dictate</source>
-        <translation>Diktálás</translation>
+        <translation type="vanished">Diktálás</translation>
     </message>
     <message>
-        <location line="+0"/>
         <source>The dictation of the system is not available here. On Windows, press Windows + H in a text.</source>
-        <translation>A rendszer diktálása itt nem érhető el. Windowsban nyomja meg a Windows + H billentyűt egy szövegben.</translation>
+        <translation type="vanished">A rendszer diktálása itt nem érhető el. Windowsban nyomja meg a Windows + H billentyűt egy szövegben.</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="-160"/>
         <source>Transcribe an audio (coming with the AI)</source>
         <translation>Hangfelvétel átírása (az MI-vel érkezik)</translation>
     </message>
@@ -3845,12 +3862,12 @@ Letölti és telepíti most? A LibertyBoard menti a dokumentumait, bezárul, maj
     </message>
     <message>
         <location line="+66"/>
-        <location line="+357"/>
+        <location line="+359"/>
         <source>Saved</source>
         <translation>Mentve</translation>
     </message>
     <message>
-        <location line="-351"/>
+        <location line="-353"/>
         <source>Search...</source>
         <translation>Keresés...</translation>
     </message>
@@ -3872,18 +3889,17 @@ Letölti és telepíti most? A LibertyBoard menti a dokumentumait, bezárul, maj
     <message>
         <location line="+28"/>
         <location line="+9"/>
-        <location line="+22"/>
+        <location line="+24"/>
         <source>Lock canvas</source>
         <translation>Vászon zárolása</translation>
     </message>
     <message>
-        <location line="-29"/>
         <source>Lock the canvas: nothing can be drawn, written, highlighted, moved or deleted; the laser pointer, the hand and the selector still work</source>
-        <translation>Vászon zárolása: semmit sem lehet rajzolni, írni, kiemelni, mozgatni vagy törölni; a lézer, a kéz és a kijelölés továbbra is működik</translation>
+        <translation type="vanished">Vászon zárolása: semmit sem lehet rajzolni, írni, kiemelni, mozgatni vagy törölni; a lézer, a kéz és a kijelölés továbbra is működik</translation>
     </message>
     <message>
-        <location line="+7"/>
-        <location line="+20"/>
+        <location line="-24"/>
+        <location line="+22"/>
         <source>Unlock canvas</source>
         <translation>Vászon feloldása</translation>
     </message>
@@ -3929,7 +3945,7 @@ Letölti és telepíti most? A LibertyBoard menti a dokumentumait, bezárul, maj
 <context>
     <name>UBMarkerOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-159"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-164"/>
         <source>Marker</source>
         <translation>Jelölőtoll</translation>
     </message>
@@ -4053,7 +4069,7 @@ Figyelmen kívül hagyja ezeket a hibákat ennél a hosztnál?</translation>
 <context>
     <name>UBNoteOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+872"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+998"/>
         <source>Note</source>
         <translation>Jegyzet</translation>
     </message>
@@ -4374,7 +4390,7 @@ Később is megteheti: Kezdőlap &gt; Szöveg felismerése.</translation>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1035"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1161"/>
         <source>Pen</source>
         <translation>Toll</translation>
     </message>
@@ -4920,17 +4936,29 @@ Dinamikus szélesség</translation>
 <context>
     <name>UBReadAloud</name>
     <message>
-        <location filename="../../src/gui/UBReadAloud.cpp" line="+58"/>
+        <location filename="../../src/gui/UBReadAloud.cpp" line="+113"/>
+        <source>This is the last page.</source>
+        <translation>Ez az utolsó oldal.</translation>
+    </message>
+    <message>
+        <location line="+24"/>
+        <source>There is no text in this rectangle.</source>
+        <translation>Ebben a téglalapban nincs szöveg.</translation>
+    </message>
+    <message>
+        <location line="+11"/>
         <source>There is no text to read on this page: write or select a text, or open a PDF with text.</source>
         <translation>Ezen az oldalon nincs felolvasható szöveg: írjon vagy jelöljön ki egy szöveget, vagy nyisson meg egy szöveges PDF-et.</translation>
     </message>
     <message>
-        <location line="+23"/>
+        <location line="+33"/>
+        <location line="+24"/>
         <source>Read aloud</source>
         <translation>Felolvasás</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="-24"/>
+        <location line="+24"/>
         <source>The voices of the system could not be used to read aloud.</source>
         <translation>A rendszer hangjait nem lehetett használni a felolvasáshoz.</translation>
     </message>
@@ -5004,7 +5032,7 @@ Dinamikus szélesség</translation>
 <context>
     <name>UBSelectorOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+895"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1021"/>
         <source>Select</source>
         <translation>Kijelölés</translation>
     </message>
@@ -5042,7 +5070,7 @@ Dinamikus szélesség</translation>
 <context>
     <name>UBSettings</name>
     <message>
-        <location filename="../../src/core/UBSettings.cpp" line="+1141"/>
+        <location filename="../../src/core/UBSettings.cpp" line="+1143"/>
         <source>My Movies</source>
         <translation>Videóim</translation>
     </message>
@@ -5179,7 +5207,7 @@ Dinamikus szélesség</translation>
     </message>
     <message>
         <location line="+15"/>
-        <location line="+30"/>
+        <location line="+31"/>
         <location line="+3"/>
         <source>Stylus Palette</source>
         <translation type="unfinished">Képernyő eszköztár</translation>
@@ -5433,7 +5461,7 @@ Dinamikus szélesség</translation>
 <context>
     <name>UBSpotlightOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-282"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-295"/>
         <location line="+4"/>
         <source>Spotlight</source>
         <translation>Reflektor</translation>
@@ -5478,7 +5506,7 @@ Dinamikus szélesség</translation>
 <context>
     <name>UBStampOptionsPanel</name>
     <message>
-        <location line="+379"/>
+        <location line="+392"/>
         <source>Stamp</source>
         <translation>Bélyegző</translation>
     </message>
@@ -5514,7 +5542,7 @@ Dinamikus szélesség</translation>
 <context>
     <name>UBStylusPalette</name>
     <message>
-        <location filename="../../src/gui/UBStylusPalette.cpp" line="+82"/>
+        <location filename="../../src/gui/UBStylusPalette.cpp" line="+84"/>
         <source>Save a screenshot</source>
         <translation>Képernyőkép mentése</translation>
     </message>
@@ -5610,7 +5638,7 @@ Dinamikus szélesség</translation>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-773"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-899"/>
         <source>Color</source>
         <translation>Szín</translation>
     </message>
@@ -5720,6 +5748,96 @@ Please reboot the application to access the updated documents.</source>
         <location line="-92"/>
         <source>Remind me later</source>
         <translation>Később emlékeztessen</translation>
+    </message>
+</context>
+<context>
+    <name>UBVoiceOptionsPanel</name>
+    <message>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+384"/>
+        <source>Read and dictate</source>
+        <translation>Felolvasás és diktálás</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Read</source>
+        <translation>Felolvasás</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <location line="+27"/>
+        <location line="+65"/>
+        <source>Dictate</source>
+        <translation>Diktálás</translation>
+    </message>
+    <message>
+        <location line="-86"/>
+        <source>From the start</source>
+        <translation>Az elejétől</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Selected text</source>
+        <translation>Kijelölt szöveg</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>From the start: reads the page shown, then the next pages. Selected text: drag a rectangle over the text to read it.</source>
+        <translation>Az elejétől: felolvassa az oldalt, majd a következőket. Kijelölt szöveg: húzzon egy téglalapot a szöveg fölé a felolvasáshoz.</translation>
+    </message>
+    <message>
+        <location line="+15"/>
+        <source>▶ Play</source>
+        <translation>▶ Lejátszás</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Reads the page from its start, or goes on after a pause</source>
+        <translation>Felolvassa az oldalt az elejétől, vagy szünet után folytatja</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>⏸ Pause</source>
+        <translation>⏸ Szünet</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Pauses the reading</source>
+        <translation>Szünetelteti a felolvasást</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>⏹ Stop</source>
+        <translation>⏹ Leállítás</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Stops the reading</source>
+        <translation>Leállítja a felolvasást</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>⏭ Next page</source>
+        <translation>⏭ Következő oldal</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Goes to the next page and reads it</source>
+        <translation>A következő oldalra lép és felolvassa</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Opens the dictation of Windows (Windows + H)</source>
+        <translation>Megnyitja a Windows diktálást (Windows + H)</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Click in a text box, then on Dictate: what you say is written there.</source>
+        <translation>Kattintson egy szövegmezőbe, majd a Diktálás gombra: amit mond, oda lesz írva.</translation>
+    </message>
+    <message>
+        <location line="+62"/>
+        <source>The dictation of the system is not available here. On Windows, press Windows + H in a text.</source>
+        <translation>A rendszer diktálása itt nem érhető el. Windowsban nyomja meg a Windows + H billentyűt egy szövegben.</translation>
     </message>
 </context>
 <context>

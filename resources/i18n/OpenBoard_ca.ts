@@ -198,7 +198,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="vanished">Fons</translation>
     </message>
     <message>
-        <location line="+1548"/>
+        <location line="+1564"/>
         <source>Text</source>
         <translation>Text</translation>
     </message>
@@ -238,7 +238,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="vanished">Canvia el fons</translation>
     </message>
     <message>
-        <location line="-1609"/>
+        <location line="-1625"/>
         <source>Undo</source>
         <translation>Desfés</translation>
     </message>
@@ -778,12 +778,12 @@ Do you wish to override the security check and continue ?   </source>
     </message>
     <message>
         <location line="+9"/>
-        <location line="+617"/>
+        <location line="+633"/>
         <source>Erase Annotations</source>
         <translation>Esborra les anotacions</translation>
     </message>
     <message>
-        <location line="-614"/>
+        <location line="-630"/>
         <source>Erase All Annotations</source>
         <translation>Esborra totes les anotacions</translation>
     </message>
@@ -889,6 +889,16 @@ Do you wish to override the security check and continue ?   </source>
     </message>
     <message>
         <location line="+13"/>
+        <source>Read and dictate</source>
+        <translation>Llegeix i dicta</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Read the page aloud, or dictate with the voice</source>
+        <translation>Llegeix la pàgina en veu alta, o dicta amb la veu</translation>
+    </message>
+    <message>
+        <location line="+13"/>
         <source>Quick note</source>
         <translation>Nota ràpida</translation>
     </message>
@@ -932,7 +942,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="vanished">Ctrl+I</translation>
     </message>
     <message>
-        <location line="-699"/>
+        <location line="-715"/>
         <source>Erase Annotation</source>
         <translation>Esborra l&apos;anotació</translation>
     </message>
@@ -977,7 +987,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Mà</translation>
     </message>
     <message>
-        <location line="+278"/>
+        <location line="+294"/>
         <location line="+165"/>
         <source>Capture Part of the Screen</source>
         <translation>Captura part de la pantalla</translation>
@@ -1021,7 +1031,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Comprova si hi ha actualitzacions</translation>
     </message>
     <message>
-        <location line="-510"/>
+        <location line="-526"/>
         <source>Scroll Page</source>
         <translation>Desplaça la pàgina</translation>
     </message>
@@ -1076,7 +1086,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Ctrl+J</translation>
     </message>
     <message>
-        <location line="+192"/>
+        <location line="+208"/>
         <source>Write Text</source>
         <translation>Escriu text</translation>
     </message>
@@ -1172,7 +1182,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Mostra a la pantalla</translation>
     </message>
     <message>
-        <location line="-1948"/>
+        <location line="-1964"/>
         <location line="+686"/>
         <location line="+3"/>
         <source>LibertyBoard</source>
@@ -1184,7 +1194,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Surt de l&apos;LibertyBoard</translation>
     </message>
     <message>
-        <location line="+1599"/>
+        <location line="+1615"/>
         <source>Erase all Annotations</source>
         <translation>Esborra totes les anotacions</translation>
     </message>
@@ -1224,7 +1234,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Elimina el fons</translation>
     </message>
     <message>
-        <location line="-825"/>
+        <location line="-841"/>
         <location line="+6"/>
         <source>Ruled Light Background</source>
         <translation type="unfinished"></translation>
@@ -1236,7 +1246,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+752"/>
+        <location line="+768"/>
         <source>Open Tutorial</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1252,7 +1262,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-1654"/>
+        <location line="-1670"/>
         <source>Small Eraser</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1287,7 +1297,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1547"/>
+        <location line="+1563"/>
         <location line="+3"/>
         <source>Draw intermediate grid lines</source>
         <translation type="unfinished"></translation>
@@ -1301,7 +1311,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-1614"/>
+        <location line="-1630"/>
         <source>Documents Mode</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1343,7 +1353,7 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="+93"/>
         <source>Desktop</source>
-        <translation type="unfinished">Escriptori</translation>
+        <translation>Escriptori</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1368,7 +1378,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+541"/>
+        <location line="+557"/>
         <source>Import one or more pages (supported formats : jpg, png, svg, ubz, pdf)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1586,7 +1596,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBAttachmentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+575"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+699"/>
         <source>Insert file</source>
         <translation>Insereix un fitxer</translation>
     </message>
@@ -1820,7 +1830,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+2143"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+2193"/>
         <source>That page is not in the document any more.</source>
         <translation>Aquesta pàgina ja no és al document.</translation>
     </message>
@@ -1905,7 +1915,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Comptagotes: agafa un color de la pantalla</translation>
     </message>
     <message>
-        <location line="+173"/>
+        <location line="+174"/>
         <source>Choose a color</source>
         <translation>Trieu un color</translation>
     </message>
@@ -1913,7 +1923,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+606"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+619"/>
         <source>Quick note</source>
         <translation>Nota ràpida</translation>
     </message>
@@ -2019,7 +2029,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Mostra la barra d&apos;estris</translation>
     </message>
     <message>
-        <location line="+337"/>
+        <location line="+366"/>
         <source>Show Board on Secondary Screen</source>
         <translation>Mostra el tauler a la pantalla secundària</translation>
     </message>
@@ -2029,7 +2039,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Mostra l&apos;escriptori a la pantalla secundària</translation>
     </message>
     <message>
-        <location line="-387"/>
+        <location line="-416"/>
         <source>Show LibertyBoard</source>
         <translation>Mostra LibertyBoard</translation>
     </message>
@@ -2606,7 +2616,7 @@ Do you want to continue?</source>
 <context>
     <name>UBEraserOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-921"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1047"/>
         <source>Eraser</source>
         <translation>Esborrador</translation>
     </message>
@@ -3453,12 +3463,11 @@ Voleu baixar-la i instal·lar-la ara? LibertyBoard desa els documents, es tanca 
         <translation>Arc de Sant Martí</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>The trail takes the colors of the rainbow, one after the other.</source>
-        <translation>La estela pren els colors de l&apos;arc de Sant Martí, l&apos;un després de l&apos;altre.</translation>
+        <translation type="vanished">La estela pren els colors de l&apos;arc de Sant Martí, l&apos;un després de l&apos;altre.</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+0"/>
         <source>Standard</source>
         <translation>Estàndard</translation>
     </message>
@@ -3468,7 +3477,12 @@ Voleu baixar-la i instal·lar-la ara? LibertyBoard desa els documents, es tanca 
         <translation>Brillantor blanca</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+2"/>
+        <source>Rainbow: the trail takes the colors of the rainbow, one after the other.</source>
+        <translation>Arc de Sant Martí: l&apos;estela pren els colors de l&apos;arc de Sant Martí, l&apos;un després de l&apos;altre.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
         <source> %</source>
         <translation> %</translation>
     </message>
@@ -3489,7 +3503,7 @@ Voleu baixar-la i instal·lar-la ara? LibertyBoard desa els documents, es tanca 
         <translation>Durada de l&apos;esvaïment</translation>
     </message>
     <message>
-        <location line="+55"/>
+        <location line="+65"/>
         <source>Wait</source>
         <translation>Espera</translation>
     </message>
@@ -3715,17 +3729,20 @@ Voleu baixar-la i instal·lar-la ara? LibertyBoard desa els documents, es tanca 
         <translation>Obre el dictat de Windows: el que es diu s&apos;escriu on és el cursor de text</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+163"/>
+        <source>Lock the canvas: nothing can be drawn, written, highlighted, selected, moved or deleted; the laser pointer and the hand still work</source>
+        <translation>Bloqueja el llenç: no es pot dibuixar, escriure, ressaltar, seleccionar, moure ni esborrar res; el làser i la mà continuen funcionant</translation>
+    </message>
+    <message>
         <source>Dictate</source>
-        <translation>Dicta</translation>
+        <translation type="vanished">Dicta</translation>
     </message>
     <message>
-        <location line="+0"/>
         <source>The dictation of the system is not available here. On Windows, press Windows + H in a text.</source>
-        <translation>El dictat del sistema no està disponible aquí. A Windows, premeu Windows + H en un text.</translation>
+        <translation type="vanished">El dictat del sistema no està disponible aquí. A Windows, premeu Windows + H en un text.</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="-160"/>
         <source>Transcribe an audio (coming with the AI)</source>
         <translation>Transcriu un àudio (arribarà amb la IA)</translation>
     </message>
@@ -3761,12 +3778,12 @@ Voleu baixar-la i instal·lar-la ara? LibertyBoard desa els documents, es tanca 
     </message>
     <message>
         <location line="+66"/>
-        <location line="+357"/>
+        <location line="+359"/>
         <source>Saved</source>
         <translation>Desat</translation>
     </message>
     <message>
-        <location line="-351"/>
+        <location line="-353"/>
         <source>Search...</source>
         <translation>Cerca...</translation>
     </message>
@@ -3788,18 +3805,17 @@ Voleu baixar-la i instal·lar-la ara? LibertyBoard desa els documents, es tanca 
     <message>
         <location line="+28"/>
         <location line="+9"/>
-        <location line="+22"/>
+        <location line="+24"/>
         <source>Lock canvas</source>
         <translation>Bloqueja el llenç</translation>
     </message>
     <message>
-        <location line="-29"/>
         <source>Lock the canvas: nothing can be drawn, written, highlighted, moved or deleted; the laser pointer, the hand and the selector still work</source>
-        <translation>Bloqueja el llenç: no es pot dibuixar, escriure, ressaltar, moure ni esborrar res; el làser, la mà i la selecció continuen funcionant</translation>
+        <translation type="vanished">Bloqueja el llenç: no es pot dibuixar, escriure, ressaltar, moure ni esborrar res; el làser, la mà i la selecció continuen funcionant</translation>
     </message>
     <message>
-        <location line="+7"/>
-        <location line="+20"/>
+        <location line="-24"/>
+        <location line="+22"/>
         <source>Unlock canvas</source>
         <translation>Desbloqueja el llenç</translation>
     </message>
@@ -3845,7 +3861,7 @@ Voleu baixar-la i instal·lar-la ara? LibertyBoard desa els documents, es tanca 
 <context>
     <name>UBMarkerOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-159"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-164"/>
         <source>Marker</source>
         <translation>Marcador</translation>
     </message>
@@ -3969,7 +3985,7 @@ Voleu ignorar aquests errors per a aquest amfitrió?</translation>
 <context>
     <name>UBNoteOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+872"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+998"/>
         <source>Note</source>
         <translation>Nota</translation>
     </message>
@@ -4270,7 +4286,7 @@ També es pot fer després amb Inici &gt; Reconeix el text.</translation>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1035"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1161"/>
         <source>Pen</source>
         <translation>Bolígraf</translation>
     </message>
@@ -4808,17 +4824,29 @@ Amplada dinàmica</translation>
 <context>
     <name>UBReadAloud</name>
     <message>
-        <location filename="../../src/gui/UBReadAloud.cpp" line="+58"/>
+        <location filename="../../src/gui/UBReadAloud.cpp" line="+113"/>
+        <source>This is the last page.</source>
+        <translation>Aquesta és l&apos;última pàgina.</translation>
+    </message>
+    <message>
+        <location line="+24"/>
+        <source>There is no text in this rectangle.</source>
+        <translation>No hi ha text en aquest requadre.</translation>
+    </message>
+    <message>
+        <location line="+11"/>
         <source>There is no text to read on this page: write or select a text, or open a PDF with text.</source>
         <translation>No hi ha text per llegir en aquesta pàgina: escriviu o seleccioneu un text, o obriu un PDF amb text.</translation>
     </message>
     <message>
-        <location line="+23"/>
+        <location line="+33"/>
+        <location line="+24"/>
         <source>Read aloud</source>
         <translation>Llegeix en veu alta</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="-24"/>
+        <location line="+24"/>
         <source>The voices of the system could not be used to read aloud.</source>
         <translation>No s&apos;han pogut fer servir les veus del sistema per llegir en veu alta.</translation>
     </message>
@@ -4892,7 +4920,7 @@ Amplada dinàmica</translation>
 <context>
     <name>UBSelectorOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+895"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1021"/>
         <source>Select</source>
         <translation>Selecciona</translation>
     </message>
@@ -4930,7 +4958,7 @@ Amplada dinàmica</translation>
 <context>
     <name>UBSettings</name>
     <message>
-        <location filename="../../src/core/UBSettings.cpp" line="+1141"/>
+        <location filename="../../src/core/UBSettings.cpp" line="+1143"/>
         <source>My Movies</source>
         <translation>Les meves pel·lícules</translation>
     </message>
@@ -5067,7 +5095,7 @@ Amplada dinàmica</translation>
     </message>
     <message>
         <location line="+15"/>
-        <location line="+30"/>
+        <location line="+31"/>
         <location line="+3"/>
         <source>Stylus Palette</source>
         <translation type="unfinished">Barra d&apos;estris</translation>
@@ -5321,7 +5349,7 @@ Amplada dinàmica</translation>
 <context>
     <name>UBSpotlightOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-282"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-295"/>
         <location line="+4"/>
         <source>Spotlight</source>
         <translation>Focus</translation>
@@ -5366,7 +5394,7 @@ Amplada dinàmica</translation>
 <context>
     <name>UBStampOptionsPanel</name>
     <message>
-        <location line="+379"/>
+        <location line="+392"/>
         <source>Stamp</source>
         <translation>Segell</translation>
     </message>
@@ -5402,7 +5430,7 @@ Amplada dinàmica</translation>
 <context>
     <name>UBStylusPalette</name>
     <message>
-        <location filename="../../src/gui/UBStylusPalette.cpp" line="+82"/>
+        <location filename="../../src/gui/UBStylusPalette.cpp" line="+84"/>
         <source>Save a screenshot</source>
         <translation>Desa una captura de pantalla</translation>
     </message>
@@ -5487,7 +5515,7 @@ Amplada dinàmica</translation>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-773"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-899"/>
         <source>Color</source>
         <translation>Color</translation>
     </message>
@@ -5598,6 +5626,96 @@ Reinicieu l&apos;aplicació per accedir als documents actualitzats.</translation
         <location line="-92"/>
         <source>Remind me later</source>
         <translation>Recorda-m&apos;ho després</translation>
+    </message>
+</context>
+<context>
+    <name>UBVoiceOptionsPanel</name>
+    <message>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+384"/>
+        <source>Read and dictate</source>
+        <translation>Llegeix i dicta</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Read</source>
+        <translation>Llegeix</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <location line="+27"/>
+        <location line="+65"/>
+        <source>Dictate</source>
+        <translation>Dicta</translation>
+    </message>
+    <message>
+        <location line="-86"/>
+        <source>From the start</source>
+        <translation>Des de l&apos;inici</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Selected text</source>
+        <translation>Text seleccionat</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>From the start: reads the page shown, then the next pages. Selected text: drag a rectangle over the text to read it.</source>
+        <translation>Des de l&apos;inici: llegeix la pàgina i després les següents. Text seleccionat: arrossegueu un requadre sobre el text per llegir-lo.</translation>
+    </message>
+    <message>
+        <location line="+15"/>
+        <source>▶ Play</source>
+        <translation>▶ Reprodueix</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Reads the page from its start, or goes on after a pause</source>
+        <translation>Llegeix la pàgina des de l&apos;inici, o continua després d&apos;una pausa</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>⏸ Pause</source>
+        <translation>⏸ Pausa</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Pauses the reading</source>
+        <translation>Posa en pausa la lectura</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>⏹ Stop</source>
+        <translation>⏹ Atura</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Stops the reading</source>
+        <translation>Atura la lectura</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>⏭ Next page</source>
+        <translation>⏭ Pàgina següent</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Goes to the next page and reads it</source>
+        <translation>Passa a la pàgina següent i la llegeix</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Opens the dictation of Windows (Windows + H)</source>
+        <translation>Obre el dictat de Windows (Windows + H)</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Click in a text box, then on Dictate: what you say is written there.</source>
+        <translation>Feu clic en un quadre de text i després a Dicta: el que digueu s&apos;hi escriurà.</translation>
+    </message>
+    <message>
+        <location line="+62"/>
+        <source>The dictation of the system is not available here. On Windows, press Windows + H in a text.</source>
+        <translation>El dictat del sistema no està disponible aquí. A Windows, premeu Windows + H en un text.</translation>
     </message>
 </context>
 <context>

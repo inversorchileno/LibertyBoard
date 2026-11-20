@@ -553,12 +553,12 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
     </message>
     <message>
         <location line="+12"/>
-        <location line="+617"/>
+        <location line="+633"/>
         <source>Erase Annotations</source>
         <translation>Açıklamaları Sil</translation>
     </message>
     <message>
-        <location line="-605"/>
+        <location line="-621"/>
         <source>Clear Page</source>
         <translation>Sayfayı Temizle</translation>
     </message>
@@ -654,6 +654,16 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
     </message>
     <message>
         <location line="+13"/>
+        <source>Read and dictate</source>
+        <translation>Okuma ve dikte</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Read the page aloud, or dictate with the voice</source>
+        <translation>Sayfayı sesli okur veya sesle dikte ettirir</translation>
+    </message>
+    <message>
+        <location line="+13"/>
         <source>Quick note</source>
         <translation>Hızlı not</translation>
     </message>
@@ -703,7 +713,7 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-1722"/>
+        <location line="-1738"/>
         <location line="+18"/>
         <location line="+15"/>
         <location line="+987"/>
@@ -988,7 +998,7 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
         <translation>Ctrl+J</translation>
     </message>
     <message>
-        <location line="+189"/>
+        <location line="+205"/>
         <source>Text</source>
         <translation>Metin</translation>
     </message>
@@ -1164,7 +1174,7 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
         <translation>Ekranda Göster</translation>
     </message>
     <message>
-        <location line="-1948"/>
+        <location line="-1964"/>
         <location line="+686"/>
         <location line="+3"/>
         <source>LibertyBoard</source>
@@ -1176,7 +1186,7 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
         <translation>LibertyBoardʼdan Çık</translation>
     </message>
     <message>
-        <location line="+1617"/>
+        <location line="+1633"/>
         <source>Hide LibertyBoard</source>
         <translation>LibertyBoardʼu Gizle</translation>
     </message>
@@ -1206,7 +1216,7 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
         <translation>Arkaplanı kaldır</translation>
     </message>
     <message>
-        <location line="-825"/>
+        <location line="-841"/>
         <location line="+6"/>
         <source>Ruled Light Background</source>
         <translation>Çizgili Açık Arkaplan</translation>
@@ -1218,7 +1228,7 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
         <translation>Çizgili Koyu Arkaplan</translation>
     </message>
     <message>
-        <location line="+752"/>
+        <location line="+768"/>
         <source>Open Tutorial</source>
         <translation>Eğitimi Aç</translation>
     </message>
@@ -1234,7 +1244,7 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
         <translation>Izgara boyutunu sıfırla</translation>
     </message>
     <message>
-        <location line="-1654"/>
+        <location line="-1670"/>
         <source>Small Eraser</source>
         <translation>Küçük Silgi</translation>
     </message>
@@ -1269,7 +1279,7 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
         <translation>Renk 5</translation>
     </message>
     <message>
-        <location line="+1547"/>
+        <location line="+1563"/>
         <location line="+3"/>
         <source>Draw intermediate grid lines</source>
         <translation>Ara ızgara çizgileri çiz</translation>
@@ -1283,7 +1293,7 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
         <translation>Web İçeriğini Yakala</translation>
     </message>
     <message>
-        <location line="-1711"/>
+        <location line="-1727"/>
         <source>Template style</source>
         <translation>Şablon stili</translation>
     </message>
@@ -1370,7 +1380,7 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
         <translation>Seyes çizgili Koyu Arkaplan</translation>
     </message>
     <message>
-        <location line="+541"/>
+        <location line="+557"/>
         <source>Import one or more pages (supported formats : jpg, png, svg, ubz, pdf)</source>
         <translation>Bir veya daha fazla sayfayı içe aktar (desteklenen biçimler: jpg, png, svg, ubz, pdf)</translation>
     </message>
@@ -1592,7 +1602,7 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
 <context>
     <name>UBAttachmentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+575"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+699"/>
         <source>Insert file</source>
         <translation>Dosya ekle</translation>
     </message>
@@ -1826,7 +1836,7 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+2143"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+2193"/>
         <source>That page is not in the document any more.</source>
         <translation>Bu sayfa artık belgede değil.</translation>
     </message>
@@ -1911,7 +1921,7 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
         <translation>Damlalık: ekrandan bir renk al</translation>
     </message>
     <message>
-        <location line="+173"/>
+        <location line="+174"/>
         <source>Choose a color</source>
         <translation>Bir renk seçin</translation>
     </message>
@@ -1919,7 +1929,7 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
 <context>
     <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+606"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+619"/>
         <source>Quick note</source>
         <translation>Hızlı not</translation>
     </message>
@@ -2025,7 +2035,7 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
         <translation>Kalemler paletini göster</translation>
     </message>
     <message>
-        <location line="+337"/>
+        <location line="+366"/>
         <source>Show Board on Secondary Screen</source>
         <translation>Tahtayı İkincil Ekranda Göster</translation>
     </message>
@@ -2035,7 +2045,7 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
         <translation>Masaüstünü İkincil Ekranda Göster</translation>
     </message>
     <message>
-        <location line="-387"/>
+        <location line="-416"/>
         <source>Show LibertyBoard</source>
         <translation>LibertyBoardʼu Göster</translation>
     </message>
@@ -2619,7 +2629,7 @@ Do you want to continue?</source>
 <context>
     <name>UBEraserOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-921"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1047"/>
         <source>Eraser</source>
         <translation>Silgi</translation>
     </message>
@@ -3466,12 +3476,11 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>Gökkuşağı</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>The trail takes the colors of the rainbow, one after the other.</source>
-        <translation>İz, gökkuşağının renklerini birbiri ardına alır.</translation>
+        <translation type="vanished">İz, gökkuşağının renklerini birbiri ardına alır.</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+0"/>
         <source>Standard</source>
         <translation>Standart</translation>
     </message>
@@ -3481,7 +3490,12 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>Beyaz parlama</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+2"/>
+        <source>Rainbow: the trail takes the colors of the rainbow, one after the other.</source>
+        <translation>Gökkuşağı: iz, gökkuşağının renklerini sırayla alır.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
         <source> %</source>
         <translation> %</translation>
     </message>
@@ -3502,7 +3516,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>Solma süresi</translation>
     </message>
     <message>
-        <location line="+55"/>
+        <location line="+65"/>
         <source>Wait</source>
         <translation>Bekleme</translation>
     </message>
@@ -3728,17 +3742,20 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>Windows dikte özelliğini açar: söylenenler metin imlecinin olduğu yere yazılır</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+163"/>
+        <source>Lock the canvas: nothing can be drawn, written, highlighted, selected, moved or deleted; the laser pointer and the hand still work</source>
+        <translation>Tuvali kilitle: hiçbir şey çizilemez, yazılamaz, vurgulanamaz, seçilemez, taşınamaz veya silinemez; lazer ve el çalışmaya devam eder</translation>
+    </message>
+    <message>
         <source>Dictate</source>
-        <translation>Dikte et</translation>
+        <translation type="vanished">Dikte et</translation>
     </message>
     <message>
-        <location line="+0"/>
         <source>The dictation of the system is not available here. On Windows, press Windows + H in a text.</source>
-        <translation>Sistemin dikte özelliği burada kullanılamıyor. Windows&apos;ta bir metinde Windows + H tuşlarına basın.</translation>
+        <translation type="vanished">Sistemin dikte özelliği burada kullanılamıyor. Windows&apos;ta bir metinde Windows + H tuşlarına basın.</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="-160"/>
         <source>Transcribe an audio (coming with the AI)</source>
         <translation>Bir sesi yazıya dök (yapay zekâ ile gelecek)</translation>
     </message>
@@ -3774,12 +3791,12 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     </message>
     <message>
         <location line="+66"/>
-        <location line="+357"/>
+        <location line="+359"/>
         <source>Saved</source>
         <translation>Kaydedildi</translation>
     </message>
     <message>
-        <location line="-351"/>
+        <location line="-353"/>
         <source>Search...</source>
         <translation>Ara...</translation>
     </message>
@@ -3801,18 +3818,17 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     <message>
         <location line="+28"/>
         <location line="+9"/>
-        <location line="+22"/>
+        <location line="+24"/>
         <source>Lock canvas</source>
         <translation>Tuvali kilitle</translation>
     </message>
     <message>
-        <location line="-29"/>
         <source>Lock the canvas: nothing can be drawn, written, highlighted, moved or deleted; the laser pointer, the hand and the selector still work</source>
-        <translation>Tuvali kilitle: hiçbir şey çizilemez, yazılamaz, vurgulanamaz, taşınamaz ya da silinemez; lazer, el ve seçim çalışmaya devam eder</translation>
+        <translation type="vanished">Tuvali kilitle: hiçbir şey çizilemez, yazılamaz, vurgulanamaz, taşınamaz ya da silinemez; lazer, el ve seçim çalışmaya devam eder</translation>
     </message>
     <message>
-        <location line="+7"/>
-        <location line="+20"/>
+        <location line="-24"/>
+        <location line="+22"/>
         <source>Unlock canvas</source>
         <translation>Tuvalin kilidini aç</translation>
     </message>
@@ -3858,7 +3874,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
 <context>
     <name>UBMarkerOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-159"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-164"/>
         <source>Marker</source>
         <translation>Fosforlu Kalem</translation>
     </message>
@@ -3981,7 +3997,7 @@ Bu ana bilgisayar için yukarıdaki hatalar yok sayılsın mı?</translation>
 <context>
     <name>UBNoteOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+872"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+998"/>
         <source>Note</source>
         <translation>Not</translation>
     </message>
@@ -4303,7 +4319,7 @@ Bu daha sonra Giriş &gt; Metni tanı ile de yapılabilir.</translation>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1035"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1161"/>
         <source>Pen</source>
         <translation>Kalem</translation>
     </message>
@@ -4844,17 +4860,29 @@ Dinamik kalınlık</translation>
 <context>
     <name>UBReadAloud</name>
     <message>
-        <location filename="../../src/gui/UBReadAloud.cpp" line="+58"/>
+        <location filename="../../src/gui/UBReadAloud.cpp" line="+113"/>
+        <source>This is the last page.</source>
+        <translation>Bu son sayfa.</translation>
+    </message>
+    <message>
+        <location line="+24"/>
+        <source>There is no text in this rectangle.</source>
+        <translation>Bu dikdörtgende metin yok.</translation>
+    </message>
+    <message>
+        <location line="+11"/>
         <source>There is no text to read on this page: write or select a text, or open a PDF with text.</source>
         <translation>Bu sayfada okunacak metin yok: bir metin yazın ya da seçin veya metin içeren bir PDF açın.</translation>
     </message>
     <message>
-        <location line="+23"/>
+        <location line="+33"/>
+        <location line="+24"/>
         <source>Read aloud</source>
         <translation>Sesli oku</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="-24"/>
+        <location line="+24"/>
         <source>The voices of the system could not be used to read aloud.</source>
         <translation>Sesli okumak için sistemin sesleri kullanılamadı.</translation>
     </message>
@@ -4928,7 +4956,7 @@ Dinamik kalınlık</translation>
 <context>
     <name>UBSelectorOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+895"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1021"/>
         <source>Select</source>
         <translation>Seç</translation>
     </message>
@@ -4966,7 +4994,7 @@ Dinamik kalınlık</translation>
 <context>
     <name>UBSettings</name>
     <message>
-        <location filename="../../src/core/UBSettings.cpp" line="+1141"/>
+        <location filename="../../src/core/UBSettings.cpp" line="+1143"/>
         <source>My Movies</source>
         <translation>Filimlerim</translation>
     </message>
@@ -5103,7 +5131,7 @@ Dinamik kalınlık</translation>
     </message>
     <message>
         <location line="+15"/>
-        <location line="+30"/>
+        <location line="+31"/>
         <location line="+3"/>
         <source>Stylus Palette</source>
         <translation type="unfinished">Kalemler Paleti</translation>
@@ -5357,7 +5385,7 @@ Dinamik kalınlık</translation>
 <context>
     <name>UBSpotlightOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-282"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-295"/>
         <location line="+4"/>
         <source>Spotlight</source>
         <translation>Spot ışığı</translation>
@@ -5402,7 +5430,7 @@ Dinamik kalınlık</translation>
 <context>
     <name>UBStampOptionsPanel</name>
     <message>
-        <location line="+379"/>
+        <location line="+392"/>
         <source>Stamp</source>
         <translation>Damga</translation>
     </message>
@@ -5438,7 +5466,7 @@ Dinamik kalınlık</translation>
 <context>
     <name>UBStylusPalette</name>
     <message>
-        <location filename="../../src/gui/UBStylusPalette.cpp" line="+82"/>
+        <location filename="../../src/gui/UBStylusPalette.cpp" line="+84"/>
         <source>Save a screenshot</source>
         <translation>Ekran görüntüsü kaydet</translation>
     </message>
@@ -5534,7 +5562,7 @@ Dinamik kalınlık</translation>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-773"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-899"/>
         <source>Color</source>
         <translation>Renk</translation>
     </message>
@@ -5648,6 +5676,96 @@ Güncellenen belgelere erişmek için uygulamayı yeniden başlatın.</translati
         <location line="-92"/>
         <source>Remind me later</source>
         <translation>Daha sonra hatırlat</translation>
+    </message>
+</context>
+<context>
+    <name>UBVoiceOptionsPanel</name>
+    <message>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+384"/>
+        <source>Read and dictate</source>
+        <translation>Okuma ve dikte</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Read</source>
+        <translation>Oku</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <location line="+27"/>
+        <location line="+65"/>
+        <source>Dictate</source>
+        <translation>Dikte et</translation>
+    </message>
+    <message>
+        <location line="-86"/>
+        <source>From the start</source>
+        <translation>Baştan</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Selected text</source>
+        <translation>Seçili metin</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>From the start: reads the page shown, then the next pages. Selected text: drag a rectangle over the text to read it.</source>
+        <translation>Baştan: sayfayı, sonra sonraki sayfaları okur. Seçili metin: okumak için metnin üzerine bir dikdörtgen sürükleyin.</translation>
+    </message>
+    <message>
+        <location line="+15"/>
+        <source>▶ Play</source>
+        <translation>▶ Oynat</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Reads the page from its start, or goes on after a pause</source>
+        <translation>Sayfayı baştan okur veya duraklatmadan sonra devam eder</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>⏸ Pause</source>
+        <translation>⏸ Duraklat</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Pauses the reading</source>
+        <translation>Okumayı duraklatır</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>⏹ Stop</source>
+        <translation>⏹ Durdur</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Stops the reading</source>
+        <translation>Okumayı durdurur</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>⏭ Next page</source>
+        <translation>⏭ Sonraki sayfa</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Goes to the next page and reads it</source>
+        <translation>Sonraki sayfaya geçer ve okur</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Opens the dictation of Windows (Windows + H)</source>
+        <translation>Windows dikte özelliğini açar (Windows + H)</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Click in a text box, then on Dictate: what you say is written there.</source>
+        <translation>Bir metin kutusuna, sonra Dikte Et&apos;e tıklayın: söyledikleriniz oraya yazılır.</translation>
+    </message>
+    <message>
+        <location line="+62"/>
+        <source>The dictation of the system is not available here. On Windows, press Windows + H in a text.</source>
+        <translation>Sistemin dikte özelliği burada kullanılamıyor. Windows&apos;ta bir metinde Windows + H tuşlarına basın.</translation>
     </message>
 </context>
 <context>

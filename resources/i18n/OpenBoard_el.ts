@@ -553,12 +553,12 @@ Do you wish to override the security check and continue ?   </source>
     </message>
     <message>
         <location line="+12"/>
-        <location line="+617"/>
+        <location line="+633"/>
         <source>Erase Annotations</source>
         <translation>Σβήσιμο σχολίων</translation>
     </message>
     <message>
-        <location line="-605"/>
+        <location line="-621"/>
         <source>Clear Page</source>
         <translation>Καθαρισμός σελίδας</translation>
     </message>
@@ -654,6 +654,16 @@ Do you wish to override the security check and continue ?   </source>
     </message>
     <message>
         <location line="+13"/>
+        <source>Read and dictate</source>
+        <translation>Ανάγνωση και υπαγόρευση</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Read the page aloud, or dictate with the voice</source>
+        <translation>Διαβάζει τη σελίδα φωναχτά ή υπαγορεύει με τη φωνή</translation>
+    </message>
+    <message>
+        <location line="+13"/>
         <source>Quick note</source>
         <translation>Γρήγορη σημείωση</translation>
     </message>
@@ -703,7 +713,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-1722"/>
+        <location line="-1738"/>
         <location line="+18"/>
         <location line="+15"/>
         <location line="+987"/>
@@ -983,7 +993,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Ctrl+J</translation>
     </message>
     <message>
-        <location line="+189"/>
+        <location line="+205"/>
         <source>Text</source>
         <translation>Κείμενο</translation>
     </message>
@@ -1159,7 +1169,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Εμφάνιση στην Οθόνη</translation>
     </message>
     <message>
-        <location line="-1948"/>
+        <location line="-1964"/>
         <location line="+686"/>
         <location line="+3"/>
         <source>LibertyBoard</source>
@@ -1171,7 +1181,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Εξοδος από το LibertyBoard</translation>
     </message>
     <message>
-        <location line="+1617"/>
+        <location line="+1633"/>
         <source>Hide LibertyBoard</source>
         <translation>Απόκρυψη του LibertyBoard</translation>
     </message>
@@ -1196,7 +1206,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Αφαίρεση παρασκηνίου</translation>
     </message>
     <message>
-        <location line="-825"/>
+        <location line="-841"/>
         <location line="+6"/>
         <source>Ruled Light Background</source>
         <translation>Γραμμές σε ανοιχτόχρωμο παρασκήνιο</translation>
@@ -1213,7 +1223,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Επιλέξτε και τροποποιήστε αντικείμενα</translation>
     </message>
     <message>
-        <location line="+560"/>
+        <location line="+576"/>
         <source>Interact with items</source>
         <translation>Αλληλεπιδράστε με στοιχεία</translation>
     </message>
@@ -1234,7 +1244,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Επαναφορά μεγέθους πλέγματος</translation>
     </message>
     <message>
-        <location line="-1654"/>
+        <location line="-1670"/>
         <source>Small Eraser</source>
         <translation>Μικρή γόμα</translation>
     </message>
@@ -1269,7 +1279,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Χρώμα 5</translation>
     </message>
     <message>
-        <location line="+1547"/>
+        <location line="+1563"/>
         <location line="+3"/>
         <source>Draw intermediate grid lines</source>
         <translation>Σχεδίαση ενδιάμεσων γραμμών πλέγματος</translation>
@@ -1283,7 +1293,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Λήψη στιγμιότυπου διαδικτυακού περιεχομένου</translation>
     </message>
     <message>
-        <location line="-1711"/>
+        <location line="-1727"/>
         <source>Template style</source>
         <translation>Στυλ προτύπου</translation>
     </message>
@@ -1370,7 +1380,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Γραμμές Seyes σε σκουρόχρωμο παρασκήνιο</translation>
     </message>
     <message>
-        <location line="+541"/>
+        <location line="+557"/>
         <source>Import one or more pages (supported formats : jpg, png, svg, ubz, pdf)</source>
         <translation>Εισαγωγή μιας ή περισσότερων σελίδων (υποστηριζόμενες μορφές : jpg, png, svg, ubz, pdf)</translation>
     </message>
@@ -1592,7 +1602,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBAttachmentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+575"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+699"/>
         <source>Insert file</source>
         <translation>Εισαγωγή αρχείου</translation>
     </message>
@@ -1826,7 +1836,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+2143"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+2193"/>
         <source>That page is not in the document any more.</source>
         <translation>Αυτή η σελίδα δεν υπάρχει πια στο έγγραφο.</translation>
     </message>
@@ -1911,7 +1921,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Σταγονόμετρο: πάρτε ένα χρώμα από την οθόνη</translation>
     </message>
     <message>
-        <location line="+173"/>
+        <location line="+174"/>
         <source>Choose a color</source>
         <translation>Επιλέξτε χρώμα</translation>
     </message>
@@ -1919,7 +1929,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+606"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+619"/>
         <source>Quick note</source>
         <translation>Γρήγορη σημείωση</translation>
     </message>
@@ -2025,7 +2035,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Εμφάνιση της εργαλειοθήκης</translation>
     </message>
     <message>
-        <location line="+337"/>
+        <location line="+366"/>
         <source>Show Board on Secondary Screen</source>
         <translation>Εμφάνιση του Πίνακα στη δευτερεύουσα οθόνη</translation>
     </message>
@@ -2035,7 +2045,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Εμφάνιση της Επιφάνειας Εργασίας στη δευτερεύουσα οθόνη</translation>
     </message>
     <message>
-        <location line="-387"/>
+        <location line="-416"/>
         <source>Show LibertyBoard</source>
         <translation>Εμφάνιση LibertyBoard</translation>
     </message>
@@ -2624,7 +2634,7 @@ Do you want to continue?</source>
 <context>
     <name>UBEraserOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-921"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1047"/>
         <source>Eraser</source>
         <translation>Γόμα</translation>
     </message>
@@ -3471,12 +3481,11 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>Ουράνιο τόξο</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>The trail takes the colors of the rainbow, one after the other.</source>
-        <translation>Το ίχνος παίρνει τα χρώματα του ουράνιου τόξου, το ένα μετά το άλλο.</translation>
+        <translation type="vanished">Το ίχνος παίρνει τα χρώματα του ουράνιου τόξου, το ένα μετά το άλλο.</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+0"/>
         <source>Standard</source>
         <translation>Κανονικό</translation>
     </message>
@@ -3486,7 +3495,12 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>Λευκή λάμψη</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+2"/>
+        <source>Rainbow: the trail takes the colors of the rainbow, one after the other.</source>
+        <translation>Ουράνιο τόξο: το ίχνος παίρνει τα χρώματα του ουράνιου τόξου, το ένα μετά το άλλο.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
         <source> %</source>
         <translation> %</translation>
     </message>
@@ -3507,7 +3521,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>Διάρκεια εξασθένισης</translation>
     </message>
     <message>
-        <location line="+55"/>
+        <location line="+65"/>
         <source>Wait</source>
         <translation>Αναμονή</translation>
     </message>
@@ -3733,17 +3747,20 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>Ανοίγει την υπαγόρευση των Windows: ό,τι λέγεται γράφεται εκεί που είναι ο δρομέας κειμένου</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+163"/>
+        <source>Lock the canvas: nothing can be drawn, written, highlighted, selected, moved or deleted; the laser pointer and the hand still work</source>
+        <translation>Κλείδωμα καμβά: τίποτα δεν μπορεί να σχεδιαστεί, να γραφτεί, να επισημανθεί, να επιλεγεί, να μετακινηθεί ή να διαγραφεί· το λέιζερ και το χέρι λειτουργούν ακόμα</translation>
+    </message>
+    <message>
         <source>Dictate</source>
-        <translation>Υπαγόρευση</translation>
+        <translation type="vanished">Υπαγόρευση</translation>
     </message>
     <message>
-        <location line="+0"/>
         <source>The dictation of the system is not available here. On Windows, press Windows + H in a text.</source>
-        <translation>Η υπαγόρευση του συστήματος δεν είναι διαθέσιμη εδώ. Στα Windows πατήστε Windows + H σε ένα κείμενο.</translation>
+        <translation type="vanished">Η υπαγόρευση του συστήματος δεν είναι διαθέσιμη εδώ. Στα Windows πατήστε Windows + H σε ένα κείμενο.</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="-160"/>
         <source>Transcribe an audio (coming with the AI)</source>
         <translation>Απομαγνητοφώνηση ήχου (θα έρθει με την ΤΝ)</translation>
     </message>
@@ -3779,12 +3796,12 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     </message>
     <message>
         <location line="+66"/>
-        <location line="+357"/>
+        <location line="+359"/>
         <source>Saved</source>
         <translation>Αποθηκεύτηκε</translation>
     </message>
     <message>
-        <location line="-351"/>
+        <location line="-353"/>
         <source>Search...</source>
         <translation>Αναζήτηση...</translation>
     </message>
@@ -3806,18 +3823,17 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     <message>
         <location line="+28"/>
         <location line="+9"/>
-        <location line="+22"/>
+        <location line="+24"/>
         <source>Lock canvas</source>
         <translation>Κλείδωμα καμβά</translation>
     </message>
     <message>
-        <location line="-29"/>
         <source>Lock the canvas: nothing can be drawn, written, highlighted, moved or deleted; the laser pointer, the hand and the selector still work</source>
-        <translation>Κλείδωμα καμβά: τίποτα δεν μπορεί να σχεδιαστεί, να γραφτεί, να επισημανθεί, να μετακινηθεί ή να διαγραφεί· το λέιζερ, το χέρι και η επιλογή λειτουργούν ακόμα</translation>
+        <translation type="vanished">Κλείδωμα καμβά: τίποτα δεν μπορεί να σχεδιαστεί, να γραφτεί, να επισημανθεί, να μετακινηθεί ή να διαγραφεί· το λέιζερ, το χέρι και η επιλογή λειτουργούν ακόμα</translation>
     </message>
     <message>
-        <location line="+7"/>
-        <location line="+20"/>
+        <location line="-24"/>
+        <location line="+22"/>
         <source>Unlock canvas</source>
         <translation>Ξεκλείδωμα καμβά</translation>
     </message>
@@ -3863,7 +3879,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
 <context>
     <name>UBMarkerOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-159"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-164"/>
         <source>Marker</source>
         <translation>Μαρκαδόρος</translation>
     </message>
@@ -3987,7 +4003,7 @@ Do you want to ignore these errors for this host?</source>
 <context>
     <name>UBNoteOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+872"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+998"/>
         <source>Note</source>
         <translation>Σημείωση</translation>
     </message>
@@ -4308,7 +4324,7 @@ It can also be done later with Home &gt; Recognize text.</source>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1035"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1161"/>
         <source>Pen</source>
         <translation>Πένα</translation>
     </message>
@@ -4846,17 +4862,29 @@ Dynamic width</source>
 <context>
     <name>UBReadAloud</name>
     <message>
-        <location filename="../../src/gui/UBReadAloud.cpp" line="+58"/>
+        <location filename="../../src/gui/UBReadAloud.cpp" line="+113"/>
+        <source>This is the last page.</source>
+        <translation>Αυτή είναι η τελευταία σελίδα.</translation>
+    </message>
+    <message>
+        <location line="+24"/>
+        <source>There is no text in this rectangle.</source>
+        <translation>Δεν υπάρχει κείμενο σε αυτό το ορθογώνιο.</translation>
+    </message>
+    <message>
+        <location line="+11"/>
         <source>There is no text to read on this page: write or select a text, or open a PDF with text.</source>
         <translation>Δεν υπάρχει κείμενο για ανάγνωση σε αυτή τη σελίδα: γράψτε ή επιλέξτε ένα κείμενο, ή ανοίξτε ένα PDF με κείμενο.</translation>
     </message>
     <message>
-        <location line="+23"/>
+        <location line="+33"/>
+        <location line="+24"/>
         <source>Read aloud</source>
         <translation>Ανάγνωση φωναχτά</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="-24"/>
+        <location line="+24"/>
         <source>The voices of the system could not be used to read aloud.</source>
         <translation>Οι φωνές του συστήματος δεν μπόρεσαν να χρησιμοποιηθούν για ανάγνωση φωναχτά.</translation>
     </message>
@@ -4930,7 +4958,7 @@ Dynamic width</source>
 <context>
     <name>UBSelectorOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+895"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1021"/>
         <source>Select</source>
         <translation>Επιλογή</translation>
     </message>
@@ -4968,7 +4996,7 @@ Dynamic width</source>
 <context>
     <name>UBSettings</name>
     <message>
-        <location filename="../../src/core/UBSettings.cpp" line="+1141"/>
+        <location filename="../../src/core/UBSettings.cpp" line="+1143"/>
         <source>My Movies</source>
         <translation>Οι ταινίες μου</translation>
     </message>
@@ -5105,7 +5133,7 @@ Dynamic width</source>
     </message>
     <message>
         <location line="+15"/>
-        <location line="+30"/>
+        <location line="+31"/>
         <location line="+3"/>
         <source>Stylus Palette</source>
         <translation type="unfinished">Παλέτα εργαλείων</translation>
@@ -5359,7 +5387,7 @@ Dynamic width</source>
 <context>
     <name>UBSpotlightOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-282"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-295"/>
         <location line="+4"/>
         <source>Spotlight</source>
         <translation>Προβολέας</translation>
@@ -5404,7 +5432,7 @@ Dynamic width</source>
 <context>
     <name>UBStampOptionsPanel</name>
     <message>
-        <location line="+379"/>
+        <location line="+392"/>
         <source>Stamp</source>
         <translation>Σφραγίδα</translation>
     </message>
@@ -5440,7 +5468,7 @@ Dynamic width</source>
 <context>
     <name>UBStylusPalette</name>
     <message>
-        <location filename="../../src/gui/UBStylusPalette.cpp" line="+82"/>
+        <location filename="../../src/gui/UBStylusPalette.cpp" line="+84"/>
         <source>Save a screenshot</source>
         <translation>Αποθήκευση στιγμιότυπου οθόνης</translation>
     </message>
@@ -5536,7 +5564,7 @@ Dynamic width</source>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-773"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-899"/>
         <source>Color</source>
         <translation>Χρώμα</translation>
     </message>
@@ -5647,6 +5675,96 @@ Please reboot the application to access the updated documents.</source>
         <location line="-92"/>
         <source>Remind me later</source>
         <translation>Υπενθύμιση αργότερα</translation>
+    </message>
+</context>
+<context>
+    <name>UBVoiceOptionsPanel</name>
+    <message>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+384"/>
+        <source>Read and dictate</source>
+        <translation>Ανάγνωση και υπαγόρευση</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Read</source>
+        <translation>Ανάγνωση</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <location line="+27"/>
+        <location line="+65"/>
+        <source>Dictate</source>
+        <translation>Υπαγόρευση</translation>
+    </message>
+    <message>
+        <location line="-86"/>
+        <source>From the start</source>
+        <translation>Από την αρχή</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Selected text</source>
+        <translation>Επιλεγμένο κείμενο</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>From the start: reads the page shown, then the next pages. Selected text: drag a rectangle over the text to read it.</source>
+        <translation>Από την αρχή: διαβάζει τη σελίδα και μετά τις επόμενες. Επιλεγμένο κείμενο: σύρετε ένα ορθογώνιο πάνω από το κείμενο για να το διαβάσει.</translation>
+    </message>
+    <message>
+        <location line="+15"/>
+        <source>▶ Play</source>
+        <translation>▶ Αναπαραγωγή</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Reads the page from its start, or goes on after a pause</source>
+        <translation>Διαβάζει τη σελίδα από την αρχή ή συνεχίζει μετά από παύση</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>⏸ Pause</source>
+        <translation>⏸ Παύση</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Pauses the reading</source>
+        <translation>Παύει την ανάγνωση</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>⏹ Stop</source>
+        <translation>⏹ Διακοπή</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Stops the reading</source>
+        <translation>Σταματά την ανάγνωση</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>⏭ Next page</source>
+        <translation>⏭ Επόμενη σελίδα</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Goes to the next page and reads it</source>
+        <translation>Πηγαίνει στην επόμενη σελίδα και τη διαβάζει</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Opens the dictation of Windows (Windows + H)</source>
+        <translation>Ανοίγει την υπαγόρευση των Windows (Windows + H)</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Click in a text box, then on Dictate: what you say is written there.</source>
+        <translation>Κάντε κλικ σε ένα πλαίσιο κειμένου και μετά στο Υπαγόρευση: ό,τι λέτε γράφεται εκεί.</translation>
+    </message>
+    <message>
+        <location line="+62"/>
+        <source>The dictation of the system is not available here. On Windows, press Windows + H in a text.</source>
+        <translation>Η υπαγόρευση του συστήματος δεν είναι διαθέσιμη εδώ. Στα Windows πατήστε Windows + H σε ένα κείμενο.</translation>
     </message>
 </context>
 <context>
