@@ -34,6 +34,9 @@
 #include <QWebEngineView>
 #include <QImage>
 #include <QWebEnginePage>
+#include <QWebEngineProfile>
+
+#include "core/UBSettings.h"
 #include <QApplication>
 
 QPointer<UBGifWindow> UBGifWindow::sWindow;
@@ -60,8 +63,11 @@ UBGifWindow::UBGifWindow(QWidget* parent)
     header->addWidget(title, 1);
     header->addWidget(close);
 
-    // The page of KLIPY as it is, with its search at the top.
+    // The page of KLIPY as it is, with its search at the top. Its own
+    // profile keeps the cookies between the openings of the window, so
+    // that the page does not ask again about them.
     mPage = new QWebEngineView(this);
+    mPage->setPage(new QWebEnginePage(profile(), mPage));
     mPage->load(QUrl("https://klipy.com/gifs"));
 
     auto layout = new QVBoxLayout(this);
@@ -69,6 +75,21 @@ UBGifWindow::UBGifWindow(QWidget* parent)
     layout->setSpacing(0);
     layout->addLayout(header);
     layout->addWidget(mPage, 1);
+}
+
+QWebEngineProfile* UBGifWindow::profile()
+{
+    static QWebEngineProfile* gifProfile = nullptr;
+
+    if (!gifProfile)
+    {
+        gifProfile = new QWebEngineProfile(QStringLiteral("LibertyBoardGifs"), qApp);
+        gifProfile->setPersistentStoragePath(UBSettings::userDataDirectory() + "/webprofiles/gifs");
+        gifProfile->setCachePath(UBSettings::userDataDirectory() + "/webprofiles/gifs/cache");
+        gifProfile->setPersistentCookiesPolicy(QWebEngineProfile::ForcePersistentCookies);
+    }
+
+    return gifProfile;
 }
 
 void UBGifWindow::toggle(QWidget* beside)

@@ -28,6 +28,7 @@
 #include <functional>
 #include <QWidget>
 
+class QWebEngineProfile;
 class QWebEngineView;
 
 /**
@@ -66,6 +67,9 @@ protected:
 
 private:
     explicit UBGifWindow(QWidget* parent = nullptr);
+
+    /** @brief The web profile of the window, which keeps its cookies on the disk. */
+    static QWebEngineProfile* profile();
     void placeBeside(QWidget* beside);
 
     QWebEngineView* mPage{nullptr};
