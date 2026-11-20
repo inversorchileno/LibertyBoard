@@ -277,6 +277,14 @@ Luis revisó la compilación 21 y entregó «observaciones_V2.docx» con 15 punt
   - Al final, las **teclas fijas** de OpenBoard (páginas con RePág/AvPág y flechas, zoom con Ctrl+ +/−, desplazamiento con Ctrl+flechas), que no se cambian.
   - Los atajos de las herramientas funcionan también con la herramienta quitada de la barra. En el modo escritorio no se pudieron probar en Linux (la capa transparente no recibe el teclado en la prueba).
 
+- **Panel de IA** (#32, `src/gui/UBAiPanel`): botón **IA** (estrellas) en la barra de la pizarra, atajo F9. Pregunta la acción: Resumen, Traducción (pide idioma de origen, o «Detectarlo», y de destino), Crear imagen (pide la descripción), Quitar fondo, Borrado generativo (pide qué borrar) o Transcribir un audio (pide el archivo); luego si se da **una parte de la página** (se arrastra un rectángulo, Esc cancela) o **todo el PDF / la pizarra** (o la página entera, para las de imagen). Lo exporta con las anotaciones (`<datos>/ai/LibertyBoard-selection.png`, `-page.png` o `-document.pdf`) y abre a la derecha la página de la IA, con perfil web propio (`webprofiles/ai`, guarda la sesión; el navegador no se presenta como QtWebEngine para que dejen iniciar sesión).
+  - La instrucción para la IA la arma LibertyBoard (en el idioma del programa), se escribe sola en la caja de la IA y queda copiada; el archivo se entrega a la página como si se eligiera o pegara (hasta 20 MB). Si la página no lo permite: Ctrl+V y arrastrar el archivo desde el panel. Depende de cómo esté hecha cada página: puede dejar de funcionar si la cambian.
+  - Lista de IA arriba del panel; el borde izquierdo se arrastra para ensanchar. Si después de dar la instrucción la página dice que se alcanzó un límite («You've reached...», «Has alcanzado el límite»...), aviso con botones para hacer lo mismo en otra IA.
+  - El resultado vuelve a la página arrastrándolo (las imágenes se toman como imagen, no como dirección, porque esa dirección exige la sesión), con **Pegar en la página**, o solo si la IA lo hace descargar: queda en Descargas y una imagen se pone en la página.
+  - Preferencias, pestaña **IA**: nombre y dirección de cada IA (ChatGPT, Claude, Gemini y Copilot por defecto), Agregar, Quitar y Lista original.
+  - **Transcribir un audio** también en Edición → Leer y dictar (Ctrl+F11) y junto a Dictar en las opciones de Texto.
+  - Probado en Linux con una página local que imita un chat (las páginas de las IA no se alcanzan desde la máquina de pruebas): instrucción escrita, PDF y PNG adjuntados, aviso de límite y arrastre de una imagen a la página. Falta probarlo con las IA reales en Windows.
+
 ## Forma de trabajo
 
 - El dueño es **Luis** (Chile), analista financiero, sin experiencia en programación. Habla en español; se le responde en español, claro y sin jerga. Usa Windows 11, pantalla ancha (unos 2540 px) y lápiz digital.
