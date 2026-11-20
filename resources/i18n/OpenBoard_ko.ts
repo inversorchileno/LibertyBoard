@@ -742,12 +742,12 @@ Do you wish to override the security check and continue ?   </source>
     </message>
     <message>
         <location line="+9"/>
-        <location line="+633"/>
+        <location line="+649"/>
         <source>Erase Annotations</source>
         <translation>주석 지우기</translation>
     </message>
     <message>
-        <location line="-630"/>
+        <location line="-646"/>
         <source>Erase All Annotations</source>
         <translation>모든 주석 지우기</translation>
     </message>
@@ -782,17 +782,15 @@ Do you wish to override the security check and continue ?   </source>
         <translation>화살표 그리기</translation>
     </message>
     <message>
-        <location line="+13"/>
         <source>Rectangle</source>
-        <translation>사각형</translation>
+        <translation type="vanished">사각형</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Draw Rectangles</source>
-        <translation>사각형 그리기</translation>
+        <translation type="vanished">사각형 그리기</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+29"/>
         <source>Ellipse</source>
         <translation>타원</translation>
     </message>
@@ -842,7 +840,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>페이지에 도장 찍기</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+29"/>
         <source>Spotlight</source>
         <translation>스포트라이트</translation>
     </message>
@@ -852,17 +850,15 @@ Do you wish to override the security check and continue ?   </source>
         <translation>스포트라이트와 돋보기: 포인터 주변을 제외한 화면을 어둡게 하거나 아래에 있는 것을 확대합니다</translation>
     </message>
     <message>
-        <location line="+13"/>
         <source>Read and dictate</source>
-        <translation>읽기와 받아쓰기</translation>
+        <translation type="vanished">읽기와 받아쓰기</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Read the page aloud, or dictate with the voice</source>
-        <translation>페이지를 소리 내어 읽거나 음성으로 받아쓰기합니다</translation>
+        <translation type="vanished">페이지를 소리 내어 읽거나 음성으로 받아쓰기합니다</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+29"/>
         <source>Quick note</source>
         <translation>빠른 메모</translation>
     </message>
@@ -906,7 +902,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="vanished">Ctrl+I</translation>
     </message>
     <message>
-        <location line="-715"/>
+        <location line="-731"/>
         <source>Erase Annotation</source>
         <translation>주석 지우기</translation>
     </message>
@@ -981,7 +977,37 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Ctrl+J</translation>
     </message>
     <message>
-        <location line="+205"/>
+        <location line="+29"/>
+        <source>Shapes</source>
+        <translation type="unfinished">도형</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Draw shapes: rectangles, ellipses, lines, polylines, arrows, stars, speech bubbles…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+93"/>
+        <source>Emojis and GIFs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Put an emoji or a GIF on the page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+29"/>
+        <source>Read aloud</source>
+        <translation type="unfinished">소리 내어 읽기</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Read the page aloud, from its start, from a word clicked or a rectangle dragged on the text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+61"/>
         <source>Text</source>
         <translation>텍스트</translation>
     </message>
@@ -1167,7 +1193,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Ctrl+H</translation>
     </message>
     <message>
-        <location line="-2009"/>
+        <location line="-2025"/>
         <location line="+686"/>
         <location line="+3"/>
         <source>LibertyBoard</source>
@@ -1179,7 +1205,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>LibertyBoard 종료</translation>
     </message>
     <message>
-        <location line="+1633"/>
+        <location line="+1649"/>
         <source>Hide LibertyBoard</source>
         <translation>LibertyBoard 숨기기</translation>
     </message>
@@ -1209,7 +1235,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished">배경 제거</translation>
     </message>
     <message>
-        <location line="-841"/>
+        <location line="-857"/>
         <location line="+6"/>
         <source>Ruled Light Background</source>
         <translation type="unfinished"></translation>
@@ -1221,7 +1247,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+768"/>
+        <location line="+784"/>
         <source>Open Tutorial</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1237,7 +1263,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-1670"/>
+        <location line="-1686"/>
         <source>Small Eraser</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1272,7 +1298,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1563"/>
+        <location line="+1579"/>
         <location line="+3"/>
         <source>Draw intermediate grid lines</source>
         <translation type="unfinished"></translation>
@@ -1286,7 +1312,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-1727"/>
+        <location line="-1743"/>
         <source>Template style</source>
         <translation>템플릿 스타일</translation>
     </message>
@@ -1378,7 +1404,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+459"/>
+        <location line="+475"/>
         <source>Import one or more pages (supported formats : jpg, png, svg, ubz, pdf)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1558,7 +1584,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="vanished">팟캐스트</translation>
     </message>
     <message>
-        <location filename="../../src/core/UBApplication.cpp" line="+384"/>
+        <location filename="../../src/core/UBApplication.cpp" line="+388"/>
         <location line="+48"/>
         <location line="+221"/>
         <source>Cannot open your UBX file directly. Please import it in Documents mode instead</source>
@@ -1596,7 +1622,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBAttachmentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+699"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+917"/>
         <source>Insert file</source>
         <translation>파일 삽입</translation>
     </message>
@@ -1629,7 +1655,17 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBackgroundPalette</name>
     <message>
-        <location filename="../../src/gui/UBBackgroundPalette.cpp" line="+57"/>
+        <location filename="../../src/gui/UBBackgroundPalette.cpp" line="+56"/>
+        <source>Page</source>
+        <translation type="unfinished">페이지</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Templates</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+23"/>
         <source>Page color</source>
         <translation>용지 색</translation>
     </message>
@@ -1641,6 +1677,26 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="+1"/>
         <source>Draw intermediate grid lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+43"/>
+        <source>Date of the calendars</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>The calendars and planners are made for this day, its week, its month or its year</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+32"/>
+        <source>%1, for the date chosen above</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <source>On a page of a PDF, the template goes on a new page after it.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1667,7 +1723,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>알 수 없는 콘텐츠 유형 %1</translation>
     </message>
     <message>
-        <location line="+627"/>
+        <location line="+683"/>
         <source>Page/canvas size</source>
         <translation>페이지/캔버스 크기</translation>
     </message>
@@ -1712,20 +1768,20 @@ Do you wish to override the security check and continue ?   </source>
         <translation>모든 지원 형식 (%1)</translation>
     </message>
     <message>
-        <location line="-1987"/>
+        <location line="-2043"/>
         <source>Page %1 deleted</source>
         <translation type="unfinished">%1페이지 삭제됨</translation>
     </message>
     <message>
         <location line="+506"/>
         <location line="+45"/>
-        <location line="+1022"/>
+        <location line="+1078"/>
         <location line="+36"/>
         <source>Add file operation failed: file copying error</source>
         <translation type="unfinished">파일 추가 작업 실패: 파일을 복사하는 도중 오류 발생</translation>
     </message>
     <message>
-        <location line="-2432"/>
+        <location line="-2488"/>
         <source>Group</source>
         <translation type="unfinished">그룹화</translation>
     </message>
@@ -1830,7 +1886,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+2193"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+2231"/>
         <source>That page is not in the document any more.</source>
         <translation>그 페이지는 더 이상 문서에 없습니다.</translation>
     </message>
@@ -1900,7 +1956,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBColorSwatches</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsWidgets.cpp" line="+152"/>
+        <location filename="../../src/gui/UBToolOptionsWidgets.cpp" line="+153"/>
         <source>No color</source>
         <translation>색 없음</translation>
     </message>
@@ -1915,7 +1971,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>스포이트: 화면에서 색 가져오기</translation>
     </message>
     <message>
-        <location line="+174"/>
+        <location line="+187"/>
         <source>Choose a color</source>
         <translation>색 선택</translation>
     </message>
@@ -1923,7 +1979,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+619"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+734"/>
         <source>Quick note</source>
         <translation>빠른 메모</translation>
     </message>
@@ -2042,6 +2098,19 @@ Do you wish to override the security check and continue ?   </source>
         <location line="-416"/>
         <source>Show LibertyBoard</source>
         <translation>LibertyBoard 표시</translation>
+    </message>
+</context>
+<context>
+    <name>UBDictation</name>
+    <message>
+        <location filename="../../src/gui/UBDictation.cpp" line="+83"/>
+        <source>Dictate</source>
+        <translation type="unfinished">받아쓰기</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>The dictation of the system is not available here. On Windows, press Windows + H in a text.</source>
+        <translation type="unfinished">여기서는 시스템 받아쓰기를 사용할 수 없습니다. Windows에서는 텍스트 안에서 Windows + H를 누르세요.</translation>
     </message>
 </context>
 <context>
@@ -2611,9 +2680,107 @@ Do you want to continue?</source>
     </message>
 </context>
 <context>
+    <name>UBEmojiOptionsPanel</name>
+    <message>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1132"/>
+        <source>Emojis and GIFs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Emojis</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>GIFs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+30"/>
+        <source>To use GIFs, make a free account at klipy.com, only once, and paste your key (API key) here. From then on, the GIF search is always ready. Without it, the emojis work as always.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>Paste your key here</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Save</source>
+        <translation type="unfinished">저장</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Open klipy.com</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+21"/>
+        <source>Search GIFs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Change the key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Powered by KLIPY</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+30"/>
+        <source>Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source> pt</source>
+        <translation type="unfinished"> pt</translation>
+    </message>
+    <message>
+        <location line="+27"/>
+        <source>The GIF search did not answer: check your key and the internet connection.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+16"/>
+        <source>Downloading the GIF...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>GIF chosen: click on the page to put it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+66"/>
+        <source>Search a GIF, then click on it and on the page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+17"/>
+        <source>Searching...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>No GIF found.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Click on a GIF, then on the page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>UBEraserOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1047"/>
+        <location line="-492"/>
         <source>Eraser</source>
         <translation>지우개</translation>
     </message>
@@ -3202,7 +3369,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
 <context>
     <name>UBGraphicsScene</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsScene.cpp" line="+1150"/>
+        <location filename="../../src/domain/UBGraphicsScene.cpp" line="+1201"/>
         <location line="+11"/>
         <source>Attach a file</source>
         <translation>파일 첨부</translation>
@@ -3234,7 +3401,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
 <context>
     <name>UBGraphicsTextItem</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsTextItem.cpp" line="+49"/>
+        <location filename="../../src/domain/UBGraphicsTextItem.cpp" line="+51"/>
         <source>&lt;Type Text Here&gt;</source>
         <translation>&lt;이곳에 텍스트를 입력하십시오&gt;</translation>
     </message>
@@ -3242,7 +3409,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
 <context>
     <name>UBGraphicsTextItemDelegate</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsTextItemDelegate.cpp" line="+338"/>
+        <location filename="../../src/domain/UBGraphicsTextItemDelegate.cpp" line="+390"/>
         <source>Text Color</source>
         <translation>텍스트 색상</translation>
     </message>
@@ -3250,6 +3417,91 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <location line="+134"/>
         <source>Editable</source>
         <translation type="unfinished">편집 가능</translation>
+    </message>
+    <message>
+        <location line="+393"/>
+        <source>Insert a table...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Add a row</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Add a column</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Remove the row</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Remove the column</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Columns as wide</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Table style</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Highlight the header row</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Highlight the first column</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>All the lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Horizontal lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Outer lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>No lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>Color of the cells...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Color of the cells</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>No color in the cells</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Remove the table</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3480,6 +3732,11 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     </message>
     <message>
         <location line="+3"/>
+        <source>Opacity</source>
+        <translation type="unfinished">불투명도</translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source> %</source>
         <translation> %</translation>
     </message>
@@ -3580,7 +3837,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation type="vanished">페이지 크기</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+131"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+132"/>
         <location line="+85"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -3726,7 +3983,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>Windows 받아쓰기를 엽니다: 말한 내용이 텍스트 커서 위치에 써집니다</translation>
     </message>
     <message>
-        <location line="+163"/>
+        <location line="+167"/>
         <source>Lock the canvas: nothing can be drawn, written, highlighted, selected, moved or deleted; the laser pointer and the hand still work</source>
         <translation>캔버스 잠금: 그리기, 쓰기, 강조, 선택, 이동, 삭제를 할 수 없습니다. 레이저와 손 도구는 계속 작동합니다</translation>
     </message>
@@ -3739,7 +3996,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation type="vanished">여기서는 시스템 받아쓰기를 사용할 수 없습니다. Windows에서는 텍스트 안에서 Windows + H를 누르세요.</translation>
     </message>
     <message>
-        <location line="-160"/>
+        <location line="-164"/>
         <source>Transcribe an audio (coming with the AI)</source>
         <translation>오디오 받아쓰기 (AI와 함께 제공 예정)</translation>
     </message>
@@ -3775,12 +4032,12 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     </message>
     <message>
         <location line="+66"/>
-        <location line="+359"/>
+        <location line="+369"/>
         <source>Saved</source>
         <translation>저장됨</translation>
     </message>
     <message>
-        <location line="-353"/>
+        <location line="-363"/>
         <source>Search...</source>
         <translation>검색...</translation>
     </message>
@@ -3800,9 +4057,9 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>PDF 목차: 제목을 클릭하면 해당 페이지로 이동합니다</translation>
     </message>
     <message>
-        <location line="+28"/>
+        <location line="+32"/>
         <location line="+9"/>
-        <location line="+24"/>
+        <location line="+23"/>
         <source>Lock canvas</source>
         <translation>캔버스 잠금</translation>
     </message>
@@ -3811,8 +4068,8 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation type="vanished">캔버스 잠금: 그리기, 쓰기, 강조, 이동, 삭제를 할 수 없습니다. 레이저, 손, 선택은 계속 작동합니다</translation>
     </message>
     <message>
-        <location line="-24"/>
-        <location line="+22"/>
+        <location line="-23"/>
+        <location line="+21"/>
         <source>Unlock canvas</source>
         <translation>캔버스 잠금 해제</translation>
     </message>
@@ -3822,7 +4079,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>도구 모음 숨기기 또는 표시</translation>
     </message>
     <message>
-        <location line="+153"/>
+        <location line="+160"/>
         <source>Exit full screen</source>
         <translation>전체 화면 종료</translation>
     </message>
@@ -3858,7 +4115,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
 <context>
     <name>UBMarkerOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-164"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-165"/>
         <source>Marker</source>
         <translation>마커</translation>
     </message>
@@ -3959,7 +4216,7 @@ Do you want to ignore these errors for this host?</source>
         <translation>여기에 메모를 입력하세요</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+7"/>
         <source>Cancel</source>
         <translation>취소</translation>
     </message>
@@ -3982,7 +4239,7 @@ Do you want to ignore these errors for this host?</source>
 <context>
     <name>UBNoteOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+998"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1325"/>
         <source>Note</source>
         <translation>메모</translation>
     </message>
@@ -4283,7 +4540,7 @@ It can also be done later with Home &gt; Recognize text.</source>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1161"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1488"/>
         <source>Pen</source>
         <translation>펜</translation>
     </message>
@@ -4821,7 +5078,7 @@ Dynamic width</source>
 <context>
     <name>UBReadAloud</name>
     <message>
-        <location filename="../../src/gui/UBReadAloud.cpp" line="+113"/>
+        <location filename="../../src/gui/UBReadAloud.cpp" line="+114"/>
         <source>This is the last page.</source>
         <translation>마지막 페이지입니다.</translation>
     </message>
@@ -4831,19 +5088,19 @@ Dynamic width</source>
         <translation>이 사각형 안에 텍스트가 없습니다.</translation>
     </message>
     <message>
-        <location line="+11"/>
+        <location line="+31"/>
         <source>There is no text to read on this page: write or select a text, or open a PDF with text.</source>
         <translation>이 페이지에는 읽을 텍스트가 없습니다: 텍스트를 쓰거나 선택하거나 텍스트가 있는 PDF를 여세요.</translation>
     </message>
     <message>
-        <location line="+33"/>
-        <location line="+24"/>
+        <location line="+34"/>
+        <location line="+25"/>
         <source>Read aloud</source>
         <translation>소리 내어 읽기</translation>
     </message>
     <message>
-        <location line="-24"/>
-        <location line="+24"/>
+        <location line="-25"/>
+        <location line="+25"/>
         <source>The voices of the system could not be used to read aloud.</source>
         <translation>시스템 음성을 소리 내어 읽기에 사용할 수 없었습니다.</translation>
     </message>
@@ -4917,7 +5174,7 @@ Dynamic width</source>
 <context>
     <name>UBSelectorOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1021"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1348"/>
         <source>Select</source>
         <translation>선택</translation>
     </message>
@@ -4955,7 +5212,7 @@ Dynamic width</source>
 <context>
     <name>UBSettings</name>
     <message>
-        <location filename="../../src/core/UBSettings.cpp" line="+1143"/>
+        <location filename="../../src/core/UBSettings.cpp" line="+1148"/>
         <source>My Movies</source>
         <translation>내 동영상</translation>
     </message>
@@ -4963,9 +5220,13 @@ Dynamic width</source>
 <context>
     <name>UBShapeOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-525"/>
         <source>Rectangle</source>
-        <translation>사각형</translation>
+        <translation type="vanished">사각형</translation>
+    </message>
+    <message>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-613"/>
+        <source>Shapes</source>
+        <translation type="unfinished">도형</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -4988,7 +5249,12 @@ Dynamic width</source>
         <translation>밑줄</translation>
     </message>
     <message>
-        <location line="+16"/>
+        <location line="+18"/>
+        <source>The shape to draw. The polyline: a click for each corner, Enter to end it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
         <source>Border</source>
         <translation>테두리</translation>
     </message>
@@ -5010,29 +5276,29 @@ Dynamic width</source>
     </message>
     <message>
         <location line="+7"/>
-        <location line="+160"/>
+        <location line="+181"/>
         <source>Line style</source>
         <translation>선 스타일</translation>
     </message>
     <message>
-        <location line="-160"/>
+        <location line="-181"/>
         <source>Border styles</source>
         <translation>테두리 스타일</translation>
     </message>
     <message>
         <location line="+13"/>
-        <location line="+147"/>
+        <location line="+168"/>
         <source>Line start</source>
         <translation>선 시작</translation>
     </message>
     <message>
-        <location line="-143"/>
-        <location line="+144"/>
+        <location line="-164"/>
+        <location line="+165"/>
         <source>Line end</source>
         <translation>선 끝</translation>
     </message>
     <message>
-        <location line="-140"/>
+        <location line="-161"/>
         <source>Tapered</source>
         <translation>점점 굵게</translation>
     </message>
@@ -5053,17 +5319,17 @@ Dynamic width</source>
     </message>
     <message>
         <location line="+10"/>
-        <location line="+131"/>
+        <location line="+152"/>
         <source>Opacity</source>
         <translation>불투명도</translation>
     </message>
     <message>
-        <location line="-130"/>
+        <location line="-151"/>
         <source> %</source>
         <translation> %</translation>
     </message>
     <message>
-        <location line="+120"/>
+        <location line="+141"/>
         <source>Line</source>
         <translation>선</translation>
     </message>
@@ -5092,7 +5358,7 @@ Dynamic width</source>
     </message>
     <message>
         <location line="+15"/>
-        <location line="+31"/>
+        <location line="+32"/>
         <location line="+3"/>
         <source>Stylus Palette</source>
         <translation type="unfinished">스타일러스 팔레트</translation>
@@ -5346,7 +5612,7 @@ Dynamic width</source>
 <context>
     <name>UBSpotlightOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-295"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-354"/>
         <location line="+4"/>
         <source>Spotlight</source>
         <translation>스포트라이트</translation>
@@ -5391,7 +5657,7 @@ Dynamic width</source>
 <context>
     <name>UBStampOptionsPanel</name>
     <message>
-        <location line="+392"/>
+        <location line="+507"/>
         <source>Stamp</source>
         <translation>도장</translation>
     </message>
@@ -5427,7 +5693,7 @@ Dynamic width</source>
 <context>
     <name>UBStylusPalette</name>
     <message>
-        <location filename="../../src/gui/UBStylusPalette.cpp" line="+84"/>
+        <location filename="../../src/gui/UBStylusPalette.cpp" line="+85"/>
         <source>Save a screenshot</source>
         <translation>스크린샷 저장</translation>
     </message>
@@ -5445,9 +5711,37 @@ Dynamic width</source>
     </message>
 </context>
 <context>
+    <name>UBTextBoxes</name>
+    <message>
+        <location filename="../../src/gui/UBTextBoxes.cpp" line="+120"/>
+        <source>Table</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>How many rows and columns?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Rows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Columns</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Insert</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>UBTextOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-195"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-251"/>
         <source>Text</source>
         <translation>텍스트</translation>
     </message>
@@ -5481,6 +5775,51 @@ Dynamic width</source>
         <source>Color</source>
         <translation>색</translation>
     </message>
+    <message>
+        <location line="+7"/>
+        <source>Checklist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Bullets</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Numbers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>Puts the lines of the text box being written in a list, or takes them out of it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>Click in a text box first, then on the list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <source>Table</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Asks how many rows and columns, then puts a table in the text box being written, or in a new one</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Dictate</source>
+        <translation type="unfinished">받아쓰기</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Makes a text box and writes in it what you say (the dictation of Windows, Windows + H). In a text box, the microphone left of F does the same.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBThumbnailAdaptor</name>
@@ -5511,7 +5850,7 @@ Dynamic width</source>
 <context>
     <name>UBToolOptionsBar</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsBar.cpp" line="+53"/>
+        <location filename="../../src/gui/UBToolOptionsBar.cpp" line="+57"/>
         <source>This tool has no options.</source>
         <translation>이 도구에는 옵션이 없습니다.</translation>
     </message>
@@ -5519,7 +5858,7 @@ Dynamic width</source>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-899"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1225"/>
         <source>Color</source>
         <translation>색</translation>
     </message>
@@ -5635,24 +5974,24 @@ Please reboot the application to access the updated documents.</source>
 <context>
     <name>UBVoiceOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+384"/>
         <source>Read and dictate</source>
-        <translation>읽기와 받아쓰기</translation>
+        <translation type="vanished">읽기와 받아쓰기</translation>
     </message>
     <message>
-        <location line="+5"/>
         <source>Read</source>
-        <translation>읽기</translation>
+        <translation type="vanished">읽기</translation>
     </message>
     <message>
-        <location line="+0"/>
-        <location line="+27"/>
-        <location line="+65"/>
         <source>Dictate</source>
-        <translation>받아쓰기</translation>
+        <translation type="vanished">받아쓰기</translation>
     </message>
     <message>
-        <location line="-86"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+650"/>
+        <source>Read aloud</source>
+        <translation type="unfinished">소리 내어 읽기</translation>
+    </message>
+    <message>
+        <location line="+8"/>
         <source>From the start</source>
         <translation>처음부터</translation>
     </message>
@@ -5662,64 +6001,86 @@ Please reboot the application to access the updated documents.</source>
         <translation>선택한 텍스트</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>From the start: reads the page shown, then the next pages. Selected text: drag a rectangle over the text to read it.</source>
-        <translation>처음부터: 페이지를 읽고 다음 페이지를 이어서 읽습니다. 선택한 텍스트: 읽을 텍스트 위로 사각형을 끌어 놓으세요.</translation>
-    </message>
-    <message>
-        <location line="+15"/>
-        <source>▶ Play</source>
-        <translation>▶ 재생</translation>
-    </message>
-    <message>
         <location line="+0"/>
+        <source>From the click</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>From the start: reads the page shown, then the next pages. Selected text: drag a rectangle over the text to read it. From the click: click on a word to read from it, then the next pages.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+17"/>
+        <source>Play</source>
+        <translation type="unfinished">재생</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Pause</source>
+        <translation type="unfinished">일시 중지</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Stop</source>
+        <translation type="unfinished">중지</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Next page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>From the start: reads the page shown, then the next pages. Selected text: drag a rectangle over the text to read it.</source>
+        <translation type="vanished">처음부터: 페이지를 읽고 다음 페이지를 이어서 읽습니다. 선택한 텍스트: 읽을 텍스트 위로 사각형을 끌어 놓으세요.</translation>
+    </message>
+    <message>
+        <source>▶ Play</source>
+        <translation type="vanished">▶ 재생</translation>
+    </message>
+    <message>
+        <location line="-3"/>
         <source>Reads the page from its start, or goes on after a pause</source>
         <translation>페이지를 처음부터 읽거나 일시 정지 후 계속합니다</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>⏸ Pause</source>
-        <translation>⏸ 일시 정지</translation>
+        <translation type="vanished">⏸ 일시 정지</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="+1"/>
         <source>Pauses the reading</source>
         <translation>읽기를 일시 정지합니다</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>⏹ Stop</source>
-        <translation>⏹ 정지</translation>
+        <translation type="vanished">⏹ 정지</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="+1"/>
         <source>Stops the reading</source>
         <translation>읽기를 멈춥니다</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>⏭ Next page</source>
-        <translation>⏭ 다음 페이지</translation>
+        <translation type="vanished">⏭ 다음 페이지</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="+1"/>
         <source>Goes to the next page and reads it</source>
         <translation>다음 페이지로 이동하여 읽습니다</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Opens the dictation of Windows (Windows + H)</source>
-        <translation>Windows 음성 입력을 엽니다 (Windows + H)</translation>
+        <translation type="vanished">Windows 음성 입력을 엽니다 (Windows + H)</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Click in a text box, then on Dictate: what you say is written there.</source>
-        <translation>텍스트 상자를 클릭한 다음 받아쓰기를 클릭하세요: 말한 내용이 그곳에 입력됩니다.</translation>
+        <translation type="vanished">텍스트 상자를 클릭한 다음 받아쓰기를 클릭하세요: 말한 내용이 그곳에 입력됩니다.</translation>
     </message>
     <message>
-        <location line="+62"/>
         <source>The dictation of the system is not available here. On Windows, press Windows + H in a text.</source>
-        <translation>여기서는 시스템 받아쓰기를 사용할 수 없습니다. Windows에서는 텍스트 안에서 Windows + H를 누르세요.</translation>
+        <translation type="vanished">여기서는 시스템 받아쓰기를 사용할 수 없습니다. Windows에서는 텍스트 안에서 Windows + H를 누르세요.</translation>
     </message>
 </context>
 <context>
@@ -5829,7 +6190,7 @@ Please reboot the application to access the updated documents.</source>
 <context>
     <name>UBZLayerController</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsScene.cpp" line="-958"/>
+        <location filename="../../src/domain/UBGraphicsScene.cpp" line="-1008"/>
         <source>Bottom layer limit reached</source>
         <translation type="unfinished"></translation>
     </message>

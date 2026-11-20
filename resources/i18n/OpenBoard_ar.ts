@@ -742,12 +742,12 @@ Do you wish to override the security check and continue ?   </source>
     </message>
     <message>
         <location line="+9"/>
-        <location line="+633"/>
+        <location line="+649"/>
         <source>Erase Annotations</source>
         <translation>فسخ الملاحظات</translation>
     </message>
     <message>
-        <location line="-630"/>
+        <location line="-646"/>
         <source>Erase All Annotations</source>
         <translation>فسخ كل الملاحظات</translation>
     </message>
@@ -782,17 +782,15 @@ Do you wish to override the security check and continue ?   </source>
         <translation>رسم أسهم</translation>
     </message>
     <message>
-        <location line="+13"/>
         <source>Rectangle</source>
-        <translation>مستطيل</translation>
+        <translation type="vanished">مستطيل</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Draw Rectangles</source>
-        <translation>رسم مستطيلات</translation>
+        <translation type="vanished">رسم مستطيلات</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+29"/>
         <source>Ellipse</source>
         <translation>شكل بيضاوي</translation>
     </message>
@@ -842,7 +840,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>وضع ختم على الصفحة</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+29"/>
         <source>Spotlight</source>
         <translation>الضوء الموجّه</translation>
     </message>
@@ -852,17 +850,15 @@ Do you wish to override the security check and continue ?   </source>
         <translation>الضوء الموجّه والعدسة المكبّرة: يعتّم الشاشة إلا حول المؤشر، أو يكبّر ما تحته</translation>
     </message>
     <message>
-        <location line="+13"/>
         <source>Read and dictate</source>
-        <translation>القراءة والإملاء</translation>
+        <translation type="vanished">القراءة والإملاء</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Read the page aloud, or dictate with the voice</source>
-        <translation>يقرأ الصفحة بصوت عالٍ، أو يملي بالصوت</translation>
+        <translation type="vanished">يقرأ الصفحة بصوت عالٍ، أو يملي بالصوت</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+29"/>
         <source>Quick note</source>
         <translation>ملاحظة سريعة</translation>
     </message>
@@ -906,7 +902,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="vanished">Ctrl+I</translation>
     </message>
     <message>
-        <location line="-715"/>
+        <location line="-731"/>
         <source>Erase Annotation</source>
         <translation>فسخ الملاحظة</translation>
     </message>
@@ -981,7 +977,37 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Ctrl+J</translation>
     </message>
     <message>
-        <location line="+205"/>
+        <location line="+29"/>
+        <source>Shapes</source>
+        <translation type="unfinished">أشكال</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Draw shapes: rectangles, ellipses, lines, polylines, arrows, stars, speech bubbles…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+93"/>
+        <source>Emojis and GIFs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Put an emoji or a GIF on the page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+29"/>
+        <source>Read aloud</source>
+        <translation type="unfinished">القراءة بصوت عالٍ</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Read the page aloud, from its start, from a word clicked or a rectangle dragged on the text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+61"/>
         <source>Text</source>
         <translation>نص</translation>
     </message>
@@ -1167,7 +1193,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Ctrl+H</translation>
     </message>
     <message>
-        <location line="-2009"/>
+        <location line="-2025"/>
         <location line="+686"/>
         <location line="+3"/>
         <source>LibertyBoard</source>
@@ -1179,7 +1205,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>مغادرة فتح Sankoré</translation>
     </message>
     <message>
-        <location line="+1633"/>
+        <location line="+1649"/>
         <source>Hide LibertyBoard</source>
         <translation>إخفاء فتح Sankoré</translation>
     </message>
@@ -1209,7 +1235,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>إزالة الخلفية</translation>
     </message>
     <message>
-        <location line="-841"/>
+        <location line="-857"/>
         <location line="+6"/>
         <source>Ruled Light Background</source>
         <translation type="unfinished"></translation>
@@ -1221,7 +1247,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+768"/>
+        <location line="+784"/>
         <source>Open Tutorial</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1237,7 +1263,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-1670"/>
+        <location line="-1686"/>
         <source>Small Eraser</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1272,7 +1298,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1563"/>
+        <location line="+1579"/>
         <location line="+3"/>
         <source>Draw intermediate grid lines</source>
         <translation type="unfinished"></translation>
@@ -1286,7 +1312,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-1727"/>
+        <location line="-1743"/>
         <source>Template style</source>
         <translation>نمط القالب</translation>
     </message>
@@ -1378,7 +1404,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+459"/>
+        <location line="+475"/>
         <source>Import one or more pages (supported formats : jpg, png, svg, ubz, pdf)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1558,7 +1584,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="vanished">بودكاست</translation>
     </message>
     <message>
-        <location filename="../../src/core/UBApplication.cpp" line="+384"/>
+        <location filename="../../src/core/UBApplication.cpp" line="+388"/>
         <location line="+48"/>
         <location line="+221"/>
         <source>Cannot open your UBX file directly. Please import it in Documents mode instead</source>
@@ -1596,7 +1622,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBAttachmentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+699"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+917"/>
         <source>Insert file</source>
         <translation>إدراج ملف</translation>
     </message>
@@ -1629,7 +1655,17 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBackgroundPalette</name>
     <message>
-        <location filename="../../src/gui/UBBackgroundPalette.cpp" line="+57"/>
+        <location filename="../../src/gui/UBBackgroundPalette.cpp" line="+56"/>
+        <source>Page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Templates</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+23"/>
         <source>Page color</source>
         <translation>لون الورقة</translation>
     </message>
@@ -1641,6 +1677,26 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="+1"/>
         <source>Draw intermediate grid lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+43"/>
+        <source>Date of the calendars</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>The calendars and planners are made for this day, its week, its month or its year</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+32"/>
+        <source>%1, for the date chosen above</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <source>On a page of a PDF, the template goes on a new page after it.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1667,7 +1723,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>نوع محتوى مجهول 1%</translation>
     </message>
     <message>
-        <location line="+627"/>
+        <location line="+683"/>
         <source>Page/canvas size</source>
         <translation>حجم الصفحة/اللوحة</translation>
     </message>
@@ -1712,20 +1768,20 @@ Do you wish to override the security check and continue ?   </source>
         <translation>دعم الجميع (1%)</translation>
     </message>
     <message>
-        <location line="-1987"/>
+        <location line="-2043"/>
         <source>Page %1 deleted</source>
         <translation>تمت إزالة صفحة%1  </translation>
     </message>
     <message>
         <location line="+506"/>
         <location line="+45"/>
-        <location line="+1022"/>
+        <location line="+1078"/>
         <location line="+36"/>
         <source>Add file operation failed: file copying error</source>
         <translation>فشلت عملية إضافة الملف: خطأ في نسخ الملف</translation>
     </message>
     <message>
-        <location line="-2432"/>
+        <location line="-2488"/>
         <source>Group</source>
         <translation>تجميع</translation>
     </message>
@@ -1830,7 +1886,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+2193"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+2231"/>
         <source>That page is not in the document any more.</source>
         <translation>لم تعد هذه الصفحة في المستند.</translation>
     </message>
@@ -1901,7 +1957,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBColorSwatches</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsWidgets.cpp" line="+152"/>
+        <location filename="../../src/gui/UBToolOptionsWidgets.cpp" line="+153"/>
         <source>No color</source>
         <translation>بلا لون</translation>
     </message>
@@ -1916,7 +1972,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>القطّارة: أخذ لون من الشاشة</translation>
     </message>
     <message>
-        <location line="+174"/>
+        <location line="+187"/>
         <source>Choose a color</source>
         <translation>اختر لونًا</translation>
     </message>
@@ -1924,7 +1980,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+619"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+734"/>
         <source>Quick note</source>
         <translation>ملاحظة سريعة</translation>
     </message>
@@ -2043,6 +2099,19 @@ Do you wish to override the security check and continue ?   </source>
         <location line="-416"/>
         <source>Show LibertyBoard</source>
         <translation>إظهار LibertyBoard</translation>
+    </message>
+</context>
+<context>
+    <name>UBDictation</name>
+    <message>
+        <location filename="../../src/gui/UBDictation.cpp" line="+83"/>
+        <source>Dictate</source>
+        <translation type="unfinished">الإملاء</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>The dictation of the system is not available here. On Windows, press Windows + H in a text.</source>
+        <translation type="unfinished">إملاء النظام غير متاح هنا. في Windows، اضغط Windows + H داخل نص.</translation>
     </message>
 </context>
 <context>
@@ -2623,9 +2692,107 @@ Do you want to continue?</source>
     </message>
 </context>
 <context>
+    <name>UBEmojiOptionsPanel</name>
+    <message>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1132"/>
+        <source>Emojis and GIFs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Emojis</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>GIFs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+30"/>
+        <source>To use GIFs, make a free account at klipy.com, only once, and paste your key (API key) here. From then on, the GIF search is always ready. Without it, the emojis work as always.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>Paste your key here</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Save</source>
+        <translation type="unfinished">حفظ</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Open klipy.com</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+21"/>
+        <source>Search GIFs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Change the key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Powered by KLIPY</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+30"/>
+        <source>Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source> pt</source>
+        <translation type="unfinished"> pt</translation>
+    </message>
+    <message>
+        <location line="+27"/>
+        <source>The GIF search did not answer: check your key and the internet connection.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+16"/>
+        <source>Downloading the GIF...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>GIF chosen: click on the page to put it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+66"/>
+        <source>Search a GIF, then click on it and on the page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+17"/>
+        <source>Searching...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>No GIF found.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Click on a GIF, then on the page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>UBEraserOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1047"/>
+        <location line="-492"/>
         <source>Eraser</source>
         <translation>ممحاة</translation>
     </message>
@@ -3214,7 +3381,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
 <context>
     <name>UBGraphicsScene</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsScene.cpp" line="+1150"/>
+        <location filename="../../src/domain/UBGraphicsScene.cpp" line="+1201"/>
         <location line="+11"/>
         <source>Attach a file</source>
         <translation>إرفاق ملف</translation>
@@ -3246,7 +3413,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
 <context>
     <name>UBGraphicsTextItem</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsTextItem.cpp" line="+49"/>
+        <location filename="../../src/domain/UBGraphicsTextItem.cpp" line="+51"/>
         <source>&lt;Type Text Here&gt;</source>
         <translation>&lt;Type Text Here&gt;</translation>
     </message>
@@ -3254,7 +3421,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
 <context>
     <name>UBGraphicsTextItemDelegate</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsTextItemDelegate.cpp" line="+338"/>
+        <location filename="../../src/domain/UBGraphicsTextItemDelegate.cpp" line="+390"/>
         <source>Text Color</source>
         <translation>لون النص</translation>
     </message>
@@ -3262,6 +3429,91 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <location line="+134"/>
         <source>Editable</source>
         <translation>قابل للنشر</translation>
+    </message>
+    <message>
+        <location line="+393"/>
+        <source>Insert a table...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Add a row</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Add a column</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Remove the row</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Remove the column</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Columns as wide</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Table style</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Highlight the header row</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Highlight the first column</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>All the lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Horizontal lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Outer lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>No lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>Color of the cells...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Color of the cells</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>No color in the cells</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Remove the table</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3492,6 +3744,11 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     </message>
     <message>
         <location line="+3"/>
+        <source>Opacity</source>
+        <translation type="unfinished">معدل الشفافية</translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source> %</source>
         <translation> %</translation>
     </message>
@@ -3592,7 +3849,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation type="vanished">حجم الصفحة</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+131"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+132"/>
         <location line="+85"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -3738,7 +3995,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>يفتح الإملاء في Windows: ما يُقال يُكتب حيث يوجد مؤشر النص</translation>
     </message>
     <message>
-        <location line="+163"/>
+        <location line="+167"/>
         <source>Lock the canvas: nothing can be drawn, written, highlighted, selected, moved or deleted; the laser pointer and the hand still work</source>
         <translation>قفل اللوحة: لا يمكن رسم أي شيء أو كتابته أو تمييزه أو تحديده أو نقله أو حذفه؛ يظل الليزر واليد يعملان</translation>
     </message>
@@ -3751,7 +4008,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation type="vanished">إملاء النظام غير متاح هنا. في Windows، اضغط Windows + H داخل نص.</translation>
     </message>
     <message>
-        <location line="-160"/>
+        <location line="-164"/>
         <source>Transcribe an audio (coming with the AI)</source>
         <translation>تفريغ تسجيل صوتي (سيأتي مع الذكاء الاصطناعي)</translation>
     </message>
@@ -3787,12 +4044,12 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     </message>
     <message>
         <location line="+66"/>
-        <location line="+359"/>
+        <location line="+369"/>
         <source>Saved</source>
         <translation>تم الحفظ</translation>
     </message>
     <message>
-        <location line="-353"/>
+        <location line="-363"/>
         <source>Search...</source>
         <translation>بحث...</translation>
     </message>
@@ -3812,9 +4069,9 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>فهرس ملف PDF: النقر على عنوان ينقلك إلى صفحته</translation>
     </message>
     <message>
-        <location line="+28"/>
+        <location line="+32"/>
         <location line="+9"/>
-        <location line="+24"/>
+        <location line="+23"/>
         <source>Lock canvas</source>
         <translation>قفل اللوحة</translation>
     </message>
@@ -3823,8 +4080,8 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation type="vanished">قفل اللوحة: لا يمكن رسم أي شيء أو كتابته أو تمييزه أو نقله أو حذفه؛ يبقى الليزر واليد والتحديد يعملون</translation>
     </message>
     <message>
-        <location line="-24"/>
-        <location line="+22"/>
+        <location line="-23"/>
+        <location line="+21"/>
         <source>Unlock canvas</source>
         <translation>فتح قفل اللوحة</translation>
     </message>
@@ -3834,7 +4091,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>إخفاء شريط الأدوات أو إظهاره</translation>
     </message>
     <message>
-        <location line="+153"/>
+        <location line="+160"/>
         <source>Exit full screen</source>
         <translation>الخروج من ملء الشاشة</translation>
     </message>
@@ -3870,7 +4127,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
 <context>
     <name>UBMarkerOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-164"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-165"/>
         <source>Marker</source>
         <translation>علامة</translation>
     </message>
@@ -3965,7 +4222,7 @@ Do you want to ignore these errors for this host?</source>
         <translation>اكتب الملاحظة هنا</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+7"/>
         <source>Cancel</source>
         <translation>إلغاء</translation>
     </message>
@@ -3988,7 +4245,7 @@ Do you want to ignore these errors for this host?</source>
 <context>
     <name>UBNoteOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+998"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1325"/>
         <source>Note</source>
         <translation>ملاحظة</translation>
     </message>
@@ -4289,7 +4546,7 @@ It can also be done later with Home &gt; Recognize text.</source>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1161"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1488"/>
         <source>Pen</source>
         <translation>قلم</translation>
     </message>
@@ -4827,7 +5084,7 @@ Dynamic width</source>
 <context>
     <name>UBReadAloud</name>
     <message>
-        <location filename="../../src/gui/UBReadAloud.cpp" line="+113"/>
+        <location filename="../../src/gui/UBReadAloud.cpp" line="+114"/>
         <source>This is the last page.</source>
         <translation>هذه هي الصفحة الأخيرة.</translation>
     </message>
@@ -4837,19 +5094,19 @@ Dynamic width</source>
         <translation>لا يوجد نص في هذا المستطيل.</translation>
     </message>
     <message>
-        <location line="+11"/>
+        <location line="+31"/>
         <source>There is no text to read on this page: write or select a text, or open a PDF with text.</source>
         <translation>لا يوجد نص للقراءة في هذه الصفحة: اكتب نصًا أو حدّده، أو افتح ملف PDF يحتوي على نص.</translation>
     </message>
     <message>
-        <location line="+33"/>
-        <location line="+24"/>
+        <location line="+34"/>
+        <location line="+25"/>
         <source>Read aloud</source>
         <translation>القراءة بصوت عالٍ</translation>
     </message>
     <message>
-        <location line="-24"/>
-        <location line="+24"/>
+        <location line="-25"/>
+        <location line="+25"/>
         <source>The voices of the system could not be used to read aloud.</source>
         <translation>تعذّر استخدام أصوات النظام للقراءة بصوت عالٍ.</translation>
     </message>
@@ -4923,7 +5180,7 @@ Dynamic width</source>
 <context>
     <name>UBSelectorOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1021"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1348"/>
         <source>Select</source>
         <translation>تحديد</translation>
     </message>
@@ -4961,7 +5218,7 @@ Dynamic width</source>
 <context>
     <name>UBSettings</name>
     <message>
-        <location filename="../../src/core/UBSettings.cpp" line="+1143"/>
+        <location filename="../../src/core/UBSettings.cpp" line="+1148"/>
         <source>My Movies</source>
         <translation>أفلامي</translation>
     </message>
@@ -4969,9 +5226,13 @@ Dynamic width</source>
 <context>
     <name>UBShapeOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-525"/>
         <source>Rectangle</source>
-        <translation>مستطيل</translation>
+        <translation type="vanished">مستطيل</translation>
+    </message>
+    <message>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-613"/>
+        <source>Shapes</source>
+        <translation type="unfinished">أشكال</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -4994,7 +5255,12 @@ Dynamic width</source>
         <translation>تسطير</translation>
     </message>
     <message>
-        <location line="+16"/>
+        <location line="+18"/>
+        <source>The shape to draw. The polyline: a click for each corner, Enter to end it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
         <source>Border</source>
         <translation>الحد</translation>
     </message>
@@ -5016,29 +5282,29 @@ Dynamic width</source>
     </message>
     <message>
         <location line="+7"/>
-        <location line="+160"/>
+        <location line="+181"/>
         <source>Line style</source>
         <translation>نمط الخط</translation>
     </message>
     <message>
-        <location line="-160"/>
+        <location line="-181"/>
         <source>Border styles</source>
         <translation>أنماط الحد</translation>
     </message>
     <message>
         <location line="+13"/>
-        <location line="+147"/>
+        <location line="+168"/>
         <source>Line start</source>
         <translation>بداية الخط</translation>
     </message>
     <message>
-        <location line="-143"/>
-        <location line="+144"/>
+        <location line="-164"/>
+        <location line="+165"/>
         <source>Line end</source>
         <translation>نهاية الخط</translation>
     </message>
     <message>
-        <location line="-140"/>
+        <location line="-161"/>
         <source>Tapered</source>
         <translation>مستدق</translation>
     </message>
@@ -5059,17 +5325,17 @@ Dynamic width</source>
     </message>
     <message>
         <location line="+10"/>
-        <location line="+131"/>
+        <location line="+152"/>
         <source>Opacity</source>
         <translation>معدل الشفافية</translation>
     </message>
     <message>
-        <location line="-130"/>
+        <location line="-151"/>
         <source> %</source>
         <translation> %</translation>
     </message>
     <message>
-        <location line="+120"/>
+        <location line="+141"/>
         <source>Line</source>
         <translation>خط</translation>
     </message>
@@ -5098,7 +5364,7 @@ Dynamic width</source>
     </message>
     <message>
         <location line="+15"/>
-        <location line="+31"/>
+        <location line="+32"/>
         <location line="+3"/>
         <source>Stylus Palette</source>
         <translation type="unfinished">لوح الرسم</translation>
@@ -5352,7 +5618,7 @@ Dynamic width</source>
 <context>
     <name>UBSpotlightOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-295"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-354"/>
         <location line="+4"/>
         <source>Spotlight</source>
         <translation>الضوء الموجّه</translation>
@@ -5397,7 +5663,7 @@ Dynamic width</source>
 <context>
     <name>UBStampOptionsPanel</name>
     <message>
-        <location line="+392"/>
+        <location line="+507"/>
         <source>Stamp</source>
         <translation>ختم</translation>
     </message>
@@ -5433,7 +5699,7 @@ Dynamic width</source>
 <context>
     <name>UBStylusPalette</name>
     <message>
-        <location filename="../../src/gui/UBStylusPalette.cpp" line="+84"/>
+        <location filename="../../src/gui/UBStylusPalette.cpp" line="+85"/>
         <source>Save a screenshot</source>
         <translation>حفظ لقطة شاشة</translation>
     </message>
@@ -5451,9 +5717,37 @@ Dynamic width</source>
     </message>
 </context>
 <context>
+    <name>UBTextBoxes</name>
+    <message>
+        <location filename="../../src/gui/UBTextBoxes.cpp" line="+120"/>
+        <source>Table</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>How many rows and columns?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Rows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Columns</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Insert</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>UBTextOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-195"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-251"/>
         <source>Text</source>
         <translation>نص</translation>
     </message>
@@ -5487,6 +5781,51 @@ Dynamic width</source>
         <source>Color</source>
         <translation>اللون</translation>
     </message>
+    <message>
+        <location line="+7"/>
+        <source>Checklist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Bullets</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Numbers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>Puts the lines of the text box being written in a list, or takes them out of it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>Click in a text box first, then on the list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <source>Table</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Asks how many rows and columns, then puts a table in the text box being written, or in a new one</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Dictate</source>
+        <translation type="unfinished">الإملاء</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Makes a text box and writes in it what you say (the dictation of Windows, Windows + H). In a text box, the microphone left of F does the same.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBThumbnailAdaptor</name>
@@ -5517,7 +5856,7 @@ Dynamic width</source>
 <context>
     <name>UBToolOptionsBar</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsBar.cpp" line="+53"/>
+        <location filename="../../src/gui/UBToolOptionsBar.cpp" line="+57"/>
         <source>This tool has no options.</source>
         <translation>لا توجد خيارات لهذه الأداة.</translation>
     </message>
@@ -5525,7 +5864,7 @@ Dynamic width</source>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-899"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1225"/>
         <source>Color</source>
         <translation>اللون</translation>
     </message>
@@ -5642,24 +5981,24 @@ Please reboot the application to access the updated documents.</source>
 <context>
     <name>UBVoiceOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+384"/>
         <source>Read and dictate</source>
-        <translation>القراءة والإملاء</translation>
+        <translation type="vanished">القراءة والإملاء</translation>
     </message>
     <message>
-        <location line="+5"/>
         <source>Read</source>
-        <translation>قراءة</translation>
+        <translation type="vanished">قراءة</translation>
     </message>
     <message>
-        <location line="+0"/>
-        <location line="+27"/>
-        <location line="+65"/>
         <source>Dictate</source>
-        <translation>الإملاء</translation>
+        <translation type="vanished">الإملاء</translation>
     </message>
     <message>
-        <location line="-86"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+650"/>
+        <source>Read aloud</source>
+        <translation type="unfinished">القراءة بصوت عالٍ</translation>
+    </message>
+    <message>
+        <location line="+8"/>
         <source>From the start</source>
         <translation>من البداية</translation>
     </message>
@@ -5669,64 +6008,86 @@ Please reboot the application to access the updated documents.</source>
         <translation>النص المحدد</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>From the start: reads the page shown, then the next pages. Selected text: drag a rectangle over the text to read it.</source>
-        <translation>من البداية: يقرأ الصفحة ثم الصفحات التالية. النص المحدد: اسحب مستطيلًا فوق النص لقراءته.</translation>
-    </message>
-    <message>
-        <location line="+15"/>
-        <source>▶ Play</source>
-        <translation>▶ تشغيل</translation>
-    </message>
-    <message>
         <location line="+0"/>
+        <source>From the click</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>From the start: reads the page shown, then the next pages. Selected text: drag a rectangle over the text to read it. From the click: click on a word to read from it, then the next pages.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+17"/>
+        <source>Play</source>
+        <translation type="unfinished">تشغيل</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Pause</source>
+        <translation type="unfinished">وقفة قصيرة</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Stop</source>
+        <translation type="unfinished">إيقاف</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Next page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>From the start: reads the page shown, then the next pages. Selected text: drag a rectangle over the text to read it.</source>
+        <translation type="vanished">من البداية: يقرأ الصفحة ثم الصفحات التالية. النص المحدد: اسحب مستطيلًا فوق النص لقراءته.</translation>
+    </message>
+    <message>
+        <source>▶ Play</source>
+        <translation type="vanished">▶ تشغيل</translation>
+    </message>
+    <message>
+        <location line="-3"/>
         <source>Reads the page from its start, or goes on after a pause</source>
         <translation>يقرأ الصفحة من بدايتها، أو يتابع بعد الإيقاف المؤقت</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>⏸ Pause</source>
-        <translation>⏸ إيقاف مؤقت</translation>
+        <translation type="vanished">⏸ إيقاف مؤقت</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="+1"/>
         <source>Pauses the reading</source>
         <translation>يوقف القراءة مؤقتًا</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>⏹ Stop</source>
-        <translation>⏹ إيقاف</translation>
+        <translation type="vanished">⏹ إيقاف</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="+1"/>
         <source>Stops the reading</source>
         <translation>يوقف القراءة</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>⏭ Next page</source>
-        <translation>⏭ الصفحة التالية</translation>
+        <translation type="vanished">⏭ الصفحة التالية</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="+1"/>
         <source>Goes to the next page and reads it</source>
         <translation>ينتقل إلى الصفحة التالية ويقرؤها</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Opens the dictation of Windows (Windows + H)</source>
-        <translation>يفتح الإملاء في Windows (Windows + H)</translation>
+        <translation type="vanished">يفتح الإملاء في Windows (Windows + H)</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Click in a text box, then on Dictate: what you say is written there.</source>
-        <translation>انقر في مربع نص، ثم على إملاء: ما تقوله يُكتب هناك.</translation>
+        <translation type="vanished">انقر في مربع نص، ثم على إملاء: ما تقوله يُكتب هناك.</translation>
     </message>
     <message>
-        <location line="+62"/>
         <source>The dictation of the system is not available here. On Windows, press Windows + H in a text.</source>
-        <translation>إملاء النظام غير متاح هنا. في Windows، اضغط Windows + H داخل نص.</translation>
+        <translation type="vanished">إملاء النظام غير متاح هنا. في Windows، اضغط Windows + H داخل نص.</translation>
     </message>
 </context>
 <context>
@@ -5836,7 +6197,7 @@ Please reboot the application to access the updated documents.</source>
 <context>
     <name>UBZLayerController</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsScene.cpp" line="-958"/>
+        <location filename="../../src/domain/UBGraphicsScene.cpp" line="-1008"/>
         <source>Bottom layer limit reached</source>
         <translation type="unfinished"></translation>
     </message>

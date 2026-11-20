@@ -198,7 +198,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="vanished">背景</translation>
     </message>
     <message>
-        <location line="+1564"/>
+        <location line="+1580"/>
         <source>Text</source>
         <translation>文字</translation>
     </message>
@@ -234,7 +234,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>新頁面</translation>
     </message>
     <message>
-        <location line="-1625"/>
+        <location line="-1641"/>
         <source>Undo</source>
         <translation>回復</translation>
     </message>
@@ -477,12 +477,12 @@ Do you wish to override the security check and continue ?   </source>
     </message>
     <message>
         <location line="+9"/>
-        <location line="+633"/>
+        <location line="+649"/>
         <source>Erase Annotations</source>
         <translation>清除桌面標注</translation>
     </message>
     <message>
-        <location line="-630"/>
+        <location line="-646"/>
         <source>Erase All Annotations</source>
         <translation>清除所有桌面標注</translation>
     </message>
@@ -512,17 +512,15 @@ Do you wish to override the security check and continue ?   </source>
         <translation>繪製箭頭</translation>
     </message>
     <message>
-        <location line="+13"/>
         <source>Rectangle</source>
-        <translation>矩形</translation>
+        <translation type="vanished">矩形</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Draw Rectangles</source>
-        <translation>繪製矩形</translation>
+        <translation type="vanished">繪製矩形</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+29"/>
         <source>Ellipse</source>
         <translation>橢圓</translation>
     </message>
@@ -572,7 +570,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>在頁面上蓋章</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+29"/>
         <source>Spotlight</source>
         <translation>聚光燈</translation>
     </message>
@@ -582,17 +580,15 @@ Do you wish to override the security check and continue ?   </source>
         <translation>聚光燈和放大鏡：除指標周圍外使螢幕變暗，或放大指標下方的內容</translation>
     </message>
     <message>
-        <location line="+13"/>
         <source>Read and dictate</source>
-        <translation>朗讀和聽寫</translation>
+        <translation type="vanished">朗讀和聽寫</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Read the page aloud, or dictate with the voice</source>
-        <translation>朗讀頁面，或用語音聽寫</translation>
+        <translation type="vanished">朗讀頁面，或用語音聽寫</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+29"/>
         <source>Quick note</source>
         <translation>快速附註</translation>
     </message>
@@ -636,7 +632,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="vanished">Ctrl+I</translation>
     </message>
     <message>
-        <location line="-715"/>
+        <location line="-731"/>
         <source>Erase Annotation</source>
         <translation>清除桌面標注</translation>
     </message>
@@ -681,7 +677,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>手型工具</translation>
     </message>
     <message>
-        <location line="+294"/>
+        <location line="+310"/>
         <location line="+165"/>
         <source>Capture Part of the Screen</source>
         <translation>部份截圖</translation>
@@ -735,7 +731,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Ctrl+H</translation>
     </message>
     <message>
-        <location line="-1274"/>
+        <location line="-1290"/>
         <location line="+746"/>
         <source>Zoom In</source>
         <translation>放大</translation>
@@ -994,7 +990,37 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Ctrl+J</translation>
     </message>
     <message>
-        <location line="+208"/>
+        <location line="+29"/>
+        <source>Shapes</source>
+        <translation>形狀</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Draw shapes: rectangles, ellipses, lines, polylines, arrows, stars, speech bubbles…</source>
+        <translation>繪製形狀：矩形、橢圓、直線、折線、箭頭、星形、對話框…</translation>
+    </message>
+    <message>
+        <location line="+93"/>
+        <source>Emojis and GIFs</source>
+        <translation>表情符號和GIF</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Put an emoji or a GIF on the page</source>
+        <translation>在頁面上放置表情符號或GIF</translation>
+    </message>
+    <message>
+        <location line="+29"/>
+        <source>Read aloud</source>
+        <translation>朗讀</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Read the page aloud, from its start, from a word clicked or a rectangle dragged on the text</source>
+        <translation>朗讀頁面：從開頭、從點選的字詞，或從在文字上拖曳的矩形</translation>
+    </message>
+    <message>
+        <location line="+64"/>
         <source>Write Text</source>
         <translation>文字書寫</translation>
     </message>
@@ -1090,7 +1116,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>於顯示器上顯示</translation>
     </message>
     <message>
-        <location line="-843"/>
+        <location line="-859"/>
         <source>Sleep</source>
         <translation>睡眠狀態</translation>
     </message>
@@ -1184,7 +1210,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>退出 LibertyBoard</translation>
     </message>
     <message>
-        <location line="+1633"/>
+        <location line="+1649"/>
         <source>Hide LibertyBoard</source>
         <translation>隱藏 LibertyBoard</translation>
     </message>
@@ -1214,7 +1240,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>移除背景</translation>
     </message>
     <message>
-        <location line="-841"/>
+        <location line="-857"/>
         <location line="+6"/>
         <source>Ruled Light Background</source>
         <translation type="unfinished"></translation>
@@ -1226,7 +1252,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+768"/>
+        <location line="+784"/>
         <source>Open Tutorial</source>
         <translation>開啟新手教學</translation>
     </message>
@@ -1242,7 +1268,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>重設網格大小</translation>
     </message>
     <message>
-        <location line="-1670"/>
+        <location line="-1686"/>
         <source>Small Eraser</source>
         <translation>小橡皮擦</translation>
     </message>
@@ -1277,7 +1303,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>顏色 5</translation>
     </message>
     <message>
-        <location line="+1563"/>
+        <location line="+1579"/>
         <location line="+3"/>
         <source>Draw intermediate grid lines</source>
         <translation type="unfinished"></translation>
@@ -1291,7 +1317,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-1727"/>
+        <location line="-1743"/>
         <source>Template style</source>
         <translation>範本樣式</translation>
     </message>
@@ -1378,7 +1404,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+557"/>
+        <location line="+573"/>
         <source>Import one or more pages (supported formats : jpg, png, svg, ubz, pdf)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1558,7 +1584,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="vanished">Podcast</translation>
     </message>
     <message>
-        <location filename="../../src/core/UBApplication.cpp" line="+384"/>
+        <location filename="../../src/core/UBApplication.cpp" line="+388"/>
         <location line="+48"/>
         <location line="+221"/>
         <source>Cannot open your UBX file directly. Please import it in Documents mode instead</source>
@@ -1596,7 +1622,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBAttachmentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+699"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+917"/>
         <source>Insert file</source>
         <translation>插入檔案</translation>
     </message>
@@ -1629,7 +1655,17 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBackgroundPalette</name>
     <message>
-        <location filename="../../src/gui/UBBackgroundPalette.cpp" line="+57"/>
+        <location filename="../../src/gui/UBBackgroundPalette.cpp" line="+56"/>
+        <source>Page</source>
+        <translation>頁面</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Templates</source>
+        <translation>範本</translation>
+    </message>
+    <message>
+        <location line="+23"/>
         <source>Page color</source>
         <translation>紙張顏色</translation>
     </message>
@@ -1642,6 +1678,26 @@ Do you wish to override the security check and continue ?   </source>
         <location line="+1"/>
         <source>Draw intermediate grid lines</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+43"/>
+        <source>Date of the calendars</source>
+        <translation>行事曆日期</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>The calendars and planners are made for this day, its week, its month or its year</source>
+        <translation>行事曆和計畫表依這一天、所在週、所在月或所在年製作</translation>
+    </message>
+    <message>
+        <location line="+32"/>
+        <source>%1, for the date chosen above</source>
+        <translation>%1，依上方選擇的日期</translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <source>On a page of a PDF, the template goes on a new page after it.</source>
+        <translation>在PDF頁面上，範本會放在其後的新頁面上。</translation>
     </message>
 </context>
 <context>
@@ -1662,7 +1718,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>未知工具類型 %1</translation>
     </message>
     <message>
-        <location line="+672"/>
+        <location line="+728"/>
         <source>Page/canvas size</source>
         <translation>頁面/畫布大小</translation>
     </message>
@@ -1707,7 +1763,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>全部已支援 (%1)</translation>
     </message>
     <message>
-        <location line="-1240"/>
+        <location line="-1296"/>
         <source>Unknown content type %1</source>
         <translation>未知內容類型 %1</translation>
     </message>
@@ -1719,13 +1775,13 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="+506"/>
         <location line="+45"/>
-        <location line="+1022"/>
+        <location line="+1078"/>
         <location line="+36"/>
         <source>Add file operation failed: file copying error</source>
         <translation>新增檔案失敗：檔案複製錯誤</translation>
     </message>
     <message>
-        <location line="-2432"/>
+        <location line="-2488"/>
         <source>Group</source>
         <translation>群組</translation>
     </message>
@@ -1837,7 +1893,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+2193"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+2231"/>
         <source>That page is not in the document any more.</source>
         <translation>該頁面已不在文件中。</translation>
     </message>
@@ -1907,7 +1963,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBColorSwatches</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsWidgets.cpp" line="+152"/>
+        <location filename="../../src/gui/UBToolOptionsWidgets.cpp" line="+153"/>
         <source>No color</source>
         <translation>無顏色</translation>
     </message>
@@ -1922,7 +1978,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>滴管：從螢幕上取色</translation>
     </message>
     <message>
-        <location line="+174"/>
+        <location line="+187"/>
         <source>Choose a color</source>
         <translation>選擇顏色</translation>
     </message>
@@ -1930,7 +1986,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+619"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+734"/>
         <source>Quick note</source>
         <translation>快速附註</translation>
     </message>
@@ -2049,6 +2105,19 @@ Do you wish to override the security check and continue ?   </source>
         <location line="-416"/>
         <source>Show LibertyBoard</source>
         <translation>顯示 LibertyBoard</translation>
+    </message>
+</context>
+<context>
+    <name>UBDictation</name>
+    <message>
+        <location filename="../../src/gui/UBDictation.cpp" line="+83"/>
+        <source>Dictate</source>
+        <translation>聽寫</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>The dictation of the system is not available here. On Windows, press Windows + H in a text.</source>
+        <translation>此處無法使用系統聽寫。在 Windows 中，請在文字中按 Windows + H。</translation>
     </message>
 </context>
 <context>
@@ -2633,9 +2702,107 @@ Do you want to continue?</source>
     </message>
 </context>
 <context>
+    <name>UBEmojiOptionsPanel</name>
+    <message>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1132"/>
+        <source>Emojis and GIFs</source>
+        <translation>表情符號和GIF</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Emojis</source>
+        <translation>表情符號</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>GIFs</source>
+        <translation>GIF</translation>
+    </message>
+    <message>
+        <location line="+30"/>
+        <source>To use GIFs, make a free account at klipy.com, only once, and paste your key (API key) here. From then on, the GIF search is always ready. Without it, the emojis work as always.</source>
+        <translation>若要使用GIF，請在 klipy.com 免費註冊一次帳號，並將您的金鑰（API key）貼到這裡。之後GIF搜尋隨時可用。沒有金鑰，表情符號照常可用。</translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>Paste your key here</source>
+        <translation>在此貼上金鑰</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Save</source>
+        <translation>儲存</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Open klipy.com</source>
+        <translation>開啟 klipy.com</translation>
+    </message>
+    <message>
+        <location line="+21"/>
+        <source>Search GIFs</source>
+        <translation>搜尋GIF</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Change the key</source>
+        <translation>變更金鑰</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Powered by KLIPY</source>
+        <translation>Powered by KLIPY</translation>
+    </message>
+    <message>
+        <location line="+30"/>
+        <source>Size</source>
+        <translation>大小</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source> pt</source>
+        <translation> pt</translation>
+    </message>
+    <message>
+        <location line="+27"/>
+        <source>The GIF search did not answer: check your key and the internet connection.</source>
+        <translation>GIF搜尋沒有回應：請檢查您的金鑰和網路連線。</translation>
+    </message>
+    <message>
+        <location line="+16"/>
+        <source>Downloading the GIF...</source>
+        <translation>正在下載GIF...</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>GIF chosen: click on the page to put it.</source>
+        <translation>已選擇GIF：點選頁面放置。</translation>
+    </message>
+    <message>
+        <location line="+66"/>
+        <source>Search a GIF, then click on it and on the page.</source>
+        <translation>搜尋GIF，然後點選它，再點選頁面。</translation>
+    </message>
+    <message>
+        <location line="+17"/>
+        <source>Searching...</source>
+        <translation>正在搜尋...</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>No GIF found.</source>
+        <translation>找不到GIF。</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Click on a GIF, then on the page.</source>
+        <translation>點選一個GIF，然後點選頁面。</translation>
+    </message>
+</context>
+<context>
     <name>UBEraserOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1047"/>
+        <location line="-492"/>
         <source>Eraser</source>
         <translation>橡皮擦</translation>
     </message>
@@ -3224,7 +3391,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
 <context>
     <name>UBGraphicsScene</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsScene.cpp" line="+1150"/>
+        <location filename="../../src/domain/UBGraphicsScene.cpp" line="+1201"/>
         <location line="+11"/>
         <source>Attach a file</source>
         <translation>附加檔案</translation>
@@ -3256,7 +3423,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
 <context>
     <name>UBGraphicsTextItem</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsTextItem.cpp" line="+49"/>
+        <location filename="../../src/domain/UBGraphicsTextItem.cpp" line="+51"/>
         <source>&lt;Type Text Here&gt;</source>
         <translation>&lt;此處輸入文字&gt;</translation>
     </message>
@@ -3264,7 +3431,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
 <context>
     <name>UBGraphicsTextItemDelegate</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsTextItemDelegate.cpp" line="+338"/>
+        <location filename="../../src/domain/UBGraphicsTextItemDelegate.cpp" line="+390"/>
         <source>Text Color</source>
         <translation>文字顏色</translation>
     </message>
@@ -3272,6 +3439,91 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <location line="+134"/>
         <source>Editable</source>
         <translation>可編輯</translation>
+    </message>
+    <message>
+        <location line="+393"/>
+        <source>Insert a table...</source>
+        <translation>插入表格...</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Add a row</source>
+        <translation>新增列</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Add a column</source>
+        <translation>新增欄</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Remove the row</source>
+        <translation>刪除列</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Remove the column</source>
+        <translation>刪除欄</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Columns as wide</source>
+        <translation>欄寬相同</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Table style</source>
+        <translation>表格樣式</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Highlight the header row</source>
+        <translation>醒目提示標題列</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Highlight the first column</source>
+        <translation>醒目提示第一欄</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>All the lines</source>
+        <translation>所有線條</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Horizontal lines</source>
+        <translation>水平線</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Outer lines</source>
+        <translation>外框線</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>No lines</source>
+        <translation>無線條</translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>Color of the cells...</source>
+        <translation>儲存格顏色...</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Color of the cells</source>
+        <translation>儲存格顏色</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>No color in the cells</source>
+        <translation>儲存格無顏色</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Remove the table</source>
+        <translation>刪除表格</translation>
     </message>
 </context>
 <context>
@@ -3502,6 +3754,11 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     </message>
     <message>
         <location line="+3"/>
+        <source>Opacity</source>
+        <translation>不透明度</translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source> %</source>
         <translation> %</translation>
     </message>
@@ -3602,7 +3859,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation type="vanished">頁面大小</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+131"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+132"/>
         <location line="+85"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -3748,7 +4005,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>開啟 Windows 聽寫：所說內容會寫在文字游標處</translation>
     </message>
     <message>
-        <location line="+163"/>
+        <location line="+167"/>
         <source>Lock the canvas: nothing can be drawn, written, highlighted, selected, moved or deleted; the laser pointer and the hand still work</source>
         <translation>鎖定畫布：無法繪製、書寫、標示、選取、移動或刪除任何內容；雷射筆和手形工具仍可使用</translation>
     </message>
@@ -3761,7 +4018,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation type="vanished">此處無法使用系統聽寫。在 Windows 中，請在文字中按 Windows + H。</translation>
     </message>
     <message>
-        <location line="-160"/>
+        <location line="-164"/>
         <source>Transcribe an audio (coming with the AI)</source>
         <translation>轉寫音訊（將隨 AI 推出）</translation>
     </message>
@@ -3797,12 +4054,12 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     </message>
     <message>
         <location line="+66"/>
-        <location line="+359"/>
+        <location line="+369"/>
         <source>Saved</source>
         <translation>已儲存</translation>
     </message>
     <message>
-        <location line="-353"/>
+        <location line="-363"/>
         <source>Search...</source>
         <translation>尋找...</translation>
     </message>
@@ -3822,9 +4079,9 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>PDF 的目錄：按一下標題即可前往其頁面</translation>
     </message>
     <message>
-        <location line="+28"/>
+        <location line="+32"/>
         <location line="+9"/>
-        <location line="+24"/>
+        <location line="+23"/>
         <source>Lock canvas</source>
         <translation>鎖定畫布</translation>
     </message>
@@ -3833,8 +4090,8 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation type="vanished">鎖定畫布：無法繪製、書寫、醒目提示、移動或刪除任何內容；雷射筆、手掌和選取仍可使用</translation>
     </message>
     <message>
-        <location line="-24"/>
-        <location line="+22"/>
+        <location line="-23"/>
+        <location line="+21"/>
         <source>Unlock canvas</source>
         <translation>解鎖畫布</translation>
     </message>
@@ -3844,7 +4101,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>隱藏或顯示工具列</translation>
     </message>
     <message>
-        <location line="+153"/>
+        <location line="+160"/>
         <source>Exit full screen</source>
         <translation>結束全螢幕</translation>
     </message>
@@ -3880,7 +4137,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
 <context>
     <name>UBMarkerOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-164"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-165"/>
         <source>Marker</source>
         <translation>提示筆</translation>
     </message>
@@ -3975,7 +4232,7 @@ Do you want to ignore these errors for this host?</source>
         <translation>在此輸入便箋</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+7"/>
         <source>Cancel</source>
         <translation>取消</translation>
     </message>
@@ -3998,7 +4255,7 @@ Do you want to ignore these errors for this host?</source>
 <context>
     <name>UBNoteOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+998"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1325"/>
         <source>Note</source>
         <translation>便箋</translation>
     </message>
@@ -4303,7 +4560,7 @@ It can also be done later with Home &gt; Recognize text.</source>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1161"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1488"/>
         <source>Pen</source>
         <translation>電子筆</translation>
     </message>
@@ -4841,7 +5098,7 @@ Dynamic width</source>
 <context>
     <name>UBReadAloud</name>
     <message>
-        <location filename="../../src/gui/UBReadAloud.cpp" line="+113"/>
+        <location filename="../../src/gui/UBReadAloud.cpp" line="+114"/>
         <source>This is the last page.</source>
         <translation>這是最後一頁。</translation>
     </message>
@@ -4851,19 +5108,19 @@ Dynamic width</source>
         <translation>此矩形內沒有文字。</translation>
     </message>
     <message>
-        <location line="+11"/>
+        <location line="+31"/>
         <source>There is no text to read on this page: write or select a text, or open a PDF with text.</source>
         <translation>此頁面上沒有可朗讀的文字：請書寫或選取文字，或開啟含文字的 PDF。</translation>
     </message>
     <message>
-        <location line="+33"/>
-        <location line="+24"/>
+        <location line="+34"/>
+        <location line="+25"/>
         <source>Read aloud</source>
         <translation>朗讀</translation>
     </message>
     <message>
-        <location line="-24"/>
-        <location line="+24"/>
+        <location line="-25"/>
+        <location line="+25"/>
         <source>The voices of the system could not be used to read aloud.</source>
         <translation>無法使用系統語音進行朗讀。</translation>
     </message>
@@ -4937,7 +5194,7 @@ Dynamic width</source>
 <context>
     <name>UBSelectorOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1021"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1348"/>
         <source>Select</source>
         <translation>選取</translation>
     </message>
@@ -4975,7 +5232,7 @@ Dynamic width</source>
 <context>
     <name>UBSettings</name>
     <message>
-        <location filename="../../src/core/UBSettings.cpp" line="+1143"/>
+        <location filename="../../src/core/UBSettings.cpp" line="+1148"/>
         <source>My Movies</source>
         <translation>我的影片</translation>
     </message>
@@ -4983,9 +5240,13 @@ Dynamic width</source>
 <context>
     <name>UBShapeOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-525"/>
         <source>Rectangle</source>
-        <translation>矩形</translation>
+        <translation type="vanished">矩形</translation>
+    </message>
+    <message>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-613"/>
+        <source>Shapes</source>
+        <translation>形狀</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -5008,7 +5269,12 @@ Dynamic width</source>
         <translation>底線</translation>
     </message>
     <message>
-        <location line="+16"/>
+        <location line="+18"/>
+        <source>The shape to draw. The polyline: a click for each corner, Enter to end it.</source>
+        <translation>要繪製的形狀。折線：每個轉角點選一次，按 Enter 結束。</translation>
+    </message>
+    <message>
+        <location line="+9"/>
         <source>Border</source>
         <translation>框線</translation>
     </message>
@@ -5030,29 +5296,29 @@ Dynamic width</source>
     </message>
     <message>
         <location line="+7"/>
-        <location line="+160"/>
+        <location line="+181"/>
         <source>Line style</source>
         <translation>線條樣式</translation>
     </message>
     <message>
-        <location line="-160"/>
+        <location line="-181"/>
         <source>Border styles</source>
         <translation>框線樣式</translation>
     </message>
     <message>
         <location line="+13"/>
-        <location line="+147"/>
+        <location line="+168"/>
         <source>Line start</source>
         <translation>線條起點</translation>
     </message>
     <message>
-        <location line="-143"/>
-        <location line="+144"/>
+        <location line="-164"/>
+        <location line="+165"/>
         <source>Line end</source>
         <translation>線條終點</translation>
     </message>
     <message>
-        <location line="-140"/>
+        <location line="-161"/>
         <source>Tapered</source>
         <translation>漸粗</translation>
     </message>
@@ -5073,17 +5339,17 @@ Dynamic width</source>
     </message>
     <message>
         <location line="+10"/>
-        <location line="+131"/>
+        <location line="+152"/>
         <source>Opacity</source>
         <translation>透明度</translation>
     </message>
     <message>
-        <location line="-130"/>
+        <location line="-151"/>
         <source> %</source>
         <translation> %</translation>
     </message>
     <message>
-        <location line="+120"/>
+        <location line="+141"/>
         <source>Line</source>
         <translation>線條</translation>
     </message>
@@ -5112,7 +5378,7 @@ Dynamic width</source>
     </message>
     <message>
         <location line="+15"/>
-        <location line="+31"/>
+        <location line="+32"/>
         <location line="+3"/>
         <source>Stylus Palette</source>
         <translation type="unfinished">桌面工具</translation>
@@ -5366,7 +5632,7 @@ Dynamic width</source>
 <context>
     <name>UBSpotlightOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-295"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-354"/>
         <location line="+4"/>
         <source>Spotlight</source>
         <translation>聚光燈</translation>
@@ -5411,7 +5677,7 @@ Dynamic width</source>
 <context>
     <name>UBStampOptionsPanel</name>
     <message>
-        <location line="+392"/>
+        <location line="+507"/>
         <source>Stamp</source>
         <translation>印章</translation>
     </message>
@@ -5447,7 +5713,7 @@ Dynamic width</source>
 <context>
     <name>UBStylusPalette</name>
     <message>
-        <location filename="../../src/gui/UBStylusPalette.cpp" line="+84"/>
+        <location filename="../../src/gui/UBStylusPalette.cpp" line="+85"/>
         <source>Save a screenshot</source>
         <translation>儲存螢幕擷取畫面</translation>
     </message>
@@ -5458,9 +5724,37 @@ Dynamic width</source>
     </message>
 </context>
 <context>
+    <name>UBTextBoxes</name>
+    <message>
+        <location filename="../../src/gui/UBTextBoxes.cpp" line="+120"/>
+        <source>Table</source>
+        <translation>表格</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>How many rows and columns?</source>
+        <translation>多少列和欄？</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Rows</source>
+        <translation>列</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Columns</source>
+        <translation>欄</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Insert</source>
+        <translation>插入</translation>
+    </message>
+</context>
+<context>
     <name>UBTextOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-195"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-251"/>
         <source>Text</source>
         <translation>文字</translation>
     </message>
@@ -5494,6 +5788,51 @@ Dynamic width</source>
         <source>Color</source>
         <translation>顏色</translation>
     </message>
+    <message>
+        <location line="+7"/>
+        <source>Checklist</source>
+        <translation>核取方塊</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Bullets</source>
+        <translation>項目符號</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Numbers</source>
+        <translation>編號</translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>Puts the lines of the text box being written in a list, or takes them out of it</source>
+        <translation>將正在編輯的文字方塊中的行放入清單，或從清單中移出</translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>Click in a text box first, then on the list.</source>
+        <translation>請先點選文字方塊，再點選清單。</translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <source>Table</source>
+        <translation>表格</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Asks how many rows and columns, then puts a table in the text box being written, or in a new one</source>
+        <translation>詢問列數和欄數，然後在正在編輯的文字方塊或新文字方塊中放入表格</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Dictate</source>
+        <translation>聽寫</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Makes a text box and writes in it what you say (the dictation of Windows, Windows + H). In a text box, the microphone left of F does the same.</source>
+        <translation>建立文字方塊並寫入您說的話（Windows 聽寫，Windows + H）。在文字方塊中，F 左邊的麥克風也一樣。</translation>
+    </message>
 </context>
 <context>
     <name>UBThumbnailAdaptor</name>
@@ -5524,7 +5863,7 @@ Dynamic width</source>
 <context>
     <name>UBToolOptionsBar</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsBar.cpp" line="+53"/>
+        <location filename="../../src/gui/UBToolOptionsBar.cpp" line="+57"/>
         <source>This tool has no options.</source>
         <translation>此工具沒有選項。</translation>
     </message>
@@ -5532,7 +5871,7 @@ Dynamic width</source>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-899"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1225"/>
         <source>Color</source>
         <translation>顏色</translation>
     </message>
@@ -5648,24 +5987,24 @@ Please reboot the application to access the updated documents.</source>
 <context>
     <name>UBVoiceOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+384"/>
         <source>Read and dictate</source>
-        <translation>朗讀和聽寫</translation>
+        <translation type="vanished">朗讀和聽寫</translation>
     </message>
     <message>
-        <location line="+5"/>
         <source>Read</source>
+        <translation type="vanished">朗讀</translation>
+    </message>
+    <message>
+        <source>Dictate</source>
+        <translation type="vanished">聽寫</translation>
+    </message>
+    <message>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+650"/>
+        <source>Read aloud</source>
         <translation>朗讀</translation>
     </message>
     <message>
-        <location line="+0"/>
-        <location line="+27"/>
-        <location line="+65"/>
-        <source>Dictate</source>
-        <translation>聽寫</translation>
-    </message>
-    <message>
-        <location line="-86"/>
+        <location line="+8"/>
         <source>From the start</source>
         <translation>從頭開始</translation>
     </message>
@@ -5675,64 +6014,86 @@ Please reboot the application to access the updated documents.</source>
         <translation>選取的文字</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>From the start: reads the page shown, then the next pages. Selected text: drag a rectangle over the text to read it.</source>
-        <translation>從頭開始：朗讀目前頁面，然後是後續頁面。選取的文字：在文字上拖曳一個矩形來朗讀它。</translation>
-    </message>
-    <message>
-        <location line="+15"/>
-        <source>▶ Play</source>
-        <translation>▶ 播放</translation>
-    </message>
-    <message>
         <location line="+0"/>
+        <source>From the click</source>
+        <translation>從點選處</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>From the start: reads the page shown, then the next pages. Selected text: drag a rectangle over the text to read it. From the click: click on a word to read from it, then the next pages.</source>
+        <translation>從開頭：朗讀目前頁面，然後是後續頁面。選取的文字：在文字上拖曳矩形來朗讀。從點選處：點選一個字詞，從那裡朗讀，然後是後續頁面。</translation>
+    </message>
+    <message>
+        <location line="+17"/>
+        <source>Play</source>
+        <translation>播放</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Pause</source>
+        <translation>暫停</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Stop</source>
+        <translation>停止</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Next page</source>
+        <translation>下一頁</translation>
+    </message>
+    <message>
+        <source>From the start: reads the page shown, then the next pages. Selected text: drag a rectangle over the text to read it.</source>
+        <translation type="vanished">從頭開始：朗讀目前頁面，然後是後續頁面。選取的文字：在文字上拖曳一個矩形來朗讀它。</translation>
+    </message>
+    <message>
+        <source>▶ Play</source>
+        <translation type="vanished">▶ 播放</translation>
+    </message>
+    <message>
+        <location line="-3"/>
         <source>Reads the page from its start, or goes on after a pause</source>
         <translation>從頭朗讀頁面，或在暫停後繼續</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>⏸ Pause</source>
-        <translation>⏸ 暫停</translation>
+        <translation type="vanished">⏸ 暫停</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="+1"/>
         <source>Pauses the reading</source>
         <translation>暫停朗讀</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>⏹ Stop</source>
-        <translation>⏹ 停止</translation>
+        <translation type="vanished">⏹ 停止</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="+1"/>
         <source>Stops the reading</source>
         <translation>停止朗讀</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>⏭ Next page</source>
-        <translation>⏭ 下一頁</translation>
+        <translation type="vanished">⏭ 下一頁</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="+1"/>
         <source>Goes to the next page and reads it</source>
         <translation>前往下一頁並朗讀</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Opens the dictation of Windows (Windows + H)</source>
-        <translation>開啟 Windows 聽寫 (Windows + H)</translation>
+        <translation type="vanished">開啟 Windows 聽寫 (Windows + H)</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Click in a text box, then on Dictate: what you say is written there.</source>
-        <translation>先點選文字方塊，再點選「聽寫」：你說的話會寫在那裡。</translation>
+        <translation type="vanished">先點選文字方塊，再點選「聽寫」：你說的話會寫在那裡。</translation>
     </message>
     <message>
-        <location line="+62"/>
         <source>The dictation of the system is not available here. On Windows, press Windows + H in a text.</source>
-        <translation>此處無法使用系統聽寫。在 Windows 中，請在文字中按 Windows + H。</translation>
+        <translation type="vanished">此處無法使用系統聽寫。在 Windows 中，請在文字中按 Windows + H。</translation>
     </message>
 </context>
 <context>
@@ -5842,7 +6203,7 @@ Please reboot the application to access the updated documents.</source>
 <context>
     <name>UBZLayerController</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsScene.cpp" line="-958"/>
+        <location filename="../../src/domain/UBGraphicsScene.cpp" line="-1008"/>
         <source>Bottom layer limit reached</source>
         <translation type="unfinished"></translation>
     </message>

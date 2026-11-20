@@ -742,12 +742,12 @@ Do you wish to override the security check and continue ?   </source>
     </message>
     <message>
         <location line="+9"/>
-        <location line="+633"/>
+        <location line="+649"/>
         <source>Erase Annotations</source>
         <translation>Slett merknader</translation>
     </message>
     <message>
-        <location line="-630"/>
+        <location line="-646"/>
         <source>Erase All Annotations</source>
         <translation>Slett alle merknader</translation>
     </message>
@@ -782,17 +782,15 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Tegn piler</translation>
     </message>
     <message>
-        <location line="+13"/>
         <source>Rectangle</source>
-        <translation>Rektangel</translation>
+        <translation type="vanished">Rektangel</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Draw Rectangles</source>
-        <translation>Tegn rektangler</translation>
+        <translation type="vanished">Tegn rektangler</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+29"/>
         <source>Ellipse</source>
         <translation>Ellipse</translation>
     </message>
@@ -842,7 +840,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Sett et stempel på siden</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+29"/>
         <source>Spotlight</source>
         <translation>Spotlight</translation>
     </message>
@@ -852,17 +850,15 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Spotlight og lupe: gjør skjermen mørk unntatt rundt pekeren, eller forstørrer det som er under</translation>
     </message>
     <message>
-        <location line="+13"/>
         <source>Read and dictate</source>
-        <translation>Les opp og dikter</translation>
+        <translation type="vanished">Les opp og dikter</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Read the page aloud, or dictate with the voice</source>
-        <translation>Leser siden høyt, eller dikterer med stemmen</translation>
+        <translation type="vanished">Leser siden høyt, eller dikterer med stemmen</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+29"/>
         <source>Quick note</source>
         <translation>Hurtignotat</translation>
     </message>
@@ -906,7 +902,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="vanished">Ctrl+I</translation>
     </message>
     <message>
-        <location line="-715"/>
+        <location line="-731"/>
         <source>Erase Annotation</source>
         <translation>Slett merknad</translation>
     </message>
@@ -981,7 +977,37 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Ctrl+J</translation>
     </message>
     <message>
-        <location line="+205"/>
+        <location line="+29"/>
+        <source>Shapes</source>
+        <translation type="unfinished">Former</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Draw shapes: rectangles, ellipses, lines, polylines, arrows, stars, speech bubbles…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+93"/>
+        <source>Emojis and GIFs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Put an emoji or a GIF on the page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+29"/>
+        <source>Read aloud</source>
+        <translation type="unfinished">Les opp</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Read the page aloud, from its start, from a word clicked or a rectangle dragged on the text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+61"/>
         <source>Text</source>
         <translation>Tekst</translation>
     </message>
@@ -1167,7 +1193,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Ctrl+H</translation>
     </message>
     <message>
-        <location line="-2009"/>
+        <location line="-2025"/>
         <location line="+686"/>
         <location line="+3"/>
         <source>LibertyBoard</source>
@@ -1179,7 +1205,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Avslutt LibertyBoard</translation>
     </message>
     <message>
-        <location line="+1633"/>
+        <location line="+1649"/>
         <source>Hide LibertyBoard</source>
         <translation>Skjul Åpne-Sankoré</translation>
     </message>
@@ -1209,7 +1235,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Fjern bakgrunn</translation>
     </message>
     <message>
-        <location line="-841"/>
+        <location line="-857"/>
         <location line="+6"/>
         <source>Ruled Light Background</source>
         <translation type="unfinished"></translation>
@@ -1221,7 +1247,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+768"/>
+        <location line="+784"/>
         <source>Open Tutorial</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1237,7 +1263,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-1670"/>
+        <location line="-1686"/>
         <source>Small Eraser</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1272,7 +1298,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1563"/>
+        <location line="+1579"/>
         <location line="+3"/>
         <source>Draw intermediate grid lines</source>
         <translation type="unfinished"></translation>
@@ -1286,7 +1312,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-1727"/>
+        <location line="-1743"/>
         <source>Template style</source>
         <translation>Malstil</translation>
     </message>
@@ -1378,7 +1404,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+459"/>
+        <location line="+475"/>
         <source>Import one or more pages (supported formats : jpg, png, svg, ubz, pdf)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1558,7 +1584,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="vanished">Podcast</translation>
     </message>
     <message>
-        <location filename="../../src/core/UBApplication.cpp" line="+384"/>
+        <location filename="../../src/core/UBApplication.cpp" line="+388"/>
         <location line="+48"/>
         <location line="+221"/>
         <source>Cannot open your UBX file directly. Please import it in Documents mode instead</source>
@@ -1596,7 +1622,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBAttachmentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+699"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+917"/>
         <source>Insert file</source>
         <translation>Sett inn fil</translation>
     </message>
@@ -1629,7 +1655,17 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBackgroundPalette</name>
     <message>
-        <location filename="../../src/gui/UBBackgroundPalette.cpp" line="+57"/>
+        <location filename="../../src/gui/UBBackgroundPalette.cpp" line="+56"/>
+        <source>Page</source>
+        <translation type="unfinished">Side</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Templates</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+23"/>
         <source>Page color</source>
         <translation>Arkfarge</translation>
     </message>
@@ -1641,6 +1677,26 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="+1"/>
         <source>Draw intermediate grid lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+43"/>
+        <source>Date of the calendars</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>The calendars and planners are made for this day, its week, its month or its year</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+32"/>
+        <source>%1, for the date chosen above</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <source>On a page of a PDF, the template goes on a new page after it.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1667,7 +1723,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Ukjent innholdstype %1</translation>
     </message>
     <message>
-        <location line="+627"/>
+        <location line="+683"/>
         <source>Page/canvas size</source>
         <translation>Side-/lerretsstørrelse</translation>
     </message>
@@ -1712,20 +1768,20 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Alle støttede (%1)</translation>
     </message>
     <message>
-        <location line="-1987"/>
+        <location line="-2043"/>
         <source>Page %1 deleted</source>
         <translation>Side %1 slettet</translation>
     </message>
     <message>
         <location line="+506"/>
         <location line="+45"/>
-        <location line="+1022"/>
+        <location line="+1078"/>
         <location line="+36"/>
         <source>Add file operation failed: file copying error</source>
         <translation>Tilføying av fil slo feil: filkopieringsfeil</translation>
     </message>
     <message>
-        <location line="-2432"/>
+        <location line="-2488"/>
         <source>Group</source>
         <translation>Grupper</translation>
     </message>
@@ -1830,7 +1886,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+2193"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+2231"/>
         <source>That page is not in the document any more.</source>
         <translation>Den siden er ikke lenger i dokumentet.</translation>
     </message>
@@ -1900,7 +1956,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBColorSwatches</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsWidgets.cpp" line="+152"/>
+        <location filename="../../src/gui/UBToolOptionsWidgets.cpp" line="+153"/>
         <source>No color</source>
         <translation>Ingen farge</translation>
     </message>
@@ -1915,7 +1971,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Pipette: ta en farge på skjermen</translation>
     </message>
     <message>
-        <location line="+174"/>
+        <location line="+187"/>
         <source>Choose a color</source>
         <translation>Velg en farge</translation>
     </message>
@@ -1923,7 +1979,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+619"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+734"/>
         <source>Quick note</source>
         <translation>Hurtignotat</translation>
     </message>
@@ -2042,6 +2098,19 @@ Do you wish to override the security check and continue ?   </source>
         <location line="-416"/>
         <source>Show LibertyBoard</source>
         <translation>Vis LibertyBoard</translation>
+    </message>
+</context>
+<context>
+    <name>UBDictation</name>
+    <message>
+        <location filename="../../src/gui/UBDictation.cpp" line="+83"/>
+        <source>Dictate</source>
+        <translation type="unfinished">Dikter</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>The dictation of the system is not available here. On Windows, press Windows + H in a text.</source>
+        <translation type="unfinished">Systemets diktering er ikke tilgjengelig her. I Windows trykker du Windows + H i en tekst.</translation>
     </message>
 </context>
 <context>
@@ -2607,9 +2676,107 @@ Do you want to continue?</source>
     </message>
 </context>
 <context>
+    <name>UBEmojiOptionsPanel</name>
+    <message>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1132"/>
+        <source>Emojis and GIFs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Emojis</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>GIFs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+30"/>
+        <source>To use GIFs, make a free account at klipy.com, only once, and paste your key (API key) here. From then on, the GIF search is always ready. Without it, the emojis work as always.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>Paste your key here</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Save</source>
+        <translation type="unfinished">Lagre</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Open klipy.com</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+21"/>
+        <source>Search GIFs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Change the key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Powered by KLIPY</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+30"/>
+        <source>Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source> pt</source>
+        <translation type="unfinished"> pt</translation>
+    </message>
+    <message>
+        <location line="+27"/>
+        <source>The GIF search did not answer: check your key and the internet connection.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+16"/>
+        <source>Downloading the GIF...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>GIF chosen: click on the page to put it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+66"/>
+        <source>Search a GIF, then click on it and on the page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+17"/>
+        <source>Searching...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>No GIF found.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Click on a GIF, then on the page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>UBEraserOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1047"/>
+        <location line="-492"/>
         <source>Eraser</source>
         <translation>Slettemarkør</translation>
     </message>
@@ -3198,7 +3365,7 @@ Laste ned og installere nå? LibertyBoard lagrer dokumentene dine, lukkes og åp
 <context>
     <name>UBGraphicsScene</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsScene.cpp" line="+1150"/>
+        <location filename="../../src/domain/UBGraphicsScene.cpp" line="+1201"/>
         <location line="+11"/>
         <source>Attach a file</source>
         <translation>Legg ved en fil</translation>
@@ -3230,7 +3397,7 @@ Laste ned og installere nå? LibertyBoard lagrer dokumentene dine, lukkes og åp
 <context>
     <name>UBGraphicsTextItem</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsTextItem.cpp" line="+49"/>
+        <location filename="../../src/domain/UBGraphicsTextItem.cpp" line="+51"/>
         <source>&lt;Type Text Here&gt;</source>
         <translation>&lt;Skriv tekst her&gt;</translation>
     </message>
@@ -3238,7 +3405,7 @@ Laste ned og installere nå? LibertyBoard lagrer dokumentene dine, lukkes og åp
 <context>
     <name>UBGraphicsTextItemDelegate</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsTextItemDelegate.cpp" line="+338"/>
+        <location filename="../../src/domain/UBGraphicsTextItemDelegate.cpp" line="+390"/>
         <source>Text Color</source>
         <translation>Tekstfarge</translation>
     </message>
@@ -3246,6 +3413,91 @@ Laste ned og installere nå? LibertyBoard lagrer dokumentene dine, lukkes og åp
         <location line="+134"/>
         <source>Editable</source>
         <translation>Redigerbar</translation>
+    </message>
+    <message>
+        <location line="+393"/>
+        <source>Insert a table...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Add a row</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Add a column</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Remove the row</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Remove the column</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Columns as wide</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Table style</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Highlight the header row</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Highlight the first column</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>All the lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Horizontal lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Outer lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>No lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>Color of the cells...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Color of the cells</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>No color in the cells</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Remove the table</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3477,6 +3729,11 @@ Laste ned og installere nå? LibertyBoard lagrer dokumentene dine, lukkes og åp
     </message>
     <message>
         <location line="+3"/>
+        <source>Opacity</source>
+        <translation type="unfinished">Ugjennomsiktig</translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source> %</source>
         <translation> %</translation>
     </message>
@@ -3577,7 +3834,7 @@ Laste ned og installere nå? LibertyBoard lagrer dokumentene dine, lukkes og åp
         <translation type="vanished">Sidestørrelse</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+131"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+132"/>
         <location line="+85"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -3723,7 +3980,7 @@ Laste ned og installere nå? LibertyBoard lagrer dokumentene dine, lukkes og åp
         <translation>Åpner Windows-diktering: det som sies, skrives der tekstmarkøren er</translation>
     </message>
     <message>
-        <location line="+163"/>
+        <location line="+167"/>
         <source>Lock the canvas: nothing can be drawn, written, highlighted, selected, moved or deleted; the laser pointer and the hand still work</source>
         <translation>Lås lerretet: ingenting kan tegnes, skrives, uthevres, markeres, flyttes eller slettes; laser og hånd virker fortsatt</translation>
     </message>
@@ -3736,7 +3993,7 @@ Laste ned og installere nå? LibertyBoard lagrer dokumentene dine, lukkes og åp
         <translation type="vanished">Systemets diktering er ikke tilgjengelig her. I Windows trykker du Windows + H i en tekst.</translation>
     </message>
     <message>
-        <location line="-160"/>
+        <location line="-164"/>
         <source>Transcribe an audio (coming with the AI)</source>
         <translation>Transkriber en lydfil (kommer med KI)</translation>
     </message>
@@ -3772,12 +4029,12 @@ Laste ned og installere nå? LibertyBoard lagrer dokumentene dine, lukkes og åp
     </message>
     <message>
         <location line="+66"/>
-        <location line="+359"/>
+        <location line="+369"/>
         <source>Saved</source>
         <translation>Lagret</translation>
     </message>
     <message>
-        <location line="-353"/>
+        <location line="-363"/>
         <source>Search...</source>
         <translation>Søk...</translation>
     </message>
@@ -3797,9 +4054,9 @@ Laste ned og installere nå? LibertyBoard lagrer dokumentene dine, lukkes og åp
         <translation>Innholdsfortegnelsen i PDF-en: et klikk på en tittel går til siden</translation>
     </message>
     <message>
-        <location line="+28"/>
+        <location line="+32"/>
         <location line="+9"/>
-        <location line="+24"/>
+        <location line="+23"/>
         <source>Lock canvas</source>
         <translation>Lås lerretet</translation>
     </message>
@@ -3808,8 +4065,8 @@ Laste ned og installere nå? LibertyBoard lagrer dokumentene dine, lukkes og åp
         <translation type="vanished">Lås lerretet: ingenting kan tegnes, skrives, uthevres, flyttes eller slettes; laser, hånd og markering virker fortsatt</translation>
     </message>
     <message>
-        <location line="-24"/>
-        <location line="+22"/>
+        <location line="-23"/>
+        <location line="+21"/>
         <source>Unlock canvas</source>
         <translation>Lås opp lerretet</translation>
     </message>
@@ -3819,7 +4076,7 @@ Laste ned og installere nå? LibertyBoard lagrer dokumentene dine, lukkes og åp
         <translation>Skjul eller vis verktøylinjen</translation>
     </message>
     <message>
-        <location line="+153"/>
+        <location line="+160"/>
         <source>Exit full screen</source>
         <translation>Avslutt fullskjerm</translation>
     </message>
@@ -3855,7 +4112,7 @@ Laste ned og installere nå? LibertyBoard lagrer dokumentene dine, lukkes og åp
 <context>
     <name>UBMarkerOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-164"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-165"/>
         <source>Marker</source>
         <translation>Markør</translation>
     </message>
@@ -3950,7 +4207,7 @@ Do you want to ignore these errors for this host?</source>
         <translation>Skriv notatet her</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+7"/>
         <source>Cancel</source>
         <translation>Avbryt</translation>
     </message>
@@ -3973,7 +4230,7 @@ Do you want to ignore these errors for this host?</source>
 <context>
     <name>UBNoteOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+998"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1325"/>
         <source>Note</source>
         <translation>Notat</translation>
     </message>
@@ -4274,7 +4531,7 @@ Det kan også gjøres senere med Hjem &gt; Gjenkjenn tekst.</translation>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1161"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1488"/>
         <source>Pen</source>
         <translation>Penn</translation>
     </message>
@@ -4812,7 +5069,7 @@ Dynamisk bredde</translation>
 <context>
     <name>UBReadAloud</name>
     <message>
-        <location filename="../../src/gui/UBReadAloud.cpp" line="+113"/>
+        <location filename="../../src/gui/UBReadAloud.cpp" line="+114"/>
         <source>This is the last page.</source>
         <translation>Dette er siste side.</translation>
     </message>
@@ -4822,19 +5079,19 @@ Dynamisk bredde</translation>
         <translation>Det er ingen tekst i dette rektangelet.</translation>
     </message>
     <message>
-        <location line="+11"/>
+        <location line="+31"/>
         <source>There is no text to read on this page: write or select a text, or open a PDF with text.</source>
         <translation>Det er ingen tekst å lese opp på denne siden: skriv eller velg en tekst, eller åpne en PDF med tekst.</translation>
     </message>
     <message>
-        <location line="+33"/>
-        <location line="+24"/>
+        <location line="+34"/>
+        <location line="+25"/>
         <source>Read aloud</source>
         <translation>Les opp</translation>
     </message>
     <message>
-        <location line="-24"/>
-        <location line="+24"/>
+        <location line="-25"/>
+        <location line="+25"/>
         <source>The voices of the system could not be used to read aloud.</source>
         <translation>Systemets stemmer kunne ikke brukes til å lese opp.</translation>
     </message>
@@ -4908,7 +5165,7 @@ Dynamisk bredde</translation>
 <context>
     <name>UBSelectorOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1021"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1348"/>
         <source>Select</source>
         <translation>Velg</translation>
     </message>
@@ -4946,7 +5203,7 @@ Dynamisk bredde</translation>
 <context>
     <name>UBSettings</name>
     <message>
-        <location filename="../../src/core/UBSettings.cpp" line="+1143"/>
+        <location filename="../../src/core/UBSettings.cpp" line="+1148"/>
         <source>My Movies</source>
         <translation>Mine filmer</translation>
     </message>
@@ -4954,9 +5211,13 @@ Dynamisk bredde</translation>
 <context>
     <name>UBShapeOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-525"/>
         <source>Rectangle</source>
-        <translation>Rektangel</translation>
+        <translation type="vanished">Rektangel</translation>
+    </message>
+    <message>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-613"/>
+        <source>Shapes</source>
+        <translation type="unfinished">Former</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -4979,7 +5240,12 @@ Dynamisk bredde</translation>
         <translation>Understrek</translation>
     </message>
     <message>
-        <location line="+16"/>
+        <location line="+18"/>
+        <source>The shape to draw. The polyline: a click for each corner, Enter to end it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
         <source>Border</source>
         <translation>Kant</translation>
     </message>
@@ -5001,29 +5267,29 @@ Dynamisk bredde</translation>
     </message>
     <message>
         <location line="+7"/>
-        <location line="+160"/>
+        <location line="+181"/>
         <source>Line style</source>
         <translation>Linjestil</translation>
     </message>
     <message>
-        <location line="-160"/>
+        <location line="-181"/>
         <source>Border styles</source>
         <translation>Kantstiler</translation>
     </message>
     <message>
         <location line="+13"/>
-        <location line="+147"/>
+        <location line="+168"/>
         <source>Line start</source>
         <translation>Linjestart</translation>
     </message>
     <message>
-        <location line="-143"/>
-        <location line="+144"/>
+        <location line="-164"/>
+        <location line="+165"/>
         <source>Line end</source>
         <translation>Linjeslutt</translation>
     </message>
     <message>
-        <location line="-140"/>
+        <location line="-161"/>
         <source>Tapered</source>
         <translation>Avsmalnende</translation>
     </message>
@@ -5044,17 +5310,17 @@ Dynamisk bredde</translation>
     </message>
     <message>
         <location line="+10"/>
-        <location line="+131"/>
+        <location line="+152"/>
         <source>Opacity</source>
         <translation>Ugjennomsiktig</translation>
     </message>
     <message>
-        <location line="-130"/>
+        <location line="-151"/>
         <source> %</source>
         <translation> %</translation>
     </message>
     <message>
-        <location line="+120"/>
+        <location line="+141"/>
         <source>Line</source>
         <translation>Linje</translation>
     </message>
@@ -5083,7 +5349,7 @@ Dynamisk bredde</translation>
     </message>
     <message>
         <location line="+15"/>
-        <location line="+31"/>
+        <location line="+32"/>
         <location line="+3"/>
         <source>Stylus Palette</source>
         <translation type="unfinished">Stilpalett</translation>
@@ -5337,7 +5603,7 @@ Dynamisk bredde</translation>
 <context>
     <name>UBSpotlightOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-295"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-354"/>
         <location line="+4"/>
         <source>Spotlight</source>
         <translation>Spotlight</translation>
@@ -5382,7 +5648,7 @@ Dynamisk bredde</translation>
 <context>
     <name>UBStampOptionsPanel</name>
     <message>
-        <location line="+392"/>
+        <location line="+507"/>
         <source>Stamp</source>
         <translation>Stempel</translation>
     </message>
@@ -5418,7 +5684,7 @@ Dynamisk bredde</translation>
 <context>
     <name>UBStylusPalette</name>
     <message>
-        <location filename="../../src/gui/UBStylusPalette.cpp" line="+84"/>
+        <location filename="../../src/gui/UBStylusPalette.cpp" line="+85"/>
         <source>Save a screenshot</source>
         <translation>Lagre et skjermbilde</translation>
     </message>
@@ -5436,9 +5702,37 @@ Dynamisk bredde</translation>
     </message>
 </context>
 <context>
+    <name>UBTextBoxes</name>
+    <message>
+        <location filename="../../src/gui/UBTextBoxes.cpp" line="+120"/>
+        <source>Table</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>How many rows and columns?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Rows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Columns</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Insert</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>UBTextOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-195"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-251"/>
         <source>Text</source>
         <translation>Tekst</translation>
     </message>
@@ -5472,6 +5766,51 @@ Dynamisk bredde</translation>
         <source>Color</source>
         <translation>Farge</translation>
     </message>
+    <message>
+        <location line="+7"/>
+        <source>Checklist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Bullets</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Numbers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>Puts the lines of the text box being written in a list, or takes them out of it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>Click in a text box first, then on the list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <source>Table</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Asks how many rows and columns, then puts a table in the text box being written, or in a new one</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Dictate</source>
+        <translation type="unfinished">Dikter</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Makes a text box and writes in it what you say (the dictation of Windows, Windows + H). In a text box, the microphone left of F does the same.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBThumbnailAdaptor</name>
@@ -5502,7 +5841,7 @@ Dynamisk bredde</translation>
 <context>
     <name>UBToolOptionsBar</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsBar.cpp" line="+53"/>
+        <location filename="../../src/gui/UBToolOptionsBar.cpp" line="+57"/>
         <source>This tool has no options.</source>
         <translation>Dette verktøyet har ingen alternativer.</translation>
     </message>
@@ -5510,7 +5849,7 @@ Dynamisk bredde</translation>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-899"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1225"/>
         <source>Color</source>
         <translation>Farge</translation>
     </message>
@@ -5625,24 +5964,24 @@ Please reboot the application to access the updated documents.</source>
 <context>
     <name>UBVoiceOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+384"/>
         <source>Read and dictate</source>
-        <translation>Les opp og dikter</translation>
+        <translation type="vanished">Les opp og dikter</translation>
     </message>
     <message>
-        <location line="+5"/>
         <source>Read</source>
-        <translation>Les opp</translation>
+        <translation type="vanished">Les opp</translation>
     </message>
     <message>
-        <location line="+0"/>
-        <location line="+27"/>
-        <location line="+65"/>
         <source>Dictate</source>
-        <translation>Dikter</translation>
+        <translation type="vanished">Dikter</translation>
     </message>
     <message>
-        <location line="-86"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+650"/>
+        <source>Read aloud</source>
+        <translation type="unfinished">Les opp</translation>
+    </message>
+    <message>
+        <location line="+8"/>
         <source>From the start</source>
         <translation>Fra begynnelsen</translation>
     </message>
@@ -5652,64 +5991,86 @@ Please reboot the application to access the updated documents.</source>
         <translation>Markert tekst</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>From the start: reads the page shown, then the next pages. Selected text: drag a rectangle over the text to read it.</source>
-        <translation>Fra begynnelsen: leser siden og deretter de neste. Markert tekst: dra et rektangel over teksten for å lese den.</translation>
-    </message>
-    <message>
-        <location line="+15"/>
-        <source>▶ Play</source>
-        <translation>▶ Spill av</translation>
-    </message>
-    <message>
         <location line="+0"/>
+        <source>From the click</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>From the start: reads the page shown, then the next pages. Selected text: drag a rectangle over the text to read it. From the click: click on a word to read from it, then the next pages.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+17"/>
+        <source>Play</source>
+        <translation type="unfinished">Spill av</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Pause</source>
+        <translation type="unfinished">Pause</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Stop</source>
+        <translation type="unfinished">Stopp</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Next page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>From the start: reads the page shown, then the next pages. Selected text: drag a rectangle over the text to read it.</source>
+        <translation type="vanished">Fra begynnelsen: leser siden og deretter de neste. Markert tekst: dra et rektangel over teksten for å lese den.</translation>
+    </message>
+    <message>
+        <source>▶ Play</source>
+        <translation type="vanished">▶ Spill av</translation>
+    </message>
+    <message>
+        <location line="-3"/>
         <source>Reads the page from its start, or goes on after a pause</source>
         <translation>Leser siden fra begynnelsen, eller fortsetter etter en pause</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>⏸ Pause</source>
-        <translation>⏸ Pause</translation>
+        <translation type="vanished">⏸ Pause</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="+1"/>
         <source>Pauses the reading</source>
         <translation>Setter opplesingen på pause</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>⏹ Stop</source>
-        <translation>⏹ Stopp</translation>
+        <translation type="vanished">⏹ Stopp</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="+1"/>
         <source>Stops the reading</source>
         <translation>Stopper opplesingen</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>⏭ Next page</source>
-        <translation>⏭ Neste side</translation>
+        <translation type="vanished">⏭ Neste side</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="+1"/>
         <source>Goes to the next page and reads it</source>
         <translation>Går til neste side og leser den</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Opens the dictation of Windows (Windows + H)</source>
-        <translation>Åpner Windows-diktering (Windows + H)</translation>
+        <translation type="vanished">Åpner Windows-diktering (Windows + H)</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Click in a text box, then on Dictate: what you say is written there.</source>
-        <translation>Klikk i en tekstboks og deretter på Dikter: det du sier, skrives der.</translation>
+        <translation type="vanished">Klikk i en tekstboks og deretter på Dikter: det du sier, skrives der.</translation>
     </message>
     <message>
-        <location line="+62"/>
         <source>The dictation of the system is not available here. On Windows, press Windows + H in a text.</source>
-        <translation>Systemets diktering er ikke tilgjengelig her. I Windows trykker du Windows + H i en tekst.</translation>
+        <translation type="vanished">Systemets diktering er ikke tilgjengelig her. I Windows trykker du Windows + H i en tekst.</translation>
     </message>
 </context>
 <context>
@@ -5819,7 +6180,7 @@ Please reboot the application to access the updated documents.</source>
 <context>
     <name>UBZLayerController</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsScene.cpp" line="-958"/>
+        <location filename="../../src/domain/UBGraphicsScene.cpp" line="-1008"/>
         <source>Bottom layer limit reached</source>
         <translation type="unfinished"></translation>
     </message>

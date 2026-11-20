@@ -744,12 +744,12 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
     </message>
     <message>
         <location line="+9"/>
-        <location line="+633"/>
+        <location line="+649"/>
         <source>Erase Annotations</source>
         <translation>Anmerkungen löschen</translation>
     </message>
     <message>
-        <location line="-630"/>
+        <location line="-646"/>
         <source>Erase All Annotations</source>
         <translation>Alle Anmerkungen löschen</translation>
     </message>
@@ -863,17 +863,15 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
         <translation>Pfeile zeichnen</translation>
     </message>
     <message>
-        <location line="+13"/>
         <source>Rectangle</source>
-        <translation>Rechteck</translation>
+        <translation type="vanished">Rechteck</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Draw Rectangles</source>
-        <translation>Rechtecke zeichnen</translation>
+        <translation type="vanished">Rechtecke zeichnen</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+29"/>
         <source>Ellipse</source>
         <translation>Ellipse</translation>
     </message>
@@ -923,7 +921,7 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
         <translation>Einen Stempel auf die Seite setzen</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+29"/>
         <source>Spotlight</source>
         <translation>Spotlight</translation>
     </message>
@@ -933,17 +931,15 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
         <translation>Spotlight und Lupe: verdunkelt den Bildschirm außer um den Zeiger, oder vergrößert, was darunter ist</translation>
     </message>
     <message>
-        <location line="+13"/>
         <source>Read and dictate</source>
-        <translation>Vorlesen und diktieren</translation>
+        <translation type="vanished">Vorlesen und diktieren</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Read the page aloud, or dictate with the voice</source>
-        <translation>Die Seite vorlesen oder mit der Stimme diktieren</translation>
+        <translation type="vanished">Die Seite vorlesen oder mit der Stimme diktieren</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+29"/>
         <source>Quick note</source>
         <translation>Kurznotiz</translation>
     </message>
@@ -1159,7 +1155,7 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
         <translation>Strg+H</translation>
     </message>
     <message>
-        <location line="-2009"/>
+        <location line="-2025"/>
         <location line="+686"/>
         <location line="+3"/>
         <source>LibertyBoard</source>
@@ -1171,7 +1167,7 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
         <translation>LibertyBoard verlassen</translation>
     </message>
     <message>
-        <location line="+1633"/>
+        <location line="+1649"/>
         <source>Hide LibertyBoard</source>
         <translation>LibertyBoard ausblenden</translation>
     </message>
@@ -1211,7 +1207,7 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
         <translation>Öffnen der Anleitung im Internet</translation>
     </message>
     <message>
-        <location line="-853"/>
+        <location line="-869"/>
         <location line="+6"/>
         <source>Ruled Light Background</source>
         <translation>Heller linierter Hintergrund</translation>
@@ -1223,13 +1219,13 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
         <translation>Dunkler linierter Hintergrund</translation>
     </message>
     <message>
-        <location line="+780"/>
+        <location line="+796"/>
         <location line="+3"/>
         <source>Reset grid size</source>
         <translation>Rastergröße zurücksetzen</translation>
     </message>
     <message>
-        <location line="-1670"/>
+        <location line="-1686"/>
         <source>Small Eraser</source>
         <translation>Kleiner Radiergummi</translation>
     </message>
@@ -1264,7 +1260,7 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
         <translation>Farbe 5</translation>
     </message>
     <message>
-        <location line="+1563"/>
+        <location line="+1579"/>
         <location line="+3"/>
         <source>Draw intermediate grid lines</source>
         <translation>Gitter-Zwischenlinien zeichnen</translation>
@@ -1278,7 +1274,7 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
         <translation>Webinhalte erfassen</translation>
     </message>
     <message>
-        <location line="-1727"/>
+        <location line="-1743"/>
         <source>Template style</source>
         <translation>Vorlagenstil</translation>
     </message>
@@ -1365,7 +1361,37 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
         <translation>Schwarzer Hintergrund Seyes liniert</translation>
     </message>
     <message>
-        <location line="+557"/>
+        <location line="+264"/>
+        <source>Shapes</source>
+        <translation>Formen</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Draw shapes: rectangles, ellipses, lines, polylines, arrows, stars, speech bubbles…</source>
+        <translation>Formen zeichnen: Rechtecke, Ellipsen, Linien, Polylinien, Pfeile, Sterne, Sprechblasen…</translation>
+    </message>
+    <message>
+        <location line="+93"/>
+        <source>Emojis and GIFs</source>
+        <translation>Emojis und GIFs</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Put an emoji or a GIF on the page</source>
+        <translation>Ein Emoji oder ein GIF auf die Seite setzen</translation>
+    </message>
+    <message>
+        <location line="+29"/>
+        <source>Read aloud</source>
+        <translation>Vorlesen</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Read the page aloud, from its start, from a word clicked or a rectangle dragged on the text</source>
+        <translation>Die Seite vorlesen, von ihrem Anfang, von einem angeklickten Wort oder aus einem über den Text gezogenen Rechteck</translation>
+    </message>
+    <message>
+        <location line="+178"/>
         <source>Import one or more pages (supported formats : jpg, png, svg, ubz, pdf)</source>
         <translation>Eine oder mehrere Seiten importieren (unterstützte Formate: jpg, png, svg, ubz, pdf)</translation>
     </message>
@@ -1398,12 +1424,12 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
         <translation>Favorit</translation>
     </message>
     <message>
-        <location line="-695"/>
+        <location line="-711"/>
         <source>Ctrl+P</source>
         <translation>Strg+P</translation>
     </message>
     <message>
-        <location line="+728"/>
+        <location line="+744"/>
         <source>Snap to grid</source>
         <translation>Am Gitter einrasten</translation>
     </message>
@@ -1572,7 +1598,7 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
         <translation type="vanished">Podcast</translation>
     </message>
     <message>
-        <location filename="../../src/core/UBApplication.cpp" line="+384"/>
+        <location filename="../../src/core/UBApplication.cpp" line="+388"/>
         <location line="+48"/>
         <location line="+221"/>
         <source>Cannot open your UBX file directly. Please import it in Documents mode instead</source>
@@ -1610,7 +1636,7 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
 <context>
     <name>UBAttachmentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+699"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+917"/>
         <source>Insert file</source>
         <translation>Datei einfügen</translation>
     </message>
@@ -1643,7 +1669,17 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
 <context>
     <name>UBBackgroundPalette</name>
     <message>
-        <location filename="../../src/gui/UBBackgroundPalette.cpp" line="+57"/>
+        <location filename="../../src/gui/UBBackgroundPalette.cpp" line="+56"/>
+        <source>Page</source>
+        <translation>Seite</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Templates</source>
+        <translation>Vorlagen</translation>
+    </message>
+    <message>
+        <location line="+23"/>
         <source>Page color</source>
         <translation>Blattfarbe</translation>
     </message>
@@ -1656,6 +1692,26 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
         <location line="+1"/>
         <source>Draw intermediate grid lines</source>
         <translation>Gitter-Zwischenlinien zeichnen</translation>
+    </message>
+    <message>
+        <location line="+43"/>
+        <source>Date of the calendars</source>
+        <translation>Datum der Kalender</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>The calendars and planners are made for this day, its week, its month or its year</source>
+        <translation>Die Kalender und Planer werden für diesen Tag, seine Woche, seinen Monat oder sein Jahr erstellt</translation>
+    </message>
+    <message>
+        <location line="+32"/>
+        <source>%1, for the date chosen above</source>
+        <translation>%1, für das oben gewählte Datum</translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <source>On a page of a PDF, the template goes on a new page after it.</source>
+        <translation>Auf einer PDF-Seite kommt die Vorlage auf eine neue Seite danach.</translation>
     </message>
 </context>
 <context>
@@ -1681,7 +1737,7 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
         <translation>Unbekannter Inhalt %1</translation>
     </message>
     <message>
-        <location line="+627"/>
+        <location line="+683"/>
         <source>Page/canvas size</source>
         <translation>Seiten-/Leinwandgröße</translation>
     </message>
@@ -1726,20 +1782,20 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
         <translation>Alle unterstützt (%1)</translation>
     </message>
     <message>
-        <location line="-1987"/>
+        <location line="-2043"/>
         <source>Page %1 deleted</source>
         <translation>Seite %1 gelöscht</translation>
     </message>
     <message>
         <location line="+506"/>
         <location line="+45"/>
-        <location line="+1022"/>
+        <location line="+1078"/>
         <location line="+36"/>
         <source>Add file operation failed: file copying error</source>
         <translation>Dokument hinzufügen fehlgeschlagen: Fehler beim Kopieren</translation>
     </message>
     <message>
-        <location line="-2432"/>
+        <location line="-2488"/>
         <source>Group</source>
         <translation>Gruppieren</translation>
     </message>
@@ -1851,7 +1907,7 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+2193"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+2231"/>
         <source>That page is not in the document any more.</source>
         <translation>Diese Seite ist nicht mehr im Dokument.</translation>
     </message>
@@ -1921,7 +1977,7 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
 <context>
     <name>UBColorSwatches</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsWidgets.cpp" line="+152"/>
+        <location filename="../../src/gui/UBToolOptionsWidgets.cpp" line="+153"/>
         <source>No color</source>
         <translation>Keine Farbe</translation>
     </message>
@@ -1936,7 +1992,7 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
         <translation>Pipette: eine Farbe vom Bildschirm nehmen</translation>
     </message>
     <message>
-        <location line="+174"/>
+        <location line="+187"/>
         <source>Choose a color</source>
         <translation>Farbe wählen</translation>
     </message>
@@ -1944,7 +2000,7 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
 <context>
     <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+619"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+734"/>
         <source>Quick note</source>
         <translation>Kurznotiz</translation>
     </message>
@@ -2063,6 +2119,19 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
         <location line="-416"/>
         <source>Show LibertyBoard</source>
         <translation>Zeige LibertyBoard</translation>
+    </message>
+</context>
+<context>
+    <name>UBDictation</name>
+    <message>
+        <location filename="../../src/gui/UBDictation.cpp" line="+83"/>
+        <source>Dictate</source>
+        <translation>Diktieren</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>The dictation of the system is not available here. On Windows, press Windows + H in a text.</source>
+        <translation>Das Diktat des Systems ist hier nicht verfügbar. Drücken Sie unter Windows in einem Text Windows + H.</translation>
     </message>
 </context>
 <context>
@@ -2691,9 +2760,107 @@ Möchten Sie fortfahren?</translation>
     </message>
 </context>
 <context>
+    <name>UBEmojiOptionsPanel</name>
+    <message>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1132"/>
+        <source>Emojis and GIFs</source>
+        <translation>Emojis und GIFs</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Emojis</source>
+        <translation>Emojis</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>GIFs</source>
+        <translation>GIFs</translation>
+    </message>
+    <message>
+        <location line="+30"/>
+        <source>To use GIFs, make a free account at klipy.com, only once, and paste your key (API key) here. From then on, the GIF search is always ready. Without it, the emojis work as always.</source>
+        <translation>Um GIFs zu nutzen, legen Sie einmalig ein kostenloses Konto auf klipy.com an und fügen Sie hier Ihren Schlüssel (API key) ein. Danach ist die GIF-Suche immer bereit. Ohne ihn funktionieren die Emojis wie immer.</translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>Paste your key here</source>
+        <translation>Schlüssel hier einfügen</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Save</source>
+        <translation>Speichern</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Open klipy.com</source>
+        <translation>klipy.com öffnen</translation>
+    </message>
+    <message>
+        <location line="+21"/>
+        <source>Search GIFs</source>
+        <translation>GIFs suchen</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Change the key</source>
+        <translation>Schlüssel ändern</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Powered by KLIPY</source>
+        <translation>Powered by KLIPY</translation>
+    </message>
+    <message>
+        <location line="+30"/>
+        <source>Size</source>
+        <translation>Größe</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source> pt</source>
+        <translation> pt</translation>
+    </message>
+    <message>
+        <location line="+27"/>
+        <source>The GIF search did not answer: check your key and the internet connection.</source>
+        <translation>Die GIF-Suche hat nicht geantwortet: Prüfen Sie Ihren Schlüssel und die Internetverbindung.</translation>
+    </message>
+    <message>
+        <location line="+16"/>
+        <source>Downloading the GIF...</source>
+        <translation>GIF wird heruntergeladen...</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>GIF chosen: click on the page to put it.</source>
+        <translation>GIF gewählt: Klicken Sie auf die Seite, um es zu setzen.</translation>
+    </message>
+    <message>
+        <location line="+66"/>
+        <source>Search a GIF, then click on it and on the page.</source>
+        <translation>Suchen Sie ein GIF, klicken Sie dann darauf und auf die Seite.</translation>
+    </message>
+    <message>
+        <location line="+17"/>
+        <source>Searching...</source>
+        <translation>Suche läuft...</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>No GIF found.</source>
+        <translation>Kein GIF gefunden.</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Click on a GIF, then on the page.</source>
+        <translation>Klicken Sie auf ein GIF und dann auf die Seite.</translation>
+    </message>
+</context>
+<context>
     <name>UBEraserOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1047"/>
+        <location line="-492"/>
         <source>Eraser</source>
         <translation>Löschen</translation>
     </message>
@@ -3283,7 +3450,7 @@ Jetzt herunterladen und installieren? LibertyBoard speichert Ihre Dokumente, sch
 <context>
     <name>UBGraphicsScene</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsScene.cpp" line="+1150"/>
+        <location filename="../../src/domain/UBGraphicsScene.cpp" line="+1201"/>
         <location line="+11"/>
         <source>Attach a file</source>
         <translation>Datei anhängen</translation>
@@ -3315,7 +3482,7 @@ Jetzt herunterladen und installieren? LibertyBoard speichert Ihre Dokumente, sch
 <context>
     <name>UBGraphicsTextItem</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsTextItem.cpp" line="+49"/>
+        <location filename="../../src/domain/UBGraphicsTextItem.cpp" line="+51"/>
         <source>&lt;Type Text Here&gt;</source>
         <translation>&lt;Text hier eintippen&gt;</translation>
     </message>
@@ -3323,7 +3490,7 @@ Jetzt herunterladen und installieren? LibertyBoard speichert Ihre Dokumente, sch
 <context>
     <name>UBGraphicsTextItemDelegate</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsTextItemDelegate.cpp" line="+338"/>
+        <location filename="../../src/domain/UBGraphicsTextItemDelegate.cpp" line="+390"/>
         <source>Text Color</source>
         <translation>Schriftfarbe</translation>
     </message>
@@ -3331,6 +3498,91 @@ Jetzt herunterladen und installieren? LibertyBoard speichert Ihre Dokumente, sch
         <location line="+134"/>
         <source>Editable</source>
         <translation>Editierbar</translation>
+    </message>
+    <message>
+        <location line="+393"/>
+        <source>Insert a table...</source>
+        <translation>Tabelle einfügen...</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Add a row</source>
+        <translation>Zeile hinzufügen</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Add a column</source>
+        <translation>Spalte hinzufügen</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Remove the row</source>
+        <translation>Zeile löschen</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Remove the column</source>
+        <translation>Spalte löschen</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Columns as wide</source>
+        <translation>Gleich breite Spalten</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Table style</source>
+        <translation>Tabellenstil</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Highlight the header row</source>
+        <translation>Kopfzeile hervorheben</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Highlight the first column</source>
+        <translation>Erste Spalte hervorheben</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>All the lines</source>
+        <translation>Alle Linien</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Horizontal lines</source>
+        <translation>Waagerechte Linien</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Outer lines</source>
+        <translation>Außenlinien</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>No lines</source>
+        <translation>Keine Linien</translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>Color of the cells...</source>
+        <translation>Farbe der Zellen...</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Color of the cells</source>
+        <translation>Farbe der Zellen</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>No color in the cells</source>
+        <translation>Keine Farbe in den Zellen</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Remove the table</source>
+        <translation>Tabelle löschen</translation>
     </message>
 </context>
 <context>
@@ -3561,6 +3813,11 @@ Jetzt herunterladen und installieren? LibertyBoard speichert Ihre Dokumente, sch
     </message>
     <message>
         <location line="+3"/>
+        <source>Opacity</source>
+        <translation>Deckkraft</translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source> %</source>
         <translation> %</translation>
     </message>
@@ -3661,7 +3918,7 @@ Jetzt herunterladen und installieren? LibertyBoard speichert Ihre Dokumente, sch
         <translation type="vanished">Seitengröße</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+131"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+132"/>
         <location line="+85"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -3807,7 +4064,7 @@ Jetzt herunterladen und installieren? LibertyBoard speichert Ihre Dokumente, sch
         <translation>Öffnet das Diktat von Windows: Gesagtes wird dort geschrieben, wo der Textcursor steht</translation>
     </message>
     <message>
-        <location line="+163"/>
+        <location line="+167"/>
         <source>Lock the canvas: nothing can be drawn, written, highlighted, selected, moved or deleted; the laser pointer and the hand still work</source>
         <translation>Leinwand sperren: Nichts kann gezeichnet, geschrieben, markiert, ausgewählt, verschoben oder gelöscht werden; Laser und Hand funktionieren weiter</translation>
     </message>
@@ -3820,7 +4077,7 @@ Jetzt herunterladen und installieren? LibertyBoard speichert Ihre Dokumente, sch
         <translation type="vanished">Das Diktat des Systems ist hier nicht verfügbar. Drücken Sie unter Windows Windows + H in einem Text.</translation>
     </message>
     <message>
-        <location line="-160"/>
+        <location line="-164"/>
         <source>Transcribe an audio (coming with the AI)</source>
         <translation>Audio transkribieren (kommt mit der KI)</translation>
     </message>
@@ -3856,12 +4113,12 @@ Jetzt herunterladen und installieren? LibertyBoard speichert Ihre Dokumente, sch
     </message>
     <message>
         <location line="+66"/>
-        <location line="+359"/>
+        <location line="+369"/>
         <source>Saved</source>
         <translation>Gespeichert</translation>
     </message>
     <message>
-        <location line="-353"/>
+        <location line="-363"/>
         <source>Search...</source>
         <translation>Suchen...</translation>
     </message>
@@ -3881,9 +4138,9 @@ Jetzt herunterladen und installieren? LibertyBoard speichert Ihre Dokumente, sch
         <translation>Das Inhaltsverzeichnis des PDF: Ein Klick auf einen Titel führt zu seiner Seite</translation>
     </message>
     <message>
-        <location line="+28"/>
+        <location line="+32"/>
         <location line="+9"/>
-        <location line="+24"/>
+        <location line="+23"/>
         <source>Lock canvas</source>
         <translation>Leinwand sperren</translation>
     </message>
@@ -3892,8 +4149,8 @@ Jetzt herunterladen und installieren? LibertyBoard speichert Ihre Dokumente, sch
         <translation type="vanished">Leinwand sperren: Nichts kann gezeichnet, geschrieben, markiert, verschoben oder gelöscht werden; Laser, Hand und Auswahl funktionieren weiter</translation>
     </message>
     <message>
-        <location line="-24"/>
-        <location line="+22"/>
+        <location line="-23"/>
+        <location line="+21"/>
         <source>Unlock canvas</source>
         <translation>Leinwand entsperren</translation>
     </message>
@@ -3903,7 +4160,7 @@ Jetzt herunterladen und installieren? LibertyBoard speichert Ihre Dokumente, sch
         <translation>Werkzeugleiste ein- oder ausblenden</translation>
     </message>
     <message>
-        <location line="+153"/>
+        <location line="+160"/>
         <source>Exit full screen</source>
         <translation>Vollbild beenden</translation>
     </message>
@@ -3939,7 +4196,7 @@ Jetzt herunterladen und installieren? LibertyBoard speichert Ihre Dokumente, sch
 <context>
     <name>UBMarkerOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-164"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-165"/>
         <source>Marker</source>
         <translation>Marker</translation>
     </message>
@@ -4040,7 +4297,7 @@ Möchten Sie diese Fehler für diesen Computer ignorieren?</translation>
         <translation>Notiz hier eingeben</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+7"/>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
@@ -4063,7 +4320,7 @@ Möchten Sie diese Fehler für diesen Computer ignorieren?</translation>
 <context>
     <name>UBNoteOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+998"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1325"/>
         <source>Note</source>
         <translation>Notiz</translation>
     </message>
@@ -4384,7 +4641,7 @@ Das geht auch später mit Start &gt; Text erkennen.</translation>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1161"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1488"/>
         <source>Pen</source>
         <translation>Stift</translation>
     </message>
@@ -4922,7 +5179,7 @@ Dynamische Breite</translation>
 <context>
     <name>UBReadAloud</name>
     <message>
-        <location filename="../../src/gui/UBReadAloud.cpp" line="+113"/>
+        <location filename="../../src/gui/UBReadAloud.cpp" line="+114"/>
         <source>This is the last page.</source>
         <translation>Das ist die letzte Seite.</translation>
     </message>
@@ -4932,19 +5189,19 @@ Dynamische Breite</translation>
         <translation>In diesem Rechteck ist kein Text.</translation>
     </message>
     <message>
-        <location line="+11"/>
+        <location line="+31"/>
         <source>There is no text to read on this page: write or select a text, or open a PDF with text.</source>
         <translation>Auf dieser Seite gibt es keinen Text zum Vorlesen: Schreiben oder wählen Sie einen Text, oder öffnen Sie ein PDF mit Text.</translation>
     </message>
     <message>
-        <location line="+33"/>
-        <location line="+24"/>
+        <location line="+34"/>
+        <location line="+25"/>
         <source>Read aloud</source>
         <translation>Vorlesen</translation>
     </message>
     <message>
-        <location line="-24"/>
-        <location line="+24"/>
+        <location line="-25"/>
+        <location line="+25"/>
         <source>The voices of the system could not be used to read aloud.</source>
         <translation>Die Stimmen des Systems konnten zum Vorlesen nicht verwendet werden.</translation>
     </message>
@@ -5018,7 +5275,7 @@ Dynamische Breite</translation>
 <context>
     <name>UBSelectorOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1021"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1348"/>
         <source>Select</source>
         <translation>Auswählen</translation>
     </message>
@@ -5056,7 +5313,7 @@ Dynamische Breite</translation>
 <context>
     <name>UBSettings</name>
     <message>
-        <location filename="../../src/core/UBSettings.cpp" line="+1143"/>
+        <location filename="../../src/core/UBSettings.cpp" line="+1148"/>
         <source>My Movies</source>
         <translation>Meine Filme</translation>
     </message>
@@ -5064,9 +5321,13 @@ Dynamische Breite</translation>
 <context>
     <name>UBShapeOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-525"/>
         <source>Rectangle</source>
-        <translation>Rechteck</translation>
+        <translation type="vanished">Rechteck</translation>
+    </message>
+    <message>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-613"/>
+        <source>Shapes</source>
+        <translation>Formen</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -5089,7 +5350,12 @@ Dynamische Breite</translation>
         <translation>Unterstreichen</translation>
     </message>
     <message>
-        <location line="+16"/>
+        <location line="+18"/>
+        <source>The shape to draw. The polyline: a click for each corner, Enter to end it.</source>
+        <translation>Die zu zeichnende Form. Die Polylinie: ein Klick für jede Ecke, Enter zum Beenden.</translation>
+    </message>
+    <message>
+        <location line="+9"/>
         <source>Border</source>
         <translation>Rand</translation>
     </message>
@@ -5111,29 +5377,29 @@ Dynamische Breite</translation>
     </message>
     <message>
         <location line="+7"/>
-        <location line="+160"/>
+        <location line="+181"/>
         <source>Line style</source>
         <translation>Linienstil</translation>
     </message>
     <message>
-        <location line="-160"/>
+        <location line="-181"/>
         <source>Border styles</source>
         <translation>Randstile</translation>
     </message>
     <message>
         <location line="+13"/>
-        <location line="+147"/>
+        <location line="+168"/>
         <source>Line start</source>
         <translation>Linienanfang</translation>
     </message>
     <message>
-        <location line="-143"/>
-        <location line="+144"/>
+        <location line="-164"/>
+        <location line="+165"/>
         <source>Line end</source>
         <translation>Linienende</translation>
     </message>
     <message>
-        <location line="-140"/>
+        <location line="-161"/>
         <source>Tapered</source>
         <translation>Spitz zulaufend</translation>
     </message>
@@ -5154,17 +5420,17 @@ Dynamische Breite</translation>
     </message>
     <message>
         <location line="+10"/>
-        <location line="+131"/>
+        <location line="+152"/>
         <source>Opacity</source>
         <translation>Deckkraft</translation>
     </message>
     <message>
-        <location line="-130"/>
+        <location line="-151"/>
         <source> %</source>
         <translation> %</translation>
     </message>
     <message>
-        <location line="+120"/>
+        <location line="+141"/>
         <source>Line</source>
         <translation>Linie</translation>
     </message>
@@ -5193,7 +5459,7 @@ Dynamische Breite</translation>
     </message>
     <message>
         <location line="+15"/>
-        <location line="+31"/>
+        <location line="+32"/>
         <location line="+3"/>
         <source>Stylus Palette</source>
         <translation>Stylus-Palette</translation>
@@ -5447,7 +5713,7 @@ Dynamische Breite</translation>
 <context>
     <name>UBSpotlightOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-295"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-354"/>
         <location line="+4"/>
         <source>Spotlight</source>
         <translation>Spotlight</translation>
@@ -5492,7 +5758,7 @@ Dynamische Breite</translation>
 <context>
     <name>UBStampOptionsPanel</name>
     <message>
-        <location line="+392"/>
+        <location line="+507"/>
         <source>Stamp</source>
         <translation>Stempel</translation>
     </message>
@@ -5528,7 +5794,7 @@ Dynamische Breite</translation>
 <context>
     <name>UBStylusPalette</name>
     <message>
-        <location filename="../../src/gui/UBStylusPalette.cpp" line="+84"/>
+        <location filename="../../src/gui/UBStylusPalette.cpp" line="+85"/>
         <source>Save a screenshot</source>
         <translation>Bildschirmfoto speichern</translation>
     </message>
@@ -5546,9 +5812,37 @@ Dynamische Breite</translation>
     </message>
 </context>
 <context>
+    <name>UBTextBoxes</name>
+    <message>
+        <location filename="../../src/gui/UBTextBoxes.cpp" line="+120"/>
+        <source>Table</source>
+        <translation>Tabelle</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>How many rows and columns?</source>
+        <translation>Wie viele Zeilen und Spalten?</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Rows</source>
+        <translation>Zeilen</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Columns</source>
+        <translation>Spalten</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Insert</source>
+        <translation>Einfügen</translation>
+    </message>
+</context>
+<context>
     <name>UBTextOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-195"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-251"/>
         <source>Text</source>
         <translation>Text</translation>
     </message>
@@ -5581,6 +5875,51 @@ Dynamische Breite</translation>
         <location line="+11"/>
         <source>Color</source>
         <translation>Farbe</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Checklist</source>
+        <translation>Checkliste</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Bullets</source>
+        <translation>Aufzählung</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Numbers</source>
+        <translation>Nummern</translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>Puts the lines of the text box being written in a list, or takes them out of it</source>
+        <translation>Setzt die Zeilen des bearbeiteten Textfelds in eine Liste oder nimmt sie heraus</translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>Click in a text box first, then on the list.</source>
+        <translation>Klicken Sie zuerst in ein Textfeld, dann auf die Liste.</translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <source>Table</source>
+        <translation>Tabelle</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Asks how many rows and columns, then puts a table in the text box being written, or in a new one</source>
+        <translation>Fragt nach der Anzahl der Zeilen und Spalten und setzt eine Tabelle in das bearbeitete Textfeld oder in ein neues</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Dictate</source>
+        <translation>Diktieren</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Makes a text box and writes in it what you say (the dictation of Windows, Windows + H). In a text box, the microphone left of F does the same.</source>
+        <translation>Erstellt ein Textfeld und schreibt hinein, was Sie sagen (das Diktat von Windows, Windows + H). In einem Textfeld macht das Mikrofon links vom F dasselbe.</translation>
     </message>
 </context>
 <context>
@@ -5621,7 +5960,7 @@ Miniaturansicht der Seite %1 wird geladen</translation>
 <context>
     <name>UBToolOptionsBar</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsBar.cpp" line="+53"/>
+        <location filename="../../src/gui/UBToolOptionsBar.cpp" line="+57"/>
         <source>This tool has no options.</source>
         <translation>Dieses Werkzeug hat keine Optionen.</translation>
     </message>
@@ -5629,7 +5968,7 @@ Miniaturansicht der Seite %1 wird geladen</translation>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-899"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1225"/>
         <source>Color</source>
         <translation>Farbe</translation>
     </message>
@@ -5745,24 +6084,24 @@ Bitte starten Sie die Anwendung erneut, um auf die aktualisierten Dokumente zugr
 <context>
     <name>UBVoiceOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+384"/>
         <source>Read and dictate</source>
-        <translation>Vorlesen und diktieren</translation>
+        <translation type="vanished">Vorlesen und diktieren</translation>
     </message>
     <message>
-        <location line="+5"/>
         <source>Read</source>
+        <translation type="vanished">Vorlesen</translation>
+    </message>
+    <message>
+        <source>Dictate</source>
+        <translation type="vanished">Diktieren</translation>
+    </message>
+    <message>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+650"/>
+        <source>Read aloud</source>
         <translation>Vorlesen</translation>
     </message>
     <message>
-        <location line="+0"/>
-        <location line="+27"/>
-        <location line="+65"/>
-        <source>Dictate</source>
-        <translation>Diktieren</translation>
-    </message>
-    <message>
-        <location line="-86"/>
+        <location line="+8"/>
         <source>From the start</source>
         <translation>Von Anfang an</translation>
     </message>
@@ -5772,64 +6111,86 @@ Bitte starten Sie die Anwendung erneut, um auf die aktualisierten Dokumente zugr
         <translation>Ausgewählter Text</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>From the start: reads the page shown, then the next pages. Selected text: drag a rectangle over the text to read it.</source>
-        <translation>Von Anfang an: liest die Seite und dann die folgenden. Ausgewählter Text: Ziehen Sie ein Rechteck über den Text, um ihn zu lesen.</translation>
-    </message>
-    <message>
-        <location line="+15"/>
-        <source>▶ Play</source>
-        <translation>▶ Abspielen</translation>
-    </message>
-    <message>
         <location line="+0"/>
+        <source>From the click</source>
+        <translation>Ab dem Klick</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>From the start: reads the page shown, then the next pages. Selected text: drag a rectangle over the text to read it. From the click: click on a word to read from it, then the next pages.</source>
+        <translation>Von Anfang an: liest die Seite und dann die folgenden. Ausgewählter Text: Ziehen Sie ein Rechteck über den Text, um ihn zu lesen. Ab dem Klick: Klicken Sie auf ein Wort, um ab dort zu lesen, dann die folgenden Seiten.</translation>
+    </message>
+    <message>
+        <location line="+17"/>
+        <source>Play</source>
+        <translation>Abspielen</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Pause</source>
+        <translation>Pause</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Stop</source>
+        <translation>Stopp</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Next page</source>
+        <translation>Nächste Seite</translation>
+    </message>
+    <message>
+        <source>From the start: reads the page shown, then the next pages. Selected text: drag a rectangle over the text to read it.</source>
+        <translation type="vanished">Von Anfang an: liest die Seite und dann die folgenden. Ausgewählter Text: Ziehen Sie ein Rechteck über den Text, um ihn zu lesen.</translation>
+    </message>
+    <message>
+        <source>▶ Play</source>
+        <translation type="vanished">▶ Abspielen</translation>
+    </message>
+    <message>
+        <location line="-3"/>
         <source>Reads the page from its start, or goes on after a pause</source>
         <translation>Liest die Seite von Anfang an oder setzt nach einer Pause fort</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>⏸ Pause</source>
-        <translation>⏸ Pause</translation>
+        <translation type="vanished">⏸ Pause</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="+1"/>
         <source>Pauses the reading</source>
         <translation>Pausiert das Vorlesen</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>⏹ Stop</source>
-        <translation>⏹ Stopp</translation>
+        <translation type="vanished">⏹ Stopp</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="+1"/>
         <source>Stops the reading</source>
         <translation>Beendet das Vorlesen</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>⏭ Next page</source>
-        <translation>⏭ Nächste Seite</translation>
+        <translation type="vanished">⏭ Nächste Seite</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="+1"/>
         <source>Goes to the next page and reads it</source>
         <translation>Geht zur nächsten Seite und liest sie</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Opens the dictation of Windows (Windows + H)</source>
-        <translation>Öffnet das Diktat von Windows (Windows + H)</translation>
+        <translation type="vanished">Öffnet das Diktat von Windows (Windows + H)</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Click in a text box, then on Dictate: what you say is written there.</source>
-        <translation>Klicken Sie in ein Textfeld und dann auf Diktieren: Was Sie sagen, wird dort geschrieben.</translation>
+        <translation type="vanished">Klicken Sie in ein Textfeld und dann auf Diktieren: Was Sie sagen, wird dort geschrieben.</translation>
     </message>
     <message>
-        <location line="+62"/>
         <source>The dictation of the system is not available here. On Windows, press Windows + H in a text.</source>
-        <translation>Das Diktat des Systems ist hier nicht verfügbar. Drücken Sie unter Windows Windows + H in einem Text.</translation>
+        <translation type="vanished">Das Diktat des Systems ist hier nicht verfügbar. Drücken Sie unter Windows Windows + H in einem Text.</translation>
     </message>
 </context>
 <context>
@@ -5939,7 +6300,7 @@ Bitte starten Sie die Anwendung erneut, um auf die aktualisierten Dokumente zugr
 <context>
     <name>UBZLayerController</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsScene.cpp" line="-958"/>
+        <location filename="../../src/domain/UBGraphicsScene.cpp" line="-1008"/>
         <source>Bottom layer limit reached</source>
         <translation>Untere Ebenengrenze erreicht</translation>
     </message>

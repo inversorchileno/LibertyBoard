@@ -804,12 +804,12 @@ Do you wish to override the security check and continue ?   </source>
     </message>
     <message>
         <location line="+9"/>
-        <location line="+633"/>
+        <location line="+649"/>
         <source>Erase Annotations</source>
         <translation>Izbriši napomene</translation>
     </message>
     <message>
-        <location line="-630"/>
+        <location line="-646"/>
         <source>Erase All Annotations</source>
         <translation>Izbriši sve napomene</translation>
     </message>
@@ -844,17 +844,15 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Crtaj strelice</translation>
     </message>
     <message>
-        <location line="+13"/>
         <source>Rectangle</source>
-        <translation>Pravokutnik</translation>
+        <translation type="vanished">Pravokutnik</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Draw Rectangles</source>
-        <translation>Crtaj pravokutnike</translation>
+        <translation type="vanished">Crtaj pravokutnike</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+29"/>
         <source>Ellipse</source>
         <translation>Elipsa</translation>
     </message>
@@ -904,7 +902,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Stavi pečat na stranicu</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+29"/>
         <source>Spotlight</source>
         <translation>Reflektor</translation>
     </message>
@@ -914,17 +912,15 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Reflektor i povećalo: zatamnjuje zaslon osim oko pokazivača ili povećava ono ispod njega</translation>
     </message>
     <message>
-        <location line="+13"/>
         <source>Read and dictate</source>
-        <translation>Čitaj i diktiraj</translation>
+        <translation type="vanished">Čitaj i diktiraj</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Read the page aloud, or dictate with the voice</source>
-        <translation>Čita stranicu naglas ili diktira glasom</translation>
+        <translation type="vanished">Čita stranicu naglas ili diktira glasom</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+29"/>
         <source>Quick note</source>
         <translation>Brza bilješka</translation>
     </message>
@@ -968,7 +964,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="vanished">Ctrl+I</translation>
     </message>
     <message>
-        <location line="-715"/>
+        <location line="-731"/>
         <source>Erase Annotation</source>
         <translation>Izbriši napomenu</translation>
     </message>
@@ -1043,7 +1039,37 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Ctrl+J</translation>
     </message>
     <message>
-        <location line="+205"/>
+        <location line="+29"/>
+        <source>Shapes</source>
+        <translation type="unfinished">Oblici</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Draw shapes: rectangles, ellipses, lines, polylines, arrows, stars, speech bubbles…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+93"/>
+        <source>Emojis and GIFs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Put an emoji or a GIF on the page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+29"/>
+        <source>Read aloud</source>
+        <translation type="unfinished">Čitaj naglas</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Read the page aloud, from its start, from a word clicked or a rectangle dragged on the text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+61"/>
         <source>Text</source>
         <translation>Tekst</translation>
     </message>
@@ -1267,7 +1293,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Resetiraj veličinu mreže</translation>
     </message>
     <message>
-        <location line="-1670"/>
+        <location line="-1686"/>
         <source>Small Eraser</source>
         <translation>Mala gumica</translation>
     </message>
@@ -1302,7 +1328,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Boja 5</translation>
     </message>
     <message>
-        <location line="+1563"/>
+        <location line="+1579"/>
         <location line="+3"/>
         <source>Draw intermediate grid lines</source>
         <translation>Crtaj sporedne crte mreže</translation>
@@ -1316,7 +1342,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Snimi web sadržaj</translation>
     </message>
     <message>
-        <location line="-1727"/>
+        <location line="-1743"/>
         <source>Template style</source>
         <translation>Stil predloška</translation>
     </message>
@@ -1408,7 +1434,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+459"/>
+        <location line="+475"/>
         <source>Import one or more pages (supported formats : jpg, png, svg, ubz, pdf)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1611,7 +1637,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="vanished">Podcast</translation>
     </message>
     <message>
-        <location filename="../../src/core/UBApplication.cpp" line="+384"/>
+        <location filename="../../src/core/UBApplication.cpp" line="+388"/>
         <location line="+48"/>
         <location line="+221"/>
         <source>Cannot open your UBX file directly. Please import it in Documents mode instead</source>
@@ -1649,7 +1675,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBAttachmentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+699"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+917"/>
         <source>Insert file</source>
         <translation>Umetni datoteku</translation>
     </message>
@@ -1682,7 +1708,17 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBackgroundPalette</name>
     <message>
-        <location filename="../../src/gui/UBBackgroundPalette.cpp" line="+57"/>
+        <location filename="../../src/gui/UBBackgroundPalette.cpp" line="+56"/>
+        <source>Page</source>
+        <translation type="unfinished">Stranica</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Templates</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+23"/>
         <source>Page color</source>
         <translation>Boja lista</translation>
     </message>
@@ -1695,6 +1731,26 @@ Do you wish to override the security check and continue ?   </source>
         <location line="+1"/>
         <source>Draw intermediate grid lines</source>
         <translation>Crtaj sporedne crte mreže</translation>
+    </message>
+    <message>
+        <location line="+43"/>
+        <source>Date of the calendars</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>The calendars and planners are made for this day, its week, its month or its year</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+32"/>
+        <source>%1, for the date chosen above</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <source>On a page of a PDF, the template goes on a new page after it.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1742,13 +1798,13 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="+131"/>
         <location line="+45"/>
-        <location line="+1022"/>
+        <location line="+1078"/>
         <location line="+36"/>
         <source>Add file operation failed: file copying error</source>
         <translation>Postupak dodavanja datoteke neuspio: greška tijekom kopiranja datoteke</translation>
     </message>
     <message>
-        <location line="-907"/>
+        <location line="-963"/>
         <source>Unknown tool type %1</source>
         <translation>Nepoznata vrsta alata %1</translation>
     </message>
@@ -1758,7 +1814,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Nepoznata vrsta sadržaja %1</translation>
     </message>
     <message>
-        <location line="+627"/>
+        <location line="+683"/>
         <source>Page/canvas size</source>
         <translation>Veličina stranice/platna</translation>
     </message>
@@ -1803,7 +1859,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Sve podržane (%1)</translation>
     </message>
     <message>
-        <location line="-2554"/>
+        <location line="-2610"/>
         <source>Color</source>
         <translation>Boja</translation>
     </message>
@@ -1890,7 +1946,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+2193"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+2231"/>
         <source>That page is not in the document any more.</source>
         <translation>Ta stranica više nije u dokumentu.</translation>
     </message>
@@ -1960,7 +2016,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBColorSwatches</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsWidgets.cpp" line="+152"/>
+        <location filename="../../src/gui/UBToolOptionsWidgets.cpp" line="+153"/>
         <source>No color</source>
         <translation>Bez boje</translation>
     </message>
@@ -1975,7 +2031,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Kapaljka: uzmi boju sa zaslona</translation>
     </message>
     <message>
-        <location line="+174"/>
+        <location line="+187"/>
         <source>Choose a color</source>
         <translation>Odaberi boju</translation>
     </message>
@@ -1983,7 +2039,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+619"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+734"/>
         <source>Quick note</source>
         <translation>Brza bilješka</translation>
     </message>
@@ -2102,6 +2158,19 @@ Do you wish to override the security check and continue ?   </source>
         <location line="+2"/>
         <source>Show Desktop on Secondary Screen</source>
         <translation>Prikaži radnu površinu na sekundarnom ekranu</translation>
+    </message>
+</context>
+<context>
+    <name>UBDictation</name>
+    <message>
+        <location filename="../../src/gui/UBDictation.cpp" line="+83"/>
+        <source>Dictate</source>
+        <translation type="unfinished">Diktiraj</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>The dictation of the system is not available here. On Windows, press Windows + H in a text.</source>
+        <translation type="unfinished">Diktiranje sustava ovdje nije dostupno. U sustavu Windows pritisnite Windows + H u tekstu.</translation>
     </message>
 </context>
 <context>
@@ -2689,9 +2758,107 @@ Do you want to continue?</source>
     </message>
 </context>
 <context>
+    <name>UBEmojiOptionsPanel</name>
+    <message>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1132"/>
+        <source>Emojis and GIFs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Emojis</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>GIFs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+30"/>
+        <source>To use GIFs, make a free account at klipy.com, only once, and paste your key (API key) here. From then on, the GIF search is always ready. Without it, the emojis work as always.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>Paste your key here</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Save</source>
+        <translation type="unfinished">Spremi</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Open klipy.com</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+21"/>
+        <source>Search GIFs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Change the key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Powered by KLIPY</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+30"/>
+        <source>Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source> pt</source>
+        <translation type="unfinished"> pt</translation>
+    </message>
+    <message>
+        <location line="+27"/>
+        <source>The GIF search did not answer: check your key and the internet connection.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+16"/>
+        <source>Downloading the GIF...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>GIF chosen: click on the page to put it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+66"/>
+        <source>Search a GIF, then click on it and on the page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+17"/>
+        <source>Searching...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>No GIF found.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Click on a GIF, then on the page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>UBEraserOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1047"/>
+        <location line="-492"/>
         <source>Eraser</source>
         <translation>Gumica</translation>
     </message>
@@ -3284,7 +3451,7 @@ Preuzeti i instalirati sada? LibertyBoard sprema tvoje dokumente, zatvara se i p
 <context>
     <name>UBGraphicsScene</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsScene.cpp" line="+1150"/>
+        <location filename="../../src/domain/UBGraphicsScene.cpp" line="+1201"/>
         <location line="+11"/>
         <source>Attach a file</source>
         <translation>Priloži datoteku</translation>
@@ -3316,7 +3483,7 @@ Preuzeti i instalirati sada? LibertyBoard sprema tvoje dokumente, zatvara se i p
 <context>
     <name>UBGraphicsTextItem</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsTextItem.cpp" line="+49"/>
+        <location filename="../../src/domain/UBGraphicsTextItem.cpp" line="+51"/>
         <source>&lt;Type Text Here&gt;</source>
         <translation>&lt;Upiši tekst ovdje&gt;</translation>
     </message>
@@ -3324,7 +3491,7 @@ Preuzeti i instalirati sada? LibertyBoard sprema tvoje dokumente, zatvara se i p
 <context>
     <name>UBGraphicsTextItemDelegate</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsTextItemDelegate.cpp" line="+338"/>
+        <location filename="../../src/domain/UBGraphicsTextItemDelegate.cpp" line="+390"/>
         <source>Text Color</source>
         <translation>Boja teksta</translation>
     </message>
@@ -3332,6 +3499,91 @@ Preuzeti i instalirati sada? LibertyBoard sprema tvoje dokumente, zatvara se i p
         <location line="+134"/>
         <source>Editable</source>
         <translation>Uredivo</translation>
+    </message>
+    <message>
+        <location line="+393"/>
+        <source>Insert a table...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Add a row</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Add a column</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Remove the row</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Remove the column</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Columns as wide</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Table style</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Highlight the header row</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Highlight the first column</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>All the lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Horizontal lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Outer lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>No lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>Color of the cells...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Color of the cells</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>No color in the cells</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Remove the table</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3562,6 +3814,11 @@ Preuzeti i instalirati sada? LibertyBoard sprema tvoje dokumente, zatvara se i p
     </message>
     <message>
         <location line="+3"/>
+        <source>Opacity</source>
+        <translation type="unfinished">Neprozirnost</translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source> %</source>
         <translation> %</translation>
     </message>
@@ -3662,7 +3919,7 @@ Preuzeti i instalirati sada? LibertyBoard sprema tvoje dokumente, zatvara se i p
         <translation type="vanished">Veličina stranice</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+131"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+132"/>
         <location line="+85"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -3808,7 +4065,7 @@ Preuzeti i instalirati sada? LibertyBoard sprema tvoje dokumente, zatvara se i p
         <translation>Otvara diktiranje sustava Windows: izgovoreno se piše gdje je pokazivač teksta</translation>
     </message>
     <message>
-        <location line="+163"/>
+        <location line="+167"/>
         <source>Lock the canvas: nothing can be drawn, written, highlighted, selected, moved or deleted; the laser pointer and the hand still work</source>
         <translation>Zaključaj platno: ništa se ne može crtati, pisati, isticati, odabirati, pomicati ni brisati; laser i ruka i dalje rade</translation>
     </message>
@@ -3821,7 +4078,7 @@ Preuzeti i instalirati sada? LibertyBoard sprema tvoje dokumente, zatvara se i p
         <translation type="vanished">Diktiranje sustava ovdje nije dostupno. U sustavu Windows pritisnite Windows + H u tekstu.</translation>
     </message>
     <message>
-        <location line="-160"/>
+        <location line="-164"/>
         <source>Transcribe an audio (coming with the AI)</source>
         <translation>Prepiši zvučni zapis (stiže s umjetnom inteligencijom)</translation>
     </message>
@@ -3857,12 +4114,12 @@ Preuzeti i instalirati sada? LibertyBoard sprema tvoje dokumente, zatvara se i p
     </message>
     <message>
         <location line="+66"/>
-        <location line="+359"/>
+        <location line="+369"/>
         <source>Saved</source>
         <translation>Spremljeno</translation>
     </message>
     <message>
-        <location line="-353"/>
+        <location line="-363"/>
         <source>Search...</source>
         <translation>Traži...</translation>
     </message>
@@ -3882,9 +4139,9 @@ Preuzeti i instalirati sada? LibertyBoard sprema tvoje dokumente, zatvara se i p
         <translation>Sadržaj PDF-a: klik na naslov vodi na njegovu stranicu</translation>
     </message>
     <message>
-        <location line="+28"/>
+        <location line="+32"/>
         <location line="+9"/>
-        <location line="+24"/>
+        <location line="+23"/>
         <source>Lock canvas</source>
         <translation>Zaključaj platno</translation>
     </message>
@@ -3893,8 +4150,8 @@ Preuzeti i instalirati sada? LibertyBoard sprema tvoje dokumente, zatvara se i p
         <translation type="vanished">Zaključaj platno: ništa se ne može crtati, pisati, isticati, pomicati ni brisati; laser, ruka i odabir i dalje rade</translation>
     </message>
     <message>
-        <location line="-24"/>
-        <location line="+22"/>
+        <location line="-23"/>
+        <location line="+21"/>
         <source>Unlock canvas</source>
         <translation>Otključaj platno</translation>
     </message>
@@ -3904,7 +4161,7 @@ Preuzeti i instalirati sada? LibertyBoard sprema tvoje dokumente, zatvara se i p
         <translation>Sakrij ili prikaži alatnu traku</translation>
     </message>
     <message>
-        <location line="+153"/>
+        <location line="+160"/>
         <source>Exit full screen</source>
         <translation>Izlaz iz cijelog zaslona</translation>
     </message>
@@ -3940,7 +4197,7 @@ Preuzeti i instalirati sada? LibertyBoard sprema tvoje dokumente, zatvara se i p
 <context>
     <name>UBMarkerOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-164"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-165"/>
         <source>Marker</source>
         <translation>Marker</translation>
     </message>
@@ -4041,7 +4298,7 @@ Do you want to ignore these errors for this host?</source>
         <translation>Ovdje upiši bilješku</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+7"/>
         <source>Cancel</source>
         <translation>Odustani</translation>
     </message>
@@ -4064,7 +4321,7 @@ Do you want to ignore these errors for this host?</source>
 <context>
     <name>UBNoteOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+998"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1325"/>
         <source>Note</source>
         <translation>Bilješka</translation>
     </message>
@@ -4385,7 +4642,7 @@ To se može učiniti i kasnije putem Početna &gt; Prepoznaj tekst.</translation
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1161"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1488"/>
         <source>Pen</source>
         <translation>Pisaljka</translation>
     </message>
@@ -4923,7 +5180,7 @@ Dinamična širina</translation>
 <context>
     <name>UBReadAloud</name>
     <message>
-        <location filename="../../src/gui/UBReadAloud.cpp" line="+113"/>
+        <location filename="../../src/gui/UBReadAloud.cpp" line="+114"/>
         <source>This is the last page.</source>
         <translation>Ovo je zadnja stranica.</translation>
     </message>
@@ -4933,19 +5190,19 @@ Dinamična širina</translation>
         <translation>U ovom pravokutniku nema teksta.</translation>
     </message>
     <message>
-        <location line="+11"/>
+        <location line="+31"/>
         <source>There is no text to read on this page: write or select a text, or open a PDF with text.</source>
         <translation>Na ovoj stranici nema teksta za čitanje: napišite ili odaberite tekst ili otvorite PDF s tekstom.</translation>
     </message>
     <message>
-        <location line="+33"/>
-        <location line="+24"/>
+        <location line="+34"/>
+        <location line="+25"/>
         <source>Read aloud</source>
         <translation>Čitaj naglas</translation>
     </message>
     <message>
-        <location line="-24"/>
-        <location line="+24"/>
+        <location line="-25"/>
+        <location line="+25"/>
         <source>The voices of the system could not be used to read aloud.</source>
         <translation>Glasovi sustava nisu se mogli koristiti za čitanje naglas.</translation>
     </message>
@@ -5019,7 +5276,7 @@ Dinamična širina</translation>
 <context>
     <name>UBSelectorOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1021"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1348"/>
         <source>Select</source>
         <translation>Odaberi</translation>
     </message>
@@ -5057,7 +5314,7 @@ Dinamična širina</translation>
 <context>
     <name>UBSettings</name>
     <message>
-        <location filename="../../src/core/UBSettings.cpp" line="+1143"/>
+        <location filename="../../src/core/UBSettings.cpp" line="+1148"/>
         <source>My Movies</source>
         <translation>Moji filmovi</translation>
     </message>
@@ -5065,9 +5322,13 @@ Dinamična širina</translation>
 <context>
     <name>UBShapeOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-525"/>
         <source>Rectangle</source>
-        <translation>Pravokutnik</translation>
+        <translation type="vanished">Pravokutnik</translation>
+    </message>
+    <message>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-613"/>
+        <source>Shapes</source>
+        <translation type="unfinished">Oblici</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -5090,7 +5351,12 @@ Dinamična širina</translation>
         <translation>Podcrtaj</translation>
     </message>
     <message>
-        <location line="+16"/>
+        <location line="+18"/>
+        <source>The shape to draw. The polyline: a click for each corner, Enter to end it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
         <source>Border</source>
         <translation>Rub</translation>
     </message>
@@ -5112,29 +5378,29 @@ Dinamična širina</translation>
     </message>
     <message>
         <location line="+7"/>
-        <location line="+160"/>
+        <location line="+181"/>
         <source>Line style</source>
         <translation>Stil linije</translation>
     </message>
     <message>
-        <location line="-160"/>
+        <location line="-181"/>
         <source>Border styles</source>
         <translation>Stilovi ruba</translation>
     </message>
     <message>
         <location line="+13"/>
-        <location line="+147"/>
+        <location line="+168"/>
         <source>Line start</source>
         <translation>Početak linije</translation>
     </message>
     <message>
-        <location line="-143"/>
-        <location line="+144"/>
+        <location line="-164"/>
+        <location line="+165"/>
         <source>Line end</source>
         <translation>Kraj linije</translation>
     </message>
     <message>
-        <location line="-140"/>
+        <location line="-161"/>
         <source>Tapered</source>
         <translation>Suženo</translation>
     </message>
@@ -5155,17 +5421,17 @@ Dinamična širina</translation>
     </message>
     <message>
         <location line="+10"/>
-        <location line="+131"/>
+        <location line="+152"/>
         <source>Opacity</source>
         <translation>Neprozirnost</translation>
     </message>
     <message>
-        <location line="-130"/>
+        <location line="-151"/>
         <source> %</source>
         <translation> %</translation>
     </message>
     <message>
-        <location line="+120"/>
+        <location line="+141"/>
         <source>Line</source>
         <translation>Crta</translation>
     </message>
@@ -5194,7 +5460,7 @@ Dinamična širina</translation>
     </message>
     <message>
         <location line="+15"/>
-        <location line="+31"/>
+        <location line="+32"/>
         <location line="+3"/>
         <source>Stylus Palette</source>
         <translation type="unfinished">Paleta alata</translation>
@@ -5448,7 +5714,7 @@ Dinamična širina</translation>
 <context>
     <name>UBSpotlightOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-295"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-354"/>
         <location line="+4"/>
         <source>Spotlight</source>
         <translation>Reflektor</translation>
@@ -5493,7 +5759,7 @@ Dinamična širina</translation>
 <context>
     <name>UBStampOptionsPanel</name>
     <message>
-        <location line="+392"/>
+        <location line="+507"/>
         <source>Stamp</source>
         <translation>Pečat</translation>
     </message>
@@ -5529,7 +5795,7 @@ Dinamična širina</translation>
 <context>
     <name>UBStylusPalette</name>
     <message>
-        <location filename="../../src/gui/UBStylusPalette.cpp" line="+84"/>
+        <location filename="../../src/gui/UBStylusPalette.cpp" line="+85"/>
         <source>Save a screenshot</source>
         <translation>Spremi snimku zaslona</translation>
     </message>
@@ -5547,9 +5813,37 @@ Dinamična širina</translation>
     </message>
 </context>
 <context>
+    <name>UBTextBoxes</name>
+    <message>
+        <location filename="../../src/gui/UBTextBoxes.cpp" line="+120"/>
+        <source>Table</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>How many rows and columns?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Rows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Columns</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Insert</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>UBTextOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-195"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-251"/>
         <source>Text</source>
         <translation>Tekst</translation>
     </message>
@@ -5582,6 +5876,51 @@ Dinamična širina</translation>
         <location line="+11"/>
         <source>Color</source>
         <translation>Boja</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Checklist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Bullets</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Numbers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>Puts the lines of the text box being written in a list, or takes them out of it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>Click in a text box first, then on the list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <source>Table</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Asks how many rows and columns, then puts a table in the text box being written, or in a new one</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Dictate</source>
+        <translation type="unfinished">Diktiraj</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Makes a text box and writes in it what you say (the dictation of Windows, Windows + H). In a text box, the microphone left of F does the same.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -5617,7 +5956,7 @@ Dinamična širina</translation>
 <context>
     <name>UBToolOptionsBar</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsBar.cpp" line="+53"/>
+        <location filename="../../src/gui/UBToolOptionsBar.cpp" line="+57"/>
         <source>This tool has no options.</source>
         <translation>Ovaj alat nema opcija.</translation>
     </message>
@@ -5625,7 +5964,7 @@ Dinamična širina</translation>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-899"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1225"/>
         <source>Color</source>
         <translation>Boja</translation>
     </message>
@@ -5752,24 +6091,24 @@ Za pristup aktualiziranim dokumentima ponovo pokreni program.</translation>
 <context>
     <name>UBVoiceOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+384"/>
         <source>Read and dictate</source>
-        <translation>Čitaj i diktiraj</translation>
+        <translation type="vanished">Čitaj i diktiraj</translation>
     </message>
     <message>
-        <location line="+5"/>
         <source>Read</source>
-        <translation>Čitaj</translation>
+        <translation type="vanished">Čitaj</translation>
     </message>
     <message>
-        <location line="+0"/>
-        <location line="+27"/>
-        <location line="+65"/>
         <source>Dictate</source>
-        <translation>Diktiraj</translation>
+        <translation type="vanished">Diktiraj</translation>
     </message>
     <message>
-        <location line="-86"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+650"/>
+        <source>Read aloud</source>
+        <translation type="unfinished">Čitaj naglas</translation>
+    </message>
+    <message>
+        <location line="+8"/>
         <source>From the start</source>
         <translation>Od početka</translation>
     </message>
@@ -5779,64 +6118,86 @@ Za pristup aktualiziranim dokumentima ponovo pokreni program.</translation>
         <translation>Odabrani tekst</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>From the start: reads the page shown, then the next pages. Selected text: drag a rectangle over the text to read it.</source>
-        <translation>Od početka: čita stranicu, a zatim sljedeće. Odabrani tekst: povucite pravokutnik preko teksta da ga pročitate.</translation>
-    </message>
-    <message>
-        <location line="+15"/>
-        <source>▶ Play</source>
-        <translation>▶ Reproduciraj</translation>
-    </message>
-    <message>
         <location line="+0"/>
+        <source>From the click</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>From the start: reads the page shown, then the next pages. Selected text: drag a rectangle over the text to read it. From the click: click on a word to read from it, then the next pages.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+17"/>
+        <source>Play</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Pause</source>
+        <translation type="unfinished">Zaustavi</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Stop</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Next page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>From the start: reads the page shown, then the next pages. Selected text: drag a rectangle over the text to read it.</source>
+        <translation type="vanished">Od početka: čita stranicu, a zatim sljedeće. Odabrani tekst: povucite pravokutnik preko teksta da ga pročitate.</translation>
+    </message>
+    <message>
+        <source>▶ Play</source>
+        <translation type="vanished">▶ Reproduciraj</translation>
+    </message>
+    <message>
+        <location line="-3"/>
         <source>Reads the page from its start, or goes on after a pause</source>
         <translation>Čita stranicu od početka ili nastavlja nakon stanke</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>⏸ Pause</source>
-        <translation>⏸ Pauza</translation>
+        <translation type="vanished">⏸ Pauza</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="+1"/>
         <source>Pauses the reading</source>
         <translation>Pauzira čitanje</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>⏹ Stop</source>
-        <translation>⏹ Zaustavi</translation>
+        <translation type="vanished">⏹ Zaustavi</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="+1"/>
         <source>Stops the reading</source>
         <translation>Zaustavlja čitanje</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>⏭ Next page</source>
-        <translation>⏭ Sljedeća stranica</translation>
+        <translation type="vanished">⏭ Sljedeća stranica</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="+1"/>
         <source>Goes to the next page and reads it</source>
         <translation>Prelazi na sljedeću stranicu i čita je</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Opens the dictation of Windows (Windows + H)</source>
-        <translation>Otvara diktiranje sustava Windows (Windows + H)</translation>
+        <translation type="vanished">Otvara diktiranje sustava Windows (Windows + H)</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Click in a text box, then on Dictate: what you say is written there.</source>
-        <translation>Kliknite u tekstni okvir, a zatim na Diktiraj: ono što kažete zapisuje se tamo.</translation>
+        <translation type="vanished">Kliknite u tekstni okvir, a zatim na Diktiraj: ono što kažete zapisuje se tamo.</translation>
     </message>
     <message>
-        <location line="+62"/>
         <source>The dictation of the system is not available here. On Windows, press Windows + H in a text.</source>
-        <translation>Diktiranje sustava ovdje nije dostupno. U sustavu Windows pritisnite Windows + H u tekstu.</translation>
+        <translation type="vanished">Diktiranje sustava ovdje nije dostupno. U sustavu Windows pritisnite Windows + H u tekstu.</translation>
     </message>
 </context>
 <context>
@@ -5960,7 +6321,7 @@ Za pristup aktualiziranim dokumentima ponovo pokreni program.</translation>
 <context>
     <name>UBZLayerController</name>
     <message>
-        <location filename="../../src/domain/UBGraphicsScene.cpp" line="-958"/>
+        <location filename="../../src/domain/UBGraphicsScene.cpp" line="-1008"/>
         <source>Bottom layer limit reached</source>
         <translation type="unfinished"></translation>
     </message>
