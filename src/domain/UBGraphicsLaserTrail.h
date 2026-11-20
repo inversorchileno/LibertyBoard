@@ -50,6 +50,13 @@ public:
     void extendTrail(const QPointF& point);
     void finishTrail();
 
+    /**
+     * @brief Adds the place of the pointer to the trail that follows it
+     * without a click; each part of it waits and fades from the moment it
+     * was drawn.
+     */
+    void follow(const QPointF& point, qreal width);
+
     QRectF boundingRect() const override;
     void paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget = nullptr) override;
 
@@ -64,12 +71,15 @@ private:
         bool whiteBurn{false};
         bool rainbow{false};
         qint64 finishedAt{-1};
+        QVector<qint64> times;      // when each point was drawn, for a trail that follows the pointer
         qint64 fadeDelay{0};
         qint64 fadeDuration{0};
     };
 
     void onFrame();
     void paintRainbow(QPainter* painter, const Trail& trail, qreal opacity, qint64 now) const;
+    void paintFollowing(QPainter* painter, const Trail& trail, qint64 now) const;
+    qreal opacityOfPoint(const Trail& trail, qint64 drawnAt, qint64 now) const;
     qreal opacityOf(const Trail& trail, qint64 now) const;
     void updateBounds();
     static qreal marginOf(const Trail& trail);

@@ -874,6 +874,27 @@ QIcon optionIcon(UBOptionIcon kind)
             painter.drawEllipse(QPointF(24, 14), 4, 4);
             break;
         }
+        case UBOptionIcon::LaserFollow:
+        {
+            // A trail fading behind the mouse pointer, which is not pressed.
+            const QPainterPath path = wavePath(QRectF(3, 6, 30, 16));
+            const int pieces = 12;
+
+            for (int i = 0; i < pieces; ++i)
+            {
+                QColor color = red;
+                color.setAlphaF(qreal(i + 1) / pieces);
+                painter.setPen(QPen(color, 3, Qt::SolidLine, Qt::RoundCap));
+                painter.drawLine(path.pointAtPercent(qreal(i) / pieces), path.pointAtPercent(qreal(i + 1) / pieces));
+            }
+
+            const QPointF tip(34, 13);
+            painter.setPen(QPen(QColor("#1c1d20"), 0.8));
+            painter.setBrush(Qt::white);
+            painter.drawPolygon(QPolygonF({ tip, tip + QPointF(0, 12), tip + QPointF(3, 9), tip + QPointF(5.5, 13.5),
+                                            tip + QPointF(7, 12.8), tip + QPointF(4.8, 8.5), tip + QPointF(8.5, 8.5) }));
+            break;
+        }
         case UBOptionIcon::MarkerRoundTip:
         case UBOptionIcon::MarkerChiselTip:
         {

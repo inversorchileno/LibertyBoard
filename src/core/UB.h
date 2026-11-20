@@ -114,7 +114,8 @@ struct UBLaserMode
     enum Enum
     {
         Trail = 0,
-        Point
+        Point,
+        Follow      // follows the pointer without a click, its tail fading
     };
 };
 

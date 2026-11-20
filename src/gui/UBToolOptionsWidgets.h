@@ -157,6 +157,7 @@ enum class UBOptionIcon
     Fill,
     LaserTrail,
     LaserPoint,
+    LaserFollow,
     LaserStandard,
     LaserWhiteBurn,
     EraserWhole,

@@ -112,6 +112,118 @@ void UBGraphicsLaserTrail::extendTrail(const QPointF& point)
                                   .adjusted(-margin, -margin, margin, margin)));
 }
 
+void UBGraphicsLaserTrail::follow(const QPointF& point, qreal width)
+{
+    const qint64 now = mClock.elapsed();
+
+    // One trail follows the pointer for as long as the mode lasts.
+    if (mTrails.isEmpty() || mTrails.last().times.isEmpty() || mTrails.last().finishedAt >= 0)
+    {
+        startTrail(point, width);
+        Trail& trail = mTrails.last();
+        trail.pointOnly = false;
+        trail.times = { now };
+        return;
+    }
+
+    Trail& trail = mTrails.last();
+    trail.width = width;
+
+    if (trail.points.last() == point)
+    {
+        return;
+    }
+
+    trail.points << point;
+    trail.times << now;
+
+    const qreal margin = marginOf(trail);
+    const QRectF pointBounds(point.x() - margin, point.y() - margin, 2 * margin, 2 * margin);
+
+    if (!mBounds.contains(pointBounds))
+    {
+        prepareGeometryChange();
+        mBounds = mBounds.united(pointBounds);
+    }
+
+    if (!mFrameTimer.isActive())
+    {
+        mFrameTimer.start();
+    }
+}
+
+qreal UBGraphicsLaserTrail::opacityOfPoint(const Trail& trail, qint64 drawnAt, qint64 now) const
+{
+    const qint64 fadingFor = now - drawnAt - trail.fadeDelay;
+
+    if (fadingFor <= 0)
+    {
+        return 1.0;
+    }
+
+    if (trail.fadeDuration <= 0)
+    {
+        return 0.0;
+    }
+
+    return qMax(0.0, 1.0 - qreal(fadingFor) / trail.fadeDuration);
+}
+
+void UBGraphicsLaserTrail::paintFollowing(QPainter* painter, const Trail& trail, qint64 now) const
+{
+    // Each segment fades from the moment it was drawn: the tail disappears
+    // while the head follows the pointer. Segments of nearly the same color
+    // and opacity are drawn as one line, so that their glow does not add up
+    // where they meet.
+    const qreal cycle = qMax(900.0, trail.width * 100);
+    const qreal layers[][2] = { { sGlowWidthFactor, 0.15 }, { 2.0, 0.35 }, { 1.0, 1.0 } };
+
+    struct Run
+    {
+        QPolygonF points;
+        QColor color;
+        qreal opacity;
+    };
+
+    QList<Run> runs;
+    qreal distance = 0;
+
+    for (int i = 1; i < trail.points.size(); ++i)
+    {
+        distance += QLineF(trail.points.at(i - 1), trail.points.at(i)).length();
+        const qreal opacity = std::round(opacityOfPoint(trail, trail.times.at(i), now) * trail.opacity * 20) / 20;
+
+        if (opacity <= 0)
+        {
+            continue;
+        }
+
+        const qreal hue = std::round(std::fmod(distance / cycle, 1.0) * 36) / 36;
+        const QColor color = trail.rainbow ? QColor::fromHslF(hue, 0.85, 0.6) : trail.color;
+
+        if (!runs.isEmpty() && runs.last().color == color && qFuzzyCompare(runs.last().opacity, opacity)
+            && runs.last().points.last() == trail.points.at(i - 1))
+        {
+            runs.last().points << trail.points.at(i);
+        }
+        else
+        {
+            runs << Run{ QPolygonF({ trail.points.at(i - 1), trail.points.at(i) }), color, opacity };
+        }
+    }
+
+    for (const auto& layer : layers)
+    {
+        for (const Run& run : std::as_const(runs))
+        {
+            QColor color = (trail.whiteBurn && layer[1] >= 1.0) ? QColor(Qt::white) : run.color;
+            color.setAlphaF(layer[1] * run.opacity);
+            painter->setPen(QPen(color, trail.width * layer[0], Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+            painter->drawPolyline(run.points);
+        }
+    }
+}
+
 void UBGraphicsLaserTrail::finishTrail()
 {
     if (!mTrails.isEmpty() && mTrails.last().finishedAt < 0)
@@ -141,6 +253,12 @@ void UBGraphicsLaserTrail::paint(QPainter* painter, const QStyleOptionGraphicsIt
 
         if (opacity <= 0)
         {
+            continue;
+        }
+
+        if (!trail.times.isEmpty())
+        {
+            paintFollowing(painter, trail, now);
             continue;
         }
 
@@ -313,6 +431,39 @@ void UBGraphicsLaserTrail::onFrame()
 {
     const qint64 now = mClock.elapsed();
     const int countBefore = mTrails.size();
+    bool following = false;
+    bool trimmed = false;
+
+    // The trail that follows the pointer loses the parts that have faded,
+    // keeping its head.
+    for (Trail& trail : mTrails)
+    {
+        if (trail.times.isEmpty())
+        {
+            continue;
+        }
+
+        int faded = 0;
+
+        while (faded < trail.times.size() - 1 && opacityOfPoint(trail, trail.times.at(faded + 1), now) <= 0)
+        {
+            ++faded;
+        }
+
+        if (faded > 0)
+        {
+            trail.points.remove(0, faded);
+            trail.times.remove(0, faded);
+            trimmed = true;
+        }
+
+        following = following || trail.points.size() > 1;
+    }
+
+    if (trimmed)
+    {
+        updateBounds();
+    }
 
     mTrails.erase(std::remove_if(mTrails.begin(), mTrails.end(), [this, now](const Trail& trail) {
         return trail.finishedAt >= 0 && opacityOf(trail, now) <= 0;
@@ -325,7 +476,15 @@ void UBGraphicsLaserTrail::onFrame()
 
     update();
 
-    if (mTrails.isEmpty())
+    // Nothing left to fade: the next move of the pointer starts it again.
+    bool fading = following;
+
+    for (const Trail& trail : std::as_const(mTrails))
+    {
+        fading = fading || trail.times.isEmpty();
+    }
+
+    if (!fading)
     {
         mFrameTimer.stop();
     }

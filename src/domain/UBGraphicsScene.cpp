@@ -561,6 +561,17 @@ bool UBGraphicsScene::inputDeviceMove(const QPointF& scenePos, const qreal& pres
     QPointF position = QPointF(scenePos);
     mCurrentPoint = position;
 
+    if (currentTool == UBStylusTool::Pointer && mLaserTrail
+        && UBSettings::settings()->laserMode->get().toInt() == UBLaserMode::Follow)
+    {
+        // The laser follows the pointer, pressed or not.
+        qreal width = UBSettings::settings()->laserWidth->get().toDouble();
+        width /= UBApplication::boardController->systemScaleFactor();
+        width /= UBApplication::boardController->currentZoom();
+        mLaserTrail->follow(position, width);
+        return true;
+    }
+
     if (currentTool == UBStylusTool::Eraser)
     {
         drawEraser(position, mInputDeviceIsPressed);
@@ -1349,7 +1360,7 @@ void UBGraphicsScene::finishShape()
 
 void UBGraphicsScene::startLaserTrail(const QPointF& point)
 {
-    if (!mLaserTrail)
+    if (!mLaserTrail || UBSettings::settings()->laserMode->get().toInt() == UBLaserMode::Follow)
     {
         return;
     }

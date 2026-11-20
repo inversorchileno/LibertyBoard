@@ -458,8 +458,11 @@ UBLaserOptionsPanel::UBLaserOptionsPanel(QWidget* parent)
     mPreview = new UBStrokePreview(this);
     addRow(mPreview);
 
-    mMode = new UBSegmentedChoice({ tr("Trail"), tr("Point") }, this);
-    mMode->setIcons({ optionIcon(UBOptionIcon::LaserTrail), optionIcon(UBOptionIcon::LaserPoint) });
+    mMode = new UBSegmentedChoice({ tr("Trail"), tr("Point"), tr("Follow") }, this);
+    mMode->setIcons({ optionIcon(UBOptionIcon::LaserTrail), optionIcon(UBOptionIcon::LaserPoint),
+                      optionIcon(UBOptionIcon::LaserFollow) });
+    mMode->setToolTip(tr("Trail: draws while pressed. Point: shows only the point. "
+                         "Follow: follows the mouse without a click, its trail fading with the times below."));
     addRow(mMode);
 
     mWidth = new UBValueSlider({ 0.5, 1, 2, 4, 8, 16, 64 }, tr(" pt"), 1, this);
