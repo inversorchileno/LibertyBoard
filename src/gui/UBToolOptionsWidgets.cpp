@@ -552,6 +552,19 @@ int UBSegmentedChoice::choice() const
     return mGroup->checkedId();
 }
 
+void UBSegmentedChoice::clearChoice()
+{
+    // An exclusive group keeps one button checked.
+    mGroup->setExclusive(false);
+
+    for (QAbstractButton* button : mGroup->buttons())
+    {
+        button->setChecked(false);
+    }
+
+    mGroup->setExclusive(true);
+}
+
 void UBSegmentedChoice::setIcons(const QList<QIcon>& icons, Qt::ToolButtonStyle style)
 {
     const QList<QAbstractButton*> buttons = mGroup->buttons();

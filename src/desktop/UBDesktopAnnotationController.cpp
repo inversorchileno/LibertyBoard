@@ -521,7 +521,6 @@ void UBDesktopAnnotationController::toolButtonPressed()
     const int tool = toolOf(action);
 
     mToolOptionsPopup->hide();
-    mSpotlightWasOn = (UBDrawingController::drawingController()->stylusTool() == UBStylusTool::Spotlight);
     UBDrawingController::drawingController()->setStylusTool(tool);
     mPressedAction = action;
     mPressTime = QTime::currentTime();
@@ -568,15 +567,6 @@ void UBDesktopAnnotationController::toolButtonReleased()
     if (UBToolOptionsPopup::hasOptions(tool) && tool != UBStylusTool::Selector && (mbArrowClicked || held))
     {
         showToolOptions(action);
-    }
-    else if (tool == UBStylusTool::Spotlight)
-    {
-        // Chosen when pressed; a second click hides or shows it again.
-        if (mSpotlightWasOn)
-        {
-            UBDrawingController* drawingController = UBDrawingController::drawingController();
-            drawingController->setSpotlightShown(!drawingController->isSpotlightShown());
-        }
     }
     else
     {

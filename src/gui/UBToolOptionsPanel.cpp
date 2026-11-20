@@ -759,13 +759,9 @@ UBSpotlightOptionsPanel::UBSpotlightOptionsPanel(QWidget* parent)
     mZoom = new UBValueSlider({ 150, 200, 300, 400, 600 }, tr(" %"), 0, this);
     addRow(mZoom);
 
-    connect(mMode, &UBSegmentedChoice::choiceChanged, this, [this, settings](int mode) {
-        settings->spotlightMode->set(mode);
-        showModeOptions();
-        updateToolIcon();
-        // Choosing the spotlight or the magnifier shows it, also after a second click hid it.
-        UBDrawingController::drawingController()->setSpotlightShown(true);
-    });
+    connect(mMode, &UBSegmentedChoice::choiceChanged, this, &UBSpotlightOptionsPanel::onModeClicked);
+    connect(UBDrawingController::drawingController(), &UBDrawingController::spotlightShownChanged,
+            this, &UBSpotlightOptionsPanel::showWhetherShown);
     connect(mRadius, &UBValueSlider::valueChanged, this, [settings](qreal radius) {
         settings->spotlightRadius->set(qRound(radius));
     });
@@ -783,7 +779,7 @@ void UBSpotlightOptionsPanel::refresh()
 {
     UBSettings* settings = UBSettings::settings();
 
-    mMode->setChoice(settings->spotlightMode->get().toInt());
+    showWhetherShown();
     mRadius->setValue(settings->spotlightRadius->get().toInt());
     mDarkness->setValue(settings->spotlightDarkness->get().toDouble() * 100);
     mZoom->setValue(settings->magnifierZoom->get().toDouble() * 100);
@@ -802,10 +798,39 @@ void UBSpotlightOptionsPanel::updateToolIcon()
     UBToolOptionsArrows::setIcon(UBApplication::mainWindow->actionSpotlight, icon);
 }
 
+void UBSpotlightOptionsPanel::onModeClicked(int mode)
+{
+    // Spotlight and Magnifier are switches: a click turns one on, or the
+    // other one into it, and a click on the one that is on turns it off.
+    UBSettings* settings = UBSettings::settings();
+    UBDrawingController* drawingController = UBDrawingController::drawingController();
+    const bool turnOff = drawingController->isSpotlightShown() && settings->spotlightMode->get().toInt() == mode;
+
+    settings->spotlightMode->set(mode);
+    drawingController->setSpotlightShown(!turnOff);
+    showWhetherShown();
+    updateToolIcon();
+}
+
+void UBSpotlightOptionsPanel::showWhetherShown()
+{
+    // Only the spotlight or magnifier that is on looks chosen.
+    if (UBDrawingController::drawingController()->isSpotlightShown())
+    {
+        mMode->setChoice(UBSettings::settings()->spotlightMode->get().toInt());
+    }
+    else
+    {
+        mMode->clearChoice();
+    }
+
+    showModeOptions();
+}
+
 void UBSpotlightOptionsPanel::showModeOptions()
 {
     // The darkness is for the spotlight, the zoom for the magnifier.
-    const bool magnifier = mMode->choice() == 1;
+    const bool magnifier = UBSettings::settings()->spotlightMode->get().toInt() == 1;
     mDarknessTitle->setVisible(!magnifier);
     mDarkness->setVisible(!magnifier);
     mZoomTitle->setVisible(magnifier);

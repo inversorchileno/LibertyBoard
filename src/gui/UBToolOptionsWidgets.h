@@ -130,6 +130,9 @@ public:
     void setChoice(int index);
     int choice() const;
 
+    /** @brief Leaves every button unchosen, for a choice that is also a switch. */
+    void clearChoice();
+
     /** @brief Shows a drawing above the label of each button, like the tiles of Drawboard PDF. */
     void setIcons(const QList<QIcon>& icons, Qt::ToolButtonStyle style = Qt::ToolButtonTextUnderIcon);
 

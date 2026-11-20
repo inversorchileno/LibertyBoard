@@ -250,6 +250,8 @@ public:
     static void updateToolIcon();
 
 private:
+    void onModeClicked(int mode);
+    void showWhetherShown();
     void showModeOptions();
 
     UBSegmentedChoice* mMode{nullptr};

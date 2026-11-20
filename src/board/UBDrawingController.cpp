@@ -99,19 +99,6 @@ UBDrawingController::UBDrawingController(QObject * parent)
         const UBStylusTool::Enum tool = shapeTool.second;
 
         connect(shapeTool.first, &QAction::triggered, this, [this, tool](bool checked) {
-            // A second click on the spotlight hides or shows it again. The
-            // desktop palette chooses its tool when pressed and counts the
-            // clicks itself.
-            if (tool == UBStylusTool::Spotlight && mStylusTool == UBStylusTool::Spotlight)
-            {
-                if (!mIsDesktopMode)
-                {
-                    setSpotlightShown(!mSpotlightShown);
-                }
-
-                return;
-            }
-
             if (checked)
             {
                 setStylusTool(tool);
@@ -176,10 +163,10 @@ void UBDrawingController::setSpotlightShown(bool shown)
 
 void UBDrawingController::setStylusTool(int tool)
 {
-    // Choosing the spotlight shows it.
-    if (tool == UBStylusTool::Spotlight && mStylusTool != UBStylusTool::Spotlight)
+    // Choosing the spotlight tool only shows its options; leaving it turns it off.
+    if (tool != mStylusTool)
     {
-        setSpotlightShown(true);
+        setSpotlightShown(false);
     }
 
     // On a locked canvas, only the tools that change nothing.

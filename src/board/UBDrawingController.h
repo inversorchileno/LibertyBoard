@@ -90,8 +90,8 @@ class UBDrawingController : public QObject
 
         /**
          * @brief Whether the spotlight or the magnifier is shown while its
-         * tool is chosen. A second click on the tool hides it, and the tool
-         * stays chosen until another one is.
+         * tool is chosen. Choosing the tool only shows its options: the
+         * Spotlight and Magnifier buttons there turn them on and off.
          */
         bool isSpotlightShown() const { return mSpotlightShown; }
         void setSpotlightShown(bool shown);
@@ -122,7 +122,7 @@ class UBDrawingController : public QObject
         UBStylusTool::Enum mLatestDrawingTool;
         bool mIsDesktopMode;
         bool mCanvasLocked{false};
-        bool mSpotlightShown{true};
+        bool mSpotlightShown{false};
 
         static UBDrawingController* sDrawingController;
 
