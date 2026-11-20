@@ -1321,12 +1321,12 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="+13"/>
         <source>Spotlight</source>
-        <translation type="unfinished"></translation>
+        <translation>Reflektor</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Spotlight and magnifier: darken the screen but around the pointer, or magnify under it</source>
-        <translation type="unfinished"></translation>
+        <translation>Reflektor a lupa: ztmaví obrazovku kromě okolí ukazatele, nebo zvětší, co je pod ním</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -1587,34 +1587,34 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBAttachmentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+576"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+575"/>
         <source>Insert file</source>
-        <translation type="unfinished"></translation>
+        <translation>Vložit soubor</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>File</source>
-        <translation type="unfinished"></translation>
+        <translation>Soubor</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Hyperlink</source>
-        <translation type="unfinished"></translation>
+        <translation>Odkaz</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>File: a click on the page attaches a file. Hyperlink: a click on the page asks for the address of a web page.</source>
-        <translation type="unfinished"></translation>
+        <translation>Soubor: kliknutí na stránku připojí soubor. Odkaz: kliknutí na stránku se zeptá na adresu webové stránky.</translation>
     </message>
     <message>
         <location line="+27"/>
         <source>Add a hyperlink to a web page</source>
-        <translation type="unfinished"></translation>
+        <translation>Přidat odkaz na webovou stránku</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Attach a file to the page</source>
-        <translation type="unfinished">Připojit soubor ke stránce</translation>
+        <translation>Připojit soubor ke stránce</translation>
     </message>
 </context>
 <context>
@@ -1655,37 +1655,37 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="+627"/>
         <source>Page/canvas size</source>
-        <translation type="unfinished"></translation>
+        <translation>Velikost stránky/plátna</translation>
     </message>
     <message>
         <location line="+9"/>
         <source> px</source>
-        <translation type="unfinished"> px</translation>
+        <translation> px</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Half as wide again</source>
-        <translation type="unfinished"></translation>
+        <translation>O polovinu širší</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Half as tall again</source>
-        <translation type="unfinished"></translation>
+        <translation>O polovinu vyšší</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>Width</source>
-        <translation type="unfinished">Tloušťka</translation>
+        <translation>Šířka</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Height</source>
-        <translation type="unfinished">Výška</translation>
+        <translation>Výška</translation>
     </message>
     <message>
         <location line="+11"/>
         <source>The size of this page. The drawings stay where they are; a bigger canvas leaves room around them.</source>
-        <translation type="unfinished"></translation>
+        <translation>Velikost této stránky. Kresby zůstanou, kde jsou; větší plátno nechá místo kolem nich.</translation>
     </message>
     <message>
         <location line="+577"/>
@@ -1903,7 +1903,7 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="+8"/>
         <source>Eyedropper: take a color on the screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Kapátko: vzít barvu z obrazovky</translation>
     </message>
     <message>
         <location line="+173"/>
@@ -3074,22 +3074,22 @@ Stáhnout a nainstalovat nyní? LibertyBoard uloží vaše dokumenty, zavře se 
     <message>
         <location filename="../../src/domain/UBGraphicsHyperlinkItem.cpp" line="+48"/>
         <source>Hyperlink</source>
-        <translation type="unfinished"></translation>
+        <translation>Odkaz</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>%1 could not be opened.</source>
-        <translation type="unfinished">%1 nelze otevřít.</translation>
+        <translation>%1 nelze otevřít.</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>Add a hyperlink</source>
-        <translation type="unfinished"></translation>
+        <translation>Přidat odkaz</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Address of the web page:</source>
-        <translation type="unfinished"></translation>
+        <translation>Adresa webové stránky:</translation>
     </message>
 </context>
 <context>
@@ -3427,12 +3427,12 @@ Stáhnout a nainstalovat nyní? LibertyBoard uloží vaše dokumenty, zavře se 
     <message>
         <location line="+0"/>
         <source>Follow</source>
-        <translation type="unfinished"></translation>
+        <translation>Sledování</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Trail: draws while pressed. Point: shows only the point. Follow: follows the mouse without a click, its trail fading with the times below.</source>
-        <translation type="unfinished"></translation>
+        <translation>Stopa: kreslí při stisknutí. Bod: ukazuje jen bod. Sledování: sleduje myš bez kliknutí, stopa mizí podle časů níže.</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -3488,12 +3488,12 @@ Stáhnout a nainstalovat nyní? LibertyBoard uloží vaše dokumenty, zavře se 
     <message>
         <location line="+55"/>
         <source>Wait</source>
-        <translation type="unfinished"></translation>
+        <translation>Čekání</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Fading</source>
-        <translation type="unfinished"></translation>
+        <translation>Mizení</translation>
     </message>
 </context>
 <context>
@@ -3608,7 +3608,7 @@ Stáhnout a nainstalovat nyní? LibertyBoard uloží vaše dokumenty, zavře se 
         <location line="-112"/>
         <location line="+152"/>
         <source>Page/canvas size</source>
-        <translation type="unfinished"></translation>
+        <translation>Velikost stránky/plátna</translation>
     </message>
     <message>
         <location line="-110"/>
@@ -3678,58 +3678,58 @@ Stáhnout a nainstalovat nyní? LibertyBoard uloží vaše dokumenty, zavře se 
     <message>
         <location line="+26"/>
         <source>Custom size...</source>
-        <translation type="unfinished"></translation>
+        <translation>Vlastní velikost...</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>Read and dictate</source>
-        <translation type="unfinished"></translation>
+        <translation>Číst a diktovat</translation>
     </message>
     <message>
         <location line="+2"/>
         <location line="+6"/>
         <source>Read aloud</source>
-        <translation type="unfinished"></translation>
+        <translation>Číst nahlas</translation>
     </message>
     <message>
         <location line="-4"/>
         <source>Reads the texts selected, or the text of the page</source>
-        <translation type="unfinished"></translation>
+        <translation>Přečte vybrané texty, nebo text stránky</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>Stop reading</source>
-        <translation type="unfinished"></translation>
+        <translation>Zastavit čtení</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Dictate (Windows + H)</source>
-        <translation type="unfinished"></translation>
+        <translation>Diktovat (Windows + H)</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Opens the dictation of Windows: what is said is written where the cursor of text is</source>
-        <translation type="unfinished"></translation>
+        <translation>Otevře diktování Windows: co řeknete, se napíše tam, kde je textový kurzor</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Dictate</source>
-        <translation type="unfinished"></translation>
+        <translation>Diktovat</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>The dictation of the system is not available here. On Windows, press Windows + H in a text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Diktování systému zde není k dispozici. Ve Windows stiskněte v textu Windows + H.</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Transcribe an audio (coming with the AI)</source>
-        <translation type="unfinished"></translation>
+        <translation>Přepsat nahrávku (přijde s AI)</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Writes what is said in a recording; it will come with the AI of LibertyBoard</source>
-        <translation type="unfinished"></translation>
+        <translation>Zapíše, co se říká v nahrávce; přijde s AI LibertyBoard</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -3787,18 +3787,18 @@ Stáhnout a nainstalovat nyní? LibertyBoard uloží vaše dokumenty, zavře se 
         <location line="+9"/>
         <location line="+22"/>
         <source>Lock canvas</source>
-        <translation type="unfinished"></translation>
+        <translation>Zamknout plátno</translation>
     </message>
     <message>
         <location line="-29"/>
         <source>Lock the canvas: nothing can be drawn, written, highlighted, moved or deleted; the laser pointer, the hand and the selector still work</source>
-        <translation type="unfinished"></translation>
+        <translation>Zamknout plátno: nelze nic kreslit, psát, zvýrazňovat, přesouvat ani mazat; laser, ruka a výběr dál fungují</translation>
     </message>
     <message>
         <location line="+7"/>
         <location line="+20"/>
         <source>Unlock canvas</source>
-        <translation type="unfinished"></translation>
+        <translation>Odemknout plátno</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -4267,7 +4267,7 @@ Lze to udělat i později přes Domů &gt; Rozpoznat text.</translation>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1036"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1035"/>
         <source>Pen</source>
         <translation>Pero</translation>
     </message>
@@ -4292,35 +4292,35 @@ Dynamická šířka</translation>
     <message>
         <location line="+8"/>
         <source>Ballpoint pen</source>
-        <translation type="unfinished"></translation>
+        <translation>Propiska</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Fountain pen</source>
-        <translation type="unfinished"></translation>
+        <translation>Plnicí pero</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Calligraphy pen</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaligrafické pero</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Pencil</source>
-        <translation type="unfinished"></translation>
+        <translation>Tužka</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Marker</source>
-        <translation type="unfinished">Zvýrazňovač</translation>
+        <translation>Fix</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Ballpoint pen: even width. Fountain pen: width follows the pressure. Calligraphy pen: width follows the direction. Pencil: thin and light, like graphite. Marker: wide and even.</source>
-        <translation type="unfinished"></translation>
+        <source>Ballpoint pen: thicker when slow, thinner when fast. Fountain pen: a slanted flat nib. Calligraphy pen: smooth and even. Pencil: thin and dark, with grain. Marker: wide, with a felt texture.</source>
+        <translation>Propiska: pomalu silnější, rychle tenčí. Plnicí pero: šikmý plochý hrot. Kaligrafické pero: hladké a rovnoměrné. Tužka: tenká a tmavá, se zrnem. Fix: široký, s texturou plsti.</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+4"/>
         <source> pt</source>
         <translation> pt</translation>
     </message>
@@ -4807,17 +4807,17 @@ Dynamická šířka</translation>
     <message>
         <location filename="../../src/gui/UBReadAloud.cpp" line="+58"/>
         <source>There is no text to read on this page: write or select a text, or open a PDF with text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Na této stránce není text ke čtení: napište nebo vyberte text, nebo otevřete PDF s textem.</translation>
     </message>
     <message>
         <location line="+23"/>
         <source>Read aloud</source>
-        <translation type="unfinished"></translation>
+        <translation>Číst nahlas</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>The voices of the system could not be used to read aloud.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hlasy systému nebylo možné použít ke čtení nahlas.</translation>
     </message>
 </context>
 <context>
@@ -5016,12 +5016,12 @@ Dynamická šířka</translation>
     <message>
         <location line="+6"/>
         <source>Fit to the text size</source>
-        <translation type="unfinished"></translation>
+        <translation>Přizpůsobit velikosti písma</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>On a PDF, the band takes the height of the line of text, with a little margin.</source>
-        <translation type="unfinished"></translation>
+        <translation>V PDF převezme pruh výšku řádku textu s malým okrajem.</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -5037,17 +5037,17 @@ Dynamická šířka</translation>
     <message>
         <location line="+120"/>
         <source>Line</source>
-        <translation type="unfinished">Čára</translation>
+        <translation>Čára</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Start</source>
-        <translation type="unfinished"></translation>
+        <translation>Začátek</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>End</source>
-        <translation type="unfinished"></translation>
+        <translation>Konec</translation>
     </message>
 </context>
 <context>
@@ -5321,43 +5321,43 @@ Dynamická šířka</translation>
         <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-282"/>
         <location line="+4"/>
         <source>Spotlight</source>
-        <translation type="unfinished"></translation>
+        <translation>Reflektor</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Magnifier</source>
-        <translation type="unfinished">Lupa</translation>
+        <translation>Lupa</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Spotlight: darkens all but a circle around the pointer. Magnifier: magnifies what is under the pointer.</source>
-        <translation type="unfinished"></translation>
+        <translation>Reflektor: ztmaví vše kromě kruhu kolem ukazatele. Lupa: zvětší, co je pod ukazatelem.</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Radius</source>
-        <translation type="unfinished"></translation>
+        <translation>Poloměr</translation>
     </message>
     <message>
         <location line="+1"/>
         <source> px</source>
-        <translation type="unfinished"> px</translation>
+        <translation> px</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Darkness</source>
-        <translation type="unfinished"></translation>
+        <translation>Tma</translation>
     </message>
     <message>
         <location line="+2"/>
         <location line="+5"/>
         <source> %</source>
-        <translation type="unfinished"> %</translation>
+        <translation> %</translation>
     </message>
     <message>
         <location line="-2"/>
         <source>Zoom</source>
-        <translation type="unfinished"></translation>
+        <translation>Zvětšení</translation>
     </message>
 </context>
 <context>
@@ -5491,7 +5491,7 @@ Dynamická šířka</translation>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-774"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-773"/>
         <source>Color</source>
         <translation>Barva</translation>
     </message>

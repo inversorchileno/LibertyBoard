@@ -844,12 +844,12 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="+13"/>
         <source>Spotlight</source>
-        <translation type="unfinished"></translation>
+        <translation>Spotlight</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Spotlight and magnifier: darken the screen but around the pointer, or magnify under it</source>
-        <translation type="unfinished"></translation>
+        <translation>Spotlight og lupe: gjør skjermen mørk unntatt rundt pekeren, eller forstørrer det som er under</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -1586,34 +1586,34 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBAttachmentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+576"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+575"/>
         <source>Insert file</source>
-        <translation type="unfinished"></translation>
+        <translation>Sett inn fil</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>File</source>
-        <translation type="unfinished"></translation>
+        <translation>Fil</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Hyperlink</source>
-        <translation type="unfinished"></translation>
+        <translation>Lenke</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>File: a click on the page attaches a file. Hyperlink: a click on the page asks for the address of a web page.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fil: et klikk på siden legger ved en fil. Lenke: et klikk på siden ber om adressen til en nettside.</translation>
     </message>
     <message>
         <location line="+27"/>
         <source>Add a hyperlink to a web page</source>
-        <translation type="unfinished"></translation>
+        <translation>Legg til en lenke til en nettside</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Attach a file to the page</source>
-        <translation type="unfinished">Legg ved en fil på siden</translation>
+        <translation>Legg ved en fil på siden</translation>
     </message>
 </context>
 <context>
@@ -1659,37 +1659,37 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="+627"/>
         <source>Page/canvas size</source>
-        <translation type="unfinished"></translation>
+        <translation>Side-/lerretsstørrelse</translation>
     </message>
     <message>
         <location line="+9"/>
         <source> px</source>
-        <translation type="unfinished"> px</translation>
+        <translation> px</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Half as wide again</source>
-        <translation type="unfinished"></translation>
+        <translation>Halvannen gang så bred</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Half as tall again</source>
-        <translation type="unfinished"></translation>
+        <translation>Halvannen gang så høy</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>Width</source>
-        <translation type="unfinished">Tykkelse</translation>
+        <translation>Bredde</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Height</source>
-        <translation type="unfinished">Høyde</translation>
+        <translation>Høyde</translation>
     </message>
     <message>
         <location line="+11"/>
         <source>The size of this page. The drawings stay where they are; a bigger canvas leaves room around them.</source>
-        <translation type="unfinished"></translation>
+        <translation>Størrelsen på denne siden. Tegningene blir der de er; et større lerret gir plass rundt dem.</translation>
     </message>
     <message>
         <location line="+577"/>
@@ -1902,7 +1902,7 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="+8"/>
         <source>Eyedropper: take a color on the screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Pipette: ta en farge på skjermen</translation>
     </message>
     <message>
         <location line="+173"/>
@@ -3070,22 +3070,22 @@ Laste ned og installere nå? LibertyBoard lagrer dokumentene dine, lukkes og åp
     <message>
         <location filename="../../src/domain/UBGraphicsHyperlinkItem.cpp" line="+48"/>
         <source>Hyperlink</source>
-        <translation type="unfinished"></translation>
+        <translation>Lenke</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>%1 could not be opened.</source>
-        <translation type="unfinished">%1 kunne ikke åpnes.</translation>
+        <translation>%1 kunne ikke åpnes.</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>Add a hyperlink</source>
-        <translation type="unfinished"></translation>
+        <translation>Legg til en lenke</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Address of the web page:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nettsidens adresse:</translation>
     </message>
 </context>
 <context>
@@ -3424,12 +3424,12 @@ Laste ned og installere nå? LibertyBoard lagrer dokumentene dine, lukkes og åp
     <message>
         <location line="+0"/>
         <source>Follow</source>
-        <translation type="unfinished"></translation>
+        <translation>Følg</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Trail: draws while pressed. Point: shows only the point. Follow: follows the mouse without a click, its trail fading with the times below.</source>
-        <translation type="unfinished"></translation>
+        <translation>Spor: tegner mens det trykkes. Punkt: viser bare punktet. Følg: følger musen uten klikk, sporet blekner etter tidene nedenfor.</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -3485,12 +3485,12 @@ Laste ned og installere nå? LibertyBoard lagrer dokumentene dine, lukkes og åp
     <message>
         <location line="+55"/>
         <source>Wait</source>
-        <translation type="unfinished"></translation>
+        <translation>Vent</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Fading</source>
-        <translation type="unfinished"></translation>
+        <translation>Bleking</translation>
     </message>
 </context>
 <context>
@@ -3605,7 +3605,7 @@ Laste ned og installere nå? LibertyBoard lagrer dokumentene dine, lukkes og åp
         <location line="-112"/>
         <location line="+152"/>
         <source>Page/canvas size</source>
-        <translation type="unfinished"></translation>
+        <translation>Side-/lerretsstørrelse</translation>
     </message>
     <message>
         <location line="-110"/>
@@ -3675,58 +3675,58 @@ Laste ned og installere nå? LibertyBoard lagrer dokumentene dine, lukkes og åp
     <message>
         <location line="+26"/>
         <source>Custom size...</source>
-        <translation type="unfinished"></translation>
+        <translation>Egendefinert størrelse...</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>Read and dictate</source>
-        <translation type="unfinished"></translation>
+        <translation>Les opp og dikter</translation>
     </message>
     <message>
         <location line="+2"/>
         <location line="+6"/>
         <source>Read aloud</source>
-        <translation type="unfinished"></translation>
+        <translation>Les opp</translation>
     </message>
     <message>
         <location line="-4"/>
         <source>Reads the texts selected, or the text of the page</source>
-        <translation type="unfinished"></translation>
+        <translation>Leser de valgte tekstene, eller sidens tekst</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>Stop reading</source>
-        <translation type="unfinished"></translation>
+        <translation>Stopp opplesing</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Dictate (Windows + H)</source>
-        <translation type="unfinished"></translation>
+        <translation>Dikter (Windows + H)</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Opens the dictation of Windows: what is said is written where the cursor of text is</source>
-        <translation type="unfinished"></translation>
+        <translation>Åpner Windows-diktering: det som sies, skrives der tekstmarkøren er</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Dictate</source>
-        <translation type="unfinished"></translation>
+        <translation>Dikter</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>The dictation of the system is not available here. On Windows, press Windows + H in a text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Systemets diktering er ikke tilgjengelig her. I Windows trykker du Windows + H i en tekst.</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Transcribe an audio (coming with the AI)</source>
-        <translation type="unfinished"></translation>
+        <translation>Transkriber en lydfil (kommer med KI)</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Writes what is said in a recording; it will come with the AI of LibertyBoard</source>
-        <translation type="unfinished"></translation>
+        <translation>Skriver det som sies i et opptak; kommer med LibertyBoards KI</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -3784,18 +3784,18 @@ Laste ned og installere nå? LibertyBoard lagrer dokumentene dine, lukkes og åp
         <location line="+9"/>
         <location line="+22"/>
         <source>Lock canvas</source>
-        <translation type="unfinished"></translation>
+        <translation>Lås lerretet</translation>
     </message>
     <message>
         <location line="-29"/>
         <source>Lock the canvas: nothing can be drawn, written, highlighted, moved or deleted; the laser pointer, the hand and the selector still work</source>
-        <translation type="unfinished"></translation>
+        <translation>Lås lerretet: ingenting kan tegnes, skrives, uthevres, flyttes eller slettes; laser, hånd og markering virker fortsatt</translation>
     </message>
     <message>
         <location line="+7"/>
         <location line="+20"/>
         <source>Unlock canvas</source>
-        <translation type="unfinished"></translation>
+        <translation>Lås opp lerretet</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -4258,7 +4258,7 @@ Det kan også gjøres senere med Hjem &gt; Gjenkjenn tekst.</translation>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1036"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1035"/>
         <source>Pen</source>
         <translation>Penn</translation>
     </message>
@@ -4283,35 +4283,35 @@ Dynamisk bredde</translation>
     <message>
         <location line="+8"/>
         <source>Ballpoint pen</source>
-        <translation type="unfinished"></translation>
+        <translation>Kulepenn</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Fountain pen</source>
-        <translation type="unfinished"></translation>
+        <translation>Fyllepenn</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Calligraphy pen</source>
-        <translation type="unfinished"></translation>
+        <translation>Kalligrafipenn</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Pencil</source>
-        <translation type="unfinished"></translation>
+        <translation>Blyant</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Marker</source>
-        <translation type="unfinished">Markør</translation>
+        <translation>Tusj</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Ballpoint pen: even width. Fountain pen: width follows the pressure. Calligraphy pen: width follows the direction. Pencil: thin and light, like graphite. Marker: wide and even.</source>
-        <translation type="unfinished"></translation>
+        <source>Ballpoint pen: thicker when slow, thinner when fast. Fountain pen: a slanted flat nib. Calligraphy pen: smooth and even. Pencil: thin and dark, with grain. Marker: wide, with a felt texture.</source>
+        <translation>Kulepenn: tykkere sakte, tynnere fort. Fyllepenn: skrå flat spiss. Kalligrafipenn: glatt og jevn. Blyant: tynn og mørk, med korn. Tusj: bred, med filtstruktur.</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+4"/>
         <source> pt</source>
         <translation> pt</translation>
     </message>
@@ -4798,17 +4798,17 @@ Dynamisk bredde</translation>
     <message>
         <location filename="../../src/gui/UBReadAloud.cpp" line="+58"/>
         <source>There is no text to read on this page: write or select a text, or open a PDF with text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Det er ingen tekst å lese opp på denne siden: skriv eller velg en tekst, eller åpne en PDF med tekst.</translation>
     </message>
     <message>
         <location line="+23"/>
         <source>Read aloud</source>
-        <translation type="unfinished"></translation>
+        <translation>Les opp</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>The voices of the system could not be used to read aloud.</source>
-        <translation type="unfinished"></translation>
+        <translation>Systemets stemmer kunne ikke brukes til å lese opp.</translation>
     </message>
 </context>
 <context>
@@ -5007,12 +5007,12 @@ Dynamisk bredde</translation>
     <message>
         <location line="+6"/>
         <source>Fit to the text size</source>
-        <translation type="unfinished"></translation>
+        <translation>Tilpass til skriftstørrelsen</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>On a PDF, the band takes the height of the line of text, with a little margin.</source>
-        <translation type="unfinished"></translation>
+        <translation>I en PDF får båndet høyden til tekstlinjen, med en liten marg.</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -5028,17 +5028,17 @@ Dynamisk bredde</translation>
     <message>
         <location line="+120"/>
         <source>Line</source>
-        <translation type="unfinished">Linje</translation>
+        <translation>Linje</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Start</source>
-        <translation type="unfinished"></translation>
+        <translation>Start</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>End</source>
-        <translation type="unfinished"></translation>
+        <translation>Slutt</translation>
     </message>
 </context>
 <context>
@@ -5312,43 +5312,43 @@ Dynamisk bredde</translation>
         <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-282"/>
         <location line="+4"/>
         <source>Spotlight</source>
-        <translation type="unfinished"></translation>
+        <translation>Spotlight</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Magnifier</source>
-        <translation type="unfinished">Forstørrelsesglass</translation>
+        <translation>Lupe</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Spotlight: darkens all but a circle around the pointer. Magnifier: magnifies what is under the pointer.</source>
-        <translation type="unfinished"></translation>
+        <translation>Spotlight: gjør alt mørkt unntatt en sirkel rundt pekeren. Lupe: forstørrer det som er under pekeren.</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Radius</source>
-        <translation type="unfinished"></translation>
+        <translation>Radius</translation>
     </message>
     <message>
         <location line="+1"/>
         <source> px</source>
-        <translation type="unfinished"> px</translation>
+        <translation> px</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Darkness</source>
-        <translation type="unfinished"></translation>
+        <translation>Mørke</translation>
     </message>
     <message>
         <location line="+2"/>
         <location line="+5"/>
         <source> %</source>
-        <translation type="unfinished"> %</translation>
+        <translation> %</translation>
     </message>
     <message>
         <location line="-2"/>
         <source>Zoom</source>
-        <translation type="unfinished"></translation>
+        <translation>Forstørrelse</translation>
     </message>
 </context>
 <context>
@@ -5482,7 +5482,7 @@ Dynamisk bredde</translation>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-774"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-773"/>
         <source>Color</source>
         <translation>Farge</translation>
     </message>

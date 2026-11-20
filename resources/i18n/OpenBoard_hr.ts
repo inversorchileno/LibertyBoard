@@ -906,12 +906,12 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="+13"/>
         <source>Spotlight</source>
-        <translation type="unfinished"></translation>
+        <translation>Reflektor</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Spotlight and magnifier: darken the screen but around the pointer, or magnify under it</source>
-        <translation type="unfinished"></translation>
+        <translation>Reflektor i povećalo: zatamnjuje zaslon osim oko pokazivača ili povećava ono ispod njega</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -1639,34 +1639,34 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBAttachmentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+576"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+575"/>
         <source>Insert file</source>
-        <translation type="unfinished"></translation>
+        <translation>Umetni datoteku</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>File</source>
-        <translation type="unfinished"></translation>
+        <translation>Datoteka</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Hyperlink</source>
-        <translation type="unfinished"></translation>
+        <translation>Poveznica</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>File: a click on the page attaches a file. Hyperlink: a click on the page asks for the address of a web page.</source>
-        <translation type="unfinished"></translation>
+        <translation>Datoteka: klik na stranicu prilaže datoteku. Poveznica: klik na stranicu traži adresu web-stranice.</translation>
     </message>
     <message>
         <location line="+27"/>
         <source>Add a hyperlink to a web page</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodaj poveznicu na web-stranicu</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Attach a file to the page</source>
-        <translation type="unfinished">Priloži datoteku stranici</translation>
+        <translation>Priloži datoteku stranici</translation>
     </message>
 </context>
 <context>
@@ -1750,37 +1750,37 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="+627"/>
         <source>Page/canvas size</source>
-        <translation type="unfinished"></translation>
+        <translation>Veličina stranice/platna</translation>
     </message>
     <message>
         <location line="+9"/>
         <source> px</source>
-        <translation type="unfinished"> px</translation>
+        <translation> px</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Half as wide again</source>
-        <translation type="unfinished"></translation>
+        <translation>Pola šire</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Half as tall again</source>
-        <translation type="unfinished"></translation>
+        <translation>Pola više</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>Width</source>
-        <translation type="unfinished">Debljina</translation>
+        <translation>Širina</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Height</source>
-        <translation type="unfinished">Visina</translation>
+        <translation>Visina</translation>
     </message>
     <message>
         <location line="+11"/>
         <source>The size of this page. The drawings stay where they are; a bigger canvas leaves room around them.</source>
-        <translation type="unfinished"></translation>
+        <translation>Veličina ove stranice. Crteži ostaju gdje jesu; veće platno ostavlja prostor oko njih.</translation>
     </message>
     <message>
         <location line="+577"/>
@@ -1962,7 +1962,7 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="+8"/>
         <source>Eyedropper: take a color on the screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Kapaljka: uzmi boju sa zaslona</translation>
     </message>
     <message>
         <location line="+173"/>
@@ -3152,22 +3152,22 @@ Preuzeti i instalirati sada? LibertyBoard sprema tvoje dokumente, zatvara se i p
     <message>
         <location filename="../../src/domain/UBGraphicsHyperlinkItem.cpp" line="+48"/>
         <source>Hyperlink</source>
-        <translation type="unfinished"></translation>
+        <translation>Poveznica</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>%1 could not be opened.</source>
-        <translation type="unfinished">%1 nije moguće otvoriti.</translation>
+        <translation>%1 nije moguće otvoriti.</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>Add a hyperlink</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodaj poveznicu</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Address of the web page:</source>
-        <translation type="unfinished"></translation>
+        <translation>Adresa web-stranice:</translation>
     </message>
 </context>
 <context>
@@ -3509,12 +3509,12 @@ Preuzeti i instalirati sada? LibertyBoard sprema tvoje dokumente, zatvara se i p
     <message>
         <location line="+0"/>
         <source>Follow</source>
-        <translation type="unfinished"></translation>
+        <translation>Praćenje</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Trail: draws while pressed. Point: shows only the point. Follow: follows the mouse without a click, its trail fading with the times below.</source>
-        <translation type="unfinished"></translation>
+        <translation>Trag: crta dok se pritišće. Točka: prikazuje samo točku. Praćenje: prati miš bez klika, trag nestaje prema vremenima ispod.</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -3570,12 +3570,12 @@ Preuzeti i instalirati sada? LibertyBoard sprema tvoje dokumente, zatvara se i p
     <message>
         <location line="+55"/>
         <source>Wait</source>
-        <translation type="unfinished"></translation>
+        <translation>Čekanje</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Fading</source>
-        <translation type="unfinished"></translation>
+        <translation>Nestajanje</translation>
     </message>
 </context>
 <context>
@@ -3690,7 +3690,7 @@ Preuzeti i instalirati sada? LibertyBoard sprema tvoje dokumente, zatvara se i p
         <location line="-112"/>
         <location line="+152"/>
         <source>Page/canvas size</source>
-        <translation type="unfinished"></translation>
+        <translation>Veličina stranice/platna</translation>
     </message>
     <message>
         <location line="-110"/>
@@ -3760,58 +3760,58 @@ Preuzeti i instalirati sada? LibertyBoard sprema tvoje dokumente, zatvara se i p
     <message>
         <location line="+26"/>
         <source>Custom size...</source>
-        <translation type="unfinished"></translation>
+        <translation>Prilagođena veličina...</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>Read and dictate</source>
-        <translation type="unfinished"></translation>
+        <translation>Čitaj i diktiraj</translation>
     </message>
     <message>
         <location line="+2"/>
         <location line="+6"/>
         <source>Read aloud</source>
-        <translation type="unfinished"></translation>
+        <translation>Čitaj naglas</translation>
     </message>
     <message>
         <location line="-4"/>
         <source>Reads the texts selected, or the text of the page</source>
-        <translation type="unfinished"></translation>
+        <translation>Čita odabrane tekstove ili tekst stranice</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>Stop reading</source>
-        <translation type="unfinished"></translation>
+        <translation>Zaustavi čitanje</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Dictate (Windows + H)</source>
-        <translation type="unfinished"></translation>
+        <translation>Diktiraj (Windows + H)</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Opens the dictation of Windows: what is said is written where the cursor of text is</source>
-        <translation type="unfinished"></translation>
+        <translation>Otvara diktiranje sustava Windows: izgovoreno se piše gdje je pokazivač teksta</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Dictate</source>
-        <translation type="unfinished"></translation>
+        <translation>Diktiraj</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>The dictation of the system is not available here. On Windows, press Windows + H in a text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Diktiranje sustava ovdje nije dostupno. U sustavu Windows pritisnite Windows + H u tekstu.</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Transcribe an audio (coming with the AI)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prepiši zvučni zapis (stiže s umjetnom inteligencijom)</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Writes what is said in a recording; it will come with the AI of LibertyBoard</source>
-        <translation type="unfinished"></translation>
+        <translation>Zapisuje ono što se govori u snimci; stiže s umjetnom inteligencijom LibertyBoarda</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -3869,18 +3869,18 @@ Preuzeti i instalirati sada? LibertyBoard sprema tvoje dokumente, zatvara se i p
         <location line="+9"/>
         <location line="+22"/>
         <source>Lock canvas</source>
-        <translation type="unfinished"></translation>
+        <translation>Zaključaj platno</translation>
     </message>
     <message>
         <location line="-29"/>
         <source>Lock the canvas: nothing can be drawn, written, highlighted, moved or deleted; the laser pointer, the hand and the selector still work</source>
-        <translation type="unfinished"></translation>
+        <translation>Zaključaj platno: ništa se ne može crtati, pisati, isticati, pomicati ni brisati; laser, ruka i odabir i dalje rade</translation>
     </message>
     <message>
         <location line="+7"/>
         <location line="+20"/>
         <source>Unlock canvas</source>
-        <translation type="unfinished"></translation>
+        <translation>Otključaj platno</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -4369,7 +4369,7 @@ To se može učiniti i kasnije putem Početna &gt; Prepoznaj tekst.</translation
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1036"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1035"/>
         <source>Pen</source>
         <translation>Pisaljka</translation>
     </message>
@@ -4394,35 +4394,35 @@ Dinamična širina</translation>
     <message>
         <location line="+8"/>
         <source>Ballpoint pen</source>
-        <translation type="unfinished"></translation>
+        <translation>Kemijska olovka</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Fountain pen</source>
-        <translation type="unfinished"></translation>
+        <translation>Nalivpero</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Calligraphy pen</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaligrafsko pero</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Pencil</source>
-        <translation type="unfinished"></translation>
+        <translation>Olovka</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Marker</source>
-        <translation type="unfinished">Marker</translation>
+        <translation>Flomaster</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Ballpoint pen: even width. Fountain pen: width follows the pressure. Calligraphy pen: width follows the direction. Pencil: thin and light, like graphite. Marker: wide and even.</source>
-        <translation type="unfinished"></translation>
+        <source>Ballpoint pen: thicker when slow, thinner when fast. Fountain pen: a slanted flat nib. Calligraphy pen: smooth and even. Pencil: thin and dark, with grain. Marker: wide, with a felt texture.</source>
+        <translation>Kemijska: deblja polako, tanja brzo. Nalivpero: kosi ravni vrh. Kaligrafsko pero: glatko i ujednačeno. Olovka: tanka i tamna, zrnata. Flomaster: širok, s teksturom filca.</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+4"/>
         <source> pt</source>
         <translation> pt</translation>
     </message>
@@ -4909,17 +4909,17 @@ Dinamična širina</translation>
     <message>
         <location filename="../../src/gui/UBReadAloud.cpp" line="+58"/>
         <source>There is no text to read on this page: write or select a text, or open a PDF with text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Na ovoj stranici nema teksta za čitanje: napišite ili odaberite tekst ili otvorite PDF s tekstom.</translation>
     </message>
     <message>
         <location line="+23"/>
         <source>Read aloud</source>
-        <translation type="unfinished"></translation>
+        <translation>Čitaj naglas</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>The voices of the system could not be used to read aloud.</source>
-        <translation type="unfinished"></translation>
+        <translation>Glasovi sustava nisu se mogli koristiti za čitanje naglas.</translation>
     </message>
 </context>
 <context>
@@ -5118,12 +5118,12 @@ Dinamična širina</translation>
     <message>
         <location line="+6"/>
         <source>Fit to the text size</source>
-        <translation type="unfinished"></translation>
+        <translation>Prilagodi veličini slova</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>On a PDF, the band takes the height of the line of text, with a little margin.</source>
-        <translation type="unfinished"></translation>
+        <translation>U PDF-u traka poprima visinu retka teksta, s malom marginom.</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -5139,17 +5139,17 @@ Dinamična širina</translation>
     <message>
         <location line="+120"/>
         <source>Line</source>
-        <translation type="unfinished">Crta</translation>
+        <translation>Crta</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Start</source>
-        <translation type="unfinished"></translation>
+        <translation>Početak</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>End</source>
-        <translation type="unfinished"></translation>
+        <translation>Kraj</translation>
     </message>
 </context>
 <context>
@@ -5423,43 +5423,43 @@ Dinamična širina</translation>
         <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-282"/>
         <location line="+4"/>
         <source>Spotlight</source>
-        <translation type="unfinished"></translation>
+        <translation>Reflektor</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Magnifier</source>
-        <translation type="unfinished">Povećalo</translation>
+        <translation>Povećalo</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Spotlight: darkens all but a circle around the pointer. Magnifier: magnifies what is under the pointer.</source>
-        <translation type="unfinished"></translation>
+        <translation>Reflektor: zatamnjuje sve osim kruga oko pokazivača. Povećalo: povećava ono ispod pokazivača.</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Radius</source>
-        <translation type="unfinished"></translation>
+        <translation>Polumjer</translation>
     </message>
     <message>
         <location line="+1"/>
         <source> px</source>
-        <translation type="unfinished"> px</translation>
+        <translation> px</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Darkness</source>
-        <translation type="unfinished"></translation>
+        <translation>Tama</translation>
     </message>
     <message>
         <location line="+2"/>
         <location line="+5"/>
         <source> %</source>
-        <translation type="unfinished"> %</translation>
+        <translation> %</translation>
     </message>
     <message>
         <location line="-2"/>
         <source>Zoom</source>
-        <translation type="unfinished"></translation>
+        <translation>Povećanje</translation>
     </message>
 </context>
 <context>
@@ -5597,7 +5597,7 @@ Dinamična širina</translation>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-774"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-773"/>
         <source>Color</source>
         <translation>Boja</translation>
     </message>

@@ -574,12 +574,12 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="+13"/>
         <source>Spotlight</source>
-        <translation type="unfinished"></translation>
+        <translation>聚光燈</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Spotlight and magnifier: darken the screen but around the pointer, or magnify under it</source>
-        <translation type="unfinished"></translation>
+        <translation>聚光燈和放大鏡：除指標周圍外使螢幕變暗，或放大指標下方的內容</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -1586,34 +1586,34 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBAttachmentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+576"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+575"/>
         <source>Insert file</source>
-        <translation type="unfinished"></translation>
+        <translation>插入檔案</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>File</source>
-        <translation type="unfinished"></translation>
+        <translation>檔案</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Hyperlink</source>
-        <translation type="unfinished"></translation>
+        <translation>超連結</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>File: a click on the page attaches a file. Hyperlink: a click on the page asks for the address of a web page.</source>
-        <translation type="unfinished"></translation>
+        <translation>檔案：按一下頁面附加一個檔案。超連結：按一下頁面會詢問網頁位址。</translation>
     </message>
     <message>
         <location line="+27"/>
         <source>Add a hyperlink to a web page</source>
-        <translation type="unfinished"></translation>
+        <translation>新增指向網頁的超連結</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Attach a file to the page</source>
-        <translation type="unfinished">在頁面附加檔案</translation>
+        <translation>將檔案附加到頁面</translation>
     </message>
 </context>
 <context>
@@ -1654,37 +1654,37 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="+672"/>
         <source>Page/canvas size</source>
-        <translation type="unfinished"></translation>
+        <translation>頁面/畫布大小</translation>
     </message>
     <message>
         <location line="+9"/>
         <source> px</source>
-        <translation type="unfinished"> px</translation>
+        <translation> px</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Half as wide again</source>
-        <translation type="unfinished"></translation>
+        <translation>寬度增加一半</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Half as tall again</source>
-        <translation type="unfinished"></translation>
+        <translation>高度增加一半</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>Width</source>
-        <translation type="unfinished">粗細</translation>
+        <translation>寬度</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Height</source>
-        <translation type="unfinished">高度</translation>
+        <translation>高度</translation>
     </message>
     <message>
         <location line="+11"/>
         <source>The size of this page. The drawings stay where they are; a bigger canvas leaves room around them.</source>
-        <translation type="unfinished"></translation>
+        <translation>此頁面的大小。繪圖保持原位；更大的畫布會在周圍留出空間。</translation>
     </message>
     <message>
         <location line="+577"/>
@@ -1909,7 +1909,7 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="+8"/>
         <source>Eyedropper: take a color on the screen</source>
-        <translation type="unfinished"></translation>
+        <translation>滴管：從螢幕上取色</translation>
     </message>
     <message>
         <location line="+173"/>
@@ -3096,22 +3096,22 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     <message>
         <location filename="../../src/domain/UBGraphicsHyperlinkItem.cpp" line="+48"/>
         <source>Hyperlink</source>
-        <translation type="unfinished"></translation>
+        <translation>超連結</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>%1 could not be opened.</source>
-        <translation type="unfinished">無法開啟 %1。</translation>
+        <translation>無法開啟 %1。</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>Add a hyperlink</source>
-        <translation type="unfinished"></translation>
+        <translation>新增超連結</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Address of the web page:</source>
-        <translation type="unfinished"></translation>
+        <translation>網頁位址：</translation>
     </message>
 </context>
 <context>
@@ -3449,12 +3449,12 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     <message>
         <location line="+0"/>
         <source>Follow</source>
-        <translation type="unfinished"></translation>
+        <translation>跟隨</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Trail: draws while pressed. Point: shows only the point. Follow: follows the mouse without a click, its trail fading with the times below.</source>
-        <translation type="unfinished"></translation>
+        <translation>軌跡：按住時繪製。點：只顯示點。跟隨：不需按一下即跟隨滑鼠，軌跡依下方的時間淡出。</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -3510,12 +3510,12 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     <message>
         <location line="+55"/>
         <source>Wait</source>
-        <translation type="unfinished"></translation>
+        <translation>等待</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Fading</source>
-        <translation type="unfinished"></translation>
+        <translation>淡出</translation>
     </message>
 </context>
 <context>
@@ -3630,7 +3630,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <location line="-112"/>
         <location line="+152"/>
         <source>Page/canvas size</source>
-        <translation type="unfinished"></translation>
+        <translation>頁面/畫布大小</translation>
     </message>
     <message>
         <location line="-110"/>
@@ -3700,58 +3700,58 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     <message>
         <location line="+26"/>
         <source>Custom size...</source>
-        <translation type="unfinished"></translation>
+        <translation>自訂大小...</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>Read and dictate</source>
-        <translation type="unfinished"></translation>
+        <translation>朗讀和聽寫</translation>
     </message>
     <message>
         <location line="+2"/>
         <location line="+6"/>
         <source>Read aloud</source>
-        <translation type="unfinished"></translation>
+        <translation>朗讀</translation>
     </message>
     <message>
         <location line="-4"/>
         <source>Reads the texts selected, or the text of the page</source>
-        <translation type="unfinished"></translation>
+        <translation>朗讀所選文字或頁面上的文字</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>Stop reading</source>
-        <translation type="unfinished"></translation>
+        <translation>停止朗讀</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Dictate (Windows + H)</source>
-        <translation type="unfinished"></translation>
+        <translation>聽寫 (Windows + H)</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Opens the dictation of Windows: what is said is written where the cursor of text is</source>
-        <translation type="unfinished"></translation>
+        <translation>開啟 Windows 聽寫：所說內容會寫在文字游標處</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Dictate</source>
-        <translation type="unfinished"></translation>
+        <translation>聽寫</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>The dictation of the system is not available here. On Windows, press Windows + H in a text.</source>
-        <translation type="unfinished"></translation>
+        <translation>此處無法使用系統聽寫。在 Windows 中，請在文字中按 Windows + H。</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Transcribe an audio (coming with the AI)</source>
-        <translation type="unfinished"></translation>
+        <translation>轉寫音訊（將隨 AI 推出）</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Writes what is said in a recording; it will come with the AI of LibertyBoard</source>
-        <translation type="unfinished"></translation>
+        <translation>寫出錄音中所說的內容；將隨 LibertyBoard 的 AI 推出</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -3809,18 +3809,18 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <location line="+9"/>
         <location line="+22"/>
         <source>Lock canvas</source>
-        <translation type="unfinished"></translation>
+        <translation>鎖定畫布</translation>
     </message>
     <message>
         <location line="-29"/>
         <source>Lock the canvas: nothing can be drawn, written, highlighted, moved or deleted; the laser pointer, the hand and the selector still work</source>
-        <translation type="unfinished"></translation>
+        <translation>鎖定畫布：無法繪製、書寫、醒目提示、移動或刪除任何內容；雷射筆、手掌和選取仍可使用</translation>
     </message>
     <message>
         <location line="+7"/>
         <location line="+20"/>
         <source>Unlock canvas</source>
-        <translation type="unfinished"></translation>
+        <translation>解鎖畫布</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -4287,7 +4287,7 @@ It can also be done later with Home &gt; Recognize text.</source>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1036"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1035"/>
         <source>Pen</source>
         <translation>電子筆</translation>
     </message>
@@ -4312,35 +4312,35 @@ Dynamic width</source>
     <message>
         <location line="+8"/>
         <source>Ballpoint pen</source>
-        <translation type="unfinished"></translation>
+        <translation>原子筆</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Fountain pen</source>
-        <translation type="unfinished"></translation>
+        <translation>鋼筆</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Calligraphy pen</source>
-        <translation type="unfinished"></translation>
+        <translation>書法筆</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Pencil</source>
-        <translation type="unfinished"></translation>
+        <translation>鉛筆</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Marker</source>
-        <translation type="unfinished">提示筆</translation>
+        <translation>麥克筆</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Ballpoint pen: even width. Fountain pen: width follows the pressure. Calligraphy pen: width follows the direction. Pencil: thin and light, like graphite. Marker: wide and even.</source>
-        <translation type="unfinished"></translation>
+        <source>Ballpoint pen: thicker when slow, thinner when fast. Fountain pen: a slanted flat nib. Calligraphy pen: smooth and even. Pencil: thin and dark, with grain. Marker: wide, with a felt texture.</source>
+        <translation>原子筆：慢則粗，快則細。鋼筆：傾斜的扁平筆尖。書法筆：平滑均勻。鉛筆：細而深，帶顆粒。麥克筆：寬，帶毛氈質感。</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+4"/>
         <source> pt</source>
         <translation> pt</translation>
     </message>
@@ -4827,17 +4827,17 @@ Dynamic width</source>
     <message>
         <location filename="../../src/gui/UBReadAloud.cpp" line="+58"/>
         <source>There is no text to read on this page: write or select a text, or open a PDF with text.</source>
-        <translation type="unfinished"></translation>
+        <translation>此頁面上沒有可朗讀的文字：請書寫或選取文字，或開啟含文字的 PDF。</translation>
     </message>
     <message>
         <location line="+23"/>
         <source>Read aloud</source>
-        <translation type="unfinished"></translation>
+        <translation>朗讀</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>The voices of the system could not be used to read aloud.</source>
-        <translation type="unfinished"></translation>
+        <translation>無法使用系統語音進行朗讀。</translation>
     </message>
 </context>
 <context>
@@ -5036,12 +5036,12 @@ Dynamic width</source>
     <message>
         <location line="+6"/>
         <source>Fit to the text size</source>
-        <translation type="unfinished"></translation>
+        <translation>配合文字大小</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>On a PDF, the band takes the height of the line of text, with a little margin.</source>
-        <translation type="unfinished"></translation>
+        <translation>在 PDF 中，色帶取文字行的高度，並留出少許邊距。</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -5057,17 +5057,17 @@ Dynamic width</source>
     <message>
         <location line="+120"/>
         <source>Line</source>
-        <translation type="unfinished">線條粗細</translation>
+        <translation>線條</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Start</source>
-        <translation type="unfinished"></translation>
+        <translation>起點</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>End</source>
-        <translation type="unfinished"></translation>
+        <translation>終點</translation>
     </message>
 </context>
 <context>
@@ -5341,43 +5341,43 @@ Dynamic width</source>
         <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-282"/>
         <location line="+4"/>
         <source>Spotlight</source>
-        <translation type="unfinished"></translation>
+        <translation>聚光燈</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Magnifier</source>
-        <translation type="unfinished">放大鏡</translation>
+        <translation>放大鏡</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Spotlight: darkens all but a circle around the pointer. Magnifier: magnifies what is under the pointer.</source>
-        <translation type="unfinished"></translation>
+        <translation>聚光燈：除指標周圍的圓圈外全部變暗。放大鏡：放大指標下方的內容。</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Radius</source>
-        <translation type="unfinished"></translation>
+        <translation>半徑</translation>
     </message>
     <message>
         <location line="+1"/>
         <source> px</source>
-        <translation type="unfinished"> px</translation>
+        <translation> px</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Darkness</source>
-        <translation type="unfinished"></translation>
+        <translation>暗度</translation>
     </message>
     <message>
         <location line="+2"/>
         <location line="+5"/>
         <source> %</source>
-        <translation type="unfinished"> %</translation>
+        <translation> %</translation>
     </message>
     <message>
         <location line="-2"/>
         <source>Zoom</source>
-        <translation type="unfinished"></translation>
+        <translation>放大倍率</translation>
     </message>
 </context>
 <context>
@@ -5504,7 +5504,7 @@ Dynamic width</source>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-774"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-773"/>
         <source>Color</source>
         <translation>顏色</translation>
     </message>

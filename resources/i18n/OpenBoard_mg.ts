@@ -574,12 +574,12 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="+13"/>
         <source>Spotlight</source>
-        <translation type="unfinished"></translation>
+        <translation>Jiro mitarafa</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Spotlight and magnifier: darken the screen but around the pointer, or magnify under it</source>
-        <translation type="unfinished"></translation>
+        <translation>Jiro mitarafa sy fanalehibiazana: maizina ny efijery afa-tsy manodidina ny tondro, na alehibe izay eo ambaniny</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -1586,34 +1586,34 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBAttachmentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+576"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+575"/>
         <source>Insert file</source>
-        <translation type="unfinished"></translation>
+        <translation>Ampidiro rakitra</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>File</source>
-        <translation type="unfinished"></translation>
+        <translation>Rakitra</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Hyperlink</source>
-        <translation type="unfinished"></translation>
+        <translation>Rohy</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>File: a click on the page attaches a file. Hyperlink: a click on the page asks for the address of a web page.</source>
-        <translation type="unfinished"></translation>
+        <translation>Rakitra: tsindrio ny pejy hampiraisana rakitra. Rohy: tsindrio ny pejy dia anontaniana ny adiresin&apos;ny tranonkala.</translation>
     </message>
     <message>
         <location line="+27"/>
         <source>Add a hyperlink to a web page</source>
-        <translation type="unfinished"></translation>
+        <translation>Ampio rohy mankany amin&apos;ny tranonkala</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Attach a file to the page</source>
-        <translation type="unfinished">Hampiditra rakitra amin&apos;ny pejy</translation>
+        <translation>Ampiraiso rakitra amin&apos;ny pejy</translation>
     </message>
 </context>
 <context>
@@ -1654,37 +1654,37 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="+672"/>
         <source>Page/canvas size</source>
-        <translation type="unfinished"></translation>
+        <translation>Haben&apos;ny pejy/lamba</translation>
     </message>
     <message>
         <location line="+9"/>
         <source> px</source>
-        <translation type="unfinished"> px</translation>
+        <translation> px</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Half as wide again</source>
-        <translation type="unfinished"></translation>
+        <translation>Avelany indray mandeha sy sasany</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Half as tall again</source>
-        <translation type="unfinished"></translation>
+        <translation>Avony indray mandeha sy sasany</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>Width</source>
-        <translation type="unfinished">Hateviny</translation>
+        <translation>Sakany</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Height</source>
-        <translation type="unfinished">Haavo</translation>
+        <translation>Haavony</translation>
     </message>
     <message>
         <location line="+11"/>
         <source>The size of this page. The drawings stay where they are; a bigger canvas leaves room around them.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ny haben&apos;ity pejy ity. Mijanona eo amin&apos;ny toerany ny sary; lamba lehibe kokoa dia mamela toerana manodidina azy.</translation>
     </message>
     <message>
         <location line="+577"/>
@@ -1902,7 +1902,7 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="+8"/>
         <source>Eyedropper: take a color on the screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Fitonta-loko: makà loko amin&apos;ny efijery</translation>
     </message>
     <message>
         <location line="+173"/>
@@ -3069,22 +3069,22 @@ Alaina sy apetraka izao ve? Hotehirizin&apos;ny LibertyBoard ny antontan-taratas
     <message>
         <location filename="../../src/domain/UBGraphicsHyperlinkItem.cpp" line="+48"/>
         <source>Hyperlink</source>
-        <translation type="unfinished"></translation>
+        <translation>Rohy</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>%1 could not be opened.</source>
-        <translation type="unfinished">Tsy nety nosokafana i %1.</translation>
+        <translation>Tsy afaka nosokafana ny %1.</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>Add a hyperlink</source>
-        <translation type="unfinished"></translation>
+        <translation>Ampio rohy</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Address of the web page:</source>
-        <translation type="unfinished"></translation>
+        <translation>Adiresin&apos;ny tranonkala:</translation>
     </message>
 </context>
 <context>
@@ -3422,12 +3422,12 @@ Alaina sy apetraka izao ve? Hotehirizin&apos;ny LibertyBoard ny antontan-taratas
     <message>
         <location line="+0"/>
         <source>Follow</source>
-        <translation type="unfinished"></translation>
+        <translation>Fanarahana</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Trail: draws while pressed. Point: shows only the point. Follow: follows the mouse without a click, its trail fading with the times below.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dia: manoratra raha tsindriana. Teboka: mampiseho ny teboka ihany. Fanarahana: manaraka ny totozy tsy misy tsindry, manjavona araka ny fotoana etsy ambany ny dia.</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -3483,12 +3483,12 @@ Alaina sy apetraka izao ve? Hotehirizin&apos;ny LibertyBoard ny antontan-taratas
     <message>
         <location line="+55"/>
         <source>Wait</source>
-        <translation type="unfinished"></translation>
+        <translation>Fiandrasana</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Fading</source>
-        <translation type="unfinished"></translation>
+        <translation>Fanjavonana</translation>
     </message>
 </context>
 <context>
@@ -3603,7 +3603,7 @@ Alaina sy apetraka izao ve? Hotehirizin&apos;ny LibertyBoard ny antontan-taratas
         <location line="-112"/>
         <location line="+152"/>
         <source>Page/canvas size</source>
-        <translation type="unfinished"></translation>
+        <translation>Haben&apos;ny pejy/lamba</translation>
     </message>
     <message>
         <location line="-110"/>
@@ -3673,58 +3673,58 @@ Alaina sy apetraka izao ve? Hotehirizin&apos;ny LibertyBoard ny antontan-taratas
     <message>
         <location line="+26"/>
         <source>Custom size...</source>
-        <translation type="unfinished"></translation>
+        <translation>Habe manokana...</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>Read and dictate</source>
-        <translation type="unfinished"></translation>
+        <translation>Mamaky sy manoratra amin&apos;ny feo</translation>
     </message>
     <message>
         <location line="+2"/>
         <location line="+6"/>
         <source>Read aloud</source>
-        <translation type="unfinished"></translation>
+        <translation>Vakio mafy</translation>
     </message>
     <message>
         <location line="-4"/>
         <source>Reads the texts selected, or the text of the page</source>
-        <translation type="unfinished"></translation>
+        <translation>Mamaky ireo soratra voafidy, na ny soratry ny pejy</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>Stop reading</source>
-        <translation type="unfinished"></translation>
+        <translation>Atsaharo ny famakiana</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Dictate (Windows + H)</source>
-        <translation type="unfinished"></translation>
+        <translation>Manoratra amin&apos;ny feo (Windows + H)</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Opens the dictation of Windows: what is said is written where the cursor of text is</source>
-        <translation type="unfinished"></translation>
+        <translation>Manokatra ny fanoratana amin&apos;ny feo an&apos;i Windows: soratana eo amin&apos;ny tondro soratra izay lazaina</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Dictate</source>
-        <translation type="unfinished"></translation>
+        <translation>Manoratra amin&apos;ny feo</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>The dictation of the system is not available here. On Windows, press Windows + H in a text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tsy misy eto ny fanoratana amin&apos;ny feo an&apos;ny rafitra. Amin&apos;ny Windows, tsindrio Windows + H ao anaty soratra.</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Transcribe an audio (coming with the AI)</source>
-        <translation type="unfinished"></translation>
+        <translation>Soraty ny feo voarakitra (ho avy miaraka amin&apos;ny IA)</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Writes what is said in a recording; it will come with the AI of LibertyBoard</source>
-        <translation type="unfinished"></translation>
+        <translation>Manoratra izay lazaina ao anaty fandraisam-peo; ho avy miaraka amin&apos;ny IA an&apos;i LibertyBoard</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -3782,18 +3782,18 @@ Alaina sy apetraka izao ve? Hotehirizin&apos;ny LibertyBoard ny antontan-taratas
         <location line="+9"/>
         <location line="+22"/>
         <source>Lock canvas</source>
-        <translation type="unfinished"></translation>
+        <translation>Hidio ny lamba</translation>
     </message>
     <message>
         <location line="-29"/>
         <source>Lock the canvas: nothing can be drawn, written, highlighted, moved or deleted; the laser pointer, the hand and the selector still work</source>
-        <translation type="unfinished"></translation>
+        <translation>Hidio ny lamba: tsy misy azo soratana, sarihana, asongadina, afindra na fafana; mbola mandeha ny laser, ny tanana ary ny fifantenana</translation>
     </message>
     <message>
         <location line="+7"/>
         <location line="+20"/>
         <source>Unlock canvas</source>
-        <translation type="unfinished"></translation>
+        <translation>Vohay ny lamba</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -4262,7 +4262,7 @@ Azo atao any aoriana ihany koa amin&apos;ny Fandraisana &gt; Fantaro ny lahatsor
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1036"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1035"/>
         <source>Pen</source>
         <translation>Penina</translation>
     </message>
@@ -4287,35 +4287,35 @@ Sakany miova</translation>
     <message>
         <location line="+8"/>
         <source>Ballpoint pen</source>
-        <translation type="unfinished"></translation>
+        <translation>Penina bille</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Fountain pen</source>
-        <translation type="unfinished"></translation>
+        <translation>Penina ranomainty</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Calligraphy pen</source>
-        <translation type="unfinished"></translation>
+        <translation>Penina kaligrafika</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Pencil</source>
-        <translation type="unfinished"></translation>
+        <translation>Pensilihazo</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Marker</source>
-        <translation type="unfinished">Penina lehibe</translation>
+        <translation>Penina feutre</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Ballpoint pen: even width. Fountain pen: width follows the pressure. Calligraphy pen: width follows the direction. Pencil: thin and light, like graphite. Marker: wide and even.</source>
-        <translation type="unfinished"></translation>
+        <source>Ballpoint pen: thicker when slow, thinner when fast. Fountain pen: a slanted flat nib. Calligraphy pen: smooth and even. Pencil: thin and dark, with grain. Marker: wide, with a felt texture.</source>
+        <translation>Penina bille: matevina rehefa miadana, manify rehefa haingana. Penina ranomainty: tendro fisaka mitongilana. Kaligrafika: malama sy mitovy. Pensilihazo: manify sy maizina, misy voany. Feutre: malalaka, mitovy feutre.</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+4"/>
         <source> pt</source>
         <translation> pt</translation>
     </message>
@@ -4802,17 +4802,17 @@ Sakany miova</translation>
     <message>
         <location filename="../../src/gui/UBReadAloud.cpp" line="+58"/>
         <source>There is no text to read on this page: write or select a text, or open a PDF with text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tsy misy soratra hovakiana amin&apos;ity pejy ity: manorata na mifidiana soratra, na sokafy PDF misy soratra.</translation>
     </message>
     <message>
         <location line="+23"/>
         <source>Read aloud</source>
-        <translation type="unfinished"></translation>
+        <translation>Vakio mafy</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>The voices of the system could not be used to read aloud.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tsy azo nampiasaina ny feon&apos;ny rafitra hamakiana mafy.</translation>
     </message>
 </context>
 <context>
@@ -5011,12 +5011,12 @@ Sakany miova</translation>
     <message>
         <location line="+6"/>
         <source>Fit to the text size</source>
-        <translation type="unfinished"></translation>
+        <translation>Ampifanaraho amin&apos;ny haben&apos;ny soratra</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>On a PDF, the band takes the height of the line of text, with a little margin.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ao amin&apos;ny PDF, ny tady dia maka ny haavon&apos;ny andalan-tsoratra, miaraka amin&apos;ny sisiny kely.</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -5032,17 +5032,17 @@ Sakany miova</translation>
     <message>
         <location line="+120"/>
         <source>Line</source>
-        <translation type="unfinished">Tsipika</translation>
+        <translation>Tsipika</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Start</source>
-        <translation type="unfinished"></translation>
+        <translation>Fiandohana</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>End</source>
-        <translation type="unfinished"></translation>
+        <translation>Fiafarana</translation>
     </message>
 </context>
 <context>
@@ -5316,43 +5316,43 @@ Sakany miova</translation>
         <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-282"/>
         <location line="+4"/>
         <source>Spotlight</source>
-        <translation type="unfinished"></translation>
+        <translation>Jiro mitarafa</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Magnifier</source>
-        <translation type="unfinished">Fanita-jery</translation>
+        <translation>Fanalehibiazana</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Spotlight: darkens all but a circle around the pointer. Magnifier: magnifies what is under the pointer.</source>
-        <translation type="unfinished"></translation>
+        <translation>Jiro mitarafa: maizina ny zava-drehetra afa-tsy faribolana manodidina ny tondro. Fanalehibiazana: alehibe izay eo ambanin&apos;ny tondro.</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Radius</source>
-        <translation type="unfinished"></translation>
+        <translation>Tadim-boribory</translation>
     </message>
     <message>
         <location line="+1"/>
         <source> px</source>
-        <translation type="unfinished"> px</translation>
+        <translation> px</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Darkness</source>
-        <translation type="unfinished"></translation>
+        <translation>Haizina</translation>
     </message>
     <message>
         <location line="+2"/>
         <location line="+5"/>
         <source> %</source>
-        <translation type="unfinished"> %</translation>
+        <translation> %</translation>
     </message>
     <message>
         <location line="-2"/>
         <source>Zoom</source>
-        <translation type="unfinished"></translation>
+        <translation>Fanalehibiazana</translation>
     </message>
 </context>
 <context>
@@ -5486,7 +5486,7 @@ Sakany miova</translation>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-774"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-773"/>
         <source>Color</source>
         <translation>Loko</translation>
     </message>

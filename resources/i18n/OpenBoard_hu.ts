@@ -645,12 +645,12 @@ Felülírja a biztonsági ellenőrzést, és folytatja?</translation>
     <message>
         <location line="+13"/>
         <source>Spotlight</source>
-        <translation type="unfinished"></translation>
+        <translation>Reflektor</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Spotlight and magnifier: darken the screen but around the pointer, or magnify under it</source>
-        <translation type="unfinished"></translation>
+        <translation>Reflektor és nagyító: elsötétíti a képernyőt a mutató körül kívül, vagy felnagyítja, ami alatta van</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -1592,34 +1592,34 @@ Felülírja a biztonsági ellenőrzést, és folytatja?</translation>
 <context>
     <name>UBAttachmentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+576"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+575"/>
         <source>Insert file</source>
-        <translation type="unfinished"></translation>
+        <translation>Fájl beszúrása</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>File</source>
-        <translation type="unfinished"></translation>
+        <translation>Fájl</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Hyperlink</source>
-        <translation type="unfinished"></translation>
+        <translation>Hivatkozás</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>File: a click on the page attaches a file. Hyperlink: a click on the page asks for the address of a web page.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fájl: egy kattintás az oldalon fájlt csatol. Hivatkozás: egy kattintás az oldalon egy weboldal címét kéri.</translation>
     </message>
     <message>
         <location line="+27"/>
         <source>Add a hyperlink to a web page</source>
-        <translation type="unfinished"></translation>
+        <translation>Hivatkozás hozzáadása egy weboldalra</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Attach a file to the page</source>
-        <translation type="unfinished">Fájl csatolása az oldalhoz</translation>
+        <translation>Fájl csatolása az oldalhoz</translation>
     </message>
 </context>
 <context>
@@ -1665,37 +1665,37 @@ Felülírja a biztonsági ellenőrzést, és folytatja?</translation>
     <message>
         <location line="+627"/>
         <source>Page/canvas size</source>
-        <translation type="unfinished"></translation>
+        <translation>Oldal/vászon mérete</translation>
     </message>
     <message>
         <location line="+9"/>
         <source> px</source>
-        <translation type="unfinished"> px</translation>
+        <translation> px</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Half as wide again</source>
-        <translation type="unfinished"></translation>
+        <translation>Másfélszer szélesebb</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Half as tall again</source>
-        <translation type="unfinished"></translation>
+        <translation>Másfélszer magasabb</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>Width</source>
-        <translation type="unfinished">Vastagság</translation>
+        <translation>Szélesség</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Height</source>
-        <translation type="unfinished">Magasság</translation>
+        <translation>Magasság</translation>
     </message>
     <message>
         <location line="+11"/>
         <source>The size of this page. The drawings stay where they are; a bigger canvas leaves room around them.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ennek az oldalnak a mérete. A rajzok a helyükön maradnak; a nagyobb vászon helyet hagy körülöttük.</translation>
     </message>
     <message>
         <location line="+577"/>
@@ -1915,7 +1915,7 @@ Felülírja a biztonsági ellenőrzést, és folytatja?</translation>
     <message>
         <location line="+8"/>
         <source>Eyedropper: take a color on the screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Pipetta: szín felvétele a képernyőről</translation>
     </message>
     <message>
         <location line="+173"/>
@@ -3161,22 +3161,22 @@ Letölti és telepíti most? A LibertyBoard menti a dokumentumait, bezárul, maj
     <message>
         <location filename="../../src/domain/UBGraphicsHyperlinkItem.cpp" line="+48"/>
         <source>Hyperlink</source>
-        <translation type="unfinished"></translation>
+        <translation>Hivatkozás</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>%1 could not be opened.</source>
-        <translation type="unfinished">%1 nem nyitható meg.</translation>
+        <translation>%1 nem nyitható meg.</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>Add a hyperlink</source>
-        <translation type="unfinished"></translation>
+        <translation>Hivatkozás hozzáadása</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Address of the web page:</source>
-        <translation type="unfinished"></translation>
+        <translation>A weboldal címe:</translation>
     </message>
 </context>
 <context>
@@ -3514,12 +3514,12 @@ Letölti és telepíti most? A LibertyBoard menti a dokumentumait, bezárul, maj
     <message>
         <location line="+0"/>
         <source>Follow</source>
-        <translation type="unfinished"></translation>
+        <translation>Követés</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Trail: draws while pressed. Point: shows only the point. Follow: follows the mouse without a click, its trail fading with the times below.</source>
-        <translation type="unfinished"></translation>
+        <translation>Csík: nyomás közben rajzol. Pont: csak a pontot mutatja. Követés: kattintás nélkül követi az egeret, a csík az alábbi idők szerint halványul.</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -3575,12 +3575,12 @@ Letölti és telepíti most? A LibertyBoard menti a dokumentumait, bezárul, maj
     <message>
         <location line="+55"/>
         <source>Wait</source>
-        <translation type="unfinished"></translation>
+        <translation>Várakozás</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Fading</source>
-        <translation type="unfinished"></translation>
+        <translation>Halványulás</translation>
     </message>
 </context>
 <context>
@@ -3695,7 +3695,7 @@ Letölti és telepíti most? A LibertyBoard menti a dokumentumait, bezárul, maj
         <location line="-112"/>
         <location line="+152"/>
         <source>Page/canvas size</source>
-        <translation type="unfinished"></translation>
+        <translation>Oldal/vászon mérete</translation>
     </message>
     <message>
         <location line="-110"/>
@@ -3765,58 +3765,58 @@ Letölti és telepíti most? A LibertyBoard menti a dokumentumait, bezárul, maj
     <message>
         <location line="+26"/>
         <source>Custom size...</source>
-        <translation type="unfinished"></translation>
+        <translation>Egyéni méret...</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>Read and dictate</source>
-        <translation type="unfinished"></translation>
+        <translation>Felolvasás és diktálás</translation>
     </message>
     <message>
         <location line="+2"/>
         <location line="+6"/>
         <source>Read aloud</source>
-        <translation type="unfinished"></translation>
+        <translation>Felolvasás</translation>
     </message>
     <message>
         <location line="-4"/>
         <source>Reads the texts selected, or the text of the page</source>
-        <translation type="unfinished"></translation>
+        <translation>Felolvassa a kijelölt szövegeket vagy az oldal szövegét</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>Stop reading</source>
-        <translation type="unfinished"></translation>
+        <translation>Felolvasás leállítása</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Dictate (Windows + H)</source>
-        <translation type="unfinished"></translation>
+        <translation>Diktálás (Windows + H)</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Opens the dictation of Windows: what is said is written where the cursor of text is</source>
-        <translation type="unfinished"></translation>
+        <translation>Megnyitja a Windows diktálását: amit mond, oda íródik, ahol a szövegkurzor van</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Dictate</source>
-        <translation type="unfinished"></translation>
+        <translation>Diktálás</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>The dictation of the system is not available here. On Windows, press Windows + H in a text.</source>
-        <translation type="unfinished"></translation>
+        <translation>A rendszer diktálása itt nem érhető el. Windowsban nyomja meg a Windows + H billentyűt egy szövegben.</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Transcribe an audio (coming with the AI)</source>
-        <translation type="unfinished"></translation>
+        <translation>Hangfelvétel átírása (az MI-vel érkezik)</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Writes what is said in a recording; it will come with the AI of LibertyBoard</source>
-        <translation type="unfinished"></translation>
+        <translation>Leírja, ami egy felvételen elhangzik; a LibertyBoard MI-jével érkezik</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -3874,18 +3874,18 @@ Letölti és telepíti most? A LibertyBoard menti a dokumentumait, bezárul, maj
         <location line="+9"/>
         <location line="+22"/>
         <source>Lock canvas</source>
-        <translation type="unfinished"></translation>
+        <translation>Vászon zárolása</translation>
     </message>
     <message>
         <location line="-29"/>
         <source>Lock the canvas: nothing can be drawn, written, highlighted, moved or deleted; the laser pointer, the hand and the selector still work</source>
-        <translation type="unfinished"></translation>
+        <translation>Vászon zárolása: semmit sem lehet rajzolni, írni, kiemelni, mozgatni vagy törölni; a lézer, a kéz és a kijelölés továbbra is működik</translation>
     </message>
     <message>
         <location line="+7"/>
         <location line="+20"/>
         <source>Unlock canvas</source>
-        <translation type="unfinished"></translation>
+        <translation>Vászon feloldása</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -4374,7 +4374,7 @@ Később is megteheti: Kezdőlap &gt; Szöveg felismerése.</translation>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1036"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1035"/>
         <source>Pen</source>
         <translation>Toll</translation>
     </message>
@@ -4399,35 +4399,35 @@ Dinamikus szélesség</translation>
     <message>
         <location line="+8"/>
         <source>Ballpoint pen</source>
-        <translation type="unfinished"></translation>
+        <translation>Golyóstoll</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Fountain pen</source>
-        <translation type="unfinished"></translation>
+        <translation>Töltőtoll</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Calligraphy pen</source>
-        <translation type="unfinished"></translation>
+        <translation>Kalligrafikus toll</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Pencil</source>
-        <translation type="unfinished"></translation>
+        <translation>Ceruza</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Marker</source>
-        <translation type="unfinished"></translation>
+        <translation>Filctoll</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Ballpoint pen: even width. Fountain pen: width follows the pressure. Calligraphy pen: width follows the direction. Pencil: thin and light, like graphite. Marker: wide and even.</source>
-        <translation type="unfinished"></translation>
+        <source>Ballpoint pen: thicker when slow, thinner when fast. Fountain pen: a slanted flat nib. Calligraphy pen: smooth and even. Pencil: thin and dark, with grain. Marker: wide, with a felt texture.</source>
+        <translation>Golyóstoll: lassan vastagabb, gyorsan vékonyabb. Töltőtoll: ferde lapos hegy. Kalligrafikus toll: sima és egyenletes. Ceruza: vékony és sötét, szemcsés. Filctoll: széles, filc textúrával.</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+4"/>
         <source> pt</source>
         <translation> pt</translation>
     </message>
@@ -4922,17 +4922,17 @@ Dinamikus szélesség</translation>
     <message>
         <location filename="../../src/gui/UBReadAloud.cpp" line="+58"/>
         <source>There is no text to read on this page: write or select a text, or open a PDF with text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ezen az oldalon nincs felolvasható szöveg: írjon vagy jelöljön ki egy szöveget, vagy nyisson meg egy szöveges PDF-et.</translation>
     </message>
     <message>
         <location line="+23"/>
         <source>Read aloud</source>
-        <translation type="unfinished"></translation>
+        <translation>Felolvasás</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>The voices of the system could not be used to read aloud.</source>
-        <translation type="unfinished"></translation>
+        <translation>A rendszer hangjait nem lehetett használni a felolvasáshoz.</translation>
     </message>
 </context>
 <context>
@@ -5131,12 +5131,12 @@ Dinamikus szélesség</translation>
     <message>
         <location line="+6"/>
         <source>Fit to the text size</source>
-        <translation type="unfinished"></translation>
+        <translation>Igazítás a betűmérethez</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>On a PDF, the band takes the height of the line of text, with a little margin.</source>
-        <translation type="unfinished"></translation>
+        <translation>PDF-en a sáv felveszi a szövegsor magasságát, kis margóval.</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -5152,17 +5152,17 @@ Dinamikus szélesség</translation>
     <message>
         <location line="+120"/>
         <source>Line</source>
-        <translation type="unfinished">Vonal</translation>
+        <translation>Vonal</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Start</source>
-        <translation type="unfinished"></translation>
+        <translation>Kezdet</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>End</source>
-        <translation type="unfinished"></translation>
+        <translation>Vég</translation>
     </message>
 </context>
 <context>
@@ -5436,43 +5436,43 @@ Dinamikus szélesség</translation>
         <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-282"/>
         <location line="+4"/>
         <source>Spotlight</source>
-        <translation type="unfinished"></translation>
+        <translation>Reflektor</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Magnifier</source>
-        <translation type="unfinished">Nagyító</translation>
+        <translation>Nagyító</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Spotlight: darkens all but a circle around the pointer. Magnifier: magnifies what is under the pointer.</source>
-        <translation type="unfinished"></translation>
+        <translation>Reflektor: mindent elsötétít a mutató körüli kör kivételével. Nagyító: felnagyítja, ami a mutató alatt van.</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Radius</source>
-        <translation type="unfinished"></translation>
+        <translation>Sugár</translation>
     </message>
     <message>
         <location line="+1"/>
         <source> px</source>
-        <translation type="unfinished"> px</translation>
+        <translation> px</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Darkness</source>
-        <translation type="unfinished"></translation>
+        <translation>Sötétség</translation>
     </message>
     <message>
         <location line="+2"/>
         <location line="+5"/>
         <source> %</source>
-        <translation type="unfinished"> %</translation>
+        <translation> %</translation>
     </message>
     <message>
         <location line="-2"/>
         <source>Zoom</source>
-        <translation type="unfinished"></translation>
+        <translation>Nagyítás</translation>
     </message>
 </context>
 <context>
@@ -5610,7 +5610,7 @@ Dinamikus szélesség</translation>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-774"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-773"/>
         <source>Color</source>
         <translation>Szín</translation>
     </message>

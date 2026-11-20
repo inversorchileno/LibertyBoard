@@ -645,12 +645,12 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
     <message>
         <location line="+13"/>
         <source>Spotlight</source>
-        <translation type="unfinished"></translation>
+        <translation>Spot ışığı</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Spotlight and magnifier: darken the screen but around the pointer, or magnify under it</source>
-        <translation type="unfinished"></translation>
+        <translation>Spot ışığı ve büyüteç: işaretçinin çevresi dışında ekranı karartır ya da altındakini büyütür</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -1592,34 +1592,34 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
 <context>
     <name>UBAttachmentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+576"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+575"/>
         <source>Insert file</source>
-        <translation type="unfinished"></translation>
+        <translation>Dosya ekle</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>File</source>
-        <translation type="unfinished"></translation>
+        <translation>Dosya</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Hyperlink</source>
-        <translation type="unfinished"></translation>
+        <translation>Köprü</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>File: a click on the page attaches a file. Hyperlink: a click on the page asks for the address of a web page.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dosya: sayfaya tıklamak bir dosya ekler. Köprü: sayfaya tıklamak bir web sayfasının adresini sorar.</translation>
     </message>
     <message>
         <location line="+27"/>
         <source>Add a hyperlink to a web page</source>
-        <translation type="unfinished"></translation>
+        <translation>Bir web sayfasına köprü ekle</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Attach a file to the page</source>
-        <translation type="unfinished">Sayfaya dosya ekle</translation>
+        <translation>Sayfaya bir dosya ekle</translation>
     </message>
 </context>
 <context>
@@ -1665,37 +1665,37 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
     <message>
         <location line="+627"/>
         <source>Page/canvas size</source>
-        <translation type="unfinished"></translation>
+        <translation>Sayfa/tuval boyutu</translation>
     </message>
     <message>
         <location line="+9"/>
         <source> px</source>
-        <translation type="unfinished"> px</translation>
+        <translation> px</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Half as wide again</source>
-        <translation type="unfinished"></translation>
+        <translation>Bir buçuk kat daha geniş</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Half as tall again</source>
-        <translation type="unfinished"></translation>
+        <translation>Bir buçuk kat daha yüksek</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>Width</source>
-        <translation type="unfinished">Kalınlık</translation>
+        <translation>Genişlik</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Height</source>
-        <translation type="unfinished">Yükseklik</translation>
+        <translation>Yükseklik</translation>
     </message>
     <message>
         <location line="+11"/>
         <source>The size of this page. The drawings stay where they are; a bigger canvas leaves room around them.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu sayfanın boyutu. Çizimler yerinde kalır; daha büyük bir tuval çevrelerinde yer bırakır.</translation>
     </message>
     <message>
         <location line="+577"/>
@@ -1908,7 +1908,7 @@ Güvenlik denetimini geçersiz kılmak ve devam etmek istiyor musunuz?   </trans
     <message>
         <location line="+8"/>
         <source>Eyedropper: take a color on the screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Damlalık: ekrandan bir renk al</translation>
     </message>
     <message>
         <location line="+173"/>
@@ -3090,22 +3090,22 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     <message>
         <location filename="../../src/domain/UBGraphicsHyperlinkItem.cpp" line="+48"/>
         <source>Hyperlink</source>
-        <translation type="unfinished"></translation>
+        <translation>Köprü</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>%1 could not be opened.</source>
-        <translation type="unfinished">%1 açılamadı.</translation>
+        <translation>%1 açılamadı.</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>Add a hyperlink</source>
-        <translation type="unfinished"></translation>
+        <translation>Köprü ekle</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Address of the web page:</source>
-        <translation type="unfinished"></translation>
+        <translation>Web sayfasının adresi:</translation>
     </message>
 </context>
 <context>
@@ -3443,12 +3443,12 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     <message>
         <location line="+0"/>
         <source>Follow</source>
-        <translation type="unfinished"></translation>
+        <translation>Takip</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Trail: draws while pressed. Point: shows only the point. Follow: follows the mouse without a click, its trail fading with the times below.</source>
-        <translation type="unfinished"></translation>
+        <translation>İz: basılıyken çizer. Nokta: yalnızca noktayı gösterir. Takip: tıklamadan fareyi izler, iz aşağıdaki sürelere göre kaybolur.</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -3504,12 +3504,12 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     <message>
         <location line="+55"/>
         <source>Wait</source>
-        <translation type="unfinished"></translation>
+        <translation>Bekleme</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Fading</source>
-        <translation type="unfinished"></translation>
+        <translation>Solma</translation>
     </message>
 </context>
 <context>
@@ -3624,7 +3624,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <location line="-112"/>
         <location line="+152"/>
         <source>Page/canvas size</source>
-        <translation type="unfinished"></translation>
+        <translation>Sayfa/tuval boyutu</translation>
     </message>
     <message>
         <location line="-110"/>
@@ -3694,58 +3694,58 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     <message>
         <location line="+26"/>
         <source>Custom size...</source>
-        <translation type="unfinished"></translation>
+        <translation>Özel boyut...</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>Read and dictate</source>
-        <translation type="unfinished"></translation>
+        <translation>Okuma ve dikte</translation>
     </message>
     <message>
         <location line="+2"/>
         <location line="+6"/>
         <source>Read aloud</source>
-        <translation type="unfinished"></translation>
+        <translation>Sesli oku</translation>
     </message>
     <message>
         <location line="-4"/>
         <source>Reads the texts selected, or the text of the page</source>
-        <translation type="unfinished"></translation>
+        <translation>Seçili metinleri ya da sayfanın metnini okur</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>Stop reading</source>
-        <translation type="unfinished"></translation>
+        <translation>Okumayı durdur</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Dictate (Windows + H)</source>
-        <translation type="unfinished"></translation>
+        <translation>Dikte et (Windows + H)</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Opens the dictation of Windows: what is said is written where the cursor of text is</source>
-        <translation type="unfinished"></translation>
+        <translation>Windows dikte özelliğini açar: söylenenler metin imlecinin olduğu yere yazılır</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Dictate</source>
-        <translation type="unfinished"></translation>
+        <translation>Dikte et</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>The dictation of the system is not available here. On Windows, press Windows + H in a text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sistemin dikte özelliği burada kullanılamıyor. Windows&apos;ta bir metinde Windows + H tuşlarına basın.</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Transcribe an audio (coming with the AI)</source>
-        <translation type="unfinished"></translation>
+        <translation>Bir sesi yazıya dök (yapay zekâ ile gelecek)</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Writes what is said in a recording; it will come with the AI of LibertyBoard</source>
-        <translation type="unfinished"></translation>
+        <translation>Bir kayıtta söylenenleri yazar; LibertyBoard yapay zekâsı ile gelecek</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -3803,18 +3803,18 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <location line="+9"/>
         <location line="+22"/>
         <source>Lock canvas</source>
-        <translation type="unfinished"></translation>
+        <translation>Tuvali kilitle</translation>
     </message>
     <message>
         <location line="-29"/>
         <source>Lock the canvas: nothing can be drawn, written, highlighted, moved or deleted; the laser pointer, the hand and the selector still work</source>
-        <translation type="unfinished"></translation>
+        <translation>Tuvali kilitle: hiçbir şey çizilemez, yazılamaz, vurgulanamaz, taşınamaz ya da silinemez; lazer, el ve seçim çalışmaya devam eder</translation>
     </message>
     <message>
         <location line="+7"/>
         <location line="+20"/>
         <source>Unlock canvas</source>
-        <translation type="unfinished"></translation>
+        <translation>Tuvalin kilidini aç</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -4303,7 +4303,7 @@ Bu daha sonra Giriş &gt; Metni tanı ile de yapılabilir.</translation>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1036"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1035"/>
         <source>Pen</source>
         <translation>Kalem</translation>
     </message>
@@ -4328,35 +4328,35 @@ Dinamik kalınlık</translation>
     <message>
         <location line="+8"/>
         <source>Ballpoint pen</source>
-        <translation type="unfinished"></translation>
+        <translation>Tükenmez kalem</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Fountain pen</source>
-        <translation type="unfinished"></translation>
+        <translation>Dolma kalem</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Calligraphy pen</source>
-        <translation type="unfinished"></translation>
+        <translation>Hat kalemi</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Pencil</source>
-        <translation type="unfinished"></translation>
+        <translation>Kurşun kalem</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Marker</source>
-        <translation type="unfinished">Fosforlu Kalem</translation>
+        <translation>Keçeli kalem</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Ballpoint pen: even width. Fountain pen: width follows the pressure. Calligraphy pen: width follows the direction. Pencil: thin and light, like graphite. Marker: wide and even.</source>
-        <translation type="unfinished"></translation>
+        <source>Ballpoint pen: thicker when slow, thinner when fast. Fountain pen: a slanted flat nib. Calligraphy pen: smooth and even. Pencil: thin and dark, with grain. Marker: wide, with a felt texture.</source>
+        <translation>Tükenmez: yavaşta kalın, hızlıda ince. Dolma kalem: eğik düz uç. Hat kalemi: düzgün ve eşit. Kurşun kalem: ince ve koyu, grenli. Keçeli kalem: geniş, keçe dokulu.</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+4"/>
         <source> pt</source>
         <translation> pt</translation>
     </message>
@@ -4846,17 +4846,17 @@ Dinamik kalınlık</translation>
     <message>
         <location filename="../../src/gui/UBReadAloud.cpp" line="+58"/>
         <source>There is no text to read on this page: write or select a text, or open a PDF with text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu sayfada okunacak metin yok: bir metin yazın ya da seçin veya metin içeren bir PDF açın.</translation>
     </message>
     <message>
         <location line="+23"/>
         <source>Read aloud</source>
-        <translation type="unfinished"></translation>
+        <translation>Sesli oku</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>The voices of the system could not be used to read aloud.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sesli okumak için sistemin sesleri kullanılamadı.</translation>
     </message>
 </context>
 <context>
@@ -5055,12 +5055,12 @@ Dinamik kalınlık</translation>
     <message>
         <location line="+6"/>
         <source>Fit to the text size</source>
-        <translation type="unfinished"></translation>
+        <translation>Yazı boyutuna uydur</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>On a PDF, the band takes the height of the line of text, with a little margin.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bir PDF&apos;te bant, metin satırının yüksekliğini küçük bir payla alır.</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -5076,17 +5076,17 @@ Dinamik kalınlık</translation>
     <message>
         <location line="+120"/>
         <source>Line</source>
-        <translation type="unfinished">Çizgi</translation>
+        <translation>Çizgi</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Start</source>
-        <translation type="unfinished"></translation>
+        <translation>Başlangıç</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>End</source>
-        <translation type="unfinished"></translation>
+        <translation>Bitiş</translation>
     </message>
 </context>
 <context>
@@ -5360,43 +5360,43 @@ Dinamik kalınlık</translation>
         <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-282"/>
         <location line="+4"/>
         <source>Spotlight</source>
-        <translation type="unfinished"></translation>
+        <translation>Spot ışığı</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Magnifier</source>
-        <translation type="unfinished">Büyüteç</translation>
+        <translation>Büyüteç</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Spotlight: darkens all but a circle around the pointer. Magnifier: magnifies what is under the pointer.</source>
-        <translation type="unfinished"></translation>
+        <translation>Spot ışığı: işaretçinin çevresindeki daire dışında her şeyi karartır. Büyüteç: işaretçinin altındakini büyütür.</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Radius</source>
-        <translation type="unfinished"></translation>
+        <translation>Yarıçap</translation>
     </message>
     <message>
         <location line="+1"/>
         <source> px</source>
-        <translation type="unfinished"> px</translation>
+        <translation> px</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Darkness</source>
-        <translation type="unfinished"></translation>
+        <translation>Karanlık</translation>
     </message>
     <message>
         <location line="+2"/>
         <location line="+5"/>
         <source> %</source>
-        <translation type="unfinished"> %</translation>
+        <translation> %</translation>
     </message>
     <message>
         <location line="-2"/>
         <source>Zoom</source>
-        <translation type="unfinished"></translation>
+        <translation>Büyütme</translation>
     </message>
 </context>
 <context>
@@ -5534,7 +5534,7 @@ Dinamik kalınlık</translation>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-774"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-773"/>
         <source>Color</source>
         <translation>Renk</translation>
     </message>

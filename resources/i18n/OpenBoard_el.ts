@@ -645,12 +645,12 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="+13"/>
         <source>Spotlight</source>
-        <translation type="unfinished"></translation>
+        <translation>Προβολέας</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Spotlight and magnifier: darken the screen but around the pointer, or magnify under it</source>
-        <translation type="unfinished"></translation>
+        <translation>Προβολέας και μεγεθυντικός φακός: σκουραίνει την οθόνη εκτός γύρω από τον δείκτη, ή μεγεθύνει ό,τι είναι από κάτω</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -1592,34 +1592,34 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBAttachmentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+576"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+575"/>
         <source>Insert file</source>
-        <translation type="unfinished"></translation>
+        <translation>Εισαγωγή αρχείου</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>File</source>
-        <translation type="unfinished"></translation>
+        <translation>Αρχείο</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Hyperlink</source>
-        <translation type="unfinished"></translation>
+        <translation>Υπερσύνδεσμος</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>File: a click on the page attaches a file. Hyperlink: a click on the page asks for the address of a web page.</source>
-        <translation type="unfinished"></translation>
+        <translation>Αρχείο: ένα κλικ στη σελίδα επισυνάπτει ένα αρχείο. Υπερσύνδεσμος: ένα κλικ στη σελίδα ζητά τη διεύθυνση μιας ιστοσελίδας.</translation>
     </message>
     <message>
         <location line="+27"/>
         <source>Add a hyperlink to a web page</source>
-        <translation type="unfinished"></translation>
+        <translation>Προσθήκη υπερσυνδέσμου σε ιστοσελίδα</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Attach a file to the page</source>
-        <translation type="unfinished">Επισύναψη αρχείου στη σελίδα</translation>
+        <translation>Επισύναψη αρχείου στη σελίδα</translation>
     </message>
 </context>
 <context>
@@ -1665,37 +1665,37 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="+627"/>
         <source>Page/canvas size</source>
-        <translation type="unfinished"></translation>
+        <translation>Μέγεθος σελίδας/καμβά</translation>
     </message>
     <message>
         <location line="+9"/>
         <source> px</source>
-        <translation type="unfinished"> px</translation>
+        <translation> px</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Half as wide again</source>
-        <translation type="unfinished"></translation>
+        <translation>Μιάμιση φορά πιο φαρδύ</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Half as tall again</source>
-        <translation type="unfinished"></translation>
+        <translation>Μιάμιση φορά πιο ψηλό</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>Width</source>
-        <translation type="unfinished">Πάχος</translation>
+        <translation>Πλάτος</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Height</source>
-        <translation type="unfinished">Ύψος</translation>
+        <translation>Ύψος</translation>
     </message>
     <message>
         <location line="+11"/>
         <source>The size of this page. The drawings stay where they are; a bigger canvas leaves room around them.</source>
-        <translation type="unfinished"></translation>
+        <translation>Το μέγεθος αυτής της σελίδας. Τα σχέδια μένουν όπου είναι· ένας μεγαλύτερος καμβάς αφήνει χώρο γύρω τους.</translation>
     </message>
     <message>
         <location line="+577"/>
@@ -1908,7 +1908,7 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="+8"/>
         <source>Eyedropper: take a color on the screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Σταγονόμετρο: πάρτε ένα χρώμα από την οθόνη</translation>
     </message>
     <message>
         <location line="+173"/>
@@ -3095,22 +3095,22 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     <message>
         <location filename="../../src/domain/UBGraphicsHyperlinkItem.cpp" line="+48"/>
         <source>Hyperlink</source>
-        <translation type="unfinished"></translation>
+        <translation>Υπερσύνδεσμος</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>%1 could not be opened.</source>
-        <translation type="unfinished">Δεν ήταν δυνατό το άνοιγμα του %1.</translation>
+        <translation>Δεν ήταν δυνατό να ανοίξει το %1.</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>Add a hyperlink</source>
-        <translation type="unfinished"></translation>
+        <translation>Προσθήκη υπερσυνδέσμου</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Address of the web page:</source>
-        <translation type="unfinished"></translation>
+        <translation>Διεύθυνση της ιστοσελίδας:</translation>
     </message>
 </context>
 <context>
@@ -3448,12 +3448,12 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     <message>
         <location line="+0"/>
         <source>Follow</source>
-        <translation type="unfinished"></translation>
+        <translation>Παρακολούθηση</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Trail: draws while pressed. Point: shows only the point. Follow: follows the mouse without a click, its trail fading with the times below.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ίχνος: σχεδιάζει όσο πατιέται. Σημείο: δείχνει μόνο το σημείο. Παρακολούθηση: ακολουθεί το ποντίκι χωρίς κλικ, το ίχνος σβήνει με τους χρόνους παρακάτω.</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -3509,12 +3509,12 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     <message>
         <location line="+55"/>
         <source>Wait</source>
-        <translation type="unfinished"></translation>
+        <translation>Αναμονή</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Fading</source>
-        <translation type="unfinished"></translation>
+        <translation>Σβήσιμο</translation>
     </message>
 </context>
 <context>
@@ -3629,7 +3629,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <location line="-112"/>
         <location line="+152"/>
         <source>Page/canvas size</source>
-        <translation type="unfinished"></translation>
+        <translation>Μέγεθος σελίδας/καμβά</translation>
     </message>
     <message>
         <location line="-110"/>
@@ -3699,58 +3699,58 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     <message>
         <location line="+26"/>
         <source>Custom size...</source>
-        <translation type="unfinished"></translation>
+        <translation>Προσαρμοσμένο μέγεθος...</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>Read and dictate</source>
-        <translation type="unfinished"></translation>
+        <translation>Ανάγνωση και υπαγόρευση</translation>
     </message>
     <message>
         <location line="+2"/>
         <location line="+6"/>
         <source>Read aloud</source>
-        <translation type="unfinished"></translation>
+        <translation>Ανάγνωση φωναχτά</translation>
     </message>
     <message>
         <location line="-4"/>
         <source>Reads the texts selected, or the text of the page</source>
-        <translation type="unfinished"></translation>
+        <translation>Διαβάζει τα επιλεγμένα κείμενα ή το κείμενο της σελίδας</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>Stop reading</source>
-        <translation type="unfinished"></translation>
+        <translation>Διακοπή ανάγνωσης</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Dictate (Windows + H)</source>
-        <translation type="unfinished"></translation>
+        <translation>Υπαγόρευση (Windows + H)</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Opens the dictation of Windows: what is said is written where the cursor of text is</source>
-        <translation type="unfinished"></translation>
+        <translation>Ανοίγει την υπαγόρευση των Windows: ό,τι λέγεται γράφεται εκεί που είναι ο δρομέας κειμένου</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Dictate</source>
-        <translation type="unfinished"></translation>
+        <translation>Υπαγόρευση</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>The dictation of the system is not available here. On Windows, press Windows + H in a text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Η υπαγόρευση του συστήματος δεν είναι διαθέσιμη εδώ. Στα Windows πατήστε Windows + H σε ένα κείμενο.</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Transcribe an audio (coming with the AI)</source>
-        <translation type="unfinished"></translation>
+        <translation>Απομαγνητοφώνηση ήχου (θα έρθει με την ΤΝ)</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Writes what is said in a recording; it will come with the AI of LibertyBoard</source>
-        <translation type="unfinished"></translation>
+        <translation>Γράφει ό,τι λέγεται σε μια ηχογράφηση· θα έρθει με την ΤΝ του LibertyBoard</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -3808,18 +3808,18 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <location line="+9"/>
         <location line="+22"/>
         <source>Lock canvas</source>
-        <translation type="unfinished"></translation>
+        <translation>Κλείδωμα καμβά</translation>
     </message>
     <message>
         <location line="-29"/>
         <source>Lock the canvas: nothing can be drawn, written, highlighted, moved or deleted; the laser pointer, the hand and the selector still work</source>
-        <translation type="unfinished"></translation>
+        <translation>Κλείδωμα καμβά: τίποτα δεν μπορεί να σχεδιαστεί, να γραφτεί, να επισημανθεί, να μετακινηθεί ή να διαγραφεί· το λέιζερ, το χέρι και η επιλογή λειτουργούν ακόμα</translation>
     </message>
     <message>
         <location line="+7"/>
         <location line="+20"/>
         <source>Unlock canvas</source>
-        <translation type="unfinished"></translation>
+        <translation>Ξεκλείδωμα καμβά</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -4308,7 +4308,7 @@ It can also be done later with Home &gt; Recognize text.</source>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1036"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1035"/>
         <source>Pen</source>
         <translation>Πένα</translation>
     </message>
@@ -4333,35 +4333,35 @@ Dynamic width</source>
     <message>
         <location line="+8"/>
         <source>Ballpoint pen</source>
-        <translation type="unfinished"></translation>
+        <translation>Στυλό διαρκείας</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Fountain pen</source>
-        <translation type="unfinished"></translation>
+        <translation>Πένα</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Calligraphy pen</source>
-        <translation type="unfinished"></translation>
+        <translation>Καλλιγραφική πένα</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Pencil</source>
-        <translation type="unfinished"></translation>
+        <translation>Μολύβι</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Marker</source>
-        <translation type="unfinished">Μαρκαδόρος</translation>
+        <translation>Μαρκαδόρος</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Ballpoint pen: even width. Fountain pen: width follows the pressure. Calligraphy pen: width follows the direction. Pencil: thin and light, like graphite. Marker: wide and even.</source>
-        <translation type="unfinished"></translation>
+        <source>Ballpoint pen: thicker when slow, thinner when fast. Fountain pen: a slanted flat nib. Calligraphy pen: smooth and even. Pencil: thin and dark, with grain. Marker: wide, with a felt texture.</source>
+        <translation>Στυλό: αργά πιο χοντρό, γρήγορα πιο λεπτό. Πένα: λοξή επίπεδη μύτη. Καλλιγραφική πένα: λεία και ομοιόμορφη. Μολύβι: λεπτό και σκούρο, με κόκκο. Μαρκαδόρος: φαρδύς, με υφή τσόχας.</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+4"/>
         <source> pt</source>
         <translation> pt</translation>
     </message>
@@ -4848,17 +4848,17 @@ Dynamic width</source>
     <message>
         <location filename="../../src/gui/UBReadAloud.cpp" line="+58"/>
         <source>There is no text to read on this page: write or select a text, or open a PDF with text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Δεν υπάρχει κείμενο για ανάγνωση σε αυτή τη σελίδα: γράψτε ή επιλέξτε ένα κείμενο, ή ανοίξτε ένα PDF με κείμενο.</translation>
     </message>
     <message>
         <location line="+23"/>
         <source>Read aloud</source>
-        <translation type="unfinished"></translation>
+        <translation>Ανάγνωση φωναχτά</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>The voices of the system could not be used to read aloud.</source>
-        <translation type="unfinished"></translation>
+        <translation>Οι φωνές του συστήματος δεν μπόρεσαν να χρησιμοποιηθούν για ανάγνωση φωναχτά.</translation>
     </message>
 </context>
 <context>
@@ -5057,12 +5057,12 @@ Dynamic width</source>
     <message>
         <location line="+6"/>
         <source>Fit to the text size</source>
-        <translation type="unfinished"></translation>
+        <translation>Προσαρμογή στο μέγεθος γραμμάτων</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>On a PDF, the band takes the height of the line of text, with a little margin.</source>
-        <translation type="unfinished"></translation>
+        <translation>Σε PDF, η λωρίδα παίρνει το ύψος της γραμμής κειμένου, με ένα μικρό περιθώριο.</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -5078,17 +5078,17 @@ Dynamic width</source>
     <message>
         <location line="+120"/>
         <source>Line</source>
-        <translation type="unfinished">Γραμμή</translation>
+        <translation>Γραμμή</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Start</source>
-        <translation type="unfinished"></translation>
+        <translation>Αρχή</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>End</source>
-        <translation type="unfinished"></translation>
+        <translation>Τέλος</translation>
     </message>
 </context>
 <context>
@@ -5362,43 +5362,43 @@ Dynamic width</source>
         <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-282"/>
         <location line="+4"/>
         <source>Spotlight</source>
-        <translation type="unfinished"></translation>
+        <translation>Προβολέας</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Magnifier</source>
-        <translation type="unfinished">Μεγεθυντικός φακός</translation>
+        <translation>Μεγεθυντικός φακός</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Spotlight: darkens all but a circle around the pointer. Magnifier: magnifies what is under the pointer.</source>
-        <translation type="unfinished"></translation>
+        <translation>Προβολέας: σκουραίνει τα πάντα εκτός από έναν κύκλο γύρω από τον δείκτη. Φακός: μεγεθύνει ό,τι είναι κάτω από τον δείκτη.</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Radius</source>
-        <translation type="unfinished"></translation>
+        <translation>Ακτίνα</translation>
     </message>
     <message>
         <location line="+1"/>
         <source> px</source>
-        <translation type="unfinished"> px</translation>
+        <translation> px</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Darkness</source>
-        <translation type="unfinished"></translation>
+        <translation>Σκοτάδι</translation>
     </message>
     <message>
         <location line="+2"/>
         <location line="+5"/>
         <source> %</source>
-        <translation type="unfinished"> %</translation>
+        <translation> %</translation>
     </message>
     <message>
         <location line="-2"/>
         <source>Zoom</source>
-        <translation type="unfinished"></translation>
+        <translation>Μεγέθυνση</translation>
     </message>
 </context>
 <context>
@@ -5536,7 +5536,7 @@ Dynamic width</source>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-774"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-773"/>
         <source>Color</source>
         <translation>Χρώμα</translation>
     </message>

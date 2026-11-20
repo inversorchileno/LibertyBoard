@@ -844,12 +844,12 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="+13"/>
         <source>Spotlight</source>
-        <translation type="unfinished"></translation>
+        <translation>Reflektor</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Spotlight and magnifier: darken the screen but around the pointer, or magnify under it</source>
-        <translation type="unfinished"></translation>
+        <translation>Reflektor i lupa: przyciemnia ekran poza okolicą wskaźnika lub powiększa to, co pod nim</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -1589,34 +1589,34 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBAttachmentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+576"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+575"/>
         <source>Insert file</source>
-        <translation type="unfinished"></translation>
+        <translation>Wstaw plik</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>File</source>
-        <translation type="unfinished"></translation>
+        <translation>Plik</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Hyperlink</source>
-        <translation type="unfinished"></translation>
+        <translation>Hiperłącze</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>File: a click on the page attaches a file. Hyperlink: a click on the page asks for the address of a web page.</source>
-        <translation type="unfinished"></translation>
+        <translation>Plik: kliknięcie strony dołącza plik. Hiperłącze: kliknięcie strony pyta o adres strony internetowej.</translation>
     </message>
     <message>
         <location line="+27"/>
         <source>Add a hyperlink to a web page</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodaj hiperłącze do strony internetowej</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Attach a file to the page</source>
-        <translation type="unfinished">Załącz plik do strony</translation>
+        <translation>Dołącz plik do strony</translation>
     </message>
 </context>
 <context>
@@ -1662,37 +1662,37 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="+627"/>
         <source>Page/canvas size</source>
-        <translation type="unfinished"></translation>
+        <translation>Rozmiar strony/płótna</translation>
     </message>
     <message>
         <location line="+9"/>
         <source> px</source>
-        <translation type="unfinished"> px</translation>
+        <translation> px</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Half as wide again</source>
-        <translation type="unfinished"></translation>
+        <translation>O połowę szerzej</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Half as tall again</source>
-        <translation type="unfinished"></translation>
+        <translation>O połowę wyżej</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>Width</source>
-        <translation type="unfinished">Grubość</translation>
+        <translation>Szerokość</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Height</source>
-        <translation type="unfinished">Wysokość</translation>
+        <translation>Wysokość</translation>
     </message>
     <message>
         <location line="+11"/>
         <source>The size of this page. The drawings stay where they are; a bigger canvas leaves room around them.</source>
-        <translation type="unfinished"></translation>
+        <translation>Rozmiar tej strony. Rysunki zostają na miejscu; większe płótno zostawia wokół nich miejsce.</translation>
     </message>
     <message>
         <location line="+577"/>
@@ -1912,7 +1912,7 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location line="+8"/>
         <source>Eyedropper: take a color on the screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Pipeta: weź kolor z ekranu</translation>
     </message>
     <message>
         <location line="+173"/>
@@ -3109,22 +3109,22 @@ Pobrać i zainstalować teraz? LibertyBoard zapisze dokumenty, zamknie się i ur
     <message>
         <location filename="../../src/domain/UBGraphicsHyperlinkItem.cpp" line="+48"/>
         <source>Hyperlink</source>
-        <translation type="unfinished"></translation>
+        <translation>Hiperłącze</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>%1 could not be opened.</source>
-        <translation type="unfinished">Nie można otworzyć %1.</translation>
+        <translation>Nie udało się otworzyć %1.</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>Add a hyperlink</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodaj hiperłącze</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Address of the web page:</source>
-        <translation type="unfinished"></translation>
+        <translation>Adres strony internetowej:</translation>
     </message>
 </context>
 <context>
@@ -3462,12 +3462,12 @@ Pobrać i zainstalować teraz? LibertyBoard zapisze dokumenty, zamknie się i ur
     <message>
         <location line="+0"/>
         <source>Follow</source>
-        <translation type="unfinished"></translation>
+        <translation>Śledzenie</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Trail: draws while pressed. Point: shows only the point. Follow: follows the mouse without a click, its trail fading with the times below.</source>
-        <translation type="unfinished"></translation>
+        <translation>Smuga: rysuje podczas naciskania. Punkt: pokazuje tylko punkt. Śledzenie: podąża za myszą bez klikania, smuga znika według czasów poniżej.</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -3523,12 +3523,12 @@ Pobrać i zainstalować teraz? LibertyBoard zapisze dokumenty, zamknie się i ur
     <message>
         <location line="+55"/>
         <source>Wait</source>
-        <translation type="unfinished"></translation>
+        <translation>Czekanie</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Fading</source>
-        <translation type="unfinished"></translation>
+        <translation>Zanikanie</translation>
     </message>
 </context>
 <context>
@@ -3643,7 +3643,7 @@ Pobrać i zainstalować teraz? LibertyBoard zapisze dokumenty, zamknie się i ur
         <location line="-112"/>
         <location line="+152"/>
         <source>Page/canvas size</source>
-        <translation type="unfinished"></translation>
+        <translation>Rozmiar strony/płótna</translation>
     </message>
     <message>
         <location line="-110"/>
@@ -3713,58 +3713,58 @@ Pobrać i zainstalować teraz? LibertyBoard zapisze dokumenty, zamknie się i ur
     <message>
         <location line="+26"/>
         <source>Custom size...</source>
-        <translation type="unfinished"></translation>
+        <translation>Własny rozmiar...</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>Read and dictate</source>
-        <translation type="unfinished"></translation>
+        <translation>Czytaj i dyktuj</translation>
     </message>
     <message>
         <location line="+2"/>
         <location line="+6"/>
         <source>Read aloud</source>
-        <translation type="unfinished"></translation>
+        <translation>Czytaj na głos</translation>
     </message>
     <message>
         <location line="-4"/>
         <source>Reads the texts selected, or the text of the page</source>
-        <translation type="unfinished"></translation>
+        <translation>Czyta zaznaczone teksty lub tekst strony</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>Stop reading</source>
-        <translation type="unfinished"></translation>
+        <translation>Zatrzymaj czytanie</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Dictate (Windows + H)</source>
-        <translation type="unfinished"></translation>
+        <translation>Dyktuj (Windows + H)</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Opens the dictation of Windows: what is said is written where the cursor of text is</source>
-        <translation type="unfinished"></translation>
+        <translation>Otwiera dyktowanie Windows: to, co powiesz, zostanie wpisane tam, gdzie jest kursor tekstu</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Dictate</source>
-        <translation type="unfinished"></translation>
+        <translation>Dyktuj</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>The dictation of the system is not available here. On Windows, press Windows + H in a text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dyktowanie systemu nie jest tu dostępne. W Windows naciśnij Windows + H w tekście.</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Transcribe an audio (coming with the AI)</source>
-        <translation type="unfinished"></translation>
+        <translation>Transkrybuj nagranie (pojawi się z AI)</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Writes what is said in a recording; it will come with the AI of LibertyBoard</source>
-        <translation type="unfinished"></translation>
+        <translation>Zapisuje to, co powiedziano w nagraniu; pojawi się z AI LibertyBoard</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -3822,18 +3822,18 @@ Pobrać i zainstalować teraz? LibertyBoard zapisze dokumenty, zamknie się i ur
         <location line="+9"/>
         <location line="+22"/>
         <source>Lock canvas</source>
-        <translation type="unfinished"></translation>
+        <translation>Zablokuj płótno</translation>
     </message>
     <message>
         <location line="-29"/>
         <source>Lock the canvas: nothing can be drawn, written, highlighted, moved or deleted; the laser pointer, the hand and the selector still work</source>
-        <translation type="unfinished"></translation>
+        <translation>Zablokuj płótno: nie można nic rysować, pisać, zakreślać, przesuwać ani usuwać; laser, ręka i zaznaczanie nadal działają</translation>
     </message>
     <message>
         <location line="+7"/>
         <location line="+20"/>
         <source>Unlock canvas</source>
-        <translation type="unfinished"></translation>
+        <translation>Odblokuj płótno</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -4322,7 +4322,7 @@ Można to też zrobić później: Start &gt; Rozpoznaj tekst.</translation>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1036"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1035"/>
         <source>Pen</source>
         <translation>Pióro</translation>
     </message>
@@ -4347,35 +4347,35 @@ Dynamiczna szerokość</translation>
     <message>
         <location line="+8"/>
         <source>Ballpoint pen</source>
-        <translation type="unfinished"></translation>
+        <translation>Długopis</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Fountain pen</source>
-        <translation type="unfinished"></translation>
+        <translation>Pióro wieczne</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Calligraphy pen</source>
-        <translation type="unfinished"></translation>
+        <translation>Pióro kaligraficzne</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Pencil</source>
-        <translation type="unfinished"></translation>
+        <translation>Ołówek</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Marker</source>
-        <translation type="unfinished">Marker</translation>
+        <translation>Flamaster</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Ballpoint pen: even width. Fountain pen: width follows the pressure. Calligraphy pen: width follows the direction. Pencil: thin and light, like graphite. Marker: wide and even.</source>
-        <translation type="unfinished"></translation>
+        <source>Ballpoint pen: thicker when slow, thinner when fast. Fountain pen: a slanted flat nib. Calligraphy pen: smooth and even. Pencil: thin and dark, with grain. Marker: wide, with a felt texture.</source>
+        <translation>Długopis: grubszy wolno, cieńszy szybko. Pióro wieczne: ukośna płaska stalówka. Pióro kaligraficzne: gładkie i równe. Ołówek: cienki i ciemny, ziarnisty. Flamaster: szeroki, z fakturą filcu.</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+4"/>
         <source> pt</source>
         <translation> pt</translation>
     </message>
@@ -4862,17 +4862,17 @@ Dynamiczna szerokość</translation>
     <message>
         <location filename="../../src/gui/UBReadAloud.cpp" line="+58"/>
         <source>There is no text to read on this page: write or select a text, or open a PDF with text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Na tej stronie nie ma tekstu do przeczytania: napisz lub zaznacz tekst albo otwórz PDF z tekstem.</translation>
     </message>
     <message>
         <location line="+23"/>
         <source>Read aloud</source>
-        <translation type="unfinished"></translation>
+        <translation>Czytaj na głos</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>The voices of the system could not be used to read aloud.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie udało się użyć głosów systemu do czytania na głos.</translation>
     </message>
 </context>
 <context>
@@ -5071,12 +5071,12 @@ Dynamiczna szerokość</translation>
     <message>
         <location line="+6"/>
         <source>Fit to the text size</source>
-        <translation type="unfinished"></translation>
+        <translation>Dopasuj do rozmiaru tekstu</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>On a PDF, the band takes the height of the line of text, with a little margin.</source>
-        <translation type="unfinished"></translation>
+        <translation>W PDF pasek przyjmuje wysokość wiersza tekstu, z małym marginesem.</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -5092,17 +5092,17 @@ Dynamiczna szerokość</translation>
     <message>
         <location line="+120"/>
         <source>Line</source>
-        <translation type="unfinished">Linia</translation>
+        <translation>Linia</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Start</source>
-        <translation type="unfinished"></translation>
+        <translation>Początek</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>End</source>
-        <translation type="unfinished"></translation>
+        <translation>Koniec</translation>
     </message>
 </context>
 <context>
@@ -5376,43 +5376,43 @@ Dynamiczna szerokość</translation>
         <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-282"/>
         <location line="+4"/>
         <source>Spotlight</source>
-        <translation type="unfinished"></translation>
+        <translation>Reflektor</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Magnifier</source>
-        <translation type="unfinished">Szkło powiększające</translation>
+        <translation>Lupa</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Spotlight: darkens all but a circle around the pointer. Magnifier: magnifies what is under the pointer.</source>
-        <translation type="unfinished"></translation>
+        <translation>Reflektor: przyciemnia wszystko poza kołem wokół wskaźnika. Lupa: powiększa to, co pod wskaźnikiem.</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Radius</source>
-        <translation type="unfinished"></translation>
+        <translation>Promień</translation>
     </message>
     <message>
         <location line="+1"/>
         <source> px</source>
-        <translation type="unfinished"> px</translation>
+        <translation> px</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Darkness</source>
-        <translation type="unfinished"></translation>
+        <translation>Ciemność</translation>
     </message>
     <message>
         <location line="+2"/>
         <location line="+5"/>
         <source> %</source>
-        <translation type="unfinished"> %</translation>
+        <translation> %</translation>
     </message>
     <message>
         <location line="-2"/>
         <source>Zoom</source>
-        <translation type="unfinished"></translation>
+        <translation>Powiększenie</translation>
     </message>
 </context>
 <context>
@@ -5546,7 +5546,7 @@ Dynamiczna szerokość</translation>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-774"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-773"/>
         <source>Color</source>
         <translation>Kolor</translation>
     </message>

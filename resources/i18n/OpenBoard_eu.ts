@@ -973,12 +973,12 @@ Segurtasun egiaztapena gainidatzi eta jarraitu nahi duzu?</translation>
     <message>
         <location line="+13"/>
         <source>Spotlight</source>
-        <translation type="unfinished"></translation>
+        <translation>Fokua</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Spotlight and magnifier: darken the screen but around the pointer, or magnify under it</source>
-        <translation type="unfinished"></translation>
+        <translation>Fokua eta lupa: pantaila iluntzen du erakuslearen inguruan izan ezik, edo azpian dagoena handitzen du</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -1706,34 +1706,34 @@ Segurtasun egiaztapena gainidatzi eta jarraitu nahi duzu?</translation>
 <context>
     <name>UBAttachmentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+576"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+575"/>
         <source>Insert file</source>
-        <translation type="unfinished"></translation>
+        <translation>Txertatu fitxategia</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>File</source>
-        <translation type="unfinished"></translation>
+        <translation>Fitxategia</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Hyperlink</source>
-        <translation type="unfinished"></translation>
+        <translation>Esteka</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>File: a click on the page attaches a file. Hyperlink: a click on the page asks for the address of a web page.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fitxategia: orrian klik eginez fitxategi bat eransten da. Esteka: orrian klik eginez web orri baten helbidea eskatzen da.</translation>
     </message>
     <message>
         <location line="+27"/>
         <source>Add a hyperlink to a web page</source>
-        <translation type="unfinished"></translation>
+        <translation>Gehitu web orri baterako esteka</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Attach a file to the page</source>
-        <translation type="unfinished">Erantsi fitxategi bat orriari</translation>
+        <translation>Erantsi fitxategi bat orriari</translation>
     </message>
 </context>
 <context>
@@ -1816,37 +1816,37 @@ Segurtasun egiaztapena gainidatzi eta jarraitu nahi duzu?</translation>
     <message>
         <location line="+627"/>
         <source>Page/canvas size</source>
-        <translation type="unfinished"></translation>
+        <translation>Orriaren/oihalaren tamaina</translation>
     </message>
     <message>
         <location line="+9"/>
         <source> px</source>
-        <translation type="unfinished"> px</translation>
+        <translation> px</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Half as wide again</source>
-        <translation type="unfinished"></translation>
+        <translation>Erdia zabalago</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Half as tall again</source>
-        <translation type="unfinished"></translation>
+        <translation>Erdia altuago</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>Width</source>
-        <translation type="unfinished">Lodiera</translation>
+        <translation>Zabalera</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Height</source>
-        <translation type="unfinished">Altuera</translation>
+        <translation>Altuera</translation>
     </message>
     <message>
         <location line="+11"/>
         <source>The size of this page. The drawings stay where they are; a bigger canvas leaves room around them.</source>
-        <translation type="unfinished"></translation>
+        <translation>Orri honen tamaina. Marrazkiak dauden lekuan geratzen dira; oihal handiago batek tokia uzten du inguruan.</translation>
     </message>
     <message>
         <location line="+577"/>
@@ -2026,7 +2026,7 @@ Segurtasun egiaztapena gainidatzi eta jarraitu nahi duzu?</translation>
     <message>
         <location line="+8"/>
         <source>Eyedropper: take a color on the screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Tantakaria: hartu kolore bat pantailatik</translation>
     </message>
     <message>
         <location line="+173"/>
@@ -3249,22 +3249,22 @@ Orain deskargatu eta instalatu? LibertyBoard-ek zure dokumentuak gordeko ditu, i
     <message>
         <location filename="../../src/domain/UBGraphicsHyperlinkItem.cpp" line="+48"/>
         <source>Hyperlink</source>
-        <translation type="unfinished"></translation>
+        <translation>Esteka</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>%1 could not be opened.</source>
-        <translation type="unfinished">Ezin izan da %1 ireki.</translation>
+        <translation>Ezin izan da %1 ireki.</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>Add a hyperlink</source>
-        <translation type="unfinished"></translation>
+        <translation>Gehitu esteka</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Address of the web page:</source>
-        <translation type="unfinished"></translation>
+        <translation>Web orriaren helbidea:</translation>
     </message>
 </context>
 <context>
@@ -3606,12 +3606,12 @@ Orain deskargatu eta instalatu? LibertyBoard-ek zure dokumentuak gordeko ditu, i
     <message>
         <location line="+0"/>
         <source>Follow</source>
-        <translation type="unfinished"></translation>
+        <translation>Jarraipena</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Trail: draws while pressed. Point: shows only the point. Follow: follows the mouse without a click, its trail fading with the times below.</source>
-        <translation type="unfinished"></translation>
+        <translation>Arrastoa: sakatuta dagoen bitartean marrazten du. Puntua: puntua soilik erakusten du. Jarraipena: sagua jarraitzen du klikik gabe, eta arrastoa beheko denboren arabera desagertzen da.</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -3667,12 +3667,12 @@ Orain deskargatu eta instalatu? LibertyBoard-ek zure dokumentuak gordeko ditu, i
     <message>
         <location line="+55"/>
         <source>Wait</source>
-        <translation type="unfinished"></translation>
+        <translation>Itxaron</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Fading</source>
-        <translation type="unfinished"></translation>
+        <translation>Desagertzea</translation>
     </message>
 </context>
 <context>
@@ -3787,7 +3787,7 @@ Orain deskargatu eta instalatu? LibertyBoard-ek zure dokumentuak gordeko ditu, i
         <location line="-112"/>
         <location line="+152"/>
         <source>Page/canvas size</source>
-        <translation type="unfinished"></translation>
+        <translation>Orriaren/oihalaren tamaina</translation>
     </message>
     <message>
         <location line="-110"/>
@@ -3857,58 +3857,58 @@ Orain deskargatu eta instalatu? LibertyBoard-ek zure dokumentuak gordeko ditu, i
     <message>
         <location line="+26"/>
         <source>Custom size...</source>
-        <translation type="unfinished"></translation>
+        <translation>Tamaina pertsonalizatua...</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>Read and dictate</source>
-        <translation type="unfinished"></translation>
+        <translation>Irakurri eta diktatu</translation>
     </message>
     <message>
         <location line="+2"/>
         <location line="+6"/>
         <source>Read aloud</source>
-        <translation type="unfinished"></translation>
+        <translation>Irakurri ozen</translation>
     </message>
     <message>
         <location line="-4"/>
         <source>Reads the texts selected, or the text of the page</source>
-        <translation type="unfinished"></translation>
+        <translation>Hautatutako testuak edo orriko testua irakurtzen ditu</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>Stop reading</source>
-        <translation type="unfinished"></translation>
+        <translation>Gelditu irakurketa</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Dictate (Windows + H)</source>
-        <translation type="unfinished"></translation>
+        <translation>Diktatu (Windows + H)</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Opens the dictation of Windows: what is said is written where the cursor of text is</source>
-        <translation type="unfinished"></translation>
+        <translation>Windows-en diktaketa irekitzen du: esaten dena testu-kurtsorea dagoen lekuan idazten da</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Dictate</source>
-        <translation type="unfinished"></translation>
+        <translation>Diktatu</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>The dictation of the system is not available here. On Windows, press Windows + H in a text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sistemaren diktaketa ez dago erabilgarri hemen. Windows-en, sakatu Windows + H testu batean.</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Transcribe an audio (coming with the AI)</source>
-        <translation type="unfinished"></translation>
+        <translation>Transkribatu audio bat (AArekin iritsiko da)</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Writes what is said in a recording; it will come with the AI of LibertyBoard</source>
-        <translation type="unfinished"></translation>
+        <translation>Grabazio batean esaten dena idazten du; LibertyBoard-en AArekin iritsiko da</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -3966,18 +3966,18 @@ Orain deskargatu eta instalatu? LibertyBoard-ek zure dokumentuak gordeko ditu, i
         <location line="+9"/>
         <location line="+22"/>
         <source>Lock canvas</source>
-        <translation type="unfinished"></translation>
+        <translation>Blokeatu oihala</translation>
     </message>
     <message>
         <location line="-29"/>
         <source>Lock the canvas: nothing can be drawn, written, highlighted, moved or deleted; the laser pointer, the hand and the selector still work</source>
-        <translation type="unfinished"></translation>
+        <translation>Blokeatu oihala: ezin da ezer marraztu, idatzi, nabarmendu, mugitu edo ezabatu; laserrak, eskuak eta hautapenak funtzionatzen jarraitzen dute</translation>
     </message>
     <message>
         <location line="+7"/>
         <location line="+20"/>
         <source>Unlock canvas</source>
-        <translation type="unfinished"></translation>
+        <translation>Desblokeatu oihala</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -4466,7 +4466,7 @@ Geroago ere egin daiteke Hasiera &gt; Ezagutu testua erabiliz.</translation>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1036"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1035"/>
         <source>Pen</source>
         <translation>Boligrafoa</translation>
     </message>
@@ -4491,35 +4491,35 @@ Zabalera dinamikoa</translation>
     <message>
         <location line="+8"/>
         <source>Ballpoint pen</source>
-        <translation type="unfinished"></translation>
+        <translation>Boligrafoa</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Fountain pen</source>
-        <translation type="unfinished"></translation>
+        <translation>Luma estilografikoa</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Calligraphy pen</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaligrafia-luma</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Pencil</source>
-        <translation type="unfinished"></translation>
+        <translation>Arkatza</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Marker</source>
-        <translation type="unfinished">Errotulagailua</translation>
+        <translation>Errotuladorea</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Ballpoint pen: even width. Fountain pen: width follows the pressure. Calligraphy pen: width follows the direction. Pencil: thin and light, like graphite. Marker: wide and even.</source>
-        <translation type="unfinished"></translation>
+        <source>Ballpoint pen: thicker when slow, thinner when fast. Fountain pen: a slanted flat nib. Calligraphy pen: smooth and even. Pencil: thin and dark, with grain. Marker: wide, with a felt texture.</source>
+        <translation>Boligrafoa: astiro lodiago, azkar meheago. Luma: punta lau okertua. Kaligrafia-luma: leuna eta berdina. Arkatza: mehea eta iluna, alearekin. Errotuladorea: zabala, feltro-ehundurarekin.</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+4"/>
         <source> pt</source>
         <translation> pt</translation>
     </message>
@@ -5044,17 +5044,17 @@ Zabalera dinamikoa</translation>
     <message>
         <location filename="../../src/gui/UBReadAloud.cpp" line="+58"/>
         <source>There is no text to read on this page: write or select a text, or open a PDF with text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ez dago irakurtzeko testurik orri honetan: idatzi edo hautatu testu bat, edo ireki testua duen PDF bat.</translation>
     </message>
     <message>
         <location line="+23"/>
         <source>Read aloud</source>
-        <translation type="unfinished"></translation>
+        <translation>Irakurri ozen</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>The voices of the system could not be used to read aloud.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ezin izan dira sistemaren ahotsak erabili ozen irakurtzeko.</translation>
     </message>
 </context>
 <context>
@@ -5253,12 +5253,12 @@ Zabalera dinamikoa</translation>
     <message>
         <location line="+6"/>
         <source>Fit to the text size</source>
-        <translation type="unfinished"></translation>
+        <translation>Doitu letra-tamainara</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>On a PDF, the band takes the height of the line of text, with a little margin.</source>
-        <translation type="unfinished"></translation>
+        <translation>PDF batean, bandak testu-lerroaren altuera hartzen du, marjina txiki batekin.</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -5274,17 +5274,17 @@ Zabalera dinamikoa</translation>
     <message>
         <location line="+120"/>
         <source>Line</source>
-        <translation type="unfinished">Lerroa</translation>
+        <translation>Lerroa</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Start</source>
-        <translation type="unfinished"></translation>
+        <translation>Hasiera</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>End</source>
-        <translation type="unfinished"></translation>
+        <translation>Amaiera</translation>
     </message>
 </context>
 <context>
@@ -5558,43 +5558,43 @@ Zabalera dinamikoa</translation>
         <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-282"/>
         <location line="+4"/>
         <source>Spotlight</source>
-        <translation type="unfinished"></translation>
+        <translation>Fokua</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Magnifier</source>
-        <translation type="unfinished">Lupa</translation>
+        <translation>Lupa</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Spotlight: darkens all but a circle around the pointer. Magnifier: magnifies what is under the pointer.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fokua: dena iluntzen du erakuslearen inguruko zirkulua izan ezik. Lupa: erakuslearen azpian dagoena handitzen du.</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Radius</source>
-        <translation type="unfinished"></translation>
+        <translation>Erradioa</translation>
     </message>
     <message>
         <location line="+1"/>
         <source> px</source>
-        <translation type="unfinished"> px</translation>
+        <translation> px</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Darkness</source>
-        <translation type="unfinished"></translation>
+        <translation>Iluntasuna</translation>
     </message>
     <message>
         <location line="+2"/>
         <location line="+5"/>
         <source> %</source>
-        <translation type="unfinished"> %</translation>
+        <translation> %</translation>
     </message>
     <message>
         <location line="-2"/>
         <source>Zoom</source>
-        <translation type="unfinished"></translation>
+        <translation>Handitzea</translation>
     </message>
 </context>
 <context>
@@ -5725,7 +5725,7 @@ Zabalera dinamikoa</translation>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-774"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-773"/>
         <source>Color</source>
         <translation>Kolorea</translation>
     </message>
