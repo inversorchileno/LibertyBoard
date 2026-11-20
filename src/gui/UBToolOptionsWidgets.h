@@ -253,8 +253,11 @@ public:
     /** @brief The shape chosen, from UBShapeKind. */
     void setChoice(int kind);
 
-    /** @brief Lays the drawings out in this many columns. */
+    /** @brief Lays the small drawings out in this many columns, for the toolbar. */
     void setColumns(int columns);
+
+    /** @brief Larger drawings in this many columns, taking all the width, for the options window. */
+    void setWide(int columns);
 
 signals:
     void choiceChanged(int kind);

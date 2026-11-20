@@ -891,7 +891,7 @@ QIcon penStyleIcon(int strokeType, const QColor& color)
 static QIcon shapeIcon(int kind)
 {
     const QSize size(20, 20);
-    const qreal ratio = 2;
+    const qreal ratio = 3; // sharp also when drawn larger, in the options window
     QPixmap pixmap(size * ratio);
     pixmap.setDevicePixelRatio(ratio);
     pixmap.fill(Qt::transparent);
@@ -939,7 +939,7 @@ UBShapeChoice::UBShapeChoice(QWidget* parent)
     }
 
     connect(mGroup, &QButtonGroup::idClicked, this, &UBShapeChoice::choiceChanged);
-    setColumns(5);
+    setWide(10);
 }
 
 void UBShapeChoice::setChoice(int kind)
@@ -962,11 +962,41 @@ void UBShapeChoice::setColumns(int columns)
 
     for (int i = 0; i < kinds.size(); ++i)
     {
-        grid->addWidget(mGroup->button(kinds.at(i)), i / columns, i % columns);
+        QAbstractButton* button = mGroup->button(kinds.at(i));
+        button->setFixedSize(22, 22);
+        button->setIconSize(QSize(20, 20));
+        grid->addWidget(button, i / columns, i % columns);
     }
 
     const int rows = (kinds.size() + columns - 1) / columns;
     setFixedSize(columns * 22 + (columns - 1), rows * 22 + (rows - 1));
+}
+
+void UBShapeChoice::setWide(int columns)
+{
+    delete layout();
+
+    auto grid = new QGridLayout(this);
+    grid->setContentsMargins(0, 0, 0, 0);
+    grid->setSpacing(3);
+
+    const QList<int> kinds = UBShapeGeometry::shapeKinds();
+
+    for (int i = 0; i < kinds.size(); ++i)
+    {
+        QAbstractButton* button = mGroup->button(kinds.at(i));
+        button->setMinimumSize(34, 34);
+        button->setMaximumSize(QWIDGETSIZE_MAX, 34);
+        button->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
+        button->setIconSize(QSize(28, 28));
+        grid->addWidget(button, i / columns, i % columns);
+    }
+
+    // As wide as the window, as high as its rows.
+    const int rows = (kinds.size() + columns - 1) / columns;
+    setMinimumSize(columns * 34 + (columns - 1) * 3, rows * 34 + (rows - 1) * 3);
+    setMaximumSize(QWIDGETSIZE_MAX, rows * 34 + (rows - 1) * 3);
+    setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
 }
 
 QIcon optionIcon(UBOptionIcon kind)
