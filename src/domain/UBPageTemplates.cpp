@@ -331,7 +331,7 @@ void UBPageTemplates::drawGrid(QPainter* painter, const QRectF& area, int column
     painter->drawRect(area);
 }
 
-void UBPageTemplates::drawMonth(QPainter* painter, const QRectF& area, const QDate& month, bool small) const
+void UBPageTemplates::drawMonth(QPainter* painter, const QRectF& area, const QDate& month, bool compact) const
 {
     const QDate first(month.year(), month.month(), 1);
     const int firstDay = mFirstDay;
@@ -340,7 +340,7 @@ void UBPageTemplates::drawMonth(QPainter* painter, const QRectF& area, const QDa
 
     QRectF grid = area;
 
-    if (small)
+    if (compact)
     {
         const qreal titleHeight = area.height() * 0.16;
         drawLabel(painter, QRectF(area.left(), area.top(), area.width(), titleHeight),
@@ -350,22 +350,22 @@ void UBPageTemplates::drawMonth(QPainter* painter, const QRectF& area, const QDa
         grid.setTop(area.top() + titleHeight);
     }
 
-    const qreal headerHeight = small ? grid.height() / 7 : grid.height() * 0.07;
+    const qreal headerHeight = compact ? grid.height() / 7 : grid.height() * 0.07;
     const qreal cellWidth = grid.width() / 7;
-    const qreal cellHeight = (grid.height() - headerHeight) / (small ? 6 : weeks);
+    const qreal cellHeight = (grid.height() - headerHeight) / (compact ? 6 : weeks);
 
     for (int i = 0; i < 7; ++i)
     {
         const int dayOfWeek = (firstDay - 1 + i) % 7 + 1;
-        const QString name = small ? dayName(dayOfWeek, true).left(mLanguage == "en" || mLanguage == "de" ? 2 : 1)
+        const QString name = compact ? dayName(dayOfWeek, true).left(mLanguage == "en" || mLanguage == "de" ? 2 : 1)
                                    : dayName(dayOfWeek, false);
         drawLabel(painter, QRectF(grid.left() + i * cellWidth, grid.top(), cellWidth, headerHeight), name,
-                  Qt::AlignCenter, headerHeight * (small ? 0.6 : 0.45), !small);
+                  Qt::AlignCenter, headerHeight * (compact ? 0.6 : 0.45), !compact);
     }
 
-    const QRectF days(grid.left(), grid.top() + headerHeight, grid.width(), cellHeight * (small ? 6 : weeks));
+    const QRectF days(grid.left(), grid.top() + headerHeight, grid.width(), cellHeight * (compact ? 6 : weeks));
 
-    if (!small)
+    if (!compact)
     {
         drawGrid(painter, days, 7, weeks);
     }
@@ -375,7 +375,7 @@ void UBPageTemplates::drawMonth(QPainter* painter, const QRectF& area, const QDa
         const int index = offset + day - 1;
         const QRectF cell(days.left() + (index % 7) * cellWidth, days.top() + (index / 7) * cellHeight, cellWidth, cellHeight);
 
-        if (small)
+        if (compact)
         {
             drawLabel(painter, cell, QString::number(day), Qt::AlignCenter, cellHeight * 0.55);
         }

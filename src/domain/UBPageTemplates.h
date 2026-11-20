@@ -109,7 +109,7 @@ private:
     void drawLines(QPainter* painter, const QRectF& area, qreal spacing, bool withBoxes = false, bool withBullets = false) const;
     void drawGrid(QPainter* painter, const QRectF& area, int columns, int rows) const;
     void drawLabel(QPainter* painter, const QRectF& area, const QString& text, int flags, qreal size, bool bold = false) const;
-    void drawMonth(QPainter* painter, const QRectF& area, const QDate& month, bool small) const;
+    void drawMonth(QPainter* painter, const QRectF& area, const QDate& month, bool compact) const;
 
     void drawDailyPlanner(QPainter* painter, const QRectF& rect, const QDate& date) const;
     void drawWeek(QPainter* painter, const QRectF& rect, const QDate& date, bool withHours) const;
