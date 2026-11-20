@@ -11,7 +11,7 @@ LibertyBoard es una pizarra digital y lector PDF con puntero láser estilo Drawb
 5. **Menús, guardar, actualización, zoom, notas de colores, idiomas y triángulos de opciones.** *(hecha, compilaciones 9 a 13)*
 6. **Pestañas, Guardar/Guardar como, girar, sellos, buscar, notas rápidas, adjuntos y sonidos.** *(hecha, compilación 14)*
 7. **Logo nuevo, íconos a color, scroll continuo, pantalla completa, barra que cabe en la pantalla.** *(hecha, compilación 15)*
-8. **Mejoras del Word de Luis, en 5 versiones.** *(Versión 1: compilación 20; Versión 2: compilación 21; observaciones: compilación 22; Versión 3: compilaciones 24 y 25)*
+8. **Mejoras del Word de Luis, en 5 versiones.** *(Versión 1: compilación 20; Versión 2: compilación 21; observaciones: compilación 22; Versión 3: compilaciones 24 a 26)*
 
 ## 1. Barras de herramientas
 
@@ -239,7 +239,7 @@ Luis revisó la compilación 21 y entregó «observaciones_V2.docx» con 15 punt
 13. **Dictado en español de Chile:** el dictado de Windows no acepta el teclado es-CL; al dictar, si el teclado es de otro español que no sea España ni México, se cambia a español de México para esta aplicación (`UBPlatformUtils::startDictation`). Sin probar en Windows.
 15. **Rotulador:** usa los mismos 13 colores que la pluma.
 
-## Versión 3 de las mejoras del Word (compilaciones 24 y 25)
+## Versión 3 de las mejoras del Word (compilaciones 24 a 26)
 
 - **Plantillas** (#3b, `src/domain/UBPageTemplates`): Estilo plantilla tiene dos pestañas, **Hoja** (las tramas y el tamaño de la cuadrícula) y **Plantillas**; el color de la hoja sirve para ambas. 21 plantillas aprobadas por Luis, dibujadas por LibertyBoard (las de internet suelen tener derechos de autor): lista de tareas, lista con viñetas, planificador diario, calendario semanal (con y sin horas), calendario mensual, planificador anual, lista de compras, seguimiento de hábitos, notas Cornell, hoja de reunión, hoja de puntos, pauta de caligrafía, papel milimetrado, pentagrama, plan de clase, lista de asistencia, planilla de notas, tabla de 2 columnas, mapa mental y guion gráfico.
   - Grises medio transparentes sobre fondo transparente: se ven en cualquier color de hoja.
@@ -262,6 +262,7 @@ Luis revisó la compilación 21 y entregó «observaciones_V2.docx» con 15 punt
 - **Colores:** círculos de 20 px y exactamente 3 filas en todas las herramientas; la Nota ofrece los 13 colores de la pluma con la rueda y el cuentagotas.
 - **Guardar/Descartar/Cancelar** en el idioma del programa en Windows: se carga `qtbase_<idioma>.qm` (el `qt_<idioma>.qm` no carga si falta algún módulo de Qt).
 - **Compilación 25** (pruebas de Luis): un GIF arrastrado desde klipy.com da la dirección de su página; LibertyBoard abre la página y descarga el GIF o WebP que comparte (`UBGifWindow::findGif`). Las tablas nacen con líneas negras de 1,5 puntos (antes grises de 1 punto, casi invisibles) y Estilo de tabla ofrece color y grosor de las líneas. Flecha/Lazo y Archivo/Hipervínculo son cuadros con dibujo arriba y nombre abajo. La línea recta salió de la barra (está en Formas).
+- **Compilación 26:** el GIF arrastrado se busca en la ventana de klipy.com que lo muestra (la página de cada GIF se arma al ejecutarse, así que descargada no lo trae): se prueba primero la versión GIF de cada dirección, luego WebP. Las formas del escritorio ocupan todo el ancho (2 filas de 10, más grandes). En un PDF el candado dice «Bloquear PDF» / «Desbloquear PDF».
 - **Traducciones:** desde la V3 los textos nuevos se traducen al español, alemán, francés, chino y japonés; los demás idiomas los muestran en inglés (pedido de Luis).
 
 ## Forma de trabajo
