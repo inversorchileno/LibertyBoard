@@ -132,6 +132,7 @@ private:
     void onActiveSceneChanged();
     void onFileImported(std::shared_ptr<UBDocumentProxy> document, const QString& filePath);
     void onTabClicked(int index);
+    void onTabMoved(int from, int to);
     void onUndoStackChanged();
 
     QTabBar* mTabBar{nullptr};

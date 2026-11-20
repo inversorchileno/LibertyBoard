@@ -65,6 +65,8 @@ UBDocumentTabs::UBDocumentTabs(QWidget* parent)
     mTabBar->setElideMode(Qt::ElideMiddle);
     mTabBar->setDocumentMode(true);
     mTabBar->setDrawBase(false);
+    // A tab is dragged to put the documents in another order.
+    mTabBar->setMovable(true);
     // As high as the tabs, with room under their names and little above them.
     setFixedHeight(25);
 
@@ -82,6 +84,7 @@ UBDocumentTabs::UBDocumentTabs(QWidget* parent)
 
     connect(mTabBar, &QTabBar::tabBarClicked, this, &UBDocumentTabs::onTabClicked);
     connect(mTabBar, &QTabBar::tabCloseRequested, this, &UBDocumentTabs::closeTab);
+    connect(mTabBar, &QTabBar::tabMoved, this, &UBDocumentTabs::onTabMoved);
     connect(newButton, &QToolButton::clicked, this, &UBDocumentTabs::newDocument);
     connect(UBApplication::boardController, &UBBoardController::activeSceneChanged, this, &UBDocumentTabs::onActiveSceneChanged);
     connect(UBApplication::applicationController, &UBApplicationController::fileImported, this, &UBDocumentTabs::onFileImported);
@@ -467,6 +470,13 @@ bool UBDocumentTabs::isBlank(const OpenDocument& open) const
 
     std::shared_ptr<UBGraphicsScene> page = UBPersistenceManager::persistenceManager()->loadDocumentScene(open.document, 0);
     return page && page->isEmpty();
+}
+
+void UBDocumentTabs::onTabMoved(int from, int to)
+{
+    // The documents keep the order of their tabs.
+    mDocuments.move(from, to);
+    saveSession();
 }
 
 void UBDocumentTabs::onTabClicked(int index)
