@@ -29,6 +29,8 @@
 
 #include "UBBoardView.h"
 
+#include "gui/UBReadAloud.h"
+
 #include <QClipboard>
 #include <QDesktopServices>
 #include <QMessageBox>
@@ -1408,6 +1410,21 @@ void UBBoardView::mousePressEvent (QMouseEvent *event)
             }
         } break;
 
+        case UBStylusTool::Voice :
+            // With "Selected text", a rectangle dragged over the text is read.
+            if (UBSettings::settings()->readSelection->get().toBool() && !UBSettings::settings()->voiceDictate->get().toBool())
+            {
+                if (!mRubberBand)
+                    mRubberBand = new UBRubberBand (QRubberBand::Rectangle, this);
+
+                mRubberBand->setGeometry (QRect (mMouseDownPos, QSize ()));
+                mRubberBand->show ();
+                mIsSelectingTextToRead = true;
+            }
+
+            event->accept ();
+            break;
+
         case UBStylusTool::Capture :
             scene ()->deselectAllItems ();
 
@@ -1429,7 +1446,8 @@ void UBBoardView::mousePressEvent (QMouseEvent *event)
                     && currentTool != UBStylusTool::Comment
                     && currentTool != UBStylusTool::Attachment
                     && currentTool != UBStylusTool::Sound
-                    && currentTool != UBStylusTool::Spotlight) {
+                    && currentTool != UBStylusTool::Spotlight
+                    && currentTool != UBStylusTool::Voice) {
                 viewport()->setCursor (QCursor (Qt::BlankCursor));
             }
             if (scene () && !mTabletStylusIsPressed) {
@@ -1651,8 +1669,9 @@ void UBBoardView::mouseMoveEvent (QMouseEvent *event)
     } break;
 
     case UBStylusTool::Text :
+    case UBStylusTool::Voice :
     case UBStylusTool::Capture : {
-        if (mRubberBand && (mIsCreatingTextZone || mIsCreatingSceneGrabZone)) {
+        if (mRubberBand && (mIsCreatingTextZone || mIsCreatingSceneGrabZone || mIsSelectingTextToRead)) {
             mRubberBand->setGeometry(QRect(mMouseDownPos, event->pos()).normalized());
             event->accept();
         }
@@ -1907,6 +1926,22 @@ void UBBoardView::mouseReleaseEvent (QMouseEvent *event)
             }
         }
         QGraphicsView::mouseReleaseEvent (event);
+    }
+    else if (currentTool == UBStylusTool::Voice)
+    {
+        if (mRubberBand && mIsSelectingTextToRead && mRubberBand->geometry().width() > 6)
+        {
+            const QRect rect = mRubberBand->geometry();
+            UBReadAloud::instance()->readArea(QRectF(mapToScene(rect.topLeft()), mapToScene(rect.bottomRight())).normalized());
+        }
+
+        if (mRubberBand)
+        {
+            mRubberBand->hide();
+        }
+
+        mIsSelectingTextToRead = false;
+        event->accept();
     }
     else if (currentTool == UBStylusTool::Capture)
     {

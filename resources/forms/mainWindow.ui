@@ -1674,6 +1674,22 @@
     <string>Spotlight and magnifier: darken the screen but around the pointer, or magnify under it</string>
    </property>
   </action>
+  <action name="actionVoice">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../OpenBoard.qrc">
+     <normaloff>:/images/stylusPalette/voiceRead.svg</normaloff>
+     <normalon>:/images/stylusPalette/voiceReadOn.svg</normalon>:/images/stylusPalette/voiceRead.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Read and dictate</string>
+   </property>
+   <property name="toolTip">
+    <string>Read the page aloud, or dictate with the voice</string>
+   </property>
+  </action>
   <action name="actionComment">
    <property name="checkable">
     <bool>true</bool>

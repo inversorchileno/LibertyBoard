@@ -22,34 +22,57 @@
 #pragma once
 
 #include <QObject>
+#include <QRectF>
 
 class QTextToSpeech;
 
 /**
- * @brief Reads the page aloud with the voices of the system.
+ * @brief Reads the pages aloud with the voices of the system.
  *
- * It reads the texts selected on the page, or else the text of the PDF
- * page and the texts written on it, from the top.
+ * It reads from the start of the page shown and goes on with the next
+ * pages, or reads the text inside a rectangle dragged on the page, or
+ * the texts selected. It can pause, go on, stop and skip to the next page.
  */
 class UBReadAloud : public QObject
 {
     Q_OBJECT
 
 public:
-    explicit UBReadAloud(QObject* parent = nullptr);
+    /** @brief The one voice of LibertyBoard. */
+    static UBReadAloud* instance();
 
     bool isReading() const;
+    bool isPaused() const;
 
-    /** @brief Reads the page shown, or stops when it is reading. */
+    /** @brief Reads the texts selected, or else the page; stops when it is reading. For the menu. */
     void readOrStop();
 
-    /** @brief The text that would be read on the page shown. */
-    static QString pageText();
+    /** @brief Reads from the start of the page shown, then the next pages; goes on after a pause. */
+    void play();
+
+    void pause();
+    void stop();
+
+    /** @brief Goes to the next page and reads it. */
+    void nextPage();
+
+    /** @brief Reads the text inside a rectangle of the page shown, in the coordinates of the scene. */
+    void readArea(const QRectF& sceneRect);
 
 signals:
     void readingChanged(bool reading);
 
 private:
+    explicit UBReadAloud(QObject* parent = nullptr);
+
+    void say(const QString& text);
+    void onStateChanged();
+    static QString pageText(bool selectionFirst);
+    static QString areaText(const QRectF& sceneRect);
+
     QTextToSpeech* mSpeech{nullptr};
     QString mPendingText;
+    bool mContinuous{false};    // goes on with the next pages
+    bool mStopping{false};
+    bool mWasSpeaking{false};
 };

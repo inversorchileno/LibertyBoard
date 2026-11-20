@@ -252,6 +252,7 @@ private:
     QRubberBand *mRubberBand;
     bool mIsCreatingTextZone;
     bool mIsCreatingSceneGrabZone;
+    bool mIsSelectingTextToRead{false};
 
     bool isAbsurdPoint(QPoint point);
 

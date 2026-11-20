@@ -364,7 +364,9 @@ class UBSettings : public QObject
         UBSetting* boardMarkerAlpha;
         UBSetting* markerChiselTip;
         UBSetting* highlightFitText;
-        UBSetting* attachmentHyperlink;    // the attachment tool puts a hyperlink instead of a file    // the highlight band as high as the line of text of the PDF     // straight ends like a highlighter, instead of round ones
+        UBSetting* attachmentHyperlink;
+        UBSetting* voiceDictate;       // the voice tool dictates instead of reading
+        UBSetting* readSelection;      // the voice tool reads a rectangle dragged on the page    // the attachment tool puts a hyperlink instead of a file    // the highlight band as high as the line of text of the PDF     // straight ends like a highlighter, instead of round ones
 
         UBColorListSetting* boardMarkerLightBackgroundColors;
         UBColorListSetting* boardMarkerLightBackgroundSelectedColors;

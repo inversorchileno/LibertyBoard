@@ -160,6 +160,10 @@
         <file>images/stylusPalette/spotlightOn.svg</file>
         <file>images/stylusPalette/magnifier.svg</file>
         <file>images/stylusPalette/magnifierOn.svg</file>
+        <file>images/stylusPalette/voiceRead.svg</file>
+        <file>images/stylusPalette/voiceReadOn.svg</file>
+        <file>images/stylusPalette/voiceDictate.svg</file>
+        <file>images/stylusPalette/voiceDictateOn.svg</file>
         <file>images/stylusPalette/hyperlink.svg</file>
         <file>images/stylusPalette/hyperlinkOn.svg</file>
         <file>images/toolbar/closeDocument.svg</file>

@@ -456,6 +456,19 @@ void UBPlatformUtils::setFrontProcess()
 
 bool UBPlatformUtils::startDictation()
 {
+    // The voice typing of Windows listens in the language of the keyboard.
+    // It knows Spanish of Spain and of Mexico, not of Chile or of other
+    // countries: there, the Spanish of Mexico is chosen, whose Latin
+    // American keyboard is the one of those countries.
+    const LANGID language = LOWORD(reinterpret_cast<UINT_PTR>(GetKeyboardLayout(0)));
+    const WORD sublanguage = SUBLANGID(language);
+
+    if (PRIMARYLANGID(language) == LANG_SPANISH && sublanguage != SUBLANG_SPANISH && sublanguage != SUBLANG_SPANISH_MODERN
+        && sublanguage != SUBLANG_SPANISH_MEXICAN)
+    {
+        LoadKeyboardLayoutW(L"0000080A", KLF_ACTIVATE | KLF_SETFORPROCESS);
+    }
+
     // Windows + H opens the voice typing of Windows.
     INPUT keys[4] = {};
 

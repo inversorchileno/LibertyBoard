@@ -73,6 +73,8 @@ UBStylusPalette::UBStylusPalette(QWidget *parent, Qt::Orientation orient)
     actions << UBApplication::mainWindow->actionSound;
     actions << UBApplication::mainWindow->actionUnderline;
     actions << UBApplication::mainWindow->actionText;
+    // Only on the board: reading and dictation.
+    actions << UBApplication::mainWindow->actionVoice;
     actions << UBApplication::mainWindow->actionLine;
     actions << UBApplication::mainWindow->actionArrowShape;
     actions << UBApplication::mainWindow->actionRectangle;

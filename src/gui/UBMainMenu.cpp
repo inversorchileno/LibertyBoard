@@ -269,7 +269,7 @@ void UBMainMenu::createMenus()
     editMenu->addAction(mMainWindow->actionPaste);
     // Reading aloud and dictation, with the voices of the system.
     QMenu* voiceMenu = editMenu->addMenu(QIcon(":/images/toolbar/readAloud.svg"), tr("Read and dictate"));
-    auto readAloud = new UBReadAloud(this);
+    UBReadAloud* readAloud = UBReadAloud::instance();
     QAction* readAction = voiceMenu->addAction(tr("Read aloud"));
     readAction->setShortcut(QKeySequence("Ctrl+Shift+L"));
     readAction->setToolTip(tr("Reads the texts selected, or the text of the page"));
@@ -281,16 +281,7 @@ void UBMainMenu::createMenus()
 
     QAction* dictateAction = voiceMenu->addAction(tr("Dictate (Windows + H)"));
     dictateAction->setToolTip(tr("Opens the dictation of Windows: what is said is written where the cursor of text is"));
-    connect(dictateAction, &QAction::triggered, this, [this]() {
-        // After the menu closes, so that the text keeps the cursor.
-        QTimer::singleShot(200, this, [this]() {
-            if (!UBPlatformUtils::startDictation())
-            {
-                mMainWindow->information(tr("Dictate"), tr("The dictation of the system is not available here. "
-                                                          "On Windows, press Windows + H in a text."));
-            }
-        });
-    });
+    connect(dictateAction, &QAction::triggered, this, &UBVoiceOptionsPanel::dictate);
 
     QAction* transcribeAction = voiceMenu->addAction(tr("Transcribe an audio (coming with the AI)"));
     transcribeAction->setEnabled(false);
@@ -471,6 +462,7 @@ void UBMainMenu::createCornerButtons()
     });
     UBAttachmentOptionsPanel::updateToolIcon(false);
     UBSpotlightOptionsPanel::updateToolIcon();
+    UBVoiceOptionsPanel::updateToolIcon();
 
     auto lockButton = new QToolButton(corner);
     lockButton->setDefaultAction(lockAction);
