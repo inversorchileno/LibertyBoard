@@ -38,6 +38,8 @@
 
 #include "board/UBDocumentPrinter.h"
 #include "board/UBPageExtractor.h"
+#include "board/UBBoardController.h"
+#include "board/UBBoardSaver.h"
 #include "board/UBDrawingController.h"
 #include "board/UBDualBoard.h"
 #include "core/UBApplication.h"
@@ -451,13 +453,33 @@ void UBMainMenu::createCornerButtons()
     lockAction->setToolTip(tr("Lock the canvas: nothing can be drawn, written, highlighted, selected, moved or deleted; "
                               "the laser pointer and the hand still work"));
     connect(lockAction, &QAction::toggled, UBDrawingController::drawingController(), &UBDrawingController::setCanvasLocked);
+
+    // On a page of a PDF, the lock says that it locks the PDF.
+    auto updateLockText = [lockAction]() {
+        const bool locked = UBDrawingController::drawingController()->isCanvasLocked();
+
+        if (UBBoardSaver::isFromPdf())
+        {
+            lockAction->setText(locked ? tr("Unlock PDF") : tr("Lock PDF"));
+            lockAction->setToolTip(tr("Lock the PDF: nothing can be drawn, written, highlighted, selected, moved or deleted; "
+                                      "the laser pointer and the hand still work"));
+        }
+        else
+        {
+            lockAction->setText(locked ? tr("Unlock canvas") : tr("Lock canvas"));
+            lockAction->setToolTip(tr("Lock the canvas: nothing can be drawn, written, highlighted, selected, moved or deleted; "
+                                      "the laser pointer and the hand still work"));
+        }
+    };
+
     connect(UBDrawingController::drawingController(), &UBDrawingController::canvasLockedChanged, this,
-            [this, lockAction](bool locked) {
+            [this, lockAction, updateLockText](bool locked) {
                 lockAction->setChecked(locked);
                 lockAction->setIcon(QIcon(locked ? ":/images/toolbar/lockClosed.svg" : ":/images/toolbar/lockOpen.svg"));
-                lockAction->setText(locked ? tr("Unlock canvas") : tr("Lock canvas"));
+                updateLockText();
                 updateLockedTools(locked);
             });
+    connect(UBApplication::boardController, &UBBoardController::activeSceneChanged, this, updateLockText);
 
     // The lock is for the board: the desktop keeps all its tools. The
     // attachment tool puts files on the board, hyperlinks on the desktop.
@@ -475,11 +497,17 @@ void UBMainMenu::createCornerButtons()
     lockButton->setStyleSheet(buttonStyle);
     layout->insertWidget(layout->indexOf(outlineButton), lockButton);
 
-    // Room for the longer of its two names.
-    lockAction->setText(tr("Unlock canvas"));
-    const int unlockWidth = lockButton->sizeHint().width();
-    lockAction->setText(tr("Lock canvas"));
-    lockButton->setMinimumWidth(qMax(unlockWidth, lockButton->sizeHint().width()));
+    // Room for the longest of its names.
+    int widest = 0;
+
+    for (const QString& name : { tr("Unlock canvas"), tr("Lock canvas"), tr("Unlock PDF"), tr("Lock PDF") })
+    {
+        lockAction->setText(name);
+        widest = qMax(widest, lockButton->sizeHint().width());
+    }
+
+    lockButton->setMinimumWidth(widest);
+    updateLockText();
 
     // Goes to the desktop mode, like the board button of the desktop palette goes back.
     auto desktopButton = new QToolButton(corner);
