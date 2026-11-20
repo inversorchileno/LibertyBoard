@@ -21,6 +21,7 @@ HEADERS +=  \
     src/gui/UBDictation.h \
     src/gui/UBTextBoxes.h \
     src/gui/UBGifWindow.h \
+    src/gui/UBToolbarChoice.h \
     src/gui/UBDocumentTabs.h \
     src/gui/UBNoteToolIcon.h \
     src/gui/UBCommentPopup.h \
@@ -98,6 +99,7 @@ SOURCES +=  \
     src/gui/UBDictation.cpp \
     src/gui/UBTextBoxes.cpp \
     src/gui/UBGifWindow.cpp \
+    src/gui/UBToolbarChoice.cpp \
     src/gui/UBDocumentTabs.cpp \
     src/gui/UBNoteToolIcon.cpp \
     src/gui/UBCommentPopup.cpp \

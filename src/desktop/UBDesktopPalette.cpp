@@ -46,6 +46,7 @@
 #include "board/UBDrawingController.h"
 
 #include "gui/UBMainWindow.h"
+#include "gui/UBToolbarChoice.h"
 
 #include "core/memcheck.h"
 
@@ -88,11 +89,13 @@ UBDesktopPalette::UBDesktopPalette(QWidget *parent, UBRightPalette* _rightPalett
     // Saves what is on the screen, with the annotations, in one click.
     mScreenshotAction = new QAction(QIcon(":/images/stylusPalette/screenshot.svg"), tr("Save a screenshot"), this);
     mScreenshotAction->setToolTip(tr("Save a screenshot with the annotations in the Pictures folder"));
+    mScreenshotAction->setObjectName("actionDesktopScreenshot");
     connect(mScreenshotAction, &QAction::triggered, this, &UBDesktopPalette::screenshotClick);
 
     // Erases everything drawn on the desktop in one click.
     mClearAction = new QAction(QIcon(":/images/stylusPalette/trash.svg"), tr("Erase all"), this);
     mClearAction->setToolTip(tr("Erase everything drawn on the screen"));
+    mClearAction->setObjectName("actionDesktopClear");
     connect(mClearAction, &QAction::triggered, this, &UBDesktopPalette::clearClick);
 
     actions << toolActions();
@@ -118,6 +121,12 @@ UBDesktopPalette::UBDesktopPalette(QWidget *parent, UBRightPalette* _rightPalett
 
     setActions(actions);
     setButtonIconSize(QSize(42, 42));
+
+    // Every button but the one back to the board may be taken out of the
+    // palette in the Customize menu.
+    QList<QAction*> choosable = toolActions();
+    choosable << mScreenshotAction << mClearAction;
+    UBToolbarChoice::registerPalette(UBToolbarChoice::Palette::Desktop, this, choosable);
 
     if (UBSettings::settings()->value(sHorizontalKey, false).toBool())
     {

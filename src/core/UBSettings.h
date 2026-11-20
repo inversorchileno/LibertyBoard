@@ -368,6 +368,8 @@ class UBSettings : public QObject
         UBSetting* emojiChoice;        // the emoji the emoji tool puts
         UBSetting* emojiSize;          // the width of an emoji put, in points of the page
         UBSetting* weekStartsOnSunday; // the calendars of the templates start their weeks on Sunday
+        UBSetting* hiddenBoardTools;   // the buttons taken out of the board palette, by the names of their actions
+        UBSetting* hiddenDesktopTools; // the same for the desktop palette
         UBSetting* shapeKind;          // the shape drawn by the shapes tool (UBShapeKind)
         UBSetting* readFrom;           // where the voice tool reads from: the start, a rectangle or a click (UBReadFrom)
 

@@ -292,8 +292,15 @@ void UBActionPalette::actionChanged()
 {
     for(int i = 0; i < mActions.length() && i < mButtons.length(); i++)
     {
-        mButtons.at(i)->setVisible(mActions.at(i)->isVisible());
+        mButtons.at(i)->setVisible(mActions.at(i)->isVisible() && !mHiddenActions.contains(mActions.at(i)));
     }
+}
+
+void UBActionPalette::setHiddenActions(const QList<QAction*>& hidden)
+{
+    mHiddenActions = hidden;
+    actionChanged();
+    adjustSizeAndPosition();
 }
 
 void UBActionPalette::clearLayout()

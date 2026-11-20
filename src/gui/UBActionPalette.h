@@ -77,6 +77,12 @@ class UBActionPalette : public UBFloatingPalette
 
         virtual UBActionPaletteButton* getButtonFromAction(QAction* action);
 
+        /**
+         * @brief Hides the buttons of these actions on this palette only,
+         * as chosen by the user; the actions stay in the other palettes.
+         */
+        void setHiddenActions(const QList<QAction*>& hidden);
+
     public slots:
         void close();
 
@@ -104,6 +110,7 @@ class UBActionPalette : public UBFloatingPalette
         QActionGroup* mActionGroup;
         QList<QAction*> mActions;
         QMap<QAction*, UBActionPaletteButton*> mMapActionToButton;
+        QList<QAction*> mHiddenActions;
 
         bool mIsClosable;
         Qt::ToolButtonStyle mToolButtonStyle;

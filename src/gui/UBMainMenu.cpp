@@ -55,6 +55,7 @@
 #include "gui/UBShapeToolIcon.h"
 #include "frameworks/UBPlatformUtils.h"
 #include "gui/UBDictation.h"
+#include "gui/UBToolbarChoice.h"
 #include "gui/UBReadAloud.h"
 #include "gui/UBSpotlight.h"
 #include "gui/UBToolOptionsPanel.h"
@@ -301,6 +302,13 @@ void UBMainMenu::createMenus()
     mMainWindow->addAction(mFullScreenAction);
     connect(mFullScreenAction, &QAction::toggled, this, &UBMainMenu::setFullScreen);
     editMenu->addAction(mFullScreenAction);
+
+    // Every tool, also those taken out of the palettes; and the choice of
+    // the buttons of each palette.
+    QMenu* toolsMenu = menuBar->addMenu(tr("&Tools"));
+    connect(toolsMenu, &QMenu::aboutToShow, this, [toolsMenu]() { UBToolbarChoice::fillToolsMenu(toolsMenu); });
+    QMenu* customizeMenu = menuBar->addMenu(tr("&Customize"));
+    connect(customizeMenu, &QMenu::aboutToShow, this, [customizeMenu]() { UBToolbarChoice::fillCustomizeMenu(customizeMenu); });
 
     QMenu* aboutMenu = menuBar->addMenu(tr("&About"));
     aboutMenu->addAction(mMainWindow->actionOpenTutorial);

@@ -43,6 +43,7 @@
 #include "board/UBBoardView.h"
 #include "gui/UBDocumentScrollBar.h"
 #include "board/UBDrawingController.h"
+#include "gui/UBToolbarChoice.h"
 
 
 #include "core/memcheck.h"
@@ -84,6 +85,7 @@ UBStylusPalette::UBStylusPalette(QWidget *parent, Qt::Orientation orient)
     // Saves the board as it is seen, without the palettes, in one click.
     mScreenshotAction = new QAction(QIcon(":/images/stylusPalette/screenshot.svg"), tr("Save a screenshot"), this);
     mScreenshotAction->setToolTip(tr("Save a screenshot of the board in the Pictures folder"));
+    mScreenshotAction->setObjectName("actionBoardScreenshot");
     mScreenshotAction->setProperty("ungrouped", true);
     connect(mScreenshotAction, &QAction::triggered, this, &UBStylusPalette::screenshotRequested);
     actions << mScreenshotAction;
@@ -92,6 +94,9 @@ UBStylusPalette::UBStylusPalette(QWidget *parent, Qt::Orientation orient)
     setButtonIconSize(QSize(42, 42));
     setBackgroundBrush(QBrush(UBSettings::opaquePaletteColor));
     groupActions();
+
+    // Every button may be taken out of the palette in the Customize menu.
+    UBToolbarChoice::registerPalette(UBToolbarChoice::Palette::Board, this, actions);
 
     UBShortcutManager::shortcutManager()->addActionGroup(mActionGroup);
 

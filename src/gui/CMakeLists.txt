@@ -57,6 +57,8 @@ target_sources(${PROJECT_NAME} PRIVATE
     UBTextBoxes.h
     UBGifWindow.cpp
     UBGifWindow.h
+    UBToolbarChoice.cpp
+    UBToolbarChoice.h
     UBDocumentTabs.cpp
     UBDocumentTabs.h
     UBNoteToolIcon.cpp

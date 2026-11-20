@@ -355,6 +355,8 @@ void UBSettings::init()
     markerChiselTip = new UBSetting(this, "Board", "LibertyBoardMarkerChiselTip", false);
     readFrom = new UBSetting(this, "Board", "LibertyBoardReadFrom", 0);
     shapeKind = new UBSetting(this, "Board", "LibertyBoardShapeKind", 0);
+    hiddenBoardTools = new UBSetting(this, "Board", "LibertyBoardHiddenBoardTools", QStringList());
+    hiddenDesktopTools = new UBSetting(this, "Board", "LibertyBoardHiddenDesktopTools", QStringList());
     weekStartsOnSunday = new UBSetting(this, "Board", "LibertyBoardWeekStartsOnSunday", false);
     emojiChoice = new UBSetting(this, "Board", "LibertyBoardEmoji", QString());
     emojiSize = new UBSetting(this, "Board", "LibertyBoardEmojiSize", 80);
