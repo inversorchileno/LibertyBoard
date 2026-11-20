@@ -32,6 +32,11 @@
 
 #include "core/UBApplication.h"
 #include "gui/UBDictation.h"
+#include "gui/UBTextBoxes.h"
+#include "domain/UBTextTables.h"
+#include <QMenu>
+#include <QColorDialog>
+#include <QTextTable>
 #include "UBGraphicsGroupContainerItem.h"
 #include "UBGraphicsTextItemDelegate.h"
 #include "UBGraphicsScene.h"
@@ -183,6 +188,13 @@ void UBGraphicsTextItemDelegate::createControls()
         }
     }
 
+    // The options of the table the cursor is in.
+    if (!mTableButton) {
+        mTableButton = new DelegateButton(":/images/table.svg", mDelegated, mFrame, Qt::TitleBarArea);
+        connect(mTableButton, &DelegateButton::clicked, this, &UBGraphicsTextItemDelegate::showTableMenu);
+        mButtons << mTableButton;
+    }
+
     foreach(DelegateButton* button, mButtons)
     {
         button->hide();
@@ -227,6 +239,10 @@ void UBGraphicsTextItemDelegate::freeButtons()
     mButtons.removeOne(mDictateButton);
     delete mDictateButton;
     mDictateButton = nullptr;
+
+    mButtons.removeOne(mTableButton);
+    delete mTableButton;
+    mTableButton = nullptr;
 
     for (DelegateButton* button : std::as_const(mListButtons)) {
         mButtons.removeOne(button);
@@ -888,4 +904,65 @@ QVariant UBGraphicsTextItemDelegate::itemChange(QGraphicsItem::GraphicsItemChang
     }
 
     return UBGraphicsItemDelegate::itemChange(change, value);
+}
+
+void UBGraphicsTextItemDelegate::showTableMenu()
+{
+    const QTextCursor cursor = delegated()->textCursor();
+    QTextTable* table = UBTextTables::tableAt(cursor);
+    QMenu menu;
+
+    if (!table) {
+        // Without a table at the cursor, the menu makes one.
+        QAction* insert = menu.addAction(tr("Insert a table..."));
+        connect(insert, &QAction::triggered, this, [this]() { UBTextBoxes::insertTable(nullptr); });
+    }
+    else {
+        menu.addAction(tr("Add a row"), this, [cursor]() { UBTextTables::addRow(cursor); });
+        menu.addAction(tr("Add a column"), this, [cursor]() { UBTextTables::addColumn(cursor); });
+        menu.addAction(tr("Remove the row"), this, [cursor]() { UBTextTables::removeRow(cursor); });
+        menu.addAction(tr("Remove the column"), this, [cursor]() { UBTextTables::removeColumn(cursor); });
+        menu.addAction(tr("Columns as wide"), this, [table]() { UBTextTables::equalizeColumns(table); });
+        menu.addSeparator();
+
+        // The style of the table.
+        QMenu* style = menu.addMenu(tr("Table style"));
+        QAction* header = style->addAction(tr("Highlight the header row"));
+        header->setCheckable(true);
+        header->setChecked(UBTextTables::isHeaderRowHighlighted(table));
+        connect(header, &QAction::toggled, this, [table](bool on) { UBTextTables::setHeaderRowHighlighted(table, on); });
+        QAction* firstColumn = style->addAction(tr("Highlight the first column"));
+        firstColumn->setCheckable(true);
+        firstColumn->setChecked(UBTextTables::isFirstColumnHighlighted(table));
+        connect(firstColumn, &QAction::toggled, this, [table](bool on) { UBTextTables::setFirstColumnHighlighted(table, on); });
+        style->addSeparator();
+
+        const QList<QPair<QString, UBTextTables::Borders>> borders = {
+            { tr("All the lines"), UBTextTables::Borders::All },
+            { tr("Horizontal lines"), UBTextTables::Borders::Horizontal },
+            { tr("Outer lines"), UBTextTables::Borders::Outer },
+            { tr("No lines"), UBTextTables::Borders::None },
+        };
+
+        for (const auto& border : borders) {
+            const UBTextTables::Borders kind = border.second;
+            style->addAction(border.first, this, [table, kind]() { UBTextTables::setBorders(table, kind); });
+        }
+
+        style->addSeparator();
+        style->addAction(tr("Color of the cells..."), this, [this, cursor]() {
+            const QColor color = QColorDialog::getColor(Qt::white, nullptr, tr("Color of the cells"));
+
+            if (color.isValid()) {
+                UBTextTables::setCellBackground(cursor, color);
+            }
+        });
+        style->addAction(tr("No color in the cells"), this, [cursor]() { UBTextTables::setCellBackground(cursor, QColor()); });
+
+        menu.addSeparator();
+        menu.addAction(tr("Remove the table"), this, [cursor]() { UBTextTables::removeTable(cursor); });
+    }
+
+    menu.exec(QCursor::pos());
+    delegated()->setFocus();
 }

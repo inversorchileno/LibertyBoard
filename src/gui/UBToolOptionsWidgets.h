@@ -193,7 +193,8 @@ enum class UBOptionIcon
     Microphone,
     Checklist,
     Bullets,
-    Numbers
+    Numbers,
+    Table
 };
 
 QIcon optionIcon(UBOptionIcon kind);

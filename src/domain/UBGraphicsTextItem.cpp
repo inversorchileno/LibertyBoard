@@ -29,6 +29,7 @@
 
 #include <QtGui>
 #include <QTextList>
+#include <QTextTable>
 #include "UBGraphicsGroupContainerItem.h"
 #include "UBGraphicsTextItem.h"
 #include "UBGraphicsTextItemDelegate.h"
@@ -65,6 +66,7 @@ UBGraphicsTextItem::UBGraphicsTextItem(QGraphicsItem * parent)
 
     setFlag(QGraphicsItem::ItemIsSelectable, true);
     setFlag(QGraphicsItem::ItemSendsGeometryChanges, true);
+    setAcceptHoverEvents(true); // for the lines of tables
 
     setTextInteractionFlags(Qt::TextEditorInteraction);
 
@@ -179,6 +181,16 @@ void UBGraphicsTextItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
         return;
     }
 
+    // A line of a table is dragged to resize its row or its columns.
+    if (isSelected() && UBTextTables::edgeAt(document(), event->pos(), mDraggedEdge))
+    {
+        mDraggingEdge = true;
+        mEdgeCursor = QTextCursor(document());
+        mEdgeCursor.beginEditBlock(); // one step of undo for the whole drag
+        event->accept();
+        return;
+    }
+
     if (Delegate())
     {
         Delegate()->mousePressEvent(event);
@@ -248,6 +260,13 @@ void UBGraphicsTextItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 
 void UBGraphicsTextItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 {
+    if (mDraggingEdge)
+    {
+        UBTextTables::moveEdge(document(), mDraggedEdge, event->pos());
+        event->accept();
+        return;
+    }
+
     if (!Delegate() || !Delegate()->mouseMoveEvent(event))
     {
         QGraphicsTextItem::mouseMoveEvent(event);
@@ -259,8 +278,34 @@ void UBGraphicsTextItem::dragMoveEvent(QGraphicsSceneDragDropEvent *event)
 
 }
 
+void UBGraphicsTextItem::hoverMoveEvent(QGraphicsSceneHoverEvent *event)
+{
+    // The lines of a table that can be dragged show a cursor to resize.
+    UBTextTables::Edge edge;
+
+    if (isSelected() && UBTextTables::edgeAt(document(), event->pos(), edge))
+    {
+        setCursor(edge.column ? Qt::SplitHCursor : Qt::SplitVCursor);
+    }
+    else
+    {
+        unsetCursor();
+    }
+
+    QGraphicsTextItem::hoverMoveEvent(event);
+}
+
 void UBGraphicsTextItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 {
+    if (mDraggingEdge)
+    {
+        mDraggingEdge = false;
+        mEdgeCursor.endEditBlock();
+        setFocus();
+        event->accept();
+        return;
+    }
+
     // scene()->itemAt(pos) returns 0 if pos is not over text, but over text item, but mouse press comes.
     // It is a cludge...
     if (UBStylusTool::Play == UBDrawingController::drawingController()->stylusTool())
@@ -289,6 +334,7 @@ void UBGraphicsTextItem::keyPressEvent(QKeyEvent *event)
         qDebug() << "UBGraphicsTextItem::keyPressEvent(QKeyEvent *event) has been rejected by delegate. Don't call base class method";
         return;
     }
+
 
     if (event->matches (QKeySequence::StandardKey::Bold) ||
         event->matches (QKeySequence::StandardKey::Underline) ||
@@ -613,4 +659,42 @@ void UBGraphicsTextItem::toggleList(ListStyle style)
 
     cursor.endEditBlock();
     setFocus();
+}
+
+bool UBGraphicsTextItem::sceneEvent(QEvent* event)
+{
+    // In a table, Tab goes to the next cell, adding a row after the last
+    // one, and Shift+Tab to the previous cell. Caught before the text,
+    // which would write a tab.
+    if (event->type() == QEvent::KeyPress)
+    {
+        auto key = static_cast<QKeyEvent*>(event);
+        QTextCursor cursor = textCursor();
+        QTextTable* table = cursor.currentTable();
+
+        if (table && (key->key() == Qt::Key_Tab || key->key() == Qt::Key_Backtab))
+        {
+            const QTextTableCell cell = table->cellAt(cursor);
+            int index = cell.row() * table->columns() + cell.column();
+            index += (key->key() == Qt::Key_Tab) ? 1 : -1;
+
+            if (index >= table->rows() * table->columns())
+            {
+                table->appendRows(1);
+            }
+
+            if (index >= 0)
+            {
+                const QTextTableCell next = table->cellAt(index / table->columns(), index % table->columns());
+                QTextCursor inNext = next.lastCursorPosition();
+                inNext.setPosition(next.firstCursorPosition().position(), QTextCursor::KeepAnchor);
+                setTextCursor(inNext);
+            }
+
+            event->accept();
+            return true;
+        }
+    }
+
+    return QGraphicsTextItem::sceneEvent(event);
 }

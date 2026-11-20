@@ -61,7 +61,6 @@ class UBGraphicsWidgetItem;
 class UBBoardPaletteManager;
 class UBItem;
 class UBGraphicsItem;
-class UBGraphicsTextItem;
 
 
 class UBBoardController : public UBDocumentContainer
@@ -241,9 +240,6 @@ class UBBoardController : public UBDocumentContainer
          * new page after it.
          */
         void applyPageTemplate(UBPageTemplates::Template pageTemplate, const QDate& date);
-
-        /** @brief The text box being written on the board: the one with the cursor, or the one selected; or none. */
-        UBGraphicsTextItem* currentTextBox() const;
         void setToolCursor(int tool);
         void showMessage(const QString& message, bool showSpinningWheel = false);
         void hideMessage();

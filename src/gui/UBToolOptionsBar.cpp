@@ -30,6 +30,7 @@
 #include "board/UBBoardController.h"
 #include "core/UBApplication.h"
 #include "domain/UBGraphicsScene.h"
+#include "gui/UBTextBoxes.h"
 #include "gui/UBToolOptionsPanel.h"
 #include "gui/UBToolOptionsPopup.h"
 
@@ -75,7 +76,7 @@ void UBToolOptionsBar::showTool(int tool)
     // the selector is chosen.
     int panelTool = (tool == UBStylusTool::Line) ? int(UBStylusTool::Pen) : tool;
 
-    if (tool == UBStylusTool::Selector && UBApplication::boardController && UBApplication::boardController->currentTextBox())
+    if (tool == UBStylusTool::Selector && UBTextBoxes::current())
     {
         panelTool = UBStylusTool::Text;
     }

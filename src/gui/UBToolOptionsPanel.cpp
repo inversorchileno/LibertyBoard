@@ -49,6 +49,7 @@
 #include "frameworks/UBPlatformUtils.h"
 #include "board/UBBoardController.h"
 #include "gui/UBDictation.h"
+#include "gui/UBTextBoxes.h"
 #include "gui/UBReadAloud.h"
 #include <QTimer>
 
@@ -1136,7 +1137,7 @@ UBTextOptionsPanel::UBTextOptionsPanel(QWidget* parent)
 
         const UBGraphicsTextItem::ListStyle style = std::get<2>(list);
         connect(button, &QToolButton::clicked, this, [style]() {
-            UBGraphicsTextItem* textBox = UBApplication::boardController->currentTextBox();
+            UBGraphicsTextItem* textBox = UBTextBoxes::current();
 
             if (!textBox)
             {
@@ -1147,6 +1148,17 @@ UBTextOptionsPanel::UBTextOptionsPanel(QWidget* parent)
             textBox->toggleList(style);
         });
     }
+
+    // A table, in the text box being written or in a new one.
+    auto table = new QToolButton(this);
+    table->setText(tr("Table"));
+    table->setIcon(optionIcon(UBOptionIcon::Table));
+    table->setIconSize(QSize(34, 19));
+    table->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
+    table->setFocusPolicy(Qt::NoFocus);
+    table->setToolTip(tr("Asks how many rows and columns, then puts a table in the text box being written, or in a new one"));
+    addRow(table);
+    connect(table, &QToolButton::clicked, this, [this]() { UBTextBoxes::insertTable(window()); });
 
     // Dictation into the text box being written.
     auto dictate = new QToolButton(this);

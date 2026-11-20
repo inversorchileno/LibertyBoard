@@ -34,6 +34,7 @@
 #include "UBItem.h"
 #include "core/UB.h"
 #include "UBResizableGraphicsItem.h"
+#include "UBTextTables.h"
 
 class UBGraphicsItemDelegate;
 class UBGraphicsScene;
@@ -136,6 +137,8 @@ class UBGraphicsTextItem : public QGraphicsTextItem, public UBItem, public UBRes
         virtual void keyReleaseEvent(QKeyEvent *event);
 
         virtual void dragMoveEvent(QGraphicsSceneDragDropEvent *event);
+        virtual void hoverMoveEvent(QGraphicsSceneHoverEvent *event);
+        bool sceneEvent(QEvent* event) override;
 
         virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 
@@ -149,6 +152,11 @@ class UBGraphicsTextItem : public QGraphicsTextItem, public UBItem, public UBRes
         QColor mColorOnDarkBackground;
         QColor mColorOnLightBackground;
         bool isActivatedTextEditor;
+
+        // A line of a table being dragged, to resize its row or its columns.
+        UBTextTables::Edge mDraggedEdge;
+        bool mDraggingEdge{false};
+        QTextCursor mEdgeCursor;
 };
 
 #endif /* UBGRAPHICSTEXTITEM_H_ */

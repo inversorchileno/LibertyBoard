@@ -140,6 +140,7 @@ class UBGraphicsTextItemDelegate : public UBGraphicsItemDelegate
 
         DelegateButton* mDictateButton{nullptr};
         QList<DelegateButton*> mListButtons;
+        DelegateButton* mTableButton{nullptr};
         DelegateButton* mFontButton;
         DelegateButton* mColorButton;
         DelegateButton* mDecreaseSizeButton;
@@ -177,6 +178,7 @@ class UBGraphicsTextItemDelegate : public UBGraphicsItemDelegate
     private slots:
 
         void pickFont();
+        void showTableMenu();
         void pickColor();
 
         void decreaseSize();

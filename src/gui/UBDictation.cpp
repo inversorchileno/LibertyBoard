@@ -36,39 +36,18 @@
 #include "domain/UBGraphicsTextItem.h"
 #include "frameworks/UBPlatformUtils.h"
 #include "gui/UBMainWindow.h"
-
-// A new text box in the middle of the board shown, as the text tool makes one.
-static QGraphicsTextItem* newTextBox()
-{
-    UBBoardController* board = UBApplication::boardController;
-    std::shared_ptr<UBGraphicsScene> scene = board ? board->activeScene() : nullptr;
-
-    if (!scene || !board->controlView())
-    {
-        return nullptr;
-    }
-
-    QGraphicsView* view = board->controlView();
-    const qreal width = scene->nominalSize().width() / board->currentZoom() / 4.;
-    const QPointF center = view->mapToScene(view->viewport()->rect().center());
-    UBGraphicsTextItem* textBox = scene->addTextHtml("", center - QPointF(width / 2, 0));
-
-    UBDrawingController::drawingController()->setStylusTool(UBStylusTool::Selector);
-    textBox->setTextWidth(width);
-    textBox->setSelected(true);
-    return textBox;
-}
+#include "gui/UBTextBoxes.h"
 
 void UBDictation::start(QGraphicsTextItem* textBox)
 {
     if (!textBox)
     {
-        textBox = UBApplication::boardController ? UBApplication::boardController->currentTextBox() : nullptr;
+        textBox = UBTextBoxes::current();
     }
 
     if (!textBox)
     {
-        textBox = newTextBox();
+        textBox = UBTextBoxes::create();
     }
 
     if (!textBox)

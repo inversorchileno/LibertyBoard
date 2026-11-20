@@ -1296,6 +1296,27 @@ QIcon optionIcon(UBOptionIcon kind)
             }
             break;
         }
+        case UBOptionIcon::Table:
+        {
+            // A grid of three rows and three columns, its first row grey.
+            const QColor sign("#e8e8e8");
+            const QRectF grid(13, 4, 22, 20);
+            painter.setPen(Qt::NoPen);
+            painter.setBrush(QColor(232, 232, 232, 90));
+            painter.drawRect(QRectF(grid.left(), grid.top(), grid.width(), grid.height() / 3));
+            painter.setPen(QPen(sign, 1.4));
+            painter.setBrush(Qt::NoBrush);
+            painter.drawRect(grid);
+
+            for (int i = 1; i < 3; ++i)
+            {
+                painter.drawLine(QPointF(grid.left(), grid.top() + grid.height() * i / 3),
+                                 QPointF(grid.right(), grid.top() + grid.height() * i / 3));
+                painter.drawLine(QPointF(grid.left() + grid.width() * i / 3, grid.top()),
+                                 QPointF(grid.left() + grid.width() * i / 3, grid.bottom()));
+            }
+            break;
+        }
         case UBOptionIcon::Microphone:
         {
             // A red microphone on its stand.
