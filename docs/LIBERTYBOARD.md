@@ -265,6 +265,18 @@ Luis revisó la compilación 21 y entregó «observaciones_V2.docx» con 15 punt
 - **Compilación 26:** el GIF arrastrado se busca en la ventana de klipy.com que lo muestra (la página de cada GIF se arma al ejecutarse, así que descargada no lo trae): se prueba primero la versión GIF de cada dirección, luego WebP. Las formas del escritorio ocupan todo el ancho (2 filas de 10, más grandes). En un PDF el candado dice «Bloquear PDF» / «Desbloquear PDF».
 - **Traducciones:** desde la V3 los textos nuevos se traducen al español, alemán, francés, chino y japonés; los demás idiomas los muestran en inglés (pedido de Luis).
 
+- **Después de la compilación 26** (sin compilar aún): la ventana de klipy.com recuerda las cookies (perfil web propio en `webprofiles/gifs`, antes preguntaba cada vez); las pestañas de documentos se reordenan arrastrándolas; el Sello «PNG personalizado» es el primero y parte vacío en cada sesión.
+
+## Versión 4 de las mejoras del Word (sin compilar aún)
+
+- **Menú Herramientas** (#29a, `src/gui/UBToolbarChoice`): todas las herramientas de la pizarra y del escritorio, con su atajo; sirve también para las que se quitaron de la barra.
+- **Menú Personalización** (#29b): submenús **Escritorio** y **Pizarra / PDF**, con una casilla por botón de la barra. Al marcar o desmarcar, el menú no se cierra; lo elegido se guarda (`hiddenBoardTools`, `hiddenDesktopTools`). Por defecto se ve todo, como antes. El botón del escritorio que vuelve a la pizarra no se puede quitar.
+- **Acerca → Atajos** (#30, `src/gui/UBShortcutsDialog`), debajo de Abrir tutorial: la lista de todas las funciones (menús, botones junto a los menús, herramientas de pizarra y escritorio, páginas) con su atajo y un buscador. Se elige una función, se presionan las teclas en el cuadro y **Asignar**; también **Quitar**, **Original** y **Restaurar todos**. Se guarda en `LibertyBoardShortcuts/<objectName>` de la configuración.
+  - Las funciones sin atajo recibieron uno (sobre todo Ctrl+Mayús+letra y teclas F): Bolígrafo Ctrl+Mayús+P, Foco F, Resaltar I, Selector E, Mano M, Nota O, Sello T, Emojis G, Nota rápida Q, Adjuntar J, Sonido K, Subrayar U, Leer en voz alta V, Flecha A, Formas R, captura C (escritorio X), Bloquear lienzo B, OCR Y; Tutorial F1, Atajos Ctrl+F1, Consejos Mayús+F1, Índice F7, Dictar F8, Pizarra Ctrl+1, Doble pizarra Ctrl+2, Nueva página Ctrl+Intro, Duplicar página Ctrl+Mayús+Intro, entre otros. No se usa Ctrl+Alt (es Alt Gr en los teclados en español) ni Alt+Mayús (cambia el idioma del teclado en Windows).
+  - Se rechaza con un aviso que explica por qué: la tecla Windows, las combinaciones de Windows (Alt+Tab, Alt+F4, Alt+Esc, Alt+Espacio, Ctrl+Esc, Ctrl+Mayús+Esc, Ctrl+Alt+Supr, Impr Pant, Mayús+F10, Ctrl+Alt+flechas que giran la pantalla), las teclas solas que sirven para escribir o moverse, Ctrl+Alt con letra (Alt Gr), Ctrl+A, Alt + la letra de un menú y un atajo que ya tiene otra función.
+  - Al final, las **teclas fijas** de OpenBoard (páginas con RePág/AvPág y flechas, zoom con Ctrl+ +/−, desplazamiento con Ctrl+flechas), que no se cambian.
+  - Los atajos de las herramientas funcionan también con la herramienta quitada de la barra, y en el modo escritorio.
+
 ## Forma de trabajo
 
 - El dueño es **Luis** (Chile), analista financiero, sin experiencia en programación. Habla en español; se le responde en español, claro y sin jerga. Usa Windows 11, pantalla ancha (unos 2540 px) y lápiz digital.
