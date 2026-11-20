@@ -2799,14 +2799,15 @@ void UBBoardController::processMimeData(const QMimeData* pMimeData, const QPoint
             // the GIF is found in the page.
             if (UBGifWindow::isGifPage(url))
             {
-                UBGifWindow::findGif(url, this, [this, pos](const QUrl& gif) {
-                    if (gif.isEmpty())
+                UBGifWindow::findGif(url, this, [this, pos](const QByteArray& gif) {
+                    if (gif.isEmpty() || !mActiveScene)
                     {
                         UBApplication::showMessage(tr("The GIF could not be found on its page. Try another one."));
                         return;
                     }
 
-                    downloadURL(gif, QString(), pos);
+                    // Put as a picture dropped on the board, moving.
+                    mActiveScene->addImage(gif, nullptr, pos, 1.);
                 });
                 index++;
                 continue;

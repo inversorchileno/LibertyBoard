@@ -32,6 +32,8 @@
 #include <QToolButton>
 #include <QVBoxLayout>
 #include <QWebEngineView>
+#include <QImage>
+#include <QWebEnginePage>
 #include <QApplication>
 
 QPointer<UBGifWindow> UBGifWindow::sWindow;
@@ -133,52 +135,194 @@ bool UBGifWindow::isGifPage(const QUrl& url)
            && (url.path().startsWith("/gifs/") || url.path().startsWith("/stickers/"));
 }
 
-// The address of the animated picture in the page of a GIF: the picture
-// shared by the page, else the first GIF or WebP file named in it.
-static QUrl gifInPage(QString html)
+// The addresses of pictures written in a page, its shared picture first.
+static QStringList picturesInPage(QString html)
 {
     // The addresses written in the data of the page have their slashes escaped.
     html.replace("\\/", "/");
 
     static const QRegularExpression shared(
-        "<meta[^>]+(?:property|name)=[\"'](?:og:image|twitter:image)[\"'][^>]+content=[\"']([^\"']+)[\"']",
+        "<meta[^>]+(?:property|name)=[\"'](?:og:image|twitter:image|og:video)[\"'][^>]+content=[\"']([^\"']+)[\"']",
         QRegularExpression::CaseInsensitiveOption);
     static const QRegularExpression sharedFirst(
-        "<meta[^>]+content=[\"']([^\"']+)[\"'][^>]+(?:property|name)=[\"'](?:og:image|twitter:image)[\"']",
+        "<meta[^>]+content=[\"']([^\"']+)[\"'][^>]+(?:property|name)=[\"'](?:og:image|twitter:image|og:video)[\"']",
         QRegularExpression::CaseInsensitiveOption);
-    static const QRegularExpression anyGif("https://[^\"'\\s<>]+?\\.(?:gif|webp)(?:\\?[^\"'\\s<>]*)?",
-                                           QRegularExpression::CaseInsensitiveOption);
+    static const QRegularExpression anyPicture("https://[^\"'\\s<>]+?\\.(?:gif|webp|mp4|webm)(?:\\?[^\"'\\s<>]*)?",
+                                               QRegularExpression::CaseInsensitiveOption);
+    QStringList addresses;
 
     for (const QRegularExpression& pattern : { shared, sharedFirst })
     {
-        const QRegularExpressionMatch match = pattern.match(html);
+        QRegularExpressionMatchIterator it = pattern.globalMatch(html);
 
-        if (match.hasMatch())
+        while (it.hasNext())
         {
-            const QString address = match.captured(1).replace("&amp;", "&");
-
-            if (address.contains(".gif", Qt::CaseInsensitive) || address.contains(".webp", Qt::CaseInsensitive))
-            {
-                return QUrl(address);
-            }
+            addresses << it.next().captured(1).replace("&amp;", "&");
         }
     }
 
-    const QRegularExpressionMatch file = anyGif.match(html);
-    return file.hasMatch() ? QUrl(file.captured(0)) : QUrl();
+    QRegularExpressionMatchIterator it = anyPicture.globalMatch(html);
+
+    while (it.hasNext())
+    {
+        addresses << it.next().captured(0).replace("&amp;", "&");
+    }
+
+    return addresses;
 }
 
-void UBGifWindow::findGif(const QUrl& page, QObject* context, const std::function<void(const QUrl&)>& found)
+namespace
 {
-    static QNetworkAccessManager* network = new QNetworkAccessManager(qApp);
-    QNetworkRequest request(page);
-    // The page is asked for as a web browser asks for it.
-    request.setHeader(QNetworkRequest::UserAgentHeader, "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-                                                        "(KHTML, like Gecko) Chrome/120.0 Safari/537.36");
-    QNetworkReply* reply = network->get(request);
+    // Tries the addresses one after the other, until one gives a picture.
+    class GifFinder : public QObject
+    {
+    public:
+        GifFinder(const QUrl& page, QObject* context, const std::function<void(const QByteArray&)>& found)
+            : QObject(context)
+            , mPage(page)
+            , mFound(found)
+        {
+        }
 
-    QObject::connect(reply, &QNetworkReply::finished, context, [reply, found]() {
-        reply->deleteLater();
-        found(reply->error() == QNetworkReply::NoError ? gifInPage(QString::fromUtf8(reply->readAll())) : QUrl());
+        void addCandidates(const QStringList& addresses)
+        {
+            for (const QString& address : addresses)
+            {
+                const QUrl url(address);
+
+                if (!url.isValid() || url.scheme() != "https")
+                {
+                    continue;
+                }
+
+                // A GIF first: the same file is often there as a GIF, a WebP and a video.
+                const QString path = url.path();
+                const int dot = path.lastIndexOf('.');
+
+                if (dot > 0 && !path.endsWith(".gif", Qt::CaseInsensitive))
+                {
+                    QUrl gif = url;
+                    gif.setPath(path.left(dot) + ".gif");
+                    add(gif);
+                }
+
+                if (!path.endsWith(".mp4", Qt::CaseInsensitive) && !path.endsWith(".webm", Qt::CaseInsensitive))
+                {
+                    add(url);
+                }
+            }
+        }
+
+        void start()
+        {
+            // Then what the page itself names, asked for as a browser does.
+            QNetworkReply* reply = network()->get(request(mPage));
+
+            connect(reply, &QNetworkReply::finished, this, [this, reply]() {
+                reply->deleteLater();
+
+                if (reply->error() == QNetworkReply::NoError)
+                {
+                    addCandidates(picturesInPage(QString::fromUtf8(reply->readAll())));
+                }
+
+                tryNext();
+            });
+        }
+
+    private:
+        static QNetworkAccessManager* network()
+        {
+            static QNetworkAccessManager* manager = new QNetworkAccessManager(qApp);
+            return manager;
+        }
+
+        QNetworkRequest request(const QUrl& url) const
+        {
+            QNetworkRequest request(url);
+            request.setHeader(QNetworkRequest::UserAgentHeader, "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                                                                "(KHTML, like Gecko) Chrome/120.0 Safari/537.36");
+            request.setRawHeader("Referer", "https://klipy.com/");
+            request.setAttribute(QNetworkRequest::RedirectPolicyAttribute, QNetworkRequest::NoLessSafeRedirectPolicy);
+            return request;
+        }
+
+        void add(const QUrl& url)
+        {
+            if (!mCandidates.contains(url) && !mTried.contains(url))
+            {
+                mCandidates << url;
+            }
+        }
+
+        void tryNext()
+        {
+            if (mCandidates.isEmpty())
+            {
+                mFound(QByteArray());
+                deleteLater();
+                return;
+            }
+
+            const QUrl url = mCandidates.takeFirst();
+            mTried << url;
+            QNetworkReply* reply = network()->get(request(url));
+
+            connect(reply, &QNetworkReply::finished, this, [this, reply]() {
+                reply->deleteLater();
+                const QByteArray data = reply->error() == QNetworkReply::NoError ? reply->readAll() : QByteArray();
+
+                if (!QImage::fromData(data).isNull())
+                {
+                    mFound(data);
+                    deleteLater();
+                    return;
+                }
+
+                tryNext();
+            });
+        }
+
+        QUrl mPage;
+        std::function<void(const QByteArray&)> mFound;
+        QList<QUrl> mCandidates;
+        QList<QUrl> mTried;
+    };
+}
+
+void UBGifWindow::findGif(const QUrl& page, QObject* context, const std::function<void(const QByteArray&)>& found)
+{
+    auto finder = new GifFinder(page, context, found);
+
+    if (!sWindow)
+    {
+        finder->start();
+        return;
+    }
+
+    // First the pictures of the GIF dragged, as the window shows them:
+    // the page of KLIPY makes them when it runs, so they are not in the
+    // page as it is downloaded.
+    const QString slug = page.path().section('/', -1);
+    const QString script = QStringLiteral(R"((function() {
+        var found = [];
+        var links = document.querySelectorAll('a[href*="%1"]');
+        links.forEach(function(link) {
+            link.querySelectorAll('img, video, source').forEach(function(media) {
+                [media.currentSrc, media.src, media.poster, media.getAttribute('data-src')].forEach(function(address) {
+                    if (address) { found.push(address); }
+                });
+                (media.srcset || '').split(',').forEach(function(part) {
+                    var address = part.trim().split(' ')[0];
+                    if (address) { found.push(address); }
+                });
+            });
+        });
+        return found;
+    })())").arg(slug);
+
+    sWindow->mPage->page()->runJavaScript(script, [finder](const QVariant& result) {
+        finder->addCandidates(result.toStringList());
+        finder->start();
     });
 }

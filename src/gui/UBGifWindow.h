@@ -52,10 +52,11 @@ public:
     static bool isGifPage(const QUrl& url);
 
     /**
-     * @brief Finds the address of the GIF shown on a page of klipy.com,
-     * then calls found with it, or with an empty address when there is none.
+     * @brief Finds the GIF of a page of klipy.com, dragged from the window,
+     * and downloads it; then calls found with its data, or with empty data
+     * when it could not be found.
      */
-    static void findGif(const QUrl& page, QObject* context, const std::function<void(const QUrl&)>& found);
+    static void findGif(const QUrl& page, QObject* context, const std::function<void(const QByteArray&)>& found);
 
 signals:
     void closed();
