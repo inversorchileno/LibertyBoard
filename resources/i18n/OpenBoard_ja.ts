@@ -1618,7 +1618,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBAttachmentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+917"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+770"/>
         <source>Insert file</source>
         <translation>ファイルを挿入</translation>
     </message>
@@ -1911,7 +1911,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>テキストをコピーしました: %1</translation>
     </message>
     <message>
-        <location line="+321"/>
+        <location line="+335"/>
         <source>Is it for Board or Widget ?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2665,12 +2665,12 @@ Do you want to continue?</source>
 <context>
     <name>UBEmojiOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1132"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-987"/>
         <source>Emojis and GIFs</source>
         <translation>絵文字とGIF</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+4"/>
         <source>Emojis</source>
         <translation>絵文字</translation>
     </message>
@@ -2680,90 +2680,86 @@ Do you want to continue?</source>
         <translation>GIF</translation>
     </message>
     <message>
-        <location line="+30"/>
+        <location line="+1"/>
+        <source>GIFs: opens the page of klipy.com beside the board, without an account; drag a GIF from it to the page. A second click on GIFs closes it.</source>
+        <translation>GIF：アカウントなしで、ボードの横に klipy.com のページを開きます。そこからGIFをページにドラッグします。もう一度 GIF をクリックすると閉じます。</translation>
+    </message>
+    <message>
+        <location line="+28"/>
+        <source>Drag a GIF from the window at the right to the page.</source>
+        <translation>右のウィンドウからGIFをページにドラッグしてください。</translation>
+    </message>
+    <message>
         <source>To use GIFs, make a free account at klipy.com, only once, and paste your key (API key) here. From then on, the GIF search is always ready. Without it, the emojis work as always.</source>
-        <translation>GIFを使うには、klipy.com で一度だけ無料アカウントを作り、ここにキー（API key）を貼り付けてください。その後はいつでもGIFを検索できます。キーがなくても絵文字はこれまで通り使えます。</translation>
+        <translation type="vanished">GIFを使うには、klipy.com で一度だけ無料アカウントを作り、ここにキー（API key）を貼り付けてください。その後はいつでもGIFを検索できます。キーがなくても絵文字はこれまで通り使えます。</translation>
     </message>
     <message>
-        <location line="+9"/>
         <source>Paste your key here</source>
-        <translation>ここにキーを貼り付け</translation>
+        <translation type="vanished">ここにキーを貼り付け</translation>
     </message>
     <message>
-        <location line="+4"/>
         <source>Save</source>
-        <translation>保存</translation>
+        <translation type="vanished">保存</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Open klipy.com</source>
-        <translation>klipy.com を開く</translation>
+        <translation type="vanished">klipy.com を開く</translation>
     </message>
     <message>
-        <location line="+21"/>
         <source>Search GIFs</source>
-        <translation>GIFを検索</translation>
+        <translation type="vanished">GIFを検索</translation>
     </message>
     <message>
-        <location line="+4"/>
         <source>Change the key</source>
-        <translation>キーを変更</translation>
+        <translation type="vanished">キーを変更</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Powered by KLIPY</source>
-        <translation>Powered by KLIPY</translation>
+        <translation type="vanished">Powered by KLIPY</translation>
     </message>
     <message>
-        <location line="+30"/>
+        <location line="+5"/>
         <source>Size</source>
         <translation>サイズ</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source> pt</source>
         <translation> pt</translation>
     </message>
     <message>
-        <location line="+27"/>
         <source>The GIF search did not answer: check your key and the internet connection.</source>
-        <translation>GIF検索が応答しませんでした：キーとインターネット接続を確認してください。</translation>
+        <translation type="vanished">GIF検索が応答しませんでした：キーとインターネット接続を確認してください。</translation>
     </message>
     <message>
-        <location line="+16"/>
         <source>Downloading the GIF...</source>
-        <translation>GIFをダウンロード中...</translation>
+        <translation type="vanished">GIFをダウンロード中...</translation>
     </message>
     <message>
-        <location line="+7"/>
         <source>GIF chosen: click on the page to put it.</source>
-        <translation>GIFを選びました：ページをクリックして置いてください。</translation>
+        <translation type="vanished">GIFを選びました：ページをクリックして置いてください。</translation>
     </message>
     <message>
-        <location line="+66"/>
         <source>Search a GIF, then click on it and on the page.</source>
-        <translation>GIFを検索し、それをクリックしてからページをクリックしてください。</translation>
+        <translation type="vanished">GIFを検索し、それをクリックしてからページをクリックしてください。</translation>
     </message>
     <message>
-        <location line="+17"/>
         <source>Searching...</source>
-        <translation>検索中...</translation>
+        <translation type="vanished">検索中...</translation>
     </message>
     <message>
-        <location line="+8"/>
         <source>No GIF found.</source>
-        <translation>GIFが見つかりません。</translation>
+        <translation type="vanished">GIFが見つかりません。</translation>
     </message>
     <message>
-        <location line="+0"/>
         <source>Click on a GIF, then on the page.</source>
-        <translation>GIFをクリックしてから、ページをクリックしてください。</translation>
+        <translation type="vanished">GIFをクリックしてから、ページをクリックしてください。</translation>
     </message>
 </context>
 <context>
     <name>UBEraserOptionsPanel</name>
     <message>
-        <location line="-492"/>
+        <location line="-282"/>
         <source>Eraser</source>
         <translation>消しゴム</translation>
     </message>
@@ -3127,6 +3123,19 @@ Do you want to continue?</source>
         <location line="+103"/>
         <source>Loading </source>
         <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UBGifWindow</name>
+    <message>
+        <location filename="../../src/gui/UBGifWindow.cpp" line="+46"/>
+        <source>GIFs of klipy.com: drag one to the page</source>
+        <translation>klipy.com のGIF：ページにドラッグ</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Close the GIFs</source>
+        <translation>GIFを閉じる</translation>
     </message>
 </context>
 <context>
@@ -4223,7 +4232,7 @@ Do you want to ignore these errors for this host?</source>
 <context>
     <name>UBNoteOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1325"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1180"/>
         <source>Note</source>
         <translation>メモ</translation>
     </message>
@@ -4524,7 +4533,7 @@ It can also be done later with Home &gt; Recognize text.</source>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1488"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1343"/>
         <source>Pen</source>
         <translation>ペン </translation>
     </message>
@@ -5158,7 +5167,7 @@ Dynamic width</source>
 <context>
     <name>UBSelectorOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1348"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1203"/>
         <source>Select</source>
         <translation>選択</translation>
     </message>
@@ -5196,7 +5205,7 @@ Dynamic width</source>
 <context>
     <name>UBSettings</name>
     <message>
-        <location filename="../../src/core/UBSettings.cpp" line="+1148"/>
+        <location filename="../../src/core/UBSettings.cpp" line="+1145"/>
         <source>My Movies</source>
         <translation>マイ・ムービー </translation>
     </message>
@@ -5842,7 +5851,7 @@ Dynamic width</source>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1225"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1080"/>
         <source>Color</source>
         <translation>色</translation>
     </message>
@@ -5970,7 +5979,7 @@ Please reboot the application to access the updated documents.</source>
         <translation type="vanished">音声入力</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+650"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+505"/>
         <source>Read aloud</source>
         <translation>読み上げ</translation>
     </message>

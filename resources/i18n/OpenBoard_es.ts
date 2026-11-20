@@ -1624,7 +1624,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBAttachmentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+917"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+770"/>
         <source>Insert file</source>
         <translation>Insertar archivo</translation>
     </message>
@@ -1924,7 +1924,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Texto copiado: %1</translation>
     </message>
     <message>
-        <location line="+321"/>
+        <location line="+335"/>
         <source>Is it for Board or Widget ?</source>
         <translation>¿Es para la pizarra o para el widget?</translation>
     </message>
@@ -2721,12 +2721,12 @@ Si quieres continuar, el documento se convertirá para ser compatible con la ver
 <context>
     <name>UBEmojiOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1132"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-987"/>
         <source>Emojis and GIFs</source>
         <translation>Emojis y GIFs</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+4"/>
         <source>Emojis</source>
         <translation>Emojis</translation>
     </message>
@@ -2736,90 +2736,86 @@ Si quieres continuar, el documento se convertirá para ser compatible con la ver
         <translation>GIFs</translation>
     </message>
     <message>
-        <location line="+30"/>
+        <location line="+1"/>
+        <source>GIFs: opens the page of klipy.com beside the board, without an account; drag a GIF from it to the page. A second click on GIFs closes it.</source>
+        <translation>GIFs: abre la página de klipy.com junto a la pizarra, sin cuenta; arrastra un GIF desde ella hasta la página. Un segundo clic en GIFs la cierra.</translation>
+    </message>
+    <message>
+        <location line="+28"/>
+        <source>Drag a GIF from the window at the right to the page.</source>
+        <translation>Arrastra un GIF desde la ventana de la derecha hasta la página.</translation>
+    </message>
+    <message>
         <source>To use GIFs, make a free account at klipy.com, only once, and paste your key (API key) here. From then on, the GIF search is always ready. Without it, the emojis work as always.</source>
-        <translation>Para usar GIFs, crea una cuenta gratis en klipy.com, una sola vez, y pega aquí tu clave (API key). Desde entonces el buscador de GIFs estará siempre listo. Sin ella, los emojis funcionan como siempre.</translation>
+        <translation type="vanished">Para usar GIFs, crea una cuenta gratis en klipy.com, una sola vez, y pega aquí tu clave (API key). Desde entonces el buscador de GIFs estará siempre listo. Sin ella, los emojis funcionan como siempre.</translation>
     </message>
     <message>
-        <location line="+9"/>
         <source>Paste your key here</source>
-        <translation>Pega aquí tu clave</translation>
+        <translation type="vanished">Pega aquí tu clave</translation>
     </message>
     <message>
-        <location line="+4"/>
         <source>Save</source>
-        <translation>Guardar</translation>
+        <translation type="vanished">Guardar</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Open klipy.com</source>
-        <translation>Abrir klipy.com</translation>
+        <translation type="vanished">Abrir klipy.com</translation>
     </message>
     <message>
-        <location line="+21"/>
         <source>Search GIFs</source>
-        <translation>Buscar GIFs</translation>
+        <translation type="vanished">Buscar GIFs</translation>
     </message>
     <message>
-        <location line="+4"/>
         <source>Change the key</source>
-        <translation>Cambiar la clave</translation>
+        <translation type="vanished">Cambiar la clave</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Powered by KLIPY</source>
-        <translation>Con la tecnología de KLIPY</translation>
+        <translation type="vanished">Con la tecnología de KLIPY</translation>
     </message>
     <message>
-        <location line="+30"/>
+        <location line="+5"/>
         <source>Size</source>
         <translation>Tamaño</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source> pt</source>
         <translation> pt</translation>
     </message>
     <message>
-        <location line="+27"/>
         <source>The GIF search did not answer: check your key and the internet connection.</source>
-        <translation>El buscador de GIFs no respondió: revisa tu clave y la conexión a internet.</translation>
+        <translation type="vanished">El buscador de GIFs no respondió: revisa tu clave y la conexión a internet.</translation>
     </message>
     <message>
-        <location line="+16"/>
         <source>Downloading the GIF...</source>
-        <translation>Descargando el GIF...</translation>
+        <translation type="vanished">Descargando el GIF...</translation>
     </message>
     <message>
-        <location line="+7"/>
         <source>GIF chosen: click on the page to put it.</source>
-        <translation>GIF elegido: haz clic en la página para ponerlo.</translation>
+        <translation type="vanished">GIF elegido: haz clic en la página para ponerlo.</translation>
     </message>
     <message>
-        <location line="+66"/>
         <source>Search a GIF, then click on it and on the page.</source>
-        <translation>Busca un GIF, luego haz clic en él y en la página.</translation>
+        <translation type="vanished">Busca un GIF, luego haz clic en él y en la página.</translation>
     </message>
     <message>
-        <location line="+17"/>
         <source>Searching...</source>
-        <translation>Buscando...</translation>
+        <translation type="vanished">Buscando...</translation>
     </message>
     <message>
-        <location line="+8"/>
         <source>No GIF found.</source>
-        <translation>No se encontró ningún GIF.</translation>
+        <translation type="vanished">No se encontró ningún GIF.</translation>
     </message>
     <message>
-        <location line="+0"/>
         <source>Click on a GIF, then on the page.</source>
-        <translation>Haz clic en un GIF y luego en la página.</translation>
+        <translation type="vanished">Haz clic en un GIF y luego en la página.</translation>
     </message>
 </context>
 <context>
     <name>UBEraserOptionsPanel</name>
     <message>
-        <location line="-492"/>
+        <location line="-282"/>
         <source>Eraser</source>
         <translation>Goma</translation>
     </message>
@@ -3183,6 +3179,19 @@ Si quieres continuar, el documento se convertirá para ser compatible con la ver
         <location line="+103"/>
         <source>Loading </source>
         <translation>Cargando </translation>
+    </message>
+</context>
+<context>
+    <name>UBGifWindow</name>
+    <message>
+        <location filename="../../src/gui/UBGifWindow.cpp" line="+46"/>
+        <source>GIFs of klipy.com: drag one to the page</source>
+        <translation>GIFs de klipy.com: arrastra uno a la página</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Close the GIFs</source>
+        <translation>Cerrar los GIFs</translation>
     </message>
 </context>
 <context>
@@ -4284,7 +4293,7 @@ Do you want to ignore these errors for this host?</source>
 <context>
     <name>UBNoteOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1325"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1180"/>
         <source>Note</source>
         <translation>Nota</translation>
     </message>
@@ -4605,7 +4614,7 @@ También se puede hacer después con Inicio &gt; Reconocer texto.</translation>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1488"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1343"/>
         <source>Pen</source>
         <translation>Bolígrafo</translation>
     </message>
@@ -5243,7 +5252,7 @@ Ancho dinámico</translation>
 <context>
     <name>UBSelectorOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1352"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1207"/>
         <source>Select</source>
         <translation>Seleccionar</translation>
     </message>
@@ -5281,7 +5290,7 @@ Ancho dinámico</translation>
 <context>
     <name>UBSettings</name>
     <message>
-        <location filename="../../src/core/UBSettings.cpp" line="+1148"/>
+        <location filename="../../src/core/UBSettings.cpp" line="+1145"/>
         <source>My Movies</source>
         <translation>Mis películas</translation>
     </message>
@@ -5931,7 +5940,7 @@ Ancho dinámico</translation>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1225"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1080"/>
         <source>Color</source>
         <translation>Color</translation>
     </message>
@@ -6059,7 +6068,7 @@ Por favor, reinicie la aplicación para acceder a los documentos actualizados.</
         <translation type="vanished">Dictar</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+650"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+505"/>
         <source>Read aloud</source>
         <translation>Leer en voz alta</translation>
     </message>

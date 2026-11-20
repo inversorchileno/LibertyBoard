@@ -1622,7 +1622,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBAttachmentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+917"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+770"/>
         <source>Insert file</source>
         <translation>插入檔案</translation>
     </message>
@@ -1922,7 +1922,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>已複製文字：%1</translation>
     </message>
     <message>
-        <location line="+321"/>
+        <location line="+335"/>
         <source>Is it for Board or Widget ?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2704,12 +2704,12 @@ Do you want to continue?</source>
 <context>
     <name>UBEmojiOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1132"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-987"/>
         <source>Emojis and GIFs</source>
         <translation>表情符號和GIF</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+4"/>
         <source>Emojis</source>
         <translation>表情符號</translation>
     </message>
@@ -2719,90 +2719,86 @@ Do you want to continue?</source>
         <translation>GIF</translation>
     </message>
     <message>
-        <location line="+30"/>
+        <location line="+1"/>
+        <source>GIFs: opens the page of klipy.com beside the board, without an account; drag a GIF from it to the page. A second click on GIFs closes it.</source>
+        <translation>GIF：無需帳號，在白板旁開啟 klipy.com 頁面；從中把GIF拖曳到頁面上。再次點選 GIF 即可關閉。</translation>
+    </message>
+    <message>
+        <location line="+28"/>
+        <source>Drag a GIF from the window at the right to the page.</source>
+        <translation>從右側視窗把GIF拖曳到頁面上。</translation>
+    </message>
+    <message>
         <source>To use GIFs, make a free account at klipy.com, only once, and paste your key (API key) here. From then on, the GIF search is always ready. Without it, the emojis work as always.</source>
-        <translation>若要使用GIF，請在 klipy.com 免費註冊一次帳號，並將您的金鑰（API key）貼到這裡。之後GIF搜尋隨時可用。沒有金鑰，表情符號照常可用。</translation>
+        <translation type="vanished">若要使用GIF，請在 klipy.com 免費註冊一次帳號，並將您的金鑰（API key）貼到這裡。之後GIF搜尋隨時可用。沒有金鑰，表情符號照常可用。</translation>
     </message>
     <message>
-        <location line="+9"/>
         <source>Paste your key here</source>
-        <translation>在此貼上金鑰</translation>
+        <translation type="vanished">在此貼上金鑰</translation>
     </message>
     <message>
-        <location line="+4"/>
         <source>Save</source>
-        <translation>儲存</translation>
+        <translation type="vanished">儲存</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Open klipy.com</source>
-        <translation>開啟 klipy.com</translation>
+        <translation type="vanished">開啟 klipy.com</translation>
     </message>
     <message>
-        <location line="+21"/>
         <source>Search GIFs</source>
-        <translation>搜尋GIF</translation>
+        <translation type="vanished">搜尋GIF</translation>
     </message>
     <message>
-        <location line="+4"/>
         <source>Change the key</source>
-        <translation>變更金鑰</translation>
+        <translation type="vanished">變更金鑰</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Powered by KLIPY</source>
-        <translation>Powered by KLIPY</translation>
+        <translation type="vanished">Powered by KLIPY</translation>
     </message>
     <message>
-        <location line="+30"/>
+        <location line="+5"/>
         <source>Size</source>
         <translation>大小</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source> pt</source>
         <translation> pt</translation>
     </message>
     <message>
-        <location line="+27"/>
         <source>The GIF search did not answer: check your key and the internet connection.</source>
-        <translation>GIF搜尋沒有回應：請檢查您的金鑰和網路連線。</translation>
+        <translation type="vanished">GIF搜尋沒有回應：請檢查您的金鑰和網路連線。</translation>
     </message>
     <message>
-        <location line="+16"/>
         <source>Downloading the GIF...</source>
-        <translation>正在下載GIF...</translation>
+        <translation type="vanished">正在下載GIF...</translation>
     </message>
     <message>
-        <location line="+7"/>
         <source>GIF chosen: click on the page to put it.</source>
-        <translation>已選擇GIF：點選頁面放置。</translation>
+        <translation type="vanished">已選擇GIF：點選頁面放置。</translation>
     </message>
     <message>
-        <location line="+66"/>
         <source>Search a GIF, then click on it and on the page.</source>
-        <translation>搜尋GIF，然後點選它，再點選頁面。</translation>
+        <translation type="vanished">搜尋GIF，然後點選它，再點選頁面。</translation>
     </message>
     <message>
-        <location line="+17"/>
         <source>Searching...</source>
-        <translation>正在搜尋...</translation>
+        <translation type="vanished">正在搜尋...</translation>
     </message>
     <message>
-        <location line="+8"/>
         <source>No GIF found.</source>
-        <translation>找不到GIF。</translation>
+        <translation type="vanished">找不到GIF。</translation>
     </message>
     <message>
-        <location line="+0"/>
         <source>Click on a GIF, then on the page.</source>
-        <translation>點選一個GIF，然後點選頁面。</translation>
+        <translation type="vanished">點選一個GIF，然後點選頁面。</translation>
     </message>
 </context>
 <context>
     <name>UBEraserOptionsPanel</name>
     <message>
-        <location line="-492"/>
+        <location line="-282"/>
         <source>Eraser</source>
         <translation>橡皮擦</translation>
     </message>
@@ -3166,6 +3162,19 @@ Do you want to continue?</source>
         <location line="+103"/>
         <source>Loading </source>
         <translation>載入中</translation>
+    </message>
+</context>
+<context>
+    <name>UBGifWindow</name>
+    <message>
+        <location filename="../../src/gui/UBGifWindow.cpp" line="+46"/>
+        <source>GIFs of klipy.com: drag one to the page</source>
+        <translation>klipy.com 的GIF：拖曳一個到頁面上</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Close the GIFs</source>
+        <translation>關閉GIF</translation>
     </message>
 </context>
 <context>
@@ -4255,7 +4264,7 @@ Do you want to ignore these errors for this host?</source>
 <context>
     <name>UBNoteOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1325"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1180"/>
         <source>Note</source>
         <translation>便箋</translation>
     </message>
@@ -4560,7 +4569,7 @@ It can also be done later with Home &gt; Recognize text.</source>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1488"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1343"/>
         <source>Pen</source>
         <translation>電子筆</translation>
     </message>
@@ -5194,7 +5203,7 @@ Dynamic width</source>
 <context>
     <name>UBSelectorOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1348"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1203"/>
         <source>Select</source>
         <translation>選取</translation>
     </message>
@@ -5232,7 +5241,7 @@ Dynamic width</source>
 <context>
     <name>UBSettings</name>
     <message>
-        <location filename="../../src/core/UBSettings.cpp" line="+1148"/>
+        <location filename="../../src/core/UBSettings.cpp" line="+1145"/>
         <source>My Movies</source>
         <translation>我的影片</translation>
     </message>
@@ -5871,7 +5880,7 @@ Dynamic width</source>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1225"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1080"/>
         <source>Color</source>
         <translation>顏色</translation>
     </message>
@@ -5999,7 +6008,7 @@ Please reboot the application to access the updated documents.</source>
         <translation type="vanished">聽寫</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+650"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+505"/>
         <source>Read aloud</source>
         <translation>朗讀</translation>
     </message>
