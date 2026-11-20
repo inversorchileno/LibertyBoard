@@ -220,9 +220,9 @@ Luis entregó un Word con 26 mejoras («mejoras liberty.docx», con capturas de 
 - **Edición → Leer y dictar:** «Leer en voz alta» (Ctrl+Mayús+L, Qt Text to Speech: voces de Windows) lee los textos seleccionados o el texto de la página; «Dictar (Windows + H)» abre el dictado de Windows; «Transcribir un audio» queda apagado hasta la IA de la Versión 4. La compilación de Windows instala el módulo `qtspeech`.
 - **Ajustes pedidos con la V2:** en la barra de la pizarra la flecha muestra un solo ícono por grupo (estilo de línea, inicio, fin) que despliega el resto, con «Cónica» y la opacidad a la izquierda; las barras de tiempo del láser ocupan la mitad («Espera», «Desvanecer»); el borde del modo escritorio parte en 1 px.
 
-## Observaciones a la Versión 2 (pendiente de aprobación)
+## Observaciones a la Versión 2 (compilación 22)
 
-Luis revisó la compilación 21 y entregó «observaciones_V2.docx» con 15 puntos. Quedaron en la rama de trabajo; no se compila hasta que él apruebe, ni se empieza la V3.
+Luis revisó la compilación 21 y entregó «observaciones_V2.docx» con 15 puntos. Los aprobó y se publicaron en la compilación 22; la V3 espera su autorización.
 
 1. **Bloquear lienzo:** la flecha de selección ya no selecciona nada (`UBBoardView`: con el lienzo bloqueado sale antes de presionar, mover y soltar).
 2. **Foco y lupa:** el ícono de la herramienta pasa a una lupa cuando se elige Lupa (`UBSpotlightOptionsPanel::updateToolIcon`, `magnifier.svg`).
