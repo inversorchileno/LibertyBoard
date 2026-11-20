@@ -275,7 +275,7 @@ Luis revisó la compilación 21 y entregó «observaciones_V2.docx» con 15 punt
   - Las funciones sin atajo recibieron uno (sobre todo Ctrl+Mayús+letra y teclas F): Bolígrafo Ctrl+Mayús+P, Foco F, Resaltar I, Selector E, Mano M, Nota O, Sello T, Emojis G, Nota rápida Q, Adjuntar J, Sonido K, Subrayar U, Leer en voz alta V, Flecha A, Formas R, captura C (escritorio X), Bloquear lienzo B, OCR Y; Tutorial F1, Atajos Ctrl+F1, Consejos Mayús+F1, Índice F7, Dictar F8, Pizarra Ctrl+1, Doble pizarra Ctrl+2, Nueva página Ctrl+Intro, Duplicar página Ctrl+Mayús+Intro, entre otros. No se usa Ctrl+Alt (es Alt Gr en los teclados en español) ni Alt+Mayús (cambia el idioma del teclado en Windows).
   - Se rechaza con un aviso que explica por qué: la tecla Windows, las combinaciones de Windows (Alt+Tab, Alt+F4, Alt+Esc, Alt+Espacio, Ctrl+Esc, Ctrl+Mayús+Esc, Ctrl+Alt+Supr, Impr Pant, Mayús+F10, Ctrl+Alt+flechas que giran la pantalla), las teclas solas que sirven para escribir o moverse, Ctrl+Alt con letra (Alt Gr), Ctrl+A, Alt + la letra de un menú y un atajo que ya tiene otra función.
   - Al final, las **teclas fijas** de OpenBoard (páginas con RePág/AvPág y flechas, zoom con Ctrl+ +/−, desplazamiento con Ctrl+flechas), que no se cambian.
-  - Los atajos de las herramientas funcionan también con la herramienta quitada de la barra, y en el modo escritorio.
+  - Los atajos de las herramientas funcionan también con la herramienta quitada de la barra. En el modo escritorio no se pudieron probar en Linux (la capa transparente no recibe el teclado en la prueba).
 
 ## Forma de trabajo
 
