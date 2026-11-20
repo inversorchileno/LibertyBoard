@@ -230,7 +230,7 @@ Luis revisó la compilación 21 y entregó «observaciones_V2.docx» con 15 punt
 4. **Movimiento rápido:** la estela de seguimiento se suaviza con curvas entre los puntos (`smoothFollowing`), sin quiebres.
 5. **Barra «Espera» en 5 s:** el tirador quedaba cortado; las barras de tiempo tienen ancho fijo (`UBValueSlider::setSliderWidth`).
 6. **Círculos de color:** el doble de grandes (el estilo general de la aplicación les daba un margen de 4 px que los achicaba), con menos espacio entre ellos, en la misma superficie.
-7. **Foco:** un segundo clic en su ícono lo apaga y vuelve a la herramienta anterior, en pizarra y escritorio.
+7. **Foco y lupa:** un segundo clic en su ícono los apaga, pero la herramienta sigue elegida hasta que se elige otra; otro clic en el ícono, o elegir Foco o Lupa en sus opciones, los vuelve a prender (`UBDrawingController::setSpotlightShown`). En pizarra y escritorio. En el escritorio la barra elige la herramienta al presionar y cuenta ella misma los clics.
 8. **Flecha cónica** con línea punteada o de trazos: cada trazo es un trapecio con su grosor, con extremos redondos.
 9. **Un color más:** 13 colores (se sumaron blanco, gris, café y azul marino) más la rueda de colores y el cuentagotas = 15 lugares.
 10. **Arcoíris** es la tercera opción del efecto del láser, junto a Estándar y Quemado blanco.

@@ -434,11 +434,15 @@ void UBMainMenu::createCornerButtons()
     outlineButton->setStyleSheet(buttonStyle);
     layout->insertWidget(layout->indexOf(searchButton), outlineButton);
 
-    // The spotlight and the magnifier follow the pointer while their tool is chosen.
+    // The spotlight and the magnifier follow the pointer while their tool is chosen and shown.
     auto spotlight = new UBSpotlight();
-    connect(UBDrawingController::drawingController(), &UBDrawingController::stylusToolChanged, spotlight, [spotlight](int tool) {
-        spotlight->setActive(tool == UBStylusTool::Spotlight);
-    });
+    auto updateSpotlight = [spotlight]() {
+        UBDrawingController* drawingController = UBDrawingController::drawingController();
+        spotlight->setActive(drawingController->stylusTool() == UBStylusTool::Spotlight
+                             && drawingController->isSpotlightShown());
+    };
+    connect(UBDrawingController::drawingController(), &UBDrawingController::stylusToolChanged, spotlight, updateSpotlight);
+    connect(UBDrawingController::drawingController(), &UBDrawingController::spotlightShownChanged, spotlight, updateSpotlight);
 
     // Locks the canvas against changes, left of the index.
     auto lockAction = new QAction(QIcon(":/images/toolbar/lockOpen.svg"), tr("Lock canvas"), mMainWindow);

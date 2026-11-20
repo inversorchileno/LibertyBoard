@@ -763,6 +763,8 @@ UBSpotlightOptionsPanel::UBSpotlightOptionsPanel(QWidget* parent)
         settings->spotlightMode->set(mode);
         showModeOptions();
         updateToolIcon();
+        // Choosing the spotlight or the magnifier shows it, also after a second click hid it.
+        UBDrawingController::drawingController()->setSpotlightShown(true);
     });
     connect(mRadius, &UBValueSlider::valueChanged, this, [settings](qreal radius) {
         settings->spotlightRadius->set(qRound(radius));

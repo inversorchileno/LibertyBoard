@@ -571,12 +571,11 @@ void UBDesktopAnnotationController::toolButtonReleased()
     }
     else if (tool == UBStylusTool::Spotlight)
     {
-        // Chosen when pressed; a second click turns it off.
+        // Chosen when pressed; a second click hides or shows it again.
         if (mSpotlightWasOn)
         {
-            UBDrawingController::drawingController()->turnOffSpotlight();
-            switchCursor(UBDrawingController::drawingController()->stylusTool());
-            return;
+            UBDrawingController* drawingController = UBDrawingController::drawingController();
+            drawingController->setSpotlightShown(!drawingController->isSpotlightShown());
         }
     }
     else

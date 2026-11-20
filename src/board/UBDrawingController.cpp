@@ -99,10 +99,16 @@ UBDrawingController::UBDrawingController(QObject * parent)
         const UBStylusTool::Enum tool = shapeTool.second;
 
         connect(shapeTool.first, &QAction::triggered, this, [this, tool](bool checked) {
-            // A second click on the spotlight turns it off.
+            // A second click on the spotlight hides or shows it again. The
+            // desktop palette chooses its tool when pressed and counts the
+            // clicks itself.
             if (tool == UBStylusTool::Spotlight && mStylusTool == UBStylusTool::Spotlight)
             {
-                turnOffSpotlight();
+                if (!mIsDesktopMode)
+                {
+                    setSpotlightShown(!mSpotlightShown);
+                }
+
                 return;
             }
 
@@ -157,17 +163,23 @@ void UBDrawingController::setCanvasLocked(bool locked)
     emit canvasLockedChanged(locked);
 }
 
-void UBDrawingController::turnOffSpotlight()
+void UBDrawingController::setSpotlightShown(bool shown)
 {
-    setStylusTool(mToolBeforeSpotlight == UBStylusTool::Spotlight ? UBStylusTool::Selector : mToolBeforeSpotlight);
+    if (shown == mSpotlightShown)
+    {
+        return;
+    }
+
+    mSpotlightShown = shown;
+    emit spotlightShownChanged(shown);
 }
 
 void UBDrawingController::setStylusTool(int tool)
 {
-    // The tool to go back to when the spotlight is turned off.
+    // Choosing the spotlight shows it.
     if (tool == UBStylusTool::Spotlight && mStylusTool != UBStylusTool::Spotlight)
     {
-        mToolBeforeSpotlight = mStylusTool;
+        setSpotlightShown(true);
     }
 
     // On a locked canvas, only the tools that change nothing.

@@ -88,8 +88,13 @@ class UBDrawingController : public QObject
         bool isCanvasLocked() const { return mCanvasLocked; }
         void setCanvasLocked(bool locked);
 
-        /** @brief Goes back from the spotlight to the tool chosen before it. */
-        void turnOffSpotlight();
+        /**
+         * @brief Whether the spotlight or the magnifier is shown while its
+         * tool is chosen. A second click on the tool hides it, and the tool
+         * stays chosen until another one is.
+         */
+        bool isSpotlightShown() const { return mSpotlightShown; }
+        void setSpotlightShown(bool shown);
 
         /** @brief True for the tools that work on a locked canvas. */
         static bool worksOnLockedCanvas(int tool);
@@ -106,6 +111,7 @@ class UBDrawingController : public QObject
         void colorPaletteChanged();
         void lassoSelectionChanged(bool lasso);
         void canvasLockedChanged(bool locked);
+        void spotlightShownChanged(bool shown);
 
         void lineWidthIndexChanged(int index);
         void colorIndexChanged(int index);
@@ -116,7 +122,7 @@ class UBDrawingController : public QObject
         UBStylusTool::Enum mLatestDrawingTool;
         bool mIsDesktopMode;
         bool mCanvasLocked{false};
-        UBStylusTool::Enum mToolBeforeSpotlight{UBStylusTool::Pen};
+        bool mSpotlightShown{true};
 
         static UBDrawingController* sDrawingController;
 
