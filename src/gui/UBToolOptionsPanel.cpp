@@ -50,16 +50,19 @@
 // Width of the eraser on screen for each point of its size
 static constexpr qreal sEraserPixelsPerPoint = 3.0;
 
+// Thirteen colors: with the other color and the eyedropper, three full
+// rows of five in the toolbar.
 static QList<QColor> penColors()
 {
     return { QColor("#ff3b30"), QColor("#2f54ff"), QColor("#000000"), QColor("#14b85a"), QColor("#9a46f0"),
-             QColor("#ff9a1f"), QColor("#12b5e8"), QColor("#ff1fd2"), QColor("#ffee1f") };
+             QColor("#ff9a1f"), QColor("#12b5e8"), QColor("#ff1fd2"), QColor("#ffee1f"), QColor("#ffffff"),
+             QColor("#8e8e93"), QColor("#8b5a2b"), QColor("#1a237e") };
 }
 
+// The same colors as the pen, as Luis asked.
 static QList<QColor> markerColors()
 {
-    return { QColor("#ffff00"), QColor("#ff00ff"), QColor("#00ffff"), QColor("#92d050"), QColor("#ff7c80"),
-             QColor("#ffc000"), QColor("#9a46f0"), QColor("#ffa07a"), QColor("#ff4f6d") };
+    return penColors();
 }
 
 static QList<QColor> laserColors()

@@ -214,7 +214,7 @@ static QIcon roundSwatchIcon(const QColor& color, int size)
 
         QPainter painter(&pixmap);
         painter.setRenderHint(QPainter::Antialiasing);
-        const QRectF circle = QRectF(0, 0, size, size).adjusted(2, 2, -2, -2);
+        const QRectF circle = QRectF(0, 0, size, size).adjusted(1.2, 1.2, -1.2, -1.2);
 
         if (color.isValid())
         {
@@ -247,10 +247,11 @@ static QIcon roundSwatchIcon(const QColor& color, int size)
 
 void UBColorSwatches::setThreeRows()
 {
-    // Round swatches in three rows, as high as the toolbar.
-    const int size = 20;
-    const QString flat = QStringLiteral("QToolButton, QToolButton:checked, QToolButton:hover "
-                                        "{ background: transparent; border: none; padding: 0px; }");
+    // Round swatches in three rows, as high as the toolbar. The style of
+    // the toolbar gives its buttons margins, which would shrink the circles.
+    const int size = 22;
+    const QString flat = QStringLiteral("QToolButton, QToolButton:checked, QToolButton:hover, QToolButton:pressed "
+                                        "{ background: transparent; border: none; padding: 0px; margin: 0px; }");
     QList<QWidget*> buttons;
 
     for (int i = 0; i < mSwatches.size(); ++i)
@@ -283,7 +284,7 @@ void UBColorSwatches::setThreeRows()
 
     auto grid = new QGridLayout(this);
     grid->setContentsMargins(0, 0, 0, 0);
-    grid->setHorizontalSpacing(2);
+    grid->setHorizontalSpacing(1);
     grid->setVerticalSpacing(1);
 
     const int columns = (buttons.size() + 2) / 3;
