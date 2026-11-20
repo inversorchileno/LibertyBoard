@@ -2003,7 +2003,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+720"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+728"/>
         <source>Quick note</source>
         <translation>Nota rápida</translation>
     </message>
@@ -2074,7 +2074,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBDesktopPalette</name>
     <message>
-        <location filename="../../src/desktop/UBDesktopPalette.cpp" line="+89"/>
+        <location filename="../../src/desktop/UBDesktopPalette.cpp" line="+90"/>
         <source>Save a screenshot</source>
         <translation>Guardar captura de pantalla</translation>
     </message>
@@ -2084,7 +2084,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Guardar una captura de pantalla con las anotaciones en la carpeta Imágenes</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+5"/>
         <source>Erase all</source>
         <translation>Borrar todo</translation>
     </message>
@@ -2094,7 +2094,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Borra todo lo dibujado en la pantalla</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+9"/>
         <source>Capture Part of the Screen</source>
         <translation>Capturar parte de la pantalla</translation>
     </message>
@@ -2104,7 +2104,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Capturar la pantalla</translation>
     </message>
     <message>
-        <location line="+26"/>
+        <location line="+32"/>
         <source>Show the stylus palette</source>
         <translation>Mostrar la paleta del lápiz</translation>
     </message>
@@ -2119,7 +2119,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Mostrar escritorio en la pantalla secundaria</translation>
     </message>
     <message>
-        <location line="-416"/>
+        <location line="-424"/>
         <source>Show LibertyBoard</source>
         <translation>Mostrar LibertyBoard</translation>
     </message>
@@ -2532,12 +2532,12 @@ Proporcionar un nuevo nombre creará un nuevo documento.</translation>
         <translation type="vanished">Nuevo documento</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBDocumentTabs.cpp" line="+73"/>
+        <location filename="../../src/gui/UBDocumentTabs.cpp" line="+75"/>
         <source>New board</source>
         <translation>Nueva pizarra</translation>
     </message>
     <message>
-        <location line="+125"/>
+        <location line="+126"/>
         <source>Save</source>
         <translation>Guardar</translation>
     </message>
@@ -2562,7 +2562,7 @@ Proporcionar un nuevo nombre creará un nuevo documento.</translation>
         <translation>Cerrar documento</translation>
     </message>
     <message>
-        <location line="+160"/>
+        <location line="+167"/>
         <source>Recover documents</source>
         <translation>Recuperar documentos</translation>
     </message>
@@ -2736,7 +2736,7 @@ Si quieres continuar, el documento se convertirá para ser compatible con la ver
 <context>
     <name>UBEmojiOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-972"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-980"/>
         <source>Emojis and GIFs</source>
         <translation>Emojis y GIFs</translation>
     </message>
@@ -3199,7 +3199,7 @@ Si quieres continuar, el documento se convertirá para ser compatible con la ver
 <context>
     <name>UBGifWindow</name>
     <message>
-        <location filename="../../src/gui/UBGifWindow.cpp" line="+52"/>
+        <location filename="../../src/gui/UBGifWindow.cpp" line="+55"/>
         <source>GIFs of klipy.com: drag one to the page</source>
         <translation>GIFs de klipy.com: arrastra uno a la página</translation>
     </message>
@@ -3759,6 +3759,24 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     </message>
 </context>
 <context>
+    <name>UBKeyCatcher</name>
+    <message>
+        <location filename="../../src/gui/UBShortcutsDialog.cpp" line="+725"/>
+        <source>Click here and press the keys of the new shortcut</source>
+        <translation>Haz clic aquí y presiona las teclas del nuevo atajo</translation>
+    </message>
+    <message>
+        <location line="+91"/>
+        <source>Press the keys...</source>
+        <translation>Presiona las teclas...</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Click here and press the keys</source>
+        <translation>Haz clic aquí y presiona las teclas</translation>
+    </message>
+</context>
+<context>
     <name>UBKeyboardPalette</name>
     <message>
         <location filename="../../src/gui/UBKeyboardPalette_linux.cpp" line="+173"/>
@@ -3935,7 +3953,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+522"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+560"/>
         <source>Hide or show the toolbar</source>
         <translation>Ocultar o mostrar la barra</translation>
     </message>
@@ -3952,13 +3970,13 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation type="vanished">Tamaño de página</translation>
     </message>
     <message>
-        <location line="-388"/>
-        <location line="+85"/>
+        <location line="-421"/>
+        <location line="+92"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
     </message>
     <message>
-        <location line="-69"/>
+        <location line="-76"/>
         <source>&amp;Home</source>
         <translation>&amp;Inicio</translation>
     </message>
@@ -3971,43 +3989,43 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation type="vanished">Guardar como PDF con las anotaciones, o la página como imagen PNG o JPEG</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location line="+8"/>
         <source>Open/Import</source>
         <translation>Abrir/Importar</translation>
     </message>
     <message>
-        <location line="+72"/>
+        <location line="+79"/>
         <source>&amp;Mode</source>
         <translation>&amp;Modo</translation>
     </message>
     <message>
-        <location line="+27"/>
+        <location line="+29"/>
         <source>&amp;Edit</source>
         <translation>&amp;Edición</translation>
     </message>
     <message>
-        <location line="-34"/>
+        <location line="-37"/>
         <source>Close document</source>
         <translation>Cerrar documento</translation>
     </message>
     <message>
-        <location line="-112"/>
-        <location line="+152"/>
+        <location line="-119"/>
+        <location line="+162"/>
         <source>Page/canvas size</source>
         <translation>Tamaño página/lienzo</translation>
     </message>
     <message>
-        <location line="-110"/>
+        <location line="-120"/>
         <source>New board</source>
         <translation>Nueva pizarra</translation>
     </message>
     <message>
-        <location line="+10"/>
+        <location line="+12"/>
         <source>Save</source>
         <translation>Guardar</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+3"/>
         <source>Save the annotations in the PDF, or the page as a picture</source>
         <translation>Guardar las anotaciones en el PDF, o la página como imagen</translation>
     </message>
@@ -4017,7 +4035,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>Guardar como...</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+3"/>
         <source>Save a copy as a PDF, PNG or JPEG file</source>
         <translation>Guardar una copia como archivo PDF, PNG o JPEG</translation>
     </message>
@@ -4037,27 +4055,27 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>Imprimir...</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+9"/>
         <source>Extract pages...</source>
         <translation>Extraer páginas...</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+5"/>
         <source>Recognize text (OCR)...</source>
         <translation>Reconocer texto (OCR)...</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>Reads the text of the scanned pages, so that it can be searched and copied</source>
         <translation>Lee el texto de las páginas escaneadas, para poder buscarlo y copiarlo</translation>
     </message>
     <message>
-        <location line="+30"/>
+        <location line="+32"/>
         <source>Double board</source>
         <translation>Doble pizarra</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+3"/>
         <source>Two documents side by side: click a side to work on it</source>
         <translation>Dos documentos lado a lado: haz clic en un lado para trabajar en él</translation>
     </message>
@@ -4073,7 +4091,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     </message>
     <message>
         <location line="+2"/>
-        <location line="+6"/>
+        <location line="+7"/>
         <source>Read aloud</source>
         <translation>Leer en voz alta</translation>
     </message>
@@ -4093,12 +4111,27 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>Dictar (Windows + H)</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>Opens the dictation of Windows: what is said is written where the cursor of text is</source>
         <translation>Abre el dictado de Windows: lo que se dice se escribe donde está el cursor de texto</translation>
     </message>
     <message>
-        <location line="+167"/>
+        <location line="+23"/>
+        <source>&amp;Tools</source>
+        <translation>&amp;Herramientas</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>&amp;Customize</source>
+        <translation>&amp;Personalización</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Shortcuts</source>
+        <translation>Atajos</translation>
+    </message>
+    <message>
+        <location line="+154"/>
         <location line="+17"/>
         <source>Lock the canvas: nothing can be drawn, written, highlighted, selected, moved or deleted; the laser pointer and the hand still work</source>
         <translation>Bloquear el lienzo: no se puede dibujar, escribir, resaltar, seleccionar, mover ni borrar nada; el láser y la mano siguen funcionando</translation>
@@ -4129,12 +4162,12 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation type="vanished">El dictado del sistema no está disponible aquí. En Windows, presiona Windows + H en un texto.</translation>
     </message>
     <message>
-        <location line="-175"/>
+        <location line="-196"/>
         <source>Transcribe an audio (coming with the AI)</source>
         <translation>Transcribir un audio (llegará con la IA)</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+3"/>
         <source>Writes what is said in a recording; it will come with the AI of LibertyBoard</source>
         <translation>Escribe lo que se dice en una grabación; llegará con la IA de LibertyBoard</translation>
     </message>
@@ -4144,17 +4177,17 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>Pantalla completa</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location line="+17"/>
         <source>&amp;About</source>
         <translation>&amp;Acerca</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+11"/>
         <source>LibertyBoard on GitHub</source>
         <translation>LibertyBoard en GitHub</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+9"/>
         <source>Update</source>
         <translation>Actualización</translation>
     </message>
@@ -4165,17 +4198,17 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     </message>
     <message>
         <location line="+66"/>
-        <location line="+395"/>
+        <location line="+398"/>
         <source>Saved</source>
         <translation>Guardado</translation>
     </message>
     <message>
-        <location line="-389"/>
+        <location line="-392"/>
         <source>Search...</source>
         <translation>Buscar...</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+5"/>
         <source>Find words in the PDF</source>
         <translation>Buscar palabras en el PDF</translation>
     </message>
@@ -4185,13 +4218,13 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>Índice</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>The index of the PDF: a click on a title goes to its page</source>
         <translation>El índice del PDF: un clic en un título lleva a su página</translation>
     </message>
     <message>
         <location line="+32"/>
-        <location line="+18"/>
+        <location line="+19"/>
         <location line="+34"/>
         <source>Lock canvas</source>
         <translation>Bloquear lienzo</translation>
@@ -4361,7 +4394,7 @@ Do you want to ignore these errors for this host?</source>
 <context>
     <name>UBNoteOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1165"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1173"/>
         <source>Note</source>
         <translation>Nota</translation>
     </message>
@@ -4682,7 +4715,7 @@ También se puede hacer después con Inicio &gt; Reconocer texto.</translation>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1328"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1336"/>
         <source>Pen</source>
         <translation>Bolígrafo</translation>
     </message>
@@ -5320,7 +5353,7 @@ Ancho dinámico</translation>
 <context>
     <name>UBSelectorOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1206"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1214"/>
         <source>Select</source>
         <translation>Seleccionar</translation>
     </message>
@@ -5361,7 +5394,7 @@ Ancho dinámico</translation>
 <context>
     <name>UBSettings</name>
     <message>
-        <location filename="../../src/core/UBSettings.cpp" line="+1146"/>
+        <location filename="../../src/core/UBSettings.cpp" line="+1148"/>
         <source>My Movies</source>
         <translation>Mis películas</translation>
     </message>
@@ -5369,7 +5402,7 @@ Ancho dinámico</translation>
 <context>
     <name>UBShapeOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-594"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-602"/>
         <source>Text highlight</source>
         <translation>Resaltado del texto</translation>
     </message>
@@ -5695,6 +5728,218 @@ Ancho dinámico</translation>
     </message>
 </context>
 <context>
+    <name>UBShortcutsDialog</name>
+    <message>
+        <location filename="../../src/gui/UBShortcutsDialog.cpp" line="-667"/>
+        <source>Shortcuts</source>
+        <translation>Atajos</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Choose a function, press the new keys in the box below and click Assign.</source>
+        <translation>Elige una función, presiona las nuevas teclas en el cuadro de abajo y haz clic en Asignar.</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Search a function...</source>
+        <translation>Buscar una función...</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Function</source>
+        <translation>Función</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Shortcut</source>
+        <translation>Atajo</translation>
+    </message>
+    <message>
+        <location line="+15"/>
+        <source>New shortcut:</source>
+        <translation>Nuevo atajo:</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Assign</source>
+        <translation>Asignar</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Remove</source>
+        <translation>Quitar</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Default</source>
+        <translation>Original</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Gives back the shortcut that this function had at first</source>
+        <translation>Devuelve el atajo que esta función tenía al principio</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <location line="+508"/>
+        <source>Restore all</source>
+        <translation>Restaurar todos</translation>
+    </message>
+    <message>
+        <location line="-507"/>
+        <source>Gives back the first shortcuts to all the functions</source>
+        <translation>Devuelve los atajos del principio a todas las funciones</translation>
+    </message>
+    <message>
+        <location line="+152"/>
+        <source>Buttons beside the menus</source>
+        <translation>Botones junto a los menús</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Tools of the board / PDF</source>
+        <translation>Herramientas de la pizarra / PDF</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Tools of the desktop</source>
+        <translation>Herramientas del escritorio</translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <source>Pages and board</source>
+        <translation>Páginas y pizarra</translation>
+    </message>
+    <message>
+        <location line="+68"/>
+        <source>no keys were pressed.</source>
+        <translation>no se presionó ninguna tecla.</translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>the Windows key is kept by Windows for its own shortcuts.</source>
+        <translation>Windows reserva la tecla Windows para sus propios atajos.</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <location line="+1"/>
+        <location line="+1"/>
+        <location line="+1"/>
+        <location line="+1"/>
+        <source>Windows uses it to change between the open windows.</source>
+        <translation>Windows lo usa para cambiar entre las ventanas abiertas.</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Windows uses it to close the window.</source>
+        <translation>Windows lo usa para cerrar la ventana.</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Windows uses it to open the menu of the window.</source>
+        <translation>Windows lo usa para abrir el menú de la ventana.</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Windows uses it to open the Start menu.</source>
+        <translation>Windows lo usa para abrir el menú Inicio.</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Windows uses it to open the Task Manager.</source>
+        <translation>Windows lo usa para abrir el Administrador de tareas.</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Windows uses it to open its security screen.</source>
+        <translation>Windows lo usa para abrir su pantalla de seguridad.</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <location line="+1"/>
+        <location line="+1"/>
+        <location line="+1"/>
+        <source>Windows uses it to take screenshots.</source>
+        <translation>Windows lo usa para tomar capturas de pantalla.</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Windows uses it to open the menu of the right click.</source>
+        <translation>Windows lo usa para abrir el menú del clic derecho.</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <location line="+1"/>
+        <location line="+1"/>
+        <location line="+1"/>
+        <source>on many computers it turns the screen.</source>
+        <translation>en muchos computadores gira la pantalla.</translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <source>this key is used to write, to move or to delete. Add Ctrl or Alt, or choose a key from F1 to F12.</source>
+        <translation>esta tecla se usa para escribir, moverse o borrar. Agrega Ctrl o Alt, o elige una tecla de F1 a F12.</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Ctrl + Alt works as Alt Gr, which writes signs such as @, # or €.</source>
+        <translation>Ctrl + Alt funciona como Alt Gr, que escribe signos como @, # o €.</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>LibertyBoard uses it to select all the text of a text box.</source>
+        <translation>LibertyBoard lo usa para seleccionar todo el texto de un cuadro de texto.</translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <source>LibertyBoard uses it to open the menu «%1».</source>
+        <translation>LibertyBoard lo usa para abrir el menú «%1».</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <location line="+178"/>
+        <source>LibertyBoard already uses it for «%1». Remove it there first.</source>
+        <translation>LibertyBoard ya lo usa para «%1». Quítalo de ahí primero.</translation>
+    </message>
+    <message>
+        <location line="-130"/>
+        <source>Fixed keys (can not be changed)</source>
+        <translation>Teclas fijas (no se pueden cambiar)</translation>
+    </message>
+    <message>
+        <location line="+68"/>
+        <source>Choose a function in the list.</source>
+        <translation>Elige una función de la lista.</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>%1: no shortcut</source>
+        <translation>%1: sin atajo</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>%1: %2</source>
+        <translation>%1: %2</translation>
+    </message>
+    <message>
+        <location line="+17"/>
+        <location line="+37"/>
+        <source>Shortcut not possible</source>
+        <translation>Atajo no posible</translation>
+    </message>
+    <message>
+        <location line="-36"/>
+        <location line="+37"/>
+        <source>%1 can not be used: %2</source>
+        <translation>%1 no se puede usar: %2</translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <source>Give back the first shortcuts to all the functions?</source>
+        <translation>¿Devolver los atajos del principio a todas las funciones?</translation>
+    </message>
+</context>
+<context>
     <name>UBSoundDialog</name>
     <message>
         <location filename="../../src/gui/UBSoundDialog.cpp" line="+53"/>
@@ -5846,7 +6091,7 @@ Ancho dinámico</translation>
 <context>
     <name>UBStylusPalette</name>
     <message>
-        <location filename="../../src/gui/UBStylusPalette.cpp" line="+85"/>
+        <location filename="../../src/gui/UBStylusPalette.cpp" line="+86"/>
         <source>Save a screenshot</source>
         <translation>Guardar una captura de pantalla</translation>
     </message>
@@ -6018,6 +6263,19 @@ Ancho dinámico</translation>
         <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1079"/>
         <source>Color</source>
         <translation>Color</translation>
+    </message>
+</context>
+<context>
+    <name>UBToolbarChoice</name>
+    <message>
+        <location filename="../../src/gui/UBToolbarChoice.cpp" line="+164"/>
+        <source>Desktop</source>
+        <translation>Escritorio</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Board / PDF</source>
+        <translation>Pizarra / PDF</translation>
     </message>
 </context>
 <context>

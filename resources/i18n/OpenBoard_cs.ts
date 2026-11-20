@@ -1995,7 +1995,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+720"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+728"/>
         <source>Quick note</source>
         <translation>Rychlá poznámka</translation>
     </message>
@@ -2066,17 +2066,17 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBDesktopPalette</name>
     <message>
-        <location filename="../../src/desktop/UBDesktopPalette.cpp" line="+500"/>
+        <location filename="../../src/desktop/UBDesktopPalette.cpp" line="+509"/>
         <source>Show Desktop on Secondary Screen</source>
         <translation>Zobrazit plochu na druhé obrazovce</translation>
     </message>
     <message>
-        <location line="-394"/>
+        <location line="-400"/>
         <source>Capture the Screen</source>
         <translation>Zachytit obrazovku</translation>
     </message>
     <message>
-        <location line="-17"/>
+        <location line="-19"/>
         <source>Save a screenshot</source>
         <translation>Uložit snímek obrazovky</translation>
     </message>
@@ -2086,7 +2086,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Uložit snímek obrazovky s anotacemi do složky Obrázky</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+5"/>
         <source>Erase all</source>
         <translation>Smazat vše</translation>
     </message>
@@ -2096,22 +2096,22 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Smaže vše, co je nakresleno na obrazovce</translation>
     </message>
     <message>
-        <location line="+37"/>
+        <location line="+44"/>
         <source>Show the stylus palette</source>
         <translation>Zobrazit paletu pro stylus</translation>
     </message>
     <message>
-        <location line="-29"/>
+        <location line="-35"/>
         <source>Capture Part of the Screen</source>
         <translation>Zachytit část obrazovky</translation>
     </message>
     <message>
-        <location line="+395"/>
+        <location line="+401"/>
         <source>Show Board on Secondary Screen</source>
         <translation>Zobrazit tabuli na druhé obrazovce</translation>
     </message>
     <message>
-        <location line="-414"/>
+        <location line="-422"/>
         <source>Show LibertyBoard</source>
         <translation>Zobrazit LibertyBoard</translation>
     </message>
@@ -2503,12 +2503,12 @@ Providing a new name will create a new document.</source>
         <translation type="vanished">Nový dokument</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBDocumentTabs.cpp" line="+73"/>
+        <location filename="../../src/gui/UBDocumentTabs.cpp" line="+75"/>
         <source>New board</source>
         <translation>Nová tabule</translation>
     </message>
     <message>
-        <location line="+125"/>
+        <location line="+126"/>
         <source>Save</source>
         <translation>Uložit</translation>
     </message>
@@ -2533,7 +2533,7 @@ Providing a new name will create a new document.</source>
         <translation>Zavřít dokument</translation>
     </message>
     <message>
-        <location line="+160"/>
+        <location line="+167"/>
         <source>Recover documents</source>
         <translation>Obnovit dokumenty</translation>
     </message>
@@ -2697,7 +2697,7 @@ Do you want to continue?</source>
 <context>
     <name>UBEmojiOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-972"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-980"/>
         <source>Emojis and GIFs</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3108,7 +3108,7 @@ Do you want to continue?</source>
 <context>
     <name>UBGifWindow</name>
     <message>
-        <location filename="../../src/gui/UBGifWindow.cpp" line="+52"/>
+        <location filename="../../src/gui/UBGifWindow.cpp" line="+55"/>
         <source>GIFs of klipy.com: drag one to the page</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3668,6 +3668,24 @@ Stáhnout a nainstalovat nyní? LibertyBoard uloží vaše dokumenty, zavře se 
     </message>
 </context>
 <context>
+    <name>UBKeyCatcher</name>
+    <message>
+        <location filename="../../src/gui/UBShortcutsDialog.cpp" line="+725"/>
+        <source>Click here and press the keys of the new shortcut</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+91"/>
+        <source>Press the keys...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Click here and press the keys</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>UBKeyboardPalette</name>
     <message>
         <location filename="../../src/gui/UBKeyboardPalette_linux.cpp" line="+173"/>
@@ -3844,13 +3862,13 @@ Stáhnout a nainstalovat nyní? LibertyBoard uloží vaše dokumenty, zavře se 
         <translation type="vanished">Velikost stránky</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+134"/>
-        <location line="+85"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+139"/>
+        <location line="+92"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
     </message>
     <message>
-        <location line="-69"/>
+        <location line="-76"/>
         <source>&amp;Home</source>
         <translation>&amp;Domů</translation>
     </message>
@@ -3863,43 +3881,43 @@ Stáhnout a nainstalovat nyní? LibertyBoard uloží vaše dokumenty, zavře se 
         <translation type="vanished">Uložit jako PDF s anotacemi, nebo stránku jako obrázek PNG či JPEG</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location line="+8"/>
         <source>Open/Import</source>
         <translation>Otevřít/Importovat</translation>
     </message>
     <message>
-        <location line="+72"/>
+        <location line="+79"/>
         <source>&amp;Mode</source>
         <translation>&amp;Režim</translation>
     </message>
     <message>
-        <location line="+27"/>
+        <location line="+29"/>
         <source>&amp;Edit</source>
         <translation>Úp&amp;ravy</translation>
     </message>
     <message>
-        <location line="-34"/>
+        <location line="-37"/>
         <source>Close document</source>
         <translation>Zavřít dokument</translation>
     </message>
     <message>
-        <location line="-112"/>
-        <location line="+152"/>
+        <location line="-119"/>
+        <location line="+162"/>
         <source>Page/canvas size</source>
         <translation>Velikost stránky/plátna</translation>
     </message>
     <message>
-        <location line="-110"/>
+        <location line="-120"/>
         <source>New board</source>
         <translation>Nová tabule</translation>
     </message>
     <message>
-        <location line="+10"/>
+        <location line="+12"/>
         <source>Save</source>
         <translation>Uložit</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+3"/>
         <source>Save the annotations in the PDF, or the page as a picture</source>
         <translation>Uložit poznámky do PDF, nebo stránku jako obrázek</translation>
     </message>
@@ -3909,7 +3927,7 @@ Stáhnout a nainstalovat nyní? LibertyBoard uloží vaše dokumenty, zavře se 
         <translation>Uložit jako...</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+3"/>
         <source>Save a copy as a PDF, PNG or JPEG file</source>
         <translation>Uložit kopii jako soubor PDF, PNG nebo JPEG</translation>
     </message>
@@ -3929,27 +3947,27 @@ Stáhnout a nainstalovat nyní? LibertyBoard uloží vaše dokumenty, zavře se 
         <translation>Tisk...</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+9"/>
         <source>Extract pages...</source>
         <translation>Extrahovat strany...</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+5"/>
         <source>Recognize text (OCR)...</source>
         <translation>Rozpoznat text (OCR)...</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>Reads the text of the scanned pages, so that it can be searched and copied</source>
         <translation>Přečte text naskenovaných stran, aby šel vyhledávat a kopírovat</translation>
     </message>
     <message>
-        <location line="+30"/>
+        <location line="+32"/>
         <source>Double board</source>
         <translation>Dvojitá tabule</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+3"/>
         <source>Two documents side by side: click a side to work on it</source>
         <translation>Dva dokumenty vedle sebe: klepnutím na stranu na ní budete pracovat</translation>
     </message>
@@ -3965,7 +3983,7 @@ Stáhnout a nainstalovat nyní? LibertyBoard uloží vaše dokumenty, zavře se 
     </message>
     <message>
         <location line="+2"/>
-        <location line="+6"/>
+        <location line="+7"/>
         <source>Read aloud</source>
         <translation>Číst nahlas</translation>
     </message>
@@ -3985,12 +4003,27 @@ Stáhnout a nainstalovat nyní? LibertyBoard uloží vaše dokumenty, zavře se 
         <translation>Diktovat (Windows + H)</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>Opens the dictation of Windows: what is said is written where the cursor of text is</source>
         <translation>Otevře diktování Windows: co řeknete, se napíše tam, kde je textový kurzor</translation>
     </message>
     <message>
-        <location line="+167"/>
+        <location line="+23"/>
+        <source>&amp;Tools</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>&amp;Customize</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+154"/>
         <location line="+17"/>
         <source>Lock the canvas: nothing can be drawn, written, highlighted, selected, moved or deleted; the laser pointer and the hand still work</source>
         <translation>Zamknout plátno: nelze nic kreslit, psát, zvýrazňovat, vybírat, přesouvat ani mazat; laser a ruka stále fungují</translation>
@@ -4021,12 +4054,12 @@ Stáhnout a nainstalovat nyní? LibertyBoard uloží vaše dokumenty, zavře se 
         <translation type="vanished">Diktování systému zde není k dispozici. Ve Windows stiskněte v textu Windows + H.</translation>
     </message>
     <message>
-        <location line="-175"/>
+        <location line="-196"/>
         <source>Transcribe an audio (coming with the AI)</source>
         <translation>Přepsat nahrávku (přijde s AI)</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+3"/>
         <source>Writes what is said in a recording; it will come with the AI of LibertyBoard</source>
         <translation>Zapíše, co se říká v nahrávce; přijde s AI LibertyBoard</translation>
     </message>
@@ -4036,17 +4069,17 @@ Stáhnout a nainstalovat nyní? LibertyBoard uloží vaše dokumenty, zavře se 
         <translation>Celá obrazovka</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location line="+17"/>
         <source>&amp;About</source>
         <translation>&amp;O aplikaci</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+11"/>
         <source>LibertyBoard on GitHub</source>
         <translation>LibertyBoard na GitHubu</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+9"/>
         <source>Update</source>
         <translation>Aktualizovat</translation>
     </message>
@@ -4057,17 +4090,17 @@ Stáhnout a nainstalovat nyní? LibertyBoard uloží vaše dokumenty, zavře se 
     </message>
     <message>
         <location line="+66"/>
-        <location line="+395"/>
+        <location line="+398"/>
         <source>Saved</source>
         <translation>Uloženo</translation>
     </message>
     <message>
-        <location line="-389"/>
+        <location line="-392"/>
         <source>Search...</source>
         <translation>Hledat...</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+5"/>
         <source>Find words in the PDF</source>
         <translation>Hledat slova v PDF</translation>
     </message>
@@ -4077,13 +4110,13 @@ Stáhnout a nainstalovat nyní? LibertyBoard uloží vaše dokumenty, zavře se 
         <translation>Obsah</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>The index of the PDF: a click on a title goes to its page</source>
         <translation>Obsah PDF: kliknutím na nadpis přejdete na jeho stranu</translation>
     </message>
     <message>
         <location line="+32"/>
-        <location line="+18"/>
+        <location line="+19"/>
         <location line="+34"/>
         <source>Lock canvas</source>
         <translation>Zamknout plátno</translation>
@@ -4264,7 +4297,7 @@ Chcete ignorovat tyto chyby na tomto serveru?</translation>
 <context>
     <name>UBNoteOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1165"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1173"/>
         <source>Note</source>
         <translation>Poznámka</translation>
     </message>
@@ -4565,7 +4598,7 @@ Lze to udělat i později přes Domů &gt; Rozpoznat text.</translation>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1328"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1336"/>
         <source>Pen</source>
         <translation>Pero</translation>
     </message>
@@ -5199,7 +5232,7 @@ Dynamická šířka</translation>
 <context>
     <name>UBSelectorOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1202"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1210"/>
         <source>Select</source>
         <translation>Vybrat</translation>
     </message>
@@ -5240,7 +5273,7 @@ Dynamická šířka</translation>
 <context>
     <name>UBSettings</name>
     <message>
-        <location filename="../../src/core/UBSettings.cpp" line="+1146"/>
+        <location filename="../../src/core/UBSettings.cpp" line="+1148"/>
         <source>My Movies</source>
         <translation>Moje filmy</translation>
     </message>
@@ -5252,7 +5285,7 @@ Dynamická šířka</translation>
         <translation type="vanished">Obdélník</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-600"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-608"/>
         <source>Shapes</source>
         <translation type="unfinished">Tvary</translation>
     </message>
@@ -5570,6 +5603,218 @@ Dynamická šířka</translation>
     </message>
 </context>
 <context>
+    <name>UBShortcutsDialog</name>
+    <message>
+        <location filename="../../src/gui/UBShortcutsDialog.cpp" line="-667"/>
+        <source>Shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Choose a function, press the new keys in the box below and click Assign.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Search a function...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Function</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Shortcut</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+15"/>
+        <source>New shortcut:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Assign</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Remove</source>
+        <translation type="unfinished">Odstranit</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Gives back the shortcut that this function had at first</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <location line="+508"/>
+        <source>Restore all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-507"/>
+        <source>Gives back the first shortcuts to all the functions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+152"/>
+        <source>Buttons beside the menus</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Tools of the board / PDF</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Tools of the desktop</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <source>Pages and board</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+68"/>
+        <source>no keys were pressed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>the Windows key is kept by Windows for its own shortcuts.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <location line="+1"/>
+        <location line="+1"/>
+        <location line="+1"/>
+        <location line="+1"/>
+        <source>Windows uses it to change between the open windows.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Windows uses it to close the window.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Windows uses it to open the menu of the window.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Windows uses it to open the Start menu.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Windows uses it to open the Task Manager.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Windows uses it to open its security screen.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <location line="+1"/>
+        <location line="+1"/>
+        <location line="+1"/>
+        <source>Windows uses it to take screenshots.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Windows uses it to open the menu of the right click.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <location line="+1"/>
+        <location line="+1"/>
+        <location line="+1"/>
+        <source>on many computers it turns the screen.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <source>this key is used to write, to move or to delete. Add Ctrl or Alt, or choose a key from F1 to F12.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Ctrl + Alt works as Alt Gr, which writes signs such as @, # or €.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>LibertyBoard uses it to select all the text of a text box.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <source>LibertyBoard uses it to open the menu «%1».</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <location line="+178"/>
+        <source>LibertyBoard already uses it for «%1». Remove it there first.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-130"/>
+        <source>Fixed keys (can not be changed)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+68"/>
+        <source>Choose a function in the list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>%1: no shortcut</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>%1: %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+17"/>
+        <location line="+37"/>
+        <source>Shortcut not possible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-36"/>
+        <location line="+37"/>
+        <source>%1 can not be used: %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <source>Give back the first shortcuts to all the functions?</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>UBSoundDialog</name>
     <message>
         <location filename="../../src/gui/UBSoundDialog.cpp" line="+53"/>
@@ -5721,7 +5966,7 @@ Dynamická šířka</translation>
 <context>
     <name>UBStylusPalette</name>
     <message>
-        <location filename="../../src/gui/UBStylusPalette.cpp" line="+85"/>
+        <location filename="../../src/gui/UBStylusPalette.cpp" line="+86"/>
         <source>Save a screenshot</source>
         <translation>Uložit snímek obrazovky</translation>
     </message>
@@ -5889,6 +6134,19 @@ Dynamická šířka</translation>
         <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1079"/>
         <source>Color</source>
         <translation>Barva</translation>
+    </message>
+</context>
+<context>
+    <name>UBToolbarChoice</name>
+    <message>
+        <location filename="../../src/gui/UBToolbarChoice.cpp" line="+164"/>
+        <source>Desktop</source>
+        <translation type="unfinished">Ploše</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Board / PDF</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

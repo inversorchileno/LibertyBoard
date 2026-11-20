@@ -2001,7 +2001,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+720"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+728"/>
         <source>Quick note</source>
         <translation>快速附註</translation>
     </message>
@@ -2072,7 +2072,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBDesktopPalette</name>
     <message>
-        <location filename="../../src/desktop/UBDesktopPalette.cpp" line="+89"/>
+        <location filename="../../src/desktop/UBDesktopPalette.cpp" line="+90"/>
         <source>Save a screenshot</source>
         <translation>儲存螢幕截圖</translation>
     </message>
@@ -2082,7 +2082,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>將含註解的螢幕截圖儲存到圖片資料夾</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+5"/>
         <source>Erase all</source>
         <translation>全部清除</translation>
     </message>
@@ -2092,7 +2092,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>清除螢幕上繪製的所有內容</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+9"/>
         <source>Capture Part of the Screen</source>
         <translation>擷取部份螢幕</translation>
     </message>
@@ -2102,7 +2102,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>擷取螢幕</translation>
     </message>
     <message>
-        <location line="+26"/>
+        <location line="+32"/>
         <source>Show the stylus palette</source>
         <translation>顯示桌面工具</translation>
     </message>
@@ -2117,7 +2117,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>於第二螢幕顯示桌面</translation>
     </message>
     <message>
-        <location line="-416"/>
+        <location line="-424"/>
         <source>Show LibertyBoard</source>
         <translation>顯示 LibertyBoard</translation>
     </message>
@@ -2523,12 +2523,12 @@ Providing a new name will create a new document.</source>
         <translation type="vanished">新文件</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBDocumentTabs.cpp" line="+73"/>
+        <location filename="../../src/gui/UBDocumentTabs.cpp" line="+75"/>
         <source>New board</source>
         <translation>新增白板</translation>
     </message>
     <message>
-        <location line="+125"/>
+        <location line="+126"/>
         <source>Save</source>
         <translation>儲存</translation>
     </message>
@@ -2553,7 +2553,7 @@ Providing a new name will create a new document.</source>
         <translation>關閉文件</translation>
     </message>
     <message>
-        <location line="+160"/>
+        <location line="+167"/>
         <source>Recover documents</source>
         <translation>復原文件</translation>
     </message>
@@ -2719,7 +2719,7 @@ Do you want to continue?</source>
 <context>
     <name>UBEmojiOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-972"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-980"/>
         <source>Emojis and GIFs</source>
         <translation>表情符號和GIF</translation>
     </message>
@@ -3182,7 +3182,7 @@ Do you want to continue?</source>
 <context>
     <name>UBGifWindow</name>
     <message>
-        <location filename="../../src/gui/UBGifWindow.cpp" line="+52"/>
+        <location filename="../../src/gui/UBGifWindow.cpp" line="+55"/>
         <source>GIFs of klipy.com: drag one to the page</source>
         <translation>klipy.com 的GIF：拖曳一個到頁面上</translation>
     </message>
@@ -3742,6 +3742,24 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     </message>
 </context>
 <context>
+    <name>UBKeyCatcher</name>
+    <message>
+        <location filename="../../src/gui/UBShortcutsDialog.cpp" line="+725"/>
+        <source>Click here and press the keys of the new shortcut</source>
+        <translation>按一下這裡並按下新快速鍵的按鍵</translation>
+    </message>
+    <message>
+        <location line="+91"/>
+        <source>Press the keys...</source>
+        <translation>請按鍵...</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Click here and press the keys</source>
+        <translation>按一下這裡並按下按鍵</translation>
+    </message>
+</context>
+<context>
     <name>UBKeyboardPalette</name>
     <message>
         <location filename="../../src/gui/UBKeyboardPalette_linux.cpp" line="+173"/>
@@ -3918,13 +3936,13 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation type="vanished">頁面大小</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+134"/>
-        <location line="+85"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+139"/>
+        <location line="+92"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
     </message>
     <message>
-        <location line="-69"/>
+        <location line="-76"/>
         <source>&amp;Home</source>
         <translation>首頁(&amp;H)</translation>
     </message>
@@ -3937,43 +3955,43 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation type="vanished">儲存為含註解的 PDF,或將頁面儲存為 PNG 或 JPEG 影像</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location line="+8"/>
         <source>Open/Import</source>
         <translation>開啟/匯入</translation>
     </message>
     <message>
-        <location line="+72"/>
+        <location line="+79"/>
         <source>&amp;Mode</source>
         <translation>模式(&amp;M)</translation>
     </message>
     <message>
-        <location line="+27"/>
+        <location line="+29"/>
         <source>&amp;Edit</source>
         <translation>編輯(&amp;E)</translation>
     </message>
     <message>
-        <location line="-34"/>
+        <location line="-37"/>
         <source>Close document</source>
         <translation>關閉文件</translation>
     </message>
     <message>
-        <location line="-112"/>
-        <location line="+152"/>
+        <location line="-119"/>
+        <location line="+162"/>
         <source>Page/canvas size</source>
         <translation>頁面/畫布大小</translation>
     </message>
     <message>
-        <location line="-110"/>
+        <location line="-120"/>
         <source>New board</source>
         <translation>新增白板</translation>
     </message>
     <message>
-        <location line="+10"/>
+        <location line="+12"/>
         <source>Save</source>
         <translation>儲存</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+3"/>
         <source>Save the annotations in the PDF, or the page as a picture</source>
         <translation>將註記儲存到 PDF，或將頁面儲存為圖片</translation>
     </message>
@@ -3983,7 +4001,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>另存新檔...</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+3"/>
         <source>Save a copy as a PDF, PNG or JPEG file</source>
         <translation>將副本另存為 PDF、PNG 或 JPEG 檔案</translation>
     </message>
@@ -4003,27 +4021,27 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>列印...</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+9"/>
         <source>Extract pages...</source>
         <translation>擷取頁面...</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+5"/>
         <source>Recognize text (OCR)...</source>
         <translation>辨識文字 (OCR)...</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>Reads the text of the scanned pages, so that it can be searched and copied</source>
         <translation>讀取掃描頁面上的文字，以便搜尋和複製</translation>
     </message>
     <message>
-        <location line="+30"/>
+        <location line="+32"/>
         <source>Double board</source>
         <translation>雙白板</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+3"/>
         <source>Two documents side by side: click a side to work on it</source>
         <translation>兩份文件並排：按一下一側即可在該側工作</translation>
     </message>
@@ -4039,7 +4057,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     </message>
     <message>
         <location line="+2"/>
-        <location line="+6"/>
+        <location line="+7"/>
         <source>Read aloud</source>
         <translation>朗讀</translation>
     </message>
@@ -4059,12 +4077,27 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>聽寫 (Windows + H)</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>Opens the dictation of Windows: what is said is written where the cursor of text is</source>
         <translation>開啟 Windows 聽寫：所說內容會寫在文字游標處</translation>
     </message>
     <message>
-        <location line="+167"/>
+        <location line="+23"/>
+        <source>&amp;Tools</source>
+        <translation>工具(&amp;T)</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>&amp;Customize</source>
+        <translation>自訂(&amp;C)</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Shortcuts</source>
+        <translation>快速鍵</translation>
+    </message>
+    <message>
+        <location line="+154"/>
         <location line="+17"/>
         <source>Lock the canvas: nothing can be drawn, written, highlighted, selected, moved or deleted; the laser pointer and the hand still work</source>
         <translation>鎖定畫布：無法繪製、書寫、標示、選取、移動或刪除任何內容；雷射筆和手形工具仍可使用</translation>
@@ -4095,12 +4128,12 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation type="vanished">此處無法使用系統聽寫。在 Windows 中，請在文字中按 Windows + H。</translation>
     </message>
     <message>
-        <location line="-175"/>
+        <location line="-196"/>
         <source>Transcribe an audio (coming with the AI)</source>
         <translation>轉寫音訊（將隨 AI 推出）</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+3"/>
         <source>Writes what is said in a recording; it will come with the AI of LibertyBoard</source>
         <translation>寫出錄音中所說的內容；將隨 LibertyBoard 的 AI 推出</translation>
     </message>
@@ -4110,17 +4143,17 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>全螢幕</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location line="+17"/>
         <source>&amp;About</source>
         <translation>關於(&amp;A)</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+11"/>
         <source>LibertyBoard on GitHub</source>
         <translation>GitHub 上的 LibertyBoard</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+9"/>
         <source>Update</source>
         <translation>更新</translation>
     </message>
@@ -4131,17 +4164,17 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     </message>
     <message>
         <location line="+66"/>
-        <location line="+395"/>
+        <location line="+398"/>
         <source>Saved</source>
         <translation>已儲存</translation>
     </message>
     <message>
-        <location line="-389"/>
+        <location line="-392"/>
         <source>Search...</source>
         <translation>尋找...</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+5"/>
         <source>Find words in the PDF</source>
         <translation>在 PDF 中尋找文字</translation>
     </message>
@@ -4151,13 +4184,13 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>目錄</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>The index of the PDF: a click on a title goes to its page</source>
         <translation>PDF 的目錄：按一下標題即可前往其頁面</translation>
     </message>
     <message>
         <location line="+32"/>
-        <location line="+18"/>
+        <location line="+19"/>
         <location line="+34"/>
         <source>Lock canvas</source>
         <translation>鎖定畫布</translation>
@@ -4332,7 +4365,7 @@ Do you want to ignore these errors for this host?</source>
 <context>
     <name>UBNoteOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1165"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1173"/>
         <source>Note</source>
         <translation>便箋</translation>
     </message>
@@ -4637,7 +4670,7 @@ It can also be done later with Home &gt; Recognize text.</source>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1328"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1336"/>
         <source>Pen</source>
         <translation>電子筆</translation>
     </message>
@@ -5271,7 +5304,7 @@ Dynamic width</source>
 <context>
     <name>UBSelectorOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1202"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1210"/>
         <source>Select</source>
         <translation>選取</translation>
     </message>
@@ -5312,7 +5345,7 @@ Dynamic width</source>
 <context>
     <name>UBSettings</name>
     <message>
-        <location filename="../../src/core/UBSettings.cpp" line="+1146"/>
+        <location filename="../../src/core/UBSettings.cpp" line="+1148"/>
         <source>My Movies</source>
         <translation>我的影片</translation>
     </message>
@@ -5324,7 +5357,7 @@ Dynamic width</source>
         <translation type="vanished">矩形</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-600"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-608"/>
         <source>Shapes</source>
         <translation>形狀</translation>
     </message>
@@ -5646,6 +5679,218 @@ Dynamic width</source>
     </message>
 </context>
 <context>
+    <name>UBShortcutsDialog</name>
+    <message>
+        <location filename="../../src/gui/UBShortcutsDialog.cpp" line="-667"/>
+        <source>Shortcuts</source>
+        <translation>快速鍵</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Choose a function, press the new keys in the box below and click Assign.</source>
+        <translation>選擇一個功能，在下方的方塊中按下新按鍵，然後按一下「指派」。</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Search a function...</source>
+        <translation>搜尋功能...</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Function</source>
+        <translation>功能</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Shortcut</source>
+        <translation>快速鍵</translation>
+    </message>
+    <message>
+        <location line="+15"/>
+        <source>New shortcut:</source>
+        <translation>新快速鍵：</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Assign</source>
+        <translation>指派</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Remove</source>
+        <translation>移除</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Default</source>
+        <translation>預設</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Gives back the shortcut that this function had at first</source>
+        <translation>還原此功能最初的快速鍵</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <location line="+508"/>
+        <source>Restore all</source>
+        <translation>全部還原</translation>
+    </message>
+    <message>
+        <location line="-507"/>
+        <source>Gives back the first shortcuts to all the functions</source>
+        <translation>將所有功能還原為最初的快速鍵</translation>
+    </message>
+    <message>
+        <location line="+152"/>
+        <source>Buttons beside the menus</source>
+        <translation>選單旁的按鈕</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Tools of the board / PDF</source>
+        <translation>白板 / PDF 工具</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Tools of the desktop</source>
+        <translation>桌面工具</translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <source>Pages and board</source>
+        <translation>頁面和白板</translation>
+    </message>
+    <message>
+        <location line="+68"/>
+        <source>no keys were pressed.</source>
+        <translation>沒有按下任何鍵。</translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>the Windows key is kept by Windows for its own shortcuts.</source>
+        <translation>Windows 鍵保留給 Windows 自己的快速鍵。</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <location line="+1"/>
+        <location line="+1"/>
+        <location line="+1"/>
+        <location line="+1"/>
+        <source>Windows uses it to change between the open windows.</source>
+        <translation>Windows 用它在開啟的視窗之間切換。</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Windows uses it to close the window.</source>
+        <translation>Windows 用它關閉視窗。</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Windows uses it to open the menu of the window.</source>
+        <translation>Windows 用它開啟視窗選單。</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Windows uses it to open the Start menu.</source>
+        <translation>Windows 用它開啟開始功能表。</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Windows uses it to open the Task Manager.</source>
+        <translation>Windows 用它開啟工作管理員。</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Windows uses it to open its security screen.</source>
+        <translation>Windows 用它開啟安全性畫面。</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <location line="+1"/>
+        <location line="+1"/>
+        <location line="+1"/>
+        <source>Windows uses it to take screenshots.</source>
+        <translation>Windows 用它擷取螢幕畫面。</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Windows uses it to open the menu of the right click.</source>
+        <translation>Windows 用它開啟右鍵選單。</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <location line="+1"/>
+        <location line="+1"/>
+        <location line="+1"/>
+        <source>on many computers it turns the screen.</source>
+        <translation>在許多電腦上它會旋轉螢幕。</translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <source>this key is used to write, to move or to delete. Add Ctrl or Alt, or choose a key from F1 to F12.</source>
+        <translation>此鍵用於輸入、移動或刪除。請加上 Ctrl 或 Alt，或選擇 F1 到 F12 中的一個鍵。</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Ctrl + Alt works as Alt Gr, which writes signs such as @, # or €.</source>
+        <translation>Ctrl + Alt 相當於 Alt Gr，用於輸入 @、# 或 € 等符號。</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>LibertyBoard uses it to select all the text of a text box.</source>
+        <translation>LibertyBoard 用它選取文字方塊中的全部文字。</translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <source>LibertyBoard uses it to open the menu «%1».</source>
+        <translation>LibertyBoard 用它開啟「%1」選單。</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <location line="+178"/>
+        <source>LibertyBoard already uses it for «%1». Remove it there first.</source>
+        <translation>LibertyBoard 已將它用於「%1」。請先從那裡移除。</translation>
+    </message>
+    <message>
+        <location line="-130"/>
+        <source>Fixed keys (can not be changed)</source>
+        <translation>固定按鍵（不可變更）</translation>
+    </message>
+    <message>
+        <location line="+68"/>
+        <source>Choose a function in the list.</source>
+        <translation>請在清單中選擇一個功能。</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>%1: no shortcut</source>
+        <translation>%1：無快速鍵</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>%1: %2</source>
+        <translation>%1：%2</translation>
+    </message>
+    <message>
+        <location line="+17"/>
+        <location line="+37"/>
+        <source>Shortcut not possible</source>
+        <translation>無法使用此快速鍵</translation>
+    </message>
+    <message>
+        <location line="-36"/>
+        <location line="+37"/>
+        <source>%1 can not be used: %2</source>
+        <translation>%1 無法使用：%2</translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <source>Give back the first shortcuts to all the functions?</source>
+        <translation>將所有功能還原為最初的快速鍵？</translation>
+    </message>
+</context>
+<context>
     <name>UBSoundDialog</name>
     <message>
         <location filename="../../src/gui/UBSoundDialog.cpp" line="+53"/>
@@ -5797,7 +6042,7 @@ Dynamic width</source>
 <context>
     <name>UBStylusPalette</name>
     <message>
-        <location filename="../../src/gui/UBStylusPalette.cpp" line="+85"/>
+        <location filename="../../src/gui/UBStylusPalette.cpp" line="+86"/>
         <source>Save a screenshot</source>
         <translation>儲存螢幕擷取畫面</translation>
     </message>
@@ -5958,6 +6203,19 @@ Dynamic width</source>
         <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1079"/>
         <source>Color</source>
         <translation>顏色</translation>
+    </message>
+</context>
+<context>
+    <name>UBToolbarChoice</name>
+    <message>
+        <location filename="../../src/gui/UBToolbarChoice.cpp" line="+164"/>
+        <source>Desktop</source>
+        <translation>桌面</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Board / PDF</source>
+        <translation>白板 / PDF</translation>
     </message>
 </context>
 <context>
