@@ -103,7 +103,17 @@ namespace
         void paint(QPainter* painter, const QRect& rect, QIcon::Mode mode, QIcon::State state) override
         {
             const qreal scale = painter->device() ? painter->device()->devicePixelRatioF() : 1.0;
+
+            // A tool that cannot be used is faint.
+            painter->save();
+
+            if (mode == QIcon::Disabled)
+            {
+                painter->setOpacity(0.3);
+            }
+
             painter->drawPixmap(rect, scaledPixmap(rect.size(), mode, state, scale));
+            painter->restore();
         }
 
         QPixmap pixmap(const QSize& size, QIcon::Mode mode, QIcon::State state) override

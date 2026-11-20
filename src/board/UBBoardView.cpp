@@ -216,6 +216,14 @@ std::shared_ptr<UBGraphicsScene> UBBoardView::scene ()
 
 void UBBoardView::keyPressEvent (QKeyEvent *event)
 {
+    // Nothing is deleted from a locked canvas.
+    if (!bIsDesktop && UBDrawingController::drawingController()->isCanvasLocked()
+        && (event->key() == Qt::Key_Delete || event->key() == Qt::Key_Backspace))
+    {
+        event->accept();
+        return;
+    }
+
     // send to the scene anyway
     QApplication::sendEvent (scene().get(), event);
 
@@ -1358,6 +1366,16 @@ void UBBoardView::mousePressEvent (QMouseEvent *event)
             if (scene()->backgroundObject() == getMovingItem())
                 setMovingItem(NULL);
 
+            // On a locked canvas the selector only selects: the items, their
+            // frames and their buttons do not get the click.
+            if (!bIsDesktop && UBDrawingController::drawingController()->isCanvasLocked())
+            {
+                setMovingItem(NULL);
+                mSelectorOnNothing = true;
+                event->accept();
+                break;
+            }
+
             // A click there may follow a link of the PDF.
             mSelectorOnNothing = !getMovingItem();
 
@@ -1436,6 +1454,12 @@ void UBBoardView::mousePressEvent (QMouseEvent *event)
             if (bIsDesktop && !getMovingItem()) {
                 event->ignore();
                 return;
+            }
+
+            if (!bIsDesktop && UBDrawingController::drawingController()->isCanvasLocked())
+            {
+                event->accept();
+                break;
             }
 
             // Calling handleItemMousePress on a text item ends in the item being deselected, so the context menu becomes inoprent.

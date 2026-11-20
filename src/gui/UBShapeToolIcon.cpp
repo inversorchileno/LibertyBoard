@@ -47,10 +47,15 @@ namespace
 
         void paint(QPainter* painter, const QRect& rect, QIcon::Mode mode, QIcon::State state) override
         {
-            Q_UNUSED(mode)
-
             painter->save();
             painter->setRenderHint(QPainter::Antialiasing);
+
+            // A tool that cannot be used is faint.
+            if (mode == QIcon::Disabled)
+            {
+                painter->setOpacity(0.3);
+            }
+
             painter->translate(rect.topLeft());
             painter->scale(rect.width() / 42.0, rect.height() / 42.0);
 

@@ -63,7 +63,9 @@ private:
     void showColorsOnTools();
     void openFiles();
     void showSavedNotice();
-    void updateDocumentTabsVisibility();
+    /** @brief Turns off the tools that would change a locked canvas, or back on. */
+        void updateLockedTools(bool locked);
+        void updateDocumentTabsVisibility();
     void setFullScreen(bool fullScreen);
     void setToolBarsHidden(bool hidden);
     QToolBar* currentToolBar() const;

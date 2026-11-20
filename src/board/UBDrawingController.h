@@ -80,6 +80,17 @@ class UBDrawingController : public QObject
         bool isLassoSelection() const;
         void setLassoSelection(bool lasso);
 
+        /**
+         * @brief A locked canvas cannot be drawn, written or highlighted on:
+         * only the laser pointer, the hand and the selector work, and the
+         * selector neither moves nor deletes.
+         */
+        bool isCanvasLocked() const { return mCanvasLocked; }
+        void setCanvasLocked(bool locked);
+
+        /** @brief True for the tools that work on a locked canvas. */
+        static bool worksOnLockedCanvas(int tool);
+
     public slots:
 
         void setStylusTool(int tool);
@@ -91,6 +102,7 @@ class UBDrawingController : public QObject
         void stylusToolChanged(int tool, int previousTool = -1);
         void colorPaletteChanged();
         void lassoSelectionChanged(bool lasso);
+        void canvasLockedChanged(bool locked);
 
         void lineWidthIndexChanged(int index);
         void colorIndexChanged(int index);
@@ -100,6 +112,7 @@ class UBDrawingController : public QObject
         UBStylusTool::Enum mStylusTool;
         UBStylusTool::Enum mLatestDrawingTool;
         bool mIsDesktopMode;
+        bool mCanvasLocked{false};
 
         static UBDrawingController* sDrawingController;
 

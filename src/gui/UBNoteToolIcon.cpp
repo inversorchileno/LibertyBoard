@@ -66,9 +66,17 @@ namespace
 
         void paint(QPainter* painter, const QRect& rect, QIcon::Mode mode, QIcon::State state) override
         {
-            Q_UNUSED(mode)
+            // A tool that cannot be used is faint.
+            painter->save();
+
+            if (mode == QIcon::Disabled)
+            {
+                painter->setOpacity(0.3);
+            }
+
             QSvgRenderer renderer(ribbonSvg(mColor, state == QIcon::On));
             renderer.render(painter, QRectF(rect));
+            painter->restore();
         }
 
         QPixmap pixmap(const QSize& size, QIcon::Mode mode, QIcon::State state) override

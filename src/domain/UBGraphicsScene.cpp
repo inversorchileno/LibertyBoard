@@ -3667,11 +3667,13 @@ void UBGraphicsScene::keyReleaseEvent(QKeyEvent * keyEvent)
             keyEvent->accept();
         }
 
-        // Delete selection scene event
+        // Delete selection scene event; nothing is deleted from a locked canvas.
+        const bool locked = !mIsDesktopMode && UBDrawingController::drawingController()->isCanvasLocked();
+
 #ifdef Q_OS_MAC
-        if (keyEvent->key() == Qt::Key_Backspace)
+        if (keyEvent->key() == Qt::Key_Backspace && !locked)
 #else
-        if (keyEvent->matches(QKeySequence::Delete))
+        if (keyEvent->matches(QKeySequence::Delete) && !locked)
 #endif
         {
             foreach(QGraphicsItem* item, selectedItems())

@@ -41,6 +41,7 @@
 #include "board/UBDrawingController.h"
 #include "board/UBDualBoard.h"
 #include "core/UBApplication.h"
+#include "core/UBApplicationController.h"
 #include "core/UBOpenedFiles.h"
 #include "core/UBDocumentManager.h"
 #include "core/UBGitHubUpdater.h"
@@ -405,6 +406,38 @@ void UBMainMenu::createCornerButtons()
     outlineButton->setStyleSheet(buttonStyle);
     layout->insertWidget(layout->indexOf(searchButton), outlineButton);
 
+    // Locks the canvas against changes, left of the index.
+    auto lockAction = new QAction(QIcon(":/images/toolbar/lockOpen.svg"), tr("Lock canvas"), mMainWindow);
+    lockAction->setCheckable(true);
+    lockAction->setToolTip(tr("Lock the canvas: nothing can be drawn, written, highlighted, moved or deleted; "
+                              "the laser pointer, the hand and the selector still work"));
+    connect(lockAction, &QAction::toggled, UBDrawingController::drawingController(), &UBDrawingController::setCanvasLocked);
+    connect(UBDrawingController::drawingController(), &UBDrawingController::canvasLockedChanged, this,
+            [this, lockAction](bool locked) {
+                lockAction->setChecked(locked);
+                lockAction->setIcon(QIcon(locked ? ":/images/toolbar/lockClosed.svg" : ":/images/toolbar/lockOpen.svg"));
+                lockAction->setText(locked ? tr("Unlock canvas") : tr("Lock canvas"));
+                updateLockedTools(locked);
+            });
+
+    // The lock is for the board: the desktop keeps all its tools.
+    connect(UBApplication::applicationController, &UBApplicationController::desktopMode, this, [this](bool desktop) {
+        updateLockedTools(UBDrawingController::drawingController()->isCanvasLocked() && !desktop);
+    });
+
+    auto lockButton = new QToolButton(corner);
+    lockButton->setDefaultAction(lockAction);
+    lockButton->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+    lockButton->setIconSize(QSize(18, 18));
+    lockButton->setStyleSheet(buttonStyle);
+    layout->insertWidget(layout->indexOf(outlineButton), lockButton);
+
+    // Room for the longer of its two names.
+    lockAction->setText(tr("Unlock canvas"));
+    const int unlockWidth = lockButton->sizeHint().width();
+    lockAction->setText(tr("Lock canvas"));
+    lockButton->setMinimumWidth(qMax(unlockWidth, lockButton->sizeHint().width()));
+
     // Goes to the desktop mode, like the board button of the desktop palette goes back.
     auto desktopButton = new QToolButton(corner);
     desktopButton->setDefaultAction(mMainWindow->actionDesktop);
@@ -589,6 +622,23 @@ void UBMainMenu::createDocumentTabs()
 
     connect(mDocumentTabs, &UBDocumentTabs::countChanged, this, &UBMainMenu::updateDocumentTabsVisibility);
     updateDocumentTabsVisibility();
+}
+
+void UBMainMenu::updateLockedTools(bool locked)
+{
+    // On a locked canvas, the tools that would change the page are off.
+    const QList<QAction*> changing = {
+        mMainWindow->actionPen, mMainWindow->actionEraser, mMainWindow->actionMarker, mMainWindow->actionHighlight,
+        mMainWindow->actionNote, mMainWindow->actionStamp, mMainWindow->actionComment, mMainWindow->actionAttachment,
+        mMainWindow->actionSound, mMainWindow->actionUnderline, mMainWindow->actionText, mMainWindow->actionLine,
+        mMainWindow->actionArrowShape, mMainWindow->actionRectangle, mMainWindow->actionEllipse, mMainWindow->actionErase,
+        mMainWindow->actionCut, mMainWindow->actionPaste,
+    };
+
+    for (QAction* action : changing)
+    {
+        action->setEnabled(!locked);
+    }
 }
 
 void UBMainMenu::updateDocumentTabsVisibility()

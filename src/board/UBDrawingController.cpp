@@ -124,8 +124,37 @@ int UBDrawingController::latestDrawingTool()
 }
 
 
+bool UBDrawingController::worksOnLockedCanvas(int tool)
+{
+    return tool == UBStylusTool::Pointer || tool == UBStylusTool::Hand || tool == UBStylusTool::Selector;
+}
+
+void UBDrawingController::setCanvasLocked(bool locked)
+{
+    if (locked == mCanvasLocked)
+    {
+        return;
+    }
+
+    mCanvasLocked = locked;
+
+    // A tool that would change the page gives way to the selector.
+    if (locked && !mIsDesktopMode && !worksOnLockedCanvas(mStylusTool))
+    {
+        setStylusTool(UBStylusTool::Selector);
+    }
+
+    emit canvasLockedChanged(locked);
+}
+
 void UBDrawingController::setStylusTool(int tool)
 {
+    // On a locked canvas, only the tools that change nothing.
+    if (mCanvasLocked && !mIsDesktopMode && !worksOnLockedCanvas(tool))
+    {
+        tool = UBStylusTool::Selector;
+    }
+
     if (tool != mStylusTool)
     {
         UBApplication::boardController->activeScene()->deselectAllItems();
