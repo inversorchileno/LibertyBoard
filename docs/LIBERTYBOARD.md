@@ -199,7 +199,7 @@ Luis entregó un Word con 26 mejoras («mejoras liberty.docx», con capturas de 
 - **Agregar página:** el botón «Páginas», sobre «Borrar página», se llama «Agregar página».
 - **Estilo plantilla** (antes «Fondos», `UBBackgroundPalette`): ventana opaca con 3 plantillas (lisa, cuadriculada, rayada) y debajo una fila «Color de la hoja» (blanco, negro, crema, amarillo, celeste, verde, rosado, azul oscuro, verde oscuro y «…» para cualquier color). Las plantillas negras de OpenBoard ya no se ofrecen: la hoja negra se elige con el color. Cambiar de plantilla mantiene el color. Un color oscuro hace la hoja «oscura» para los trazos y la cuadrícula. Se guarda en la página como `ub:background-color` y como relleno del rectángulo de fondo; OpenBoard la abre blanca o negra.
 - **Flecha cónica:** casilla «Cónica» en las opciones de la flecha (barra superior en pizarra, triángulo en escritorio). La línea crece de fina a 2,4 veces su grosor en la punta, con una cabeza mayor, en un solo contorno.
-- **Láser arcoíris:** casilla «Arcoíris» aparte de los colores; la estela toma los colores del arcoíris a lo largo de su recorrido, con su brillo; en modo Punto los colores cambian con el tiempo. Elegir un color la apaga.
+- **Láser arcoíris:** la estela toma los colores del arcoíris a lo largo de su recorrido, con su brillo; en modo Punto los colores cambian con el tiempo. Desde las observaciones a la V2 es una tercera opción del efecto (Estándar, Quemado blanco, Arcoíris) y no una casilla aparte.
 - **Consejos y trucos:** la primera página muestra el logo de LibertyBoard en vez del globo de OpenBoard.
 - **Rotulador:** «Punta circular» o «Punta recta», con dibujo. Con la recta, al levantar el lápiz el trazo se rehace como con la punta biselada de un destacador: ancho en líneas horizontales, más fino en las verticales, con extremos rectos.
 
@@ -212,13 +212,32 @@ Luis entregó un Word con 26 mejoras («mejoras liberty.docx», con capturas de 
   - **Lápiz grafito:** fino, más oscuro que el color, con grano; **Marcador:** ancho, con textura de fieltro. Ambos se rehacen al levantar el lápiz como hebras translúcidas ásperas (`UBGraphicsStroke::redrawnTextured`).
 - **Colores en círculos** en tres filas en la barra de la pizarra (dibujados como íconos, con anillo blanco en el elegido); en escritorio quedan igual. **Cuentagotas** al final de toda fila de colores, en ambos modos (`src/gui/UBEyedropper`: foto de la pantalla con lupa; clic toma el color, Esc cancela).
 - **Resaltar → «Ajustar al tamaño de letra»:** en un PDF la banda toma el alto de la línea de texto (palabras del PDF o del OCR, `UBPdfTextSearch::wordsIn`) con 2 puntos de margen.
-- **Bloquear lienzo** (candado, a la izquierda de Índice, `UBDrawingController::setCanvasLocked`): sin rayar, escribir, resaltar, Limpiar página, Cortar ni Pegar; solo láser, mano, foco y selección, que solo selecciona (no mueve ni borra; Supr no borra). El escritorio no se bloquea.
+- **Bloquear lienzo** (candado, a la izquierda de Índice, `UBDrawingController::setCanvasLocked`): sin rayar, escribir, resaltar, Limpiar página, Cortar ni Pegar; solo láser, mano, foco y leer/dictar; la flecha de selección no hace nada (desde las observaciones a la V2). El escritorio no se bloquea.
 - **Edición → Tamaño página/lienzo → Tamaño personalizado...:** siempre disponible; ancho y alto en píxeles, con botones para agrandar el lienzo una vez y media; se puede deshacer.
 - **Láser «Seguimiento»** (como Repen): sigue al mouse sin clic y cada parte de la estela se desvanece con los tiempos del láser. Cada capa del brillo se dibuja opaca en una imagen aparte y se pone translúcida de una vez, para que no queden puntos donde se juntan los tramos.
 - **Foco y lupa** (herramienta nueva tras el láser, en ambos modos, `src/gui/UBSpotlight`): el foco oscurece todo menos un círculo (radio 150 px y oscuridad 75 % por defecto); la lupa amplía bajo el puntero (200 % por defecto). Es una ventana transparente al mouse; en Windows queda fuera de las capturas de pantalla (`SetWindowDisplayAffinity`) para que la lupa vea lo que hay debajo. En Linux necesita un compositor (`xcompmgr`) para verse.
 - **Hipervínculo:** la herramienta «Insertar archivo» (adjuntar) tiene Archivo o Hipervínculo; con Hipervínculo un clic pide la dirección y deja un ícono de cadena (`UBGraphicsHyperlinkItem`, `<ub:hyperlink xlink:href>`) que abre el navegador. En escritorio la herramienta está en la barra y solo pone hipervínculos. En el PDF guardado es un comentario con la dirección.
 - **Edición → Leer y dictar:** «Leer en voz alta» (Ctrl+Mayús+L, Qt Text to Speech: voces de Windows) lee los textos seleccionados o el texto de la página; «Dictar (Windows + H)» abre el dictado de Windows; «Transcribir un audio» queda apagado hasta la IA de la Versión 4. La compilación de Windows instala el módulo `qtspeech`.
 - **Ajustes pedidos con la V2:** en la barra de la pizarra la flecha muestra un solo ícono por grupo (estilo de línea, inicio, fin) que despliega el resto, con «Cónica» y la opacidad a la izquierda; las barras de tiempo del láser ocupan la mitad («Espera», «Desvanecer»); el borde del modo escritorio parte en 1 px.
+
+## Observaciones a la Versión 2 (pendiente de aprobación)
+
+Luis revisó la compilación 21 y entregó «observaciones_V2.docx» con 15 puntos. Quedaron en la rama de trabajo; no se compila hasta que él apruebe, ni se empieza la V3.
+
+1. **Bloquear lienzo:** la flecha de selección ya no selecciona nada (`UBBoardView`: con el lienzo bloqueado sale antes de presionar, mover y soltar).
+2. **Foco y lupa:** el ícono de la herramienta pasa a una lupa cuando se elige Lupa (`UBSpotlightOptionsPanel::updateToolIcon`, `magnifier.svg`).
+3. **Láser seguimiento:** la estela leía color y efecto solo al empezar, por eso seguía en arcoíris; ahora los toma en cada movimiento (`UBGraphicsLaserTrail::takeSettings`).
+4. **Movimiento rápido:** la estela de seguimiento se suaviza con curvas entre los puntos (`smoothFollowing`), sin quiebres.
+5. **Barra «Espera» en 5 s:** el tirador quedaba cortado; las barras de tiempo tienen ancho fijo (`UBValueSlider::setSliderWidth`).
+6. **Círculos de color:** el doble de grandes (el estilo general de la aplicación les daba un margen de 4 px que los achicaba), con menos espacio entre ellos, en la misma superficie.
+7. **Foco:** un segundo clic en su ícono lo apaga y vuelve a la herramienta anterior, en pizarra y escritorio.
+8. **Flecha cónica** con línea punteada o de trazos: cada trazo es un trapecio con su grosor, con extremos redondos.
+9. **Un color más:** 13 colores (se sumaron blanco, gris, café y azul marino) más la rueda de colores y el cuentagotas = 15 lugares.
+10. **Arcoíris** es la tercera opción del efecto del láser, junto a Estándar y Quemado blanco.
+11. **Barra de escritorio:** vuelve a su grosor; el triangulito rojo se dibuja en una franja fuera de la barra.
+12. y 14. **Herramienta «Leer y dictar»** (`UBStylusTool::Voice`, solo en la pizarra, tras Texto): Leer o Dictar, y el ícono cambia según lo elegido. Leer: «Desde el inicio» (lee la página y sigue con las siguientes) o «Texto seleccionado» (se arrastra un recuadro sobre el texto); botones Reproducir, Pausar, Detener y Siguiente hoja (`UBReadAloud`). Dictar: botón que abre el dictado de Windows.
+13. **Dictado en español de Chile:** el dictado de Windows no acepta el teclado es-CL; al dictar, si el teclado es de otro español que no sea España ni México, se cambia a español de México para esta aplicación (`UBPlatformUtils::startDictation`). Sin probar en Windows.
+15. **Rotulador:** usa los mismos 13 colores que la pluma.
 
 ## Forma de trabajo
 
