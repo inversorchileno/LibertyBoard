@@ -69,6 +69,20 @@ class UBGraphicsTextItem : public QGraphicsTextItem, public UBItem, public UBRes
 
         void contentsChanged();
 
+        /** @brief The lists of a text: boxes to tick, bullets or numbers. */
+        enum class ListStyle
+        {
+            Checklist,
+            Bullets,
+            Numbers
+        };
+
+        /**
+         * @brief Puts the paragraphs of the cursor in a list of this style,
+         * or takes them out of it when they already are in one.
+         */
+        void toggleList(ListStyle style);
+
         virtual void resize(qreal w, qreal h);
 
         virtual QSizeF size() const;

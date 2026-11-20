@@ -28,6 +28,7 @@
 
 
 #include <QtGui>
+#include <QTextList>
 #include "UBGraphicsGroupContainerItem.h"
 #include "UBGraphicsTextItem.h"
 #include "UBGraphicsTextItemDelegate.h"
@@ -530,4 +531,86 @@ void UBGraphicsTextItem::activateTextEditor(bool activate)
     }
 
     qDebug() <<  textInteractionFlags();
+}
+
+void UBGraphicsTextItem::toggleList(ListStyle style)
+{
+    QTextCursor cursor = textCursor();
+    const QTextListFormat::Style wanted = (style == ListStyle::Numbers) ? QTextListFormat::ListDecimal : QTextListFormat::ListDisc;
+    const bool checklist = (style == ListStyle::Checklist);
+    QTextList* list = cursor.currentList();
+    const bool hasBoxes = cursor.blockFormat().marker() != QTextBlockFormat::MarkerType::NoMarker;
+    const bool alreadyThere = list && list->format().style() == wanted && hasBoxes == checklist;
+
+    // The paragraphs from the start to the end of the selection.
+    const QTextBlock first = document()->findBlock(cursor.selectionStart());
+    const QTextBlock last = document()->findBlock(cursor.selectionEnd());
+
+    cursor.beginEditBlock();
+
+    if (alreadyThere)
+    {
+        // Out of the list, as plain paragraphs.
+        for (QTextBlock block = first; block.isValid(); block = block.next())
+        {
+            if (QTextList* blockList = block.textList())
+            {
+                blockList->remove(block);
+            }
+
+            QTextCursor blockCursor(block);
+            QTextBlockFormat format = block.blockFormat();
+            format.setMarker(QTextBlockFormat::MarkerType::NoMarker);
+            format.setIndent(0);
+            blockCursor.setBlockFormat(format);
+
+            if (block == last)
+            {
+                break;
+            }
+        }
+    }
+    else
+    {
+        // One list for all the paragraphs, the one already there if any.
+        if (list)
+        {
+            QTextListFormat format = list->format();
+            format.setStyle(wanted);
+            list->setFormat(format);
+        }
+        else
+        {
+            QTextListFormat format;
+            format.setStyle(wanted);
+            list = QTextCursor(first).createList(format);
+        }
+
+        // Each paragraph in it, with a box to tick before it, or none.
+        for (QTextBlock block = first; block.isValid(); block = block.next())
+        {
+            if (block.textList() != list)
+            {
+                if (QTextList* other = block.textList())
+                {
+                    other->remove(block);
+                }
+
+                list->add(block);
+            }
+
+            QTextCursor blockCursor(block);
+            QTextBlockFormat format = block.blockFormat();
+            format.setMarker(checklist ? QTextBlockFormat::MarkerType::Unchecked : QTextBlockFormat::MarkerType::NoMarker);
+            blockCursor.setBlockFormat(format);
+
+            if (block == last)
+            {
+                break;
+            }
+        }
+    }
+
+    cursor.endEditBlock();
+    setFocus();
 }

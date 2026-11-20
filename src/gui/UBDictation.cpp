@@ -37,32 +37,6 @@
 #include "frameworks/UBPlatformUtils.h"
 #include "gui/UBMainWindow.h"
 
-// The text box being written on the board: the one with the cursor, or the one selected.
-static QGraphicsTextItem* currentTextBox()
-{
-    std::shared_ptr<UBGraphicsScene> scene = UBApplication::boardController ? UBApplication::boardController->activeScene() : nullptr;
-
-    if (!scene)
-    {
-        return nullptr;
-    }
-
-    if (auto focused = dynamic_cast<UBGraphicsTextItem*>(scene->focusItem()))
-    {
-        return focused;
-    }
-
-    for (QGraphicsItem* item : scene->selectedItems())
-    {
-        if (auto text = dynamic_cast<UBGraphicsTextItem*>(item))
-        {
-            return text;
-        }
-    }
-
-    return nullptr;
-}
-
 // A new text box in the middle of the board shown, as the text tool makes one.
 static QGraphicsTextItem* newTextBox()
 {
@@ -89,7 +63,7 @@ void UBDictation::start(QGraphicsTextItem* textBox)
 {
     if (!textBox)
     {
-        textBox = currentTextBox();
+        textBox = UBApplication::boardController ? UBApplication::boardController->currentTextBox() : nullptr;
     }
 
     if (!textBox)

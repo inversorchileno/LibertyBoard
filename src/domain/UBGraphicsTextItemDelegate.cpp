@@ -166,6 +166,23 @@ void UBGraphicsTextItemDelegate::createControls()
         mButtons << mAlignButton;
     }
 
+    // The lists: boxes to tick, bullets and numbers.
+    if (mListButtons.isEmpty()) {
+        const QList<QPair<QString, UBGraphicsTextItem::ListStyle>> lists = {
+            { ":/images/listChecklist.svg", UBGraphicsTextItem::ListStyle::Checklist },
+            { ":/images/listBullets.svg", UBGraphicsTextItem::ListStyle::Bullets },
+            { ":/images/listNumbers.svg", UBGraphicsTextItem::ListStyle::Numbers },
+        };
+
+        for (const auto& list : lists) {
+            auto button = new DelegateButton(list.first, mDelegated, mFrame, Qt::TitleBarArea);
+            const UBGraphicsTextItem::ListStyle style = list.second;
+            connect(button, &DelegateButton::clicked, this, [this, style]() { delegated()->toggleList(style); });
+            mButtons << button;
+            mListButtons << button;
+        }
+    }
+
     foreach(DelegateButton* button, mButtons)
     {
         button->hide();
@@ -210,6 +227,13 @@ void UBGraphicsTextItemDelegate::freeButtons()
     mButtons.removeOne(mDictateButton);
     delete mDictateButton;
     mDictateButton = nullptr;
+
+    for (DelegateButton* button : std::as_const(mListButtons)) {
+        mButtons.removeOne(button);
+        delete button;
+    }
+
+    mListButtons.clear();
 
     mButtons.removeOne(mFontButton);
     delete mFontButton;

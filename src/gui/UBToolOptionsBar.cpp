@@ -27,6 +27,9 @@
 
 #include "board/UBDrawingController.h"
 #include "core/UB.h"
+#include "board/UBBoardController.h"
+#include "core/UBApplication.h"
+#include "domain/UBGraphicsScene.h"
 #include "gui/UBToolOptionsPanel.h"
 #include "gui/UBToolOptionsPopup.h"
 
@@ -67,8 +70,20 @@ UBToolOptionsBar::UBToolOptionsBar(QWidget* parent)
 
 void UBToolOptionsBar::showTool(int tool)
 {
-    // The line tool shares the options of the pen.
-    const int panelTool = (tool == UBStylusTool::Line) ? int(UBStylusTool::Pen) : tool;
+    // The line tool shares the options of the pen. A text box being
+    // written shows the options of the text: once a text box is made,
+    // the selector is chosen.
+    int panelTool = (tool == UBStylusTool::Line) ? int(UBStylusTool::Pen) : tool;
+
+    if (tool == UBStylusTool::Selector && UBApplication::boardController && UBApplication::boardController->currentTextBox())
+    {
+        panelTool = UBStylusTool::Text;
+    }
+
+    if (mCurrentPanel && mCurrentPanel == mPanels.value(panelTool))
+    {
+        return;
+    }
 
     if (mCurrentPanel)
     {
@@ -113,7 +128,34 @@ QSize UBToolOptionsBar::sizeHint() const
 void UBToolOptionsBar::showEvent(QShowEvent* event)
 {
     QWidget::showEvent(event);
+
+    if (UBApplication::boardController)
+    {
+        connect(UBApplication::boardController, &UBBoardController::activeSceneChanged,
+                this, &UBToolOptionsBar::watchActiveScene, Qt::UniqueConnection);
+        watchActiveScene();
+    }
+
     showTool(UBDrawingController::drawingController()->stylusTool());
+}
+
+void UBToolOptionsBar::watchActiveScene()
+{
+    std::shared_ptr<UBGraphicsScene> scene = UBApplication::boardController->activeScene();
+
+    if (scene)
+    {
+        connect(scene.get(), &QGraphicsScene::focusItemChanged, this, &UBToolOptionsBar::onTextBoxChanged, Qt::UniqueConnection);
+        connect(scene.get(), &QGraphicsScene::selectionChanged, this, &UBToolOptionsBar::onTextBoxChanged, Qt::UniqueConnection);
+    }
+}
+
+void UBToolOptionsBar::onTextBoxChanged()
+{
+    if (isVisible())
+    {
+        showTool(UBDrawingController::drawingController()->stylusTool());
+    }
 }
 
 void UBToolOptionsBar::onStylusToolChanged(int tool)

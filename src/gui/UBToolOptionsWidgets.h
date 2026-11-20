@@ -190,7 +190,10 @@ enum class UBOptionIcon
     Pause,
     Stop,
     NextPage,
-    Microphone
+    Microphone,
+    Checklist,
+    Bullets,
+    Numbers
 };
 
 QIcon optionIcon(UBOptionIcon kind);

@@ -1253,6 +1253,49 @@ QIcon optionIcon(UBOptionIcon kind)
             }
             break;
         }
+        case UBOptionIcon::Checklist:
+        case UBOptionIcon::Bullets:
+        case UBOptionIcon::Numbers:
+        {
+            // Three lines with a box, a bullet or a number before each.
+            const QColor sign("#e8e8e8");
+
+            for (int i = 0; i < 3; ++i)
+            {
+                const qreal y = 6 + i * 8;
+                painter.setPen(QPen(sign, 2, Qt::SolidLine, Qt::RoundCap));
+                painter.drawLine(QPointF(21, y), QPointF(38, y));
+
+                if (kind == UBOptionIcon::Checklist)
+                {
+                    painter.setPen(QPen(sign, 1.3));
+                    painter.setBrush(Qt::NoBrush);
+                    painter.drawRect(QRectF(11, y - 3, 6, 6));
+
+                    if (i == 0)
+                    {
+                        painter.setPen(QPen(blue, 1.6, Qt::SolidLine, Qt::RoundCap));
+                        painter.drawPolyline(QPolygonF({ QPointF(12, y), QPointF(13.8, y + 1.8), QPointF(17.5, y - 3) }));
+                    }
+                }
+                else if (kind == UBOptionIcon::Bullets)
+                {
+                    painter.setPen(Qt::NoPen);
+                    painter.setBrush(sign);
+                    painter.drawEllipse(QPointF(14, y), 2, 2);
+                }
+                else
+                {
+                    QFont font = painter.font();
+                    font.setPixelSize(7);
+                    font.setBold(true);
+                    painter.setFont(font);
+                    painter.setPen(sign);
+                    painter.drawText(QRectF(9, y - 5, 9, 10), Qt::AlignCenter, QString::number(i + 1));
+                }
+            }
+            break;
+        }
         case UBOptionIcon::Microphone:
         {
             // A red microphone on its stand.

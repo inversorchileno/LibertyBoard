@@ -47,6 +47,7 @@
 #include "gui/UBToolOptionsArrows.h"
 #include "gui/UBToolOptionsWidgets.h"
 #include "frameworks/UBPlatformUtils.h"
+#include "board/UBBoardController.h"
 #include "gui/UBDictation.h"
 #include "gui/UBReadAloud.h"
 #include <QTimer>
@@ -1114,8 +1115,40 @@ UBTextOptionsPanel::UBTextOptionsPanel(QWidget* parent)
     mColors = new UBColorSwatches(penColors(), false, this);
     addRow(mColors);
 
-    // Dictation into the text box being written: the button takes no
+    // The lists, for the text box being written. The buttons take no
     // focus, so that the text box keeps its cursor.
+    const QList<std::tuple<QString, UBOptionIcon, UBGraphicsTextItem::ListStyle>> lists = {
+        { tr("Checklist"), UBOptionIcon::Checklist, UBGraphicsTextItem::ListStyle::Checklist },
+        { tr("Bullets"), UBOptionIcon::Bullets, UBGraphicsTextItem::ListStyle::Bullets },
+        { tr("Numbers"), UBOptionIcon::Numbers, UBGraphicsTextItem::ListStyle::Numbers },
+    };
+
+    for (const auto& list : lists)
+    {
+        auto button = new QToolButton(this);
+        button->setText(std::get<0>(list));
+        button->setIcon(optionIcon(std::get<1>(list)));
+        button->setIconSize(QSize(34, 19));
+        button->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
+        button->setFocusPolicy(Qt::NoFocus);
+        button->setToolTip(tr("Puts the lines of the text box being written in a list, or takes them out of it"));
+        addRow(button);
+
+        const UBGraphicsTextItem::ListStyle style = std::get<2>(list);
+        connect(button, &QToolButton::clicked, this, [style]() {
+            UBGraphicsTextItem* textBox = UBApplication::boardController->currentTextBox();
+
+            if (!textBox)
+            {
+                UBApplication::showMessage(tr("Click in a text box first, then on the list."));
+                return;
+            }
+
+            textBox->toggleList(style);
+        });
+    }
+
+    // Dictation into the text box being written.
     auto dictate = new QToolButton(this);
     dictate->setText(tr("Dictate"));
     dictate->setIcon(optionIcon(UBOptionIcon::Microphone));

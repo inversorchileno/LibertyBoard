@@ -1950,6 +1950,29 @@ void UBBoardController::changeBackground(bool isDark, UBPageBackground pageBackg
     }
 }
 
+UBGraphicsTextItem* UBBoardController::currentTextBox() const
+{
+    if (!mActiveScene)
+    {
+        return nullptr;
+    }
+
+    if (auto focused = dynamic_cast<UBGraphicsTextItem*>(mActiveScene->focusItem()))
+    {
+        return focused;
+    }
+
+    for (QGraphicsItem* item : mActiveScene->selectedItems())
+    {
+        if (auto text = dynamic_cast<UBGraphicsTextItem*>(item))
+        {
+            return text;
+        }
+    }
+
+    return nullptr;
+}
+
 void UBBoardController::applyPageTemplate(UBPageTemplates::Template pageTemplate, const QDate& date)
 {
     if (!mActiveScene)

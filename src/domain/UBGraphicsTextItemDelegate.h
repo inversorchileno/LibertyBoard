@@ -139,6 +139,7 @@ class UBGraphicsTextItemDelegate : public UBGraphicsItemDelegate
         UBGraphicsTextItem* delegated();
 
         DelegateButton* mDictateButton{nullptr};
+        QList<DelegateButton*> mListButtons;
         DelegateButton* mFontButton;
         DelegateButton* mColorButton;
         DelegateButton* mDecreaseSizeButton;

@@ -48,6 +48,8 @@ protected:
 
 private:
     void onStylusToolChanged(int tool);
+    void watchActiveScene();
+    void onTextBoxChanged();
 
     QWidget* mContent{nullptr};
     QHBoxLayout* mContentLayout{nullptr};
