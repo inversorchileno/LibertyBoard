@@ -1787,7 +1787,7 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
         <translation>Das GIF wurde auf seiner Seite nicht gefunden. Versuchen Sie ein anderes.</translation>
     </message>
     <message>
-        <location line="+199"/>
+        <location line="+200"/>
         <source>Add Item</source>
         <translation>Objekt hinzufügen</translation>
     </message>
@@ -1797,7 +1797,7 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
         <translation>Alle unterstützt (%1)</translation>
     </message>
     <message>
-        <location line="-2062"/>
+        <location line="-2063"/>
         <source>Page %1 deleted</source>
         <translation>Seite %1 gelöscht</translation>
     </message>
@@ -3241,7 +3241,7 @@ Möchten Sie fortfahren?</translation>
 <context>
     <name>UBGifWindow</name>
     <message>
-        <location filename="../../src/gui/UBGifWindow.cpp" line="+50"/>
+        <location filename="../../src/gui/UBGifWindow.cpp" line="+52"/>
         <source>GIFs of klipy.com: drag one to the page</source>
         <translation>GIFs von klipy.com: eines auf die Seite ziehen</translation>
     </message>
@@ -3977,7 +3977,7 @@ Jetzt herunterladen und installieren? LibertyBoard speichert Ihre Dokumente, sch
         <translation type="vanished">Seitengröße</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+132"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+134"/>
         <location line="+85"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -4124,8 +4124,26 @@ Jetzt herunterladen und installieren? LibertyBoard speichert Ihre Dokumente, sch
     </message>
     <message>
         <location line="+167"/>
+        <location line="+17"/>
         <source>Lock the canvas: nothing can be drawn, written, highlighted, selected, moved or deleted; the laser pointer and the hand still work</source>
         <translation>Leinwand sperren: Nichts kann gezeichnet, geschrieben, markiert, ausgewählt, verschoben oder gelöscht werden; Laser und Hand funktionieren weiter</translation>
+    </message>
+    <message>
+        <location line="-7"/>
+        <location line="+40"/>
+        <source>Unlock PDF</source>
+        <translation>PDF entsperren</translation>
+    </message>
+    <message>
+        <location line="-40"/>
+        <location line="+40"/>
+        <source>Lock PDF</source>
+        <translation>PDF sperren</translation>
+    </message>
+    <message>
+        <location line="-39"/>
+        <source>Lock the PDF: nothing can be drawn, written, highlighted, selected, moved or deleted; the laser pointer and the hand still work</source>
+        <translation>PDF sperren: Nichts kann gezeichnet, geschrieben, markiert, ausgewählt, verschoben oder gelöscht werden; Laser und Hand funktionieren weiter</translation>
     </message>
     <message>
         <source>Dictate</source>
@@ -4136,7 +4154,7 @@ Jetzt herunterladen und installieren? LibertyBoard speichert Ihre Dokumente, sch
         <translation type="vanished">Das Diktat des Systems ist hier nicht verfügbar. Drücken Sie unter Windows Windows + H in einem Text.</translation>
     </message>
     <message>
-        <location line="-164"/>
+        <location line="-175"/>
         <source>Transcribe an audio (coming with the AI)</source>
         <translation>Audio transkribieren (kommt mit der KI)</translation>
     </message>
@@ -4172,12 +4190,12 @@ Jetzt herunterladen und installieren? LibertyBoard speichert Ihre Dokumente, sch
     </message>
     <message>
         <location line="+66"/>
-        <location line="+369"/>
+        <location line="+395"/>
         <source>Saved</source>
         <translation>Gespeichert</translation>
     </message>
     <message>
-        <location line="-363"/>
+        <location line="-389"/>
         <source>Search...</source>
         <translation>Suchen...</translation>
     </message>
@@ -4198,8 +4216,8 @@ Jetzt herunterladen und installieren? LibertyBoard speichert Ihre Dokumente, sch
     </message>
     <message>
         <location line="+32"/>
-        <location line="+9"/>
-        <location line="+23"/>
+        <location line="+18"/>
+        <location line="+34"/>
         <source>Lock canvas</source>
         <translation>Leinwand sperren</translation>
     </message>
@@ -4208,13 +4226,13 @@ Jetzt herunterladen und installieren? LibertyBoard speichert Ihre Dokumente, sch
         <translation type="vanished">Leinwand sperren: Nichts kann gezeichnet, geschrieben, markiert, verschoben oder gelöscht werden; Laser, Hand und Auswahl funktionieren weiter</translation>
     </message>
     <message>
-        <location line="-23"/>
-        <location line="+21"/>
+        <location line="-34"/>
+        <location line="+34"/>
         <source>Unlock canvas</source>
         <translation>Leinwand entsperren</translation>
     </message>
     <message>
-        <location line="+15"/>
+        <location line="+19"/>
         <source>Hide or show the toolbar</source>
         <translation>Werkzeugleiste ein- oder ausblenden</translation>
     </message>

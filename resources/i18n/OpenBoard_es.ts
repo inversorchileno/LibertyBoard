@@ -1775,7 +1775,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>No se encontró el GIF en su página. Prueba con otro.</translation>
     </message>
     <message>
-        <location line="+199"/>
+        <location line="+200"/>
         <source>Add Item</source>
         <translation>Añadir elemento</translation>
     </message>
@@ -1785,7 +1785,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Todos compatibles (%1)</translation>
     </message>
     <message>
-        <location line="-2062"/>
+        <location line="-2063"/>
         <source>Page %1 deleted</source>
         <translation>Página %1 eliminada</translation>
     </message>
@@ -3199,7 +3199,7 @@ Si quieres continuar, el documento se convertirá para ser compatible con la ver
 <context>
     <name>UBGifWindow</name>
     <message>
-        <location filename="../../src/gui/UBGifWindow.cpp" line="+50"/>
+        <location filename="../../src/gui/UBGifWindow.cpp" line="+52"/>
         <source>GIFs of klipy.com: drag one to the page</source>
         <translation>GIFs de klipy.com: arrastra uno a la página</translation>
     </message>
@@ -3935,7 +3935,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+494"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+522"/>
         <source>Hide or show the toolbar</source>
         <translation>Ocultar o mostrar la barra</translation>
     </message>
@@ -3952,7 +3952,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation type="vanished">Tamaño de página</translation>
     </message>
     <message>
-        <location line="-362"/>
+        <location line="-388"/>
         <location line="+85"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -4099,8 +4099,26 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     </message>
     <message>
         <location line="+167"/>
+        <location line="+17"/>
         <source>Lock the canvas: nothing can be drawn, written, highlighted, selected, moved or deleted; the laser pointer and the hand still work</source>
         <translation>Bloquear el lienzo: no se puede dibujar, escribir, resaltar, seleccionar, mover ni borrar nada; el láser y la mano siguen funcionando</translation>
+    </message>
+    <message>
+        <location line="-7"/>
+        <location line="+40"/>
+        <source>Unlock PDF</source>
+        <translation>Desbloquear PDF</translation>
+    </message>
+    <message>
+        <location line="-40"/>
+        <location line="+40"/>
+        <source>Lock PDF</source>
+        <translation>Bloquear PDF</translation>
+    </message>
+    <message>
+        <location line="-39"/>
+        <source>Lock the PDF: nothing can be drawn, written, highlighted, selected, moved or deleted; the laser pointer and the hand still work</source>
+        <translation>Bloquear el PDF: no se puede dibujar, escribir, resaltar, seleccionar, mover ni borrar nada; el láser y la mano siguen funcionando</translation>
     </message>
     <message>
         <source>Dictate</source>
@@ -4111,7 +4129,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation type="vanished">El dictado del sistema no está disponible aquí. En Windows, presiona Windows + H en un texto.</translation>
     </message>
     <message>
-        <location line="-164"/>
+        <location line="-175"/>
         <source>Transcribe an audio (coming with the AI)</source>
         <translation>Transcribir un audio (llegará con la IA)</translation>
     </message>
@@ -4147,12 +4165,12 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     </message>
     <message>
         <location line="+66"/>
-        <location line="+369"/>
+        <location line="+395"/>
         <source>Saved</source>
         <translation>Guardado</translation>
     </message>
     <message>
-        <location line="-363"/>
+        <location line="-389"/>
         <source>Search...</source>
         <translation>Buscar...</translation>
     </message>
@@ -4173,8 +4191,8 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     </message>
     <message>
         <location line="+32"/>
-        <location line="+9"/>
-        <location line="+23"/>
+        <location line="+18"/>
+        <location line="+34"/>
         <source>Lock canvas</source>
         <translation>Bloquear lienzo</translation>
     </message>
@@ -4183,13 +4201,13 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation type="vanished">Bloquear el lienzo: no se puede dibujar, escribir, resaltar, mover ni borrar nada; el láser, la mano y la selección siguen funcionando</translation>
     </message>
     <message>
-        <location line="-23"/>
-        <location line="+21"/>
+        <location line="-34"/>
+        <location line="+34"/>
         <source>Unlock canvas</source>
         <translation>Desbloquear lienzo</translation>
     </message>
     <message>
-        <location line="+175"/>
+        <location line="+179"/>
         <source>Exit full screen</source>
         <translation>Salir de pantalla completa</translation>
     </message>

@@ -1769,7 +1769,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>ページでGIFが見つかりませんでした。別のGIFを試してください。</translation>
     </message>
     <message>
-        <location line="+199"/>
+        <location line="+200"/>
         <source>Add Item</source>
         <translation>アイテムの追加</translation>
     </message>
@@ -1779,7 +1779,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>全てサポート(%1) </translation>
     </message>
     <message>
-        <location line="-2885"/>
+        <location line="-2886"/>
         <source>Group</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3143,7 +3143,7 @@ Do you want to continue?</source>
 <context>
     <name>UBGifWindow</name>
     <message>
-        <location filename="../../src/gui/UBGifWindow.cpp" line="+50"/>
+        <location filename="../../src/gui/UBGifWindow.cpp" line="+52"/>
         <source>GIFs of klipy.com: drag one to the page</source>
         <translation>klipy.com のGIF：ページにドラッグ</translation>
     </message>
@@ -3879,7 +3879,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation type="vanished">ページサイズ</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+132"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+134"/>
         <location line="+85"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -4026,8 +4026,26 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     </message>
     <message>
         <location line="+167"/>
+        <location line="+17"/>
         <source>Lock the canvas: nothing can be drawn, written, highlighted, selected, moved or deleted; the laser pointer and the hand still work</source>
         <translation>キャンバスをロック：描画、書き込み、ハイライト、選択、移動、削除はできません。レーザーと手のひらツールは引き続き使えます</translation>
+    </message>
+    <message>
+        <location line="-7"/>
+        <location line="+40"/>
+        <source>Unlock PDF</source>
+        <translation>PDFのロックを解除</translation>
+    </message>
+    <message>
+        <location line="-40"/>
+        <location line="+40"/>
+        <source>Lock PDF</source>
+        <translation>PDFをロック</translation>
+    </message>
+    <message>
+        <location line="-39"/>
+        <source>Lock the PDF: nothing can be drawn, written, highlighted, selected, moved or deleted; the laser pointer and the hand still work</source>
+        <translation>PDFをロック：描画、書き込み、ハイライト、選択、移動、削除はできません。レーザーと手のひらツールは引き続き使えます</translation>
     </message>
     <message>
         <source>Dictate</source>
@@ -4038,7 +4056,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation type="vanished">ここではシステムの音声入力を使えません。Windows ではテキスト内で Windows + H を押してください。</translation>
     </message>
     <message>
-        <location line="-164"/>
+        <location line="-175"/>
         <source>Transcribe an audio (coming with the AI)</source>
         <translation>音声を文字起こし (AI で提供予定)</translation>
     </message>
@@ -4074,12 +4092,12 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     </message>
     <message>
         <location line="+66"/>
-        <location line="+369"/>
+        <location line="+395"/>
         <source>Saved</source>
         <translation>保存しました</translation>
     </message>
     <message>
-        <location line="-363"/>
+        <location line="-389"/>
         <source>Search...</source>
         <translation>検索...</translation>
     </message>
@@ -4100,8 +4118,8 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     </message>
     <message>
         <location line="+32"/>
-        <location line="+9"/>
-        <location line="+23"/>
+        <location line="+18"/>
+        <location line="+34"/>
         <source>Lock canvas</source>
         <translation>キャンバスをロック</translation>
     </message>
@@ -4110,13 +4128,13 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation type="vanished">キャンバスをロック: 描く、書く、ハイライト、移動、削除はできません。レーザー、手のひら、選択は使えます</translation>
     </message>
     <message>
-        <location line="-23"/>
-        <location line="+21"/>
+        <location line="-34"/>
+        <location line="+34"/>
         <source>Unlock canvas</source>
         <translation>キャンバスのロックを解除</translation>
     </message>
     <message>
-        <location line="+15"/>
+        <location line="+19"/>
         <source>Hide or show the toolbar</source>
         <translation>ツールバーの表示/非表示</translation>
     </message>

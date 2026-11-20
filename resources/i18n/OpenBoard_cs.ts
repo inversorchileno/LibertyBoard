@@ -1714,12 +1714,12 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBoardController</name>
     <message>
-        <location filename="../../src/board/UBBoardController.cpp" line="+3006"/>
+        <location filename="../../src/board/UBBoardController.cpp" line="+3007"/>
         <source>All Supported (%1)</source>
         <translation>Všechny podporované (%1)</translation>
     </message>
     <message>
-        <location line="-1696"/>
+        <location line="-1697"/>
         <source>Downloading content %1 failed</source>
         <translation>Nepodařilo se stáhnout %1</translation>
     </message>
@@ -1769,12 +1769,12 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+199"/>
+        <location line="+200"/>
         <source>Add Item</source>
         <translation>Přidat položku</translation>
     </message>
     <message>
-        <location line="-1358"/>
+        <location line="-1359"/>
         <source>Unknown tool type %1</source>
         <translation>Neznámý typ nástroje %1</translation>
     </message>
@@ -3108,7 +3108,7 @@ Do you want to continue?</source>
 <context>
     <name>UBGifWindow</name>
     <message>
-        <location filename="../../src/gui/UBGifWindow.cpp" line="+50"/>
+        <location filename="../../src/gui/UBGifWindow.cpp" line="+52"/>
         <source>GIFs of klipy.com: drag one to the page</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3844,7 +3844,7 @@ Stáhnout a nainstalovat nyní? LibertyBoard uloží vaše dokumenty, zavře se 
         <translation type="vanished">Velikost stránky</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+132"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+134"/>
         <location line="+85"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -3991,8 +3991,26 @@ Stáhnout a nainstalovat nyní? LibertyBoard uloží vaše dokumenty, zavře se 
     </message>
     <message>
         <location line="+167"/>
+        <location line="+17"/>
         <source>Lock the canvas: nothing can be drawn, written, highlighted, selected, moved or deleted; the laser pointer and the hand still work</source>
         <translation>Zamknout plátno: nelze nic kreslit, psát, zvýrazňovat, vybírat, přesouvat ani mazat; laser a ruka stále fungují</translation>
+    </message>
+    <message>
+        <location line="-7"/>
+        <location line="+40"/>
+        <source>Unlock PDF</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-40"/>
+        <location line="+40"/>
+        <source>Lock PDF</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-39"/>
+        <source>Lock the PDF: nothing can be drawn, written, highlighted, selected, moved or deleted; the laser pointer and the hand still work</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Dictate</source>
@@ -4003,7 +4021,7 @@ Stáhnout a nainstalovat nyní? LibertyBoard uloží vaše dokumenty, zavře se 
         <translation type="vanished">Diktování systému zde není k dispozici. Ve Windows stiskněte v textu Windows + H.</translation>
     </message>
     <message>
-        <location line="-164"/>
+        <location line="-175"/>
         <source>Transcribe an audio (coming with the AI)</source>
         <translation>Přepsat nahrávku (přijde s AI)</translation>
     </message>
@@ -4039,12 +4057,12 @@ Stáhnout a nainstalovat nyní? LibertyBoard uloží vaše dokumenty, zavře se 
     </message>
     <message>
         <location line="+66"/>
-        <location line="+369"/>
+        <location line="+395"/>
         <source>Saved</source>
         <translation>Uloženo</translation>
     </message>
     <message>
-        <location line="-363"/>
+        <location line="-389"/>
         <source>Search...</source>
         <translation>Hledat...</translation>
     </message>
@@ -4065,8 +4083,8 @@ Stáhnout a nainstalovat nyní? LibertyBoard uloží vaše dokumenty, zavře se 
     </message>
     <message>
         <location line="+32"/>
-        <location line="+9"/>
-        <location line="+23"/>
+        <location line="+18"/>
+        <location line="+34"/>
         <source>Lock canvas</source>
         <translation>Zamknout plátno</translation>
     </message>
@@ -4075,13 +4093,13 @@ Stáhnout a nainstalovat nyní? LibertyBoard uloží vaše dokumenty, zavře se 
         <translation type="vanished">Zamknout plátno: nelze nic kreslit, psát, zvýrazňovat, přesouvat ani mazat; laser, ruka a výběr dál fungují</translation>
     </message>
     <message>
-        <location line="-23"/>
-        <location line="+21"/>
+        <location line="-34"/>
+        <location line="+34"/>
         <source>Unlock canvas</source>
         <translation>Odemknout plátno</translation>
     </message>
     <message>
-        <location line="+15"/>
+        <location line="+19"/>
         <source>Hide or show the toolbar</source>
         <translation>Skrýt nebo zobrazit panel nástrojů</translation>
     </message>

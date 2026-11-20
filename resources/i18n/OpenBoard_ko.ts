@@ -1773,7 +1773,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+199"/>
+        <location line="+200"/>
         <source>Add Item</source>
         <translation>항목 추가</translation>
     </message>
@@ -1783,7 +1783,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>모든 지원 형식 (%1)</translation>
     </message>
     <message>
-        <location line="-2062"/>
+        <location line="-2063"/>
         <source>Page %1 deleted</source>
         <translation type="unfinished">%1페이지 삭제됨</translation>
     </message>
@@ -3108,7 +3108,7 @@ Do you want to continue?</source>
 <context>
     <name>UBGifWindow</name>
     <message>
-        <location filename="../../src/gui/UBGifWindow.cpp" line="+50"/>
+        <location filename="../../src/gui/UBGifWindow.cpp" line="+52"/>
         <source>GIFs of klipy.com: drag one to the page</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3844,7 +3844,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation type="vanished">페이지 크기</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+132"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+134"/>
         <location line="+85"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -3991,8 +3991,26 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     </message>
     <message>
         <location line="+167"/>
+        <location line="+17"/>
         <source>Lock the canvas: nothing can be drawn, written, highlighted, selected, moved or deleted; the laser pointer and the hand still work</source>
         <translation>캔버스 잠금: 그리기, 쓰기, 강조, 선택, 이동, 삭제를 할 수 없습니다. 레이저와 손 도구는 계속 작동합니다</translation>
+    </message>
+    <message>
+        <location line="-7"/>
+        <location line="+40"/>
+        <source>Unlock PDF</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-40"/>
+        <location line="+40"/>
+        <source>Lock PDF</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-39"/>
+        <source>Lock the PDF: nothing can be drawn, written, highlighted, selected, moved or deleted; the laser pointer and the hand still work</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Dictate</source>
@@ -4003,7 +4021,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation type="vanished">여기서는 시스템 받아쓰기를 사용할 수 없습니다. Windows에서는 텍스트 안에서 Windows + H를 누르세요.</translation>
     </message>
     <message>
-        <location line="-164"/>
+        <location line="-175"/>
         <source>Transcribe an audio (coming with the AI)</source>
         <translation>오디오 받아쓰기 (AI와 함께 제공 예정)</translation>
     </message>
@@ -4039,12 +4057,12 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     </message>
     <message>
         <location line="+66"/>
-        <location line="+369"/>
+        <location line="+395"/>
         <source>Saved</source>
         <translation>저장됨</translation>
     </message>
     <message>
-        <location line="-363"/>
+        <location line="-389"/>
         <source>Search...</source>
         <translation>검색...</translation>
     </message>
@@ -4065,8 +4083,8 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     </message>
     <message>
         <location line="+32"/>
-        <location line="+9"/>
-        <location line="+23"/>
+        <location line="+18"/>
+        <location line="+34"/>
         <source>Lock canvas</source>
         <translation>캔버스 잠금</translation>
     </message>
@@ -4075,13 +4093,13 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation type="vanished">캔버스 잠금: 그리기, 쓰기, 강조, 이동, 삭제를 할 수 없습니다. 레이저, 손, 선택은 계속 작동합니다</translation>
     </message>
     <message>
-        <location line="-23"/>
-        <location line="+21"/>
+        <location line="-34"/>
+        <location line="+34"/>
         <source>Unlock canvas</source>
         <translation>캔버스 잠금 해제</translation>
     </message>
     <message>
-        <location line="+15"/>
+        <location line="+19"/>
         <source>Hide or show the toolbar</source>
         <translation>도구 모음 숨기기 또는 표시</translation>
     </message>

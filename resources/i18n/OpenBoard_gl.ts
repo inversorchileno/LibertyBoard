@@ -1773,7 +1773,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+199"/>
+        <location line="+200"/>
         <source>Add Item</source>
         <translation>Engadir elemento</translation>
     </message>
@@ -1783,7 +1783,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Todos compatibles (%1)</translation>
     </message>
     <message>
-        <location line="-2062"/>
+        <location line="-2063"/>
         <source>Page %1 deleted</source>
         <translation>Páxina %1 eliminada</translation>
     </message>
@@ -3136,7 +3136,7 @@ Do you want to continue?</source>
 <context>
     <name>UBGifWindow</name>
     <message>
-        <location filename="../../src/gui/UBGifWindow.cpp" line="+50"/>
+        <location filename="../../src/gui/UBGifWindow.cpp" line="+52"/>
         <source>GIFs of klipy.com: drag one to the page</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3872,7 +3872,7 @@ Descargala e instalala agora? LibertyBoard garda os teus documentos, péchase e 
         <translation type="vanished">Tamaño de páxina</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+132"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+134"/>
         <location line="+85"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -4019,8 +4019,26 @@ Descargala e instalala agora? LibertyBoard garda os teus documentos, péchase e 
     </message>
     <message>
         <location line="+167"/>
+        <location line="+17"/>
         <source>Lock the canvas: nothing can be drawn, written, highlighted, selected, moved or deleted; the laser pointer and the hand still work</source>
         <translation>Bloquear o lenzo: non se pode debuxar, escribir, resaltar, seleccionar, mover nin borrar nada; o láser e a man seguen funcionando</translation>
+    </message>
+    <message>
+        <location line="-7"/>
+        <location line="+40"/>
+        <source>Unlock PDF</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-40"/>
+        <location line="+40"/>
+        <source>Lock PDF</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-39"/>
+        <source>Lock the PDF: nothing can be drawn, written, highlighted, selected, moved or deleted; the laser pointer and the hand still work</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Dictate</source>
@@ -4031,7 +4049,7 @@ Descargala e instalala agora? LibertyBoard garda os teus documentos, péchase e 
         <translation type="vanished">O ditado do sistema non está dispoñible aquí. En Windows, preme Windows + H nun texto.</translation>
     </message>
     <message>
-        <location line="-164"/>
+        <location line="-175"/>
         <source>Transcribe an audio (coming with the AI)</source>
         <translation>Transcribir un audio (chegará coa IA)</translation>
     </message>
@@ -4067,12 +4085,12 @@ Descargala e instalala agora? LibertyBoard garda os teus documentos, péchase e 
     </message>
     <message>
         <location line="+66"/>
-        <location line="+369"/>
+        <location line="+395"/>
         <source>Saved</source>
         <translation>Gardado</translation>
     </message>
     <message>
-        <location line="-363"/>
+        <location line="-389"/>
         <source>Search...</source>
         <translation>Buscar...</translation>
     </message>
@@ -4093,8 +4111,8 @@ Descargala e instalala agora? LibertyBoard garda os teus documentos, péchase e 
     </message>
     <message>
         <location line="+32"/>
-        <location line="+9"/>
-        <location line="+23"/>
+        <location line="+18"/>
+        <location line="+34"/>
         <source>Lock canvas</source>
         <translation>Bloquear o lenzo</translation>
     </message>
@@ -4103,13 +4121,13 @@ Descargala e instalala agora? LibertyBoard garda os teus documentos, péchase e 
         <translation type="vanished">Bloquear o lenzo: non se pode debuxar, escribir, resaltar, mover nin borrar nada; o láser, a man e a selección seguen funcionando</translation>
     </message>
     <message>
-        <location line="-23"/>
-        <location line="+21"/>
+        <location line="-34"/>
+        <location line="+34"/>
         <source>Unlock canvas</source>
         <translation>Desbloquear o lenzo</translation>
     </message>
     <message>
-        <location line="+15"/>
+        <location line="+19"/>
         <source>Hide or show the toolbar</source>
         <translation>Ocultar ou amosar a barra</translation>
     </message>

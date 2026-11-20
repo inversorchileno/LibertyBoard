@@ -1773,7 +1773,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>在其页面上找不到该GIF。请换一个试试。</translation>
     </message>
     <message>
-        <location line="+199"/>
+        <location line="+200"/>
         <source>Add Item</source>
         <translation>添加项目</translation>
     </message>
@@ -1783,7 +1783,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>所有支持的（%1）</translation>
     </message>
     <message>
-        <location line="-2062"/>
+        <location line="-2063"/>
         <source>Page %1 deleted</source>
         <translation>已删除%1页</translation>
     </message>
@@ -3192,7 +3192,7 @@ Do you want to continue?</source>
 <context>
     <name>UBGifWindow</name>
     <message>
-        <location filename="../../src/gui/UBGifWindow.cpp" line="+50"/>
+        <location filename="../../src/gui/UBGifWindow.cpp" line="+52"/>
         <source>GIFs of klipy.com: drag one to the page</source>
         <translation>klipy.com 的GIF：拖一个到页面上</translation>
     </message>
@@ -3928,7 +3928,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation type="vanished">页面大小</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+132"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+134"/>
         <location line="+85"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -4075,8 +4075,26 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     </message>
     <message>
         <location line="+167"/>
+        <location line="+17"/>
         <source>Lock the canvas: nothing can be drawn, written, highlighted, selected, moved or deleted; the laser pointer and the hand still work</source>
         <translation>锁定画布：无法绘制、书写、高亮、选择、移动或删除任何内容；激光笔和手形工具仍可使用</translation>
+    </message>
+    <message>
+        <location line="-7"/>
+        <location line="+40"/>
+        <source>Unlock PDF</source>
+        <translation>解锁PDF</translation>
+    </message>
+    <message>
+        <location line="-40"/>
+        <location line="+40"/>
+        <source>Lock PDF</source>
+        <translation>锁定PDF</translation>
+    </message>
+    <message>
+        <location line="-39"/>
+        <source>Lock the PDF: nothing can be drawn, written, highlighted, selected, moved or deleted; the laser pointer and the hand still work</source>
+        <translation>锁定PDF：无法绘制、书写、高亮、选择、移动或删除任何内容；激光笔和手形工具仍可使用</translation>
     </message>
     <message>
         <source>Dictate</source>
@@ -4087,7 +4105,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation type="vanished">此处无法使用系统听写。在 Windows 中，请在文本中按 Windows + H。</translation>
     </message>
     <message>
-        <location line="-164"/>
+        <location line="-175"/>
         <source>Transcribe an audio (coming with the AI)</source>
         <translation>转写音频（将随 AI 推出）</translation>
     </message>
@@ -4123,12 +4141,12 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     </message>
     <message>
         <location line="+66"/>
-        <location line="+369"/>
+        <location line="+395"/>
         <source>Saved</source>
         <translation>已保存</translation>
     </message>
     <message>
-        <location line="-363"/>
+        <location line="-389"/>
         <source>Search...</source>
         <translation>查找...</translation>
     </message>
@@ -4149,8 +4167,8 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     </message>
     <message>
         <location line="+32"/>
-        <location line="+9"/>
-        <location line="+23"/>
+        <location line="+18"/>
+        <location line="+34"/>
         <source>Lock canvas</source>
         <translation>锁定画布</translation>
     </message>
@@ -4159,13 +4177,13 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation type="vanished">锁定画布：无法绘制、书写、高亮、移动或删除任何内容；激光笔、抓手和选择仍可使用</translation>
     </message>
     <message>
-        <location line="-23"/>
-        <location line="+21"/>
+        <location line="-34"/>
+        <location line="+34"/>
         <source>Unlock canvas</source>
         <translation>解锁画布</translation>
     </message>
     <message>
-        <location line="+15"/>
+        <location line="+19"/>
         <source>Hide or show the toolbar</source>
         <translation>隐藏或显示工具栏</translation>
     </message>
