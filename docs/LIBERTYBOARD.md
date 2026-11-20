@@ -11,7 +11,7 @@ LibertyBoard es una pizarra digital y lector PDF con puntero láser estilo Drawb
 5. **Menús, guardar, actualización, zoom, notas de colores, idiomas y triángulos de opciones.** *(hecha, compilaciones 9 a 13)*
 6. **Pestañas, Guardar/Guardar como, girar, sellos, buscar, notas rápidas, adjuntos y sonidos.** *(hecha, compilación 14)*
 7. **Logo nuevo, íconos a color, scroll continuo, pantalla completa, barra que cabe en la pantalla.** *(hecha, compilación 15)*
-8. **Mejoras del Word de Luis, en 5 versiones.** *(Versión 1 hecha, compilación 20)*
+8. **Mejoras del Word de Luis, en 5 versiones.** *(Versión 1: compilación 20; Versión 2: compilación 21)*
 
 ## 1. Barras de herramientas
 
@@ -194,7 +194,7 @@ Luis entregó un Word con 26 mejoras («mejoras liberty.docx», con capturas de 
 
 - **Cuenta nueva:** el repositorio pasó de `noteimportaaaa` a `inversorchileno`. El actualizador, los enlaces y la documentación usan la dirección nueva; las versiones antiguas siguen encontrando las nuevas porque GitHub responde con una redirección 301 que el actualizador sigue.
 - **Barra de escritorio** (`UBDesktopPalette`): soltada cerca del borde de arriba o de abajo queda horizontal (triángulos de opciones abajo o arriba de los íconos); cerca de la izquierda o la derecha, vertical. Recuerda orientación y borde. Un **triangulito rojo** en el lado que mira al borde de la pantalla la reduce al ícono comprimido con un clic (empujarla contra el borde izquierdo o derecho sigue comprimiéndola). Al final, una **papelera** que borra todo lo dibujado en la pantalla.
-- **Borde en modo escritorio** (`src/desktop/UBDesktopFrame`): ventana propia, transparente a los clics, con un borde alrededor de la pantalla. Preferencias → General → «Borde en modo escritorio»: mostrar o no, color y grosor de 1 a 12 px (por defecto rojo, 6 px). Se oculta al volver a la pizarra y al sacar pantallazos.
+- **Borde en modo escritorio** (`src/desktop/UBDesktopFrame`): ventana propia, transparente a los clics, con un borde alrededor de la pantalla. Preferencias → General → «Borde en modo escritorio»: mostrar o no, color y grosor de 1 a 12 px (por defecto rojo, 1 px desde la compilación 21). Se oculta al volver a la pizarra y al sacar pantallazos.
 - **Pestañas:** la franja entre el menú y las pestañas bajó de 18 a 11 px (las pestañas heredaban un margen de 6 px del estilo de OpenBoard). El espacio bajo los nombres y la línea blanca siguen igual.
 - **Agregar página:** el botón «Páginas», sobre «Borrar página», se llama «Agregar página».
 - **Estilo plantilla** (antes «Fondos», `UBBackgroundPalette`): ventana opaca con 3 plantillas (lisa, cuadriculada, rayada) y debajo una fila «Color de la hoja» (blanco, negro, crema, amarillo, celeste, verde, rosado, azul oscuro, verde oscuro y «…» para cualquier color). Las plantillas negras de OpenBoard ya no se ofrecen: la hoja negra se elige con el color. Cambiar de plantilla mantiene el color. Un color oscuro hace la hoja «oscura» para los trazos y la cuadrícula. Se guarda en la página como `ub:background-color` y como relleno del rectángulo de fondo; OpenBoard la abre blanca o negra.
@@ -202,6 +202,23 @@ Luis entregó un Word con 26 mejoras («mejoras liberty.docx», con capturas de 
 - **Láser arcoíris:** casilla «Arcoíris» aparte de los colores; la estela toma los colores del arcoíris a lo largo de su recorrido, con su brillo; en modo Punto los colores cambian con el tiempo. Elegir un color la apaga.
 - **Consejos y trucos:** la primera página muestra el logo de LibertyBoard en vez del globo de OpenBoard.
 - **Rotulador:** «Punta circular» o «Punta recta», con dibujo. Con la recta, al levantar el lápiz el trazo se rehace como con la punta biselada de un destacador: ancho en líneas horizontales, más fino en las verticales, con extremos rectos.
+
+## Versión 2 de las mejoras del Word (compilación 21)
+
+- **Cinco plumas como en Samsung Notes** (aprobadas por Luis con su captura de referencia), en lugar de Básico/Pro/Caligrafía; los íconos son dibujos de la pluma en el color elegido (`penStyleIcon`), en botones más chicos en la barra de la pizarra. Se guardan con los mismos valores de `UBPenStrokeType` (0 a 2 como antes, 3 y 4 nuevos):
+  - **Lápiz pasta:** más grueso lento y más fino rápido (velocidad suavizada en `UBGraphicsScene::updateSpeedFactor`), algo más fino al subir a la derecha, y la presión.
+  - **Pluma fuente:** plumilla plana inclinada hacia arriba a la derecha; al levantar el lápiz el trazo se rehace con esa plumilla (`UBGraphicsStroke::redrawnWithChiselTip`), con extremos cortados en diagonal.
+  - **Pluma caligráfica:** lisa y pareja, con la presión.
+  - **Lápiz grafito:** fino, más oscuro que el color, con grano; **Marcador:** ancho, con textura de fieltro. Ambos se rehacen al levantar el lápiz como hebras translúcidas ásperas (`UBGraphicsStroke::redrawnTextured`).
+- **Colores en círculos** en tres filas en la barra de la pizarra (dibujados como íconos, con anillo blanco en el elegido); en escritorio quedan igual. **Cuentagotas** al final de toda fila de colores, en ambos modos (`src/gui/UBEyedropper`: foto de la pantalla con lupa; clic toma el color, Esc cancela).
+- **Resaltar → «Ajustar al tamaño de letra»:** en un PDF la banda toma el alto de la línea de texto (palabras del PDF o del OCR, `UBPdfTextSearch::wordsIn`) con 2 puntos de margen.
+- **Bloquear lienzo** (candado, a la izquierda de Índice, `UBDrawingController::setCanvasLocked`): sin rayar, escribir, resaltar, Limpiar página, Cortar ni Pegar; solo láser, mano, foco y selección, que solo selecciona (no mueve ni borra; Supr no borra). El escritorio no se bloquea.
+- **Edición → Tamaño página/lienzo → Tamaño personalizado...:** siempre disponible; ancho y alto en píxeles, con botones para agrandar el lienzo una vez y media; se puede deshacer.
+- **Láser «Seguimiento»** (como Repen): sigue al mouse sin clic y cada parte de la estela se desvanece con los tiempos del láser. Cada capa del brillo se dibuja opaca en una imagen aparte y se pone translúcida de una vez, para que no queden puntos donde se juntan los tramos.
+- **Foco y lupa** (herramienta nueva tras el láser, en ambos modos, `src/gui/UBSpotlight`): el foco oscurece todo menos un círculo (radio 150 px y oscuridad 75 % por defecto); la lupa amplía bajo el puntero (200 % por defecto). Es una ventana transparente al mouse; en Windows queda fuera de las capturas de pantalla (`SetWindowDisplayAffinity`) para que la lupa vea lo que hay debajo. En Linux necesita un compositor (`xcompmgr`) para verse.
+- **Hipervínculo:** la herramienta «Insertar archivo» (adjuntar) tiene Archivo o Hipervínculo; con Hipervínculo un clic pide la dirección y deja un ícono de cadena (`UBGraphicsHyperlinkItem`, `<ub:hyperlink xlink:href>`) que abre el navegador. En escritorio la herramienta está en la barra y solo pone hipervínculos. En el PDF guardado es un comentario con la dirección.
+- **Edición → Leer y dictar:** «Leer en voz alta» (Ctrl+Mayús+L, Qt Text to Speech: voces de Windows) lee los textos seleccionados o el texto de la página; «Dictar (Windows + H)» abre el dictado de Windows; «Transcribir un audio» queda apagado hasta la IA de la Versión 4. La compilación de Windows instala el módulo `qtspeech`.
+- **Ajustes pedidos con la V2:** en la barra de la pizarra la flecha muestra un solo ícono por grupo (estilo de línea, inicio, fin) que despliega el resto, con «Cónica» y la opacidad a la izquierda; las barras de tiempo del láser ocupan la mitad («Espera», «Desvanecer»); el borde del modo escritorio parte en 1 px.
 
 ## Forma de trabajo
 
@@ -215,7 +232,7 @@ Luis entregó un Word con 26 mejoras («mejoras liberty.docx», con capturas de 
 ## Pruebas en Linux
 
 - Compilar con CMake + Ninja (Qt 6 del sistema) e instalar con `ninja install` (queda como `/usr/local/bin/openboard`).
-- Pantalla virtual: `Xvfb :99 -screen 0 2540x1000x24 -dpi 96` + `openbox`; abrir con `HOME=<carpeta de prueba> LANG=es_ES.UTF-8 LANGUAGE=es QTWEBENGINE_DISABLE_SANDBOX=1 LIBGL_ALWAYS_SOFTWARE=1`. Clics con `xdotool`, capturas con `import -window root`.
+- Pantalla virtual: `Xvfb :99 -screen 0 2540x1000x24 -dpi 96` + `openbox` (+ `xcompmgr` para ver ventanas translúcidas como el foco); abrir con `HOME=<carpeta de prueba> LANG=es_ES.UTF-8 LANGUAGE=es QTWEBENGINE_DISABLE_SANDBOX=1 LIBGL_ALWAYS_SOFTWARE=1`. Clics con `xdotool`, capturas con `import -window root`.
 - Para abrir un PDF de prueba: ejecutar un segundo `openboard <archivo.pdf>`, que lo pasa al programa ya abierto. No reutilizar el mismo nombre de PDF (pregunta si reemplazar).
 
 ## Ideas pendientes
