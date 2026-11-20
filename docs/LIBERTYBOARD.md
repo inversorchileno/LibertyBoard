@@ -11,7 +11,7 @@ LibertyBoard es una pizarra digital y lector PDF con puntero láser estilo Drawb
 5. **Menús, guardar, actualización, zoom, notas de colores, idiomas y triángulos de opciones.** *(hecha, compilaciones 9 a 13)*
 6. **Pestañas, Guardar/Guardar como, girar, sellos, buscar, notas rápidas, adjuntos y sonidos.** *(hecha, compilación 14)*
 7. **Logo nuevo, íconos a color, scroll continuo, pantalla completa, barra que cabe en la pantalla.** *(hecha, compilación 15)*
-8. **Mejoras del Word de Luis, en 5 versiones.** *(Versión 1: compilación 20; Versión 2: compilación 21)*
+8. **Mejoras del Word de Luis, en 5 versiones.** *(Versión 1: compilación 20; Versión 2: compilación 21; observaciones: compilación 22; Versión 3: pendiente de aprobación)*
 
 ## 1. Barras de herramientas
 
@@ -238,6 +238,30 @@ Luis revisó la compilación 21 y entregó «observaciones_V2.docx» con 15 punt
 12. y 14. **Herramienta «Leer y dictar»** (`UBStylusTool::Voice`, solo en la pizarra, tras Texto): Leer o Dictar, y el ícono cambia según lo elegido. Leer: «Desde el inicio» (lee la página y sigue con las siguientes) o «Texto seleccionado» (se arrastra un recuadro sobre el texto); botones Reproducir, Pausar, Detener y Siguiente hoja (`UBReadAloud`). Dictar: botón que abre el dictado de Windows.
 13. **Dictado en español de Chile:** el dictado de Windows no acepta el teclado es-CL; al dictar, si el teclado es de otro español que no sea España ni México, se cambia a español de México para esta aplicación (`UBPlatformUtils::startDictation`). Sin probar en Windows.
 15. **Rotulador:** usa los mismos 13 colores que la pluma.
+
+## Versión 3 de las mejoras del Word (pendiente de aprobación)
+
+- **Plantillas** (#3b, `src/domain/UBPageTemplates`): Estilo plantilla tiene dos pestañas, **Hoja** (las tramas y el tamaño de la cuadrícula) y **Plantillas**; el color de la hoja sirve para ambas. 21 plantillas aprobadas por Luis, dibujadas por LibertyBoard (las de internet suelen tener derechos de autor): lista de tareas, lista con viñetas, planificador diario, calendario semanal (con y sin horas), calendario mensual, planificador anual, lista de compras, seguimiento de hábitos, notas Cornell, hoja de reunión, hoja de puntos, pauta de caligrafía, papel milimetrado, pentagrama, plan de clase, lista de asistencia, planilla de notas, tabla de 2 columnas, mapa mental y guion gráfico.
+  - Grises medio transparentes sobre fondo transparente: se ven en cualquier color de hoja.
+  - Los calendarios se arman para la «Fecha de los calendarios» (hoy por defecto): los días caen en su día real cada año; la semana empieza el primer día de la semana del idioma.
+  - Textos de las plantillas en español, inglés, alemán, francés, chino y japonés; los demás idiomas, en inglés (pedido de Luis). No pasan por las traducciones.
+  - Es un SVG detrás de la página, marcado en su descripción; elegir una trama lo quita. En una página de PDF o con una imagen detrás, la plantilla va en una página nueva después.
+- **Formas** (#13, `UBShapeKind`, `UBShapeGeometry::outline`): Rectángulo y Elipse se unieron en la herramienta **Formas** con 20 formas: línea, polilínea, elipse, rectángulo, paralelogramo, triángulo, triángulo rectángulo, rombo, pentágono, hexágono, flechas de bloque (derecha, izquierda, arriba, abajo), estrellas de 4, 5 y 6 puntas, globos de diálogo rectangular y ovalado, y nube. Polilínea: un clic por esquina, Enter termina, Esc descarta. En la barra: las formas a la izquierda en 3 filas, luego colores, Borde/Relleno en una columna, grosor y opacidad con el número sobre la barra. El ícono es la forma elegida. La elipse salió de las barras.
+- **Listas** (#5, `UBGraphicsTextItem::toggleList`): casillas para marcar, viñetas y números, en la barra de Texto y en la barra de cada cuadro de texto. Un clic marca la casilla; se guarda en el HTML del texto.
+- **Tablas** (#6, `src/domain/UBTextTables`, `src/gui/UBTextBoxes`): Tabla en las opciones de Texto pregunta filas y columnas (2 × 3) y la pone en el cuadro que se escribe o en uno nuevo. Tab pasa a la celda siguiente (agrega fila al final), Mayús+Tab vuelve. Se arrastran las líneas para ensanchar columnas y agrandar filas. Botón de tabla en el cuadro: añadir/eliminar fila o columna, columnas del mismo ancho, estilo (destacar encabezado o primera columna, líneas: todas, horizontales, exteriores o ninguna, color de celdas) y eliminar tabla. Es una tabla del HTML del texto: OpenBoard la muestra.
+- **Mientras se escribe en un cuadro de texto**, la barra muestra las opciones de Texto (la herramienta pasa a Selección al crear el cuadro).
+- **Emojis y GIFs** (#17, `UBStylusTool::Emoji`, `src/domain/UBEmojis`, `src/gui/UBGifWindow`): herramienta nueva en ambas barras (con triángulo en escritorio). Emojis: 72, en 3 filas; clic elige, clic en la página lo pone como imagen a color, del tamaño elegido. GIFs: sin cuenta (decisión de Luis), el botón GIFs abre la página de klipy.com en una ventana angosta a la derecha, con su buscador; se arrastra un GIF a la página. La ✕ arriba a la derecha o un segundo clic en GIFs la cierran.
+- **GIF animados** (`UBGraphicsPixmapItem::setAnimation`): una imagen de varios cuadros se mueve en la pizarra, también arrastrada desde un navegador y al reabrir la página (el GIF se guarda tal cual). Al guardar como imagen o PDF, o imprimir, queda el cuadro visible.
+
+### Ajustes pedidos durante la V3
+
+- **Leer en voz alta** (antes Leer y dictar) solo lee: «Desde el inicio», «Texto seleccionado» (el recuadro se marca en amarillo mientras se lee) y **«Desde el clic»** (lee desde la palabra clicada y sigue con las páginas siguientes). Todos los botones son cuadros con dibujo arriba y nombre abajo.
+- **Dictar** pasó a Texto (`src/gui/UBDictation`): botón Dictar en las opciones de Texto (dicta en el cuadro que se escribe o crea uno en el centro) y micrófono a la izquierda de la F en cada cuadro. El cuadro que se escribe tapa casi por completo la página (92 % opaco).
+- **Foco y lupa:** el ícono de la barra solo elige la herramienta; los botones Foco y Lupa de las opciones prenden, cambian y apagan.
+- **Láser:** las barras de opacidad, espera y desvanecer del mismo ancho, con el nombre arriba y el número al lado.
+- **Colores:** círculos de 20 px y exactamente 3 filas en todas las herramientas; la Nota ofrece los 13 colores de la pluma con la rueda y el cuentagotas.
+- **Guardar/Descartar/Cancelar** en el idioma del programa en Windows: se carga `qtbase_<idioma>.qm` (el `qt_<idioma>.qm` no carga si falta algún módulo de Qt).
+- **Traducciones:** desde la V3 los textos nuevos se traducen al español, alemán, francés, chino y japonés; los demás idiomas los muestran en inglés (pedido de Luis).
 
 ## Forma de trabajo
 
