@@ -615,6 +615,11 @@ void UBPlatformUtils::setFrontProcess()
  * @brief Full-screen a QWidget. Specific behaviour is platform-dependent.
  * @param pWidget the QWidget to maximize
  */
+bool UBPlatformUtils::startDictation()
+{
+    return false;
+}
+
 bool UBPlatformUtils::hideFromScreenCapture(QWidget* widget)
 {
     Q_UNUSED(widget)

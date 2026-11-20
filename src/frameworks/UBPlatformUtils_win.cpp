@@ -454,6 +454,26 @@ void UBPlatformUtils::setFrontProcess()
 }
 
 
+bool UBPlatformUtils::startDictation()
+{
+    // Windows + H opens the voice typing of Windows.
+    INPUT keys[4] = {};
+
+    for (INPUT& key : keys)
+    {
+        key.type = INPUT_KEYBOARD;
+    }
+
+    keys[0].ki.wVk = VK_LWIN;
+    keys[1].ki.wVk = 'H';
+    keys[2].ki.wVk = 'H';
+    keys[2].ki.dwFlags = KEYEVENTF_KEYUP;
+    keys[3].ki.wVk = VK_LWIN;
+    keys[3].ki.dwFlags = KEYEVENTF_KEYUP;
+
+    return SendInput(4, keys, sizeof(INPUT)) == 4;
+}
+
 bool UBPlatformUtils::hideFromScreenCapture(QWidget* widget)
 {
     // WDA_EXCLUDEFROMCAPTURE, Windows 10 version 2004 and later.

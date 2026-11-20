@@ -41,6 +41,7 @@ QT += multimedia
 QT += multimediawidgets
 QT += webenginewidgets
 QT += printsupport
+QT += texttospeech
 QT += core
 QT += concurrent
 greaterThan(QT_MAJOR_VERSION, 5): win32: QT += core5compat

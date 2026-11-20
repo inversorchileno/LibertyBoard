@@ -49,6 +49,8 @@ target_sources(${PROJECT_NAME} PRIVATE
     UBEyedropper.h
     UBSpotlight.cpp
     UBSpotlight.h
+    UBReadAloud.cpp
+    UBReadAloud.h
     UBDocumentTabs.cpp
     UBDocumentTabs.h
     UBNoteToolIcon.cpp

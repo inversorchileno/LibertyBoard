@@ -51,6 +51,8 @@
 #include "gui/UBMainWindow.h"
 #include "gui/UBNoteToolIcon.h"
 #include "gui/UBShapeToolIcon.h"
+#include "frameworks/UBPlatformUtils.h"
+#include "gui/UBReadAloud.h"
 #include "gui/UBSpotlight.h"
 #include "gui/UBToolOptionsPanel.h"
 #include "gui/UBToolColorIcon.h"
@@ -265,6 +267,35 @@ void UBMainMenu::createMenus()
     editMenu->addAction(mMainWindow->actionCut);
     editMenu->addAction(mMainWindow->actionCopy);
     editMenu->addAction(mMainWindow->actionPaste);
+    // Reading aloud and dictation, with the voices of the system.
+    QMenu* voiceMenu = editMenu->addMenu(QIcon(":/images/toolbar/readAloud.svg"), tr("Read and dictate"));
+    auto readAloud = new UBReadAloud(this);
+    QAction* readAction = voiceMenu->addAction(tr("Read aloud"));
+    readAction->setShortcut(QKeySequence("Ctrl+Shift+L"));
+    readAction->setToolTip(tr("Reads the texts selected, or the text of the page"));
+    mMainWindow->addAction(readAction);
+    connect(readAction, &QAction::triggered, readAloud, &UBReadAloud::readOrStop);
+    connect(readAloud, &UBReadAloud::readingChanged, readAction, [readAction](bool reading) {
+        readAction->setText(reading ? tr("Stop reading") : tr("Read aloud"));
+    });
+
+    QAction* dictateAction = voiceMenu->addAction(tr("Dictate (Windows + H)"));
+    dictateAction->setToolTip(tr("Opens the dictation of Windows: what is said is written where the cursor of text is"));
+    connect(dictateAction, &QAction::triggered, this, [this]() {
+        // After the menu closes, so that the text keeps the cursor.
+        QTimer::singleShot(200, this, [this]() {
+            if (!UBPlatformUtils::startDictation())
+            {
+                mMainWindow->information(tr("Dictate"), tr("The dictation of the system is not available here. "
+                                                          "On Windows, press Windows + H in a text."));
+            }
+        });
+    });
+
+    QAction* transcribeAction = voiceMenu->addAction(tr("Transcribe an audio (coming with the AI)"));
+    transcribeAction->setEnabled(false);
+    transcribeAction->setToolTip(tr("Writes what is said in a recording; it will come with the AI of LibertyBoard"));
+
     editMenu->addAction(mMainWindow->actionHideApplication);
     editMenu->addAction(mMainWindow->actionSleep);
     editMenu->addSeparator();

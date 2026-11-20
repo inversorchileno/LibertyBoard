@@ -8,6 +8,7 @@ set(QT_COMPONENTS
     Network
     PrintSupport
     Svg
+    TextToSpeech
     UiTools
     WebEngineWidgets
     Xml

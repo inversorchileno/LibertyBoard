@@ -489,6 +489,11 @@ void UBPlatformUtils::setFrontProcess()
 }
 
 
+bool UBPlatformUtils::startDictation()
+{
+    return false;
+}
+
 bool UBPlatformUtils::hideFromScreenCapture(QWidget* widget)
 {
     Q_UNUSED(widget)

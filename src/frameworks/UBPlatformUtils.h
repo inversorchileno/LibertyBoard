@@ -218,6 +218,12 @@ public:
          * the system cannot.
          */
         static bool hideFromScreenCapture(QWidget* widget);
+
+        /**
+         * @brief Opens the dictation of the system, which writes what is said
+         * where the cursor of text is. False where the system has none.
+         */
+        static bool startDictation();
         static void showOSK(bool show);
 
 #ifdef Q_OS_OSX
