@@ -1638,7 +1638,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Odkaz</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+2"/>
         <source>File: a click on the page attaches a file. Hyperlink: a click on the page asks for the address of a web page.</source>
         <translation>Soubor: kliknutí na stránku připojí soubor. Odkaz: kliknutí na stránku se zeptá na adresu webové stránky.</translation>
     </message>
@@ -1995,7 +1995,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+734"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+720"/>
         <source>Quick note</source>
         <translation>Rychlá poznámka</translation>
     </message>
@@ -2697,7 +2697,7 @@ Do you want to continue?</source>
 <context>
     <name>UBEmojiOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-987"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-972"/>
         <source>Emojis and GIFs</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3457,6 +3457,41 @@ Stáhnout a nainstalovat nyní? LibertyBoard uloží vaše dokumenty, zavře se 
     </message>
     <message>
         <location line="+9"/>
+        <source>Color of the lines...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Color of the lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Width of the lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Thin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Medium</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Thick</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Very thick</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+11"/>
         <source>Color of the cells...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4211,7 +4246,7 @@ Chcete ignorovat tyto chyby na tomto serveru?</translation>
 <context>
     <name>UBNoteOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1180"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1165"/>
         <source>Note</source>
         <translation>Poznámka</translation>
     </message>
@@ -4512,7 +4547,7 @@ Lze to udělat i později přes Domů &gt; Rozpoznat text.</translation>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1343"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1328"/>
         <source>Pen</source>
         <translation>Pero</translation>
     </message>
@@ -5146,37 +5181,40 @@ Dynamická šířka</translation>
 <context>
     <name>UBSelectorOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1203"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1202"/>
         <source>Select</source>
         <translation>Vybrat</translation>
     </message>
     <message>
-        <location line="+29"/>
+        <location line="+3"/>
         <source>Arrow</source>
         <translation>Šipka</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Select with a rectangle again</source>
-        <translation>Znovu vybírat obdélníkem</translation>
+        <location line="+2"/>
+        <source>Arrow: select with a rectangle. Lasso: select by drawing a free line around the objects.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1"/>
+        <source>Select with a rectangle again</source>
+        <translation type="vanished">Znovu vybírat obdélníkem</translation>
+    </message>
+    <message>
+        <location line="+20"/>
         <source>Draw a line around what to select.</source>
         <translation>Nakreslete čáru kolem toho, co chcete vybrat.</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="-22"/>
         <source>Lasso</source>
         <translation>Laso</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Select by drawing a free line around the objects</source>
-        <translation>Vybrat nakreslením volné čáry kolem objektů</translation>
+        <translation type="vanished">Vybrat nakreslením volné čáry kolem objektů</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+22"/>
         <source>Drag a rectangle, or over a PDF to copy its text.</source>
         <translation>Táhněte obdélník, nebo přes PDF pro zkopírování jeho textu.</translation>
     </message>
@@ -5196,7 +5234,7 @@ Dynamická šířka</translation>
         <translation type="vanished">Obdélník</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-613"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-600"/>
         <source>Shapes</source>
         <translation type="unfinished">Tvary</translation>
     </message>
@@ -5830,7 +5868,7 @@ Dynamická šířka</translation>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1080"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1079"/>
         <source>Color</source>
         <translation>Barva</translation>
     </message>

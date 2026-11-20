@@ -1637,7 +1637,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>超链接</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+2"/>
         <source>File: a click on the page attaches a file. Hyperlink: a click on the page asks for the address of a web page.</source>
         <translation>文件：单击页面附加一个文件。超链接：单击页面会询问网页地址。</translation>
     </message>
@@ -2001,7 +2001,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+734"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+720"/>
         <source>Quick note</source>
         <translation>快速备注</translation>
     </message>
@@ -2729,7 +2729,7 @@ Do you want to continue?</source>
 <context>
     <name>UBEmojiOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-987"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-972"/>
         <source>Emojis and GIFs</source>
         <translation>表情和GIF</translation>
     </message>
@@ -3541,6 +3541,41 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     </message>
     <message>
         <location line="+9"/>
+        <source>Color of the lines...</source>
+        <translation>线条颜色...</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Color of the lines</source>
+        <translation>线条颜色</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Width of the lines</source>
+        <translation>线条粗细</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Thin</source>
+        <translation>细</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Medium</source>
+        <translation>中</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Thick</source>
+        <translation>粗</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Very thick</source>
+        <translation>很粗</translation>
+    </message>
+    <message>
+        <location line="+11"/>
         <source>Color of the cells...</source>
         <translation>单元格颜色...</translation>
     </message>
@@ -4295,7 +4330,7 @@ Do you want to ignore these errors for this host?</source>
 <context>
     <name>UBNoteOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1180"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1165"/>
         <source>Note</source>
         <translation>便笺</translation>
     </message>
@@ -4616,7 +4651,7 @@ It can also be done later with Home &gt; Recognize text.</source>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1343"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1328"/>
         <source>Pen</source>
         <translation>笔</translation>
     </message>
@@ -5250,37 +5285,40 @@ Dynamic width</source>
 <context>
     <name>UBSelectorOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1203"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1202"/>
         <source>Select</source>
         <translation>选择</translation>
     </message>
     <message>
-        <location line="+29"/>
+        <location line="+3"/>
         <source>Arrow</source>
         <translation>箭头</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Select with a rectangle again</source>
-        <translation>再次用矩形选择</translation>
+        <location line="+2"/>
+        <source>Arrow: select with a rectangle. Lasso: select by drawing a free line around the objects.</source>
+        <translation>箭头：用矩形选择。套索：围绕对象画一条自由线来选择。</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <source>Select with a rectangle again</source>
+        <translation type="vanished">再次用矩形选择</translation>
+    </message>
+    <message>
+        <location line="+20"/>
         <source>Draw a line around what to select.</source>
         <translation>在要选择的内容周围画一条线。</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="-22"/>
         <source>Lasso</source>
         <translation>套索</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Select by drawing a free line around the objects</source>
-        <translation>在对象周围画一条自由线来选择</translation>
+        <translation type="vanished">在对象周围画一条自由线来选择</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+22"/>
         <source>Drag a rectangle, or over a PDF to copy its text.</source>
         <translation>拖出一个矩形，在 PDF 上则复制其文字。</translation>
     </message>
@@ -5300,7 +5338,7 @@ Dynamic width</source>
         <translation type="vanished">矩形</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-613"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-600"/>
         <source>Shapes</source>
         <translation>形状</translation>
     </message>
@@ -5942,7 +5980,7 @@ Dynamic width</source>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1080"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1079"/>
         <source>Color</source>
         <translation>颜色</translation>
     </message>

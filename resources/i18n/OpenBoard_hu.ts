@@ -1643,7 +1643,7 @@ Felülírja a biztonsági ellenőrzést, és folytatja?</translation>
         <translation>Hivatkozás</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+2"/>
         <source>File: a click on the page attaches a file. Hyperlink: a click on the page asks for the address of a web page.</source>
         <translation>Fájl: egy kattintás az oldalon fájlt csatol. Hivatkozás: egy kattintás az oldalon egy weboldal címét kéri.</translation>
     </message>
@@ -2007,7 +2007,7 @@ Felülírja a biztonsági ellenőrzést, és folytatja?</translation>
 <context>
     <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+734"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+720"/>
         <source>Quick note</source>
         <translation>Gyors jegyzet</translation>
     </message>
@@ -2784,7 +2784,7 @@ Do you want to continue?</source>
 <context>
     <name>UBEmojiOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-987"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-972"/>
         <source>Emojis and GIFs</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3544,6 +3544,41 @@ Letölti és telepíti most? A LibertyBoard menti a dokumentumait, bezárul, maj
     </message>
     <message>
         <location line="+9"/>
+        <source>Color of the lines...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Color of the lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Width of the lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Thin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Medium</source>
+        <translation type="unfinished">Közepes</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Thick</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Very thick</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+11"/>
         <source>Color of the cells...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4298,7 +4333,7 @@ Figyelmen kívül hagyja ezeket a hibákat ennél a hosztnál?</translation>
 <context>
     <name>UBNoteOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1180"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1165"/>
         <source>Note</source>
         <translation>Jegyzet</translation>
     </message>
@@ -4619,7 +4654,7 @@ Később is megteheti: Kezdőlap &gt; Szöveg felismerése.</translation>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1343"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1328"/>
         <source>Pen</source>
         <translation>Toll</translation>
     </message>
@@ -5261,37 +5296,40 @@ Dinamikus szélesség</translation>
 <context>
     <name>UBSelectorOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1203"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1202"/>
         <source>Select</source>
         <translation>Kijelölés</translation>
     </message>
     <message>
-        <location line="+29"/>
+        <location line="+3"/>
         <source>Arrow</source>
         <translation>Nyíl</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Select with a rectangle again</source>
-        <translation>Kijelölés ismét téglalappal</translation>
+        <location line="+2"/>
+        <source>Arrow: select with a rectangle. Lasso: select by drawing a free line around the objects.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1"/>
+        <source>Select with a rectangle again</source>
+        <translation type="vanished">Kijelölés ismét téglalappal</translation>
+    </message>
+    <message>
+        <location line="+20"/>
         <source>Draw a line around what to select.</source>
         <translation>Rajzoljon vonalat a kijelölendők köré.</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="-22"/>
         <source>Lasso</source>
         <translation>Lasszó</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Select by drawing a free line around the objects</source>
-        <translation>Kijelölés szabad vonal rajzolásával az objektumok köré</translation>
+        <translation type="vanished">Kijelölés szabad vonal rajzolásával az objektumok köré</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+22"/>
         <source>Drag a rectangle, or over a PDF to copy its text.</source>
         <translation>Húzzon egy téglalapot, vagy egy PDF fölött a szöveg másolásához.</translation>
     </message>
@@ -5311,7 +5349,7 @@ Dinamikus szélesség</translation>
         <translation type="vanished">Téglalap</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-613"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-600"/>
         <source>Shapes</source>
         <translation type="unfinished">Alakzatok</translation>
     </message>
@@ -5949,7 +5987,7 @@ Dinamikus szélesség</translation>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1080"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1079"/>
         <source>Color</source>
         <translation>Szín</translation>
     </message>

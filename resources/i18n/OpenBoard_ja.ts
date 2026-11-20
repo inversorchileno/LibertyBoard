@@ -1633,7 +1633,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>ハイパーリンク</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+2"/>
         <source>File: a click on the page attaches a file. Hyperlink: a click on the page asks for the address of a web page.</source>
         <translation>ファイル: ページをクリックするとファイルを添付します。ハイパーリンク: ページをクリックするとWebページのアドレスを尋ねます。</translation>
     </message>
@@ -1990,7 +1990,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+734"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+720"/>
         <source>Quick note</source>
         <translation>クイックメモ</translation>
     </message>
@@ -2680,7 +2680,7 @@ Do you want to continue?</source>
 <context>
     <name>UBEmojiOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-987"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-972"/>
         <source>Emojis and GIFs</source>
         <translation>絵文字とGIF</translation>
     </message>
@@ -3492,6 +3492,41 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     </message>
     <message>
         <location line="+9"/>
+        <source>Color of the lines...</source>
+        <translation>線の色...</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Color of the lines</source>
+        <translation>線の色</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Width of the lines</source>
+        <translation>線の太さ</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Thin</source>
+        <translation>細い</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Medium</source>
+        <translation>普通</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Thick</source>
+        <translation>太い</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Very thick</source>
+        <translation>とても太い</translation>
+    </message>
+    <message>
+        <location line="+11"/>
         <source>Color of the cells...</source>
         <translation>セルの色...</translation>
     </message>
@@ -4247,7 +4282,7 @@ Do you want to ignore these errors for this host?</source>
 <context>
     <name>UBNoteOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1180"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1165"/>
         <source>Note</source>
         <translation>メモ</translation>
     </message>
@@ -4548,7 +4583,7 @@ It can also be done later with Home &gt; Recognize text.</source>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1343"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1328"/>
         <source>Pen</source>
         <translation>ペン </translation>
     </message>
@@ -5182,37 +5217,40 @@ Dynamic width</source>
 <context>
     <name>UBSelectorOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1203"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1202"/>
         <source>Select</source>
         <translation>選択</translation>
     </message>
     <message>
-        <location line="+29"/>
+        <location line="+3"/>
         <source>Arrow</source>
         <translation>矢印</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Select with a rectangle again</source>
-        <translation>再び四角形で選択</translation>
+        <location line="+2"/>
+        <source>Arrow: select with a rectangle. Lasso: select by drawing a free line around the objects.</source>
+        <translation>矢印：四角形で選択します。投げ縄：オブジェクトの周りを自由な線で囲んで選択します。</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <source>Select with a rectangle again</source>
+        <translation type="vanished">再び四角形で選択</translation>
+    </message>
+    <message>
+        <location line="+20"/>
         <source>Draw a line around what to select.</source>
         <translation>選択したいものの周りに線を描きます。</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="-22"/>
         <source>Lasso</source>
         <translation>なげなわ</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Select by drawing a free line around the objects</source>
-        <translation>オブジェクトの周りに自由な線を描いて選択</translation>
+        <translation type="vanished">オブジェクトの周りに自由な線を描いて選択</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+22"/>
         <source>Drag a rectangle, or over a PDF to copy its text.</source>
         <translation>四角形をドラッグします。PDF の上ではそのテキストをコピーします。</translation>
     </message>
@@ -5232,7 +5270,7 @@ Dynamic width</source>
         <translation type="vanished">長方形</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-613"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-600"/>
         <source>Shapes</source>
         <translation>図形</translation>
     </message>
@@ -5870,7 +5908,7 @@ Dynamic width</source>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1080"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1079"/>
         <source>Color</source>
         <translation>色</translation>
     </message>

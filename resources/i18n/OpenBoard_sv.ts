@@ -1637,7 +1637,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Länk</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+2"/>
         <source>File: a click on the page attaches a file. Hyperlink: a click on the page asks for the address of a web page.</source>
         <translation>Fil: ett klick på sidan bifogar en fil. Länk: ett klick på sidan frågar efter adressen till en webbsida.</translation>
     </message>
@@ -1995,7 +1995,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+734"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+720"/>
         <source>Quick note</source>
         <translation>Snabbanteckning</translation>
     </message>
@@ -2693,7 +2693,7 @@ Do you want to continue?</source>
 <context>
     <name>UBEmojiOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-987"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-972"/>
         <source>Emojis and GIFs</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3453,6 +3453,41 @@ Ladda ner och installera nu? LibertyBoard sparar dina dokument, stängs och öpp
     </message>
     <message>
         <location line="+9"/>
+        <source>Color of the lines...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Color of the lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Width of the lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Thin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Medium</source>
+        <translation type="unfinished">Medium</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Thick</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Very thick</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+11"/>
         <source>Color of the cells...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4207,7 +4242,7 @@ Vill du ignorera felen för den här värden?</translation>
 <context>
     <name>UBNoteOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1180"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1165"/>
         <source>Note</source>
         <translation>Anteckning</translation>
     </message>
@@ -4508,7 +4543,7 @@ Det går också senare med Start &gt; Känn igen text.</translation>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1343"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1328"/>
         <source>Pen</source>
         <translation>Penna</translation>
     </message>
@@ -5142,37 +5177,40 @@ Dynamisk bredd</translation>
 <context>
     <name>UBSelectorOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1203"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1202"/>
         <source>Select</source>
         <translation>Markera</translation>
     </message>
     <message>
-        <location line="+29"/>
+        <location line="+3"/>
         <source>Arrow</source>
         <translation>Pil</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Select with a rectangle again</source>
-        <translation>Markera med en rektangel igen</translation>
+        <location line="+2"/>
+        <source>Arrow: select with a rectangle. Lasso: select by drawing a free line around the objects.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1"/>
+        <source>Select with a rectangle again</source>
+        <translation type="vanished">Markera med en rektangel igen</translation>
+    </message>
+    <message>
+        <location line="+20"/>
         <source>Draw a line around what to select.</source>
         <translation>Rita en linje runt det som ska markeras.</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="-22"/>
         <source>Lasso</source>
         <translation>Lasso</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Select by drawing a free line around the objects</source>
-        <translation>Markera genom att rita en fri linje runt objekten</translation>
+        <translation type="vanished">Markera genom att rita en fri linje runt objekten</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+22"/>
         <source>Drag a rectangle, or over a PDF to copy its text.</source>
         <translation>Dra en rektangel, eller över en PDF för att kopiera dess text.</translation>
     </message>
@@ -5192,7 +5230,7 @@ Dynamisk bredd</translation>
         <translation type="vanished">Rektangel</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-613"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-600"/>
         <source>Shapes</source>
         <translation type="unfinished">Former</translation>
     </message>
@@ -5826,7 +5864,7 @@ Dynamisk bredd</translation>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1080"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1079"/>
         <source>Color</source>
         <translation>Färg</translation>
     </message>

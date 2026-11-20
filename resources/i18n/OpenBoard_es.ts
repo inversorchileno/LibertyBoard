@@ -1639,7 +1639,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Hipervínculo</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+2"/>
         <source>File: a click on the page attaches a file. Hyperlink: a click on the page asks for the address of a web page.</source>
         <translation>Archivo: un clic en la página adjunta un archivo. Hipervínculo: un clic en la página pide la dirección de una página web.</translation>
     </message>
@@ -2003,7 +2003,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+734"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+720"/>
         <source>Quick note</source>
         <translation>Nota rápida</translation>
     </message>
@@ -2736,7 +2736,7 @@ Si quieres continuar, el documento se convertirá para ser compatible con la ver
 <context>
     <name>UBEmojiOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-987"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-972"/>
         <source>Emojis and GIFs</source>
         <translation>Emojis y GIFs</translation>
     </message>
@@ -3548,6 +3548,41 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
     </message>
     <message>
         <location line="+9"/>
+        <source>Color of the lines...</source>
+        <translation>Color de las líneas...</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Color of the lines</source>
+        <translation>Color de las líneas</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Width of the lines</source>
+        <translation>Grosor de las líneas</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Thin</source>
+        <translation>Fino</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Medium</source>
+        <translation>Medio</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Thick</source>
+        <translation>Grueso</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Very thick</source>
+        <translation>Muy grueso</translation>
+    </message>
+    <message>
+        <location line="+11"/>
         <source>Color of the cells...</source>
         <translation>Color de las celdas...</translation>
     </message>
@@ -4308,7 +4343,7 @@ Do you want to ignore these errors for this host?</source>
 <context>
     <name>UBNoteOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1180"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1165"/>
         <source>Note</source>
         <translation>Nota</translation>
     </message>
@@ -4629,7 +4664,7 @@ También se puede hacer después con Inicio &gt; Reconocer texto.</translation>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1343"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1328"/>
         <source>Pen</source>
         <translation>Bolígrafo</translation>
     </message>
@@ -5267,37 +5302,40 @@ Ancho dinámico</translation>
 <context>
     <name>UBSelectorOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1207"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1206"/>
         <source>Select</source>
         <translation>Seleccionar</translation>
     </message>
     <message>
-        <location line="+29"/>
+        <location line="+3"/>
         <source>Arrow</source>
         <translation>Flecha</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Select with a rectangle again</source>
-        <translation>Seleccionar otra vez con un rectángulo</translation>
+        <location line="+2"/>
+        <source>Arrow: select with a rectangle. Lasso: select by drawing a free line around the objects.</source>
+        <translation>Flecha: selecciona con un rectángulo. Lazo: selecciona dibujando una línea libre alrededor de los objetos.</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <source>Select with a rectangle again</source>
+        <translation type="vanished">Seleccionar otra vez con un rectángulo</translation>
+    </message>
+    <message>
+        <location line="+20"/>
         <source>Draw a line around what to select.</source>
         <translation>Dibuja una línea alrededor de lo que quieres seleccionar.</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="-22"/>
         <source>Lasso</source>
         <translation>Lazo</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Select by drawing a free line around the objects</source>
-        <translation>Seleccionar dibujando una línea libre alrededor de los objetos</translation>
+        <translation type="vanished">Seleccionar dibujando una línea libre alrededor de los objetos</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+22"/>
         <source>Drag a rectangle, or over a PDF to copy its text.</source>
         <translation>Arrastra un rectángulo, o sobre un PDF para copiar su texto.</translation>
     </message>
@@ -5313,7 +5351,7 @@ Ancho dinámico</translation>
 <context>
     <name>UBShapeOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-607"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-594"/>
         <source>Text highlight</source>
         <translation>Resaltado del texto</translation>
     </message>
@@ -5959,7 +5997,7 @@ Ancho dinámico</translation>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1080"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1079"/>
         <source>Color</source>
         <translation>Color</translation>
     </message>

@@ -1651,7 +1651,7 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
         <translation>Hyperlink</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+2"/>
         <source>File: a click on the page attaches a file. Hyperlink: a click on the page asks for the address of a web page.</source>
         <translation>Datei: Ein Klick auf die Seite hängt eine Datei an. Hyperlink: Ein Klick auf die Seite fragt nach der Adresse einer Webseite.</translation>
     </message>
@@ -2015,7 +2015,7 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
 <context>
     <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+734"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+720"/>
         <source>Quick note</source>
         <translation>Kurznotiz</translation>
     </message>
@@ -2777,7 +2777,7 @@ Möchten Sie fortfahren?</translation>
 <context>
     <name>UBEmojiOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-987"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-972"/>
         <source>Emojis and GIFs</source>
         <translation>Emojis und GIFs</translation>
     </message>
@@ -3590,6 +3590,41 @@ Jetzt herunterladen und installieren? LibertyBoard speichert Ihre Dokumente, sch
     </message>
     <message>
         <location line="+9"/>
+        <source>Color of the lines...</source>
+        <translation>Farbe der Linien...</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Color of the lines</source>
+        <translation>Farbe der Linien</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Width of the lines</source>
+        <translation>Stärke der Linien</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Thin</source>
+        <translation>Dünn</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Medium</source>
+        <translation>Mittel</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Thick</source>
+        <translation>Dick</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Very thick</source>
+        <translation>Sehr dick</translation>
+    </message>
+    <message>
+        <location line="+11"/>
         <source>Color of the cells...</source>
         <translation>Farbe der Zellen...</translation>
     </message>
@@ -4344,7 +4379,7 @@ Möchten Sie diese Fehler für diesen Computer ignorieren?</translation>
 <context>
     <name>UBNoteOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1180"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1165"/>
         <source>Note</source>
         <translation>Notiz</translation>
     </message>
@@ -4665,7 +4700,7 @@ Das geht auch später mit Start &gt; Text erkennen.</translation>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1343"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1328"/>
         <source>Pen</source>
         <translation>Stift</translation>
     </message>
@@ -5299,37 +5334,40 @@ Dynamische Breite</translation>
 <context>
     <name>UBSelectorOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1203"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1202"/>
         <source>Select</source>
         <translation>Auswählen</translation>
     </message>
     <message>
-        <location line="+29"/>
+        <location line="+3"/>
         <source>Arrow</source>
         <translation>Pfeil</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Select with a rectangle again</source>
-        <translation>Wieder mit einem Rechteck auswählen</translation>
+        <location line="+2"/>
+        <source>Arrow: select with a rectangle. Lasso: select by drawing a free line around the objects.</source>
+        <translation>Pfeil: mit einem Rechteck auswählen. Lasso: mit einer freien Linie um die Objekte auswählen.</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <source>Select with a rectangle again</source>
+        <translation type="vanished">Wieder mit einem Rechteck auswählen</translation>
+    </message>
+    <message>
+        <location line="+20"/>
         <source>Draw a line around what to select.</source>
         <translation>Zeichnen Sie eine Linie um das, was ausgewählt werden soll.</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="-22"/>
         <source>Lasso</source>
         <translation>Lasso</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Select by drawing a free line around the objects</source>
-        <translation>Auswählen durch eine freie Linie um die Objekte</translation>
+        <translation type="vanished">Auswählen durch eine freie Linie um die Objekte</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+22"/>
         <source>Drag a rectangle, or over a PDF to copy its text.</source>
         <translation>Ziehen Sie ein Rechteck, oder über einem PDF, um dessen Text zu kopieren.</translation>
     </message>
@@ -5349,7 +5387,7 @@ Dynamische Breite</translation>
         <translation type="vanished">Rechteck</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-613"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-600"/>
         <source>Shapes</source>
         <translation>Formen</translation>
     </message>
@@ -5996,7 +6034,7 @@ Miniaturansicht der Seite %1 wird geladen</translation>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1080"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1079"/>
         <source>Color</source>
         <translation>Farbe</translation>
     </message>
