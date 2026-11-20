@@ -434,7 +434,7 @@ UBAiPanel::UBAiPanel(QWidget* parent)
 QStringList UBAiPanel::defaultServices()
 {
     return { "ChatGPT|https://chatgpt.com/", "Claude|https://claude.ai/new", "Gemini|https://gemini.google.com/app",
-             "Copilot|https://copilot.microsoft.com/" };
+             "Copilot|https://copilot.microsoft.com/", "DeepSeek|https://chat.deepseek.com/", "Grok|https://grok.com/", "Le Chat|https://chat.mistral.ai/", "Perplexity|https://www.perplexity.ai/" };
 }
 
 QList<UBAiPanel::Service> UBAiPanel::services()

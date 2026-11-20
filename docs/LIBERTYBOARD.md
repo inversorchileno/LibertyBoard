@@ -281,7 +281,7 @@ Luis revisó la compilación 21 y entregó «observaciones_V2.docx» con 15 punt
   - La instrucción para la IA la arma LibertyBoard (en el idioma del programa), se escribe sola en la caja de la IA y queda copiada; el archivo se entrega a la página como si se eligiera o pegara (hasta 20 MB). Si la página no lo permite: Ctrl+V y arrastrar el archivo desde el panel. Depende de cómo esté hecha cada página: puede dejar de funcionar si la cambian.
   - Lista de IA arriba del panel; el borde izquierdo se arrastra para ensanchar. Si después de dar la instrucción la página dice que se alcanzó un límite («You've reached...», «Has alcanzado el límite»...), aviso con botones para hacer lo mismo en otra IA.
   - El resultado vuelve a la página arrastrándolo (las imágenes se toman como imagen, no como dirección, porque esa dirección exige la sesión), con **Pegar en la página**, o solo si la IA lo hace descargar: queda en Descargas y una imagen se pone en la página.
-  - Preferencias, pestaña **IA**: nombre y dirección de cada IA (ChatGPT, Claude, Gemini y Copilot por defecto), Agregar, Quitar y Lista original.
+  - Preferencias, pestaña **IA**: nombre y dirección de cada IA (por defecto ChatGPT, Claude, Gemini, Copilot, DeepSeek, Grok, Le Chat y Perplexity; cada uno puede agregar más), Agregar, Quitar y Lista original.
   - **Transcribir un audio** también en Edición → Leer y dictar (Ctrl+F11) y junto a Dictar en las opciones de Texto.
   - Probado en Linux con una página local que imita un chat (las páginas de las IA no se alcanzan desde la máquina de pruebas): instrucción escrita, PDF y PNG adjuntados, aviso de límite y arrastre de una imagen a la página. Falta probarlo con las IA reales en Windows.
 

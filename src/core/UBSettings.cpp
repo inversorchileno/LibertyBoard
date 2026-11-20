@@ -359,7 +359,8 @@ void UBSettings::init()
     hiddenDesktopTools = new UBSetting(this, "Board", "LibertyBoardHiddenDesktopTools", QStringList());
     aiServices = new UBSetting(this, "Board", "LibertyBoardAiServices",
                                QStringList({ "ChatGPT|https://chatgpt.com/", "Claude|https://claude.ai/new",
-                                             "Gemini|https://gemini.google.com/app", "Copilot|https://copilot.microsoft.com/" }));
+                                             "Gemini|https://gemini.google.com/app", "Copilot|https://copilot.microsoft.com/",
+                                             "DeepSeek|https://chat.deepseek.com/", "Grok|https://grok.com/", "Le Chat|https://chat.mistral.ai/", "Perplexity|https://www.perplexity.ai/" }));
     aiCurrentService = new UBSetting(this, "Board", "LibertyBoardAiCurrentService", 0);
     weekStartsOnSunday = new UBSetting(this, "Board", "LibertyBoardWeekStartsOnSunday", false);
     emojiChoice = new UBSetting(this, "Board", "LibertyBoardEmoji", QString());
