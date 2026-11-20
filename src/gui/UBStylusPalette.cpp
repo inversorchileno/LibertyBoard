@@ -77,8 +77,8 @@ UBStylusPalette::UBStylusPalette(QWidget *parent, Qt::Orientation orient)
     actions << UBApplication::mainWindow->actionVoice;
     actions << UBApplication::mainWindow->actionLine;
     actions << UBApplication::mainWindow->actionArrowShape;
+    // The shapes tool draws the ellipse too, with all the other shapes.
     actions << UBApplication::mainWindow->actionRectangle;
-    actions << UBApplication::mainWindow->actionEllipse;
 
     // Saves the board as it is seen, without the palettes, in one click.
     mScreenshotAction = new QAction(QIcon(":/images/stylusPalette/screenshot.svg"), tr("Save a screenshot"), this);

@@ -523,6 +523,23 @@ bool UBGraphicsScene::inputDevicePress(const QPointF& scenePos, const qreal& pre
             mNotePosition = scenePos;
             accepted = true;
         }
+        else if (currentTool == UBStylusTool::Rectangle
+                 && UBSettings::settings()->shapeKind->get().toInt() == UBShapeKind::Polyline) {
+            // Each click puts a corner of the polyline; Enter ends it.
+            // The last point follows the pointer: a click puts it down there.
+            if (mPolyline.isEmpty())
+            {
+                mPolyline << scenePos << scenePos;
+            }
+            else
+            {
+                mPolyline.last() = scenePos;
+            }
+
+            mPolylineDragging = true;
+            showPolyline();
+            accepted = true;
+        }
         else if (isShapeTool(currentTool)) {
             mShapeTool = currentTool;
             mShapeStart = scenePos;
@@ -561,6 +578,17 @@ bool UBGraphicsScene::inputDeviceMove(const QPointF& scenePos, const qreal& pres
 
     QPointF position = QPointF(scenePos);
     mCurrentPoint = position;
+
+    // The last segment of the polyline follows the pointer, pressed or not.
+    if (!mPolyline.isEmpty())
+    {
+        mPolyline.last() = (modifiers & Qt::ShiftModifier)
+                ? UBShapeGeometry::constrainedEnd(UBStylusTool::Rectangle, mPolyline.at(mPolyline.size() - 2), position,
+                                                  UBShapeKind::Polyline)
+                : position;
+        showPolyline();
+        return true;
+    }
 
     if (currentTool == UBStylusTool::Pointer && mLaserTrail
         && UBSettings::settings()->laserMode->get().toInt() == UBLaserMode::Follow)
@@ -747,7 +775,9 @@ bool UBGraphicsScene::inputDeviceMove(const QPointF& scenePos, const qreal& pres
         else if (mShapeTool >= 0)
         {
             mShapeEnd = (modifiers & Qt::ShiftModifier)
-                    ? UBShapeGeometry::constrainedEnd(mShapeTool, mShapeStart, position)
+                    ? UBShapeGeometry::constrainedEnd(mShapeTool, mShapeStart, position,
+                                                      mShapeTool == UBStylusTool::Rectangle
+                                                          ? UBSettings::settings()->shapeKind->get().toInt() : 0)
                     : position;
 
             if (mShapePreview)
@@ -885,6 +915,14 @@ bool UBGraphicsScene::inputDeviceRelease(int tool, Qt::KeyboardModifiers modifie
     if (mShapeTool >= 0)
     {
         finishShape();
+    }
+
+    // The corner stays where the button was released; the next segment starts there.
+    if (mPolylineDragging)
+    {
+        mPolylineDragging = false;
+        mPolyline << mPolyline.last();
+        showPolyline();
     }
 
     if (mNotePending)
@@ -1102,6 +1140,7 @@ UBShapeStyle UBGraphicsScene::shapeStyle(int tool) const
     style.endEnding = settings->endEnding->get().toInt();
     style.opacity = settings->opacity->get().toDouble();
     style.tapered = (tool == UBStylusTool::Arrow) && settings->tapered->get().toBool();
+    style.kind = (tool == UBStylusTool::Rectangle) ? UBSettings::settings()->shapeKind->get().toInt() : 0;
     style.minimumHeadSize = 12 * screenToScene;
 
     if (tool == UBStylusTool::Highlight && mFittedHighlightHeight > 0)
@@ -1344,8 +1383,60 @@ void UBGraphicsScene::finishShape()
         return;
     }
 
-    const QList<UBShapePart> parts = UBShapeGeometry::build(tool, mShapeStart, mShapeEnd, shapeStyle(tool));
+    addShape(UBShapeGeometry::build(tool, mShapeStart, mShapeEnd, shapeStyle(tool)));
+}
 
+void UBGraphicsScene::showPolyline()
+{
+    if (mShapePreview)
+    {
+        mShapePreview->setParts(UBShapeGeometry::buildPolyline(mPolyline, shapeStyle(UBStylusTool::Rectangle)));
+    }
+}
+
+void UBGraphicsScene::finishPolyline()
+{
+    if (mPolyline.isEmpty())
+    {
+        return;
+    }
+
+    // The corners clicked: the point following the pointer, and a corner
+    // clicked twice, are not corners.
+    QPolygonF corners;
+
+    for (int i = 0; i < mPolyline.size() - (mPolylineDragging ? 0 : 1); ++i)
+    {
+        if (corners.isEmpty() || QLineF(corners.last(), mPolyline.at(i)).length() > 0.5)
+        {
+            corners << mPolyline.at(i);
+        }
+    }
+
+    mPolyline.clear();
+    mPolylineDragging = false;
+
+    if (mShapePreview)
+    {
+        mShapePreview->clear();
+    }
+
+    addShape(UBShapeGeometry::buildPolyline(corners, shapeStyle(UBStylusTool::Rectangle)));
+}
+
+void UBGraphicsScene::cancelPolyline()
+{
+    mPolyline.clear();
+    mPolylineDragging = false;
+
+    if (mShapePreview)
+    {
+        mShapePreview->clear();
+    }
+}
+
+void UBGraphicsScene::addShape(const QList<UBShapePart>& parts)
+{
     if (parts.isEmpty())
     {
         return;

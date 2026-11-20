@@ -23,6 +23,7 @@
 
 #include <QPointer>
 
+#include "domain/UBShapeGeometry.h"
 #include "gui/UBEyedropper.h"
 
 #include <cmath>
@@ -437,7 +438,7 @@ void UBValueSlider::setSliderWidth(int width)
     mSlider->setFixedWidth(width);
 }
 
-void UBValueSlider::setStacked(const QString& caption)
+void UBValueSlider::setStacked(const QString& caption, bool valueAbove)
 {
     delete layout();
 
@@ -446,16 +447,33 @@ void UBValueSlider::setStacked(const QString& caption)
     grid->setHorizontalSpacing(8);
     grid->setVerticalSpacing(0);
 
-    // The caption above, the slider and its value side by side under it.
-    if (!caption.isEmpty())
+    if (valueAbove)
     {
-        auto label = new QLabel(caption, this);
-        label->setObjectName("section");
-        grid->addWidget(label, 0, 0, 1, 2, Qt::AlignLeft | Qt::AlignBottom);
+        // The caption and the value above the slider.
+        if (!caption.isEmpty())
+        {
+            auto label = new QLabel(caption, this);
+            label->setObjectName("section");
+            grid->addWidget(label, 0, 0, Qt::AlignLeft | Qt::AlignVCenter);
+        }
+
+        grid->addWidget(mValueBox, 0, 1, Qt::AlignRight | Qt::AlignVCenter);
+        grid->addWidget(mSlider, 1, 0, 1, 2);
+    }
+    else
+    {
+        // The caption above, the slider and its value side by side under it.
+        if (!caption.isEmpty())
+        {
+            auto label = new QLabel(caption, this);
+            label->setObjectName("section");
+            grid->addWidget(label, 0, 0, 1, 2, Qt::AlignLeft | Qt::AlignBottom);
+        }
+
+        grid->addWidget(mSlider, 1, 0, Qt::AlignVCenter);
+        grid->addWidget(mValueBox, 1, 1, Qt::AlignVCenter);
     }
 
-    grid->addWidget(mSlider, 1, 0, Qt::AlignVCenter);
-    grid->addWidget(mValueBox, 1, 1, Qt::AlignVCenter);
     grid->setColumnStretch(0, 1);
 
     mValueBox->setFixedHeight(22);
@@ -644,6 +662,27 @@ void UBSegmentedChoice::setSmall()
 
         // Each as wide as its own name.
         button->setMinimumWidth(0);
+    }
+}
+
+void UBSegmentedChoice::setVertical()
+{
+    delete layout();
+
+    auto column = new QVBoxLayout(this);
+    column->setContentsMargins(0, 0, 0, 0);
+    column->setSpacing(2);
+
+    for (QAbstractButton* button : mGroup->buttons())
+    {
+        auto toolButton = static_cast<QToolButton*>(button);
+        toolButton->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+        toolButton->setIconSize(QSize(18, 12));
+        toolButton->setFixedHeight(24);
+        toolButton->setMinimumWidth(0);
+        toolButton->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
+        toolButton->setStyleSheet("QToolButton { padding: 1px 4px; }");
+        column->addWidget(toolButton);
     }
 }
 
@@ -844,6 +883,90 @@ QIcon penStyleIcon(int strokeType, const QColor& color)
     }
 
     return QIcon(pixmap);
+}
+
+// ---------------------------------------------------------------------------
+
+// The drawing of a shape in light grey, on the dark toolbar.
+static QIcon shapeIcon(int kind)
+{
+    const QSize size(20, 20);
+    const qreal ratio = 2;
+    QPixmap pixmap(size * ratio);
+    pixmap.setDevicePixelRatio(ratio);
+    pixmap.fill(Qt::transparent);
+
+    QPainter painter(&pixmap);
+    painter.setRenderHint(QPainter::Antialiasing);
+    painter.setPen(QPen(QColor("#e8e8e8"), 1.4, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+    painter.setBrush(Qt::NoBrush);
+
+    const QPolygonF outline = UBShapeGeometry::outline(kind, QRectF(2.5, 3.5, 15, 13));
+
+    if (kind == UBShapeKind::Line || kind == UBShapeKind::Polyline)
+    {
+        painter.drawPolyline(outline);
+    }
+    else
+    {
+        painter.drawPolygon(outline);
+    }
+
+    painter.end();
+    return QIcon(pixmap);
+}
+
+UBShapeChoice::UBShapeChoice(QWidget* parent)
+    : QWidget(parent)
+{
+    mGroup = new QButtonGroup(this);
+    mGroup->setExclusive(true);
+
+    const QString style = QStringLiteral("QToolButton { background: transparent; border: 1px solid transparent; "
+                                         "border-radius: 3px; padding: 0px; margin: 0px; }"
+                                         "QToolButton:hover { border-color: #8a8f99; }"
+                                         "QToolButton:checked { background: rgba(255, 255, 255, 60); border-color: #e8e8e8; }");
+
+    for (int kind : UBShapeGeometry::shapeKinds())
+    {
+        auto button = new QToolButton(this);
+        button->setIcon(shapeIcon(kind));
+        button->setIconSize(QSize(20, 20));
+        button->setFixedSize(22, 22);
+        button->setCheckable(true);
+        button->setStyleSheet(style);
+        mGroup->addButton(button, kind);
+    }
+
+    connect(mGroup, &QButtonGroup::idClicked, this, &UBShapeChoice::choiceChanged);
+    setColumns(5);
+}
+
+void UBShapeChoice::setChoice(int kind)
+{
+    if (QAbstractButton* button = mGroup->button(kind))
+    {
+        button->setChecked(true);
+    }
+}
+
+void UBShapeChoice::setColumns(int columns)
+{
+    delete layout();
+
+    auto grid = new QGridLayout(this);
+    grid->setContentsMargins(0, 0, 0, 0);
+    grid->setSpacing(1);
+
+    const QList<int> kinds = UBShapeGeometry::shapeKinds();
+
+    for (int i = 0; i < kinds.size(); ++i)
+    {
+        grid->addWidget(mGroup->button(kinds.at(i)), i / columns, i % columns);
+    }
+
+    const int rows = (kinds.size() + columns - 1) / columns;
+    setFixedSize(columns * 22 + (columns - 1), rows * 22 + (rows - 1));
 }
 
 QIcon optionIcon(UBOptionIcon kind)

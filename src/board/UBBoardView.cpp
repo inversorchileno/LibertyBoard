@@ -172,6 +172,17 @@ void UBBoardView::init ()
     connect (UBSettings::settings ()->boardUseHighResTabletEvent, SIGNAL (changed (QVariant)),
              this, SLOT (settingChanged (QVariant)));
 
+    // Another tool, or another shape, ends the polyline being drawn.
+    if (bIsControl)
+    {
+        connect(UBDrawingController::drawingController(), &UBDrawingController::stylusToolChanged, this, [this]() {
+            if (scene())
+            {
+                scene()->finishPolyline();
+            }
+        });
+    }
+
     // The rectangle being read aloud is marked on the board.
     if (bIsControl && !bIsDesktop)
     {
@@ -228,6 +239,23 @@ void UBBoardView::keyPressEvent (QKeyEvent *event)
     if (!bIsDesktop && UBDrawingController::drawingController()->isCanvasLocked()
         && (event->key() == Qt::Key_Delete || event->key() == Qt::Key_Backspace))
     {
+        event->accept();
+        return;
+    }
+
+    // Enter ends the polyline being drawn, Escape drops it.
+    if (scene() && scene()->isDrawingPolyline()
+        && (event->key() == Qt::Key_Return || event->key() == Qt::Key_Enter || event->key() == Qt::Key_Escape))
+    {
+        if (event->key() == Qt::Key_Escape)
+        {
+            scene()->cancelPolyline();
+        }
+        else
+        {
+            scene()->finishPolyline();
+        }
+
         event->accept();
         return;
     }

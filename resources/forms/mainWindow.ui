@@ -1572,10 +1572,10 @@
      <normalon>:/images/stylusPalette/rectangleOn.svg</normalon>:/images/stylusPalette/rectangle.svg</iconset>
    </property>
    <property name="text">
-    <string>Rectangle</string>
+    <string>Shapes</string>
    </property>
    <property name="toolTip">
-    <string>Draw Rectangles</string>
+    <string>Draw shapes: rectangles, ellipses, lines, polylines, arrows, stars, speech bubbles…</string>
    </property>
   </action>
   <action name="actionEllipse">

@@ -46,6 +46,7 @@ struct UBShapeStyle
     qreal opacity{1};
     qreal minimumHeadSize{10};  // smallest size of arrow endings, in scene units
     bool tapered{false};        // arrow line growing from its start to its tip
+    int kind{0};                // UBShapeKind, for the shapes tool
 };
 
 /**
@@ -67,6 +68,18 @@ public:
      */
     static QList<UBShapePart> build(int tool, const QPointF& start, const QPointF& end, const UBShapeStyle& style);
 
+    /** @brief A line through these corners, with the line style and width of the style. */
+    static QList<UBShapePart> buildPolyline(const QPolygonF& corners, const UBShapeStyle& style);
+
+    /**
+     * @brief The outline of a shape of UBShapeKind in the rectangle, for the
+     * shapes and their pictures. A line is its two ends, a polyline a zigzag.
+     */
+    static QPolygonF outline(int kind, const QRectF& rect);
+
+    /** @brief The shapes of UBShapeKind, in the order they are offered. */
+    static QList<int> shapeKinds();
+
     /** @brief Corrects the end point while Shift is held: squares, circles and lines at 15 degree steps. */
-    static QPointF constrainedEnd(int tool, const QPointF& start, const QPointF& end);
+    static QPointF constrainedEnd(int tool, const QPointF& start, const QPointF& end, int kind = 0);
 };

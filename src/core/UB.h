@@ -131,6 +131,35 @@ struct UBLaserEffect
     };
 };
 
+struct UBShapeKind
+{
+    // The shapes of the shapes tool (the former rectangle tool). The values
+    // are saved in the settings: new ones go at the end.
+    enum Enum
+    {
+        Rectangle = 0,
+        Ellipse,
+        Line,
+        Polyline,           // a line of several segments, a click for each corner
+        Parallelogram,
+        Triangle,
+        RightTriangle,
+        Diamond,
+        Pentagon,
+        Hexagon,
+        ArrowRight,
+        ArrowLeft,
+        ArrowUp,
+        ArrowDown,
+        Star4,
+        Star5,
+        Star6,
+        CalloutRectangle,   // a speech bubble
+        CalloutOval,
+        Cloud
+    };
+};
+
 struct UBReadFrom
 {
     enum Enum

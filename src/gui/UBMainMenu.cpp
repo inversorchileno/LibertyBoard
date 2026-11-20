@@ -566,14 +566,21 @@ void UBMainMenu::showColorsOnTools()
         QAction* action = shape.first;
         const int tool = shape.second;
 
-        auto updateShape = [action, tool, shapeSettings]() {
+        auto updateShape = [action, tool, shapeSettings, settings]() {
             const QColor stroke(shapeSettings->strokeColor->get().toString());
             const QString fillName = shapeSettings->fillColor ? shapeSettings->fillColor->get().toString() : QString();
-            UBToolOptionsArrows::setIcon(action, UBShapeToolIcon::create(tool, stroke, fillName.isEmpty() ? QColor() : QColor(fillName)));
+            UBToolOptionsArrows::setIcon(action, UBShapeToolIcon::create(tool, stroke, fillName.isEmpty() ? QColor() : QColor(fillName),
+                                                                         settings->shapeKind->get().toInt()));
         };
 
         updateShape();
         connect(shapeSettings->strokeColor, &UBSetting::changed, this, updateShape);
+
+        // The shapes tool shows the shape chosen.
+        if (tool == UBStylusTool::Rectangle)
+        {
+            connect(settings->shapeKind, &UBSetting::changed, this, updateShape);
+        }
 
         if (shapeSettings->fillColor)
         {

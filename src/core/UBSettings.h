@@ -365,6 +365,7 @@ class UBSettings : public QObject
         UBSetting* markerChiselTip;
         UBSetting* highlightFitText;
         UBSetting* attachmentHyperlink;
+        UBSetting* shapeKind;          // the shape drawn by the shapes tool (UBShapeKind)
         UBSetting* readFrom;           // where the voice tool reads from: the start, a rectangle or a click (UBReadFrom)
 
         UBColorListSetting* boardMarkerLightBackgroundColors;

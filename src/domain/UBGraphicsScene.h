@@ -111,6 +111,7 @@ private:
 
 class UBGraphicsLaserTrail;
 class UBGraphicsShapePreview;
+struct UBShapePart;
 struct UBShapeStyle;
 
 class UBGraphicsScene: public UBCoreGraphicsScene, public UBItem, public std::enable_shared_from_this<UBGraphicsScene>
@@ -149,6 +150,15 @@ class UBGraphicsScene: public UBCoreGraphicsScene, public UBItem, public std::en
 
         /** @brief Returns true for the tools that draw a shape: arrow, rectangle, ellipse and underline. */
         static bool isShapeTool(int tool);
+
+        /** @brief Whether a polyline is being drawn, corner by corner. */
+        bool isDrawingPolyline() const { return !mPolyline.isEmpty(); }
+
+        /** @brief Ends the polyline being drawn at its last corner clicked. */
+        void finishPolyline();
+
+        /** @brief Drops the polyline being drawn. */
+        void cancelPolyline();
 
         void leaveEvent (QEvent* event);
 
@@ -427,6 +437,8 @@ signals:
         void startLaserTrail(const QPointF& point);
         UBShapeStyle shapeStyle(int tool) const;
         void finishShape();
+        void addShape(const QList<UBShapePart>& parts);
+        void showPolyline();
         void addOrEditNote(const QPointF& position);
 
         /** @brief Puts the current stamp of the stamp tool on the page, centered on the position. */
@@ -498,6 +510,8 @@ signals:
         int mShapeTool{-1};     // the shape being drawn, or -1
         QPointF mShapeStart;
         QPointF mShapeEnd;
+        QPolygonF mPolyline;            // the corners of the polyline being drawn, the last one following the pointer
+        bool mPolylineDragging{false};  // the button is held on the last corner
         bool mNotePending{false};
         bool mStampPending{false};
         int mPendingMarkTool{-1};

@@ -100,10 +100,11 @@ public:
     void setSliderWidth(int width);
 
     /**
-     * @brief Puts the caption and the value above the slider, so that the
-     * slider takes less room in the toolbar.
+     * @brief Puts the caption above the slider, so that the slider takes
+     * less room in the toolbar: the value beside the slider, or above it
+     * with the caption.
      */
-    void setStacked(const QString& caption);
+    void setStacked(const QString& caption, bool valueAbove = false);
 
 signals:
     void valueChanged(qreal value);
@@ -148,6 +149,9 @@ public:
 
     /** @brief Smaller still: small drawings and text, for many choices in the toolbar. */
     void setSmall();
+
+    /** @brief One small button under the other, to take little width in the toolbar. */
+    void setVertical();
 
 signals:
     void choiceChanged(int index);
@@ -224,6 +228,30 @@ signals:
 private:
     QButtonGroup* mGroup{nullptr};
     QToolButton* mDropDown{nullptr};
+};
+
+/**
+ * @brief The shapes of the shapes tool, as small drawings in rows: line,
+ * polyline, ellipse, rectangle, triangles, arrows, stars, speech bubbles…
+ */
+class UBShapeChoice : public QWidget
+{
+    Q_OBJECT
+
+public:
+    explicit UBShapeChoice(QWidget* parent = nullptr);
+
+    /** @brief The shape chosen, from UBShapeKind. */
+    void setChoice(int kind);
+
+    /** @brief Lays the drawings out in this many columns. */
+    void setColumns(int columns);
+
+signals:
+    void choiceChanged(int kind);
+
+private:
+    QButtonGroup* mGroup{nullptr};
 };
 
 /**

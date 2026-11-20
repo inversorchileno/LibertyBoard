@@ -397,13 +397,169 @@ QPolygonF endingPolygon(int ending, const QPointF& tip, const QPointF& along, qr
     }
 }
 
+// The corners of a regular polygon or a star inside the rectangle, the first one on top.
+QPolygonF starOutline(const QRectF& rect, int points, qreal innerRatio)
+{
+    QPolygonF outline;
+    const QPointF center = rect.center();
+    const int corners = innerRatio > 0 ? points * 2 : points;
+
+    for (int i = 0; i < corners; ++i)
+    {
+        const qreal angle = -M_PI / 2 + i * 2 * M_PI / corners;
+        const qreal ratio = (innerRatio > 0 && i % 2 == 1) ? innerRatio : 1.0;
+        outline << QPointF(center.x() + std::cos(angle) * rect.width() / 2 * ratio,
+                           center.y() + std::sin(angle) * rect.height() / 2 * ratio);
+    }
+
+    return outline;
+}
+
+// A block arrow pointing right in the rectangle, turned by quarter turns.
+QPolygonF blockArrowOutline(const QRectF& rect, int quarterTurns)
+{
+    // Drawn in a unit square pointing right, then fitted to the rectangle.
+    const QPolygonF unit({ QPointF(0, 0.3), QPointF(0.55, 0.3), QPointF(0.55, 0), QPointF(1, 0.5),
+                           QPointF(0.55, 1), QPointF(0.55, 0.7), QPointF(0, 0.7) });
+    QPolygonF outline;
+
+    for (const QPointF& point : unit)
+    {
+        QPointF turned = point;
+
+        for (int i = 0; i < quarterTurns; ++i)
+        {
+            turned = QPointF(1 - turned.y(), turned.x()); // a quarter turn, clockwise
+        }
+
+        outline << QPointF(rect.left() + turned.x() * rect.width(), rect.top() + turned.y() * rect.height());
+    }
+
+    return outline;
+}
+
+QPolygonF shapeOutline(int kind, const QRectF& rect)
+{
+    const qreal l = rect.left();
+    const qreal t = rect.top();
+    const qreal r = rect.right();
+    const qreal b = rect.bottom();
+    const qreal w = rect.width();
+    const qreal h = rect.height();
+    const QPointF c = rect.center();
+
+    switch (kind)
+    {
+        case UBShapeKind::Ellipse:
+            return ellipseOutline(rect);
+        case UBShapeKind::Cloud:
+        {
+            // Round bumps all around an oval, like a drawn cloud.
+            const qreal bump = qMin(w, h) * 0.2;
+            const QRectF inner = rect.adjusted(bump, bump, -bump, -bump);
+            QPainterPath cloud;
+            cloud.addEllipse(inner);
+            const int bumps = 10;
+
+            for (int i = 0; i < bumps; ++i)
+            {
+                const qreal angle = i * 2 * M_PI / bumps;
+                const QPointF center(c.x() + std::cos(angle) * inner.width() / 2, c.y() + std::sin(angle) * inner.height() / 2);
+                QPainterPath circle;
+                circle.addEllipse(center, bump, bump);
+                cloud = cloud.united(circle);
+            }
+
+            const QList<QPolygonF> polygons = cloud.simplified().toFillPolygons();
+
+            if (polygons.isEmpty())
+            {
+                return ellipseOutline(rect);
+            }
+
+            QPolygonF outline = polygons.first();
+
+            if (outline.size() > 1 && outline.first() == outline.last())
+            {
+                outline.removeLast();
+            }
+
+            return outline;
+        }
+        case UBShapeKind::Line:
+            return QPolygonF({ QPointF(l, b), QPointF(r, t) });
+        case UBShapeKind::Polyline:
+            return QPolygonF({ QPointF(l, b), QPointF(l + w * 0.35, t), QPointF(l + w * 0.65, b), QPointF(r, t) });
+        case UBShapeKind::Parallelogram:
+            return QPolygonF({ QPointF(l + w * 0.25, t), QPointF(r, t), QPointF(r - w * 0.25, b), QPointF(l, b) });
+        case UBShapeKind::Triangle:
+            return QPolygonF({ QPointF(c.x(), t), QPointF(r, b), QPointF(l, b) });
+        case UBShapeKind::RightTriangle:
+            return QPolygonF({ QPointF(l, t), QPointF(r, b), QPointF(l, b) });
+        case UBShapeKind::Diamond:
+            return QPolygonF({ QPointF(c.x(), t), QPointF(r, c.y()), QPointF(c.x(), b), QPointF(l, c.y()) });
+        case UBShapeKind::Pentagon:
+            return starOutline(rect, 5, 0);
+        case UBShapeKind::Hexagon:
+            return QPolygonF({ QPointF(l + w * 0.25, t), QPointF(r - w * 0.25, t), QPointF(r, c.y()),
+                               QPointF(r - w * 0.25, b), QPointF(l + w * 0.25, b), QPointF(l, c.y()) });
+        case UBShapeKind::ArrowRight:
+            return blockArrowOutline(rect, 0);
+        case UBShapeKind::ArrowDown:
+            return blockArrowOutline(rect, 1);
+        case UBShapeKind::ArrowLeft:
+            return blockArrowOutline(rect, 2);
+        case UBShapeKind::ArrowUp:
+            return blockArrowOutline(rect, 3);
+        case UBShapeKind::Star4:
+            return starOutline(rect, 4, 0.38);
+        case UBShapeKind::Star5:
+            return starOutline(rect, 5, 0.42);
+        case UBShapeKind::Star6:
+            return starOutline(rect, 6, 0.55);
+        case UBShapeKind::CalloutRectangle:
+        {
+            // A box with a tail down at its left.
+            const qreal bottom = t + h * 0.78;
+            return QPolygonF({ QPointF(l, t), QPointF(r, t), QPointF(r, bottom), QPointF(l + w * 0.42, bottom),
+                               QPointF(l + w * 0.18, b), QPointF(l + w * 0.24, bottom), QPointF(l, bottom) });
+        }
+        case UBShapeKind::CalloutOval:
+        {
+            QPainterPath bubble;
+            bubble.addPolygon(ellipseOutline(QRectF(l, t, w, h * 0.8)));
+            QPainterPath tail;
+            tail.addPolygon(QPolygonF({ QPointF(l + w * 0.25, t + h * 0.6), QPointF(l + w * 0.45, t + h * 0.72),
+                                        QPointF(l + w * 0.12, b), QPointF(l + w * 0.25, t + h * 0.6) }));
+            const QList<QPolygonF> united = bubble.united(tail).simplified().toFillPolygons();
+
+            if (united.isEmpty())
+            {
+                return ellipseOutline(rect);
+            }
+
+            QPolygonF outline = united.first();
+
+            if (outline.size() > 1 && outline.first() == outline.last())
+            {
+                outline.removeLast();
+            }
+
+            return outline;
+        }
+        default:
+            return rectangleOutline(rect);
+    }
+}
+
 QList<UBShapePart> buildClosedShape(int tool, const QPointF& start, const QPointF& end, const UBShapeStyle& style,
                                     const QColor& strokeColor, const QColor& fillColor)
 {
     QList<UBShapePart> parts;
     const QRectF rect = QRectF(start, end).normalized();
 
-    QPolygonF outline = (tool == UBStylusTool::Ellipse) ? ellipseOutline(rect) : rectangleOutline(rect);
+    QPolygonF outline = (tool == UBStylusTool::Ellipse) ? ellipseOutline(rect) : shapeOutline(style.kind, rect);
+
 
     if (style.borderStyle == UBBorderStyle::Cloud)
     {
@@ -598,6 +754,21 @@ QList<UBShapePart> UBShapeGeometry::build(int tool, const QPointF& start, const 
     {
         case UBStylusTool::Rectangle:
         case UBStylusTool::Ellipse:
+            if (tool == UBStylusTool::Rectangle && style.kind == UBShapeKind::Line)
+            {
+                // A plain line, without endings.
+                UBShapeStyle line = style;
+                line.startEnding = UBLineEnding::None;
+                line.endEnding = UBLineEnding::None;
+                line.tapered = false;
+                return buildArrow(start, end, line, strokeColor);
+            }
+
+            if (tool == UBStylusTool::Rectangle && style.kind == UBShapeKind::Polyline)
+            {
+                return {}; // drawn corner by corner, with buildPolyline
+            }
+
             return buildClosedShape(tool, start, end, style, strokeColor, withOpacity(style.fillColor, style.opacity));
 
         case UBStylusTool::Arrow:
@@ -631,9 +802,58 @@ QList<UBShapePart> UBShapeGeometry::build(int tool, const QPointF& start, const 
     }
 }
 
-QPointF UBShapeGeometry::constrainedEnd(int tool, const QPointF& start, const QPointF& end)
+QList<UBShapePart> UBShapeGeometry::buildPolyline(const QPolygonF& corners, const UBShapeStyle& style)
+{
+    QList<UBShapePart> parts;
+
+    if (corners.size() < 2)
+    {
+        return parts;
+    }
+
+    const QColor color = withOpacity(style.strokeColor.isValid() ? style.strokeColor : QColor(Qt::black), style.opacity);
+
+    // One outline for a solid line, so that a transparent line has the same
+    // transparency at its corners.
+    if (style.dash == UBLineDash::Solid)
+    {
+        addPolygons(parts, strokePolygons(polylinePath(corners), style.width, Qt::RoundCap), color);
+        return parts;
+    }
+
+    for (const Piece& piece : dashPieces(corners, style.dash, style.width))
+    {
+        addPolygons(parts, strokePolygons(polylinePath(piece.points), style.width, piece.cap), color);
+    }
+
+    return parts;
+}
+
+QPolygonF UBShapeGeometry::outline(int kind, const QRectF& rect)
+{
+    return shapeOutline(kind, rect);
+}
+
+QList<int> UBShapeGeometry::shapeKinds()
+{
+    // As in the picture Luis gave, the curve replaced by the polyline.
+    return { UBShapeKind::Line, UBShapeKind::Polyline, UBShapeKind::Ellipse, UBShapeKind::Rectangle,
+             UBShapeKind::Parallelogram, UBShapeKind::Triangle, UBShapeKind::RightTriangle, UBShapeKind::Diamond,
+             UBShapeKind::Pentagon, UBShapeKind::Hexagon, UBShapeKind::ArrowRight, UBShapeKind::ArrowLeft,
+             UBShapeKind::ArrowUp, UBShapeKind::ArrowDown, UBShapeKind::Star4, UBShapeKind::Star5,
+             UBShapeKind::Star6, UBShapeKind::CalloutRectangle, UBShapeKind::CalloutOval, UBShapeKind::Cloud };
+}
+
+QPointF UBShapeGeometry::constrainedEnd(int tool, const QPointF& start, const QPointF& end, int kind)
 {
     const QPointF delta = end - start;
+
+    if (tool == UBStylusTool::Rectangle && (kind == UBShapeKind::Line || kind == UBShapeKind::Polyline))
+    {
+        QLineF line(start, end);
+        line.setAngle(qRound(line.angle() / 15.0) * 15.0);
+        return line.p2();
+    }
 
     if (tool == UBStylusTool::Rectangle || tool == UBStylusTool::Ellipse)
     {

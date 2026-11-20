@@ -34,6 +34,7 @@ class QVBoxLayout;
 class UBColorSwatches;
 class UBPictureChoice;
 class UBSegmentedChoice;
+class UBShapeChoice;
 class UBStrokePreview;
 class UBValueSlider;
 
@@ -66,6 +67,9 @@ protected:
 
     /** @brief True when the toolbar shows captions and values above the sliders, to save room. */
     virtual bool stacksSlidersInToolbar() const { return false; }
+
+    /** @brief Whether the stacked sliders have their value above them, with the caption, rather than beside them. */
+    virtual bool stacksValuesAboveSliders() const { return false; }
 
     void addRow(QWidget* widget);
     void addSection(const QString& title);
@@ -164,12 +168,15 @@ public:
 
 protected:
     void layOutForToolbar() override;
+    bool stacksSlidersInToolbar() const override;
+    bool stacksValuesAboveSliders() const override { return true; }
 
 private:
     void showColorTarget(int target);
 
     UBSettings::ShapeSettings* mSettings{nullptr};
     int mTool{0};
+    UBShapeChoice* mShapes{nullptr};
     UBSegmentedChoice* mColorTarget{nullptr};
     UBColorSwatches* mStrokeColors{nullptr};
     UBColorSwatches* mFillColors{nullptr};

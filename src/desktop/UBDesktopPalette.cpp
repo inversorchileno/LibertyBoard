@@ -70,7 +70,7 @@ QList<QAction*> UBDesktopPalette::toolActions()
              mainWindow->actionPointer, mainWindow->actionSpotlight, mainWindow->actionHighlight, mainWindow->actionSelector,
              mainWindow->actionNote, mainWindow->actionStamp, mainWindow->actionAttachment,
              mainWindow->actionUnderline, mainWindow->actionText,
-             mainWindow->actionArrowShape, mainWindow->actionRectangle, mainWindow->actionEllipse };
+             mainWindow->actionArrowShape, mainWindow->actionRectangle };
 }
 
 UBDesktopPalette::UBDesktopPalette(QWidget *parent, UBRightPalette* _rightPalette)

@@ -32,6 +32,9 @@
  */
 namespace UBShapeToolIcon
 {
-    /** @param tool UBStylusTool::Arrow, Rectangle or Ellipse. An invalid fill color means not filled. */
-    QIcon create(int tool, const QColor& stroke, const QColor& fill);
+    /**
+     * @param tool UBStylusTool::Arrow, Rectangle (the shapes tool) or Ellipse. An invalid fill color means not filled.
+     * @param kind for the shapes tool, the UBShapeKind chosen.
+     */
+    QIcon create(int tool, const QColor& stroke, const QColor& fill, int kind = 0);
 }

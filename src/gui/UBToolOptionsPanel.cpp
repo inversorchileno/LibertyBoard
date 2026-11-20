@@ -219,7 +219,7 @@ void UBToolOptionsPanel::setHorizontal()
 
             if (auto slider = qobject_cast<UBValueSlider*>(widget))
             {
-                slider->setStacked(section ? section->text() : QString());
+                slider->setStacked(section ? section->text() : QString(), stacksValuesAboveSliders());
 
                 if (section)
                 {
@@ -792,7 +792,7 @@ static QString shapeTitle(int tool)
     switch (tool)
     {
         case UBStylusTool::Rectangle:
-            return UBShapeOptionsPanel::tr("Rectangle");
+            return UBShapeOptionsPanel::tr("Shapes");
         case UBStylusTool::Ellipse:
             return UBShapeOptionsPanel::tr("Ellipse");
         case UBStylusTool::Arrow:
@@ -813,6 +813,17 @@ UBShapeOptionsPanel::UBShapeOptionsPanel(int tool, QWidget* parent)
     const bool isArrow = (tool == UBStylusTool::Arrow);
     const bool isUnderline = (tool == UBStylusTool::Underline);
     const bool isHighlight = (tool == UBStylusTool::Highlight);
+
+    // The shapes tool draws the shape chosen here.
+    if (tool == UBStylusTool::Rectangle)
+    {
+        mShapes = new UBShapeChoice(this);
+        mShapes->setToolTip(tr("The shape to draw. The polyline: a click for each corner, Enter to end it."));
+        addRow(mShapes);
+        connect(mShapes, &UBShapeChoice::choiceChanged, this, [](int kind) {
+            UBSettings::settings()->shapeKind->set(kind);
+        });
+    }
 
     if (closedShape)
     {
@@ -954,6 +965,11 @@ UBShapeOptionsPanel::UBShapeOptionsPanel(int tool, QWidget* parent)
 
 void UBShapeOptionsPanel::refresh()
 {
+    if (mShapes)
+    {
+        mShapes->setChoice(UBSettings::settings()->shapeKind->get().toInt());
+    }
+
     mStrokeColors->setCurrentColor(settingColor(mSettings->strokeColor));
 
     if (mFillColors)
@@ -990,8 +1006,24 @@ void UBShapeOptionsPanel::refresh()
     }
 }
 
+bool UBShapeOptionsPanel::stacksSlidersInToolbar() const
+{
+    return mTool == UBStylusTool::Rectangle;
+}
+
 void UBShapeOptionsPanel::layOutForToolbar()
 {
+    if (mTool == UBStylusTool::Rectangle)
+    {
+        // The shapes at the left in three rows, then the colors; Border and
+        // Fill one under the other, to save width.
+        mShapes->setColumns(7);
+        mColorTarget->setVertical();
+        mLayout->removeWidget(mColorTarget);
+        mLayout->insertWidget(mLayout->indexOf(mFillColors) + 1, mColorTarget);
+        return;
+    }
+
     if (mTool != UBStylusTool::Arrow)
     {
         return;

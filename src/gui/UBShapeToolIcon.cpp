@@ -30,6 +30,7 @@
 #include <QtMath>
 
 #include "core/UB.h"
+#include "domain/UBShapeGeometry.h"
 
 namespace
 {
@@ -37,10 +38,11 @@ namespace
     class ShapeIconEngine : public QIconEngine
     {
     public:
-        ShapeIconEngine(int tool, const QColor& stroke, const QColor& fill)
+        ShapeIconEngine(int tool, const QColor& stroke, const QColor& fill, int kind)
             : mTool(tool)
             , mStroke(stroke)
             , mFill(fill)
+            , mKind(kind)
         {
             mStroke.setAlpha(255);
         }
@@ -87,15 +89,31 @@ namespace
                     break;
                 }
                 case UBStylusTool::Rectangle:
-                    outline.addRect(QRectF(9, 12, 24, 18));
+                {
+                    // The shape chosen for the shapes tool.
+                    const QPolygonF shape = UBShapeGeometry::outline(mKind, QRectF(9, 11, 24, 20));
+
+                    if (mKind == UBShapeKind::Line || mKind == UBShapeKind::Polyline)
+                    {
+                        outline.addPolygon(shape);
+                    }
+                    else
+                    {
+                        outline.addPolygon(shape);
+                        outline.closeSubpath();
+                    }
                     break;
+                }
                 default:
                     outline.addEllipse(QRectF(8, 11, 26, 20));
                     break;
             }
 
             // The filling, then a light halo and the border, seen on the dark palette.
-            if (mFill.isValid() && mFill.alpha() > 0 && mTool != UBStylusTool::Arrow)
+            const bool open = mTool == UBStylusTool::Arrow
+                              || (mTool == UBStylusTool::Rectangle && (mKind == UBShapeKind::Line || mKind == UBShapeKind::Polyline));
+
+            if (mFill.isValid() && mFill.alpha() > 0 && !open)
             {
                 QColor fill = mFill;
                 fill.setAlpha(qMax(fill.alpha(), 200));
@@ -154,17 +172,18 @@ namespace
 
         QIconEngine* clone() const override
         {
-            return new ShapeIconEngine(mTool, mStroke, mFill);
+            return new ShapeIconEngine(mTool, mStroke, mFill, mKind);
         }
 
     private:
         int mTool;
         QColor mStroke;
         QColor mFill;
+        int mKind;
     };
 }
 
-QIcon UBShapeToolIcon::create(int tool, const QColor& stroke, const QColor& fill)
+QIcon UBShapeToolIcon::create(int tool, const QColor& stroke, const QColor& fill, int kind)
 {
-    return QIcon(new ShapeIconEngine(tool, stroke, fill));
+    return QIcon(new ShapeIconEngine(tool, stroke, fill, kind));
 }

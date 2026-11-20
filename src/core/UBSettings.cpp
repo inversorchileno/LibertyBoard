@@ -354,6 +354,7 @@ void UBSettings::init()
     boardMarkerAlpha = new UBSetting(this, "Board", "MarkerAlpha", 0.5);
     markerChiselTip = new UBSetting(this, "Board", "LibertyBoardMarkerChiselTip", false);
     readFrom = new UBSetting(this, "Board", "LibertyBoardReadFrom", 0);
+    shapeKind = new UBSetting(this, "Board", "LibertyBoardShapeKind", 0);
     attachmentHyperlink = new UBSetting(this, "Board", "LibertyBoardAttachmentHyperlink", false);
     highlightFitText = new UBSetting(this, "Board", "LibertyBoardHighlightFitText", false);
 
