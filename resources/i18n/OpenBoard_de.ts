@@ -1588,6 +1588,237 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
     </message>
 </context>
 <context>
+    <name>UBAiPanel</name>
+    <message>
+        <location filename="../../src/gui/UBAiPanel.cpp" line="+123"/>
+        <source>Drag over the part of the page to give to the AI. Escape: cancel.</source>
+        <translation>Ziehen Sie über den Teil der Seite, der der KI gegeben wird. Esc: abbrechen.</translation>
+    </message>
+    <message>
+        <location line="+86"/>
+        <location line="+345"/>
+        <source>Translation</source>
+        <translation>Übersetzung</translation>
+    </message>
+    <message>
+        <location line="-337"/>
+        <source>Detect it</source>
+        <translation>Erkennen</translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>Write or choose the languages:</source>
+        <translation>Schreiben oder wählen Sie die Sprachen:</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>From:</source>
+        <translation>Von:</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>To:</source>
+        <translation>Nach:</translation>
+    </message>
+    <message>
+        <location line="+113"/>
+        <source>The AI shown; the addresses are in the preferences</source>
+        <translation>Die angezeigte KI; die Adressen stehen in den Einstellungen</translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <location line="+218"/>
+        <source>Close the AI</source>
+        <translation>KI schließen</translation>
+    </message>
+    <message>
+        <location line="-213"/>
+        <source>AI:</source>
+        <translation>KI:</translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <source>Copy instruction</source>
+        <translation>Anweisung kopieren</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Copies the instruction again, to paste it with Ctrl+V in the box of the AI</source>
+        <translation>Kopiert die Anweisung erneut, um sie mit Strg+V in das Feld der KI einzufügen</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Paste on the page</source>
+        <translation>Auf der Seite einfügen</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Puts on the page what was copied in the AI: a text, or a picture with its right click, Copy image</source>
+        <translation>Fügt auf der Seite ein, was in der KI kopiert wurde: einen Text oder ein Bild mit Rechtsklick, Bild kopieren</translation>
+    </message>
+    <message>
+        <location line="+31"/>
+        <source>Drag to make the panel wider</source>
+        <translation>Ziehen, um das Feld zu verbreitern</translation>
+    </message>
+    <message>
+        <location line="+110"/>
+        <source>The picture of the AI is on the page; it is also in %1</source>
+        <translation>Das Bild der KI ist auf der Seite; es liegt auch in %1</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Downloaded: %1</source>
+        <translation>Heruntergeladen: %1</translation>
+    </message>
+    <message>
+        <location line="+34"/>
+        <source>Summary</source>
+        <translation>Zusammenfassung</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <location line="+36"/>
+        <source>Create an image</source>
+        <translation>Bild erstellen</translation>
+    </message>
+    <message>
+        <location line="-35"/>
+        <source>Remove the background</source>
+        <translation>Hintergrund entfernen</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <location line="+35"/>
+        <source>Generative erasing</source>
+        <translation>Generatives Löschen</translation>
+    </message>
+    <message>
+        <location line="-34"/>
+        <source>Transcribe an audio</source>
+        <translation>Audio transkribieren</translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>Only open the AI</source>
+        <translation>Nur die KI öffnen</translation>
+    </message>
+    <message>
+        <location line="+22"/>
+        <source>Describe the image to create:</source>
+        <translation>Beschreiben Sie das zu erstellende Bild:</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>What should the AI erase from the picture?</source>
+        <translation>Was soll die KI aus dem Bild löschen?</translation>
+    </message>
+    <message>
+        <location line="+15"/>
+        <source>Summarize the attached document in clear words: first the main idea in two or three sentences, then the important points as a list.</source>
+        <translation>Fasse das angehängte Dokument in klaren Worten zusammen: zuerst die Hauptidee in zwei oder drei Sätzen, dann die wichtigen Punkte als Liste.</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Translate the text of the attached file into %1. Keep its order and its titles, and give only the translation.</source>
+        <translation>Übersetze den Text der angehängten Datei ins %1. Behalte Reihenfolge und Überschriften bei und gib nur die Übersetzung aus.</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Translate the text of the attached file from %1 into %2. Keep its order and its titles, and give only the translation.</source>
+        <translation>Übersetze den Text der angehängten Datei aus dem %1 ins %2. Behalte Reihenfolge und Überschriften bei und gib nur die Übersetzung aus.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Create an image: %1</source>
+        <translation>Erstelle ein Bild: %1</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Remove the background of the attached image and give me the result as a PNG image with a transparent background, of the same size.</source>
+        <translation>Entferne den Hintergrund des angehängten Bildes und gib mir das Ergebnis als PNG-Bild mit transparentem Hintergrund in derselben Größe.</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>In the attached image, erase this: %1. Fill its place so that it looks natural, as if it had never been there, and give me the result as an image of the same size.</source>
+        <translation>Lösche im angehängten Bild Folgendes: %1. Fülle die Stelle so, dass sie natürlich aussieht, als wäre es nie da gewesen, und gib mir das Ergebnis als Bild derselben Größe.</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Transcribe the attached audio word by word. When several people speak, mark who speaks. Give only the text.</source>
+        <translation>Transkribiere das angehängte Audio Wort für Wort. Wenn mehrere Personen sprechen, kennzeichne, wer spricht. Gib nur den Text aus.</translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <source>Audio to transcribe</source>
+        <translation>Zu transkribierendes Audio</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Audio</source>
+        <translation>Audio</translation>
+    </message>
+    <message>
+        <location line="+12"/>
+        <location line="+13"/>
+        <location line="+17"/>
+        <location line="+106"/>
+        <source>AI</source>
+        <translation>KI</translation>
+    </message>
+    <message>
+        <location line="-136"/>
+        <source>What should be given to the AI?</source>
+        <translation>Was soll der KI gegeben werden?</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>A part of the page</source>
+        <translation>Ein Teil der Seite</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>The whole page</source>
+        <translation>Die ganze Seite</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>The whole PDF or board</source>
+        <translation>Das ganze PDF oder die Tafel</translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <location line="+17"/>
+        <source>The file for the AI could not be made.</source>
+        <translation>Die Datei für die KI konnte nicht erstellt werden.</translation>
+    </message>
+    <message>
+        <location line="+28"/>
+        <source>Drag a text or a picture of the AI to the page, or copy it and use Paste on the page.</source>
+        <translation>Ziehen Sie einen Text oder ein Bild der KI auf die Seite, oder kopieren Sie es und nutzen Sie Auf der Seite einfügen.</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>If the AI did not take the file, drag it from here to the AI</source>
+        <translation>Wenn die KI die Datei nicht übernommen hat, ziehen Sie sie von hier zur KI</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>The instruction is written in the AI and also copied: Ctrl+V pastes it. Drag the answer to the page, or use Paste on the page.</source>
+        <translation>Die Anweisung steht in der KI und ist auch kopiert: Strg+V fügt sie ein. Ziehen Sie die Antwort auf die Seite oder nutzen Sie Auf der Seite einfügen.</translation>
+    </message>
+    <message>
+        <location line="+72"/>
+        <source>It seems that the free uses of %1 are over for now. Do the same with another AI?</source>
+        <translation>Die kostenlosen Nutzungen von %1 scheinen vorerst aufgebraucht. Dasselbe mit einer anderen KI machen?</translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <source>Stay here</source>
+        <translation>Hier bleiben</translation>
+    </message>
+</context>
+<context>
     <name>UBApplication</name>
     <message>
         <source>Page Size</source>
@@ -1636,7 +1867,7 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
 <context>
     <name>UBAttachmentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+771"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+772"/>
         <source>Insert file</source>
         <translation>Datei einfügen</translation>
     </message>
@@ -1727,7 +1958,7 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
 <context>
     <name>UBBoardController</name>
     <message>
-        <location filename="../../src/board/UBBoardController.cpp" line="+1310"/>
+        <location filename="../../src/board/UBBoardController.cpp" line="+1311"/>
         <source>Downloading content %1 failed</source>
         <translation>Fehler beim Herunterladen von %1</translation>
     </message>
@@ -1782,7 +2013,7 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
         <translation>Die Größe dieser Seite. Die Zeichnungen bleiben, wo sie sind; eine größere Leinwand lässt Platz darum herum.</translation>
     </message>
     <message>
-        <location line="+395"/>
+        <location line="+406"/>
         <source>The GIF could not be found on its page. Try another one.</source>
         <translation>Das GIF wurde auf seiner Seite nicht gefunden. Versuchen Sie ein anderes.</translation>
     </message>
@@ -1797,7 +2028,7 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
         <translation>Alle unterstützt (%1)</translation>
     </message>
     <message>
-        <location line="-2063"/>
+        <location line="-2074"/>
         <source>Page %1 deleted</source>
         <translation>Seite %1 gelöscht</translation>
     </message>
@@ -2015,7 +2246,7 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
 <context>
     <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+728"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+741"/>
         <source>Quick note</source>
         <translation>Kurznotiz</translation>
     </message>
@@ -2777,7 +3008,7 @@ Möchten Sie fortfahren?</translation>
 <context>
     <name>UBEmojiOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-980"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-993"/>
         <source>Emojis and GIFs</source>
         <translation>Emojis und GIFs</translation>
     </message>
@@ -3803,7 +4034,7 @@ Jetzt herunterladen und installieren? LibertyBoard speichert Ihre Dokumente, sch
 <context>
     <name>UBKeyCatcher</name>
     <message>
-        <location filename="../../src/gui/UBShortcutsDialog.cpp" line="+725"/>
+        <location filename="../../src/gui/UBShortcutsDialog.cpp" line="+727"/>
         <source>Click here and press the keys of the new shortcut</source>
         <translation>Hier klicken und die Tasten des neuen Tastenkürzels drücken</translation>
     </message>
@@ -3995,7 +4226,7 @@ Jetzt herunterladen und installieren? LibertyBoard speichert Ihre Dokumente, sch
         <translation type="vanished">Seitengröße</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+139"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+140"/>
         <location line="+92"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -4141,7 +4372,17 @@ Jetzt herunterladen und installieren? LibertyBoard speichert Ihre Dokumente, sch
         <translation>Öffnet das Diktat von Windows: Gesagtes wird dort geschrieben, wo der Textcursor steht</translation>
     </message>
     <message>
-        <location line="+23"/>
+        <location line="+3"/>
+        <source>Transcribe an audio...</source>
+        <translation>Audio transkribieren...</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Writes what is said in a recording, with an AI on the web</source>
+        <translation>Schreibt mit einer KI im Web auf, was in einer Aufnahme gesagt wird</translation>
+    </message>
+    <message>
+        <location line="+20"/>
         <source>&amp;Tools</source>
         <translation>&amp;Werkzeuge</translation>
     </message>
@@ -4187,17 +4428,15 @@ Jetzt herunterladen und installieren? LibertyBoard speichert Ihre Dokumente, sch
         <translation type="vanished">Das Diktat des Systems ist hier nicht verfügbar. Drücken Sie unter Windows Windows + H in einem Text.</translation>
     </message>
     <message>
-        <location line="-196"/>
         <source>Transcribe an audio (coming with the AI)</source>
-        <translation>Audio transkribieren (kommt mit der KI)</translation>
+        <translation type="vanished">Audio transkribieren (kommt mit der KI)</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Writes what is said in a recording; it will come with the AI of LibertyBoard</source>
-        <translation>Schreibt, was in einer Aufnahme gesagt wird; kommt mit der KI von LibertyBoard</translation>
+        <translation type="vanished">Schreibt, was in einer Aufnahme gesagt wird; kommt mit der KI von LibertyBoard</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location line="-186"/>
         <source>Full screen</source>
         <translation>Vollbild</translation>
     </message>
@@ -4430,7 +4669,7 @@ Möchten Sie diese Fehler für diesen Computer ignorieren?</translation>
 <context>
     <name>UBNoteOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1173"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1186"/>
         <source>Note</source>
         <translation>Notiz</translation>
     </message>
@@ -4751,7 +4990,7 @@ Das geht auch später mit Start &gt; Text erkennen.</translation>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1336"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1349"/>
         <source>Pen</source>
         <translation>Stift</translation>
     </message>
@@ -4985,7 +5224,7 @@ Dynamische Breite</translation>
 <context>
     <name>UBPreferencesController</name>
     <message>
-        <location filename="../../src/core/UBPreferencesController.cpp" line="+137"/>
+        <location filename="../../src/core/UBPreferencesController.cpp" line="+141"/>
         <source>Language</source>
         <translation>Sprache</translation>
     </message>
@@ -5010,7 +5249,42 @@ Dynamische Breite</translation>
         <translation>Stiftdruck</translation>
     </message>
     <message>
-        <location line="+24"/>
+        <location line="+18"/>
+        <source>AI</source>
+        <translation>KI</translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>The AI that the AI panel can show. Write a name and the address of its page; the first one is shown the first time.</source>
+        <translation>Die KIs, die das KI-Feld zeigen kann. Geben Sie einen Namen und die Adresse ihrer Seite ein; die erste wird beim ersten Mal gezeigt.</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Name</source>
+        <translation>Name</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Address</source>
+        <translation>Adresse</translation>
+    </message>
+    <message>
+        <location line="+40"/>
+        <source>Add</source>
+        <translation>Hinzufügen</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Remove</source>
+        <translation>Entfernen</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Default list</source>
+        <translation>Ursprüngliche Liste</translation>
+    </message>
+    <message>
+        <location line="+36"/>
         <source>Border in desktop mode</source>
         <translation>Rahmen im Desktop-Modus</translation>
     </message>
@@ -5385,7 +5659,7 @@ Dynamische Breite</translation>
 <context>
     <name>UBSelectorOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1210"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1223"/>
         <source>Select</source>
         <translation>Auswählen</translation>
     </message>
@@ -5426,7 +5700,7 @@ Dynamische Breite</translation>
 <context>
     <name>UBSettings</name>
     <message>
-        <location filename="../../src/core/UBSettings.cpp" line="+1148"/>
+        <location filename="../../src/core/UBSettings.cpp" line="+1152"/>
         <source>My Movies</source>
         <translation>Meine Filme</translation>
     </message>
@@ -5438,7 +5712,7 @@ Dynamische Breite</translation>
         <translation type="vanished">Rechteck</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-608"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-621"/>
         <source>Shapes</source>
         <translation>Formen</translation>
     </message>
@@ -6087,7 +6361,7 @@ Dynamische Breite</translation>
 <context>
     <name>UBStampOptionsPanel</name>
     <message>
-        <location line="+507"/>
+        <location line="+520"/>
         <source>Stamp</source>
         <translation>Stempel</translation>
     </message>
@@ -6123,7 +6397,17 @@ Dynamische Breite</translation>
 <context>
     <name>UBStylusPalette</name>
     <message>
-        <location filename="../../src/gui/UBStylusPalette.cpp" line="+86"/>
+        <location filename="../../src/gui/UBStylusPalette.cpp" line="+87"/>
+        <source>AI</source>
+        <translation>KI</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Summary, translation, images and more with an AI on the web</source>
+        <translation>Zusammenfassung, Übersetzung, Bilder und mehr mit einer KI im Web</translation>
+    </message>
+    <message>
+        <location line="+7"/>
         <source>Save a screenshot</source>
         <translation>Bildschirmfoto speichern</translation>
     </message>
@@ -6171,7 +6455,7 @@ Dynamische Breite</translation>
 <context>
     <name>UBTextOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-251"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-264"/>
         <source>Text</source>
         <translation>Text</translation>
     </message>
@@ -6250,6 +6534,16 @@ Dynamische Breite</translation>
         <source>Makes a text box and writes in it what you say (the dictation of Windows, Windows + H). In a text box, the microphone left of F does the same.</source>
         <translation>Erstellt ein Textfeld und schreibt hinein, was Sie sagen (das Diktat von Windows, Windows + H). In einem Textfeld macht das Mikrofon links vom F dasselbe.</translation>
     </message>
+    <message>
+        <location line="+7"/>
+        <source>Transcribe</source>
+        <translation>Transkribieren</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Asks for an audio and gives it to an AI on the web, which writes what is said</source>
+        <translation>Fragt nach einem Audio und gibt es einer KI im Web, die aufschreibt, was gesagt wird</translation>
+    </message>
 </context>
 <context>
     <name>UBThumbnailAdaptor</name>
@@ -6297,7 +6591,7 @@ Miniaturansicht der Seite %1 wird geladen</translation>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1079"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1091"/>
         <source>Color</source>
         <translation>Farbe</translation>
     </message>
