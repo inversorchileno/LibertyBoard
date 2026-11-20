@@ -23,6 +23,9 @@
 #pragma once
 
 #include <QPointer>
+#include <QUrl>
+
+#include <functional>
 #include <QWidget>
 
 class QWebEngineView;
@@ -44,6 +47,15 @@ public:
 
     /** @brief The one window, while it is open; for its signal closed. */
     static UBGifWindow* instance();
+
+    /** @brief Whether this is the address of the page of a GIF of klipy.com, rather than of the GIF. */
+    static bool isGifPage(const QUrl& url);
+
+    /**
+     * @brief Finds the address of the GIF shown on a page of klipy.com,
+     * then calls found with it, or with an empty address when there is none.
+     */
+    static void findGif(const QUrl& page, QObject* context, const std::function<void(const QUrl&)>& found);
 
 signals:
     void closed();

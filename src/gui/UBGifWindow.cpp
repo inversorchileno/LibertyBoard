@@ -25,10 +25,14 @@
 #include <QCloseEvent>
 #include <QHBoxLayout>
 #include <QLabel>
+#include <QNetworkAccessManager>
+#include <QNetworkReply>
+#include <QRegularExpression>
 #include <QScreen>
 #include <QToolButton>
 #include <QVBoxLayout>
 #include <QWebEngineView>
+#include <QApplication>
 
 QPointer<UBGifWindow> UBGifWindow::sWindow;
 
@@ -120,4 +124,61 @@ void UBGifWindow::closeEvent(QCloseEvent* event)
 
     emit closed();
     QWidget::closeEvent(event);
+}
+
+bool UBGifWindow::isGifPage(const QUrl& url)
+{
+    const QString host = url.host().toLower();
+    return (host == "klipy.com" || host.endsWith(".klipy.com")) && !url.path().contains('.')
+           && (url.path().startsWith("/gifs/") || url.path().startsWith("/stickers/"));
+}
+
+// The address of the animated picture in the page of a GIF: the picture
+// shared by the page, else the first GIF or WebP file named in it.
+static QUrl gifInPage(QString html)
+{
+    // The addresses written in the data of the page have their slashes escaped.
+    html.replace("\\/", "/");
+
+    static const QRegularExpression shared(
+        "<meta[^>]+(?:property|name)=[\"'](?:og:image|twitter:image)[\"'][^>]+content=[\"']([^\"']+)[\"']",
+        QRegularExpression::CaseInsensitiveOption);
+    static const QRegularExpression sharedFirst(
+        "<meta[^>]+content=[\"']([^\"']+)[\"'][^>]+(?:property|name)=[\"'](?:og:image|twitter:image)[\"']",
+        QRegularExpression::CaseInsensitiveOption);
+    static const QRegularExpression anyGif("https://[^\"'\\s<>]+?\\.(?:gif|webp)(?:\\?[^\"'\\s<>]*)?",
+                                           QRegularExpression::CaseInsensitiveOption);
+
+    for (const QRegularExpression& pattern : { shared, sharedFirst })
+    {
+        const QRegularExpressionMatch match = pattern.match(html);
+
+        if (match.hasMatch())
+        {
+            const QString address = match.captured(1).replace("&amp;", "&");
+
+            if (address.contains(".gif", Qt::CaseInsensitive) || address.contains(".webp", Qt::CaseInsensitive))
+            {
+                return QUrl(address);
+            }
+        }
+    }
+
+    const QRegularExpressionMatch file = anyGif.match(html);
+    return file.hasMatch() ? QUrl(file.captured(0)) : QUrl();
+}
+
+void UBGifWindow::findGif(const QUrl& page, QObject* context, const std::function<void(const QUrl&)>& found)
+{
+    static QNetworkAccessManager* network = new QNetworkAccessManager(qApp);
+    QNetworkRequest request(page);
+    // The page is asked for as a web browser asks for it.
+    request.setHeader(QNetworkRequest::UserAgentHeader, "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                                                        "(KHTML, like Gecko) Chrome/120.0 Safari/537.36");
+    QNetworkReply* reply = network->get(request);
+
+    QObject::connect(reply, &QNetworkReply::finished, context, [reply, found]() {
+        reply->deleteLater();
+        found(reply->error() == QNetworkReply::NoError ? gifInPage(QString::fromUtf8(reply->readAll())) : QUrl());
+    });
 }

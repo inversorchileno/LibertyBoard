@@ -79,6 +79,7 @@
 #include "gui/UBFeaturesWidget.h"
 #include "gui/UBKeyboardPalette.h"
 #include "gui/UBMagnifer.h"
+#include "gui/UBGifWindow.h"
 #include "gui/UBMainWindow.h"
 #include "gui/UBMessageWindow.h"
 #include "gui/UBThumbnailScene.h"
@@ -2793,6 +2794,23 @@ void UBBoardController::processMimeData(const QMimeData* pMimeData, const QPoint
 
         foreach(const QUrl url, urls){
             QPointF pos(pPos + QPointF(index * 15, index * 15));
+
+            // A GIF dragged from klipy.com gives the address of its page:
+            // the GIF is found in the page.
+            if (UBGifWindow::isGifPage(url))
+            {
+                UBGifWindow::findGif(url, this, [this, pos](const QUrl& gif) {
+                    if (gif.isEmpty())
+                    {
+                        UBApplication::showMessage(tr("The GIF could not be found on its page. Try another one."));
+                        return;
+                    }
+
+                    downloadURL(gif, QString(), pos);
+                });
+                index++;
+                continue;
+            }
 
             downloadURL(url, QString(), pos, QSize(), false,  internalData);
             index++;
