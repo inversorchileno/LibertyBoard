@@ -85,6 +85,7 @@ namespace
             { "actionLbDictate", "F8" },
             // About
             { "actionLbShortcuts", "Ctrl+F1" },
+            { "actionLbCreator", "Ctrl+Shift+F2" },
             { "actionHintsAndTips", "F1" },
             { "actionLbGitHub", "Alt+F1" },
             { "actionCheckUpdate", "Ctrl+Shift+F1" },
