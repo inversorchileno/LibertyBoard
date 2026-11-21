@@ -1498,33 +1498,51 @@ QIcon UBStampOptionsPanel::iconFor(int index) const
         const QRectF frame = QRectF(picture.rect()).adjusted(6, 6, -6, -6);
         painter.drawRoundedRect(frame, 20, 20);
 
-        const QRectF plusArea(frame.left(), frame.top() + frame.height() * 0.06, frame.width(), frame.height() * 0.5);
-        const QRectF nameArea(frame.left() + 8, plusArea.bottom(), frame.width() - 16, frame.bottom() - plusArea.bottom() - 4);
+        const QRectF plusArea(frame.left(), frame.top() + frame.height() * 0.04, frame.width(), frame.height() * 0.4);
+        const QRectF textArea(frame.left() + 8, plusArea.bottom(), frame.width() - 16, frame.bottom() - plusArea.bottom() - 4);
 
         // A thick plus, drawn rather than written, to fill its place.
-        const qreal arm = plusArea.height() * 0.9;
+        const qreal arm = plusArea.height() * 0.85;
         const QPointF center = plusArea.center();
         painter.setPen(QPen(QColor("#5b6270"), arm * 0.22, Qt::SolidLine, Qt::RoundCap));
         painter.drawLine(QPointF(center.x() - arm / 2, center.y()), QPointF(center.x() + arm / 2, center.y()));
         painter.drawLine(QPointF(center.x(), center.y() - arm / 2), QPointF(center.x(), center.y() + arm / 2));
 
+        // The name in two lines, "PNG" above, the rest below, as large as they fit.
+        const QString name = UBStamps::name(index).toUpper();
+        const int space = name.indexOf(' ');
+        const QStringList lines = space > 0 ? QStringList{ name.left(space), name.mid(space + 1) } : QStringList{ name };
+        const qreal lineHeight = textArea.height() / lines.size();
+
         QFont font = painter.font();
         font.setBold(true);
-        font.setStretch(QFont::Condensed);
-
-        // The name on one line, as tall as the space left allows.
-        const QString name = UBStamps::name(index).toUpper();
-        int size = qRound(nameArea.height() * 0.9);
+        int size = qRound(lineHeight * 0.95);
         font.setPixelSize(size);
 
-        while (size > 8 && QFontMetricsF(font).horizontalAdvance(name) > nameArea.width())
+        auto widest = [&lines](const QFont& f) {
+            qreal width = 0;
+
+            for (const QString& line : lines)
+            {
+                width = qMax(width, QFontMetricsF(f).horizontalAdvance(line));
+            }
+
+            return width;
+        };
+
+        while (size > 8 && widest(font) > textArea.width())
         {
             font.setPixelSize(--size);
         }
 
         painter.setFont(font);
         painter.setPen(QColor("#4a5160"));
-        painter.drawText(nameArea, Qt::AlignCenter, name);
+
+        for (int i = 0; i < lines.size(); ++i)
+        {
+            painter.drawText(QRectF(textArea.left(), textArea.top() + i * lineHeight, textArea.width(), lineHeight),
+                             Qt::AlignCenter, lines.at(i));
+        }
     }
 
     return QIcon(QPixmap::fromImage(picture));
