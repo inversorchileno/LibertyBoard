@@ -82,9 +82,9 @@ namespace
     }
 
     /*
-     * A line of the Customize menu: a box with the name of the tool, and its
-     * icon at the right. A click anywhere on the line ticks the box; the
-     * menu stays open, to tick several.
+     * A line of the Customize menu: the icon of the tool, its name, and at
+     * the right the box that shows it in the palette. A click anywhere on
+     * the line ticks the box; the menu stays open, to tick several.
      */
     class ToolRow : public QWidget
     {
@@ -95,28 +95,32 @@ namespace
             setObjectName("toolRow");
             setAttribute(Qt::WA_StyledBackground);
             setAttribute(Qt::WA_Hover);
-            // Dark text on the light menu, white on the line under the mouse.
             setStyleSheet("QWidget#toolRow { background: transparent; }"
                           "QWidget#toolRow:hover { background: #308cc6; }");
 
-            mBox = new QCheckBox(displayName(tool), this);
+            auto icon = new QLabel(this);
+            icon->setPixmap(tool->icon().pixmap(QSize(22, 22)));
+
+            // Dark text on the light menu, white on the line under the mouse.
+            mName = new QLabel(displayName(tool), this);
+            mName->setStyleSheet("QLabel { color: #1e1e1e; }");
+
+            mBox = new QCheckBox(this);
             QPalette colors = mBox->palette();
             colors.setColor(QPalette::Base, Qt::white);
             colors.setColor(QPalette::Text, QColor("#1e1e1e"));
             colors.setColor(QPalette::WindowText, QColor("#1e1e1e"));
             mBox->setPalette(colors);
-            mBox->setStyleSheet("QCheckBox { color: #1e1e1e; }");
             mBox->setChecked(shown);
-
-            auto icon = new QLabel(this);
-            icon->setPixmap(tool->icon().pixmap(QSize(22, 22)));
 
             auto layout = new QHBoxLayout(this);
             layout->setContentsMargins(8, 3, 10, 3);
-            layout->setSpacing(12);
-            layout->addWidget(mBox);
-            layout->addStretch(1);
+            layout->setSpacing(10);
             layout->addWidget(icon);
+            layout->addWidget(mName);
+            layout->addStretch(1);
+            layout->addSpacing(16);
+            layout->addWidget(mBox);
         }
 
         QCheckBox* box() const
@@ -127,12 +131,12 @@ namespace
     protected:
         void enterEvent(QEnterEvent*) override
         {
-            mBox->setStyleSheet("QCheckBox { color: #ffffff; }");
+            mName->setStyleSheet("QLabel { color: #ffffff; }");
         }
 
         void leaveEvent(QEvent*) override
         {
-            mBox->setStyleSheet("QCheckBox { color: #1e1e1e; }");
+            mName->setStyleSheet("QLabel { color: #1e1e1e; }");
         }
 
         void mouseReleaseEvent(QMouseEvent* event) override
@@ -145,6 +149,7 @@ namespace
         }
 
     private:
+        QLabel* mName;
         QCheckBox* mBox;
     };
 
