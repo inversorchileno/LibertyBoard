@@ -265,7 +265,7 @@ Luis revisó la compilación 21 y entregó «observaciones_V2.docx» con 15 punt
 - **Compilación 26:** el GIF arrastrado se busca en la ventana de klipy.com que lo muestra (la página de cada GIF se arma al ejecutarse, así que descargada no lo trae): se prueba primero la versión GIF de cada dirección, luego WebP. Las formas del escritorio ocupan todo el ancho (2 filas de 10, más grandes). En un PDF el candado dice «Bloquear PDF» / «Desbloquear PDF».
 - **Traducciones:** desde la V3 los textos nuevos se traducen al español, alemán, francés, chino y japonés; los demás idiomas los muestran en inglés (pedido de Luis).
 
-- **Después de la compilación 26** (sin compilar aún): la ventana de klipy.com recuerda las cookies (perfil web propio en `webprofiles/gifs`, antes preguntaba cada vez); las pestañas de documentos se reordenan arrastrándolas; el Sello «PNG personalizado» es el primero y parte vacío en cada sesión.
+- **Después de la compilación 26** (sin compilar aún): la ventana de klipy.com recuerda las cookies (perfil web propio en `webprofiles/gifs`, antes preguntaba cada vez); las pestañas de documentos se reordenan arrastrándolas; el sello propio (hoy «Tu PNG») es el primero y parte vacío en cada sesión.
 
 ## Versión 4 de las mejoras del Word (sin compilar aún)
 
@@ -287,7 +287,7 @@ Luis revisó la compilación 21 y entregó «observaciones_V2.docx» con 15 punt
 
 ### Ajustes pedidos después de la compilación 27
 
-- **Sello «PNG personalizado»:** el «+» grande arriba y el nombre en dos líneas («PNG» y debajo «PERSONALIZADO»), al tamaño máximo que cabe.
+- **Sello «Tu PNG»** (antes «PNG personalizado»; en inglés «Your PNG»): el «+» arriba y «TU PNG» en una línea debajo, al tamaño máximo que cabe.
 - **Personalización:** cada línea tiene la casilla a la izquierda y el ícono del botón a la derecha; un clic en el nombre o el ícono también marca. Nueva opción **Mover elementos...** (`UBToolbarChoice::openOrderWindow`): pestañas Pizarra / PDF y Escritorio con solo las herramientas visibles, se arrastran o se usan Subir / Bajar / Orden original; las ocultas guardan su lugar. En el escritorio el botón que vuelve a la pizarra queda siempre primero. Se guarda en `boardToolOrder` / `desktopToolOrder` (`UBActionPalette::setOrder`). Lo elegido en Personalización se escribe en disco al instante.
 - **IA como herramienta** (`UBStylusTool::Ai`, `actionAi`, `UBAiOptionsPanel`): en la pizarra muestra en la barra de opciones un cuadro con ícono propio por acción (Resumen, Traducción, Crear imagen, Quitar fondo, Borrado generativo, Transcribir, Abrir la IA). En el escritorio está en la barra y su botón abre esos cuadros (3 por fila) sin Transcribir; Resumen, Traducción, Quitar fondo y Borrado piden una zona de la pantalla (sobre una foto fija de la pantalla); Crear imagen solo pide qué crear. En el escritorio el panel va dentro de la capa que cubre el escritorio (si fuera una ventana aparte no recibiría los clics) y lo que trae la IA queda sobre el escritorio, movible y de tamaño ajustable.
 - **Traer el resultado:** clic derecho sobre una imagen o un texto seleccionado de la IA → «Poner la imagen/el texto en la página» (o en el escritorio); la imagen la copia la propia página. Arrastrar al escritorio no funcionó en la pantalla de prueba de Linux.

@@ -1621,21 +1621,19 @@ QIcon UBStampOptionsPanel::iconFor(int index) const
         const QRectF textArea(frame.left() + 8, plusArea.bottom(), frame.width() - 16, frame.bottom() - plusArea.bottom() - 4);
 
         // A thick plus, drawn rather than written, to fill its place.
-        const qreal arm = plusArea.height() * 0.85;
+        const qreal arm = plusArea.height() * 0.75;
         const QPointF center = plusArea.center();
         painter.setPen(QPen(QColor("#5b6270"), arm * 0.22, Qt::SolidLine, Qt::RoundCap));
         painter.drawLine(QPointF(center.x() - arm / 2, center.y()), QPointF(center.x() + arm / 2, center.y()));
         painter.drawLine(QPointF(center.x(), center.y() - arm / 2), QPointF(center.x(), center.y() + arm / 2));
 
-        // The name in two lines, "PNG" above, the rest below, as large as they fit.
-        const QString name = UBStamps::name(index).toUpper();
-        const int space = name.indexOf(' ');
-        const QStringList lines = space > 0 ? QStringList{ name.left(space), name.mid(space + 1) } : QStringList{ name };
+        // The name on one line under the plus, as large as it fits.
+        const QStringList lines{ UBStamps::name(index).toUpper() };
         const qreal lineHeight = textArea.height() / lines.size();
 
         QFont font = painter.font();
         font.setBold(true);
-        int size = qRound(lineHeight * 0.95);
+        int size = qRound(lineHeight * 0.85);
         font.setPixelSize(size);
 
         auto widest = [&lines](const QFont& f) {

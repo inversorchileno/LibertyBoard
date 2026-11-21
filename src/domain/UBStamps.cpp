@@ -100,7 +100,7 @@ QString UBStamps::name(int index)
 {
     if (isCustom(index))
     {
-        return isSpanish() ? QStringLiteral("PNG personalizado") : QStringLiteral("Custom PNG");
+        return isSpanish() ? QStringLiteral("Tu PNG") : QStringLiteral("Your PNG");
     }
 
     const Standard stamp = standards().value(index - 1);
