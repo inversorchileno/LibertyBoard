@@ -232,6 +232,30 @@ private:
     QLabel* mDragHint{nullptr};
 };
 
+/**
+ * @brief Options of the AI tool: what to give to an AI on the web. On the
+ * desktop, a part of the screen is given and there is no transcription.
+ */
+class UBAiOptionsPanel : public UBToolOptionsPanel
+{
+    Q_OBJECT
+
+public:
+    explicit UBAiOptionsPanel(QWidget* parent = nullptr);
+    void refresh() override;
+
+protected:
+    void layOutForToolbar() override;
+
+private:
+    void placeTiles(int columns);
+
+    QGridLayout* mTiles{nullptr};
+    QList<QToolButton*> mButtons;
+    QToolButton* mTranscribe{nullptr};
+    int mColumns{3};
+};
+
 /** @brief Options of the read aloud tool: where to read from, play, pause, stop and next page. */
 class UBVoiceOptionsPanel : public UBToolOptionsPanel
 {

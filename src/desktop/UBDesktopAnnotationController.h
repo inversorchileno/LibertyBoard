@@ -104,6 +104,20 @@ class UBDesktopAnnotationController : public QObject
         UBBoardView* mTransparentDrawingView;       
         std::shared_ptr<UBGraphicsScene> mTransparentDrawingScene;
 
+    public:
+        /** @brief The scene drawn over the desktop, and its view. */
+        std::shared_ptr<UBGraphicsScene> drawingScene() const
+        {
+            return mTransparentDrawingScene;
+        }
+
+        UBBoardView* drawingView() const
+        {
+            return mTransparentDrawingView;
+        }
+
+    protected:
+
     private slots:
         void updateColors();
         void eraseDesktopAnnotations();

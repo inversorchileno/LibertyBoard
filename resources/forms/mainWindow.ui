@@ -1674,6 +1674,21 @@
     <string>Put an emoji or a GIF on the page</string>
    </property>
   </action>
+  <action name="actionAi">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../OpenBoard.qrc">
+     <normaloff>:/images/stylusPalette/ai.svg</normaloff>:/images/stylusPalette/ai.svg</iconset>
+   </property>
+   <property name="text">
+    <string>AI</string>
+   </property>
+   <property name="toolTip">
+    <string>Summary, translation, images and more with an AI on the web</string>
+   </property>
+  </action>
   <action name="actionSpotlight">
    <property name="checkable">
     <bool>true</bool>

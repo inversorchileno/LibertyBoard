@@ -54,6 +54,8 @@
 #include "gui/UBDictation.h"
 #include "gui/UBGifWindow.h"
 #include "gui/UBAiPanel.h"
+#include "core/UBApplicationController.h"
+#include "gui/UBToolOptionsPopup.h"
 #include "gui/UBTextBoxes.h"
 #include "gui/UBReadAloud.h"
 #include <QTimer>
@@ -152,6 +154,8 @@ UBToolOptionsPanel* UBToolOptionsPanel::create(int tool, QWidget* parent)
             return new UBVoiceOptionsPanel(parent);
         case UBStylusTool::Emoji:
             return new UBEmojiOptionsPanel(parent);
+        case UBStylusTool::Ai:
+            return new UBAiOptionsPanel(parent);
         case UBStylusTool::Comment:
             return new UBCommentOptionsPanel(parent);
         case UBStylusTool::Selector:
@@ -713,6 +717,121 @@ void UBEmojiOptionsPanel::showGifs(bool shown)
     mSizeTitle->setVisible(!shown);
     mSize->setVisible(!shown);
     mDragHint->setVisible(shown);
+}
+
+UBAiOptionsPanel::UBAiOptionsPanel(QWidget* parent)
+    : UBToolOptionsPanel(tr("AI"), parent)
+{
+    // A tile for each action, its drawing above its name, all of the same
+    // size: three by row in the options of the desktop, one row in the toolbar.
+    const QList<std::tuple<int, QString, QIcon, QString>> actions = {
+        { int(UBAiPanel::Action::Summary), tr("Summary"), optionIcon(UBOptionIcon::AiSummary),
+          tr("A part of the page, or all of it, summarized by the AI") },
+        { int(UBAiPanel::Action::Translation), tr("Translation"), optionIcon(UBOptionIcon::AiTranslate),
+          tr("A part of the page, or all of it, translated by the AI into the language chosen") },
+        { int(UBAiPanel::Action::CreateImage), tr("Create image"), optionIcon(UBOptionIcon::AiCreateImage),
+          tr("An image made by the AI from what you write") },
+        { int(UBAiPanel::Action::RemoveBackground), tr("Remove background"), optionIcon(UBOptionIcon::AiRemoveBackground),
+          tr("A picture without its background, made by the AI") },
+        { int(UBAiPanel::Action::GenerativeErase), tr("Generative erase"), optionIcon(UBOptionIcon::AiErase),
+          tr("Something erased from a picture by the AI, as if it had never been there") },
+        { int(UBAiPanel::Action::Transcription), tr("Transcribe"), optionIcon(UBOptionIcon::AiTranscribe),
+          tr("Asks for an audio and gives it to the AI, which writes what is said") },
+        { -1, tr("Open the AI"), optionIcon(":/images/stylusPalette/ai.svg"),
+          tr("Opens or closes the page of the AI at the right") },
+    };
+
+    auto tiles = new QWidget(this);
+    mTiles = new QGridLayout(tiles);
+    mTiles->setContentsMargins(0, 0, 0, 0);
+    mTiles->setSpacing(4);
+
+    for (const auto& action : actions)
+    {
+        auto button = new QToolButton(tiles);
+        button->setText(std::get<1>(action));
+        button->setIcon(std::get<2>(action));
+        button->setIconSize(QSize(48, 28));
+        button->setToolTip(std::get<3>(action));
+        button->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
+        button->setFocusPolicy(Qt::NoFocus);
+        mButtons << button;
+
+        const int chosen = std::get<0>(action);
+
+        if (chosen == int(UBAiPanel::Action::Transcription))
+        {
+            mTranscribe = button;
+        }
+
+        connect(button, &QToolButton::clicked, this, [this, chosen]() {
+            // On the desktop the options are in a window of their own: it
+            // goes, so that the screen can be chosen under it.
+            QWidget* parent = window();
+
+            if (qobject_cast<UBToolOptionsPopup*>(parent))
+            {
+                parent->hide();
+                parent = parent->parentWidget() ? parent->parentWidget()->window() : nullptr;
+            }
+
+            if (chosen < 0)
+            {
+                UBAiPanel::toggle(parent);
+            }
+            else
+            {
+                UBAiPanel::startAction(UBAiPanel::Action(chosen), parent);
+            }
+        });
+    }
+
+    // All as wide as the longest name.
+    int widest = 72;
+
+    for (QToolButton* button : std::as_const(mButtons))
+    {
+        widest = qMax(widest, button->fontMetrics().horizontalAdvance(button->text()) + 18);
+    }
+
+    for (QToolButton* button : std::as_const(mButtons))
+    {
+        button->setFixedWidth(widest);
+    }
+
+    addRow(tiles);
+    placeTiles(3);
+    refresh();
+}
+
+void UBAiOptionsPanel::placeTiles(int columns)
+{
+    int index = 0;
+
+    for (QToolButton* button : std::as_const(mButtons))
+    {
+        mTiles->removeWidget(button);
+
+        if (!button->isHidden() || button != mTranscribe)
+        {
+            mTiles->addWidget(button, index / columns, index % columns);
+            ++index;
+        }
+    }
+
+    mColumns = columns;
+}
+
+void UBAiOptionsPanel::layOutForToolbar()
+{
+    placeTiles(mButtons.size());
+}
+
+void UBAiOptionsPanel::refresh()
+{
+    // No transcription on the desktop: there is no page to write it on.
+    mTranscribe->setHidden(UBApplication::applicationController->isShowingDesktop());
+    placeTiles(mColumns);
 }
 
 UBVoiceOptionsPanel::UBVoiceOptionsPanel(QWidget* parent)

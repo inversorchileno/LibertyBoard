@@ -999,6 +999,20 @@ void UBShapeChoice::setWide(int columns)
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
 }
 
+// A small four-pointed star, the sign of the AI.
+static void drawSparkle(QPainter& painter, const QPointF& center, qreal radius, const QColor& color)
+{
+    QPainterPath star;
+    star.moveTo(center.x(), center.y() - radius);
+    star.quadTo(center, QPointF(center.x() + radius, center.y()));
+    star.quadTo(center, QPointF(center.x(), center.y() + radius));
+    star.quadTo(center, QPointF(center.x() - radius, center.y()));
+    star.quadTo(center, QPointF(center.x(), center.y() - radius));
+    painter.setPen(Qt::NoPen);
+    painter.setBrush(color);
+    painter.drawPath(star);
+}
+
 QIcon optionIcon(UBOptionIcon kind)
 {
     // Drawn at twice the size, sharp on high resolution screens.
@@ -1372,6 +1386,129 @@ QIcon optionIcon(UBOptionIcon kind)
             painter.setBrush(Qt::white);
             painter.drawPolygon(QPolygonF({ tip, tip + QPointF(0, 13), tip + QPointF(3.2, 9.8), tip + QPointF(5.8, 14.6),
                                             tip + QPointF(7.4, 13.8), tip + QPointF(5, 9.2), tip + QPointF(9, 9.2) }));
+            break;
+        }
+        case UBOptionIcon::AiSummary:
+        {
+            // A page of many lines, and beside it its few main lines.
+            const QColor sign("#e8e8e8");
+            painter.setPen(QPen(sign, 1.4));
+            painter.setBrush(Qt::NoBrush);
+            painter.drawRect(QRectF(7, 3, 15, 22));
+
+            for (int i = 0; i < 6; ++i)
+            {
+                painter.drawLine(QPointF(10, 7 + i * 3), QPointF(19, 7 + i * 3));
+            }
+
+            painter.setPen(QPen(QColor("#a77bff"), 2.4, Qt::SolidLine, Qt::RoundCap));
+            painter.drawLine(QPointF(26, 12), QPointF(29, 12));
+            painter.drawLine(QPointF(27, 10), QPointF(29, 12));
+            painter.drawLine(QPointF(27, 14), QPointF(29, 12));
+            painter.setPen(QPen(sign, 2.2, Qt::SolidLine, Qt::RoundCap));
+            painter.drawLine(QPointF(33, 9), QPointF(42, 9));
+            painter.drawLine(QPointF(33, 15), QPointF(40, 15));
+            drawSparkle(painter, QPointF(40, 22), 4.5, QColor("#ffd36b"));
+            break;
+        }
+        case UBOptionIcon::AiTranslate:
+        {
+            // A letter of one alphabet becoming a sign of another.
+            QFont font = painter.font();
+            font.setBold(true);
+            font.setPixelSize(15);
+            painter.setFont(font);
+            painter.setPen(QColor("#e8e8e8"));
+            painter.drawText(QRectF(4, 3, 16, 20), Qt::AlignCenter, "A");
+            painter.setPen(QColor("#7ab8ff"));
+            painter.drawText(QRectF(28, 7, 17, 20), Qt::AlignCenter, QString::fromUtf8("文"));
+            painter.setPen(QPen(QColor("#a77bff"), 2, Qt::SolidLine, Qt::RoundCap));
+            painter.drawLine(QPointF(19, 14), QPointF(28, 14));
+            painter.drawLine(QPointF(25, 11), QPointF(28, 14));
+            painter.drawLine(QPointF(25, 17), QPointF(28, 14));
+            drawSparkle(painter, QPointF(23, 5), 3.5, QColor("#ffd36b"));
+            break;
+        }
+        case UBOptionIcon::AiCreateImage:
+        {
+            // A picture with mountains and a sun, being made.
+            const QRectF frame(10, 4, 26, 20);
+            painter.setPen(QPen(QColor("#e8e8e8"), 1.4));
+            painter.setBrush(Qt::NoBrush);
+            painter.drawRect(frame);
+            QPainterPath mountains;
+            mountains.moveTo(frame.left(), frame.bottom());
+            mountains.lineTo(frame.left() + 8, frame.top() + 9);
+            mountains.lineTo(frame.left() + 13, frame.top() + 14);
+            mountains.lineTo(frame.left() + 18, frame.top() + 8);
+            mountains.lineTo(frame.right(), frame.bottom());
+            mountains.closeSubpath();
+            painter.setPen(Qt::NoPen);
+            painter.setBrush(QColor("#5b8def"));
+            painter.drawPath(mountains);
+            painter.setBrush(QColor("#ffd36b"));
+            painter.drawEllipse(QPointF(frame.left() + 7, frame.top() + 5), 2.5, 2.5);
+            drawSparkle(painter, QPointF(39, 6), 5, QColor("#a77bff"));
+            break;
+        }
+        case UBOptionIcon::AiRemoveBackground:
+        {
+            // A person kept on the squares of a transparent background.
+            const QRectF frame(12, 3, 24, 22);
+
+            for (int row = 0; row < 4; ++row)
+            {
+                for (int column = 0; column < 4; ++column)
+                {
+                    painter.fillRect(QRectF(frame.left() + column * 6, frame.top() + row * 5.5, 6, 5.5),
+                                     (row + column) % 2 ? QColor(232, 232, 232, 70) : QColor(232, 232, 232, 160));
+                }
+            }
+
+            painter.setPen(Qt::NoPen);
+            painter.setBrush(QColor("#ff5468"));
+            painter.drawEllipse(QPointF(24, 10), 3.5, 3.5);
+            painter.drawRoundedRect(QRectF(18, 15, 12, 10), 5, 5);
+            drawSparkle(painter, QPointF(40, 6), 4.5, QColor("#ffd36b"));
+            break;
+        }
+        case UBOptionIcon::AiErase:
+        {
+            // An eraser that leaves the place as if nothing had been there.
+            painter.setPen(QPen(QColor("#e8e8e8"), 1.2, Qt::DashLine));
+            painter.setBrush(Qt::NoBrush);
+            painter.drawRect(QRectF(6, 12, 14, 12));
+            painter.save();
+            painter.translate(28, 13);
+            painter.rotate(-35);
+            painter.setPen(Qt::NoPen);
+            painter.setBrush(QColor("#ff8fb1"));
+            painter.drawRoundedRect(QRectF(-6, -5, 8, 10), 1.5, 1.5);
+            painter.setBrush(QColor("#5b8def"));
+            painter.drawRoundedRect(QRectF(2, -5, 9, 10), 1.5, 1.5);
+            painter.restore();
+            drawSparkle(painter, QPointF(40, 20), 5, QColor("#ffd36b"));
+            break;
+        }
+        case UBOptionIcon::AiTranscribe:
+        {
+            // The waves of a sound becoming lines of text.
+            painter.setPen(QPen(QColor("#7ab8ff"), 2, Qt::SolidLine, Qt::RoundCap));
+            const qreal heights[] = { 4, 10, 16, 8, 13, 5 };
+
+            for (int i = 0; i < 6; ++i)
+            {
+                painter.drawLine(QPointF(5 + i * 3, 14 - heights[i] / 2), QPointF(5 + i * 3, 14 + heights[i] / 2));
+            }
+
+            painter.setPen(QPen(QColor("#a77bff"), 2, Qt::SolidLine, Qt::RoundCap));
+            painter.drawLine(QPointF(24, 14), QPointF(29, 14));
+            painter.drawLine(QPointF(27, 12), QPointF(29, 14));
+            painter.drawLine(QPointF(27, 16), QPointF(29, 14));
+            painter.setPen(QPen(QColor("#e8e8e8"), 1.8, Qt::SolidLine, Qt::RoundCap));
+            painter.drawLine(QPointF(33, 8), QPointF(44, 8));
+            painter.drawLine(QPointF(33, 13), QPointF(44, 13));
+            painter.drawLine(QPointF(33, 18), QPointF(40, 18));
             break;
         }
         case UBOptionIcon::Microphone:

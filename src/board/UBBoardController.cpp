@@ -2770,13 +2770,10 @@ void UBBoardController::processMimeData(const QMimeData* pMimeData, const QPoint
     }
 
     // A picture dragged from the AI panel: its address needs the session of the AI.
-    if (UBAiPanel::isAiDrag(pMimeData) && mActiveScene)
+    if (UBAiPanel::isAiDrag(pMimeData))
     {
-        QByteArray png;
-        QBuffer buffer(&png);
-        buffer.open(QIODevice::WriteOnly);
-        qvariant_cast<QImage>(pMimeData->imageData()).save(&buffer, "PNG");
-        mActiveScene->addImage(png, nullptr, pPos, 1.);
+        // Also on the desktop, whose drops come here.
+        UBAiPanel::putPicture(UBAiPanel::pngOf(qvariant_cast<QImage>(pMimeData->imageData())), &pPos);
         return;
     }
 

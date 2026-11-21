@@ -196,7 +196,13 @@ enum class UBOptionIcon
     Checklist,
     Bullets,
     Numbers,
-    Table
+    Table,
+    AiSummary,
+    AiTranslate,
+    AiCreateImage,
+    AiRemoveBackground,
+    AiErase,
+    AiTranscribe
 };
 
 QIcon optionIcon(UBOptionIcon kind);

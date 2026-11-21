@@ -60,6 +60,7 @@
 #include "gui/UBKeyboardPalette.h"
 #include "gui/UBResources.h"
 #include "gui/UBToolOptionsPopup.h"
+#include "gui/UBAiPanel.h"
 #include "desktop/UBDesktopFrame.h"
 
 #include "core/memcheck.h"
@@ -500,6 +501,7 @@ int UBDesktopAnnotationController::toolOf(QAction* action) const
         { mainWindow->actionEmoji, UBStylusTool::Emoji },
         { mainWindow->actionSpotlight, UBStylusTool::Spotlight },
         { mainWindow->actionAttachment, UBStylusTool::Attachment },
+        { mainWindow->actionAi, UBStylusTool::Ai },
     };
 
     return tools.value(action, -1);
@@ -530,6 +532,14 @@ void UBDesktopAnnotationController::toolButtonPressed()
     // The selector lets the clicks through on the desktop: its lasso is for the board.
     if (!UBToolOptionsPopup::hasOptions(tool) || tool == UBStylusTool::Selector)
     {
+        return;
+    }
+
+    // The AI does nothing by itself: its options open at once.
+    if (tool == UBStylusTool::Ai)
+    {
+        mbArrowClicked = true;
+        toolButtonReleased();
         return;
     }
 
@@ -713,6 +723,14 @@ void UBDesktopAnnotationController::updateMask(bool bTransparent)
 
         if (UBApplication::boardController->paletteManager()->addItemPalette()->isVisible()) {
             p.drawRect(UBApplication::boardController->paletteManager()->addItemPalette()->geometry());
+        }
+
+        // The panel of the AI, inside this layer, keeps its clicks.
+        const QRect aiPanel = UBAiPanel::desktopArea();
+
+        if (!aiPanel.isNull())
+        {
+            p.drawRect(aiPanel);
         }
 
 

@@ -73,24 +73,34 @@ public:
     static QStringList defaultServices();
     static QList<Service> services();
 
-    /** @brief The AI button: the menu of the actions, under the mouse. */
-    static void showActions(QWidget* parent);
-
     /** @brief Asks what is needed for the action, exports, and opens the panel. */
     static void startAction(Action action, QWidget* parent);
 
     /** @brief Opens the panel or closes it, without action. */
     static void toggle(QWidget* parent);
 
+    /** @brief Puts a picture over the desktop on the desktop, else on the page, at the center or there. */
+    static void putPicture(const QByteArray& data, const QPointF* position = nullptr);
+    static QByteArray pngOf(const QImage& image);
+
+    /** @brief Puts a text over the desktop on the desktop, else on the page, at the center. */
+    static void putText(const QString& text);
+
+    /** @brief Where the panel is in the layer over the desktop, or nothing. */
+    static QRect desktopArea();
+
     /** @brief Whether this drag comes from the page of an AI, to take its picture rather than its address. */
     static bool isAiDrag(const QMimeData* mimeData);
 
 protected:
     void closeEvent(QCloseEvent* event) override;
+    void showEvent(QShowEvent* event) override;
+    void hideEvent(QHideEvent* event) override;
+    void resizeEvent(QResizeEvent* event) override;
     bool eventFilter(QObject* watched, QEvent* event) override;
 
 private:
-    explicit UBAiPanel(QWidget* parent = nullptr);
+    UBAiPanel(QWidget* parent, bool desktop);
 
     static UBAiPanel* open(QWidget* parent);
     static QWebEngineProfile* profile();
@@ -113,6 +123,7 @@ private:
     QLabel* mInstructionLabel{nullptr};
     QWidget* mEdge{nullptr};
     QTimer* mLimitTimer{nullptr};
+    bool mDesktop{false};
     QString mInstruction;
     QString mFilePath;
     int mLimitMarks{-1};

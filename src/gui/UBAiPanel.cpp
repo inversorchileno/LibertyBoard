@@ -23,6 +23,8 @@
 #include "UBAiPanel.h"
 
 #include <QApplication>
+#include <QBuffer>
+#include <QGuiApplication>
 #include <QClipboard>
 #include <QCloseEvent>
 #include <QComboBox>
@@ -49,6 +51,8 @@
 #include <QTimer>
 #include <QToolButton>
 #include <QVBoxLayout>
+#include <QContextMenuEvent>
+#include <QWebEngineContextMenuRequest>
 #include <QWebEngineDownloadRequest>
 #include <QWebEnginePage>
 #include <QWebEngineProfile>
@@ -63,6 +67,7 @@
 #include "core/UBApplication.h"
 #include "core/UBApplicationController.h"
 #include "core/UBSettings.h"
+#include "desktop/UBDesktopAnnotationController.h"
 #include "domain/UBGraphicsScene.h"
 
 QPointer<UBAiPanel> UBAiPanel::sPanel;
@@ -101,10 +106,40 @@ namespace
             setFocus();
         }
 
+        /**
+         * @brief On the desktop: the screen as it was, shown over the layer
+         * drawn above the desktop, which covers the screen.
+         */
+        AreaPicker(QWidget* layer, QScreen* screen, std::function<void(const QImage&)> picked)
+            : QWidget(layer)
+            , mView(nullptr)
+            , mPicked(std::move(picked))
+        {
+            setAttribute(Qt::WA_DeleteOnClose);
+            setCursor(Qt::CrossCursor);
+            setFocusPolicy(Qt::StrongFocus);
+            mScreenshot = screen->grabWindow(0);
+            mScreenOrigin = screen->geometry().topLeft();
+            setGeometry(layer->rect());
+            show();
+            raise();
+            activateWindow();
+            setFocus();
+        }
+
     protected:
         void paintEvent(QPaintEvent*) override
         {
             QPainter painter(this);
+
+            if (!mScreenshot.isNull())
+            {
+                // Where this layer is on the screen.
+                const QPoint offset = mapToGlobal(QPoint(0, 0)) - mScreenOrigin;
+                const qreal ratio = mScreenshot.devicePixelRatio();
+                painter.drawPixmap(rect(), mScreenshot, QRectF(QPointF(offset) * ratio, QSizeF(size()) * ratio));
+            }
+
             QPainterPath shade;
             shade.addRect(rect());
 
@@ -120,7 +155,9 @@ namespace
             painter.drawRect(mArea.normalized());
 
             // What to do, at the top.
-            const QString help = UBAiPanel::tr("Drag over the part of the page to give to the AI. Escape: cancel.");
+            const QString help = mScreenshot.isNull()
+                                     ? UBAiPanel::tr("Drag over the part of the page to give to the AI. Escape: cancel.")
+                                     : UBAiPanel::tr("Drag over the part of the screen to give to the AI. Escape: cancel.");
             QFont font = painter.font();
             font.setPointSize(13);
             font.setBold(true);
@@ -161,7 +198,19 @@ namespace
 
             // Without the frame and the shade.
             hide();
-            const QImage image = mView->grab(area).toImage();
+            QImage image;
+
+            if (mView)
+            {
+                image = mView->grab(area).toImage();
+            }
+            else
+            {
+                const qreal ratio = mScreenshot.devicePixelRatio();
+                const QPoint onScreen = mapToGlobal(area.topLeft()) - mScreenOrigin;
+                image = mScreenshot.copy(QRectF(QPointF(onScreen) * ratio, QSizeF(area.size()) * ratio).toRect()).toImage();
+            }
+
             const auto picked = mPicked;
             close();
             picked(image);
@@ -177,6 +226,8 @@ namespace
 
     private:
         QWidget* mView;
+        QPixmap mScreenshot;
+        QPoint mScreenOrigin;
         std::function<void(const QImage&)> mPicked;
         QRect mArea;
     };
@@ -302,6 +353,62 @@ namespace
 })()
 )JS";
 
+    /*
+     * The page of the AI, whose right click on a picture or a selected text
+     * also offers to put it on the page, or on the desktop: the picture is
+     * copied by the page itself, as the address of a picture of an AI only
+     * opens with its session.
+     */
+    class AiWebView : public QWebEngineView
+    {
+    public:
+        using QWebEngineView::QWebEngineView;
+
+    protected:
+        void contextMenuEvent(QContextMenuEvent* event) override
+        {
+            QMenu* menu = createStandardContextMenu();
+            QWebEngineContextMenuRequest* request = lastContextMenuRequest();
+            const bool desktop = UBApplication::applicationController->isShowingDesktop();
+            QAction* first = menu->actions().value(0);
+
+            if (request && request->mediaType() == QWebEngineContextMenuRequest::MediaTypeImage)
+            {
+                auto put = new QAction(desktop ? UBAiPanel::tr("Put the picture on the desktop")
+                                               : UBAiPanel::tr("Put the picture on the page"), menu);
+                QObject::connect(put, &QAction::triggered, this, [this]() {
+                    page()->triggerAction(QWebEnginePage::CopyImageToClipboard);
+
+                    // The picture comes to the clipboard a moment later.
+                    QTimer::singleShot(400, this, []() {
+                        const QImage image = QApplication::clipboard()->image();
+
+                        if (!image.isNull())
+                        {
+                            UBAiPanel::putPicture(UBAiPanel::pngOf(image));
+                        }
+                    });
+                });
+                menu->insertAction(first, put);
+                menu->insertSeparator(first);
+            }
+            else if (request && !request->selectedText().trimmed().isEmpty())
+            {
+                const QString text = request->selectedText().trimmed();
+                auto put = new QAction(desktop ? UBAiPanel::tr("Put the text on the desktop")
+                                               : UBAiPanel::tr("Put the text on the page"), menu);
+                QObject::connect(put, &QAction::triggered, this, [text]() { UBAiPanel::putText(text); });
+                menu->insertAction(first, put);
+                menu->insertSeparator(first);
+            }
+
+            // Above the panel, which stays above the desktop.
+            menu->setAttribute(Qt::WA_DeleteOnClose);
+            menu->setWindowFlag(Qt::WindowStaysOnTopHint);
+            menu->popup(event->globalPos());
+        }
+    };
+
     QString jsString(const QString& text)
     {
         QString quoted = text;
@@ -322,10 +429,15 @@ namespace
     }
 }
 
-UBAiPanel::UBAiPanel(QWidget* parent)
-    : QWidget(parent, Qt::Tool | Qt::FramelessWindowHint)
+UBAiPanel::UBAiPanel(QWidget* parent, bool desktop)
+    : QWidget(parent, desktop ? Qt::Widget : Qt::Tool | Qt::FramelessWindowHint)
+    , mDesktop(desktop)
 {
     setAttribute(Qt::WA_DeleteOnClose);
+    // On the desktop, inside the layer drawn over the desktop, which takes
+    // the clicks of the whole screen: a window of its own would not get them.
+    setAttribute(Qt::WA_StyledBackground);
+    setAutoFillBackground(true);
     setObjectName("aiPanel");
     setStyleSheet("QWidget#aiPanel { background: #23262b; border: 1px solid #5a606a; }"
                   "QLabel { color: white; }"
@@ -370,9 +482,23 @@ UBAiPanel::UBAiPanel(QWidget* parent)
         QApplication::clipboard()->setText(mInstruction);
     });
 
-    auto paste = new QPushButton(tr("Paste on the page"), this);
-    paste->setToolTip(tr("Puts on the page what was copied in the AI: a text, or a picture with its right click, Copy image"));
-    connect(paste, &QPushButton::clicked, this, []() {
+    auto paste = new QPushButton(desktop ? tr("Paste on the desktop") : tr("Paste on the page"), this);
+    paste->setToolTip(tr("Puts on the page what was copied in the AI: a text, or a picture with its right click, Copy image. "
+                         "The right click on a picture or a selected text of the AI can also put it there."));
+    connect(paste, &QPushButton::clicked, this, [this]() {
+        const QMimeData* data = QApplication::clipboard()->mimeData();
+
+        // On the desktop, a picture goes over the desktop.
+        if (mDesktop)
+        {
+            if (data && data->hasImage())
+            {
+                putPicture(pngOf(qvariant_cast<QImage>(data->imageData())));
+            }
+
+            return;
+        }
+
         UBApplication::applicationController->showBoard();
         UBApplication::boardController->paste();
     });
@@ -388,7 +514,7 @@ UBAiPanel::UBAiPanel(QWidget* parent)
     mInstructionLabel->setWordWrap(true);
     mInstructionLabel->setContentsMargins(8, 2, 8, 4);
 
-    mPage = new QWebEngineView(this);
+    mPage = new AiWebView(this);
     mPage->setPage(new QWebEnginePage(profile(), mPage));
     connect(mPage, &QWebEngineView::loadFinished, this, [this]() {
         if (!mInstruction.isEmpty() && mLimitMarks < 0)
@@ -429,6 +555,14 @@ UBAiPanel::UBAiPanel(QWidget* parent)
 
     updateFileLabel();
     loadService(current);
+
+    // Made for the board or for the desktop: another one comes with the other mode.
+    connect(UBApplication::applicationController, &UBApplicationController::desktopMode, this, [this](bool desktop) {
+        if (desktop != mDesktop)
+        {
+            QWidget::close();
+        }
+    });
 }
 
 QStringList UBAiPanel::defaultServices()
@@ -506,12 +640,9 @@ void UBAiPanel::downloaded(QWebEngineDownloadRequest* download)
         const QString file = QDir(download->downloadDirectory()).filePath(download->downloadFileName());
         QFile picture(file);
 
-        if (QImageReader(file).canRead() && picture.open(QIODevice::ReadOnly) && UBApplication::boardController->activeScene())
+        if (QImageReader(file).canRead() && picture.open(QIODevice::ReadOnly))
         {
-            UBApplication::applicationController->showBoard();
-            UBBoardView* view = UBApplication::boardController->controlView();
-            const QPointF center = view->mapToScene(view->viewport()->rect().center());
-            UBApplication::boardController->activeScene()->addImage(picture.readAll(), nullptr, center, 1.);
+            putPicture(picture.readAll());
             UBApplication::showMessage(tr("The picture of the AI is on the page; it is also in %1").arg(QDir::toNativeSeparators(file)));
         }
         else
@@ -523,10 +654,27 @@ void UBAiPanel::downloaded(QWebEngineDownloadRequest* download)
 
 UBAiPanel* UBAiPanel::open(QWidget* parent)
 {
+    // On the desktop the panel stays above the desktop; on the board, beside it.
+    const bool desktop = UBApplication::applicationController->isShowingDesktop();
+
+    if (sPanel && sPanel->mDesktop != desktop)
+    {
+        sPanel->close();
+        sPanel.clear();
+    }
+
     if (!sPanel)
     {
-        sPanel = new UBAiPanel(parent ? parent->window() : nullptr);
-        sPanel->placeBeside(parent);
+        QWidget* owner = parent ? parent->window() : nullptr;
+
+        if (desktop)
+        {
+            UBDesktopAnnotationController* controller = UBApplication::applicationController->uninotesController();
+            owner = controller ? controller->drawingView() : owner;
+        }
+
+        sPanel = new UBAiPanel(owner, desktop);
+        sPanel->placeBeside(owner);
     }
 
     sPanel->show();
@@ -546,34 +694,16 @@ void UBAiPanel::toggle(QWidget* parent)
     open(parent);
 }
 
-void UBAiPanel::showActions(QWidget* parent)
-{
-    QMenu menu(parent);
-    const QList<QPair<Action, QString>> actions = {
-        { Action::Summary, tr("Summary") },
-        { Action::Translation, tr("Translation") },
-        { Action::CreateImage, tr("Create an image") },
-        { Action::RemoveBackground, tr("Remove the background") },
-        { Action::GenerativeErase, tr("Generative erasing") },
-        { Action::Transcription, tr("Transcribe an audio") },
-    };
-
-    for (const auto& action : actions)
-    {
-        QAction* item = menu.addAction(action.second);
-        const Action chosen = action.first;
-        connect(item, &QAction::triggered, parent, [chosen, parent]() { startAction(chosen, parent); });
-    }
-
-    menu.addSeparator();
-    QAction* panel = menu.addAction(sPanel ? tr("Close the AI") : tr("Only open the AI"));
-    connect(panel, &QAction::triggered, parent, [parent]() { toggle(parent); });
-
-    menu.exec(QCursor::pos());
-}
-
 void UBAiPanel::startAction(Action action, QWidget* parent)
 {
+    const bool desktop = UBApplication::applicationController->isShowingDesktop();
+
+    // On the desktop there is no page to write a transcription on.
+    if (desktop && action == Action::Transcription)
+    {
+        return;
+    }
+
     // What the AI needs to know, asked before choosing the part.
     QString detail;
     QString from;
@@ -649,6 +779,41 @@ void UBAiPanel::startAction(Action action, QWidget* parent)
         return;
     }
 
+    // On the desktop, a part of the screen, chosen once the options are gone.
+    if (desktop)
+    {
+        QPointer<QWidget> owner = parent;
+        UBDesktopAnnotationController* desktopController = UBApplication::applicationController->uninotesController();
+        QPointer<QWidget> layer = desktopController ? desktopController->drawingView() : nullptr;
+
+        if (!layer)
+        {
+            return;
+        }
+
+        QTimer::singleShot(250, qApp, [instruction, owner, layer]() {
+            if (!layer)
+            {
+                return;
+            }
+
+            QScreen* screen = layer->screen() ? layer->screen() : QGuiApplication::primaryScreen();
+
+            new AreaPicker(layer, screen, [instruction, owner](const QImage& image) {
+                const QString file = workFolder() + "/LibertyBoard-selection.png";
+
+                if (!image.save(file, "PNG"))
+                {
+                    QMessageBox::warning(owner, tr("AI"), tr("The file for the AI could not be made."));
+                    return;
+                }
+
+                open(owner)->setWork(instruction, file);
+            });
+        });
+        return;
+    }
+
     // A part of the page, or all of it.
     const bool picture = action == Action::RemoveBackground || action == Action::GenerativeErase;
     QMessageBox question(QMessageBox::Question, tr("AI"), tr("What should be given to the AI?"), QMessageBox::Cancel, parent);
@@ -709,15 +874,18 @@ void UBAiPanel::updateFileLabel()
     if (mInstruction.isEmpty())
     {
         mFile->hide();
-        mInstructionLabel->setText(tr("Drag a text or a picture of the AI to the page, or copy it and use Paste on the page."));
+        mInstructionLabel->setText(mDesktop ? tr("Right click on a picture or a text of the AI to put it on the desktop.")
+                                            : tr("Drag a text or a picture of the AI to the page, or right click on it to put it there."));
         return;
     }
 
     mFile->setVisible(!mFilePath.isEmpty());
     mFile->setText(QStringLiteral("📎 ") + QFileInfo(mFilePath).fileName());
     mFile->setToolTip(tr("If the AI did not take the file, drag it from here to the AI"));
-    mInstructionLabel->setText(tr("The instruction is written in the AI and also copied: Ctrl+V pastes it. "
-                                  "Drag the answer to the page, or use Paste on the page."));
+    mInstructionLabel->setText(mDesktop ? tr("The instruction is written in the AI and also copied: Ctrl+V pastes it. "
+                                             "Right click on the answer to put it on the desktop.")
+                                        : tr("The instruction is written in the AI and also copied: Ctrl+V pastes it. "
+                                             "Drag the answer to the page, or right click on it to put it there."));
     mInstructionLabel->setToolTip(mInstruction);
 }
 
@@ -812,6 +980,66 @@ void UBAiPanel::offerOtherService()
     }
 }
 
+QByteArray UBAiPanel::pngOf(const QImage& image)
+{
+    QByteArray png;
+    QBuffer buffer(&png);
+    buffer.open(QIODevice::WriteOnly);
+    image.save(&buffer, "PNG");
+    return png;
+}
+
+void UBAiPanel::putPicture(const QByteArray& data, const QPointF* position)
+{
+    // Over the desktop on the desktop, else on the page of the board; it
+    // can then be moved and made larger or smaller like any picture.
+    std::shared_ptr<UBGraphicsScene> scene;
+    UBBoardView* view = nullptr;
+
+    if (UBApplication::applicationController->isShowingDesktop())
+    {
+        UBDesktopAnnotationController* desktop = UBApplication::applicationController->uninotesController();
+        scene = desktop ? desktop->drawingScene() : nullptr;
+        view = desktop ? desktop->drawingView() : nullptr;
+    }
+    else
+    {
+        scene = UBApplication::boardController->activeScene();
+        view = UBApplication::boardController->controlView();
+    }
+
+    if (!scene || !view)
+    {
+        return;
+    }
+
+    const QPointF center = position ? *position : view->mapToScene(view->viewport()->rect().center());
+    scene->addImage(data, nullptr, center, 1.);
+}
+
+void UBAiPanel::putText(const QString& text)
+{
+    std::shared_ptr<UBGraphicsScene> scene;
+    UBBoardView* view = nullptr;
+
+    if (UBApplication::applicationController->isShowingDesktop())
+    {
+        UBDesktopAnnotationController* desktop = UBApplication::applicationController->uninotesController();
+        scene = desktop ? desktop->drawingScene() : nullptr;
+        view = desktop ? desktop->drawingView() : nullptr;
+    }
+    else
+    {
+        scene = UBApplication::boardController->activeScene();
+        view = UBApplication::boardController->controlView();
+    }
+
+    if (scene && view)
+    {
+        scene->addTextWithFont(text, view->mapToScene(view->viewport()->rect().center()));
+    }
+}
+
 bool UBAiPanel::isAiDrag(const QMimeData* mimeData)
 {
     if (!mimeData->hasImage())
@@ -865,6 +1093,16 @@ bool UBAiPanel::isAiDrag(const QMimeData* mimeData)
 
 void UBAiPanel::placeBeside(QWidget* beside)
 {
+    // Inside the layer of the desktop: at its right, in its coordinates.
+    if (mDesktop && parentWidget())
+    {
+        const QRect area = parentWidget()->rect();
+        const int width = qBound(420, area.width() / 4, 700);
+        const int top = qMin(110, area.height() / 8);
+        setGeometry(area.right() - width - 110, top, width, area.height() - top - 120);
+        return;
+    }
+
     // A column at the right of the window, or of the screen.
     QRect area = beside ? beside->window()->geometry() : QRect();
     QScreen* screen = beside ? beside->screen() : nullptr;
@@ -933,6 +1171,51 @@ bool UBAiPanel::eventFilter(QObject* watched, QEvent* event)
     }
 
     return QWidget::eventFilter(watched, event);
+}
+
+QRect UBAiPanel::desktopArea()
+{
+    return sPanel && sPanel->mDesktop && sPanel->isVisible() ? sPanel->geometry() : QRect();
+}
+
+static void refreshDesktopMask()
+{
+    // The layer over the desktop lets the clicks through except where it
+    // shows something: the panel is part of it.
+    if (UBDesktopAnnotationController* controller = UBApplication::applicationController->uninotesController())
+    {
+        QTimer::singleShot(0, controller, [controller]() { QMetaObject::invokeMethod(controller, "refreshMask"); });
+    }
+}
+
+void UBAiPanel::showEvent(QShowEvent* event)
+{
+    QWidget::showEvent(event);
+
+    if (mDesktop)
+    {
+        refreshDesktopMask();
+    }
+}
+
+void UBAiPanel::hideEvent(QHideEvent* event)
+{
+    QWidget::hideEvent(event);
+
+    if (mDesktop)
+    {
+        refreshDesktopMask();
+    }
+}
+
+void UBAiPanel::resizeEvent(QResizeEvent* event)
+{
+    QWidget::resizeEvent(event);
+
+    if (mDesktop)
+    {
+        refreshDesktopMask();
+    }
 }
 
 void UBAiPanel::closeEvent(QCloseEvent* event)
