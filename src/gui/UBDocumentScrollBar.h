@@ -50,11 +50,14 @@ public:
 private:
     void updateFromView();
     void showPosition(int value);
+    void showPendingPosition();
     void checkPointer();
     bool isUseful() const;
 
     UBBoardView* mView{nullptr};
     QTimer* mPointerTimer{nullptr};
     QTimer* mHideTimer{nullptr};
+    QTimer* mShowTimer{nullptr};
+    int mPendingValue{0};
     bool mUpdating{false};
 };

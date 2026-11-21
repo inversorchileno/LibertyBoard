@@ -2890,7 +2890,12 @@ void UBBoardView::showDocumentPosition(qreal position)
     const int index = qBound(0, int(position), document->pageCount() - 1);
     const qreal fraction = qBound(0.0, position - index, 1.0);
     const qreal scale = transform().m11();
-    const qreal centerX = mapToScene(viewport()->rect().center()).x();
+
+    // Only the height changes: the place across stays as it is. Centering
+    // on the middle read from the view moved the page half a pixel each
+    // time, and a drag of the bar, with its many steps, took it off the
+    // screen.
+    const int across = horizontalScrollBar()->value();
 
     if (index != mController->activeSceneIndex())
     {
@@ -2899,13 +2904,19 @@ void UBBoardView::showDocumentPosition(qreal position)
 
     const QRectF page = scene()->normalizedSceneRect();
     const qreal visibleHeight = viewport()->height() / transform().m11();
-    const QPointF middle(centerX, page.top() + fraction * page.height() + visibleHeight / 2);
-    centerOn(middle);
+    const qreal top = page.top() + fraction * page.height();
+
+    auto place = [this, top, visibleHeight, across]() {
+        centerOn(QPointF(mapToScene(viewport()->rect().center()).x(), top + visibleHeight / 2));
+        horizontalScrollBar()->setValue(across);
+    };
+
+    place();
 
     // Showing a page restores its saved view once the events are processed:
     // the place is set again after that.
-    QTimer::singleShot(0, this, [this, middle]() {
-        centerOn(middle);
+    QTimer::singleShot(0, this, [this, place]() {
+        place();
         UBApplication::applicationController->adjustDisplayView();
     });
 }

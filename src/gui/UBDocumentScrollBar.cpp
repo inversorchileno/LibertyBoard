@@ -50,6 +50,11 @@ UBDocumentScrollBar::UBDocumentScrollBar(UBBoardView* view, QWidget* parent)
     connect(UBApplication::boardController, &UBBoardController::activeSceneChanged, this, &UBDocumentScrollBar::updateFromView);
     connect(this, &QScrollBar::valueChanged, this, &UBDocumentScrollBar::showPosition);
 
+    mShowTimer = new QTimer(this);
+    mShowTimer->setSingleShot(true);
+    mShowTimer->setInterval(30);
+    connect(mShowTimer, &QTimer::timeout, this, &UBDocumentScrollBar::showPendingPosition);
+
     // The pointer is followed, including over the palettes, without the
     // events of the board, which the drawing tools take.
     mPointerTimer = new QTimer(this);
@@ -117,8 +122,20 @@ void UBDocumentScrollBar::showPosition(int value)
         return;
     }
 
+    // A drag gives many values in a row: the board follows the last one,
+    // a moment later, rather than changing of page for each of them.
+    mPendingValue = value;
+
+    if (!mShowTimer->isActive())
+    {
+        mShowTimer->start();
+    }
+}
+
+void UBDocumentScrollBar::showPendingPosition()
+{
     mUpdating = true;
-    mView->showDocumentPosition(qreal(value) / sUnitsPerPage);
+    mView->showDocumentPosition(qreal(mPendingValue) / sUnitsPerPage);
     mUpdating = false;
 }
 
