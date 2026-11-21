@@ -112,12 +112,16 @@ jobs:
       fail-fast: false
       matrix:
         include:
+          # Homebrew gives ready Qt and libraries for Apple chips.
           - runner: macos-15
             name: apple-silicon
+            qt: brew
+          # It no longer does for Intel: the official Qt, and the rest by Homebrew.
           - runner: macos-15-intel
             name: intel
+            qt: official
     runs-on: ${{ matrix.runner }}
-    timeout-minutes: 120
+    timeout-minutes: 300
 
     steps:
       - name: Checkout LibertyBoard
@@ -131,17 +135,40 @@ jobs:
           echo "LIBERTYBOARD_BUILD=${number}" >> "$GITHUB_ENV"
           echo "Build number: ${number:-none}"
 
-      - name: Install the libraries
+      - name: Install the libraries (Homebrew)
+        if: matrix.qt == 'brew'
         run: |
           brew update >/dev/null
           brew install qt poppler quazip ffmpeg pkgconf ninja openssl@3 || true
           brew list --versions qt poppler quazip ffmpeg
+          echo "QT_DIR=$(brew --prefix qt)" >> "$GITHUB_ENV"
+          echo "PREFIXES=$(brew --prefix qt);$(brew --prefix quazip);$(brew --prefix poppler)" >> "$GITHUB_ENV"
+
+      - name: Install the libraries (official Qt)
+        if: matrix.qt == 'official'
+        run: |
+          python3 -m pip install --break-system-packages aqtinstall
+          python3 -m aqt install-qt mac desktop 6.8.3 clang_64 -O "$HOME/Qt" \
+            -m qtwebengine qtwebchannel qtpositioning qtmultimedia qtspeech qt5compat qtimageformats qtpdf
+          qt="$HOME/Qt/6.8.3/macos"
+          brew update >/dev/null
+          brew install poppler ffmpeg pkgconf ninja || true
+          brew list --versions poppler ffmpeg
+          # QuaZip, built with this Qt.
+          git clone --depth 1 --branch v1.4 https://github.com/stachenov/quazip.git "$RUNNER_TEMP/quazip"
+          cmake -S "$RUNNER_TEMP/quazip" -B "$RUNNER_TEMP/quazip-build" -G Ninja -DCMAKE_BUILD_TYPE=Release \
+            -DQUAZIP_QT_MAJOR_VERSION=6 -DQUAZIP_BZIP2=OFF -DBUILD_SHARED_LIBS=ON \
+            -DCMAKE_PREFIX_PATH="$qt" -DCMAKE_INSTALL_PREFIX="$HOME/quazip"
+          cmake --build "$RUNNER_TEMP/quazip-build"
+          cmake --install "$RUNNER_TEMP/quazip-build"
+          echo "QT_DIR=$qt" >> "$GITHUB_ENV"
+          echo "PREFIXES=$qt;$HOME/quazip;$(brew --prefix poppler)" >> "$GITHUB_ENV"
+          echo "DYLD_LIBRARY_PATH=$HOME/quazip/lib" >> "$GITHUB_ENV"
 
       - name: Build
         run: |
           cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DQT_VERSION=6 \
-            -DCMAKE_PREFIX_PATH="$(brew --prefix qt);$(brew --prefix quazip);$(brew --prefix poppler)" \
-            -DCMAKE_OSX_DEPLOYMENT_TARGET=12.0
+            -DCMAKE_PREFIX_PATH="$PREFIXES" -DCMAKE_OSX_DEPLOYMENT_TARGET=12.0
           cmake --build build
 
       - name: Make the application and the disk image
@@ -162,7 +189,7 @@ jobs:
             sips -z $double $double docs/images/libertyboard-logo.png --out icon.iconset/icon_${size}x${size}@2x.png >/dev/null
           done
           iconutil -c icns icon.iconset -o "$resources/LibertyBoard.icns"
-          "$(brew --prefix qt)/bin/macdeployqt" "$app" -verbose=1
+          "$QT_DIR/bin/macdeployqt" "$app" -verbose=1 -libpath="$HOME/quazip/lib"
           codesign --force --deep --sign - "$app"
           mkdir dmg
           cp -R "$app" dmg/
