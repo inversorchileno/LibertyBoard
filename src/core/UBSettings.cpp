@@ -357,6 +357,8 @@ void UBSettings::init()
     shapeKind = new UBSetting(this, "Board", "LibertyBoardShapeKind", 0);
     hiddenBoardTools = new UBSetting(this, "Board", "LibertyBoardHiddenBoardTools", QStringList());
     hiddenDesktopTools = new UBSetting(this, "Board", "LibertyBoardHiddenDesktopTools", QStringList());
+    boardToolOrder = new UBSetting(this, "Board", "LibertyBoardBoardToolOrder", QStringList());
+    desktopToolOrder = new UBSetting(this, "Board", "LibertyBoardDesktopToolOrder", QStringList());
     aiServices = new UBSetting(this, "Board", "LibertyBoardAiServices",
                                QStringList({ "ChatGPT|https://chatgpt.com/", "Claude|https://claude.ai/new",
                                              "Gemini|https://gemini.google.com/app", "Copilot|https://copilot.microsoft.com/",

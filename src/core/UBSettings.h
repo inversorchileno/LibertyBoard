@@ -370,6 +370,8 @@ class UBSettings : public QObject
         UBSetting* weekStartsOnSunday; // the calendars of the templates start their weeks on Sunday
         UBSetting* hiddenBoardTools;   // the buttons taken out of the board palette, by the names of their actions
         UBSetting* hiddenDesktopTools; // the same for the desktop palette
+        UBSetting* boardToolOrder;     // the order of the buttons of the board palette, by the names of their actions
+        UBSetting* desktopToolOrder;   // the same for the desktop palette
         UBSetting* aiServices;         // the AI of the AI panel, as "name|address"
         UBSetting* aiCurrentService;   // the index of the AI shown last
         UBSetting* shapeKind;          // the shape drawn by the shapes tool (UBShapeKind)

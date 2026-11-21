@@ -23,6 +23,12 @@
 #include "UBToolbarChoice.h"
 
 #include <QAction>
+#include <QDialog>
+#include <QDialogButtonBox>
+#include <QListWidget>
+#include <QPushButton>
+#include <QTabWidget>
+#include <QVBoxLayout>
 #include <QCheckBox>
 #include <QHBoxLayout>
 #include <QLabel>
@@ -49,6 +55,12 @@ namespace
     {
         static QMap<UBToolbarChoice::Palette, Registered> registered;
         return registered;
+    }
+
+    UBSetting* orderSetting(UBToolbarChoice::Palette palette)
+    {
+        return palette == UBToolbarChoice::Palette::Board ? UBSettings::settings()->boardToolOrder
+                                                           : UBSettings::settings()->desktopToolOrder;
     }
 
     UBSetting* hiddenSetting(UBToolbarChoice::Palette palette)
@@ -182,6 +194,7 @@ void UBToolbarChoice::setShown(Palette palette, QAction* action, bool shown)
     }
 
     hiddenSetting(palette)->set(hidden);
+    UBSettings::settings()->save();
     apply(palette);
 }
 
@@ -205,6 +218,183 @@ void UBToolbarChoice::apply(Palette palette)
     }
 
     registered.palette->setHiddenActions(hidden);
+    registered.palette->setOrder(orderedActions(palette));
+}
+
+QList<QAction*> UBToolbarChoice::orderedActions(Palette palette)
+{
+    const QList<QAction*> choosable = palettes().value(palette).choosable;
+    const QStringList order = orderSetting(palette)->get().toStringList();
+    QList<QAction*> ordered;
+
+    for (const QString& name : order)
+    {
+        for (QAction* action : choosable)
+        {
+            if (action->objectName() == name && !ordered.contains(action))
+            {
+                ordered << action;
+            }
+        }
+    }
+
+    // The buttons not yet in the order, as new ones, where they come.
+    for (int i = 0; i < choosable.size(); ++i)
+    {
+        if (!ordered.contains(choosable.at(i)))
+        {
+            ordered.insert(qMin(i, ordered.size()), choosable.at(i));
+        }
+    }
+
+    return ordered;
+}
+
+void UBToolbarChoice::setShownOrder(Palette palette, const QList<QAction*>& shownOrder)
+{
+    // The places of the buttons shown take the new order; the hidden
+    // buttons stay where they were, for when they are shown again.
+    QList<QAction*> all = orderedActions(palette);
+    int next = 0;
+
+    for (int i = 0; i < all.size() && next < shownOrder.size(); ++i)
+    {
+        if (shownOrder.contains(all.at(i)))
+        {
+            all[i] = shownOrder.at(next++);
+        }
+    }
+
+    QStringList names;
+
+    for (QAction* action : std::as_const(all))
+    {
+        names << action->objectName();
+    }
+
+    orderSetting(palette)->set(names);
+    UBSettings::settings()->save();
+    apply(palette);
+}
+
+void UBToolbarChoice::openOrderWindow(QWidget* parent)
+{
+    QDialog dialog(parent);
+    dialog.setWindowTitle(tr("Move items"));
+    dialog.resize(440, 640);
+
+    auto layout = new QVBoxLayout(&dialog);
+    auto help = new QLabel(tr("Drag the tools up or down, or use the buttons. Only the tools shown in the palette are listed."), &dialog);
+    help->setWordWrap(true);
+    layout->addWidget(help);
+
+    auto tabs = new QTabWidget(&dialog);
+    layout->addWidget(tabs, 1);
+
+    QMap<Palette, QListWidget*> lists;
+
+    for (const auto& section : { qMakePair(Palette::Board, tr("Board / PDF")), qMakePair(Palette::Desktop, tr("Desktop")) })
+    {
+        const Palette palette = section.first;
+        auto page = new QWidget(tabs);
+        auto pageLayout = new QVBoxLayout(page);
+
+        // On the desktop, the button back to the board stays at the top.
+        if (palette == Palette::Desktop)
+        {
+            auto fixed = new QLabel(tr("Back to the board: always first"), page);
+            fixed->setStyleSheet("QLabel { color: #6b7383; font-style: italic; padding: 4px 6px; border: 1px dashed #b8bec8; }");
+            pageLayout->addWidget(fixed);
+        }
+
+        auto list = new QListWidget(page);
+        list->setDragDropMode(QAbstractItemView::InternalMove);
+        list->setDefaultDropAction(Qt::MoveAction);
+        list->setIconSize(QSize(28, 28));
+        list->setSpacing(1);
+
+        for (QAction* action : orderedActions(palette))
+        {
+            if (isShown(palette, action))
+            {
+                auto item = new QListWidgetItem(action->icon(), action->text(), list);
+                item->setData(Qt::UserRole, QVariant::fromValue(static_cast<QObject*>(action)));
+            }
+        }
+
+        pageLayout->addWidget(list, 1);
+
+        auto buttons = new QHBoxLayout();
+        auto up = new QPushButton(tr("Up"), page);
+        auto down = new QPushButton(tr("Down"), page);
+        auto original = new QPushButton(tr("Original order"), page);
+        buttons->addWidget(up);
+        buttons->addWidget(down);
+        buttons->addStretch(1);
+        buttons->addWidget(original);
+        pageLayout->addLayout(buttons);
+
+        auto move = [list](int step) {
+            const int row = list->currentRow();
+
+            if (row < 0 || row + step < 0 || row + step >= list->count())
+            {
+                return;
+            }
+
+            QListWidgetItem* item = list->takeItem(row);
+            list->insertItem(row + step, item);
+            list->setCurrentRow(row + step);
+        };
+
+        QObject::connect(up, &QPushButton::clicked, list, [move]() { move(-1); });
+        QObject::connect(down, &QPushButton::clicked, list, [move]() { move(1); });
+        QObject::connect(original, &QPushButton::clicked, list, [list, palette]() {
+            // The order of the palette as it comes, for the tools shown.
+            QList<QListWidgetItem*> items;
+
+            while (list->count())
+            {
+                items << list->takeItem(0);
+            }
+
+            for (QAction* action : palettes().value(palette).choosable)
+            {
+                for (QListWidgetItem* item : std::as_const(items))
+                {
+                    if (item->data(Qt::UserRole).value<QObject*>() == action)
+                    {
+                        list->addItem(item);
+                    }
+                }
+            }
+        });
+
+        tabs->addTab(page, section.second);
+        lists[palette] = list;
+    }
+
+    auto buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, &dialog);
+    layout->addWidget(buttons);
+    QObject::connect(buttons, &QDialogButtonBox::accepted, &dialog, &QDialog::accept);
+    QObject::connect(buttons, &QDialogButtonBox::rejected, &dialog, &QDialog::reject);
+
+    if (dialog.exec() != QDialog::Accepted)
+    {
+        return;
+    }
+
+    for (auto it = lists.cbegin(); it != lists.cend(); ++it)
+    {
+        QList<QAction*> order;
+
+        for (int i = 0; i < it.value()->count(); ++i)
+        {
+            order << qobject_cast<QAction*>(it.value()->item(i)->data(Qt::UserRole).value<QObject*>());
+        }
+
+        setShownOrder(it.key(), order);
+    }
 }
 
 void UBToolbarChoice::fillToolsMenu(QMenu* menu)
@@ -242,7 +432,7 @@ void UBToolbarChoice::fillCustomizeMenu(QMenu* menu)
         QMenu* sub = menu->addMenu(section.second);
         sub->installEventFilter(new KeepMenuOpen(sub));
 
-        for (QAction* tool : palettes().value(palette).choosable)
+        for (QAction* tool : orderedActions(palette))
         {
             // The box at the left shows whether the button is shown, its
             // icon at the right which button it is.
@@ -254,4 +444,9 @@ void UBToolbarChoice::fillCustomizeMenu(QMenu* menu)
             sub->addAction(item);
         }
     }
+
+    // The order of the buttons, in a window.
+    menu->addSeparator();
+    QAction* move = menu->addAction(tr("Move items..."));
+    QObject::connect(move, &QAction::triggered, menu, [menu]() { openOrderWindow(menu->parentWidget() ? menu->parentWidget()->window() : nullptr); });
 }

@@ -89,6 +89,8 @@ void UBActionPalette::setActions(QList<QAction*> actions)
         addAction(action);
     }
 
+    // Also when the palette makes its buttons again.
+    applyOrder();
     actionChanged();
 }
 
@@ -301,6 +303,88 @@ void UBActionPalette::setHiddenActions(const QList<QAction*>& hidden)
     mHiddenActions = hidden;
     actionChanged();
     adjustSizeAndPosition();
+}
+
+void UBActionPalette::setOrder(const QList<QAction*>& order)
+{
+    mOrder = order;
+    applyOrder();
+    adjustSizeAndPosition();
+}
+
+void UBActionPalette::applyOrder()
+{
+    auto box = qobject_cast<QBoxLayout*>(layout());
+
+    if (!box || mOrder.isEmpty())
+    {
+        return;
+    }
+
+    // The places of the ordered buttons, and the buttons in their order.
+    QList<int> places;
+    QList<QAction*> wanted;
+
+    for (int i = 0; i < mActions.size(); ++i)
+    {
+        if (mOrder.contains(mActions.at(i)))
+        {
+            places << i;
+        }
+    }
+
+    for (QAction* action : std::as_const(mOrder))
+    {
+        if (mActions.contains(action))
+        {
+            wanted << action;
+        }
+    }
+
+    if (places.size() != wanted.size())
+    {
+        return;
+    }
+
+    QList<QAction*> actions = mActions;
+
+    for (int k = 0; k < places.size(); ++k)
+    {
+        actions[places.at(k)] = wanted.at(k);
+    }
+
+    if (actions == mActions)
+    {
+        return;
+    }
+
+    // The buttons leave the layout, then come back in the new order, at
+    // the same places of the layout.
+    QList<int> layoutPlaces;
+
+    for (UBActionPaletteButton* button : std::as_const(mButtons))
+    {
+        layoutPlaces << box->indexOf(button);
+    }
+
+    std::sort(layoutPlaces.begin(), layoutPlaces.end());
+
+    for (UBActionPaletteButton* button : std::as_const(mButtons))
+    {
+        box->removeWidget(button);
+    }
+
+    QList<UBActionPaletteButton*> buttons;
+
+    for (int i = 0; i < actions.size(); ++i)
+    {
+        UBActionPaletteButton* button = mMapActionToButton.value(actions.at(i));
+        buttons << button;
+        box->insertWidget(layoutPlaces.value(i, box->count()), button);
+    }
+
+    mActions = actions;
+    mButtons = buttons;
 }
 
 void UBActionPalette::clearLayout()

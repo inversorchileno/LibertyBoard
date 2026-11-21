@@ -57,7 +57,16 @@ public:
     /** @brief The actions of the buttons of a palette the user may take out. */
     static QList<QAction*> choosableActions(Palette palette);
 
-    /** @brief Shows on the palette the buttons the user chose. */
+    /** @brief The same actions, in the order chosen by the user. */
+    static QList<QAction*> orderedActions(Palette palette);
+
+    /**
+     * @brief Move items: a window with a tab for each palette, where the
+     * buttons shown are put in the order wanted.
+     */
+    static void openOrderWindow(QWidget* parent);
+
+    /** @brief Shows on the palette the buttons the user chose, in their order. */
     static void apply(Palette palette);
 
     /** @brief Fills the Tools menu: every tool of the board and of the desktop. */
@@ -72,4 +81,7 @@ public:
 private:
     static bool isShown(Palette palette, QAction* action);
     static void setShown(Palette palette, QAction* action, bool shown);
+
+    /** @brief The new order of the buttons shown; those hidden keep their places. */
+    static void setShownOrder(Palette palette, const QList<QAction*>& shownOrder);
 };

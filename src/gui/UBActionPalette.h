@@ -83,6 +83,12 @@ class UBActionPalette : public UBFloatingPalette
          */
         void setHiddenActions(const QList<QAction*>& hidden);
 
+        /**
+         * @brief The order of some buttons: they take, in this order, the
+         * places that they have among the buttons; the others stay.
+         */
+        void setOrder(const QList<QAction*>& order);
+
     public slots:
         void close();
 
@@ -111,6 +117,9 @@ class UBActionPalette : public UBFloatingPalette
         QList<QAction*> mActions;
         QMap<QAction*, UBActionPaletteButton*> mMapActionToButton;
         QList<QAction*> mHiddenActions;
+        QList<QAction*> mOrder;
+
+        void applyOrder();
 
         bool mIsClosable;
         Qt::ToolButtonStyle mToolButtonStyle;
