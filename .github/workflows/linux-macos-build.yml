@@ -116,12 +116,12 @@ jobs:
           - runner: macos-15
             name: apple-silicon
             qt: brew
-          # It no longer does for Intel: the official Qt, and the rest by Homebrew.
+          # It no longer does for Intel: the official Qt, and the rest by conda-forge.
           - runner: macos-15-intel
             name: intel
             qt: official
     runs-on: ${{ matrix.runner }}
-    timeout-minutes: 300
+    timeout-minutes: 150
 
     steps:
       - name: Checkout LibertyBoard
@@ -136,24 +136,30 @@ jobs:
           echo "Build number: ${number:-none}"
 
       - name: Install the libraries (Homebrew)
+        timeout-minutes: 45
         if: matrix.qt == 'brew'
         run: |
           brew update >/dev/null
           brew install qt ffmpeg pkgconf ninja openssl@3 freetype fontconfig jpeg-turbo libpng openjpeg little-cms2 || true
           brew list --versions qt ffmpeg
           echo "QT_DIR=$(brew --prefix qt)" >> "$GITHUB_ENV"
+          echo "DEPS=$(brew --prefix)" >> "$GITHUB_ENV"
 
       - name: Install the libraries (official Qt)
+        timeout-minutes: 45
         if: matrix.qt == 'official'
         run: |
           python3 -m pip install --break-system-packages aqtinstall
           python3 -m aqt install-qt mac desktop 6.8.3 clang_64 -O "$HOME/Qt" \
             -m qtwebengine qtwebchannel qtpositioning qtmultimedia qtspeech qt5compat qtimageformats qtpdf
           qt="$HOME/Qt/6.8.3/macos"
-          brew update >/dev/null
-          brew install ffmpeg pkgconf ninja freetype fontconfig jpeg-turbo libpng openjpeg little-cms2 || true
-          brew list --versions ffmpeg
+          # Homebrew builds everything from source on Intel Macs: conda-forge has it ready.
+          curl -sSL https://micro.mamba.pm/api/micromamba/osx-64/latest | tar -xj -C "$HOME" bin/micromamba
+          "$HOME/bin/micromamba" create -y -p "$HOME/deps" -c conda-forge \
+            ffmpeg freetype fontconfig libjpeg-turbo libpng openjpeg lcms2 zlib pkg-config ninja
+          echo "$HOME/deps/bin" >> "$GITHUB_PATH"
           echo "QT_DIR=$qt" >> "$GITHUB_ENV"
+          echo "DEPS=$HOME/deps" >> "$GITHUB_ENV"
 
       - name: Build QuaZip
         run: |
@@ -167,13 +173,14 @@ jobs:
           cmake --install "$RUNNER_TEMP/quazip-build"
 
       - name: Build poppler
+        timeout-minutes: 45
         run: |
           # The version of Linux: the one of Homebrew has another interface.
           curl -sSL -o "$RUNNER_TEMP/poppler.tar.xz" https://poppler.freedesktop.org/poppler-24.02.0.tar.xz
           tar xf "$RUNNER_TEMP/poppler.tar.xz" -C "$RUNNER_TEMP"
           cmake -S "$RUNNER_TEMP/poppler-24.02.0" -B "$RUNNER_TEMP/poppler-build" -G Ninja -DCMAKE_BUILD_TYPE=Release \
             -DCMAKE_INSTALL_PREFIX="$HOME/poppler" -DCMAKE_INSTALL_NAME_DIR="$HOME/poppler/lib" \
-            -DCMAKE_PREFIX_PATH="$(brew --prefix)" -DCMAKE_OSX_DEPLOYMENT_TARGET=12.0 \
+            -DCMAKE_PREFIX_PATH="$DEPS" -DCMAKE_OSX_DEPLOYMENT_TARGET=12.0 \
             -DENABLE_UNSTABLE_API_ABI_HEADERS=ON -DENABLE_CPP=ON -DENABLE_QT5=OFF -DENABLE_QT6=OFF \
             -DENABLE_GLIB=OFF -DENABLE_GOBJECT_INTROSPECTION=OFF -DENABLE_UTILS=OFF -DENABLE_BOOST=OFF \
             -DENABLE_NSS3=OFF -DENABLE_GPGME=OFF -DENABLE_LIBCURL=OFF -DENABLE_LIBTIFF=OFF \
@@ -181,9 +188,9 @@ jobs:
             -DBUILD_MANUAL_TESTS=OFF -DRUN_GPERF_IF_PRESENT=OFF
           cmake --build "$RUNNER_TEMP/poppler-build"
           cmake --install "$RUNNER_TEMP/poppler-build"
-          echo "PREFIXES=$QT_DIR;$HOME/quazip;$HOME/poppler" >> "$GITHUB_ENV"
-          echo "DYLD_LIBRARY_PATH=$HOME/quazip/lib:$HOME/poppler/lib" >> "$GITHUB_ENV"
-          echo "PKG_CONFIG_PATH=$HOME/poppler/lib/pkgconfig" >> "$GITHUB_ENV"
+          echo "PREFIXES=$QT_DIR;$HOME/quazip;$HOME/poppler;$DEPS" >> "$GITHUB_ENV"
+          echo "DYLD_LIBRARY_PATH=$HOME/quazip/lib:$HOME/poppler/lib:$DEPS/lib" >> "$GITHUB_ENV"
+          echo "PKG_CONFIG_PATH=$HOME/poppler/lib/pkgconfig:$DEPS/lib/pkgconfig" >> "$GITHUB_ENV"
 
       - name: Build
         run: |
@@ -211,7 +218,7 @@ jobs:
             sips -z $double $double docs/images/libertyboard-logo.png --out icon.iconset/icon_${size}x${size}@2x.png >/dev/null
           done
           iconutil -c icns icon.iconset -o "$resources/LibertyBoard.icns"
-          "$QT_DIR/bin/macdeployqt" "$app" -verbose=1 -libpath="$HOME/quazip/lib" -libpath="$HOME/poppler/lib"
+          "$QT_DIR/bin/macdeployqt" "$app" -verbose=1 -libpath="$HOME/quazip/lib" -libpath="$HOME/poppler/lib" -libpath="$DEPS/lib"
           codesign --force --deep --sign - "$app"
           mkdir dmg
           cp -R "$app" dmg/
