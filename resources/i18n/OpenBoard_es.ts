@@ -4131,7 +4131,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
 <context>
     <name>UBKeyCatcher</name>
     <message>
-        <location filename="../../src/gui/UBShortcutsDialog.cpp" line="+727"/>
+        <location filename="../../src/gui/UBShortcutsDialog.cpp" line="+726"/>
         <source>Click here and press the keys of the new shortcut</source>
         <translation>Haz clic aquí y presiona las teclas del nuevo atajo</translation>
     </message>
@@ -4323,7 +4323,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+563"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+621"/>
         <source>Hide or show the toolbar</source>
         <translation>Ocultar o mostrar la barra</translation>
     </message>
@@ -4340,7 +4340,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation type="vanished">Tamaño de página</translation>
     </message>
     <message>
-        <location line="-423"/>
+        <location line="-479"/>
         <location line="+92"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -4379,8 +4379,8 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>Cerrar documento</translation>
     </message>
     <message>
-        <location line="-119"/>
-        <location line="+162"/>
+        <location line="-118"/>
+        <location line="+161"/>
         <source>Page/canvas size</source>
         <translation>Tamaño página/lienzo</translation>
     </message>
@@ -4506,9 +4506,40 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>&amp;Personalización</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+10"/>
         <source>Shortcuts</source>
         <translation>Atajos</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <location line="+31"/>
+        <source>Creator</source>
+        <translation>Creador</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>LibertyBoard was created by Luis, known on YouTube as «Inversor Chileno».</source>
+        <translation>LibertyBoard fue creado por Luis, conocido en YouTube como «Inversor Chileno».</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>It was born from a simple idea: to have in a single program what used to be spread over many different tools. Taking OpenBoard, a free digital whiteboard, as a base, I added the reading and annotation of PDFs, templates, shapes, stamps, emojis and GIFs, reading aloud and dictation, artificial intelligence and much more.</source>
+        <translation>Nació de una idea simple: tener en un solo programa lo que antes estaba repartido en muchas herramientas distintas. Tomando como base OpenBoard, una pizarra digital libre, sumé la lectura y anotación de PDF, plantillas, formas, sellos, emojis y GIFs, lectura en voz alta y dictado, inteligencia artificial y mucho más.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>It is for students, teachers, workers, content creators and, in general, for everyone who wants a multifunctional PDF and whiteboard tool.</source>
+        <translation>Sirve para estudiantes, profesores, trabajadores, creadores de contenido y, en general, para todos los que quieren una herramienta de PDF y pizarra multifuncional.</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>The curious thing is that I know nothing about writing code. I built LibertyBoard with the help of Claude, an artificial intelligence: I brought the ideas and Claude turned them into a program. If your ideas are clear and you know how to write them in a good prompt, you too can create what you imagine.</source>
+        <translation>Lo curioso es que no sé nada de escribir código. Construí LibertyBoard apoyándome en Claude, una inteligencia artificial: yo ponía las ideas y Claude las convertía en programa. Si tienes claras tus ideas y sabes escribirlas en un buen prompt, tú también puedes crear lo que imaginas.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>LibertyBoard is free software (GPLv3 license), like OpenBoard.</source>
+        <translation>LibertyBoard es software libre (licencia GPLv3), igual que OpenBoard.</translation>
     </message>
     <message>
         <location line="+154"/>
@@ -4550,7 +4581,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation type="vanished">Escribe lo que se dice en una grabación; llegará con la IA de LibertyBoard</translation>
     </message>
     <message>
-        <location line="-186"/>
+        <location line="-242"/>
         <source>Full screen</source>
         <translation>Pantalla completa</translation>
     </message>
@@ -4560,7 +4591,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>&amp;Acerca</translation>
     </message>
     <message>
-        <location line="+11"/>
+        <location line="+18"/>
         <source>LibertyBoard on GitHub</source>
         <translation>LibertyBoard en GitHub</translation>
     </message>
@@ -4575,7 +4606,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>Descargar e instalar la última versión desde GitHub</translation>
     </message>
     <message>
-        <location line="+66"/>
+        <location line="+115"/>
         <location line="+398"/>
         <source>Saved</source>
         <translation>Guardado</translation>
@@ -6496,7 +6527,7 @@ Ancho dinámico</translation>
 <context>
     <name>UBStartupHintsPalette</name>
     <message>
-        <location filename="../../src/gui/UBStartupHintsPalette.cpp" line="+67"/>
+        <location filename="../../src/gui/UBStartupHintsPalette.cpp" line="+68"/>
         <source>Visible next time</source>
         <translation>Mostrar la próxima vez</translation>
     </message>
@@ -6714,7 +6745,7 @@ Ancho dinámico</translation>
         <translation>Selector: flecha / lazo</translation>
     </message>
     <message>
-        <location line="+229"/>
+        <location line="+234"/>
         <source>Move items</source>
         <translation>Mover elementos</translation>
     </message>

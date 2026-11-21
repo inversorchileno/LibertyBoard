@@ -4130,7 +4130,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
 <context>
     <name>UBKeyCatcher</name>
     <message>
-        <location filename="../../src/gui/UBShortcutsDialog.cpp" line="+727"/>
+        <location filename="../../src/gui/UBShortcutsDialog.cpp" line="+726"/>
         <source>Click here and press the keys of the new shortcut</source>
         <translation>点击这里并按下新快捷键的按键</translation>
     </message>
@@ -4322,7 +4322,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation type="vanished">页面大小</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+140"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+142"/>
         <location line="+92"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -4361,8 +4361,8 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>关闭文档</translation>
     </message>
     <message>
-        <location line="-119"/>
-        <location line="+162"/>
+        <location line="-118"/>
+        <location line="+161"/>
         <source>Page/canvas size</source>
         <translation>页面/画布大小</translation>
     </message>
@@ -4488,9 +4488,40 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>自定义(&amp;C)</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+10"/>
         <source>Shortcuts</source>
         <translation>快捷键</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <location line="+31"/>
+        <source>Creator</source>
+        <translation>创作者</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>LibertyBoard was created by Luis, known on YouTube as «Inversor Chileno».</source>
+        <translation>LibertyBoard 由 Luis 创作，他在 YouTube 上以「Inversor Chileno」为人所知。</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>It was born from a simple idea: to have in a single program what used to be spread over many different tools. Taking OpenBoard, a free digital whiteboard, as a base, I added the reading and annotation of PDFs, templates, shapes, stamps, emojis and GIFs, reading aloud and dictation, artificial intelligence and much more.</source>
+        <translation>它源于一个简单的想法：把以前分散在许多不同工具中的功能集中到一个程序里。以自由的数字白板 OpenBoard 为基础，我加入了 PDF 阅读与批注、模板、形状、印章、表情符号和 GIF、朗读与听写、人工智能等等。</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>It is for students, teachers, workers, content creators and, in general, for everyone who wants a multifunctional PDF and whiteboard tool.</source>
+        <translation>它适合学生、教师、上班族、内容创作者，也适合所有想要一款多功能 PDF 与白板工具的人。</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>The curious thing is that I know nothing about writing code. I built LibertyBoard with the help of Claude, an artificial intelligence: I brought the ideas and Claude turned them into a program. If your ideas are clear and you know how to write them in a good prompt, you too can create what you imagine.</source>
+        <translation>有趣的是，我完全不会写代码。我是在人工智能 Claude 的帮助下打造 LibertyBoard 的：我提出想法，Claude 把它们变成程序。只要你的想法清晰，并且会把它们写成好的提示词，你也能创造出你想象的东西。</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>LibertyBoard is free software (GPLv3 license), like OpenBoard.</source>
+        <translation>LibertyBoard 和 OpenBoard 一样，是自由软件（GPLv3 许可证）。</translation>
     </message>
     <message>
         <location line="+154"/>
@@ -4532,7 +4563,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation type="vanished">写出录音中所说的内容；将随 LibertyBoard 的 AI 推出</translation>
     </message>
     <message>
-        <location line="-186"/>
+        <location line="-242"/>
         <source>Full screen</source>
         <translation>全屏</translation>
     </message>
@@ -4542,7 +4573,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>关于(&amp;A)</translation>
     </message>
     <message>
-        <location line="+11"/>
+        <location line="+18"/>
         <source>LibertyBoard on GitHub</source>
         <translation>GitHub 上的 LibertyBoard</translation>
     </message>
@@ -4557,7 +4588,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>从 GitHub 下载并安装最新版本</translation>
     </message>
     <message>
-        <location line="+66"/>
+        <location line="+115"/>
         <location line="+398"/>
         <source>Saved</source>
         <translation>已保存</translation>
@@ -6485,7 +6516,7 @@ Dynamic width</source>
 <context>
     <name>UBStartupHintsPalette</name>
     <message>
-        <location filename="../../src/gui/UBStartupHintsPalette.cpp" line="+67"/>
+        <location filename="../../src/gui/UBStartupHintsPalette.cpp" line="+68"/>
         <source>Visible next time</source>
         <translation>下次显示</translation>
     </message>
@@ -6703,7 +6734,7 @@ Dynamic width</source>
         <translation>选择：箭头 / 套索</translation>
     </message>
     <message>
-        <location line="+229"/>
+        <location line="+234"/>
         <source>Move items</source>
         <translation>移动项目</translation>
     </message>

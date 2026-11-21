@@ -4003,7 +4003,7 @@ Alaina sy apetraka izao ve? Hotehirizin&apos;ny LibertyBoard ny antontan-taratas
 <context>
     <name>UBKeyCatcher</name>
     <message>
-        <location filename="../../src/gui/UBShortcutsDialog.cpp" line="+727"/>
+        <location filename="../../src/gui/UBShortcutsDialog.cpp" line="+726"/>
         <source>Click here and press the keys of the new shortcut</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4195,7 +4195,7 @@ Alaina sy apetraka izao ve? Hotehirizin&apos;ny LibertyBoard ny antontan-taratas
         <translation type="vanished">Haben&apos;ny pejy</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+140"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+142"/>
         <location line="+92"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -4234,8 +4234,8 @@ Alaina sy apetraka izao ve? Hotehirizin&apos;ny LibertyBoard ny antontan-taratas
         <translation>Hanidy ny antontan-taratasy</translation>
     </message>
     <message>
-        <location line="-119"/>
-        <location line="+162"/>
+        <location line="-118"/>
+        <location line="+161"/>
         <source>Page/canvas size</source>
         <translation>Haben&apos;ny pejy/lamba</translation>
     </message>
@@ -4361,9 +4361,40 @@ Alaina sy apetraka izao ve? Hotehirizin&apos;ny LibertyBoard ny antontan-taratas
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+10"/>
         <source>Shortcuts</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <location line="+31"/>
+        <source>Creator</source>
+        <translation>Mpamorona</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>LibertyBoard was created by Luis, known on YouTube as «Inversor Chileno».</source>
+        <translation>Luis, fantatra amin&apos;ny YouTube amin&apos;ny anarana hoe «Inversor Chileno», no namorona ny LibertyBoard.</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>It was born from a simple idea: to have in a single program what used to be spread over many different tools. Taking OpenBoard, a free digital whiteboard, as a base, I added the reading and annotation of PDFs, templates, shapes, stamps, emojis and GIFs, reading aloud and dictation, artificial intelligence and much more.</source>
+        <translation>Teraka avy amin&apos;ny hevitra tsotra izy: ny hanana ao anaty fandaharana iray monja izay niparitaka teo amin&apos;ny fitaovana maro samihafa taloha. Niainga tamin&apos;ny OpenBoard, solaitrabe nomerika malalaka, aho ka nanampy ny famakiana sy fanamarihana PDF, modely, endrika, tombo-kase, emoji sy GIF, famakiana mafy sy fanoratana amin&apos;ny feo, faharanitan-tsaina artifisialy sy maro hafa koa.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>It is for students, teachers, workers, content creators and, in general, for everyone who wants a multifunctional PDF and whiteboard tool.</source>
+        <translation>Natao ho an&apos;ny mpianatra, mpampianatra, mpiasa, mpamorona votoaty ary amin&apos;ny ankapobeny ho an&apos;izay rehetra mila fitaovana PDF sy solaitrabe maro asa.</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>The curious thing is that I know nothing about writing code. I built LibertyBoard with the help of Claude, an artificial intelligence: I brought the ideas and Claude turned them into a program. If your ideas are clear and you know how to write them in a good prompt, you too can create what you imagine.</source>
+        <translation>Ny mahaliana dia tsy mahay manoratra kaody mihitsy aho. Nanorina ny LibertyBoard aho tamin&apos;ny fanampian&apos;i Claude, faharanitan-tsaina artifisialy: izaho no nitondra ny hevitra ary i Claude no nanova azy ireo ho fandaharana. Raha mazava ny hevitrao ary mahay manoratra azy amin&apos;ny prompt tsara ianao, dia afaka mamorona izay eritreretinao koa ianao.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>LibertyBoard is free software (GPLv3 license), like OpenBoard.</source>
+        <translation>Rindrambaiko malalaka ny LibertyBoard (fahazoan-dalana GPLv3), toy ny OpenBoard.</translation>
     </message>
     <message>
         <location line="+154"/>
@@ -4405,7 +4436,7 @@ Alaina sy apetraka izao ve? Hotehirizin&apos;ny LibertyBoard ny antontan-taratas
         <translation type="vanished">Manoratra izay lazaina ao anaty fandraisam-peo; ho avy miaraka amin&apos;ny IA an&apos;i LibertyBoard</translation>
     </message>
     <message>
-        <location line="-186"/>
+        <location line="-242"/>
         <source>Full screen</source>
         <translation>Efijery feno</translation>
     </message>
@@ -4415,7 +4446,7 @@ Alaina sy apetraka izao ve? Hotehirizin&apos;ny LibertyBoard ny antontan-taratas
         <translation>&amp;Mombamomba</translation>
     </message>
     <message>
-        <location line="+11"/>
+        <location line="+18"/>
         <source>LibertyBoard on GitHub</source>
         <translation>LibertyBoard ao amin&apos;ny GitHub</translation>
     </message>
@@ -4430,7 +4461,7 @@ Alaina sy apetraka izao ve? Hotehirizin&apos;ny LibertyBoard ny antontan-taratas
         <translation>Haka sy hametraka ny dikan-teny farany avy amin&apos;ny GitHub</translation>
     </message>
     <message>
-        <location line="+66"/>
+        <location line="+115"/>
         <location line="+398"/>
         <source>Saved</source>
         <translation>Voatahiry</translation>
@@ -6334,7 +6365,7 @@ Sakany miova</translation>
 <context>
     <name>UBStartupHintsPalette</name>
     <message>
-        <location filename="../../src/gui/UBStartupHintsPalette.cpp" line="+67"/>
+        <location filename="../../src/gui/UBStartupHintsPalette.cpp" line="+68"/>
         <source>Visible next time</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6540,7 +6571,7 @@ Sakany miova</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+229"/>
+        <location line="+234"/>
         <source>Move items</source>
         <translation type="unfinished"></translation>
     </message>

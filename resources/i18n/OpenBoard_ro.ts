@@ -4003,7 +4003,7 @@ O descărcați și o instalați acum? LibertyBoard vă salvează documentele, se
 <context>
     <name>UBKeyCatcher</name>
     <message>
-        <location filename="../../src/gui/UBShortcutsDialog.cpp" line="+727"/>
+        <location filename="../../src/gui/UBShortcutsDialog.cpp" line="+726"/>
         <source>Click here and press the keys of the new shortcut</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4195,7 +4195,7 @@ O descărcați și o instalați acum? LibertyBoard vă salvează documentele, se
         <translation type="vanished">Dimensiunea paginii</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+140"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+142"/>
         <location line="+92"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -4234,8 +4234,8 @@ O descărcați și o instalați acum? LibertyBoard vă salvează documentele, se
         <translation>Închide documentul</translation>
     </message>
     <message>
-        <location line="-119"/>
-        <location line="+162"/>
+        <location line="-118"/>
+        <location line="+161"/>
         <source>Page/canvas size</source>
         <translation>Dimensiunea paginii/pânzei</translation>
     </message>
@@ -4361,9 +4361,40 @@ O descărcați și o instalați acum? LibertyBoard vă salvează documentele, se
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+10"/>
         <source>Shortcuts</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <location line="+31"/>
+        <source>Creator</source>
+        <translation>Creator</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>LibertyBoard was created by Luis, known on YouTube as «Inversor Chileno».</source>
+        <translation>LibertyBoard a fost creat de Luis, cunoscut pe YouTube ca „Inversor Chileno”.</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>It was born from a simple idea: to have in a single program what used to be spread over many different tools. Taking OpenBoard, a free digital whiteboard, as a base, I added the reading and annotation of PDFs, templates, shapes, stamps, emojis and GIFs, reading aloud and dictation, artificial intelligence and much more.</source>
+        <translation>S-a născut dintr-o idee simplă: să ai într-un singur program ceea ce înainte era împrăștiat în multe instrumente diferite. Pornind de la OpenBoard, o tablă digitală liberă, am adăugat citirea și adnotarea PDF-urilor, șabloane, forme, ștampile, emoji și GIF-uri, citirea cu voce tare și dictarea, inteligența artificială și multe altele.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>It is for students, teachers, workers, content creators and, in general, for everyone who wants a multifunctional PDF and whiteboard tool.</source>
+        <translation>Este pentru elevi, profesori, angajați, creatori de conținut și, în general, pentru toți cei care vor un instrument multifuncțional pentru PDF și tablă.</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>The curious thing is that I know nothing about writing code. I built LibertyBoard with the help of Claude, an artificial intelligence: I brought the ideas and Claude turned them into a program. If your ideas are clear and you know how to write them in a good prompt, you too can create what you imagine.</source>
+        <translation>Curios este că nu știu nimic despre scrierea de cod. Am construit LibertyBoard cu ajutorul lui Claude, o inteligență artificială: eu aduceam ideile, iar Claude le transforma în program. Dacă ai ideile clare și știi să le scrii într-un prompt bun, poți și tu să creezi ce îți imaginezi.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>LibertyBoard is free software (GPLv3 license), like OpenBoard.</source>
+        <translation>LibertyBoard este software liber (licență GPLv3), la fel ca OpenBoard.</translation>
     </message>
     <message>
         <location line="+154"/>
@@ -4405,7 +4436,7 @@ O descărcați și o instalați acum? LibertyBoard vă salvează documentele, se
         <translation type="vanished">Scrie ce se spune într-o înregistrare; va veni cu IA LibertyBoard</translation>
     </message>
     <message>
-        <location line="-186"/>
+        <location line="-242"/>
         <source>Full screen</source>
         <translation>Ecran complet</translation>
     </message>
@@ -4415,7 +4446,7 @@ O descărcați și o instalați acum? LibertyBoard vă salvează documentele, se
         <translation>&amp;Despre</translation>
     </message>
     <message>
-        <location line="+11"/>
+        <location line="+18"/>
         <source>LibertyBoard on GitHub</source>
         <translation>LibertyBoard pe GitHub</translation>
     </message>
@@ -4430,7 +4461,7 @@ O descărcați și o instalați acum? LibertyBoard vă salvează documentele, se
         <translation>Descarcă și instalează cea mai nouă versiune de pe GitHub</translation>
     </message>
     <message>
-        <location line="+66"/>
+        <location line="+115"/>
         <location line="+398"/>
         <source>Saved</source>
         <translation>Salvat</translation>
@@ -6334,7 +6365,7 @@ Lățime dinamică</translation>
 <context>
     <name>UBStartupHintsPalette</name>
     <message>
-        <location filename="../../src/gui/UBStartupHintsPalette.cpp" line="+67"/>
+        <location filename="../../src/gui/UBStartupHintsPalette.cpp" line="+68"/>
         <source>Visible next time</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6540,7 +6571,7 @@ Lățime dinamică</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+229"/>
+        <location line="+234"/>
         <source>Move items</source>
         <translation type="unfinished"></translation>
     </message>

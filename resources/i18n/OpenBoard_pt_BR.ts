@@ -4186,7 +4186,7 @@ Baixar e instalar agora? O LibertyBoard salva seus documentos, fecha e abre nova
 <context>
     <name>UBKeyCatcher</name>
     <message>
-        <location filename="../../src/gui/UBShortcutsDialog.cpp" line="+727"/>
+        <location filename="../../src/gui/UBShortcutsDialog.cpp" line="+726"/>
         <source>Click here and press the keys of the new shortcut</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4378,7 +4378,7 @@ Baixar e instalar agora? O LibertyBoard salva seus documentos, fecha e abre nova
         <translation type="vanished">Tamanho da página</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+140"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+142"/>
         <location line="+92"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -4417,8 +4417,8 @@ Baixar e instalar agora? O LibertyBoard salva seus documentos, fecha e abre nova
         <translation>Fechar documento</translation>
     </message>
     <message>
-        <location line="-119"/>
-        <location line="+162"/>
+        <location line="-118"/>
+        <location line="+161"/>
         <source>Page/canvas size</source>
         <translation>Tamanho da página/tela</translation>
     </message>
@@ -4544,9 +4544,40 @@ Baixar e instalar agora? O LibertyBoard salva seus documentos, fecha e abre nova
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+10"/>
         <source>Shortcuts</source>
         <translation type="unfinished">Atalhos</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <location line="+31"/>
+        <source>Creator</source>
+        <translation>Criador</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>LibertyBoard was created by Luis, known on YouTube as «Inversor Chileno».</source>
+        <translation>O LibertyBoard foi criado por Luis, conhecido no YouTube como «Inversor Chileno».</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>It was born from a simple idea: to have in a single program what used to be spread over many different tools. Taking OpenBoard, a free digital whiteboard, as a base, I added the reading and annotation of PDFs, templates, shapes, stamps, emojis and GIFs, reading aloud and dictation, artificial intelligence and much more.</source>
+        <translation>Ele nasceu de uma ideia simples: ter em um só programa o que antes ficava espalhado em muitas ferramentas diferentes. Tomando como base o OpenBoard, uma lousa digital livre, acrescentei a leitura e anotação de PDF, modelos, formas, carimbos, emojis e GIFs, leitura em voz alta e ditado, inteligência artificial e muito mais.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>It is for students, teachers, workers, content creators and, in general, for everyone who wants a multifunctional PDF and whiteboard tool.</source>
+        <translation>Serve para estudantes, professores, trabalhadores, criadores de conteúdo e, em geral, para todos que querem uma ferramenta de PDF e lousa multifuncional.</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>The curious thing is that I know nothing about writing code. I built LibertyBoard with the help of Claude, an artificial intelligence: I brought the ideas and Claude turned them into a program. If your ideas are clear and you know how to write them in a good prompt, you too can create what you imagine.</source>
+        <translation>O curioso é que eu não sei nada de escrever código. Construí o LibertyBoard com a ajuda do Claude, uma inteligência artificial: eu trazia as ideias e o Claude as transformava em programa. Se você tem ideias claras e sabe escrevê-las em um bom prompt, você também pode criar o que imagina.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>LibertyBoard is free software (GPLv3 license), like OpenBoard.</source>
+        <translation>O LibertyBoard é software livre (licença GPLv3), assim como o OpenBoard.</translation>
     </message>
     <message>
         <location line="+154"/>
@@ -4588,7 +4619,7 @@ Baixar e instalar agora? O LibertyBoard salva seus documentos, fecha e abre nova
         <translation type="vanished">Escreve o que se diz em uma gravação; chegará com a IA do LibertyBoard</translation>
     </message>
     <message>
-        <location line="-186"/>
+        <location line="-242"/>
         <source>Full screen</source>
         <translation>Tela cheia</translation>
     </message>
@@ -4598,7 +4629,7 @@ Baixar e instalar agora? O LibertyBoard salva seus documentos, fecha e abre nova
         <translation>&amp;Sobre</translation>
     </message>
     <message>
-        <location line="+11"/>
+        <location line="+18"/>
         <source>LibertyBoard on GitHub</source>
         <translation>LibertyBoard no GitHub</translation>
     </message>
@@ -4613,7 +4644,7 @@ Baixar e instalar agora? O LibertyBoard salva seus documentos, fecha e abre nova
         <translation>Baixar e instalar a versão mais recente do GitHub</translation>
     </message>
     <message>
-        <location line="+66"/>
+        <location line="+115"/>
         <location line="+398"/>
         <source>Saved</source>
         <translation>Salvo</translation>
@@ -6559,7 +6590,7 @@ Largura dinâmica</translation>
 <context>
     <name>UBStartupHintsPalette</name>
     <message>
-        <location filename="../../src/gui/UBStartupHintsPalette.cpp" line="+67"/>
+        <location filename="../../src/gui/UBStartupHintsPalette.cpp" line="+68"/>
         <source>Visible next time</source>
         <translation>Visível na próxima vez </translation>
     </message>
@@ -6769,7 +6800,7 @@ Largura dinâmica</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+229"/>
+        <location line="+234"/>
         <source>Move items</source>
         <translation type="unfinished"></translation>
     </message>
