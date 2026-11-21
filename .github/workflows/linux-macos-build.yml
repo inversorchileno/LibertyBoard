@@ -139,10 +139,9 @@ jobs:
         if: matrix.qt == 'brew'
         run: |
           brew update >/dev/null
-          brew install qt poppler quazip ffmpeg pkgconf ninja openssl@3 || true
-          brew list --versions qt poppler quazip ffmpeg
+          brew install qt poppler ffmpeg pkgconf ninja openssl@3 || true
+          brew list --versions qt poppler ffmpeg
           echo "QT_DIR=$(brew --prefix qt)" >> "$GITHUB_ENV"
-          echo "PREFIXES=$(brew --prefix qt);$(brew --prefix quazip);$(brew --prefix poppler)" >> "$GITHUB_ENV"
 
       - name: Install the libraries (official Qt)
         if: matrix.qt == 'official'
@@ -154,15 +153,19 @@ jobs:
           brew update >/dev/null
           brew install poppler ffmpeg pkgconf ninja || true
           brew list --versions poppler ffmpeg
-          # QuaZip, built with this Qt.
+          echo "QT_DIR=$qt" >> "$GITHUB_ENV"
+
+      - name: Build QuaZip
+        run: |
+          # Built here: the one of Homebrew points to the libbz2 of another SDK.
+          qt="$QT_DIR"
           git clone --depth 1 --branch v1.4 https://github.com/stachenov/quazip.git "$RUNNER_TEMP/quazip"
           cmake -S "$RUNNER_TEMP/quazip" -B "$RUNNER_TEMP/quazip-build" -G Ninja -DCMAKE_BUILD_TYPE=Release \
             -DQUAZIP_QT_MAJOR_VERSION=6 -DQUAZIP_BZIP2=OFF -DBUILD_SHARED_LIBS=ON \
             -DCMAKE_PREFIX_PATH="$qt" -DCMAKE_INSTALL_PREFIX="$HOME/quazip"
           cmake --build "$RUNNER_TEMP/quazip-build"
           cmake --install "$RUNNER_TEMP/quazip-build"
-          echo "QT_DIR=$qt" >> "$GITHUB_ENV"
-          echo "PREFIXES=$qt;$HOME/quazip;$(brew --prefix poppler)" >> "$GITHUB_ENV"
+          echo "PREFIXES=$QT_DIR;$HOME/quazip;$(brew --prefix poppler)" >> "$GITHUB_ENV"
           echo "DYLD_LIBRARY_PATH=$HOME/quazip/lib" >> "$GITHUB_ENV"
 
       - name: Build
