@@ -39,6 +39,11 @@ project(openboard
 
 add_compile_definitions(UBVERSION="${VERSION}")
 
+# The number of the build, compared with the latest release by About > Update.
+if(DEFINED ENV{LIBERTYBOARD_BUILD} AND NOT "$ENV{LIBERTYBOARD_BUILD}" STREQUAL "")
+    add_compile_definitions(LIBERTYBOARD_BUILD=$ENV{LIBERTYBOARD_BUILD})
+endif()
+
 
 # ==========================================================================
 # Configuration options
@@ -107,6 +112,24 @@ endif()
 
 add_executable(${PROJECT_NAME})
 
+# macOS: the Objective-C++ of the platform, and an application bundle.
+if(APPLE)
+    enable_language(OBJCXX)
+    set(LIBERTYBOARD_BUNDLE_VERSION "${VERSION}")
+    configure_file(resources/macx/LibertyBoard.Info.plist.in ${PROJECT_BINARY_DIR}/Info.plist @ONLY)
+    set_target_properties(${PROJECT_NAME} PROPERTIES
+        MACOSX_BUNDLE TRUE
+        OUTPUT_NAME LibertyBoard
+        MACOSX_BUNDLE_INFO_PLIST ${PROJECT_BINARY_DIR}/Info.plist
+    )
+    target_compile_definitions(${PROJECT_NAME} PRIVATE Q_WS_MACX)
+    target_compile_options(${PROJECT_NAME} PRIVATE -Wno-overloaded-virtual)
+    target_link_libraries(${PROJECT_NAME}
+        "-framework Foundation" "-framework Cocoa" "-framework Carbon"
+        "-framework AVFoundation" "-framework CoreMedia" "-framework ApplicationServices"
+    )
+endif()
+
 # manage dependencies
 include(cmake/DependencyQt.cmake)
 include(cmake/DependencyOpenSSL.cmake)
@@ -114,7 +137,9 @@ include(cmake/DependencyPoppler.cmake)
 include(cmake/DependencyZlib.cmake)
 include(cmake/DependencyQuaZip.cmake)
 include(cmake/DependencyFFmpeg.cmake)
-include(cmake/DependencyX11.cmake)
+if(CMAKE_SYSTEM_NAME STREQUAL Linux)
+    include(cmake/DependencyX11.cmake)
+endif()
 
 # add source path to include directories
 target_include_directories(${PROJECT_NAME} PRIVATE
@@ -183,8 +208,15 @@ target_sources(${PROJECT_NAME} PRIVATE ${QM_FILES} ${OPENBOARD_TS_FILES})
 
 include(GNUInstallDirs)
 
+# An AppImage finds its data beside the executable: usr/bin and
+# usr/share/openboard, the configuration in usr/share/openboard/etc.
+option(LIBERTYBOARD_RELOCATABLE "Find the data relative to the executable, as in an AppImage" OFF)
+
 # set relative install paths
-if(CMAKE_INSTALL_PREFIX STREQUAL "/opt")
+if(LIBERTYBOARD_RELOCATABLE)
+    set(OPENBOARD_INSTALL_DATADIR ${CMAKE_INSTALL_DATADIR}/${PROJECT_NAME})
+    set(OPENBOARD_INSTALL_SYSCONFDIR ${OPENBOARD_INSTALL_DATADIR}/etc)
+elseif(CMAKE_INSTALL_PREFIX STREQUAL "/opt")
     set(OPENBOARD_INSTALL_SYSCONFDIR ${CMAKE_INSTALL_PREFIX}/${PROJECT_NAME}/etc)
     set(OPENBOARD_INSTALL_DATADIR ${PROJECT_NAME})
     set(CMAKE_INSTALL_BINDIR "/usr/bin")
@@ -204,6 +236,10 @@ set(OPENBOARD_TPL_PREFIX "${OPENBOARD_APP_PREFIX}/template")
 message(STATUS "OpenBoard ETC_PREFIX is " ${OPENBOARD_ETC_PREFIX})
 message(STATUS "OpenBoard APP_PREFIX is " ${OPENBOARD_APP_PREFIX})
 message(STATUS "OpenBoard TPL_PREFIX is " ${OPENBOARD_TPL_PREFIX})
+
+if(LIBERTYBOARD_RELOCATABLE)
+    target_compile_definitions(${PROJECT_NAME} PRIVATE OPENBOARD_RELOCATABLE)
+endif()
 
 target_compile_definitions(${PROJECT_NAME} PRIVATE
     OPENBOARD_FHS_LAYOUT

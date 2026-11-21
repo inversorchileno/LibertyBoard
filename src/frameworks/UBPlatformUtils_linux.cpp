@@ -63,7 +63,10 @@ void UBPlatformUtils::init()
 
 QString UBPlatformUtils::applicationResourcesDirectory()
 {
-#ifdef OPENBOARD_FHS_LAYOUT
+#if defined(OPENBOARD_RELOCATABLE)
+    // An AppImage: usr/bin beside usr/share/openboard.
+    return QFileInfo(QApplication::applicationDirPath() + "/../share/openboard").absoluteFilePath();
+#elif defined(OPENBOARD_FHS_LAYOUT)
     QString prefix = OPENBOARD_BASE + xstr(OPENBOARD_APP_PREFIX);
     return QFileInfo(prefix).absoluteFilePath();
 #else
@@ -73,7 +76,9 @@ QString UBPlatformUtils::applicationResourcesDirectory()
 
 QString UBPlatformUtils::applicationEtcDirectory()
 {
-#ifdef OPENBOARD_FHS_LAYOUT
+#if defined(OPENBOARD_RELOCATABLE)
+    return applicationResourcesDirectory() + "/etc";
+#elif defined(OPENBOARD_FHS_LAYOUT)
     QString prefix = OPENBOARD_BASE + xstr(OPENBOARD_ETC_PREFIX);
     return QFileInfo(prefix).absoluteFilePath();
 #else
@@ -83,7 +88,9 @@ QString UBPlatformUtils::applicationEtcDirectory()
 
 QString UBPlatformUtils::applicationTemplateDirectory()
 {
-#ifdef OPENBOARD_FHS_LAYOUT
+#if defined(OPENBOARD_RELOCATABLE)
+    return applicationResourcesDirectory() + "/template";
+#elif defined(OPENBOARD_FHS_LAYOUT)
     QString prefix = OPENBOARD_BASE + xstr(OPENBOARD_TPL_PREFIX);
     return QFileInfo(prefix).absoluteFilePath();
 #else

@@ -1,0 +1,183 @@
+name: Linux and macOS builds
+
+on:
+  push:
+    branches: [ master, 'claude/**' ]
+    # Documentation alone does not make a new version.
+    paths-ignore:
+      - 'docs/**'
+      - '**.md'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  linux:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+
+    steps:
+      - name: Checkout LibertyBoard
+        uses: actions/checkout@v4
+
+      - name: Number of the build
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # The same number as the Windows build of this commit, for About > Update.
+          number=$(gh api "repos/${{ github.repository }}/actions/workflows/windows-build.yml/runs?head_sha=${{ github.sha }}" --jq '.workflow_runs[0].run_number // empty' || true)
+          echo "LIBERTYBOARD_BUILD=${number}" >> "$GITHUB_ENV"
+          echo "Build number: ${number:-none}"
+
+      - name: Install the libraries
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            cmake ninja-build pkg-config file patchelf libfuse2 xvfb \
+            qt6-base-dev qt6-base-private-dev qt6-base-dev-tools qt6-5compat-dev \
+            qt6-declarative-dev qt6-multimedia-dev qt6-svg-dev qt6-tools-dev \
+            qt6-tools-dev-tools qt6-l10n-tools qt6-webengine-dev qt6-webengine-dev-tools \
+            qt6-webchannel-dev qt6-speech-dev qt6-speech-speechd-plugin qt6-pdf-dev \
+            qt6-positioning-dev qt6-image-formats-plugins qt6-qpa-plugins qt6-wayland \
+            libqt6svgwidgets6 libqt6opengl6-dev \
+            libpoppler-dev libpoppler-cpp-dev libpoppler-private-dev libquazip1-qt6-dev \
+            libavcodec-dev libavformat-dev libavutil-dev libswresample-dev libswscale-dev \
+            libssl-dev zlib1g-dev libx11-dev libgl-dev
+
+      - name: Build
+        run: |
+          cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DQT_VERSION=6 \
+            -DCMAKE_INSTALL_PREFIX=/usr -DLIBERTYBOARD_RELOCATABLE=ON
+          cmake --build build
+          DESTDIR="$PWD/AppDir" cmake --install build
+
+      - name: Make the AppImage
+        env:
+          QMAKE: /usr/lib/qt6/bin/qmake
+          APPIMAGE_EXTRACT_AND_RUN: 1
+          OUTPUT: LibertyBoard-linux-x86_64.AppImage
+        run: |
+          wget -q https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage
+          wget -q https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage
+          chmod +x linuxdeploy*.AppImage
+          rm -f AppDir/usr/share/applications/*.desktop
+          cp docs/images/libertyboard-logo.png libertyboard.png
+          cat > libertyboard.desktop <<'EOF'
+          [Desktop Entry]
+          Type=Application
+          Name=LibertyBoard
+          Comment=Whiteboard and PDF reader
+          Exec=openboard %F
+          Icon=libertyboard
+          Categories=Education;Office;
+          MimeType=application/pdf;
+          EOF
+          sed -i 's/^ *//' libertyboard.desktop
+          export EXTRA_QT_MODULES="texttospeech;svg;webenginecore;multimedia"
+          ./linuxdeploy-x86_64.AppImage --appdir AppDir -e AppDir/usr/bin/openboard \
+            -d libertyboard.desktop -i libertyboard.png --plugin qt --output appimage
+          ls -la *.AppImage
+
+      - name: Start it once
+        env:
+          APPIMAGE_EXTRACT_AND_RUN: 1
+          QTWEBENGINE_DISABLE_SANDBOX: 1
+        run: |
+          # It must still be running after 25 seconds: it opened without crashing.
+          set +e
+          HOME="$RUNNER_TEMP/home" xvfb-run -a timeout 25 ./LibertyBoard-linux-x86_64.AppImage
+          code=$?
+          echo "exit code: $code"
+          test "$code" = "124"
+
+      - name: Keep the AppImage
+        uses: actions/upload-artifact@v4
+        with:
+          name: LibertyBoard-linux
+          path: LibertyBoard-linux-x86_64.AppImage
+          retention-days: 30
+
+      - name: Add it to the release of this build
+        if: github.ref == 'refs/heads/master'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: bash .github/workflows/attach-to-release.sh LibertyBoard-linux-x86_64.AppImage
+
+  macos:
+    runs-on: macos-14
+    timeout-minutes: 120
+
+    steps:
+      - name: Checkout LibertyBoard
+        uses: actions/checkout@v4
+
+      - name: Number of the build
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          number=$(gh api "repos/${{ github.repository }}/actions/workflows/windows-build.yml/runs?head_sha=${{ github.sha }}" --jq '.workflow_runs[0].run_number // empty' || true)
+          echo "LIBERTYBOARD_BUILD=${number}" >> "$GITHUB_ENV"
+          echo "Build number: ${number:-none}"
+
+      - name: Install the libraries
+        run: |
+          brew update >/dev/null
+          brew install qt poppler quazip ffmpeg pkgconf ninja openssl@3 || true
+          brew list --versions qt poppler quazip ffmpeg
+
+      - name: Build
+        run: |
+          cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DQT_VERSION=6 \
+            -DCMAKE_PREFIX_PATH="$(brew --prefix qt);$(brew --prefix quazip);$(brew --prefix poppler)" \
+            -DCMAKE_OSX_DEPLOYMENT_TARGET=12.0
+          cmake --build build
+
+      - name: Make the application and the disk image
+        run: |
+          app=build/LibertyBoard.app
+          resources="$app/Contents/Resources"
+          mkdir -p "$resources"
+          # The data of LibertyBoard, where the macOS version looks for it.
+          cp -R resources/etc resources/library resources/startupHints "$resources/"
+          cp -R resources/customizations resources/fonts "$resources/" 2>/dev/null || true
+          mkdir -p "$resources/i18n"
+          cp build/i18n/*.qm "$resources/i18n/" 2>/dev/null || cp build/*.qm "$resources/i18n/" 2>/dev/null || true
+          # The icon, from the logo.
+          mkdir icon.iconset
+          for size in 16 32 64 128 256 512; do
+            sips -z $size $size docs/images/libertyboard-logo.png --out icon.iconset/icon_${size}x${size}.png >/dev/null
+            double=$((size * 2))
+            sips -z $double $double docs/images/libertyboard-logo.png --out icon.iconset/icon_${size}x${size}@2x.png >/dev/null
+          done
+          iconutil -c icns icon.iconset -o "$resources/LibertyBoard.icns"
+          "$(brew --prefix qt)/bin/macdeployqt" "$app" -verbose=1
+          codesign --force --deep --sign - "$app"
+          mkdir dmg
+          cp -R "$app" dmg/
+          ln -s /Applications dmg/Applications
+          hdiutil create -volname LibertyBoard -srcfolder dmg -ov -format UDZO LibertyBoard-macos.dmg
+          ls -la LibertyBoard-macos.dmg
+
+      - name: Start it once
+        run: |
+          set +e
+          build/LibertyBoard.app/Contents/MacOS/LibertyBoard &
+          pid=$!
+          sleep 25
+          if kill -0 $pid 2>/dev/null; then echo "still running"; kill $pid; exit 0; fi
+          wait $pid; echo "exit code: $?"; exit 1
+
+      - name: Keep the disk image
+        uses: actions/upload-artifact@v4
+        with:
+          name: LibertyBoard-macos
+          path: LibertyBoard-macos.dmg
+          retention-days: 30
+
+      - name: Add it to the release of this build
+        if: github.ref == 'refs/heads/master'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: bash .github/workflows/attach-to-release.sh LibertyBoard-macos.dmg

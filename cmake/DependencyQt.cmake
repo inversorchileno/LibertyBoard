@@ -14,6 +14,11 @@ set(QT_COMPONENTS
     Xml
 )
 
+# D-Bus is only for the keyboard of Linux.
+if(APPLE)
+    list(REMOVE_ITEM QT_COMPONENTS DBus)
+endif()
+
 if(QT_VERSION STREQUAL "")
     find_package(QT NAMES Qt5 Qt6 REQUIRED COMPONENTS Core)
     set(QT_VERSION ${QT_VERSION_MAJOR})

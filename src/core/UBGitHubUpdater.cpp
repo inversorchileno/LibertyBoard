@@ -115,12 +115,32 @@ void UBGitHubUpdater::onReleaseReceived(QNetworkReply* reply)
     {
         const QJsonObject object = asset.toObject();
 
-        if (object.value("name").toString().endsWith(".zip", Qt::CaseInsensitive))
+        // The zip of Windows; a release also has the files of Linux and macOS.
+        const QString name = object.value("name").toString();
+
+        if (name.endsWith(".zip", Qt::CaseInsensitive) && (!zipUrl.isValid() || name.contains("windows", Qt::CaseInsensitive)))
         {
             zipUrl = QUrl(object.value("browser_download_url").toString());
-            break;
         }
     }
+
+#ifndef Q_OS_WIN
+    // On Linux and macOS the new version is downloaded from its page.
+    if (build > currentBuild())
+    {
+        mBusy = false;
+        const auto open = QMessageBox::question(mDialogParent, tr("Update"),
+            tr("A new version of LibertyBoard is available (build %1).\n\nOpen its page to download it?").arg(build),
+            QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
+
+        if (open == QMessageBox::Yes)
+        {
+            QDesktopServices::openUrl(mReleasePage);
+        }
+
+        return;
+    }
+#endif
 
     if (build <= currentBuild() || !zipUrl.isValid())
     {
