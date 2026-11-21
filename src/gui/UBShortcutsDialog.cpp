@@ -84,9 +84,8 @@ namespace
             { "actionCustomPageSize", "Ctrl+F10" },
             { "actionLbDictate", "F8" },
             // About
-            { "actionOpenTutorial", "F1" },
             { "actionLbShortcuts", "Ctrl+F1" },
-            { "actionHintsAndTips", "Shift+F1" },
+            { "actionHintsAndTips", "F1" },
             { "actionLbGitHub", "Alt+F1" },
             { "actionCheckUpdate", "Ctrl+Shift+F1" },
             // Beside the menus

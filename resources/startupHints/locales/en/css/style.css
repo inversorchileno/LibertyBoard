@@ -1,36 +1,12 @@
-*{
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.title
-{
-	width:100%;
-	color: #6682b5;
-	text-align: center;
-}
-
-.file-extension
-{
-	background: lightgrey;
-}
-
-.image
-{
-	text-align:center;
-}
-
-.image img
-{
-	max-width: 600px;
-}
-
-.icon
-{
-	vertical-align: middle;
-}
-
-.tip
-{
-	font-style: italic;
-	font-size: 0.8rem;
-}
+* { font-family: "Segoe UI", Arial, Helvetica, sans-serif; }
+body { margin: 0 14px; color: #222; font-size: 15px; line-height: 1.45; }
+.title { width: 100%; color: #3b5fa0; text-align: center; margin: 8px 0 6px 0; font-size: 26px; }
+.intro { text-align: center; color: #444; margin: 0 0 10px 0; }
+.image { text-align: center; margin: 8px 0; }
+.image img { max-width: 100%; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,.25); }
+.image.narrow img { max-height: 380px; }
+ul { margin: 6px 0 8px 0; padding-left: 22px; }
+li { margin: 4px 0; }
+b { color: #1f3d73; }
+.tip { display: block; font-style: italic; font-size: 0.85rem; color: #555; margin-top: 8px;
+       background: #f3f6fb; border-left: 4px solid #6682b5; padding: 6px 10px; }

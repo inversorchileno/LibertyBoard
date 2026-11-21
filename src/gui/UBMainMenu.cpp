@@ -124,7 +124,6 @@ QMenu* UBMainMenu::createApplicationMenu(UBMainWindow* mainWindow, QWidget* pare
     menu->addAction(mainWindow->actionSleep);
 
     menu->addSeparator();
-    menu->addAction(mainWindow->actionOpenTutorial);
     menu->addAction(mainWindow->actionHintsAndTips);
     menu->addSeparator();
     menu->addAction(mainWindow->actionPreferences);
@@ -334,14 +333,15 @@ void UBMainMenu::createMenus()
     connect(customizeMenu, &QMenu::aboutToShow, this, [customizeMenu]() { UBToolbarChoice::fillCustomizeMenu(customizeMenu); });
 
     QMenu* aboutMenu = menuBar->addMenu(tr("&About"));
-    aboutMenu->addAction(mMainWindow->actionOpenTutorial);
+
+    // The guide of the tools, with pictures.
+    aboutMenu->addAction(mMainWindow->actionHintsAndTips);
 
     // The list of the keyboard shortcuts, which can be changed.
     auto shortcutsAction = new QAction(QIcon(":/images/toolbar/keyboard.svg"), tr("Shortcuts"), mMainWindow);
     shortcutsAction->setObjectName("actionLbShortcuts");
     connect(shortcutsAction, &QAction::triggered, this, [this]() { UBShortcutsDialog::open(mMainWindow); });
     aboutMenu->addAction(shortcutsAction);
-    aboutMenu->addAction(mMainWindow->actionHintsAndTips);
     aboutMenu->addSeparator();
 
     auto gitHubAction = new QAction(QIcon(":/images/toolbar/github.svg"), tr("LibertyBoard on GitHub"), mMainWindow);

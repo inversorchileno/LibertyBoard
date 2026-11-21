@@ -48,7 +48,8 @@ UBStartupHintsPalette::UBStartupHintsPalette(QWidget *parent) :
     UBFloatingPalette(Qt::BottomRightCorner,parent)
 {
     setObjectName("UBStartupHintsPalette");
-    setFixedSize(800,600);
+    // Large enough for the pictures of the guide of the tools.
+    setFixedSize(1000, 760);
     mLayout = new QVBoxLayout();
     mLayout->setContentsMargins(10,28,10,10);
     setLayout(mLayout);
