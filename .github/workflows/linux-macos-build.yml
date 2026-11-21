@@ -220,6 +220,7 @@ jobs:
           done
           iconutil -c icns icon.iconset -o "$resources/LibertyBoard.icns"
           "$QT_DIR/bin/macdeployqt" "$app" -verbose=1 -libpath="$HOME/quazip/lib" -libpath="$HOME/poppler/lib" -libpath="$DEPS/lib"
+          bash .github/workflows/fix-macos-libraries.sh "$app"
           codesign --force --deep --sign - "$app"
           mkdir dmg
           cp -R "$app" dmg/
