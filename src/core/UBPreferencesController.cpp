@@ -218,9 +218,42 @@ void UBPreferencesController::simplifyTabs()
     tabs->removeTab(tabs->indexOf(mPreferencesUI->penTab));
     tabs->removeTab(tabs->indexOf(mPreferencesUI->markerTab));
 
-    // Credits and About in one tab: the credits under the copyright.
-    mPreferencesUI->verticalLayout_2->insertWidget(1, mPreferencesUI->textBrowser);
+    // The translators and the licenses in the About tab, each behind a
+    // small button at its bottom: out of the way, but there.
+    QWidget* licenses = mPreferencesUI->thirdPartyLicence;
+    tabs->removeTab(tabs->indexOf(licenses));
     tabs->removeTab(tabs->indexOf(mPreferencesUI->creditsTab));
+
+    QVBoxLayout* about = mPreferencesUI->verticalLayout_2;
+    auto buttons = new QHBoxLayout();
+    buttons->addStretch(1);
+    about->addLayout(buttons);
+
+    const QList<QPair<QString, QWidget*>> hidden = {
+        { tr("Translators"), mPreferencesUI->textBrowser },
+        { tr("Licenses"), licenses },
+    };
+
+    for (const auto& part : hidden)
+    {
+        QWidget* content = part.second;
+        about->addWidget(content, 1);
+        content->hide();
+
+        auto button = new QToolButton(mPreferencesUI->aboutTab);
+        button->setText(part.first + QStringLiteral(" ▸"));
+        button->setCheckable(true);
+        button->setAutoRaise(true);
+        button->setStyleSheet("QToolButton { color: #6b7383; font-size: 11px; border: none; }"
+                              "QToolButton:checked { color: #2f5fa8; }");
+        buttons->addWidget(button);
+
+        const QString name = part.first;
+        connect(button, &QToolButton::toggled, this, [button, content, name](bool shown) {
+            content->setVisible(shown);
+            button->setText(name + (shown ? QStringLiteral(" ▾") : QStringLiteral(" ▸")));
+        });
+    }
 
     tabs->insertTab(1, aiChoice(), tr("AI"));
 }

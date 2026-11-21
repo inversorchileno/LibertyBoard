@@ -57,7 +57,6 @@
 #include "gui/UBNoteToolIcon.h"
 #include "gui/UBShapeToolIcon.h"
 #include "frameworks/UBPlatformUtils.h"
-#include "gui/UBDictation.h"
 #include "gui/UBToolbarChoice.h"
 #include "gui/UBReadAloud.h"
 #include "gui/UBSpotlight.h"
@@ -68,7 +67,6 @@
 #include "gui/UBPageButtons.h"
 #include "gui/UBPageIndicator.h"
 #include "gui/UBPdfOutlinePanel.h"
-#include "gui/UBAiPanel.h"
 #include "gui/UBSearchBar.h"
 #include "gui/UBShortcutsDialog.h"
 #include "gui/UBToolOptionsBar.h"
@@ -288,30 +286,14 @@ void UBMainMenu::createMenus()
     editMenu->addAction(mMainWindow->actionCut);
     editMenu->addAction(mMainWindow->actionCopy);
     editMenu->addAction(mMainWindow->actionPaste);
-    // Reading aloud and dictation, with the voices of the system.
-    QMenu* voiceMenu = editMenu->addMenu(QIcon(":/images/toolbar/readAloud.svg"), tr("Read and dictate"));
+    // Reading aloud keeps its shortcut, without a menu: the tool Read aloud,
+    // and Dictate and Transcribe in the options of Text, do the rest.
     UBReadAloud* readAloud = UBReadAloud::instance();
-    QAction* readAction = voiceMenu->addAction(tr("Read aloud"));
+    auto readAction = new QAction(tr("Read aloud"), mMainWindow);
     readAction->setObjectName("actionLbRead");
     readAction->setShortcut(QKeySequence("Ctrl+Shift+L"));
-    readAction->setToolTip(tr("Reads the texts selected, or the text of the page"));
     mMainWindow->addAction(readAction);
     connect(readAction, &QAction::triggered, readAloud, &UBReadAloud::readOrStop);
-    connect(readAloud, &UBReadAloud::readingChanged, readAction, [readAction](bool reading) {
-        readAction->setText(reading ? tr("Stop reading") : tr("Read aloud"));
-    });
-
-    QAction* dictateAction = voiceMenu->addAction(tr("Dictate (Windows + H)"));
-    dictateAction->setObjectName("actionLbDictate");
-    dictateAction->setToolTip(tr("Opens the dictation of Windows: what is said is written where the cursor of text is"));
-    connect(dictateAction, &QAction::triggered, this, []() { UBDictation::start(); });
-
-    QAction* transcribeAction = voiceMenu->addAction(tr("Transcribe an audio..."));
-    transcribeAction->setObjectName("actionLbTranscribe");
-    transcribeAction->setToolTip(tr("Writes what is said in a recording, with an AI on the web"));
-    connect(transcribeAction, &QAction::triggered, this, [this]() {
-        UBAiPanel::startAction(UBAiPanel::Action::Transcription, mMainWindow);
-    });
 
     editMenu->addAction(mMainWindow->actionHideApplication);
     editMenu->addAction(mMainWindow->actionSleep);
@@ -395,7 +377,6 @@ void UBMainMenu::showCreator()
         tr("The curious thing is that I know nothing about writing code. I built LibertyBoard with the help of Claude, an "
            "artificial intelligence: I brought the ideas and Claude turned them into a program. If your ideas are clear and you "
            "know how to write them in a good prompt, you too can create what you imagine."),
-        tr("LibertyBoard is free software (GPLv3 license), like OpenBoard."),
     };
 
     QString html = "<h2>LibertyBoard</h2>";
