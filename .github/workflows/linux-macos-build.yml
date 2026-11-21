@@ -139,8 +139,8 @@ jobs:
         if: matrix.qt == 'brew'
         run: |
           brew update >/dev/null
-          brew install qt poppler ffmpeg pkgconf ninja openssl@3 || true
-          brew list --versions qt poppler ffmpeg
+          brew install qt ffmpeg pkgconf ninja openssl@3 freetype fontconfig jpeg-turbo libpng openjpeg little-cms2 || true
+          brew list --versions qt ffmpeg
           echo "QT_DIR=$(brew --prefix qt)" >> "$GITHUB_ENV"
 
       - name: Install the libraries (official Qt)
@@ -151,8 +151,8 @@ jobs:
             -m qtwebengine qtwebchannel qtpositioning qtmultimedia qtspeech qt5compat qtimageformats qtpdf
           qt="$HOME/Qt/6.8.3/macos"
           brew update >/dev/null
-          brew install poppler ffmpeg pkgconf ninja || true
-          brew list --versions poppler ffmpeg
+          brew install ffmpeg pkgconf ninja freetype fontconfig jpeg-turbo libpng openjpeg little-cms2 || true
+          brew list --versions ffmpeg
           echo "QT_DIR=$qt" >> "$GITHUB_ENV"
 
       - name: Build QuaZip
@@ -165,15 +165,31 @@ jobs:
             -DCMAKE_PREFIX_PATH="$qt" -DCMAKE_INSTALL_PREFIX="$HOME/quazip"
           cmake --build "$RUNNER_TEMP/quazip-build"
           cmake --install "$RUNNER_TEMP/quazip-build"
-          echo "PREFIXES=$QT_DIR;$HOME/quazip;$(brew --prefix poppler)" >> "$GITHUB_ENV"
-          echo "DYLD_LIBRARY_PATH=$HOME/quazip/lib" >> "$GITHUB_ENV"
+
+      - name: Build poppler
+        run: |
+          # The version of Linux: the one of Homebrew has another interface.
+          curl -sSL -o "$RUNNER_TEMP/poppler.tar.xz" https://poppler.freedesktop.org/poppler-24.02.0.tar.xz
+          tar xf "$RUNNER_TEMP/poppler.tar.xz" -C "$RUNNER_TEMP"
+          cmake -S "$RUNNER_TEMP/poppler-24.02.0" -B "$RUNNER_TEMP/poppler-build" -G Ninja -DCMAKE_BUILD_TYPE=Release \
+            -DCMAKE_INSTALL_PREFIX="$HOME/poppler" -DCMAKE_INSTALL_NAME_DIR="$HOME/poppler/lib" \
+            -DCMAKE_PREFIX_PATH="$(brew --prefix)" -DCMAKE_OSX_DEPLOYMENT_TARGET=12.0 \
+            -DENABLE_UNSTABLE_API_ABI_HEADERS=ON -DENABLE_CPP=ON -DENABLE_QT5=OFF -DENABLE_QT6=OFF \
+            -DENABLE_GLIB=OFF -DENABLE_GOBJECT_INTROSPECTION=OFF -DENABLE_UTILS=OFF -DENABLE_BOOST=OFF \
+            -DENABLE_NSS3=OFF -DENABLE_GPGME=OFF -DENABLE_LIBCURL=OFF -DENABLE_LIBTIFF=OFF \
+            -DBUILD_GTK_TESTS=OFF -DBUILD_QT5_TESTS=OFF -DBUILD_QT6_TESTS=OFF -DBUILD_CPP_TESTS=OFF \
+            -DBUILD_MANUAL_TESTS=OFF -DRUN_GPERF_IF_PRESENT=OFF
+          cmake --build "$RUNNER_TEMP/poppler-build"
+          cmake --install "$RUNNER_TEMP/poppler-build"
+          echo "PREFIXES=$QT_DIR;$HOME/quazip;$HOME/poppler" >> "$GITHUB_ENV"
+          echo "DYLD_LIBRARY_PATH=$HOME/quazip/lib:$HOME/poppler/lib" >> "$GITHUB_ENV"
+          echo "PKG_CONFIG_PATH=$HOME/poppler/lib/pkgconfig" >> "$GITHUB_ENV"
 
       - name: Build
         run: |
           # The code includes <poppler/Object.h>: the folder above that of poppler.
-          export CXXFLAGS="-I$(brew --prefix poppler)/include"
-          # The poppler of Homebrew is written in C++20.
-          cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DQT_VERSION=6 -DCMAKE_CXX_STANDARD=20 \
+          export CXXFLAGS="-I$HOME/poppler/include"
+          cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DQT_VERSION=6 \
             -DCMAKE_PREFIX_PATH="$PREFIXES" -DCMAKE_OSX_DEPLOYMENT_TARGET=12.0
           cmake --build build
 
@@ -195,7 +211,7 @@ jobs:
             sips -z $double $double docs/images/libertyboard-logo.png --out icon.iconset/icon_${size}x${size}@2x.png >/dev/null
           done
           iconutil -c icns icon.iconset -o "$resources/LibertyBoard.icns"
-          "$QT_DIR/bin/macdeployqt" "$app" -verbose=1 -libpath="$HOME/quazip/lib"
+          "$QT_DIR/bin/macdeployqt" "$app" -verbose=1 -libpath="$HOME/quazip/lib" -libpath="$HOME/poppler/lib"
           codesign --force --deep --sign - "$app"
           mkdir dmg
           cp -R "$app" dmg/
