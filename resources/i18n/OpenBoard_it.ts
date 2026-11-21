@@ -3132,7 +3132,7 @@ Vuoi continuare?</translation>
     </message>
     <message>
         <location line="+28"/>
-        <source>Drag a GIF from the window at the right to the page.</source>
+        <source>Drag a GIF from the window of the GIFs to the page.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3522,7 +3522,7 @@ Vuoi continuare?</translation>
 <context>
     <name>UBGifWindow</name>
     <message>
-        <location filename="../../src/gui/UBGifWindow.cpp" line="+55"/>
+        <location filename="../../src/gui/UBGifWindow.cpp" line="+66"/>
         <source>GIFs of klipy.com: drag one to the page</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4084,7 +4084,7 @@ Scaricarla e installarla ora? LibertyBoard salva i tuoi documenti, si chiude e s
 <context>
     <name>UBKeyCatcher</name>
     <message>
-        <location filename="../../src/gui/UBShortcutsDialog.cpp" line="+726"/>
+        <location filename="../../src/gui/UBShortcutsDialog.cpp" line="+727"/>
         <source>Click here and press the keys of the new shortcut</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4276,7 +4276,7 @@ Scaricarla e installarla ora? LibertyBoard salva i tuoi documenti, si chiude e s
         <translation type="vanished">Dimensione pagina</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+142"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+140"/>
         <location line="+92"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -4391,48 +4391,32 @@ Scaricarla e installarla ora? LibertyBoard salva i tuoi documenti, si chiude e s
         <translation>Dimensione personalizzata...</translation>
     </message>
     <message>
-        <location line="+5"/>
         <source>Read and dictate</source>
-        <translation>Leggi e detta</translation>
+        <translation type="vanished">Leggi e detta</translation>
     </message>
     <message>
-        <location line="+2"/>
         <location line="+7"/>
         <source>Read aloud</source>
         <translation>Leggi ad alta voce</translation>
     </message>
     <message>
-        <location line="-4"/>
         <source>Reads the texts selected, or the text of the page</source>
-        <translation>Legge i testi selezionati, o il testo della pagina</translation>
+        <translation type="vanished">Legge i testi selezionati, o il testo della pagina</translation>
     </message>
     <message>
-        <location line="+4"/>
         <source>Stop reading</source>
-        <translation>Ferma la lettura</translation>
+        <translation type="vanished">Ferma la lettura</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Dictate (Windows + H)</source>
-        <translation>Detta (Windows + H)</translation>
+        <translation type="vanished">Detta (Windows + H)</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Opens the dictation of Windows: what is said is written where the cursor of text is</source>
-        <translation>Apre la dettatura di Windows: ciò che si dice viene scritto dove si trova il cursore di testo</translation>
+        <translation type="vanished">Apre la dettatura di Windows: ciò che si dice viene scritto dove si trova il cursore di testo</translation>
     </message>
     <message>
-        <location line="+3"/>
-        <source>Transcribe an audio...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Writes what is said in a recording, with an AI on the web</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+20"/>
+        <location line="+21"/>
         <source>&amp;Tools</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4473,12 +4457,11 @@ Scaricarla e installarla ora? LibertyBoard salva i tuoi documenti, si chiude e s
         <translation>La cosa curiosa è che non so niente di programmazione. Ho costruito LibertyBoard con l&apos;aiuto di Claude, un&apos;intelligenza artificiale: io mettevo le idee e Claude le trasformava in programma. Se hai le idee chiare e sai scriverle in un buon prompt, anche tu puoi creare ciò che immagini.</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>LibertyBoard is free software (GPLv3 license), like OpenBoard.</source>
-        <translation>LibertyBoard è software libero (licenza GPLv3), come OpenBoard.</translation>
+        <translation type="vanished">LibertyBoard è software libero (licenza GPLv3), come OpenBoard.</translation>
     </message>
     <message>
-        <location line="+154"/>
+        <location line="+156"/>
         <location line="+17"/>
         <source>Lock the canvas: nothing can be drawn, written, highlighted, selected, moved or deleted; the laser pointer and the hand still work</source>
         <translation>Blocca la tela: non si può disegnare, scrivere, evidenziare, selezionare, spostare né cancellare nulla; il laser e la mano funzionano ancora</translation>
@@ -4517,7 +4500,7 @@ Scaricarla e installarla ora? LibertyBoard salva i tuoi documenti, si chiude e s
         <translation type="vanished">Scrive ciò che si dice in una registrazione; arriverà con l&apos;IA di LibertyBoard</translation>
     </message>
     <message>
-        <location line="-242"/>
+        <location line="-241"/>
         <source>Full screen</source>
         <translation>Schermo intero</translation>
     </message>
@@ -4542,7 +4525,7 @@ Scaricarla e installarla ora? LibertyBoard salva i tuoi documenti, si chiude e s
         <translation>Scarica e installa l&apos;ultima versione da GitHub</translation>
     </message>
     <message>
-        <location line="+115"/>
+        <location line="+114"/>
         <location line="+398"/>
         <source>Saved</source>
         <translation>Salvato</translation>
@@ -5330,7 +5313,17 @@ Larghezza dinamica</translation>
         <translation>Pressione della penna</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="+26"/>
+        <source>Translators</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Licenses</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+24"/>
         <source>AI</source>
         <translation type="unfinished"></translation>
     </message>

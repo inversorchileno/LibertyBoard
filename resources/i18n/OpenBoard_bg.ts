@@ -3055,7 +3055,7 @@ Do you want to continue?</source>
     </message>
     <message>
         <location line="+28"/>
-        <source>Drag a GIF from the window at the right to the page.</source>
+        <source>Drag a GIF from the window of the GIFs to the page.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3445,7 +3445,7 @@ Do you want to continue?</source>
 <context>
     <name>UBGifWindow</name>
     <message>
-        <location filename="../../src/gui/UBGifWindow.cpp" line="+55"/>
+        <location filename="../../src/gui/UBGifWindow.cpp" line="+66"/>
         <source>GIFs of klipy.com: drag one to the page</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4007,7 +4007,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
 <context>
     <name>UBKeyCatcher</name>
     <message>
-        <location filename="../../src/gui/UBShortcutsDialog.cpp" line="+726"/>
+        <location filename="../../src/gui/UBShortcutsDialog.cpp" line="+727"/>
         <source>Click here and press the keys of the new shortcut</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4199,7 +4199,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation type="vanished">Размер на страницата</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+142"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+140"/>
         <location line="+92"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -4314,48 +4314,32 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>Размер по избор...</translation>
     </message>
     <message>
-        <location line="+5"/>
         <source>Read and dictate</source>
-        <translation>Четене и диктуване</translation>
+        <translation type="vanished">Четене и диктуване</translation>
     </message>
     <message>
-        <location line="+2"/>
         <location line="+7"/>
         <source>Read aloud</source>
         <translation>Прочети на глас</translation>
     </message>
     <message>
-        <location line="-4"/>
         <source>Reads the texts selected, or the text of the page</source>
-        <translation>Чете избраните текстове или текста на страницата</translation>
+        <translation type="vanished">Чете избраните текстове или текста на страницата</translation>
     </message>
     <message>
-        <location line="+4"/>
         <source>Stop reading</source>
-        <translation>Спри четенето</translation>
+        <translation type="vanished">Спри четенето</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Dictate (Windows + H)</source>
-        <translation>Диктувай (Windows + H)</translation>
+        <translation type="vanished">Диктувай (Windows + H)</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Opens the dictation of Windows: what is said is written where the cursor of text is</source>
-        <translation>Отваря диктуването на Windows: казаното се изписва там, където е текстовият курсор</translation>
+        <translation type="vanished">Отваря диктуването на Windows: казаното се изписва там, където е текстовият курсор</translation>
     </message>
     <message>
-        <location line="+3"/>
-        <source>Transcribe an audio...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Writes what is said in a recording, with an AI on the web</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+20"/>
+        <location line="+21"/>
         <source>&amp;Tools</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4396,12 +4380,11 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>Любопитното е, че не знам нищо за писането на код. Създадох LibertyBoard с помощта на Claude, изкуствен интелект: аз давах идеите, а Claude ги превръщаше в програма. Ако идеите ви са ясни и умеете да ги опишете в добър промпт, и вие можете да създадете това, което си представяте.</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>LibertyBoard is free software (GPLv3 license), like OpenBoard.</source>
-        <translation>LibertyBoard е свободен софтуер (лиценз GPLv3), също като OpenBoard.</translation>
+        <translation type="vanished">LibertyBoard е свободен софтуер (лиценз GPLv3), също като OpenBoard.</translation>
     </message>
     <message>
-        <location line="+154"/>
+        <location line="+156"/>
         <location line="+17"/>
         <source>Lock the canvas: nothing can be drawn, written, highlighted, selected, moved or deleted; the laser pointer and the hand still work</source>
         <translation>Заключване на платното: нищо не може да се рисува, пише, открояват, избира, мести или изтрива; лазерът и ръката продължават да работят</translation>
@@ -4440,7 +4423,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation type="vanished">Записва казаното в запис; ще дойде с ИИ на LibertyBoard</translation>
     </message>
     <message>
-        <location line="-242"/>
+        <location line="-241"/>
         <source>Full screen</source>
         <translation>Цял екран</translation>
     </message>
@@ -4465,7 +4448,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>Изтегляне и инсталиране на най-новата версия от GitHub</translation>
     </message>
     <message>
-        <location line="+115"/>
+        <location line="+114"/>
         <location line="+398"/>
         <source>Saved</source>
         <translation>Запазено</translation>
@@ -5226,7 +5209,17 @@ Dynamic width</source>
         <translation>Натиск на писалката</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="+26"/>
+        <source>Translators</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Licenses</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+24"/>
         <source>AI</source>
         <translation type="unfinished"></translation>
     </message>

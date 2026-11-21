@@ -3056,7 +3056,7 @@ Do you want to continue?</source>
     </message>
     <message>
         <location line="+28"/>
-        <source>Drag a GIF from the window at the right to the page.</source>
+        <source>Drag a GIF from the window of the GIFs to the page.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3446,7 +3446,7 @@ Do you want to continue?</source>
 <context>
     <name>UBGifWindow</name>
     <message>
-        <location filename="../../src/gui/UBGifWindow.cpp" line="+55"/>
+        <location filename="../../src/gui/UBGifWindow.cpp" line="+66"/>
         <source>GIFs of klipy.com: drag one to the page</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4008,7 +4008,7 @@ Ladda ner och installera nu? LibertyBoard sparar dina dokument, stängs och öpp
 <context>
     <name>UBKeyCatcher</name>
     <message>
-        <location filename="../../src/gui/UBShortcutsDialog.cpp" line="+726"/>
+        <location filename="../../src/gui/UBShortcutsDialog.cpp" line="+727"/>
         <source>Click here and press the keys of the new shortcut</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4200,7 +4200,7 @@ Ladda ner och installera nu? LibertyBoard sparar dina dokument, stängs och öpp
         <translation type="vanished">Sidstorlek</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+142"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+140"/>
         <location line="+92"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -4315,48 +4315,32 @@ Ladda ner och installera nu? LibertyBoard sparar dina dokument, stängs och öpp
         <translation>Anpassad storlek...</translation>
     </message>
     <message>
-        <location line="+5"/>
         <source>Read and dictate</source>
-        <translation>Läs upp och diktera</translation>
+        <translation type="vanished">Läs upp och diktera</translation>
     </message>
     <message>
-        <location line="+2"/>
         <location line="+7"/>
         <source>Read aloud</source>
         <translation>Läs upp</translation>
     </message>
     <message>
-        <location line="-4"/>
         <source>Reads the texts selected, or the text of the page</source>
-        <translation>Läser de markerade texterna, eller sidans text</translation>
+        <translation type="vanished">Läser de markerade texterna, eller sidans text</translation>
     </message>
     <message>
-        <location line="+4"/>
         <source>Stop reading</source>
-        <translation>Sluta läsa</translation>
+        <translation type="vanished">Sluta läsa</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Dictate (Windows + H)</source>
-        <translation>Diktera (Windows + H)</translation>
+        <translation type="vanished">Diktera (Windows + H)</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Opens the dictation of Windows: what is said is written where the cursor of text is</source>
-        <translation>Öppnar Windows diktering: det som sägs skrivs där textmarkören är</translation>
+        <translation type="vanished">Öppnar Windows diktering: det som sägs skrivs där textmarkören är</translation>
     </message>
     <message>
-        <location line="+3"/>
-        <source>Transcribe an audio...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Writes what is said in a recording, with an AI on the web</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+20"/>
+        <location line="+21"/>
         <source>&amp;Tools</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4397,12 +4381,11 @@ Ladda ner och installera nu? LibertyBoard sparar dina dokument, stängs och öpp
         <translation>Det märkliga är att jag inte kan något om att skriva kod. Jag byggde LibertyBoard med hjälp av Claude, en artificiell intelligens: jag kom med idéerna och Claude gjorde dem till ett program. Om dina idéer är tydliga och du kan skriva dem i en bra prompt kan du också skapa det du föreställer dig.</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>LibertyBoard is free software (GPLv3 license), like OpenBoard.</source>
-        <translation>LibertyBoard är fri programvara (GPLv3-licens), precis som OpenBoard.</translation>
+        <translation type="vanished">LibertyBoard är fri programvara (GPLv3-licens), precis som OpenBoard.</translation>
     </message>
     <message>
-        <location line="+154"/>
+        <location line="+156"/>
         <location line="+17"/>
         <source>Lock the canvas: nothing can be drawn, written, highlighted, selected, moved or deleted; the laser pointer and the hand still work</source>
         <translation>Lås duken: inget kan ritas, skrivas, markeras, väljas, flyttas eller raderas; lasern och handen fungerar fortfarande</translation>
@@ -4441,7 +4424,7 @@ Ladda ner och installera nu? LibertyBoard sparar dina dokument, stängs och öpp
         <translation type="vanished">Skriver det som sägs i en inspelning; kommer med LibertyBoards AI</translation>
     </message>
     <message>
-        <location line="-242"/>
+        <location line="-241"/>
         <source>Full screen</source>
         <translation>Helskärm</translation>
     </message>
@@ -4466,7 +4449,7 @@ Ladda ner och installera nu? LibertyBoard sparar dina dokument, stängs och öpp
         <translation>Ladda ner och installera den senaste versionen från GitHub</translation>
     </message>
     <message>
-        <location line="+115"/>
+        <location line="+114"/>
         <location line="+398"/>
         <source>Saved</source>
         <translation>Sparad</translation>
@@ -5234,7 +5217,17 @@ Dynamisk bredd</translation>
         <translation>Pennans tryck</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="+26"/>
+        <source>Translators</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Licenses</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+24"/>
         <source>AI</source>
         <translation type="unfinished"></translation>
     </message>

@@ -3110,8 +3110,12 @@ Do you want to continue?</source>
     </message>
     <message>
         <location line="+28"/>
+        <source>Drag a GIF from the window of the GIFs to the page.</source>
+        <translation>從 GIF 視窗把一個 GIF 拖到頁面上。</translation>
+    </message>
+    <message>
         <source>Drag a GIF from the window at the right to the page.</source>
-        <translation>從右側視窗把GIF拖曳到頁面上。</translation>
+        <translation type="vanished">從右側視窗把GIF拖曳到頁面上。</translation>
     </message>
     <message>
         <source>To use GIFs, make a free account at klipy.com, only once, and paste your key (API key) here. From then on, the GIF search is always ready. Without it, the emojis work as always.</source>
@@ -3552,7 +3556,7 @@ Do you want to continue?</source>
 <context>
     <name>UBGifWindow</name>
     <message>
-        <location filename="../../src/gui/UBGifWindow.cpp" line="+55"/>
+        <location filename="../../src/gui/UBGifWindow.cpp" line="+66"/>
         <source>GIFs of klipy.com: drag one to the page</source>
         <translation>klipy.com 的GIF：拖曳一個到頁面上</translation>
     </message>
@@ -4114,7 +4118,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
 <context>
     <name>UBKeyCatcher</name>
     <message>
-        <location filename="../../src/gui/UBShortcutsDialog.cpp" line="+726"/>
+        <location filename="../../src/gui/UBShortcutsDialog.cpp" line="+727"/>
         <source>Click here and press the keys of the new shortcut</source>
         <translation>按一下這裡並按下新快速鍵的按鍵</translation>
     </message>
@@ -4306,7 +4310,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation type="vanished">頁面大小</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+142"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+140"/>
         <location line="+92"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -4421,48 +4425,40 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>自訂大小...</translation>
     </message>
     <message>
-        <location line="+5"/>
         <source>Read and dictate</source>
-        <translation>朗讀和聽寫</translation>
+        <translation type="vanished">朗讀和聽寫</translation>
     </message>
     <message>
-        <location line="+2"/>
         <location line="+7"/>
         <source>Read aloud</source>
         <translation>朗讀</translation>
     </message>
     <message>
-        <location line="-4"/>
         <source>Reads the texts selected, or the text of the page</source>
-        <translation>朗讀所選文字或頁面上的文字</translation>
+        <translation type="vanished">朗讀所選文字或頁面上的文字</translation>
     </message>
     <message>
-        <location line="+4"/>
         <source>Stop reading</source>
-        <translation>停止朗讀</translation>
+        <translation type="vanished">停止朗讀</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Dictate (Windows + H)</source>
-        <translation>聽寫 (Windows + H)</translation>
+        <translation type="vanished">聽寫 (Windows + H)</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Opens the dictation of Windows: what is said is written where the cursor of text is</source>
-        <translation>開啟 Windows 聽寫：所說內容會寫在文字游標處</translation>
+        <translation type="vanished">開啟 Windows 聽寫：所說內容會寫在文字游標處</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Transcribe an audio...</source>
-        <translation>轉寫音訊...</translation>
+        <translation type="vanished">轉寫音訊...</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Writes what is said in a recording, with an AI on the web</source>
-        <translation>藉助網路上的AI寫出錄音中所說的內容</translation>
+        <translation type="vanished">藉助網路上的AI寫出錄音中所說的內容</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+21"/>
         <source>&amp;Tools</source>
         <translation>工具(&amp;T)</translation>
     </message>
@@ -4503,12 +4499,11 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>有趣的是，我完全不會寫程式碼。我是在人工智慧 Claude 的幫助下打造 LibertyBoard 的：我提出想法，Claude 把它們變成程式。只要你的想法清楚，並且會把它們寫成好的提示詞，你也能創造出你想像的東西。</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>LibertyBoard is free software (GPLv3 license), like OpenBoard.</source>
-        <translation>LibertyBoard 和 OpenBoard 一樣，是自由軟體（GPLv3 授權）。</translation>
+        <translation type="vanished">LibertyBoard 和 OpenBoard 一樣，是自由軟體（GPLv3 授權）。</translation>
     </message>
     <message>
-        <location line="+154"/>
+        <location line="+156"/>
         <location line="+17"/>
         <source>Lock the canvas: nothing can be drawn, written, highlighted, selected, moved or deleted; the laser pointer and the hand still work</source>
         <translation>鎖定畫布：無法繪製、書寫、標示、選取、移動或刪除任何內容；雷射筆和手形工具仍可使用</translation>
@@ -4547,7 +4542,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation type="vanished">寫出錄音中所說的內容；將隨 LibertyBoard 的 AI 推出</translation>
     </message>
     <message>
-        <location line="-242"/>
+        <location line="-241"/>
         <source>Full screen</source>
         <translation>全螢幕</translation>
     </message>
@@ -4572,7 +4567,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>從 GitHub 下載並安裝最新版本</translation>
     </message>
     <message>
-        <location line="+115"/>
+        <location line="+114"/>
         <location line="+398"/>
         <source>Saved</source>
         <translation>已儲存</translation>
@@ -5338,7 +5333,17 @@ Dynamic width</source>
         <translation>筆壓</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="+26"/>
+        <source>Translators</source>
+        <translation>譯者</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Licenses</source>
+        <translation>授權</translation>
+    </message>
+    <message>
+        <location line="+24"/>
         <source>AI</source>
         <translation>AI</translation>
     </message>

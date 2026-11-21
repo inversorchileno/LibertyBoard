@@ -3071,8 +3071,12 @@ Do you want to continue?</source>
     </message>
     <message>
         <location line="+28"/>
+        <source>Drag a GIF from the window of the GIFs to the page.</source>
+        <translation>GIF のウィンドウから GIF をページへドラッグしてください。</translation>
+    </message>
+    <message>
         <source>Drag a GIF from the window at the right to the page.</source>
-        <translation>右のウィンドウからGIFをページにドラッグしてください。</translation>
+        <translation type="vanished">右のウィンドウからGIFをページにドラッグしてください。</translation>
     </message>
     <message>
         <source>To use GIFs, make a free account at klipy.com, only once, and paste your key (API key) here. From then on, the GIF search is always ready. Without it, the emojis work as always.</source>
@@ -3513,7 +3517,7 @@ Do you want to continue?</source>
 <context>
     <name>UBGifWindow</name>
     <message>
-        <location filename="../../src/gui/UBGifWindow.cpp" line="+55"/>
+        <location filename="../../src/gui/UBGifWindow.cpp" line="+66"/>
         <source>GIFs of klipy.com: drag one to the page</source>
         <translation>klipy.com のGIF：ページにドラッグ</translation>
     </message>
@@ -4075,7 +4079,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
 <context>
     <name>UBKeyCatcher</name>
     <message>
-        <location filename="../../src/gui/UBShortcutsDialog.cpp" line="+726"/>
+        <location filename="../../src/gui/UBShortcutsDialog.cpp" line="+727"/>
         <source>Click here and press the keys of the new shortcut</source>
         <translation>ここをクリックして新しいショートカットのキーを押してください</translation>
     </message>
@@ -4267,7 +4271,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation type="vanished">ページサイズ</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+142"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+140"/>
         <location line="+92"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -4382,48 +4386,40 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>カスタムサイズ...</translation>
     </message>
     <message>
-        <location line="+5"/>
         <source>Read and dictate</source>
-        <translation>読み上げと音声入力</translation>
+        <translation type="vanished">読み上げと音声入力</translation>
     </message>
     <message>
-        <location line="+2"/>
         <location line="+7"/>
         <source>Read aloud</source>
         <translation>読み上げ</translation>
     </message>
     <message>
-        <location line="-4"/>
         <source>Reads the texts selected, or the text of the page</source>
-        <translation>選択したテキスト、またはページのテキストを読み上げます</translation>
+        <translation type="vanished">選択したテキスト、またはページのテキストを読み上げます</translation>
     </message>
     <message>
-        <location line="+4"/>
         <source>Stop reading</source>
-        <translation>読み上げを停止</translation>
+        <translation type="vanished">読み上げを停止</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Dictate (Windows + H)</source>
-        <translation>音声入力 (Windows + H)</translation>
+        <translation type="vanished">音声入力 (Windows + H)</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Opens the dictation of Windows: what is said is written where the cursor of text is</source>
-        <translation>Windows の音声入力を開きます: 話したことがテキストカーソルの位置に書かれます</translation>
+        <translation type="vanished">Windows の音声入力を開きます: 話したことがテキストカーソルの位置に書かれます</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Transcribe an audio...</source>
-        <translation>音声を文字起こし...</translation>
+        <translation type="vanished">音声を文字起こし...</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Writes what is said in a recording, with an AI on the web</source>
-        <translation>Web上のAIで、録音で話された内容を書き起こします</translation>
+        <translation type="vanished">Web上のAIで、録音で話された内容を書き起こします</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+21"/>
         <source>&amp;Tools</source>
         <translation>ツール(&amp;T)</translation>
     </message>
@@ -4464,12 +4460,11 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>面白いのは、私がコードの書き方をまったく知らないことです。LibertyBoard は人工知能の Claude の助けを借りて作りました。私がアイデアを出し、Claude がそれをプログラムにしました。アイデアがはっきりしていて、それを良いプロンプトに書ければ、あなたも想像したものを作れます。</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>LibertyBoard is free software (GPLv3 license), like OpenBoard.</source>
-        <translation>LibertyBoard は OpenBoard と同じく、自由ソフトウェア(GPLv3 ライセンス)です。</translation>
+        <translation type="vanished">LibertyBoard は OpenBoard と同じく、自由ソフトウェア(GPLv3 ライセンス)です。</translation>
     </message>
     <message>
-        <location line="+154"/>
+        <location line="+156"/>
         <location line="+17"/>
         <source>Lock the canvas: nothing can be drawn, written, highlighted, selected, moved or deleted; the laser pointer and the hand still work</source>
         <translation>キャンバスをロック：描画、書き込み、ハイライト、選択、移動、削除はできません。レーザーと手のひらツールは引き続き使えます</translation>
@@ -4508,7 +4503,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation type="vanished">録音で話されたことを書き起こします。LibertyBoard の AI で提供予定です</translation>
     </message>
     <message>
-        <location line="-242"/>
+        <location line="-241"/>
         <source>Full screen</source>
         <translation>全画面表示</translation>
     </message>
@@ -4533,7 +4528,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>GitHub から最新バージョンをダウンロードしてインストール</translation>
     </message>
     <message>
-        <location line="+115"/>
+        <location line="+114"/>
         <location line="+398"/>
         <source>Saved</source>
         <translation>保存しました</translation>
@@ -5302,7 +5297,17 @@ Dynamic width</source>
         <translation>ペンの筆圧</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="+26"/>
+        <source>Translators</source>
+        <translation>翻訳者</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Licenses</source>
+        <translation>ライセンス</translation>
+    </message>
+    <message>
+        <location line="+24"/>
         <source>AI</source>
         <translation>AI</translation>
     </message>

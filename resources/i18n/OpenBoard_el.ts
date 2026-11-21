@@ -3081,7 +3081,7 @@ Do you want to continue?</source>
     </message>
     <message>
         <location line="+28"/>
-        <source>Drag a GIF from the window at the right to the page.</source>
+        <source>Drag a GIF from the window of the GIFs to the page.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3471,7 +3471,7 @@ Do you want to continue?</source>
 <context>
     <name>UBGifWindow</name>
     <message>
-        <location filename="../../src/gui/UBGifWindow.cpp" line="+55"/>
+        <location filename="../../src/gui/UBGifWindow.cpp" line="+66"/>
         <source>GIFs of klipy.com: drag one to the page</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4033,7 +4033,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
 <context>
     <name>UBKeyCatcher</name>
     <message>
-        <location filename="../../src/gui/UBShortcutsDialog.cpp" line="+726"/>
+        <location filename="../../src/gui/UBShortcutsDialog.cpp" line="+727"/>
         <source>Click here and press the keys of the new shortcut</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4225,7 +4225,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation type="vanished">Μέγεθος σελίδας</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+142"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+140"/>
         <location line="+92"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -4340,48 +4340,32 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>Προσαρμοσμένο μέγεθος...</translation>
     </message>
     <message>
-        <location line="+5"/>
         <source>Read and dictate</source>
-        <translation>Ανάγνωση και υπαγόρευση</translation>
+        <translation type="vanished">Ανάγνωση και υπαγόρευση</translation>
     </message>
     <message>
-        <location line="+2"/>
         <location line="+7"/>
         <source>Read aloud</source>
         <translation>Ανάγνωση φωναχτά</translation>
     </message>
     <message>
-        <location line="-4"/>
         <source>Reads the texts selected, or the text of the page</source>
-        <translation>Διαβάζει τα επιλεγμένα κείμενα ή το κείμενο της σελίδας</translation>
+        <translation type="vanished">Διαβάζει τα επιλεγμένα κείμενα ή το κείμενο της σελίδας</translation>
     </message>
     <message>
-        <location line="+4"/>
         <source>Stop reading</source>
-        <translation>Διακοπή ανάγνωσης</translation>
+        <translation type="vanished">Διακοπή ανάγνωσης</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Dictate (Windows + H)</source>
-        <translation>Υπαγόρευση (Windows + H)</translation>
+        <translation type="vanished">Υπαγόρευση (Windows + H)</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Opens the dictation of Windows: what is said is written where the cursor of text is</source>
-        <translation>Ανοίγει την υπαγόρευση των Windows: ό,τι λέγεται γράφεται εκεί που είναι ο δρομέας κειμένου</translation>
+        <translation type="vanished">Ανοίγει την υπαγόρευση των Windows: ό,τι λέγεται γράφεται εκεί που είναι ο δρομέας κειμένου</translation>
     </message>
     <message>
-        <location line="+3"/>
-        <source>Transcribe an audio...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Writes what is said in a recording, with an AI on the web</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+20"/>
+        <location line="+21"/>
         <source>&amp;Tools</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4422,12 +4406,11 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>Το περίεργο είναι ότι δεν ξέρω τίποτα από γράψιμο κώδικα. Έφτιαξα το LibertyBoard με τη βοήθεια του Claude, μιας τεχνητής νοημοσύνης: εγώ έφερνα τις ιδέες και ο Claude τις έκανε πρόγραμμα. Αν οι ιδέες σας είναι ξεκάθαρες και ξέρετε να τις γράψετε σε ένα καλό prompt, μπορείτε κι εσείς να δημιουργήσετε ό,τι φαντάζεστε.</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>LibertyBoard is free software (GPLv3 license), like OpenBoard.</source>
-        <translation>Το LibertyBoard είναι ελεύθερο λογισμικό (άδεια GPLv3), όπως και το OpenBoard.</translation>
+        <translation type="vanished">Το LibertyBoard είναι ελεύθερο λογισμικό (άδεια GPLv3), όπως και το OpenBoard.</translation>
     </message>
     <message>
-        <location line="+154"/>
+        <location line="+156"/>
         <location line="+17"/>
         <source>Lock the canvas: nothing can be drawn, written, highlighted, selected, moved or deleted; the laser pointer and the hand still work</source>
         <translation>Κλείδωμα καμβά: τίποτα δεν μπορεί να σχεδιαστεί, να γραφτεί, να επισημανθεί, να επιλεγεί, να μετακινηθεί ή να διαγραφεί· το λέιζερ και το χέρι λειτουργούν ακόμα</translation>
@@ -4466,7 +4449,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation type="vanished">Γράφει ό,τι λέγεται σε μια ηχογράφηση· θα έρθει με την ΤΝ του LibertyBoard</translation>
     </message>
     <message>
-        <location line="-242"/>
+        <location line="-241"/>
         <source>Full screen</source>
         <translation>Πλήρης οθόνη</translation>
     </message>
@@ -4491,7 +4474,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>Λήψη και εγκατάσταση της τελευταίας έκδοσης από το GitHub</translation>
     </message>
     <message>
-        <location line="+115"/>
+        <location line="+114"/>
         <location line="+398"/>
         <source>Saved</source>
         <translation>Αποθηκεύτηκε</translation>
@@ -5279,7 +5262,17 @@ Dynamic width</source>
         <translation>Πίεση γραφίδας</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="+26"/>
+        <source>Translators</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Licenses</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+24"/>
         <source>AI</source>
         <translation type="unfinished"></translation>
     </message>

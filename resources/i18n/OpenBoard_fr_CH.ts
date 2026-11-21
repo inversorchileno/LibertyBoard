@@ -3170,8 +3170,12 @@ Voulez-vous continuer ?</translation>
     </message>
     <message>
         <location line="+28"/>
+        <source>Drag a GIF from the window of the GIFs to the page.</source>
+        <translation>Faites glisser un GIF de la fenêtre des GIF sur la page.</translation>
+    </message>
+    <message>
         <source>Drag a GIF from the window at the right to the page.</source>
-        <translation>Glissez un GIF depuis la fenêtre de droite sur la page.</translation>
+        <translation type="vanished">Glissez un GIF depuis la fenêtre de droite sur la page.</translation>
     </message>
     <message>
         <source>To use GIFs, make a free account at klipy.com, only once, and paste your key (API key) here. From then on, the GIF search is always ready. Without it, the emojis work as always.</source>
@@ -3614,7 +3618,7 @@ Voulez-vous continuer ?</translation>
 <context>
     <name>UBGifWindow</name>
     <message>
-        <location filename="../../src/gui/UBGifWindow.cpp" line="+55"/>
+        <location filename="../../src/gui/UBGifWindow.cpp" line="+66"/>
         <source>GIFs of klipy.com: drag one to the page</source>
         <translation>GIF de klipy.com : glissez-en un sur la page</translation>
     </message>
@@ -4176,7 +4180,7 @@ La télécharger et l&apos;installer maintenant ? LibertyBoard enregistre vos do
 <context>
     <name>UBKeyCatcher</name>
     <message>
-        <location filename="../../src/gui/UBShortcutsDialog.cpp" line="+726"/>
+        <location filename="../../src/gui/UBShortcutsDialog.cpp" line="+727"/>
         <source>Click here and press the keys of the new shortcut</source>
         <translation>Cliquez ici et appuyez sur les touches du nouveau raccourci</translation>
     </message>
@@ -4368,7 +4372,7 @@ La télécharger et l&apos;installer maintenant ? LibertyBoard enregistre vos do
         <translation type="vanished">Taille de la page</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+142"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+140"/>
         <location line="+92"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -4483,48 +4487,40 @@ La télécharger et l&apos;installer maintenant ? LibertyBoard enregistre vos do
         <translation>Taille personnalisée...</translation>
     </message>
     <message>
-        <location line="+5"/>
         <source>Read and dictate</source>
-        <translation>Lire et dicter</translation>
+        <translation type="vanished">Lire et dicter</translation>
     </message>
     <message>
-        <location line="+2"/>
         <location line="+7"/>
         <source>Read aloud</source>
         <translation>Lire à voix haute</translation>
     </message>
     <message>
-        <location line="-4"/>
         <source>Reads the texts selected, or the text of the page</source>
-        <translation>Lit les textes sélectionnés, ou le texte de la page</translation>
+        <translation type="vanished">Lit les textes sélectionnés, ou le texte de la page</translation>
     </message>
     <message>
-        <location line="+4"/>
         <source>Stop reading</source>
-        <translation>Arrêter la lecture</translation>
+        <translation type="vanished">Arrêter la lecture</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Dictate (Windows + H)</source>
-        <translation>Dicter (Windows + H)</translation>
+        <translation type="vanished">Dicter (Windows + H)</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Opens the dictation of Windows: what is said is written where the cursor of text is</source>
-        <translation>Ouvre la dictée de Windows : ce qui est dit s&apos;écrit là où se trouve le curseur de texte</translation>
+        <translation type="vanished">Ouvre la dictée de Windows : ce qui est dit s&apos;écrit là où se trouve le curseur de texte</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Transcribe an audio...</source>
-        <translation>Transcrire un audio...</translation>
+        <translation type="vanished">Transcrire un audio...</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Writes what is said in a recording, with an AI on the web</source>
-        <translation>Écrit ce qui est dit dans un enregistrement, avec une IA sur le web</translation>
+        <translation type="vanished">Écrit ce qui est dit dans un enregistrement, avec une IA sur le web</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+21"/>
         <source>&amp;Tools</source>
         <translation>&amp;Outils</translation>
     </message>
@@ -4565,12 +4561,11 @@ La télécharger et l&apos;installer maintenant ? LibertyBoard enregistre vos do
         <translation>Le plus curieux, c’est que je ne sais pas écrire de code. J’ai construit LibertyBoard avec l’aide de Claude, une intelligence artificielle : j’apportais les idées et Claude les transformait en programme. Si vos idées sont claires et que vous savez les écrire dans un bon prompt, vous aussi pouvez créer ce que vous imaginez.</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>LibertyBoard is free software (GPLv3 license), like OpenBoard.</source>
-        <translation>LibertyBoard est un logiciel libre (licence GPLv3), comme OpenBoard.</translation>
+        <translation type="vanished">LibertyBoard est un logiciel libre (licence GPLv3), comme OpenBoard.</translation>
     </message>
     <message>
-        <location line="+154"/>
+        <location line="+156"/>
         <location line="+17"/>
         <source>Lock the canvas: nothing can be drawn, written, highlighted, selected, moved or deleted; the laser pointer and the hand still work</source>
         <translation>Verrouiller le canevas : rien ne peut être dessiné, écrit, surligné, sélectionné, déplacé ni supprimé ; le laser et la main fonctionnent toujours</translation>
@@ -4609,7 +4604,7 @@ La télécharger et l&apos;installer maintenant ? LibertyBoard enregistre vos do
         <translation type="vanished">Écrit ce qui est dit dans un enregistrement ; arrivera avec l&apos;IA de LibertyBoard</translation>
     </message>
     <message>
-        <location line="-242"/>
+        <location line="-241"/>
         <source>Full screen</source>
         <translation>Plein écran</translation>
     </message>
@@ -4634,7 +4629,7 @@ La télécharger et l&apos;installer maintenant ? LibertyBoard enregistre vos do
         <translation>Télécharger et installer la dernière version depuis GitHub</translation>
     </message>
     <message>
-        <location line="+115"/>
+        <location line="+114"/>
         <location line="+398"/>
         <source>Saved</source>
         <translation>Enregistré</translation>
@@ -5401,7 +5396,7 @@ Largeur dynamique</translation>
 <context>
     <name>UBPreferencesController</name>
     <message>
-        <location filename="../../src/core/UBPreferencesController.cpp" line="+570"/>
+        <location filename="../../src/core/UBPreferencesController.cpp" line="+603"/>
         <source>Marker is pressure sensitive</source>
         <translation>Stylet sensible à la pression</translation>
     </message>
@@ -5411,7 +5406,7 @@ Largeur dynamique</translation>
         <translation>version : </translation>
     </message>
     <message>
-        <location line="-283"/>
+        <location line="-316"/>
         <source>Language</source>
         <translation>Langue</translation>
     </message>
@@ -5436,7 +5431,17 @@ Largeur dynamique</translation>
         <translation>Pression du stylet</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="+26"/>
+        <source>Translators</source>
+        <translation>Traducteurs</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Licenses</source>
+        <translation>Licences</translation>
+    </message>
+    <message>
+        <location line="+24"/>
         <source>AI</source>
         <translation>IA</translation>
     </message>

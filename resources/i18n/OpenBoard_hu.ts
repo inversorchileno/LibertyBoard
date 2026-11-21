@@ -3147,7 +3147,7 @@ Do you want to continue?</source>
     </message>
     <message>
         <location line="+28"/>
-        <source>Drag a GIF from the window at the right to the page.</source>
+        <source>Drag a GIF from the window of the GIFs to the page.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3537,7 +3537,7 @@ Do you want to continue?</source>
 <context>
     <name>UBGifWindow</name>
     <message>
-        <location filename="../../src/gui/UBGifWindow.cpp" line="+55"/>
+        <location filename="../../src/gui/UBGifWindow.cpp" line="+66"/>
         <source>GIFs of klipy.com: drag one to the page</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4099,7 +4099,7 @@ Letölti és telepíti most? A LibertyBoard menti a dokumentumait, bezárul, maj
 <context>
     <name>UBKeyCatcher</name>
     <message>
-        <location filename="../../src/gui/UBShortcutsDialog.cpp" line="+726"/>
+        <location filename="../../src/gui/UBShortcutsDialog.cpp" line="+727"/>
         <source>Click here and press the keys of the new shortcut</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4291,7 +4291,7 @@ Letölti és telepíti most? A LibertyBoard menti a dokumentumait, bezárul, maj
         <translation type="vanished">Oldalméret</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+142"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+140"/>
         <location line="+92"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -4406,48 +4406,32 @@ Letölti és telepíti most? A LibertyBoard menti a dokumentumait, bezárul, maj
         <translation>Egyéni méret...</translation>
     </message>
     <message>
-        <location line="+5"/>
         <source>Read and dictate</source>
-        <translation>Felolvasás és diktálás</translation>
+        <translation type="vanished">Felolvasás és diktálás</translation>
     </message>
     <message>
-        <location line="+2"/>
         <location line="+7"/>
         <source>Read aloud</source>
         <translation>Felolvasás</translation>
     </message>
     <message>
-        <location line="-4"/>
         <source>Reads the texts selected, or the text of the page</source>
-        <translation>Felolvassa a kijelölt szövegeket vagy az oldal szövegét</translation>
+        <translation type="vanished">Felolvassa a kijelölt szövegeket vagy az oldal szövegét</translation>
     </message>
     <message>
-        <location line="+4"/>
         <source>Stop reading</source>
-        <translation>Felolvasás leállítása</translation>
+        <translation type="vanished">Felolvasás leállítása</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Dictate (Windows + H)</source>
-        <translation>Diktálás (Windows + H)</translation>
+        <translation type="vanished">Diktálás (Windows + H)</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Opens the dictation of Windows: what is said is written where the cursor of text is</source>
-        <translation>Megnyitja a Windows diktálását: amit mond, oda íródik, ahol a szövegkurzor van</translation>
+        <translation type="vanished">Megnyitja a Windows diktálását: amit mond, oda íródik, ahol a szövegkurzor van</translation>
     </message>
     <message>
-        <location line="+3"/>
-        <source>Transcribe an audio...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Writes what is said in a recording, with an AI on the web</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+20"/>
+        <location line="+21"/>
         <source>&amp;Tools</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4488,12 +4472,11 @@ Letölti és telepíti most? A LibertyBoard menti a dokumentumait, bezárul, maj
         <translation>Az érdekes az, hogy egyáltalán nem tudok programozni. A LibertyBoardot Claude, egy mesterséges intelligencia segítségével építettem: én hoztam az ötleteket, Claude pedig programmá alakította őket. Ha világosak az ötleteid, és jól meg tudod fogalmazni őket egy promptban, te is létrehozhatod, amit elképzelsz.</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>LibertyBoard is free software (GPLv3 license), like OpenBoard.</source>
-        <translation>A LibertyBoard szabad szoftver (GPLv3 licenc), akárcsak az OpenBoard.</translation>
+        <translation type="vanished">A LibertyBoard szabad szoftver (GPLv3 licenc), akárcsak az OpenBoard.</translation>
     </message>
     <message>
-        <location line="+154"/>
+        <location line="+156"/>
         <location line="+17"/>
         <source>Lock the canvas: nothing can be drawn, written, highlighted, selected, moved or deleted; the laser pointer and the hand still work</source>
         <translation>Vászon zárolása: semmit sem lehet rajzolni, írni, kiemelni, kijelölni, mozgatni vagy törölni; a lézer és a kéz továbbra is működik</translation>
@@ -4532,7 +4515,7 @@ Letölti és telepíti most? A LibertyBoard menti a dokumentumait, bezárul, maj
         <translation type="vanished">Leírja, ami egy felvételen elhangzik; a LibertyBoard MI-jével érkezik</translation>
     </message>
     <message>
-        <location line="-242"/>
+        <location line="-241"/>
         <source>Full screen</source>
         <translation>Teljes képernyő</translation>
     </message>
@@ -4557,7 +4540,7 @@ Letölti és telepíti most? A LibertyBoard menti a dokumentumait, bezárul, maj
         <translation>A legújabb verzió letöltése és telepítése a GitHubról</translation>
     </message>
     <message>
-        <location line="+115"/>
+        <location line="+114"/>
         <location line="+398"/>
         <source>Saved</source>
         <translation>Mentve</translation>
@@ -5353,7 +5336,17 @@ Dinamikus szélesség</translation>
         <translation>Tollnyomás</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="+26"/>
+        <source>Translators</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Licenses</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+24"/>
         <source>AI</source>
         <translation type="unfinished"></translation>
     </message>

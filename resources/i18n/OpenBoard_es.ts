@@ -3127,8 +3127,12 @@ Si quieres continuar, el documento se convertirá para ser compatible con la ver
     </message>
     <message>
         <location line="+28"/>
+        <source>Drag a GIF from the window of the GIFs to the page.</source>
+        <translation>Arrastra un GIF desde la ventana de los GIFs hasta la página.</translation>
+    </message>
+    <message>
         <source>Drag a GIF from the window at the right to the page.</source>
-        <translation>Arrastra un GIF desde la ventana de la derecha hasta la página.</translation>
+        <translation type="vanished">Arrastra un GIF desde la ventana de la derecha hasta la página.</translation>
     </message>
     <message>
         <source>To use GIFs, make a free account at klipy.com, only once, and paste your key (API key) here. From then on, the GIF search is always ready. Without it, the emojis work as always.</source>
@@ -3569,7 +3573,7 @@ Si quieres continuar, el documento se convertirá para ser compatible con la ver
 <context>
     <name>UBGifWindow</name>
     <message>
-        <location filename="../../src/gui/UBGifWindow.cpp" line="+55"/>
+        <location filename="../../src/gui/UBGifWindow.cpp" line="+66"/>
         <source>GIFs of klipy.com: drag one to the page</source>
         <translation>GIFs de klipy.com: arrastra uno a la página</translation>
     </message>
@@ -4131,7 +4135,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
 <context>
     <name>UBKeyCatcher</name>
     <message>
-        <location filename="../../src/gui/UBShortcutsDialog.cpp" line="+726"/>
+        <location filename="../../src/gui/UBShortcutsDialog.cpp" line="+727"/>
         <source>Click here and press the keys of the new shortcut</source>
         <translation>Haz clic aquí y presiona las teclas del nuevo atajo</translation>
     </message>
@@ -4323,7 +4327,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
 <context>
     <name>UBMainMenu</name>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+621"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+602"/>
         <source>Hide or show the toolbar</source>
         <translation>Ocultar o mostrar la barra</translation>
     </message>
@@ -4340,7 +4344,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation type="vanished">Tamaño de página</translation>
     </message>
     <message>
-        <location line="-479"/>
+        <location line="-462"/>
         <location line="+92"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -4455,48 +4459,40 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>Tamaño personalizado...</translation>
     </message>
     <message>
-        <location line="+5"/>
         <source>Read and dictate</source>
-        <translation>Leer y dictar</translation>
+        <translation type="vanished">Leer y dictar</translation>
     </message>
     <message>
-        <location line="+2"/>
         <location line="+7"/>
         <source>Read aloud</source>
         <translation>Leer en voz alta</translation>
     </message>
     <message>
-        <location line="-4"/>
         <source>Reads the texts selected, or the text of the page</source>
-        <translation>Lee los textos seleccionados, o el texto de la página</translation>
+        <translation type="vanished">Lee los textos seleccionados, o el texto de la página</translation>
     </message>
     <message>
-        <location line="+4"/>
         <source>Stop reading</source>
-        <translation>Detener lectura</translation>
+        <translation type="vanished">Detener lectura</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Dictate (Windows + H)</source>
-        <translation>Dictar (Windows + H)</translation>
+        <translation type="vanished">Dictar (Windows + H)</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Opens the dictation of Windows: what is said is written where the cursor of text is</source>
-        <translation>Abre el dictado de Windows: lo que se dice se escribe donde está el cursor de texto</translation>
+        <translation type="vanished">Abre el dictado de Windows: lo que se dice se escribe donde está el cursor de texto</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Transcribe an audio...</source>
-        <translation>Transcribir un audio...</translation>
+        <translation type="vanished">Transcribir un audio...</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Writes what is said in a recording, with an AI on the web</source>
-        <translation>Escribe lo que se dice en una grabación, con una IA en la web</translation>
+        <translation type="vanished">Escribe lo que se dice en una grabación, con una IA en la web</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+21"/>
         <source>&amp;Tools</source>
         <translation>&amp;Herramientas</translation>
     </message>
@@ -4537,12 +4533,11 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>Lo curioso es que no sé nada de escribir código. Construí LibertyBoard apoyándome en Claude, una inteligencia artificial: yo ponía las ideas y Claude las convertía en programa. Si tienes claras tus ideas y sabes escribirlas en un buen prompt, tú también puedes crear lo que imaginas.</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>LibertyBoard is free software (GPLv3 license), like OpenBoard.</source>
-        <translation>LibertyBoard es software libre (licencia GPLv3), igual que OpenBoard.</translation>
+        <translation type="vanished">LibertyBoard es software libre (licencia GPLv3), igual que OpenBoard.</translation>
     </message>
     <message>
-        <location line="+154"/>
+        <location line="+156"/>
         <location line="+17"/>
         <source>Lock the canvas: nothing can be drawn, written, highlighted, selected, moved or deleted; the laser pointer and the hand still work</source>
         <translation>Bloquear el lienzo: no se puede dibujar, escribir, resaltar, seleccionar, mover ni borrar nada; el láser y la mano siguen funcionando</translation>
@@ -4581,7 +4576,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation type="vanished">Escribe lo que se dice en una grabación; llegará con la IA de LibertyBoard</translation>
     </message>
     <message>
-        <location line="-242"/>
+        <location line="-241"/>
         <source>Full screen</source>
         <translation>Pantalla completa</translation>
     </message>
@@ -4606,7 +4601,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>Descargar e instalar la última versión desde GitHub</translation>
     </message>
     <message>
-        <location line="+115"/>
+        <location line="+114"/>
         <location line="+398"/>
         <source>Saved</source>
         <translation>Guardado</translation>
@@ -5366,12 +5361,12 @@ Ancho dinámico</translation>
         <translation type="vanished">Puntero láser</translation>
     </message>
     <message>
-        <location filename="../../src/core/UBPreferencesController.cpp" line="+424"/>
+        <location filename="../../src/core/UBPreferencesController.cpp" line="+457"/>
         <source>version: </source>
         <translation>versión:</translation>
     </message>
     <message>
-        <location line="-283"/>
+        <location line="-316"/>
         <source>Language</source>
         <translation>Idioma</translation>
     </message>
@@ -5396,7 +5391,17 @@ Ancho dinámico</translation>
         <translation>Presión del lápiz</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="+26"/>
+        <source>Translators</source>
+        <translation>Traductores</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Licenses</source>
+        <translation>Licencias</translation>
+    </message>
+    <message>
+        <location line="+24"/>
         <source>AI</source>
         <translation>IA</translation>
     </message>

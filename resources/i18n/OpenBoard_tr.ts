@@ -3076,7 +3076,7 @@ Do you want to continue?</source>
     </message>
     <message>
         <location line="+28"/>
-        <source>Drag a GIF from the window at the right to the page.</source>
+        <source>Drag a GIF from the window of the GIFs to the page.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3466,7 +3466,7 @@ Do you want to continue?</source>
 <context>
     <name>UBGifWindow</name>
     <message>
-        <location filename="../../src/gui/UBGifWindow.cpp" line="+55"/>
+        <location filename="../../src/gui/UBGifWindow.cpp" line="+66"/>
         <source>GIFs of klipy.com: drag one to the page</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4028,7 +4028,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
 <context>
     <name>UBKeyCatcher</name>
     <message>
-        <location filename="../../src/gui/UBShortcutsDialog.cpp" line="+726"/>
+        <location filename="../../src/gui/UBShortcutsDialog.cpp" line="+727"/>
         <source>Click here and press the keys of the new shortcut</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4220,7 +4220,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation type="vanished">Sayfa boyutu</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBMainMenu.cpp" line="+142"/>
+        <location filename="../../src/gui/UBMainMenu.cpp" line="+140"/>
         <location line="+92"/>
         <source>Podcast</source>
         <translation>Podcast</translation>
@@ -4335,48 +4335,32 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>Özel boyut...</translation>
     </message>
     <message>
-        <location line="+5"/>
         <source>Read and dictate</source>
-        <translation>Okuma ve dikte</translation>
+        <translation type="vanished">Okuma ve dikte</translation>
     </message>
     <message>
-        <location line="+2"/>
         <location line="+7"/>
         <source>Read aloud</source>
         <translation>Sesli oku</translation>
     </message>
     <message>
-        <location line="-4"/>
         <source>Reads the texts selected, or the text of the page</source>
-        <translation>Seçili metinleri ya da sayfanın metnini okur</translation>
+        <translation type="vanished">Seçili metinleri ya da sayfanın metnini okur</translation>
     </message>
     <message>
-        <location line="+4"/>
         <source>Stop reading</source>
-        <translation>Okumayı durdur</translation>
+        <translation type="vanished">Okumayı durdur</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Dictate (Windows + H)</source>
-        <translation>Dikte et (Windows + H)</translation>
+        <translation type="vanished">Dikte et (Windows + H)</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Opens the dictation of Windows: what is said is written where the cursor of text is</source>
-        <translation>Windows dikte özelliğini açar: söylenenler metin imlecinin olduğu yere yazılır</translation>
+        <translation type="vanished">Windows dikte özelliğini açar: söylenenler metin imlecinin olduğu yere yazılır</translation>
     </message>
     <message>
-        <location line="+3"/>
-        <source>Transcribe an audio...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Writes what is said in a recording, with an AI on the web</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+20"/>
+        <location line="+21"/>
         <source>&amp;Tools</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4417,12 +4401,11 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>İşin ilginç yanı, kod yazmayı hiç bilmiyorum. LibertyBoard&apos;u bir yapay zekâ olan Claude&apos;un yardımıyla yaptım: fikirleri ben getirdim, Claude onları programa dönüştürdü. Fikirleriniz netse ve onları iyi bir prompt ile yazabiliyorsanız, siz de hayal ettiğinizi yaratabilirsiniz.</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>LibertyBoard is free software (GPLv3 license), like OpenBoard.</source>
-        <translation>LibertyBoard, tıpkı OpenBoard gibi özgür yazılımdır (GPLv3 lisansı).</translation>
+        <translation type="vanished">LibertyBoard, tıpkı OpenBoard gibi özgür yazılımdır (GPLv3 lisansı).</translation>
     </message>
     <message>
-        <location line="+154"/>
+        <location line="+156"/>
         <location line="+17"/>
         <source>Lock the canvas: nothing can be drawn, written, highlighted, selected, moved or deleted; the laser pointer and the hand still work</source>
         <translation>Tuvali kilitle: hiçbir şey çizilemez, yazılamaz, vurgulanamaz, seçilemez, taşınamaz veya silinemez; lazer ve el çalışmaya devam eder</translation>
@@ -4461,7 +4444,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation type="vanished">Bir kayıtta söylenenleri yazar; LibertyBoard yapay zekâsı ile gelecek</translation>
     </message>
     <message>
-        <location line="-242"/>
+        <location line="-241"/>
         <source>Full screen</source>
         <translation>Tam ekran</translation>
     </message>
@@ -4486,7 +4469,7 @@ Download and install it now? LibertyBoard saves your documents, closes and opens
         <translation>En son sürümü GitHub&apos;dan indir ve kur</translation>
     </message>
     <message>
-        <location line="+115"/>
+        <location line="+114"/>
         <location line="+398"/>
         <source>Saved</source>
         <translation>Kaydedildi</translation>
@@ -5277,7 +5260,17 @@ Dinamik kalınlık</translation>
         <translation>Kalem basıncı</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="+26"/>
+        <source>Translators</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Licenses</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+24"/>
         <source>AI</source>
         <translation type="unfinished"></translation>
     </message>
