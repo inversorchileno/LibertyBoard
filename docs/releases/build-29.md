@@ -5,7 +5,6 @@
 - Arreglo: al arrastrar la barra de páginas, la página ya no se corre hacia la derecha.
 - La ventana de GIFs se ubica como la de la IA, sin tapar la barra de opciones ni el zoom.
 - Edición sin «Leer y dictar» (siguen en sus herramientas y Ctrl+Mayús+L).
-- Preferencias → Acerca de: licencias y traductores en botones pequeños.
 - Descripción de GitHub con todas las funciones y notas de cada versión.
 
 ---

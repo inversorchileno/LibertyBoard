@@ -12,7 +12,7 @@
 
 LibertyBoard junta en un solo programa lo que antes estaba repartido en muchas herramientas: un lector y anotador de PDF, una pizarra para clases y presentaciones, un modo para escribir sobre cualquier programa abierto y un panel para trabajar con ChatGPT, Claude, Gemini, Copilot y otras IA. Sirve para estudiantes, profesores, trabajadores, creadores de contenido y, en general, para todos los que quieren una herramienta de PDF y pizarra multifuncional.
 
-Lo creó Luis, conocido en YouTube como «Inversor Chileno», tomando como base [OpenBoard](https://github.com/OpenBoard-org/OpenBoard). Luis no programa: construyó LibertyBoard con la ayuda de Claude, una inteligencia artificial, aportando las ideas.
+Lo creó Luis, conocido en YouTube como «Inversor Chileno». Luis no programa: construyó LibertyBoard con la ayuda de Claude, una inteligencia artificial, aportando las ideas.
 
 ## Descargar
 
@@ -97,8 +97,6 @@ Solo se pide la primera vez. LibertyBoard guarda sus documentos y su configuraci
 
 La versión de Windows se compila automáticamente con GitHub Actions (`.github/workflows/windows-build.yml`) usando Qt 6 y MSVC, y se publica en Releases con las notas de `docs/releases`. Las notas de diseño y lo acordado para cada etapa están en [docs/LIBERTYBOARD.md](docs/LIBERTYBOARD.md).
 
-## Licencia y origen
+## Licencia
 
-LibertyBoard es una **versión modificada de [OpenBoard](https://github.com/OpenBoard-org/OpenBoard)**, que a su vez deriva de Open-Sankoré y Uniboard. Se distribuye bajo la **Licencia Pública General de GNU, versión 3 (GPLv3)**, igual que OpenBoard, con la misma excepción de enlace para OpenSSL. Ver [LICENSE](LICENSE) y [COPYRIGHT](COPYRIGHT).
-
-Los avisos de copyright originales se mantienen en los archivos de código. LibertyBoard no está afiliado ni respaldado por el proyecto OpenBoard ni por sus autores.
+LibertyBoard es software libre bajo la Licencia Pública General de GNU, versión 3 (GPLv3), derivado de [OpenBoard](https://github.com/OpenBoard-org/OpenBoard); ver [LICENSE](LICENSE) y [COPYRIGHT](COPYRIGHT).

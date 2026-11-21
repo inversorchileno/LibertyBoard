@@ -3224,11 +3224,6 @@ hr { height: 1px; border-width: 0; }
 &lt;/tr&gt;&lt;/table&gt;
 &lt;p&gt;LibertyBoard es un programa para leer y anotar documentos PDF con lápiz, presentar con puntero láser y dibujar sobre el escritorio. Incluye paneles de herramientas, formas, resaltador, notas y miniaturas de páginas.&lt;/p&gt;
 &lt;p&gt;Código fuente de LibertyBoard: &lt;a href=&quot;https://github.com/inversorchileno/LibertyBoard&quot;&gt;github.com/inversorchileno/LibertyBoard&lt;/a&gt;&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;&lt;b&gt;Versión modificada de OpenBoard&lt;/b&gt;&lt;/p&gt;
-&lt;p&gt;LibertyBoard es una versión modificada de OpenBoard. Se distribuye bajo los mismos términos de la Licencia Pública General de GNU, versión 3 (GPLv3), con la excepción de enlace para la biblioteca OpenSSL. LibertyBoard no está afiliado ni respaldado por el proyecto OpenBoard ni por sus autores.&lt;/p&gt;
-&lt;p&gt;OpenBoard es copyright © 2022 de sus autores (&lt;a href=&quot;https://github.com/OpenBoard-org&quot;&gt;github.com/OpenBoard-org&lt;/a&gt;). OpenBoard deriva de Open-Sankoré. Open-Sankoré es copyright © 2010-2015 Groupement d&#x27;Intérêt Public pour l&#x27;Education Numérique en Afrique (GIP ENA).&lt;/p&gt;
-&lt;p&gt;LibertyBoard is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 of the License, with a specific linking exception for the OpenSSL project&#x27;s &quot;OpenSSL&quot; library. LibertyBoard is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License below for more details.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="openExternalLinks">
