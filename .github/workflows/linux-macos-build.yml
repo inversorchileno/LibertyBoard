@@ -227,9 +227,18 @@ jobs:
           hdiutil create -volname LibertyBoard -srcfolder dmg -ov -format UDZO LibertyBoard-macos-${{ matrix.name }}.dmg
           ls -la LibertyBoard-macos-${{ matrix.name }}.dmg
 
+      - name: Check that the application carries its libraries
+        run: |
+          # No library may be looked for in the folders of this machine.
+          bad=$(find build/LibertyBoard.app -type f \( -perm -u+x -o -name '*.dylib' \) -exec otool -L {} \; 2>/dev/null \
+                | grep -E '^\s+(/Users/|/opt/homebrew|/usr/local)' | sort -u || true)
+          if [ -n "$bad" ]; then echo "Libraries outside the application:"; echo "$bad"; exit 1; fi
+          echo "All libraries are inside the application."
+
       - name: Start it once
         run: |
           set +e
+          unset DYLD_FALLBACK_LIBRARY_PATH
           build/LibertyBoard.app/Contents/MacOS/LibertyBoard &
           pid=$!
           sleep 25
