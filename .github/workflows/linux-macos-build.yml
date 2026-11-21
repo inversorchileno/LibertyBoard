@@ -170,6 +170,8 @@ jobs:
 
       - name: Build
         run: |
+          # The code includes <poppler/Object.h>: the folder above that of poppler.
+          export CXXFLAGS="-I$(brew --prefix poppler)/include"
           cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DQT_VERSION=6 \
             -DCMAKE_PREFIX_PATH="$PREFIXES" -DCMAKE_OSX_DEPLOYMENT_TARGET=12.0
           cmake --build build
