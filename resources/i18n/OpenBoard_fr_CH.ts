@@ -1679,7 +1679,7 @@ Voulez-vous continuer quand-même ?   </translation>
 <context>
     <name>UBAiPanel</name>
     <message>
-        <location filename="../../src/gui/UBAiPanel.cpp" line="+159"/>
+        <location filename="../../src/gui/UBAiPanel.cpp" line="+164"/>
         <source>Drag over the part of the page to give to the AI. Escape: cancel.</source>
         <translation>Faites glisser sur la partie de la page à donner à l&apos;IA. Échap : annuler.</translation>
     </message>
@@ -1714,7 +1714,7 @@ Voulez-vous continuer quand-même ?   </translation>
         <translation>Vers :</translation>
     </message>
     <message>
-        <location line="+98"/>
+        <location line="+171"/>
         <source>Put the picture on the desktop</source>
         <translation>Mettre l&apos;image sur le bureau</translation>
     </message>
@@ -1774,7 +1774,7 @@ Voulez-vous continuer quand-même ?   </translation>
         <translation>Met sur la page ce qui a été copié dans l&apos;IA : un texte, ou une image avec son clic droit, Copier l&apos;image. Le clic droit sur une image ou un texte sélectionné de l&apos;IA peut aussi l&apos;y mettre.</translation>
     </message>
     <message>
-        <location line="+391"/>
+        <location line="+405"/>
         <source>Right click on a picture or a text of the AI to put it on the desktop.</source>
         <translation>Clic droit sur une image ou un texte de l&apos;IA pour le mettre sur le bureau.</translation>
     </message>
@@ -1794,16 +1794,21 @@ Voulez-vous continuer quand-même ?   </translation>
         <translation>L&apos;instruction est écrite dans l&apos;IA et aussi copiée : Ctrl+V la colle. Faites glisser la réponse sur la page, ou faites un clic droit dessus pour l&apos;y mettre.</translation>
     </message>
     <message>
+        <location line="+305"/>
+        <source>The picture could not be taken from the AI: right click on it and choose to put it on the page.</source>
+        <translation>L&apos;image n&apos;a pas pu être prise de l&apos;IA : faites un clic droit dessus et choisissez de la mettre sur la page.</translation>
+    </message>
+    <message>
         <source>Puts on the page what was copied in the AI: a text, or a picture with its right click, Copy image</source>
         <translation type="vanished">Met sur la page ce qui a été copié dans l&apos;IA : un texte, ou une image avec son clic droit, Copier l&apos;image</translation>
     </message>
     <message>
-        <location line="-356"/>
+        <location line="-675"/>
         <source>Drag to make the panel wider</source>
         <translation>Faites glisser pour élargir le panneau</translation>
     </message>
     <message>
-        <location line="+115"/>
+        <location line="+129"/>
         <source>The picture of the AI is on the page; it is also in %1</source>
         <translation>L&apos;image de l&apos;IA est sur la page ; elle est aussi dans %1</translation>
     </message>
@@ -1898,12 +1903,12 @@ Voulez-vous continuer quand-même ?   </translation>
         <location line="+12"/>
         <location line="+13"/>
         <location line="+17"/>
-        <location line="+109"/>
+        <location line="+139"/>
         <source>AI</source>
         <translation>IA</translation>
     </message>
     <message>
-        <location line="-139"/>
+        <location line="-169"/>
         <source>What should be given to the AI?</source>
         <translation>Que faut-il donner à l&apos;IA ?</translation>
     </message>
@@ -1943,7 +1948,7 @@ Voulez-vous continuer quand-même ?   </translation>
         <translation type="vanished">L&apos;instruction est écrite dans l&apos;IA et aussi copiée : Ctrl+V la colle. Faites glisser la réponse sur la page, ou utilisez Coller sur la page.</translation>
     </message>
     <message>
-        <location line="+75"/>
+        <location line="+105"/>
         <source>It seems that the free uses of %1 are over for now. Do the same with another AI?</source>
         <translation>Il semble que les utilisations gratuites de %1 soient épuisées pour l&apos;instant. Faire la même chose avec une autre IA ?</translation>
     </message>
@@ -2143,7 +2148,7 @@ Voulez-vous continuer quand-même ?   </translation>
         <translation>La taille de cette page. Les dessins restent où ils sont ; un canevas plus grand laisse de la place autour.</translation>
     </message>
     <message>
-        <location line="+403"/>
+        <location line="+402"/>
         <source>The GIF could not be found on its page. Try another one.</source>
         <translation>Le GIF n&apos;a pas été trouvé sur sa page. Essayez-en un autre.</translation>
     </message>
@@ -2158,7 +2163,7 @@ Voulez-vous continuer quand-même ?   </translation>
         <translation>Tous (%1)</translation>
     </message>
     <message>
-        <location line="-1324"/>
+        <location line="-1323"/>
         <source>Unknown content type %1</source>
         <translation>Type de contenu inconnu (%1)</translation>
     </message>
@@ -2381,7 +2386,7 @@ Voulez-vous continuer quand-même ?   </translation>
 <context>
     <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+777"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+775"/>
         <source>Quick note</source>
         <translation>Note rapide</translation>
     </message>
@@ -3144,7 +3149,7 @@ Voulez-vous continuer ?</translation>
 <context>
     <name>UBEmojiOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1144"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1142"/>
         <source>Emojis and GIFs</source>
         <translation>Emojis et GIF</translation>
     </message>
@@ -4806,7 +4811,7 @@ Voulez-vous ignorer les erreurs pour ce serveur ?</translation>
 <context>
     <name>UBNoteOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1337"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1335"/>
         <source>Note</source>
         <translation>Note</translation>
     </message>
@@ -5127,7 +5132,7 @@ On peut aussi le faire plus tard avec Accueil &gt; Reconnaître le texte.</trans
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1500"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1498"/>
         <source>Pen</source>
         <translation>Stylo</translation>
     </message>
@@ -5800,7 +5805,7 @@ Largeur dynamique</translation>
 <context>
     <name>UBSelectorOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1374"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1372"/>
         <source>Select</source>
         <translation>Sélectionner</translation>
     </message>
@@ -5853,7 +5858,7 @@ Largeur dynamique</translation>
         <translation type="vanished">Rectangle</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-657"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-655"/>
         <source>Shapes</source>
         <translation>Formes</translation>
     </message>
@@ -6737,7 +6742,22 @@ Largeur dynamique</translation>
 <context>
     <name>UBToolbarChoice</name>
     <message>
-        <location filename="../../src/gui/UBToolbarChoice.cpp" line="+283"/>
+        <location filename="../../src/gui/UBToolbarChoice.cpp" line="+64"/>
+        <source>Spotlight / Magnifier</source>
+        <translation>Projecteur / Loupe</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Attach file / Hyperlink</source>
+        <translation>Joindre un fichier / Hyperlien</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Selector: arrow / lasso</source>
+        <translation>Sélecteur : flèche / lasso</translation>
+    </message>
+    <message>
+        <location line="+229"/>
         <source>Move items</source>
         <translation>Déplacer les éléments</translation>
     </message>

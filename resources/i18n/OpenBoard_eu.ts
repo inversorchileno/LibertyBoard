@@ -1784,7 +1784,7 @@ Segurtasun egiaztapena gainidatzi eta jarraitu nahi duzu?</translation>
 <context>
     <name>UBAiPanel</name>
     <message>
-        <location filename="../../src/gui/UBAiPanel.cpp" line="+159"/>
+        <location filename="../../src/gui/UBAiPanel.cpp" line="+164"/>
         <source>Drag over the part of the page to give to the AI. Escape: cancel.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1819,7 +1819,7 @@ Segurtasun egiaztapena gainidatzi eta jarraitu nahi duzu?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+98"/>
+        <location line="+171"/>
         <source>Put the picture on the desktop</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1879,7 +1879,7 @@ Segurtasun egiaztapena gainidatzi eta jarraitu nahi duzu?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+391"/>
+        <location line="+405"/>
         <source>Right click on a picture or a text of the AI to put it on the desktop.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1899,12 +1899,17 @@ Segurtasun egiaztapena gainidatzi eta jarraitu nahi duzu?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-356"/>
+        <location line="+305"/>
+        <source>The picture could not be taken from the AI: right click on it and choose to put it on the page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-675"/>
         <source>Drag to make the panel wider</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+115"/>
+        <location line="+129"/>
         <source>The picture of the AI is on the page; it is also in %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1983,12 +1988,12 @@ Segurtasun egiaztapena gainidatzi eta jarraitu nahi duzu?</translation>
         <location line="+12"/>
         <location line="+13"/>
         <location line="+17"/>
-        <location line="+109"/>
+        <location line="+139"/>
         <source>AI</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-139"/>
+        <location line="-169"/>
         <source>What should be given to the AI?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2020,7 +2025,7 @@ Segurtasun egiaztapena gainidatzi eta jarraitu nahi duzu?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+75"/>
+        <location line="+105"/>
         <source>It seems that the free uses of %1 are over for now. Do the same with another AI?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2262,7 +2267,7 @@ Segurtasun egiaztapena gainidatzi eta jarraitu nahi duzu?</translation>
         <translation>Orri honen tamaina. Marrazkiak dauden lekuan geratzen dira; oihal handiago batek tokia uzten du inguruan.</translation>
     </message>
     <message>
-        <location line="+403"/>
+        <location line="+402"/>
         <source>The GIF could not be found on its page. Try another one.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2277,7 +2282,7 @@ Segurtasun egiaztapena gainidatzi eta jarraitu nahi duzu?</translation>
         <translation>Onartutako guztiak (%1)</translation>
     </message>
     <message>
-        <location line="-2638"/>
+        <location line="-2637"/>
         <source>Color</source>
         <translation>Kolorea</translation>
     </message>
@@ -2455,7 +2460,7 @@ Segurtasun egiaztapena gainidatzi eta jarraitu nahi duzu?</translation>
 <context>
     <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+777"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+775"/>
         <source>Quick note</source>
         <translation>Ohar azkarra</translation>
     </message>
@@ -3201,7 +3206,7 @@ Do you want to continue?</source>
 <context>
     <name>UBEmojiOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1144"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1142"/>
         <source>Emojis and GIFs</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4821,7 +4826,7 @@ Ostalari onentzako errore hauek ez-ikusi nahi dituzu?</translation>
 <context>
     <name>UBNoteOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1337"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1335"/>
         <source>Note</source>
         <translation>Oharra</translation>
     </message>
@@ -5142,7 +5147,7 @@ Geroago ere egin daiteke Hasiera &gt; Ezagutu testua erabiliz.</translation>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1500"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1498"/>
         <source>Pen</source>
         <translation>Boligrafoa</translation>
     </message>
@@ -5849,7 +5854,7 @@ Zabalera dinamikoa</translation>
 <context>
     <name>UBSelectorOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1374"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1372"/>
         <source>Select</source>
         <translation>Hautatu</translation>
     </message>
@@ -5902,7 +5907,7 @@ Zabalera dinamikoa</translation>
         <translation type="vanished">Laukizuzena</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-657"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-655"/>
         <source>Shapes</source>
         <translation type="unfinished">Formak</translation>
     </message>
@@ -6763,7 +6768,22 @@ Zabalera dinamikoa</translation>
 <context>
     <name>UBToolbarChoice</name>
     <message>
-        <location filename="../../src/gui/UBToolbarChoice.cpp" line="+283"/>
+        <location filename="../../src/gui/UBToolbarChoice.cpp" line="+64"/>
+        <source>Spotlight / Magnifier</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Attach file / Hyperlink</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Selector: arrow / lasso</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+229"/>
         <source>Move items</source>
         <translation type="unfinished"></translation>
     </message>
