@@ -3591,7 +3591,8 @@ Do you want to continue?</source>
     </message>
     <message>
         <location line="+17"/>
-        <location line="+30"/>
+        <location line="+34"/>
+        <location line="+16"/>
         <location line="+5"/>
         <location line="+19"/>
         <location line="+31"/>
@@ -3602,12 +3603,21 @@ Do you want to continue?</source>
         <translation>更新</translation>
     </message>
     <message>
-        <location line="-164"/>
+        <location line="-184"/>
         <source>LibertyBoard could not reach GitHub to look for a new version. Check the internet connection and try again.</source>
         <translation>LibertyBoard 无法连接 GitHub 查找新版本。请检查网络连接后重试。</translation>
     </message>
     <message>
-        <location line="+30"/>
+        <location line="+34"/>
+        <source>A new version of LibertyBoard is available (build %1).
+
+Open its page to download it?</source>
+        <translation>LibertyBoard 有新版本（构建 %1）。
+
+打开其页面下载吗？</translation>
+    </message>
+    <message>
+        <location line="+16"/>
         <source>You have the latest version of LibertyBoard.</source>
         <translation>您使用的是最新版本的 LibertyBoard。</translation>
     </message>
@@ -5235,7 +5245,7 @@ Dynamic width</source>
 <context>
     <name>UBPlatformUtils</name>
     <message>
-        <location filename="../../src/frameworks/UBPlatformUtils_linux.cpp" line="+462"/>
+        <location filename="../../src/frameworks/UBPlatformUtils_linux.cpp" line="+469"/>
         <location filename="../../src/frameworks/UBPlatformUtils_win.cpp" line="+429"/>
         <source>English</source>
         <translation>英语</translation>

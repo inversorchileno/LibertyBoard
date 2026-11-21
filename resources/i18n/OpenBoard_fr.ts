@@ -3637,7 +3637,8 @@ Voulez-vous continuer ?</translation>
     </message>
     <message>
         <location line="+17"/>
-        <location line="+30"/>
+        <location line="+34"/>
+        <location line="+16"/>
         <location line="+5"/>
         <location line="+19"/>
         <location line="+31"/>
@@ -3648,12 +3649,21 @@ Voulez-vous continuer ?</translation>
         <translation>Mettre à jour</translation>
     </message>
     <message>
-        <location line="-164"/>
+        <location line="-184"/>
         <source>LibertyBoard could not reach GitHub to look for a new version. Check the internet connection and try again.</source>
         <translation>LibertyBoard n&apos;a pas pu joindre GitHub pour chercher une nouvelle version. Vérifiez la connexion internet et réessayez.</translation>
     </message>
     <message>
-        <location line="+30"/>
+        <location line="+34"/>
+        <source>A new version of LibertyBoard is available (build %1).
+
+Open its page to download it?</source>
+        <translation>Une nouvelle version de LibertyBoard est disponible (build %1).
+
+Ouvrir sa page pour la télécharger ?</translation>
+    </message>
+    <message>
+        <location line="+16"/>
         <source>You have the latest version of LibertyBoard.</source>
         <translation>Vous avez la dernière version de LibertyBoard.</translation>
     </message>
@@ -5285,7 +5295,7 @@ Largeur dynamique</translation>
 <context>
     <name>UBPlatformUtils</name>
     <message>
-        <location filename="../../src/frameworks/UBPlatformUtils_linux.cpp" line="+462"/>
+        <location filename="../../src/frameworks/UBPlatformUtils_linux.cpp" line="+469"/>
         <location filename="../../src/frameworks/UBPlatformUtils_win.cpp" line="+429"/>
         <source>English</source>
         <translation>Anglais</translation>
