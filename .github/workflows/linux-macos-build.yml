@@ -35,7 +35,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends \
-            cmake ninja-build pkg-config file patchelf libfuse2 xvfb \
+            cmake ninja-build pkg-config file patchelf libfuse2 xvfb imagemagick \
             qt6-base-dev qt6-base-private-dev qt6-base-dev-tools qt6-5compat-dev \
             qt6-declarative-dev qt6-multimedia-dev qt6-svg-dev qt6-tools-dev \
             qt6-tools-dev-tools qt6-l10n-tools qt6-webengine-dev qt6-webengine-dev-tools \
@@ -63,7 +63,8 @@ jobs:
           wget -q https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage
           chmod +x linuxdeploy*.AppImage
           rm -f AppDir/usr/share/applications/*.desktop
-          cp docs/images/libertyboard-logo.png libertyboard.png
+          # linuxdeploy takes icons up to 512 x 512.
+          convert docs/images/libertyboard-logo.png -resize 512x512 libertyboard.png
           cat > libertyboard.desktop <<'EOF'
           [Desktop Entry]
           Type=Application
@@ -111,7 +112,7 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - runner: macos-14
+          - runner: macos-15
             name: apple-silicon
           - runner: macos-15-intel
             name: intel
