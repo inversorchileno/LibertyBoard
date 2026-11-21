@@ -127,4 +127,17 @@ jobs:
           $zip = "LibertyBoard-windows.zip"
           Compress-Archive -Path "build\win32\release\product\*" -DestinationPath $zip -Force
           $tag = "build-$env:LIBERTYBOARD_BUILD"
-          gh release create $tag $zip --repo "${{ github.repository }}" --target "${{ github.sha }}" --title "LibertyBoard (build $env:LIBERTYBOARD_BUILD)" --notes "Windows build $env:LIBERTYBOARD_BUILD. Unzip and open LibertyBoard.exe, or use About > Update in LibertyBoard." --latest
+          # The notes of this build, written in docs/releases, else a short text.
+          $notes = "docs\releases\$tag.md"
+          if (Test-Path $notes) {
+            gh release create $tag $zip --repo "${{ github.repository }}" --target "${{ github.sha }}" --title "LibertyBoard (build $env:LIBERTYBOARD_BUILD)" --notes-file $notes --latest
+          } else {
+            gh release create $tag $zip --repo "${{ github.repository }}" --target "${{ github.sha }}" --title "LibertyBoard (build $env:LIBERTYBOARD_BUILD)" --notes "Windows build $env:LIBERTYBOARD_BUILD. Unzip and open LibertyBoard.exe, or use About > Update in LibertyBoard." --latest
+          }
+          if ($LASTEXITCODE -ne 0) { exit 1 }
+
+          # The notes of the earlier builds follow their files, when they change.
+          Get-ChildItem "docs\releases\build-*.md" | Where-Object { $_.BaseName -ne $tag } | ForEach-Object {
+            gh release edit $_.BaseName --repo "${{ github.repository }}" --notes-file $_.FullName 2>$null
+          }
+          exit 0
