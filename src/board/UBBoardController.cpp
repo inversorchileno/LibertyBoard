@@ -2770,10 +2770,9 @@ void UBBoardController::processMimeData(const QMimeData* pMimeData, const QPoint
     }
 
     // A picture dragged from the AI panel: its address needs the session of the AI.
-    if (UBAiPanel::isAiDrag(pMimeData))
+    // Also on the desktop, whose drops come here.
+    if (UBAiPanel::takeDrop(pMimeData, pPos))
     {
-        // Also on the desktop, whose drops come here.
-        UBAiPanel::putPicture(UBAiPanel::pngOf(qvariant_cast<QImage>(pMimeData->imageData())), &pPos);
         return;
     }
 

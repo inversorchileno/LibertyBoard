@@ -89,8 +89,12 @@ public:
     /** @brief Where the panel is in the layer over the desktop, or nothing. */
     static QRect desktopArea();
 
-    /** @brief Whether this drag comes from the page of an AI, to take its picture rather than its address. */
-    static bool isAiDrag(const QMimeData* mimeData);
+    /**
+     * @brief A drag from the page of an AI: its picture goes on the page, or
+     * on the desktop, read in the page of the AI when its address needs the
+     * session. False when the drag is not from an AI.
+     */
+    static bool takeDrop(const QMimeData* mimeData, const QPointF& position);
 
 protected:
     void closeEvent(QCloseEvent* event) override;
@@ -110,6 +114,8 @@ private:
     void setWork(const QString& instruction, const QString& file);
     void loadService(int index);
     void fillPage(int attempt);
+    void sendMessage(int attempt);
+    void fetchPicture(const QUrl& address, const QPointF& position, int attempt);
     void checkLimit();
     void offerOtherService();
     void placeBeside(QWidget* beside);

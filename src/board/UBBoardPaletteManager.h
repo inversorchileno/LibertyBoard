@@ -74,6 +74,7 @@ class UBBoardPaletteManager : public QObject
         UBLeftPalette* leftPalette(){return mLeftPalette;}
         UBRightPalette* rightPalette(){return mRightPalette;}
         UBStylusPalette* stylusPalette(){return mStylusPalette;}
+        UBZoomPalette* zoomPalette(){return mZoomPalette;}
         UBPageNavigationWidget* pageNavigationWidget(){return mpPageNavigWidget;}
         void showToolOptions(int tool);
         UBActionPalette *addItemPalette() {return mAddItemPalette;}

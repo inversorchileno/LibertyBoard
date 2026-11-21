@@ -60,6 +60,7 @@
 #include <QWebEngineView>
 
 #include <functional>
+#include <optional>
 
 #include "board/UBBoardController.h"
 #include "board/UBBoardSaver.h"
@@ -67,7 +68,11 @@
 #include "core/UBApplication.h"
 #include "core/UBApplicationController.h"
 #include "core/UBSettings.h"
+#include "board/UBBoardPaletteManager.h"
 #include "desktop/UBDesktopAnnotationController.h"
+#include "desktop/UBDesktopPalette.h"
+#include "gui/UBStylusPalette.h"
+#include "gui/UBZoomPalette.h"
 #include "domain/UBGraphicsScene.h"
 
 QPointer<UBAiPanel> UBAiPanel::sPanel;
@@ -326,11 +331,27 @@ namespace
     for (let i = 0; i < bytes.length; i++) array[i] = bytes.charCodeAt(i);
     const transfer = new DataTransfer();
     transfer.items.add(new File([array], name, { type: type }));
-    const inputs = [...document.querySelectorAll('input[type=file]')];
+    // The field of files that takes this kind of file: a PDF does not go
+    // in the field of the pictures.
+    const lower = name.toLowerCase();
+    const score = input => {
+        const accept = (input.accept || '').trim();
+        if (!accept || accept === '*' || accept === '*/*') return 1;
+        let best = 0;
+        for (let token of accept.split(',')) {
+            token = token.trim().toLowerCase();
+            if (token === type || (token.startsWith('.') && lower.endsWith(token))) best = Math.max(best, 3);
+            else if (token.endsWith('/*') && type.startsWith(token.slice(0, -1))) best = Math.max(best, 2);
+            else if (token === '*/*') best = Math.max(best, 1);
+        }
+        return best;
+    };
+    const inputs = [...document.querySelectorAll('input[type=file]')]
+        .map(input => ({ input: input, score: score(input) }))
+        .filter(choice => choice.score > 0)
+        .sort((a, b) => b.score - a.score);
     if (inputs.length) {
-        const fits = inputs.find(i => !i.accept || i.accept.includes('*') || i.accept.includes(type)
-            || i.accept.split(',').some(a => name.toLowerCase().endsWith(a.trim().toLowerCase())));
-        const input = fits || inputs[0];
+        const input = inputs[0].input;
         input.files = transfer.files;
         input.dispatchEvent(new Event('change', { bubbles: true }));
         return 'input';
@@ -343,6 +364,63 @@ namespace
     return '';
 })(%1, %2, %3)
 )JS";
+
+    // The JavaScript that sends the message, once the page lets it: its
+    // button is off while the file is being sent.
+    const char* const sSendScript = R"JS(
+(function () {
+    const selectors = ['button[data-testid="send-button"]', '#composer-submit-button',
+                       'button[aria-label="Send prompt"]', 'button[aria-label="Send message"]',
+                       'button[aria-label="Submit message"]', 'button[aria-label*="Send" i]',
+                       'button[aria-label*="Enviar" i]', 'button[aria-label*="Submit" i]',
+                       'button.send-button', 'button[type="submit"]'];
+    for (const selector of selectors) {
+        const found = [...document.querySelectorAll(selector)].filter(e => e.offsetParent !== null);
+        if (found.length) {
+            const button = found[found.length - 1];
+            if (button.disabled || button.getAttribute('aria-disabled') === 'true') return 'wait';
+            button.click();
+            return 'sent';
+        }
+    }
+    return 'none';
+})()
+)JS";
+
+    // Enter in the box, for the pages whose button is not found.
+    const char* const sEnterScript = R"JS(
+(function () {
+    const box = [...document.querySelectorAll('#prompt-textarea, div[contenteditable="true"], textarea')]
+        .filter(e => e.offsetParent !== null).pop();
+    if (!box) return false;
+    box.focus();
+    for (const kind of ['keydown', 'keypress', 'keyup']) {
+        box.dispatchEvent(new KeyboardEvent(kind, { key: 'Enter', code: 'Enter', keyCode: 13, which: 13, bubbles: true, cancelable: true }));
+    }
+    return true;
+})()
+)JS";
+
+    // A picture of the page of the AI, only readable in the page: it is
+    // read there and kept for LibertyBoard to take.
+    const char* const sFetchScript = R"JS(
+(function (address) {
+    window.__libertyBoardPicture = null;
+    fetch(address).then(r => r.blob()).then(blob => {
+        const reader = new FileReader();
+        reader.onload = () => { window.__libertyBoardPicture = reader.result; };
+        reader.readAsDataURL(blob);
+    }).catch(() => { window.__libertyBoardPicture = 'error'; });
+    return true;
+})(%1)
+)JS";
+
+    // Where a picture dragged from the panel goes, when it comes by a download.
+    std::optional<QPointF>& droppedAt()
+    {
+        static std::optional<QPointF> position;
+        return position;
+    }
 
     // How many times the page says that a limit is reached.
     const char* const sLimitScript = R"JS(
@@ -626,12 +704,15 @@ QWebEngineProfile* UBAiPanel::profile()
 
 void UBAiPanel::downloaded(QWebEngineDownloadRequest* download)
 {
-    // What the AI gives to download goes to Downloads; a picture also to the page.
-    const QString folder = QStandardPaths::writableLocation(QStandardPaths::DownloadLocation);
+    // What the AI gives to download goes to Downloads; a picture also to the
+    // page. A picture dragged from the panel only goes to the page.
+    const std::optional<QPointF> dropped = droppedAt();
+    droppedAt().reset();
+    const QString folder = dropped ? workFolder() : QStandardPaths::writableLocation(QStandardPaths::DownloadLocation);
     download->setDownloadDirectory(folder);
     download->accept();
 
-    connect(download, &QWebEngineDownloadRequest::isFinishedChanged, download, [download]() {
+    connect(download, &QWebEngineDownloadRequest::isFinishedChanged, download, [download, dropped]() {
         if (download->state() != QWebEngineDownloadRequest::DownloadCompleted)
         {
             return;
@@ -639,6 +720,17 @@ void UBAiPanel::downloaded(QWebEngineDownloadRequest* download)
 
         const QString file = QDir(download->downloadDirectory()).filePath(download->downloadFileName());
         QFile picture(file);
+
+        if (dropped)
+        {
+            if (QImageReader(file).canRead() && picture.open(QIODevice::ReadOnly))
+            {
+                const QPointF position = *dropped;
+                putPicture(picture.readAll(), &position);
+            }
+
+            return;
+        }
 
         if (QImageReader(file).canRead() && picture.open(QIODevice::ReadOnly))
         {
@@ -921,7 +1013,9 @@ void UBAiPanel::fillPage(int attempt)
         // The file, as if chosen in the page; else it is dragged from the panel.
         QFile file(mFilePath);
 
-        if (!mFilePath.isEmpty() && file.size() <= sMaximumAttachedSize && file.open(QIODevice::ReadOnly))
+        const bool attaching = !mFilePath.isEmpty() && file.size() <= sMaximumAttachedSize && file.open(QIODevice::ReadOnly);
+
+        if (attaching)
         {
             const QString attach = QString::fromUtf8(sAttachScript)
                                        .arg("'" + QString::fromLatin1(file.readAll().toBase64()) + "'",
@@ -929,11 +1023,39 @@ void UBAiPanel::fillPage(int attempt)
             mPage->page()->runJavaScript(attach);
         }
 
+        // Then it is sent, as with Enter: a file first has to arrive.
+        QTimer::singleShot(attaching ? 3000 : 800, this, [this]() { sendMessage(0); });
+
         // From now on, a new message of limit means that the free uses are over.
         mPage->page()->runJavaScript(QString::fromUtf8(sLimitScript), [this](const QVariant& marks) {
             mLimitMarks = marks.toInt();
             mLimitTimer->start();
         });
+    });
+}
+
+void UBAiPanel::sendMessage(int attempt)
+{
+    mPage->page()->runJavaScript(QString::fromUtf8(sSendScript), [this, attempt](const QVariant& result) {
+        const QString state = result.toString();
+
+        if (state == "sent")
+        {
+            return;
+        }
+
+        // Without a button found, Enter in the box.
+        if (state == "none" && attempt >= 4)
+        {
+            mPage->page()->runJavaScript(QString::fromUtf8(sEnterScript));
+            return;
+        }
+
+        // The button is off while the file is sent: a little later.
+        if (attempt < 60)
+        {
+            QTimer::singleShot(1000, this, [this, attempt]() { sendMessage(attempt + 1); });
+        }
     });
 }
 
@@ -1040,9 +1162,10 @@ void UBAiPanel::putText(const QString& text)
     }
 }
 
-bool UBAiPanel::isAiDrag(const QMimeData* mimeData)
+bool UBAiPanel::takeDrop(const QMimeData* mimeData, const QPointF& position)
 {
-    if (!mimeData->hasImage())
+    // A text dragged has no address of its own: it goes as a text.
+    if (!mimeData->hasUrls() && !mimeData->hasImage())
     {
         return false;
     }
@@ -1066,11 +1189,11 @@ bool UBAiPanel::isAiDrag(const QMimeData* mimeData)
         hosts << service.url.host().toLower().remove(QRegularExpression("^www\\."));
     }
 
-    for (const QUrl& url : urls)
-    {
+    // A picture of an AI: its address only opens with the session of the AI.
+    auto fromAi = [&hosts](const QUrl& url) {
         const QString host = url.host().toLower();
 
-        if (url.scheme() == "blob" || url.scheme() == "data")
+        if (url.scheme() == "blob" || url.scheme() == "data" || host.contains("oaiusercontent") || host.contains("googleusercontent"))
         {
             return true;
         }
@@ -1080,48 +1203,160 @@ bool UBAiPanel::isAiDrag(const QMimeData* mimeData)
             // The pictures of an AI often come from another address of the same company.
             const QString company = aiHost.section('.', -2);
 
-            if (host == aiHost || host.endsWith("." + company) || host == company
-                    || host.contains("oaiusercontent") || host.contains("googleusercontent"))
+            if (host == aiHost || host == company || host.endsWith("." + company))
             {
                 return true;
             }
         }
+
+        return false;
+    };
+
+    QUrl picture;
+
+    for (const QUrl& url : urls)
+    {
+        if (fromAi(url))
+        {
+            picture = url;
+            break;
+        }
     }
 
-    return false;
+    if (picture.isEmpty())
+    {
+        return false;
+    }
+
+    // The picture itself, when the drag brings it.
+    if (mimeData->hasImage())
+    {
+        putPicture(pngOf(qvariant_cast<QImage>(mimeData->imageData())), &position);
+        return true;
+    }
+
+    if (picture.scheme() == "data")
+    {
+        const QByteArray data = QByteArray::fromBase64(picture.toString().section(',', 1).toLatin1());
+        putPicture(data, &position);
+        return true;
+    }
+
+    if (!sPanel)
+    {
+        return false;
+    }
+
+    // An address of the page of the AI: read in the page, which has the session.
+    if (picture.scheme() == "blob")
+    {
+        sPanel->fetchPicture(picture, position, 0);
+    }
+    else
+    {
+        droppedAt() = position;
+        sPanel->mPage->page()->download(picture);
+    }
+
+    return true;
+}
+
+void UBAiPanel::fetchPicture(const QUrl& address, const QPointF& position, int attempt)
+{
+    if (attempt == 0)
+    {
+        mPage->page()->runJavaScript(QString::fromUtf8(sFetchScript).arg(jsString(address.toString())));
+    }
+
+    mPage->page()->runJavaScript("window.__libertyBoardPicture", [this, address, position, attempt](const QVariant& result) {
+        const QString data = result.toString();
+
+        if (data.startsWith("data:"))
+        {
+            putPicture(QByteArray::fromBase64(data.section(',', 1).toLatin1()), &position);
+        }
+        else if (data.isEmpty() && attempt < 40)
+        {
+            QTimer::singleShot(250, this, [this, address, position, attempt]() { fetchPicture(address, position, attempt + 1); });
+        }
+        else if (data == "error" || data.isEmpty())
+        {
+            UBApplication::showMessage(tr("The picture could not be taken from the AI: right click on it and choose to put it on the page."));
+        }
+    });
 }
 
 void UBAiPanel::placeBeside(QWidget* beside)
 {
-    // Inside the layer of the desktop: at its right, in its coordinates.
+    Q_UNUSED(beside)
+
+    // The free part of the board, or of the screen on the desktop, and the
+    // tool palette, in the coordinates the panel is placed in.
+    QRect area;
+    QRect palette;
+    QRect zoom;
+
     if (mDesktop && parentWidget())
     {
-        const QRect area = parentWidget()->rect();
-        const int width = qBound(420, area.width() / 4, 700);
-        const int top = qMin(110, area.height() / 8);
-        setGeometry(area.right() - width - 110, top, width, area.height() - top - 120);
-        return;
+        area = parentWidget()->rect();
+        UBDesktopAnnotationController* controller = UBApplication::applicationController->uninotesController();
+        QWidget* desktopPalette = controller ? controller->desktopPalette() : nullptr;
+
+        if (desktopPalette && desktopPalette->isVisible())
+        {
+            palette = desktopPalette->geometry();
+        }
     }
-
-    // A column at the right of the window, or of the screen.
-    QRect area = beside ? beside->window()->geometry() : QRect();
-    QScreen* screen = beside ? beside->screen() : nullptr;
-
-    if (screen && (area.isEmpty() || beside->window()->isFullScreen() || area.width() >= screen->availableGeometry().width()))
+    else
     {
-        area = screen->availableGeometry();
+        UBBoardView* view = UBApplication::boardController->controlView();
+
+        if (!view)
+        {
+            resize(520, 760);
+            return;
+        }
+
+        area = QRect(view->mapToGlobal(QPoint(0, 0)), view->size());
+        QWidget* stylus = UBApplication::boardController->paletteManager()->stylusPalette();
+        QWidget* zoomPalette = UBApplication::boardController->paletteManager()->zoomPalette();
+
+        if (stylus && stylus->isVisible())
+        {
+            palette = QRect(stylus->mapToGlobal(QPoint(0, 0)), stylus->size());
+        }
+
+        if (zoomPalette && zoomPalette->isVisible())
+        {
+            zoom = QRect(zoomPalette->mapToGlobal(QPoint(0, 0)), zoomPalette->size());
+        }
     }
 
-    if (area.isEmpty())
-    {
-        resize(520, 760);
-        return;
-    }
-
+    // At the left when the palette is upright at the right; else at the right.
+    const bool upright = palette.height() > palette.width();
+    const bool atLeft = upright && palette.center().x() > area.center().x();
     const int width = qBound(420, area.width() / 4, 700);
-    const int top = area.top() + qMin(110, area.height() / 8);
-    // Left of the tool palette, which is at the right.
-    setGeometry(area.right() - width - 110, top, width, area.bottom() - top - 20);
+    QRect place(atLeft ? area.left() : area.right() + 1 - width, area.top(), width, area.height());
+
+    // Neither over the palette when it lies across, nor over the zoom.
+    for (const QRect& other : { upright ? QRect() : palette, zoom })
+    {
+        if (other.isNull() || !place.intersects(other))
+        {
+            continue;
+        }
+
+        if (other.center().y() > place.center().y())
+        {
+            place.setBottom(other.top() - 6);
+        }
+        else
+        {
+            place.setTop(other.bottom() + 6);
+        }
+    }
+
+    setGeometry(place);
 }
 
 bool UBAiPanel::eventFilter(QObject* watched, QEvent* event)

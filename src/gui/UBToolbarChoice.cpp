@@ -57,6 +57,18 @@ namespace
         return registered;
     }
 
+    // The tools that do two things are named by both.
+    QString displayName(QAction* action)
+    {
+        const QMap<QString, QString> names = {
+            { "actionSpotlight", UBToolbarChoice::tr("Spotlight / Magnifier") },
+            { "actionAttachment", UBToolbarChoice::tr("Attach file / Hyperlink") },
+            { "actionSelector", UBToolbarChoice::tr("Selector: arrow / lasso") },
+        };
+
+        return names.value(action->objectName(), action->text());
+    }
+
     UBSetting* orderSetting(UBToolbarChoice::Palette palette)
     {
         return palette == UBToolbarChoice::Palette::Board ? UBSettings::settings()->boardToolOrder
@@ -87,7 +99,7 @@ namespace
             setStyleSheet("QWidget#toolRow { background: transparent; }"
                           "QWidget#toolRow:hover { background: #308cc6; }");
 
-            mBox = new QCheckBox(tool->text(), this);
+            mBox = new QCheckBox(displayName(tool), this);
             QPalette colors = mBox->palette();
             colors.setColor(QPalette::Base, Qt::white);
             colors.setColor(QPalette::Text, QColor("#1e1e1e"));
@@ -317,7 +329,7 @@ void UBToolbarChoice::openOrderWindow(QWidget* parent)
         {
             if (isShown(palette, action))
             {
-                auto item = new QListWidgetItem(action->icon(), action->text(), list);
+                auto item = new QListWidgetItem(action->icon(), displayName(action), list);
                 item->setData(Qt::UserRole, QVariant::fromValue(static_cast<QObject*>(action)));
             }
         }
