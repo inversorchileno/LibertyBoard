@@ -2807,15 +2807,15 @@ void UBBoardController::processMimeData(const QMimeData* pMimeData, const QPoint
             // the GIF is found in the page.
             if (UBGifWindow::isGifPage(url))
             {
-                UBGifWindow::findGif(url, this, [this, pos](const QByteArray& gif) {
-                    if (gif.isEmpty() || !mActiveScene)
+                UBGifWindow::findGif(url, this, [pos](const QByteArray& gif) {
+                    if (gif.isEmpty())
                     {
                         UBApplication::showMessage(tr("The GIF could not be found on its page. Try another one."));
                         return;
                     }
 
-                    // Put as a picture dropped on the board, moving.
-                    mActiveScene->addImage(gif, nullptr, pos, 1.);
+                    // Put as a picture dropped on the board, or on the desktop, moving.
+                    UBAiPanel::putPicture(gif, &pos);
                 });
                 index++;
                 continue;

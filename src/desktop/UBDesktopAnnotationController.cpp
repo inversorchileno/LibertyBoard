@@ -61,6 +61,7 @@
 #include "gui/UBResources.h"
 #include "gui/UBToolOptionsPopup.h"
 #include "gui/UBAiPanel.h"
+#include "gui/UBGifWindow.h"
 #include "desktop/UBDesktopFrame.h"
 
 #include "core/memcheck.h"
@@ -726,11 +727,13 @@ void UBDesktopAnnotationController::updateMask(bool bTransparent)
         }
 
         // The panel of the AI, inside this layer, keeps its clicks.
-        const QRect aiPanel = UBAiPanel::desktopArea();
-
-        if (!aiPanel.isNull())
+        // So does the window of the GIFs.
+        for (const QRect& side : { UBAiPanel::desktopArea(), UBGifWindow::desktopArea() })
         {
-            p.drawRect(aiPanel);
+            if (!side.isNull())
+            {
+                p.drawRect(side);
+            }
         }
 
 

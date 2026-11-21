@@ -37,14 +37,25 @@
 #include <QWebEngineProfile>
 
 #include "core/UBSettings.h"
+#include "core/UBApplication.h"
+#include "core/UBApplicationController.h"
+#include "board/UBBoardView.h"
+#include "desktop/UBDesktopAnnotationController.h"
+#include "gui/UBAiPanel.h"
+#include <QTimer>
 #include <QApplication>
 
 QPointer<UBGifWindow> UBGifWindow::sWindow;
 
-UBGifWindow::UBGifWindow(QWidget* parent)
-    : QWidget(parent, Qt::Tool | Qt::WindowStaysOnTopHint | Qt::FramelessWindowHint)
+UBGifWindow::UBGifWindow(QWidget* parent, bool desktop)
+    : QWidget(parent, desktop ? Qt::Widget : Qt::Tool | Qt::FramelessWindowHint)
+    , mDesktop(desktop)
 {
     setAttribute(Qt::WA_DeleteOnClose);
+    // On the desktop, inside the layer drawn over the desktop, like the
+    // panel of the AI: a window of its own would not get the clicks.
+    setAttribute(Qt::WA_StyledBackground);
+    setAutoFillBackground(true);
     setObjectName("gifWindow");
     setStyleSheet("QWidget#gifWindow { background: #23262b; border: 1px solid #5a606a; }"
                   "QLabel { color: white; }"
@@ -100,9 +111,28 @@ void UBGifWindow::toggle(QWidget* beside)
         return;
     }
 
-    sWindow = new UBGifWindow(beside ? beside->window() : nullptr);
-    sWindow->placeBeside(beside);
+    // Where the panel of the AI goes, against the edge opposite the palette.
+    const bool desktop = UBApplication::applicationController->isShowingDesktop();
+    QWidget* owner = beside ? beside->window() : nullptr;
+
+    if (desktop)
+    {
+        UBDesktopAnnotationController* controller = UBApplication::applicationController->uninotesController();
+        owner = controller ? static_cast<QWidget*>(controller->drawingView()) : owner;
+    }
+
+    sWindow = new UBGifWindow(owner, desktop);
+    sWindow->setGeometry(UBAiPanel::sidePlace(desktop, owner));
     sWindow->show();
+    sWindow->raise();
+
+    // Made for the board or for the desktop: it closes with the other mode.
+    connect(UBApplication::applicationController, &UBApplicationController::desktopMode, sWindow, [](bool showing) {
+        if (sWindow && showing != sWindow->mDesktop)
+        {
+            sWindow->close();
+        }
+    });
 }
 
 bool UBGifWindow::isOpen()
@@ -115,26 +145,39 @@ UBGifWindow* UBGifWindow::instance()
     return sWindow;
 }
 
-void UBGifWindow::placeBeside(QWidget* beside)
+QRect UBGifWindow::desktopArea()
 {
-    // A narrow column at the right of the window, or of the screen.
-    QRect area = beside ? beside->window()->geometry() : QRect();
-    QScreen* screen = beside ? beside->screen() : nullptr;
+    return sWindow && sWindow->mDesktop && sWindow->isVisible() ? sWindow->geometry() : QRect();
+}
 
-    if (screen && (area.isEmpty() || beside->window()->isFullScreen() || area.width() >= screen->availableGeometry().width()))
+static void refreshDesktopMask()
+{
+    // The layer over the desktop lets the clicks through except where it
+    // shows something: the window is part of it.
+    if (UBDesktopAnnotationController* controller = UBApplication::applicationController->uninotesController())
     {
-        area = screen->availableGeometry();
+        QTimer::singleShot(0, controller, [controller]() { QMetaObject::invokeMethod(controller, "refreshMask"); });
     }
+}
 
-    if (area.isEmpty())
+void UBGifWindow::showEvent(QShowEvent* event)
+{
+    QWidget::showEvent(event);
+
+    if (mDesktop)
     {
-        resize(380, 700);
-        return;
+        refreshDesktopMask();
     }
+}
 
-    const int width = qBound(320, area.width() / 5, 460);
-    const int top = area.top() + qMin(140, area.height() / 6);
-    setGeometry(area.right() - width - 60, top, width, area.bottom() - top - 20);
+void UBGifWindow::hideEvent(QHideEvent* event)
+{
+    QWidget::hideEvent(event);
+
+    if (mDesktop)
+    {
+        refreshDesktopMask();
+    }
 }
 
 void UBGifWindow::closeEvent(QCloseEvent* event)

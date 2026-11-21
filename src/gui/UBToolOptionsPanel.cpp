@@ -636,7 +636,7 @@ UBEmojiOptionsPanel::UBEmojiOptionsPanel(QWidget* parent)
     addRow(mEmojis);
 
     // While the window of the GIFs is open.
-    mDragHint = new QLabel(tr("Drag a GIF from the window at the right to the page."), this);
+    mDragHint = new QLabel(tr("Drag a GIF from the window of the GIFs to the page."), this);
     mDragHint->setObjectName("section");
     mDragHint->setStyleSheet("QLabel { color: white; font-size: 14px; }");
     addRow(mDragHint);

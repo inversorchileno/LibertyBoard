@@ -1289,16 +1289,21 @@ void UBAiPanel::fetchPicture(const QUrl& address, const QPointF& position, int a
 void UBAiPanel::placeBeside(QWidget* beside)
 {
     Q_UNUSED(beside)
+    setGeometry(sidePlace(mDesktop, parentWidget()));
+}
 
+QRect UBAiPanel::sidePlace(bool desktop, QWidget* layer)
+{
     // The free part of the board, or of the screen on the desktop, and the
-    // tool palette, in the coordinates the panel is placed in.
+    // tool palette, in the coordinates the panel is placed in: those of the
+    // layer over the desktop, else of the screen.
     QRect area;
     QRect palette;
     QRect zoom;
 
-    if (mDesktop && parentWidget())
+    if (desktop && layer)
     {
-        area = parentWidget()->rect();
+        area = layer->rect();
         UBDesktopAnnotationController* controller = UBApplication::applicationController->uninotesController();
         QWidget* desktopPalette = controller ? controller->desktopPalette() : nullptr;
 
@@ -1313,8 +1318,7 @@ void UBAiPanel::placeBeside(QWidget* beside)
 
         if (!view)
         {
-            resize(520, 760);
-            return;
+            return QRect(100, 100, 520, 760);
         }
 
         area = QRect(view->mapToGlobal(QPoint(0, 0)), view->size());
@@ -1356,7 +1360,7 @@ void UBAiPanel::placeBeside(QWidget* beside)
         }
     }
 
-    setGeometry(place);
+    return place;
 }
 
 bool UBAiPanel::eventFilter(QObject* watched, QEvent* event)

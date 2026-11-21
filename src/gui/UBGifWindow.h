@@ -46,6 +46,9 @@ public:
 
     static bool isOpen();
 
+    /** @brief Where the window is in the layer over the desktop, or nothing. */
+    static QRect desktopArea();
+
     /** @brief The one window, while it is open; for its signal closed. */
     static UBGifWindow* instance();
 
@@ -64,14 +67,16 @@ signals:
 
 protected:
     void closeEvent(QCloseEvent* event) override;
+    void showEvent(QShowEvent* event) override;
+    void hideEvent(QHideEvent* event) override;
 
 private:
-    explicit UBGifWindow(QWidget* parent = nullptr);
+    UBGifWindow(QWidget* parent, bool desktop);
 
     /** @brief The web profile of the window, which keeps its cookies on the disk. */
     static QWebEngineProfile* profile();
-    void placeBeside(QWidget* beside);
 
     QWebEngineView* mPage{nullptr};
+    bool mDesktop{false};
     static QPointer<UBGifWindow> sWindow;
 };

@@ -86,6 +86,14 @@ public:
     /** @brief Puts a text over the desktop on the desktop, else on the page, at the center. */
     static void putText(const QString& text);
 
+    /**
+     * @brief Where a side window goes, as the panel of the AI and the window
+     * of the GIFs: against the edge opposite the tool palette, without
+     * covering the bar of options, the zoom or a palette lying across. On
+     * the desktop, in the coordinates of the layer over the desktop.
+     */
+    static QRect sidePlace(bool desktop, QWidget* layer);
+
     /** @brief Where the panel is in the layer over the desktop, or nothing. */
     static QRect desktopArea();
 
