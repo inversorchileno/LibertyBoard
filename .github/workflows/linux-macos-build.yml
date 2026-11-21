@@ -189,7 +189,8 @@ jobs:
           cmake --build "$RUNNER_TEMP/poppler-build"
           cmake --install "$RUNNER_TEMP/poppler-build"
           echo "PREFIXES=$QT_DIR;$HOME/quazip;$HOME/poppler;$DEPS" >> "$GITHUB_ENV"
-          echo "DYLD_LIBRARY_PATH=$HOME/quazip/lib:$HOME/poppler/lib:$DEPS/lib" >> "$GITHUB_ENV"
+          # Only for what is not found elsewhere: the libiconv of conda-forge must not replace that of macOS.
+          echo "DYLD_FALLBACK_LIBRARY_PATH=$HOME/quazip/lib:$HOME/poppler/lib:$DEPS/lib:/usr/local/lib:/usr/lib" >> "$GITHUB_ENV"
           echo "PKG_CONFIG_PATH=$HOME/poppler/lib/pkgconfig:$DEPS/lib/pkgconfig" >> "$GITHUB_ENV"
 
       - name: Build

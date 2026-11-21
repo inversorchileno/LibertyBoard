@@ -448,7 +448,17 @@ bool UBFFmpegVideoEncoder::init()
         }
 
         c->bit_rate = 96000;
+#if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(61, 13, 100)
         c->sample_fmt  = audioCodec->sample_fmts ? audioCodec->sample_fmts[0] : AV_SAMPLE_FMT_FLTP;// FLTP by default for AAC
+#else
+        // FFmpeg 8 has no sample_fmts in AVCodec: the formats come from the configuration of the codec.
+        const void* sampleFormats = nullptr;
+        int sampleFormatCount = 0;
+        avcodec_get_supported_config(nullptr, audioCodec, AV_CODEC_CONFIG_SAMPLE_FORMAT, 0, &sampleFormats, &sampleFormatCount);
+        c->sample_fmt = sampleFormats && sampleFormatCount > 0
+                ? static_cast<const AVSampleFormat*>(sampleFormats)[0]
+                : AV_SAMPLE_FMT_FLTP; // FLTP by default for AAC
+#endif
         c->sample_rate = mAudioSampleRate;
 
 #if LIBAVUTIL_VERSION_INT < AV_VERSION_INT(57, 25, 100)
