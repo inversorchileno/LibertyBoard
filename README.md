@@ -16,11 +16,31 @@ Lo creó Luis, conocido en YouTube como «Inversor Chileno», tomando como base 
 
 ## Descargar
 
-1. Abre la sección **[Releases](https://github.com/inversorchileno/LibertyBoard/releases/latest)** y descarga `LibertyBoard-windows.zip`.
-2. Descomprime la carpeta y abre `LibertyBoard.exe`. No necesita instalación.
-3. Las versiones siguientes se instalan desde el propio programa: **Acerca → Actualización**.
+Abre la sección **[Releases](https://github.com/inversorchileno/LibertyBoard/releases/latest)** y descarga el archivo de tu sistema:
 
-Cada versión publicada trae sus novedades en su página de Releases. LibertyBoard guarda sus documentos y su configuración en su propia carpeta (`%LOCALAPPDATA%\LibertyBoard`).
+| Sistema | Archivo | Cómo abrirlo |
+|---|---|---|
+| **Windows** 10 y 11 | `LibertyBoard-windows.zip` | Descomprime la carpeta y abre `LibertyBoard.exe`. No necesita instalación. |
+| **macOS** con chip Apple (M1, M2, M3, M4…) | `LibertyBoard-macos-apple-silicon.dmg` | Abre el `.dmg` y arrastra LibertyBoard a Aplicaciones. |
+| **macOS** con procesador Intel (Mac antiguos) | `LibertyBoard-macos-intel.dmg` | Igual que el anterior. |
+| **Linux** (64 bits) | `LibertyBoard-linux-x86_64.AppImage` | Dale permiso de ejecución (clic derecho → Propiedades → Permitir ejecutar, o `chmod +x`) y ábrelo. |
+
+¿Qué Mac tengo? Menú  → **Acerca de este Mac**: si dice «Chip Apple M…», usa la versión *apple-silicon*; si dice «Procesador Intel…», la versión *intel*.
+
+En Windows, las versiones siguientes se instalan desde el propio programa: **Acerca → Actualización**. En macOS y Linux, ese mismo menú abre la página para descargar la nueva versión.
+
+### Aviso de seguridad al abrirlo por primera vez
+
+**Windows y macOS mostrarán un aviso de seguridad la primera vez que abras LibertyBoard.** Es normal y no significa que el programa tenga un virus.
+
+**Por qué aparece:** Windows y macOS confían de inmediato en los programas *firmados digitalmente* con un certificado comprado a una empresa autorizada (en Windows, varios cientos de dólares al año; en Apple, la cuenta de desarrollador cuesta US$99 al año y cada versión debe enviarse a Apple para su revisión). LibertyBoard es un proyecto personal, gratuito y de código abierto, y por ahora no está firmado. Por eso el sistema no sabe quién lo hizo y te pide confirmar. Todo su código está publicado en este repositorio, y cada versión se compila automáticamente en los servidores de GitHub a partir de ese código.
+
+**Cómo abrirlo:**
+- **Windows** («Windows protegió su PC», SmartScreen): haz clic en **Más información** y luego en **Ejecutar de todas formas**.
+- **macOS** («no se puede abrir porque no se puede verificar al desarrollador»): haz **clic derecho** (o Control + clic) sobre LibertyBoard en Aplicaciones → **Abrir** → **Abrir**. Si no aparece el botón, ve a **Configuración del Sistema → Privacidad y seguridad** y presiona **Abrir igualmente** junto al aviso de LibertyBoard.
+- **Linux** no muestra este aviso; solo hay que darle permiso de ejecución al archivo.
+
+Solo se pide la primera vez. LibertyBoard guarda sus documentos y su configuración en su propia carpeta de usuario.
 
 ## Todas las funciones
 

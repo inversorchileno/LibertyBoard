@@ -106,7 +106,16 @@ jobs:
         run: bash .github/workflows/attach-to-release.sh LibertyBoard-linux-x86_64.AppImage
 
   macos:
-    runs-on: macos-14
+    # The new Macs with an Apple chip (M1, M2...), and the older ones with Intel.
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: macos-14
+            name: apple-silicon
+          - runner: macos-15-intel
+            name: intel
+    runs-on: ${{ matrix.runner }}
     timeout-minutes: 120
 
     steps:
@@ -157,8 +166,8 @@ jobs:
           mkdir dmg
           cp -R "$app" dmg/
           ln -s /Applications dmg/Applications
-          hdiutil create -volname LibertyBoard -srcfolder dmg -ov -format UDZO LibertyBoard-macos.dmg
-          ls -la LibertyBoard-macos.dmg
+          hdiutil create -volname LibertyBoard -srcfolder dmg -ov -format UDZO LibertyBoard-macos-${{ matrix.name }}.dmg
+          ls -la LibertyBoard-macos-${{ matrix.name }}.dmg
 
       - name: Start it once
         run: |
@@ -172,12 +181,12 @@ jobs:
       - name: Keep the disk image
         uses: actions/upload-artifact@v4
         with:
-          name: LibertyBoard-macos
-          path: LibertyBoard-macos.dmg
+          name: LibertyBoard-macos-${{ matrix.name }}
+          path: LibertyBoard-macos-${{ matrix.name }}.dmg
           retention-days: 30
 
       - name: Add it to the release of this build
         if: github.ref == 'refs/heads/master'
         env:
           GH_TOKEN: ${{ github.token }}
-        run: bash .github/workflows/attach-to-release.sh LibertyBoard-macos.dmg
+        run: bash .github/workflows/attach-to-release.sh LibertyBoard-macos-${{ matrix.name }}.dmg
