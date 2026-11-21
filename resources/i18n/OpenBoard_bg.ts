@@ -546,12 +546,12 @@ Do you wish to override the security check and continue ?   </source>
     </message>
     <message>
         <location line="+12"/>
-        <location line="+649"/>
+        <location line="+664"/>
         <source>Erase Annotations</source>
         <translation>Изтрий анотациите</translation>
     </message>
     <message>
-        <location line="-637"/>
+        <location line="-652"/>
         <source>Clear Page</source>
         <translation>Изчисти страницата</translation>
     </message>
@@ -634,7 +634,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Поставяне на печат върху страницата</translation>
     </message>
     <message>
-        <location line="+29"/>
+        <location line="+44"/>
         <source>Spotlight</source>
         <translation>Прожектор</translation>
     </message>
@@ -702,7 +702,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-1754"/>
+        <location line="-1769"/>
         <location line="+18"/>
         <location line="+15"/>
         <location line="+987"/>
@@ -1007,6 +1007,16 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location line="+12"/>
+        <source>AI</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Summary, translation, images and more with an AI on the web</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location line="+29"/>
         <source>Read aloud</source>
         <translation type="unfinished">Прочети на глас</translation>
@@ -1193,7 +1203,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Покажи на екрана</translation>
     </message>
     <message>
-        <location line="-1980"/>
+        <location line="-1995"/>
         <location line="+686"/>
         <location line="+3"/>
         <source>LibertyBoard</source>
@@ -1205,7 +1215,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Излез от Санкоре</translation>
     </message>
     <message>
-        <location line="+1649"/>
+        <location line="+1664"/>
         <source>Hide LibertyBoard</source>
         <translation>Скрий Санкоре</translation>
     </message>
@@ -1235,7 +1245,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Премахни фона</translation>
     </message>
     <message>
-        <location line="-1376"/>
+        <location line="-1391"/>
         <source>Ctrl+L</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1252,7 +1262,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+784"/>
+        <location line="+799"/>
         <source>Open Tutorial</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1268,7 +1278,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-1686"/>
+        <location line="-1701"/>
         <source>Small Eraser</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1303,7 +1313,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1579"/>
+        <location line="+1594"/>
         <location line="+3"/>
         <source>Draw intermediate grid lines</source>
         <translation type="unfinished"></translation>
@@ -1317,7 +1327,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-1743"/>
+        <location line="-1758"/>
         <source>Template style</source>
         <translation>Стил на шаблона</translation>
     </message>
@@ -1404,7 +1414,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+573"/>
+        <location line="+588"/>
         <source>Import one or more pages (supported formats : jpg, png, svg, ubz, pdf)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1574,20 +1584,102 @@ Do you wish to override the security check and continue ?   </source>
     </message>
 </context>
 <context>
-    <name>UBAiPanel</name>
+    <name>UBAiOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBAiPanel.cpp" line="+123"/>
-        <source>Drag over the part of the page to give to the AI. Escape: cancel.</source>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+723"/>
+        <source>AI</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+86"/>
-        <location line="+345"/>
+        <location line="+5"/>
+        <source>Summary</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>A part of the page, or all of it, summarized by the AI</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>Translation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-337"/>
+        <location line="+1"/>
+        <source>A part of the page, or all of it, translated by the AI into the language chosen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Create image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>An image made by the AI from what you write</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Remove background</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>A picture without its background, made by the AI</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Generative erase</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Something erased from a picture by the AI, as if it had never been there</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Transcribe</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Asks for an audio and gives it to the AI, which writes what is said</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Open the AI</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Opens or closes the page of the AI at the right</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UBAiPanel</name>
+    <message>
+        <location filename="../../src/gui/UBAiPanel.cpp" line="+159"/>
+        <source>Drag over the part of the page to give to the AI. Escape: cancel.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Drag over the part of the screen to give to the AI. Escape: cancel.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+100"/>
+        <source>Translation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+8"/>
         <source>Detect it</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1607,18 +1699,37 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+113"/>
+        <location line="+98"/>
+        <source>Put the picture on the desktop</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Put the picture on the page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+20"/>
+        <source>Put the text on the desktop</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Put the text on the page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+54"/>
         <source>The AI shown; the addresses are in the preferences</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+10"/>
-        <location line="+218"/>
         <source>Close the AI</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-213"/>
+        <location line="+5"/>
         <source>AI:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1638,17 +1749,42 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Puts on the page what was copied in the AI: a text, or a picture with its right click, Copy image</source>
+        <location line="+0"/>
+        <source>Paste on the desktop</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+31"/>
+        <location line="+1"/>
+        <source>Puts on the page what was copied in the AI: a text, or a picture with its right click, Copy image. The right click on a picture or a selected text of the AI can also put it there.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+391"/>
+        <source>Right click on a picture or a text of the AI to put it on the desktop.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Drag a text or a picture of the AI to the page, or right click on it to put it there.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>The instruction is written in the AI and also copied: Ctrl+V pastes it. Right click on the answer to put it on the desktop.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>The instruction is written in the AI and also copied: Ctrl+V pastes it. Drag the answer to the page, or right click on it to put it there.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-356"/>
         <source>Drag to make the panel wider</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+110"/>
+        <location line="+115"/>
         <source>The picture of the AI is on the page; it is also in %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1658,39 +1794,17 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+34"/>
-        <source>Summary</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <location line="+36"/>
+        <location line="+71"/>
         <source>Create an image</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-35"/>
-        <source>Remove the background</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location line="+1"/>
-        <location line="+35"/>
         <source>Generative erasing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-34"/>
-        <source>Transcribe an audio</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+11"/>
-        <source>Only open the AI</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+22"/>
+        <location line="-1"/>
         <source>Describe the image to create:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1745,15 +1859,16 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location line="+35"/>
         <location line="+12"/>
         <location line="+13"/>
         <location line="+17"/>
-        <location line="+106"/>
+        <location line="+109"/>
         <source>AI</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-136"/>
+        <location line="-139"/>
         <source>What should be given to the AI?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1773,28 +1888,19 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+11"/>
+        <location line="-14"/>
+        <location line="+25"/>
         <location line="+17"/>
         <source>The file for the AI could not be made.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+28"/>
-        <source>Drag a text or a picture of the AI to the page, or copy it and use Paste on the page.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+6"/>
+        <location line="+35"/>
         <source>If the AI did not take the file, drag it from here to the AI</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>The instruction is written in the AI and also copied: Ctrl+V pastes it. Drag the answer to the page, or use Paste on the page.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+72"/>
+        <location line="+75"/>
         <source>It seems that the free uses of %1 are over for now. Do the same with another AI?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1853,7 +1959,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBAttachmentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+772"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+150"/>
         <source>Insert file</source>
         <translation>Вмъкни файл</translation>
     </message>
@@ -1999,7 +2105,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Размерът на тази страница. Рисунките остават на място; по-голямо платно оставя място около тях.</translation>
     </message>
     <message>
-        <location line="+406"/>
+        <location line="+403"/>
         <source>The GIF could not be found on its page. Try another one.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2014,7 +2120,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Всички поддържани (%1)</translation>
     </message>
     <message>
-        <location line="-2074"/>
+        <location line="-2071"/>
         <source>Page %1 deleted</source>
         <translation>Страница %1 изтрита</translation>
     </message>
@@ -2132,7 +2238,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+2241"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+2242"/>
         <source>That page is not in the document any more.</source>
         <translation>Тази страница вече не е в документа.</translation>
     </message>
@@ -2225,7 +2331,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+741"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+777"/>
         <source>Quick note</source>
         <translation>Бърза бележка</translation>
     </message>
@@ -2923,7 +3029,7 @@ Do you want to continue?</source>
 <context>
     <name>UBEmojiOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-993"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1144"/>
         <source>Emojis and GIFs</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4531,7 +4637,7 @@ Do you want to ignore these errors for this host?</source>
 <context>
     <name>UBNoteOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1186"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1337"/>
         <source>Note</source>
         <translation>Бележка</translation>
     </message>
@@ -4825,7 +4931,7 @@ It can also be done later with Home &gt; Recognize text.</source>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1349"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1500"/>
         <source>Pen</source>
         <translation>Химикалка</translation>
     </message>
@@ -5494,7 +5600,7 @@ Dynamic width</source>
 <context>
     <name>UBSelectorOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1223"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1374"/>
         <source>Select</source>
         <translation>Избор</translation>
     </message>
@@ -5535,7 +5641,7 @@ Dynamic width</source>
 <context>
     <name>UBSettings</name>
     <message>
-        <location filename="../../src/core/UBSettings.cpp" line="+1152"/>
+        <location filename="../../src/core/UBSettings.cpp" line="+1155"/>
         <source>My Movies</source>
         <translation>Моите филми</translation>
     </message>
@@ -5547,7 +5653,7 @@ Dynamic width</source>
         <translation type="vanished">Правоъгълник</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-621"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-657"/>
         <source>Shapes</source>
         <translation type="unfinished">Форми</translation>
     </message>
@@ -6228,17 +6334,7 @@ Dynamic width</source>
 <context>
     <name>UBStylusPalette</name>
     <message>
-        <location filename="../../src/gui/UBStylusPalette.cpp" line="+87"/>
-        <source>AI</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Summary, translation, images and more with an AI on the web</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+7"/>
+        <location filename="../../src/gui/UBStylusPalette.cpp" line="+90"/>
         <source>Save a screenshot</source>
         <translation>Запазване на екранна снимка</translation>
     </message>
@@ -6413,7 +6509,7 @@ Dynamic width</source>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1091"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1206"/>
         <source>Color</source>
         <translation>Цвят</translation>
     </message>
@@ -6421,13 +6517,50 @@ Dynamic width</source>
 <context>
     <name>UBToolbarChoice</name>
     <message>
-        <location filename="../../src/gui/UBToolbarChoice.cpp" line="+164"/>
+        <location filename="../../src/gui/UBToolbarChoice.cpp" line="+283"/>
+        <source>Move items</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Drag the tools up or down, or use the buttons. Only the tools shown in the palette are listed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <location line="+129"/>
         <source>Desktop</source>
         <translation type="unfinished">Десктоп</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="-129"/>
+        <location line="+130"/>
         <source>Board / PDF</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-121"/>
+        <source>Back to the board: always first</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+23"/>
+        <source>Up</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Down</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Original order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+120"/>
+        <source>Move items...</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6553,7 +6686,7 @@ Please reboot the application to access the updated documents.</source>
         <translation type="vanished">Диктувай</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+505"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+620"/>
         <source>Read aloud</source>
         <translation type="unfinished">Прочети на глас</translation>
     </message>

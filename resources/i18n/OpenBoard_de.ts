@@ -744,12 +744,12 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
     </message>
     <message>
         <location line="+9"/>
-        <location line="+649"/>
+        <location line="+664"/>
         <source>Erase Annotations</source>
         <translation>Anmerkungen löschen</translation>
     </message>
     <message>
-        <location line="-646"/>
+        <location line="-661"/>
         <source>Erase All Annotations</source>
         <translation>Alle Anmerkungen löschen</translation>
     </message>
@@ -921,7 +921,7 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
         <translation>Einen Stempel auf die Seite setzen</translation>
     </message>
     <message>
-        <location line="+29"/>
+        <location line="+44"/>
         <source>Spotlight</source>
         <translation>Spotlight</translation>
     </message>
@@ -1155,7 +1155,7 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
         <translation>Strg+H</translation>
     </message>
     <message>
-        <location line="-2025"/>
+        <location line="-2040"/>
         <location line="+686"/>
         <location line="+3"/>
         <source>LibertyBoard</source>
@@ -1167,7 +1167,7 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
         <translation>LibertyBoard verlassen</translation>
     </message>
     <message>
-        <location line="+1649"/>
+        <location line="+1664"/>
         <source>Hide LibertyBoard</source>
         <translation>LibertyBoard ausblenden</translation>
     </message>
@@ -1207,7 +1207,7 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
         <translation>Öffnen der Anleitung im Internet</translation>
     </message>
     <message>
-        <location line="-869"/>
+        <location line="-884"/>
         <location line="+6"/>
         <source>Ruled Light Background</source>
         <translation>Heller linierter Hintergrund</translation>
@@ -1219,13 +1219,13 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
         <translation>Dunkler linierter Hintergrund</translation>
     </message>
     <message>
-        <location line="+796"/>
+        <location line="+811"/>
         <location line="+3"/>
         <source>Reset grid size</source>
         <translation>Rastergröße zurücksetzen</translation>
     </message>
     <message>
-        <location line="-1686"/>
+        <location line="-1701"/>
         <source>Small Eraser</source>
         <translation>Kleiner Radiergummi</translation>
     </message>
@@ -1260,7 +1260,7 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
         <translation>Farbe 5</translation>
     </message>
     <message>
-        <location line="+1579"/>
+        <location line="+1594"/>
         <location line="+3"/>
         <source>Draw intermediate grid lines</source>
         <translation>Gitter-Zwischenlinien zeichnen</translation>
@@ -1274,7 +1274,7 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
         <translation>Webinhalte erfassen</translation>
     </message>
     <message>
-        <location line="-1743"/>
+        <location line="-1758"/>
         <source>Template style</source>
         <translation>Vorlagenstil</translation>
     </message>
@@ -1381,6 +1381,16 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
         <translation>Ein Emoji oder ein GIF auf die Seite setzen</translation>
     </message>
     <message>
+        <location line="+12"/>
+        <source>AI</source>
+        <translation>KI</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Summary, translation, images and more with an AI on the web</source>
+        <translation>Zusammenfassung, Übersetzung, Bilder und mehr mit einer KI im Web</translation>
+    </message>
+    <message>
         <location line="+29"/>
         <source>Read aloud</source>
         <translation>Vorlesen</translation>
@@ -1424,12 +1434,12 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
         <translation>Favorit</translation>
     </message>
     <message>
-        <location line="-711"/>
+        <location line="-726"/>
         <source>Ctrl+P</source>
         <translation>Strg+P</translation>
     </message>
     <message>
-        <location line="+744"/>
+        <location line="+759"/>
         <source>Snap to grid</source>
         <translation>Am Gitter einrasten</translation>
     </message>
@@ -1588,20 +1598,102 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
     </message>
 </context>
 <context>
-    <name>UBAiPanel</name>
+    <name>UBAiOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBAiPanel.cpp" line="+123"/>
-        <source>Drag over the part of the page to give to the AI. Escape: cancel.</source>
-        <translation>Ziehen Sie über den Teil der Seite, der der KI gegeben wird. Esc: abbrechen.</translation>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+723"/>
+        <source>AI</source>
+        <translation>KI</translation>
     </message>
     <message>
-        <location line="+86"/>
-        <location line="+345"/>
+        <location line="+5"/>
+        <source>Summary</source>
+        <translation>Zusammenfassung</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>A part of the page, or all of it, summarized by the AI</source>
+        <translation>Ein Teil der Seite oder die ganze, von der KI zusammengefasst</translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>Translation</source>
         <translation>Übersetzung</translation>
     </message>
     <message>
-        <location line="-337"/>
+        <location line="+1"/>
+        <source>A part of the page, or all of it, translated by the AI into the language chosen</source>
+        <translation>Ein Teil der Seite oder die ganze, von der KI in die gewählte Sprache übersetzt</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Create image</source>
+        <translation>Bild erstellen</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>An image made by the AI from what you write</source>
+        <translation>Ein Bild, das die KI aus Ihrem Text erstellt</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Remove background</source>
+        <translation>Hintergrund entfernen</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>A picture without its background, made by the AI</source>
+        <translation>Ein Bild ohne Hintergrund, von der KI erstellt</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Generative erase</source>
+        <translation>Generatives Löschen</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Something erased from a picture by the AI, as if it had never been there</source>
+        <translation>Etwas, das die KI aus einem Bild löscht, als wäre es nie da gewesen</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Transcribe</source>
+        <translation>Transkribieren</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Asks for an audio and gives it to the AI, which writes what is said</source>
+        <translation>Fragt nach einem Audio und gibt es der KI, die aufschreibt, was gesagt wird</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Open the AI</source>
+        <translation>KI öffnen</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Opens or closes the page of the AI at the right</source>
+        <translation>Öffnet oder schließt die Seite der KI rechts</translation>
+    </message>
+</context>
+<context>
+    <name>UBAiPanel</name>
+    <message>
+        <location filename="../../src/gui/UBAiPanel.cpp" line="+159"/>
+        <source>Drag over the part of the page to give to the AI. Escape: cancel.</source>
+        <translation>Ziehen Sie über den Teil der Seite, der der KI gegeben wird. Esc: abbrechen.</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Drag over the part of the screen to give to the AI. Escape: cancel.</source>
+        <translation>Ziehen Sie über den Teil des Bildschirms, der der KI gegeben wird. Esc: abbrechen.</translation>
+    </message>
+    <message>
+        <location line="+100"/>
+        <source>Translation</source>
+        <translation>Übersetzung</translation>
+    </message>
+    <message>
+        <location line="+8"/>
         <source>Detect it</source>
         <translation>Erkennen</translation>
     </message>
@@ -1621,18 +1713,37 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
         <translation>Nach:</translation>
     </message>
     <message>
-        <location line="+113"/>
+        <location line="+98"/>
+        <source>Put the picture on the desktop</source>
+        <translation>Bild auf den Desktop legen</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Put the picture on the page</source>
+        <translation>Bild auf die Seite legen</translation>
+    </message>
+    <message>
+        <location line="+20"/>
+        <source>Put the text on the desktop</source>
+        <translation>Text auf den Desktop legen</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Put the text on the page</source>
+        <translation>Text auf die Seite legen</translation>
+    </message>
+    <message>
+        <location line="+54"/>
         <source>The AI shown; the addresses are in the preferences</source>
         <translation>Die angezeigte KI; die Adressen stehen in den Einstellungen</translation>
     </message>
     <message>
         <location line="+10"/>
-        <location line="+218"/>
         <source>Close the AI</source>
         <translation>KI schließen</translation>
     </message>
     <message>
-        <location line="-213"/>
+        <location line="+5"/>
         <source>AI:</source>
         <translation>KI:</translation>
     </message>
@@ -1652,17 +1763,46 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
         <translation>Auf der Seite einfügen</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Puts on the page what was copied in the AI: a text, or a picture with its right click, Copy image</source>
-        <translation>Fügt auf der Seite ein, was in der KI kopiert wurde: einen Text oder ein Bild mit Rechtsklick, Bild kopieren</translation>
+        <location line="+0"/>
+        <source>Paste on the desktop</source>
+        <translation>Auf dem Desktop einfügen</translation>
     </message>
     <message>
-        <location line="+31"/>
+        <location line="+1"/>
+        <source>Puts on the page what was copied in the AI: a text, or a picture with its right click, Copy image. The right click on a picture or a selected text of the AI can also put it there.</source>
+        <translation>Fügt auf der Seite ein, was in der KI kopiert wurde: einen Text oder ein Bild mit Rechtsklick, Bild kopieren. Ein Rechtsklick auf ein Bild oder einen markierten Text der KI legt es ebenfalls dort ab.</translation>
+    </message>
+    <message>
+        <location line="+391"/>
+        <source>Right click on a picture or a text of the AI to put it on the desktop.</source>
+        <translation>Rechtsklick auf ein Bild oder einen Text der KI, um es auf den Desktop zu legen.</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Drag a text or a picture of the AI to the page, or right click on it to put it there.</source>
+        <translation>Ziehen Sie einen Text oder ein Bild der KI auf die Seite, oder legen Sie es mit einem Rechtsklick dort ab.</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>The instruction is written in the AI and also copied: Ctrl+V pastes it. Right click on the answer to put it on the desktop.</source>
+        <translation>Die Anweisung steht in der KI und ist auch kopiert: Strg+V fügt sie ein. Rechtsklick auf die Antwort, um sie auf den Desktop zu legen.</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>The instruction is written in the AI and also copied: Ctrl+V pastes it. Drag the answer to the page, or right click on it to put it there.</source>
+        <translation>Die Anweisung steht in der KI und ist auch kopiert: Strg+V fügt sie ein. Ziehen Sie die Antwort auf die Seite oder legen Sie sie mit einem Rechtsklick dort ab.</translation>
+    </message>
+    <message>
+        <source>Puts on the page what was copied in the AI: a text, or a picture with its right click, Copy image</source>
+        <translation type="vanished">Fügt auf der Seite ein, was in der KI kopiert wurde: einen Text oder ein Bild mit Rechtsklick, Bild kopieren</translation>
+    </message>
+    <message>
+        <location line="-356"/>
         <source>Drag to make the panel wider</source>
         <translation>Ziehen, um das Feld zu verbreitern</translation>
     </message>
     <message>
-        <location line="+110"/>
+        <location line="+115"/>
         <source>The picture of the AI is on the page; it is also in %1</source>
         <translation>Das Bild der KI ist auf der Seite; es liegt auch in %1</translation>
     </message>
@@ -1672,39 +1812,33 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
         <translation>Heruntergeladen: %1</translation>
     </message>
     <message>
-        <location line="+34"/>
         <source>Summary</source>
-        <translation>Zusammenfassung</translation>
+        <translation type="vanished">Zusammenfassung</translation>
     </message>
     <message>
-        <location line="+2"/>
-        <location line="+36"/>
+        <location line="+71"/>
         <source>Create an image</source>
         <translation>Bild erstellen</translation>
     </message>
     <message>
-        <location line="-35"/>
         <source>Remove the background</source>
-        <translation>Hintergrund entfernen</translation>
+        <translation type="vanished">Hintergrund entfernen</translation>
     </message>
     <message>
         <location line="+1"/>
-        <location line="+35"/>
         <source>Generative erasing</source>
         <translation>Generatives Löschen</translation>
     </message>
     <message>
-        <location line="-34"/>
         <source>Transcribe an audio</source>
-        <translation>Audio transkribieren</translation>
+        <translation type="vanished">Audio transkribieren</translation>
     </message>
     <message>
-        <location line="+11"/>
         <source>Only open the AI</source>
-        <translation>Nur die KI öffnen</translation>
+        <translation type="vanished">Nur die KI öffnen</translation>
     </message>
     <message>
-        <location line="+22"/>
+        <location line="-1"/>
         <source>Describe the image to create:</source>
         <translation>Beschreiben Sie das zu erstellende Bild:</translation>
     </message>
@@ -1759,15 +1893,16 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
         <translation>Audio</translation>
     </message>
     <message>
+        <location line="+35"/>
         <location line="+12"/>
         <location line="+13"/>
         <location line="+17"/>
-        <location line="+106"/>
+        <location line="+109"/>
         <source>AI</source>
         <translation>KI</translation>
     </message>
     <message>
-        <location line="-136"/>
+        <location line="-139"/>
         <source>What should be given to the AI?</source>
         <translation>Was soll der KI gegeben werden?</translation>
     </message>
@@ -1787,28 +1922,27 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
         <translation>Das ganze PDF oder die Tafel</translation>
     </message>
     <message>
-        <location line="+11"/>
+        <location line="-14"/>
+        <location line="+25"/>
         <location line="+17"/>
         <source>The file for the AI could not be made.</source>
         <translation>Die Datei für die KI konnte nicht erstellt werden.</translation>
     </message>
     <message>
-        <location line="+28"/>
         <source>Drag a text or a picture of the AI to the page, or copy it and use Paste on the page.</source>
-        <translation>Ziehen Sie einen Text oder ein Bild der KI auf die Seite, oder kopieren Sie es und nutzen Sie Auf der Seite einfügen.</translation>
+        <translation type="vanished">Ziehen Sie einen Text oder ein Bild der KI auf die Seite, oder kopieren Sie es und nutzen Sie Auf der Seite einfügen.</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+35"/>
         <source>If the AI did not take the file, drag it from here to the AI</source>
         <translation>Wenn die KI die Datei nicht übernommen hat, ziehen Sie sie von hier zur KI</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>The instruction is written in the AI and also copied: Ctrl+V pastes it. Drag the answer to the page, or use Paste on the page.</source>
-        <translation>Die Anweisung steht in der KI und ist auch kopiert: Strg+V fügt sie ein. Ziehen Sie die Antwort auf die Seite oder nutzen Sie Auf der Seite einfügen.</translation>
+        <translation type="vanished">Die Anweisung steht in der KI und ist auch kopiert: Strg+V fügt sie ein. Ziehen Sie die Antwort auf die Seite oder nutzen Sie Auf der Seite einfügen.</translation>
     </message>
     <message>
-        <location line="+72"/>
+        <location line="+75"/>
         <source>It seems that the free uses of %1 are over for now. Do the same with another AI?</source>
         <translation>Die kostenlosen Nutzungen von %1 scheinen vorerst aufgebraucht. Dasselbe mit einer anderen KI machen?</translation>
     </message>
@@ -1867,7 +2001,7 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
 <context>
     <name>UBAttachmentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+772"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+150"/>
         <source>Insert file</source>
         <translation>Datei einfügen</translation>
     </message>
@@ -2013,7 +2147,7 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
         <translation>Die Größe dieser Seite. Die Zeichnungen bleiben, wo sie sind; eine größere Leinwand lässt Platz darum herum.</translation>
     </message>
     <message>
-        <location line="+406"/>
+        <location line="+403"/>
         <source>The GIF could not be found on its page. Try another one.</source>
         <translation>Das GIF wurde auf seiner Seite nicht gefunden. Versuchen Sie ein anderes.</translation>
     </message>
@@ -2028,7 +2162,7 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
         <translation>Alle unterstützt (%1)</translation>
     </message>
     <message>
-        <location line="-2074"/>
+        <location line="-2071"/>
         <source>Page %1 deleted</source>
         <translation>Seite %1 gelöscht</translation>
     </message>
@@ -2153,7 +2287,7 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+2241"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+2242"/>
         <source>That page is not in the document any more.</source>
         <translation>Diese Seite ist nicht mehr im Dokument.</translation>
     </message>
@@ -2246,7 +2380,7 @@ Möchten Sie die Sicherheitsüberprüfung außer Kraft setzen und fortfahren?   
 <context>
     <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+741"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+777"/>
         <source>Quick note</source>
         <translation>Kurznotiz</translation>
     </message>
@@ -3008,7 +3142,7 @@ Möchten Sie fortfahren?</translation>
 <context>
     <name>UBEmojiOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-993"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1144"/>
         <source>Emojis and GIFs</source>
         <translation>Emojis und GIFs</translation>
     </message>
@@ -4669,7 +4803,7 @@ Möchten Sie diese Fehler für diesen Computer ignorieren?</translation>
 <context>
     <name>UBNoteOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1186"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1337"/>
         <source>Note</source>
         <translation>Notiz</translation>
     </message>
@@ -4990,7 +5124,7 @@ Das geht auch später mit Start &gt; Text erkennen.</translation>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1349"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1500"/>
         <source>Pen</source>
         <translation>Stift</translation>
     </message>
@@ -5659,7 +5793,7 @@ Dynamische Breite</translation>
 <context>
     <name>UBSelectorOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1223"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1374"/>
         <source>Select</source>
         <translation>Auswählen</translation>
     </message>
@@ -5700,7 +5834,7 @@ Dynamische Breite</translation>
 <context>
     <name>UBSettings</name>
     <message>
-        <location filename="../../src/core/UBSettings.cpp" line="+1152"/>
+        <location filename="../../src/core/UBSettings.cpp" line="+1155"/>
         <source>My Movies</source>
         <translation>Meine Filme</translation>
     </message>
@@ -5712,7 +5846,7 @@ Dynamische Breite</translation>
         <translation type="vanished">Rechteck</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-621"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-657"/>
         <source>Shapes</source>
         <translation>Formen</translation>
     </message>
@@ -6397,17 +6531,15 @@ Dynamische Breite</translation>
 <context>
     <name>UBStylusPalette</name>
     <message>
-        <location filename="../../src/gui/UBStylusPalette.cpp" line="+87"/>
         <source>AI</source>
-        <translation>KI</translation>
+        <translation type="vanished">KI</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Summary, translation, images and more with an AI on the web</source>
-        <translation>Zusammenfassung, Übersetzung, Bilder und mehr mit einer KI im Web</translation>
+        <translation type="vanished">Zusammenfassung, Übersetzung, Bilder und mehr mit einer KI im Web</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location filename="../../src/gui/UBStylusPalette.cpp" line="+90"/>
         <source>Save a screenshot</source>
         <translation>Bildschirmfoto speichern</translation>
     </message>
@@ -6591,7 +6723,7 @@ Miniaturansicht der Seite %1 wird geladen</translation>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1091"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1206"/>
         <source>Color</source>
         <translation>Farbe</translation>
     </message>
@@ -6599,14 +6731,51 @@ Miniaturansicht der Seite %1 wird geladen</translation>
 <context>
     <name>UBToolbarChoice</name>
     <message>
-        <location filename="../../src/gui/UBToolbarChoice.cpp" line="+164"/>
+        <location filename="../../src/gui/UBToolbarChoice.cpp" line="+283"/>
+        <source>Move items</source>
+        <translation>Elemente verschieben</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Drag the tools up or down, or use the buttons. Only the tools shown in the palette are listed.</source>
+        <translation>Ziehen Sie die Werkzeuge nach oben oder unten, oder nutzen Sie die Schaltflächen. Nur die in der Leiste gezeigten Werkzeuge sind aufgeführt.</translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <location line="+129"/>
         <source>Desktop</source>
         <translation>Desktop</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="-129"/>
+        <location line="+130"/>
         <source>Board / PDF</source>
         <translation>Tafel / PDF</translation>
+    </message>
+    <message>
+        <location line="-121"/>
+        <source>Back to the board: always first</source>
+        <translation>Zurück zur Tafel: immer zuerst</translation>
+    </message>
+    <message>
+        <location line="+23"/>
+        <source>Up</source>
+        <translation>Nach oben</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Down</source>
+        <translation>Nach unten</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Original order</source>
+        <translation>Ursprüngliche Reihenfolge</translation>
+    </message>
+    <message>
+        <location line="+120"/>
+        <source>Move items...</source>
+        <translation>Elemente verschieben...</translation>
     </message>
 </context>
 <context>
@@ -6732,7 +6901,7 @@ Bitte starten Sie die Anwendung erneut, um auf die aktualisierten Dokumente zugr
         <translation type="vanished">Diktieren</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+505"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+620"/>
         <source>Read aloud</source>
         <translation>Vorlesen</translation>
     </message>

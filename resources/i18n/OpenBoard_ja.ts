@@ -742,12 +742,12 @@ Do you wish to override the security check and continue ?   </source>
     </message>
     <message>
         <location line="+9"/>
-        <location line="+649"/>
+        <location line="+664"/>
         <source>Erase Annotations</source>
         <translation>注釈を消去</translation>
     </message>
     <message>
-        <location line="-646"/>
+        <location line="-661"/>
         <source>Erase All Annotations</source>
         <translation>全注釈を消去</translation>
     </message>
@@ -840,7 +840,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>ページにスタンプを押す</translation>
     </message>
     <message>
-        <location line="+29"/>
+        <location line="+44"/>
         <source>Spotlight</source>
         <translation>スポットライト</translation>
     </message>
@@ -902,7 +902,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="vanished">Ctrl+I </translation>
     </message>
     <message>
-        <location line="-731"/>
+        <location line="-746"/>
         <source>Erase Annotation</source>
         <translation>注釈を消去</translation>
     </message>
@@ -995,6 +995,16 @@ Do you wish to override the security check and continue ?   </source>
         <location line="+3"/>
         <source>Put an emoji or a GIF on the page</source>
         <translation>ページに絵文字やGIFを置きます</translation>
+    </message>
+    <message>
+        <location line="+12"/>
+        <source>AI</source>
+        <translation>AI</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Summary, translation, images and more with an AI on the web</source>
+        <translation>Web上のAIで要約、翻訳、画像など</translation>
     </message>
     <message>
         <location line="+29"/>
@@ -1193,7 +1203,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Ctrl+H </translation>
     </message>
     <message>
-        <location line="-2025"/>
+        <location line="-2040"/>
         <location line="+686"/>
         <location line="+3"/>
         <source>LibertyBoard</source>
@@ -1205,7 +1215,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Open-Sankoreを終了</translation>
     </message>
     <message>
-        <location line="+1649"/>
+        <location line="+1664"/>
         <source>Hide LibertyBoard</source>
         <translation>LibertyBoardを隠す</translation>
     </message>
@@ -1235,7 +1245,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>背景を削除する</translation>
     </message>
     <message>
-        <location line="-857"/>
+        <location line="-872"/>
         <location line="+6"/>
         <source>Ruled Light Background</source>
         <translation type="unfinished"></translation>
@@ -1247,7 +1257,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+784"/>
+        <location line="+799"/>
         <source>Open Tutorial</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1263,7 +1273,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-1686"/>
+        <location line="-1701"/>
         <source>Small Eraser</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1298,7 +1308,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1579"/>
+        <location line="+1594"/>
         <location line="+3"/>
         <source>Draw intermediate grid lines</source>
         <translation type="unfinished"></translation>
@@ -1312,7 +1322,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-1743"/>
+        <location line="-1758"/>
         <source>Template style</source>
         <translation>テンプレートのスタイル</translation>
     </message>
@@ -1404,7 +1414,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+475"/>
+        <location line="+490"/>
         <source>Import one or more pages (supported formats : jpg, png, svg, ubz, pdf)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1570,20 +1580,102 @@ Do you wish to override the security check and continue ?   </source>
     </message>
 </context>
 <context>
-    <name>UBAiPanel</name>
+    <name>UBAiOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBAiPanel.cpp" line="+123"/>
-        <source>Drag over the part of the page to give to the AI. Escape: cancel.</source>
-        <translation>AIに渡すページの部分をドラッグしてください。Esc:キャンセル。</translation>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+723"/>
+        <source>AI</source>
+        <translation>AI</translation>
     </message>
     <message>
-        <location line="+86"/>
-        <location line="+345"/>
+        <location line="+5"/>
+        <source>Summary</source>
+        <translation>要約</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>A part of the page, or all of it, summarized by the AI</source>
+        <translation>ページの一部または全体をAIが要約</translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>Translation</source>
         <translation>翻訳</translation>
     </message>
     <message>
-        <location line="-337"/>
+        <location line="+1"/>
+        <source>A part of the page, or all of it, translated by the AI into the language chosen</source>
+        <translation>ページの一部または全体をAIが選んだ言語に翻訳</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Create image</source>
+        <translation>画像を作成</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>An image made by the AI from what you write</source>
+        <translation>書いた内容からAIが画像を作成</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Remove background</source>
+        <translation>背景を削除</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>A picture without its background, made by the AI</source>
+        <translation>AIが背景を消した画像</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Generative erase</source>
+        <translation>生成消去</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Something erased from a picture by the AI, as if it had never been there</source>
+        <translation>画像の一部を、最初からなかったかのようにAIが消去</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Transcribe</source>
+        <translation>文字起こし</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Asks for an audio and gives it to the AI, which writes what is said</source>
+        <translation>音声を選び、AIに渡して話された内容を書き起こします</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Open the AI</source>
+        <translation>AIを開く</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Opens or closes the page of the AI at the right</source>
+        <translation>右側のAIのページを開閉します</translation>
+    </message>
+</context>
+<context>
+    <name>UBAiPanel</name>
+    <message>
+        <location filename="../../src/gui/UBAiPanel.cpp" line="+159"/>
+        <source>Drag over the part of the page to give to the AI. Escape: cancel.</source>
+        <translation>AIに渡すページの部分をドラッグしてください。Esc:キャンセル。</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Drag over the part of the screen to give to the AI. Escape: cancel.</source>
+        <translation>AIに渡す画面の部分をドラッグしてください。Esc:キャンセル。</translation>
+    </message>
+    <message>
+        <location line="+100"/>
+        <source>Translation</source>
+        <translation>翻訳</translation>
+    </message>
+    <message>
+        <location line="+8"/>
         <source>Detect it</source>
         <translation>自動検出</translation>
     </message>
@@ -1603,18 +1695,37 @@ Do you wish to override the security check and continue ?   </source>
         <translation>翻訳先:</translation>
     </message>
     <message>
-        <location line="+113"/>
+        <location line="+98"/>
+        <source>Put the picture on the desktop</source>
+        <translation>画像をデスクトップに置く</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Put the picture on the page</source>
+        <translation>画像をページに置く</translation>
+    </message>
+    <message>
+        <location line="+20"/>
+        <source>Put the text on the desktop</source>
+        <translation>テキストをデスクトップに置く</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Put the text on the page</source>
+        <translation>テキストをページに置く</translation>
+    </message>
+    <message>
+        <location line="+54"/>
         <source>The AI shown; the addresses are in the preferences</source>
         <translation>表示中のAI。アドレスは設定にあります</translation>
     </message>
     <message>
         <location line="+10"/>
-        <location line="+218"/>
         <source>Close the AI</source>
         <translation>AIを閉じる</translation>
     </message>
     <message>
-        <location line="-213"/>
+        <location line="+5"/>
         <source>AI:</source>
         <translation>AI:</translation>
     </message>
@@ -1634,17 +1745,46 @@ Do you wish to override the security check and continue ?   </source>
         <translation>ページに貼り付け</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Puts on the page what was copied in the AI: a text, or a picture with its right click, Copy image</source>
-        <translation>AIでコピーしたものをページに置きます:テキスト、または右クリック「画像をコピー」した画像</translation>
+        <location line="+0"/>
+        <source>Paste on the desktop</source>
+        <translation>デスクトップに貼り付け</translation>
     </message>
     <message>
-        <location line="+31"/>
+        <location line="+1"/>
+        <source>Puts on the page what was copied in the AI: a text, or a picture with its right click, Copy image. The right click on a picture or a selected text of the AI can also put it there.</source>
+        <translation>AIでコピーしたものをページに置きます:テキスト、または右クリック「画像をコピー」した画像。AIの画像や選択したテキストを右クリックしても置けます。</translation>
+    </message>
+    <message>
+        <location line="+391"/>
+        <source>Right click on a picture or a text of the AI to put it on the desktop.</source>
+        <translation>AIの画像やテキストを右クリックしてデスクトップに置きます。</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Drag a text or a picture of the AI to the page, or right click on it to put it there.</source>
+        <translation>AIのテキストや画像をページにドラッグするか、右クリックしてそこに置きます。</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>The instruction is written in the AI and also copied: Ctrl+V pastes it. Right click on the answer to put it on the desktop.</source>
+        <translation>指示はAIに入力され、コピーもされています(Ctrl+V で貼り付け)。回答を右クリックしてデスクトップに置きます。</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>The instruction is written in the AI and also copied: Ctrl+V pastes it. Drag the answer to the page, or right click on it to put it there.</source>
+        <translation>指示はAIに入力され、コピーもされています(Ctrl+V で貼り付け)。回答をページにドラッグするか、右クリックしてそこに置きます。</translation>
+    </message>
+    <message>
+        <source>Puts on the page what was copied in the AI: a text, or a picture with its right click, Copy image</source>
+        <translation type="vanished">AIでコピーしたものをページに置きます:テキスト、または右クリック「画像をコピー」した画像</translation>
+    </message>
+    <message>
+        <location line="-356"/>
         <source>Drag to make the panel wider</source>
         <translation>ドラッグしてパネルを広げます</translation>
     </message>
     <message>
-        <location line="+110"/>
+        <location line="+115"/>
         <source>The picture of the AI is on the page; it is also in %1</source>
         <translation>AIの画像をページに置きました。%1 にも保存されています</translation>
     </message>
@@ -1654,39 +1794,33 @@ Do you wish to override the security check and continue ?   </source>
         <translation>ダウンロード済み: %1</translation>
     </message>
     <message>
-        <location line="+34"/>
         <source>Summary</source>
-        <translation>要約</translation>
+        <translation type="vanished">要約</translation>
     </message>
     <message>
-        <location line="+2"/>
-        <location line="+36"/>
+        <location line="+71"/>
         <source>Create an image</source>
         <translation>画像を作成</translation>
     </message>
     <message>
-        <location line="-35"/>
         <source>Remove the background</source>
-        <translation>背景を削除</translation>
+        <translation type="vanished">背景を削除</translation>
     </message>
     <message>
         <location line="+1"/>
-        <location line="+35"/>
         <source>Generative erasing</source>
         <translation>生成消去</translation>
     </message>
     <message>
-        <location line="-34"/>
         <source>Transcribe an audio</source>
-        <translation>音声を文字起こし</translation>
+        <translation type="vanished">音声を文字起こし</translation>
     </message>
     <message>
-        <location line="+11"/>
         <source>Only open the AI</source>
-        <translation>AIを開くだけ</translation>
+        <translation type="vanished">AIを開くだけ</translation>
     </message>
     <message>
-        <location line="+22"/>
+        <location line="-1"/>
         <source>Describe the image to create:</source>
         <translation>作成したい画像を説明してください:</translation>
     </message>
@@ -1741,15 +1875,16 @@ Do you wish to override the security check and continue ?   </source>
         <translation>音声</translation>
     </message>
     <message>
+        <location line="+35"/>
         <location line="+12"/>
         <location line="+13"/>
         <location line="+17"/>
-        <location line="+106"/>
+        <location line="+109"/>
         <source>AI</source>
         <translation>AI</translation>
     </message>
     <message>
-        <location line="-136"/>
+        <location line="-139"/>
         <source>What should be given to the AI?</source>
         <translation>AIに何を渡しますか?</translation>
     </message>
@@ -1769,28 +1904,27 @@ Do you wish to override the security check and continue ?   </source>
         <translation>PDFまたはボード全体</translation>
     </message>
     <message>
-        <location line="+11"/>
+        <location line="-14"/>
+        <location line="+25"/>
         <location line="+17"/>
         <source>The file for the AI could not be made.</source>
         <translation>AI用のファイルを作成できませんでした。</translation>
     </message>
     <message>
-        <location line="+28"/>
         <source>Drag a text or a picture of the AI to the page, or copy it and use Paste on the page.</source>
-        <translation>AIのテキストや画像をページにドラッグするか、コピーして「ページに貼り付け」を使ってください。</translation>
+        <translation type="vanished">AIのテキストや画像をページにドラッグするか、コピーして「ページに貼り付け」を使ってください。</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+35"/>
         <source>If the AI did not take the file, drag it from here to the AI</source>
         <translation>AIがファイルを受け取らなかった場合は、ここからAIへドラッグしてください</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>The instruction is written in the AI and also copied: Ctrl+V pastes it. Drag the answer to the page, or use Paste on the page.</source>
-        <translation>指示はAIに入力され、コピーもされています(Ctrl+V で貼り付け)。回答をページにドラッグするか、「ページに貼り付け」を使ってください。</translation>
+        <translation type="vanished">指示はAIに入力され、コピーもされています(Ctrl+V で貼り付け)。回答をページにドラッグするか、「ページに貼り付け」を使ってください。</translation>
     </message>
     <message>
-        <location line="+72"/>
+        <location line="+75"/>
         <source>It seems that the free uses of %1 are over for now. Do the same with another AI?</source>
         <translation>%1 の無料利用回数は今のところ終わったようです。別のAIで同じことをしますか?</translation>
     </message>
@@ -1849,7 +1983,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBAttachmentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+772"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+150"/>
         <source>Insert file</source>
         <translation>ファイルを挿入</translation>
     </message>
@@ -1995,7 +2129,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>このページのサイズ。描いたものはそのまま残り、大きいキャンバスはその周りに余白を作ります。</translation>
     </message>
     <message>
-        <location line="+406"/>
+        <location line="+403"/>
         <source>The GIF could not be found on its page. Try another one.</source>
         <translation>ページでGIFが見つかりませんでした。別のGIFを試してください。</translation>
     </message>
@@ -2010,7 +2144,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>全てサポート(%1) </translation>
     </message>
     <message>
-        <location line="-2897"/>
+        <location line="-2894"/>
         <source>Group</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2128,7 +2262,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+2241"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+2242"/>
         <source>That page is not in the document any more.</source>
         <translation>そのページはもう文書にありません。</translation>
     </message>
@@ -2221,7 +2355,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+741"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+777"/>
         <source>Quick note</source>
         <translation>クイックメモ</translation>
     </message>
@@ -2911,7 +3045,7 @@ Do you want to continue?</source>
 <context>
     <name>UBEmojiOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-993"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1144"/>
         <source>Emojis and GIFs</source>
         <translation>絵文字とGIF</translation>
     </message>
@@ -4572,7 +4706,7 @@ Do you want to ignore these errors for this host?</source>
 <context>
     <name>UBNoteOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1186"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1337"/>
         <source>Note</source>
         <translation>メモ</translation>
     </message>
@@ -4873,7 +5007,7 @@ It can also be done later with Home &gt; Recognize text.</source>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1349"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1500"/>
         <source>Pen</source>
         <translation>ペン </translation>
     </message>
@@ -5542,7 +5676,7 @@ Dynamic width</source>
 <context>
     <name>UBSelectorOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1223"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1374"/>
         <source>Select</source>
         <translation>選択</translation>
     </message>
@@ -5583,7 +5717,7 @@ Dynamic width</source>
 <context>
     <name>UBSettings</name>
     <message>
-        <location filename="../../src/core/UBSettings.cpp" line="+1152"/>
+        <location filename="../../src/core/UBSettings.cpp" line="+1155"/>
         <source>My Movies</source>
         <translation>マイ・ムービー </translation>
     </message>
@@ -5595,7 +5729,7 @@ Dynamic width</source>
         <translation type="vanished">長方形</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-621"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-657"/>
         <source>Shapes</source>
         <translation>図形</translation>
     </message>
@@ -6280,17 +6414,15 @@ Dynamic width</source>
 <context>
     <name>UBStylusPalette</name>
     <message>
-        <location filename="../../src/gui/UBStylusPalette.cpp" line="+87"/>
         <source>AI</source>
-        <translation>AI</translation>
+        <translation type="vanished">AI</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Summary, translation, images and more with an AI on the web</source>
-        <translation>Web上のAIで要約、翻訳、画像など</translation>
+        <translation type="vanished">Web上のAIで要約、翻訳、画像など</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location filename="../../src/gui/UBStylusPalette.cpp" line="+90"/>
         <source>Save a screenshot</source>
         <translation>スクリーンショットを保存</translation>
     </message>
@@ -6465,7 +6597,7 @@ Dynamic width</source>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1091"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1206"/>
         <source>Color</source>
         <translation>色</translation>
     </message>
@@ -6473,14 +6605,51 @@ Dynamic width</source>
 <context>
     <name>UBToolbarChoice</name>
     <message>
-        <location filename="../../src/gui/UBToolbarChoice.cpp" line="+164"/>
+        <location filename="../../src/gui/UBToolbarChoice.cpp" line="+283"/>
+        <source>Move items</source>
+        <translation>項目を移動</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Drag the tools up or down, or use the buttons. Only the tools shown in the palette are listed.</source>
+        <translation>ツールを上下にドラッグするか、ボタンを使ってください。バーに表示されているツールだけが並びます。</translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <location line="+129"/>
         <source>Desktop</source>
         <translation>デスクトップ</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="-129"/>
+        <location line="+130"/>
         <source>Board / PDF</source>
         <translation>ボード / PDF</translation>
+    </message>
+    <message>
+        <location line="-121"/>
+        <source>Back to the board: always first</source>
+        <translation>ボードに戻る:常に先頭</translation>
+    </message>
+    <message>
+        <location line="+23"/>
+        <source>Up</source>
+        <translation>上へ</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Down</source>
+        <translation>下へ</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Original order</source>
+        <translation>元の順序</translation>
+    </message>
+    <message>
+        <location line="+120"/>
+        <source>Move items...</source>
+        <translation>項目を移動...</translation>
     </message>
 </context>
 <context>
@@ -6606,7 +6775,7 @@ Please reboot the application to access the updated documents.</source>
         <translation type="vanished">音声入力</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+505"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+620"/>
         <source>Read aloud</source>
         <translation>読み上げ</translation>
     </message>

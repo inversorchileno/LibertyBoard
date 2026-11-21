@@ -255,12 +255,12 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Skončiť</translation>
     </message>
     <message>
-        <location line="+1386"/>
+        <location line="+1401"/>
         <source>Text</source>
         <translation>Text</translation>
     </message>
     <message>
-        <location line="-1551"/>
+        <location line="-1566"/>
         <source>Undo</source>
         <translation>Odvolať zmenu</translation>
     </message>
@@ -293,7 +293,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Svetlá</translation>
     </message>
     <message>
-        <location line="+746"/>
+        <location line="+761"/>
         <source>Embed Web Content</source>
         <translation>Vložiť obsah z webu</translation>
     </message>
@@ -303,17 +303,17 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Stránky</translation>
     </message>
     <message>
-        <location line="-721"/>
+        <location line="-736"/>
         <source>Paste</source>
         <translation>Prilepiť</translation>
     </message>
     <message>
-        <location line="+780"/>
+        <location line="+795"/>
         <source>Pause</source>
         <translation>Pozastaviť</translation>
     </message>
     <message>
-        <location line="-1331"/>
+        <location line="-1346"/>
         <source>Right</source>
         <translation>Doprava</translation>
     </message>
@@ -350,7 +350,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Úplne tmavé pozadie</translation>
     </message>
     <message>
-        <location line="+657"/>
+        <location line="+672"/>
         <source>Podcast Config</source>
         <translation>Nastavenia podcastu</translation>
     </message>
@@ -360,7 +360,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Vyhľadať aktualizáciu</translation>
     </message>
     <message>
-        <location line="-958"/>
+        <location line="-973"/>
         <source>Use Custom Document Size</source>
         <translation>Použiť vlastnú veľkosť dokumentu</translation>
     </message>
@@ -393,7 +393,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Mriežka so svetlým pozadím</translation>
     </message>
     <message>
-        <location line="+839"/>
+        <location line="+854"/>
         <source>Hide LibertyBoard Application</source>
         <translation>Schovať aplikáciu LibertyBoard</translation>
     </message>
@@ -402,7 +402,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="vanished">Nahrať externú stránku</translation>
     </message>
     <message>
-        <location line="-1415"/>
+        <location line="-1430"/>
         <source>Add Bookmark</source>
         <translation>Pridať záložku</translation>
     </message>
@@ -434,12 +434,12 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Knižnica</translation>
     </message>
     <message>
-        <location line="+1229"/>
+        <location line="+1244"/>
         <source>Configure Podcast Recording</source>
         <translation>Nastaviť nahrávanie podcastu</translation>
     </message>
     <message>
-        <location line="-1057"/>
+        <location line="-1072"/>
         <source>Open Page in Board</source>
         <translation>Otvoriť stránku na tabuli</translation>
     </message>
@@ -540,12 +540,12 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Nahrať</translation>
     </message>
     <message>
-        <location line="+1131"/>
+        <location line="+1146"/>
         <source>Custom Capture</source>
         <translation>Vlastný spôsob označenia</translation>
     </message>
     <message>
-        <location line="-510"/>
+        <location line="-525"/>
         <source>Marker</source>
         <translation>Zvýrazňovač</translation>
     </message>
@@ -608,12 +608,12 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Nahrať úvodnú stránku</translation>
     </message>
     <message>
-        <location line="+1272"/>
+        <location line="+1287"/>
         <source>Duplicate Page</source>
         <translation>Duplikovať stránku</translation>
     </message>
     <message>
-        <location line="-992"/>
+        <location line="-1007"/>
         <source>Duplicate Selected Content</source>
         <translation>Duplikovať vybraný obsah</translation>
     </message>
@@ -644,7 +644,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Záložka</translation>
     </message>
     <message>
-        <location line="+1180"/>
+        <location line="+1195"/>
         <location line="+3"/>
         <source>Add To Current Page</source>
         <translation>Pridať na aktuálnu stránku</translation>
@@ -661,7 +661,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Schovať LibertyBoard</translation>
     </message>
     <message>
-        <location line="-679"/>
+        <location line="-694"/>
         <source>Erase All Items</source>
         <translation>Vygumovať všetky položky</translation>
     </message>
@@ -710,7 +710,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Zastaviť nahrávanie webovej stránky</translation>
     </message>
     <message>
-        <location line="+791"/>
+        <location line="+806"/>
         <source>Duplicate the Current Page</source>
         <translation>Duplikovať aktuálnu stránku</translation>
     </message>
@@ -720,7 +720,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Pozastaviť nahrávanie podcastu</translation>
     </message>
     <message>
-        <location line="-1113"/>
+        <location line="-1128"/>
         <source>Create a New Folder</source>
         <translation>Vytvoriť nový priečinok</translation>
     </message>
@@ -730,12 +730,12 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Vyčistiť stránku</translation>
     </message>
     <message>
-        <location line="+450"/>
+        <location line="+465"/>
         <source>Add To Library</source>
         <translation>Pridať do knižnice</translation>
     </message>
     <message>
-        <location line="-1575"/>
+        <location line="-1590"/>
         <source>Previous</source>
         <translation>Predošlá</translation>
     </message>
@@ -750,17 +750,17 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Obnoviť aktuálnu stránku</translation>
     </message>
     <message>
-        <location line="+1301"/>
+        <location line="+1316"/>
         <source>Import Page</source>
         <translation>Nahrať stránku</translation>
     </message>
     <message>
-        <location line="-338"/>
+        <location line="-353"/>
         <source>Draw Lines</source>
         <translation>Kresliť čiary</translation>
     </message>
     <message>
-        <location line="+243"/>
+        <location line="+258"/>
         <source>Capture</source>
         <translation>Označiť</translation>
     </message>
@@ -779,17 +779,17 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Označiť okno</translation>
     </message>
     <message>
-        <location line="-1069"/>
+        <location line="-1084"/>
         <source>Delete Selected Content</source>
         <translation>Vymazať vybraný obsah</translation>
     </message>
     <message>
-        <location line="+922"/>
+        <location line="+937"/>
         <source>Add Item To New Page</source>
         <translation>Pridať položku na novú stránku</translation>
     </message>
     <message>
-        <location line="-885"/>
+        <location line="-900"/>
         <source>Add Content to Document</source>
         <translation>Pridať obsah do dokumentu</translation>
     </message>
@@ -799,7 +799,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Zmenšiť</translation>
     </message>
     <message>
-        <location line="+1215"/>
+        <location line="+1230"/>
         <source>Capture Embeddable Web Content</source>
         <translation>Označiť obsah z internetu, ktorý sa dá vložiť</translation>
     </message>
@@ -809,18 +809,18 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Písať text</translation>
     </message>
     <message>
-        <location line="-1637"/>
+        <location line="-1652"/>
         <location line="+160"/>
         <source>Documents</source>
         <translation>Dokumenty</translation>
     </message>
     <message>
-        <location line="+1520"/>
+        <location line="+1535"/>
         <source>Add To New Page</source>
         <translation>Pridať na novú stránku</translation>
     </message>
     <message>
-        <location line="-777"/>
+        <location line="-792"/>
         <location line="+3"/>
         <source>Regular Size (4/3)</source>
         <translation>Bežná veľkosť (4/3)</translation>
@@ -873,12 +873,12 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Oddeľovač</translation>
     </message>
     <message>
-        <location line="+555"/>
+        <location line="+570"/>
         <source>Erase all Annotations</source>
         <translation>Vygumovať všetky poznámky</translation>
     </message>
     <message>
-        <location line="-649"/>
+        <location line="-664"/>
         <source>Erase All Annotations</source>
         <translation>Vygumovať všetky poznámky</translation>
     </message>
@@ -893,12 +893,12 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Spustiť nahrávanie obrazovky</translation>
     </message>
     <message>
-        <location line="+515"/>
+        <location line="+530"/>
         <source>New Page</source>
         <translation>Nová stránka</translation>
     </message>
     <message>
-        <location line="-1034"/>
+        <location line="-1049"/>
         <source>Import a Document</source>
         <translation>Nahrať dokument</translation>
     </message>
@@ -926,13 +926,13 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Predvoľby</translation>
     </message>
     <message>
-        <location line="+1119"/>
+        <location line="+1134"/>
         <location line="+165"/>
         <source>Capture Part of the Screen</source>
         <translation>Označiť časť obrazovky</translation>
     </message>
     <message>
-        <location line="-1217"/>
+        <location line="-1232"/>
         <source>Ctrl+Shift+H</source>
         <translation>Ctrl+Shift+H</translation>
     </message>
@@ -952,7 +952,7 @@ Do you wish to override the security check and continue ?   </source>
     </message>
     <message>
         <location line="+991"/>
-        <location line="+649"/>
+        <location line="+664"/>
         <source>Erase Annotations</source>
         <translation>Vygumovať poznámky</translation>
     </message>
@@ -962,17 +962,17 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Zobraziť pri projekcii</translation>
     </message>
     <message>
-        <location line="-531"/>
+        <location line="-546"/>
         <source>Select And Modify Objects</source>
         <translation>Vybrať a upraviť objekty</translation>
     </message>
     <message>
-        <location line="+503"/>
+        <location line="+518"/>
         <source>Capture a Window</source>
         <translation>Označiť okno</translation>
     </message>
     <message>
-        <location line="-442"/>
+        <location line="-457"/>
         <source>Virtual Laser Pointer</source>
         <translation>Virtuálne laserové ukazovadlo</translation>
     </message>
@@ -983,7 +983,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Úplne svetlé pozadie</translation>
     </message>
     <message>
-        <location line="+650"/>
+        <location line="+665"/>
         <source>Add Item To Library</source>
         <translation>Pridať položku do knižnice</translation>
     </message>
@@ -1005,7 +1005,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="vanished">Pridať do aktuálneho dokumentu</translation>
     </message>
     <message>
-        <location line="-360"/>
+        <location line="-375"/>
         <source>Highlight </source>
         <translation>Zvýrazniť</translation>
     </message>
@@ -1051,6 +1051,16 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location line="+12"/>
+        <source>AI</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Summary, translation, images and more with an AI on the web</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location line="+29"/>
         <source>Read aloud</source>
         <translation type="unfinished">Čítať nahlas</translation>
@@ -1092,7 +1102,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Otvoriť webovú stránku príručky</translation>
     </message>
     <message>
-        <location line="-869"/>
+        <location line="-884"/>
         <location line="+6"/>
         <source>Ruled Light Background</source>
         <translation type="unfinished"></translation>
@@ -1124,7 +1134,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+227"/>
+        <location line="+242"/>
         <source>Ctrl+K</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1140,7 +1150,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-1686"/>
+        <location line="-1701"/>
         <source>Small Eraser</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1175,7 +1185,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1579"/>
+        <location line="+1594"/>
         <location line="+3"/>
         <source>Draw intermediate grid lines</source>
         <translation type="unfinished"></translation>
@@ -1189,7 +1199,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-1743"/>
+        <location line="-1758"/>
         <source>Template style</source>
         <translation>Štýl šablóny</translation>
     </message>
@@ -1349,7 +1359,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Dať pečiatku na stránku</translation>
     </message>
     <message>
-        <location line="+29"/>
+        <location line="+44"/>
         <source>Spotlight</source>
         <translation>Reflektor</translation>
     </message>
@@ -1577,20 +1587,102 @@ Do you wish to override the security check and continue ?   </source>
     </message>
 </context>
 <context>
-    <name>UBAiPanel</name>
+    <name>UBAiOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBAiPanel.cpp" line="+123"/>
-        <source>Drag over the part of the page to give to the AI. Escape: cancel.</source>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+723"/>
+        <source>AI</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+86"/>
-        <location line="+345"/>
+        <location line="+5"/>
+        <source>Summary</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>A part of the page, or all of it, summarized by the AI</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>Translation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-337"/>
+        <location line="+1"/>
+        <source>A part of the page, or all of it, translated by the AI into the language chosen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Create image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>An image made by the AI from what you write</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Remove background</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>A picture without its background, made by the AI</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Generative erase</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Something erased from a picture by the AI, as if it had never been there</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Transcribe</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Asks for an audio and gives it to the AI, which writes what is said</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Open the AI</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Opens or closes the page of the AI at the right</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UBAiPanel</name>
+    <message>
+        <location filename="../../src/gui/UBAiPanel.cpp" line="+159"/>
+        <source>Drag over the part of the page to give to the AI. Escape: cancel.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Drag over the part of the screen to give to the AI. Escape: cancel.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+100"/>
+        <source>Translation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+8"/>
         <source>Detect it</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1610,18 +1702,37 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+113"/>
+        <location line="+98"/>
+        <source>Put the picture on the desktop</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Put the picture on the page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+20"/>
+        <source>Put the text on the desktop</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Put the text on the page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+54"/>
         <source>The AI shown; the addresses are in the preferences</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+10"/>
-        <location line="+218"/>
         <source>Close the AI</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-213"/>
+        <location line="+5"/>
         <source>AI:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1641,17 +1752,42 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Puts on the page what was copied in the AI: a text, or a picture with its right click, Copy image</source>
+        <location line="+0"/>
+        <source>Paste on the desktop</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+31"/>
+        <location line="+1"/>
+        <source>Puts on the page what was copied in the AI: a text, or a picture with its right click, Copy image. The right click on a picture or a selected text of the AI can also put it there.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+391"/>
+        <source>Right click on a picture or a text of the AI to put it on the desktop.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Drag a text or a picture of the AI to the page, or right click on it to put it there.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>The instruction is written in the AI and also copied: Ctrl+V pastes it. Right click on the answer to put it on the desktop.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>The instruction is written in the AI and also copied: Ctrl+V pastes it. Drag the answer to the page, or right click on it to put it there.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-356"/>
         <source>Drag to make the panel wider</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+110"/>
+        <location line="+115"/>
         <source>The picture of the AI is on the page; it is also in %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1661,39 +1797,17 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+34"/>
-        <source>Summary</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <location line="+36"/>
+        <location line="+71"/>
         <source>Create an image</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-35"/>
-        <source>Remove the background</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location line="+1"/>
-        <location line="+35"/>
         <source>Generative erasing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-34"/>
-        <source>Transcribe an audio</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+11"/>
-        <source>Only open the AI</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+22"/>
+        <location line="-1"/>
         <source>Describe the image to create:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1748,15 +1862,16 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location line="+35"/>
         <location line="+12"/>
         <location line="+13"/>
         <location line="+17"/>
-        <location line="+106"/>
+        <location line="+109"/>
         <source>AI</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-136"/>
+        <location line="-139"/>
         <source>What should be given to the AI?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1776,28 +1891,19 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+11"/>
+        <location line="-14"/>
+        <location line="+25"/>
         <location line="+17"/>
         <source>The file for the AI could not be made.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+28"/>
-        <source>Drag a text or a picture of the AI to the page, or copy it and use Paste on the page.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+6"/>
+        <location line="+35"/>
         <source>If the AI did not take the file, drag it from here to the AI</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>The instruction is written in the AI and also copied: Ctrl+V pastes it. Drag the answer to the page, or use Paste on the page.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+72"/>
+        <location line="+75"/>
         <source>It seems that the free uses of %1 are over for now. Do the same with another AI?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1856,7 +1962,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBAttachmentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+772"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+150"/>
         <source>Insert file</source>
         <translation>Vložiť súbor</translation>
     </message>
@@ -1947,12 +2053,12 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBoardController</name>
     <message>
-        <location filename="../../src/board/UBBoardController.cpp" line="+3019"/>
+        <location filename="../../src/board/UBBoardController.cpp" line="+3016"/>
         <source>All Supported (%1)</source>
         <translation>Všetky podporované (%1)</translation>
     </message>
     <message>
-        <location line="-1708"/>
+        <location line="-1705"/>
         <source>Downloading content %1 failed</source>
         <translation>Nepodarilo sa stiahnuť %1</translation>
     </message>
@@ -1997,7 +2103,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Veľkosť tejto stránky. Kresby zostanú, kde sú; väčšie plátno nechá miesto okolo nich.</translation>
     </message>
     <message>
-        <location line="+406"/>
+        <location line="+403"/>
         <source>The GIF could not be found on its page. Try another one.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2007,7 +2113,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Pridať položku</translation>
     </message>
     <message>
-        <location line="-1370"/>
+        <location line="-1367"/>
         <source>Unknown tool type %1</source>
         <translation>Neznámy typ nástroja %1</translation>
     </message>
@@ -2135,7 +2241,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+2241"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+2242"/>
         <source>That page is not in the document any more.</source>
         <translation>Táto strana už v dokumente nie je.</translation>
     </message>
@@ -2228,7 +2334,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+741"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+777"/>
         <source>Quick note</source>
         <translation>Rýchla poznámka</translation>
     </message>
@@ -2934,7 +3040,7 @@ Do you want to continue?</source>
 <context>
     <name>UBEmojiOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-993"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1144"/>
         <source>Emojis and GIFs</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4542,7 +4648,7 @@ Chcete ignorovať tieto chyby na tomto serveri?</translation>
 <context>
     <name>UBNoteOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1186"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1337"/>
         <source>Note</source>
         <translation>Poznámka</translation>
     </message>
@@ -4863,7 +4969,7 @@ Dá sa to urobiť aj neskôr cez Domov &gt; Rozpoznať text.</translation>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1349"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1500"/>
         <source>Pen</source>
         <translation>Pero</translation>
     </message>
@@ -5534,7 +5640,7 @@ Dynamická šírka</translation>
 <context>
     <name>UBSelectorOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1223"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1374"/>
         <source>Select</source>
         <translation>Vybrať</translation>
     </message>
@@ -5575,7 +5681,7 @@ Dynamická šírka</translation>
 <context>
     <name>UBSettings</name>
     <message>
-        <location filename="../../src/core/UBSettings.cpp" line="+1152"/>
+        <location filename="../../src/core/UBSettings.cpp" line="+1155"/>
         <source>My Movies</source>
         <translation>Moje filmy</translation>
     </message>
@@ -5587,7 +5693,7 @@ Dynamická šírka</translation>
         <translation type="vanished">Obdĺžnik</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-621"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-657"/>
         <source>Shapes</source>
         <translation type="unfinished">Geometrické útvary</translation>
     </message>
@@ -6268,17 +6374,7 @@ Dynamická šírka</translation>
 <context>
     <name>UBStylusPalette</name>
     <message>
-        <location filename="../../src/gui/UBStylusPalette.cpp" line="+87"/>
-        <source>AI</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Summary, translation, images and more with an AI on the web</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+7"/>
+        <location filename="../../src/gui/UBStylusPalette.cpp" line="+90"/>
         <source>Save a screenshot</source>
         <translation>Uložiť snímku obrazovky</translation>
     </message>
@@ -6453,7 +6549,7 @@ Dynamická šírka</translation>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1091"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1206"/>
         <source>Color</source>
         <translation>Farba</translation>
     </message>
@@ -6461,13 +6557,50 @@ Dynamická šírka</translation>
 <context>
     <name>UBToolbarChoice</name>
     <message>
-        <location filename="../../src/gui/UBToolbarChoice.cpp" line="+164"/>
+        <location filename="../../src/gui/UBToolbarChoice.cpp" line="+283"/>
+        <source>Move items</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Drag the tools up or down, or use the buttons. Only the tools shown in the palette are listed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <location line="+129"/>
         <source>Desktop</source>
         <translation type="unfinished">Pracovná plocha</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="-129"/>
+        <location line="+130"/>
         <source>Board / PDF</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-121"/>
+        <source>Back to the board: always first</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+23"/>
+        <source>Up</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Down</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Original order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+120"/>
+        <source>Move items...</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6594,7 +6727,7 @@ Reštartujte aplikáciu, aby ste mohli pracovať s aktualizovanými dokumentmi.<
         <translation type="vanished">Diktovať</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+505"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+620"/>
         <source>Read aloud</source>
         <translation type="unfinished">Čítať nahlas</translation>
     </message>

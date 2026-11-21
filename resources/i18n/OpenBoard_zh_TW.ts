@@ -198,7 +198,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="vanished">背景</translation>
     </message>
     <message>
-        <location line="+1580"/>
+        <location line="+1595"/>
         <source>Text</source>
         <translation>文字</translation>
     </message>
@@ -234,7 +234,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>新頁面</translation>
     </message>
     <message>
-        <location line="-1641"/>
+        <location line="-1656"/>
         <source>Undo</source>
         <translation>回復</translation>
     </message>
@@ -477,12 +477,12 @@ Do you wish to override the security check and continue ?   </source>
     </message>
     <message>
         <location line="+9"/>
-        <location line="+649"/>
+        <location line="+664"/>
         <source>Erase Annotations</source>
         <translation>清除桌面標注</translation>
     </message>
     <message>
-        <location line="-646"/>
+        <location line="-661"/>
         <source>Erase All Annotations</source>
         <translation>清除所有桌面標注</translation>
     </message>
@@ -570,7 +570,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>在頁面上蓋章</translation>
     </message>
     <message>
-        <location line="+29"/>
+        <location line="+44"/>
         <source>Spotlight</source>
         <translation>聚光燈</translation>
     </message>
@@ -632,7 +632,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="vanished">Ctrl+I</translation>
     </message>
     <message>
-        <location line="-731"/>
+        <location line="-746"/>
         <source>Erase Annotation</source>
         <translation>清除桌面標注</translation>
     </message>
@@ -677,7 +677,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>手型工具</translation>
     </message>
     <message>
-        <location line="+310"/>
+        <location line="+325"/>
         <location line="+165"/>
         <source>Capture Part of the Screen</source>
         <translation>部份截圖</translation>
@@ -731,7 +731,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Ctrl+H</translation>
     </message>
     <message>
-        <location line="-1290"/>
+        <location line="-1305"/>
         <location line="+746"/>
         <source>Zoom In</source>
         <translation>放大</translation>
@@ -1010,6 +1010,16 @@ Do you wish to override the security check and continue ?   </source>
         <translation>在頁面上放置表情符號或GIF</translation>
     </message>
     <message>
+        <location line="+12"/>
+        <source>AI</source>
+        <translation>AI</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Summary, translation, images and more with an AI on the web</source>
+        <translation>藉助網路上的AI進行摘要、翻譯、產生圖片等</translation>
+    </message>
+    <message>
         <location line="+29"/>
         <source>Read aloud</source>
         <translation>朗讀</translation>
@@ -1116,7 +1126,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>於顯示器上顯示</translation>
     </message>
     <message>
-        <location line="-859"/>
+        <location line="-874"/>
         <source>Sleep</source>
         <translation>睡眠狀態</translation>
     </message>
@@ -1210,7 +1220,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>退出 LibertyBoard</translation>
     </message>
     <message>
-        <location line="+1649"/>
+        <location line="+1664"/>
         <source>Hide LibertyBoard</source>
         <translation>隱藏 LibertyBoard</translation>
     </message>
@@ -1240,7 +1250,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>移除背景</translation>
     </message>
     <message>
-        <location line="-857"/>
+        <location line="-872"/>
         <location line="+6"/>
         <source>Ruled Light Background</source>
         <translation type="unfinished"></translation>
@@ -1252,7 +1262,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+784"/>
+        <location line="+799"/>
         <source>Open Tutorial</source>
         <translation>開啟新手教學</translation>
     </message>
@@ -1268,7 +1278,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>重設網格大小</translation>
     </message>
     <message>
-        <location line="-1686"/>
+        <location line="-1701"/>
         <source>Small Eraser</source>
         <translation>小橡皮擦</translation>
     </message>
@@ -1303,7 +1313,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>顏色 5</translation>
     </message>
     <message>
-        <location line="+1579"/>
+        <location line="+1594"/>
         <location line="+3"/>
         <source>Draw intermediate grid lines</source>
         <translation type="unfinished"></translation>
@@ -1317,7 +1327,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-1743"/>
+        <location line="-1758"/>
         <source>Template style</source>
         <translation>範本樣式</translation>
     </message>
@@ -1404,7 +1414,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+573"/>
+        <location line="+588"/>
         <source>Import one or more pages (supported formats : jpg, png, svg, ubz, pdf)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1574,20 +1584,102 @@ Do you wish to override the security check and continue ?   </source>
     </message>
 </context>
 <context>
-    <name>UBAiPanel</name>
+    <name>UBAiOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBAiPanel.cpp" line="+123"/>
-        <source>Drag over the part of the page to give to the AI. Escape: cancel.</source>
-        <translation>拖曳選取要交給AI的頁面部分。Esc：取消。</translation>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+723"/>
+        <source>AI</source>
+        <translation>AI</translation>
     </message>
     <message>
-        <location line="+86"/>
-        <location line="+345"/>
+        <location line="+5"/>
+        <source>Summary</source>
+        <translation>摘要</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>A part of the page, or all of it, summarized by the AI</source>
+        <translation>由AI摘要頁面的一部分或全部</translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>Translation</source>
         <translation>翻譯</translation>
     </message>
     <message>
-        <location line="-337"/>
+        <location line="+1"/>
+        <source>A part of the page, or all of it, translated by the AI into the language chosen</source>
+        <translation>由AI將頁面的一部分或全部翻譯成所選語言</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Create image</source>
+        <translation>建立圖片</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>An image made by the AI from what you write</source>
+        <translation>AI根據你寫的內容產生圖片</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Remove background</source>
+        <translation>移除背景</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>A picture without its background, made by the AI</source>
+        <translation>由AI產生的移除背景圖片</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Generative erase</source>
+        <translation>生成式擦除</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Something erased from a picture by the AI, as if it had never been there</source>
+        <translation>由AI從圖片中擦除某物，就像它從未存在過</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Transcribe</source>
+        <translation>轉寫</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Asks for an audio and gives it to the AI, which writes what is said</source>
+        <translation>選擇一個音訊交給AI，由它寫出所說的內容</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Open the AI</source>
+        <translation>開啟AI</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Opens or closes the page of the AI at the right</source>
+        <translation>開啟或關閉右側的AI頁面</translation>
+    </message>
+</context>
+<context>
+    <name>UBAiPanel</name>
+    <message>
+        <location filename="../../src/gui/UBAiPanel.cpp" line="+159"/>
+        <source>Drag over the part of the page to give to the AI. Escape: cancel.</source>
+        <translation>拖曳選取要交給AI的頁面部分。Esc：取消。</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Drag over the part of the screen to give to the AI. Escape: cancel.</source>
+        <translation>拖曳選取要交給AI的螢幕部分。Esc：取消。</translation>
+    </message>
+    <message>
+        <location line="+100"/>
+        <source>Translation</source>
+        <translation>翻譯</translation>
+    </message>
+    <message>
+        <location line="+8"/>
         <source>Detect it</source>
         <translation>自動偵測</translation>
     </message>
@@ -1607,18 +1699,37 @@ Do you wish to override the security check and continue ?   </source>
         <translation>到：</translation>
     </message>
     <message>
-        <location line="+113"/>
+        <location line="+98"/>
+        <source>Put the picture on the desktop</source>
+        <translation>把圖片放到桌面</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Put the picture on the page</source>
+        <translation>把圖片放到頁面</translation>
+    </message>
+    <message>
+        <location line="+20"/>
+        <source>Put the text on the desktop</source>
+        <translation>把文字放到桌面</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Put the text on the page</source>
+        <translation>把文字放到頁面</translation>
+    </message>
+    <message>
+        <location line="+54"/>
         <source>The AI shown; the addresses are in the preferences</source>
         <translation>顯示的AI；網址在偏好設定中</translation>
     </message>
     <message>
         <location line="+10"/>
-        <location line="+218"/>
         <source>Close the AI</source>
         <translation>關閉AI</translation>
     </message>
     <message>
-        <location line="-213"/>
+        <location line="+5"/>
         <source>AI:</source>
         <translation>AI：</translation>
     </message>
@@ -1638,17 +1749,46 @@ Do you wish to override the security check and continue ?   </source>
         <translation>貼到頁面</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Puts on the page what was copied in the AI: a text, or a picture with its right click, Copy image</source>
-        <translation>把在AI中複製的內容放到頁面上：文字，或按右鍵「複製圖片」的圖片</translation>
+        <location line="+0"/>
+        <source>Paste on the desktop</source>
+        <translation>貼到桌面</translation>
     </message>
     <message>
-        <location line="+31"/>
+        <location line="+1"/>
+        <source>Puts on the page what was copied in the AI: a text, or a picture with its right click, Copy image. The right click on a picture or a selected text of the AI can also put it there.</source>
+        <translation>把在AI中複製的內容放到頁面上：文字，或按右鍵「複製圖片」的圖片。在AI的圖片或所選文字上按右鍵也可以放過去。</translation>
+    </message>
+    <message>
+        <location line="+391"/>
+        <source>Right click on a picture or a text of the AI to put it on the desktop.</source>
+        <translation>在AI的圖片或文字上按右鍵，把它放到桌面。</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Drag a text or a picture of the AI to the page, or right click on it to put it there.</source>
+        <translation>把AI的文字或圖片拖到頁面上，或在上面按右鍵放過去。</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>The instruction is written in the AI and also copied: Ctrl+V pastes it. Right click on the answer to put it on the desktop.</source>
+        <translation>指令已寫入AI並已複製：Ctrl+V 可貼上。在回答上按右鍵，把它放到桌面。</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>The instruction is written in the AI and also copied: Ctrl+V pastes it. Drag the answer to the page, or right click on it to put it there.</source>
+        <translation>指令已寫入AI並已複製：Ctrl+V 可貼上。把回答拖到頁面上，或在上面按右鍵放過去。</translation>
+    </message>
+    <message>
+        <source>Puts on the page what was copied in the AI: a text, or a picture with its right click, Copy image</source>
+        <translation type="vanished">把在AI中複製的內容放到頁面上：文字，或按右鍵「複製圖片」的圖片</translation>
+    </message>
+    <message>
+        <location line="-356"/>
         <source>Drag to make the panel wider</source>
         <translation>拖曳以加寬面板</translation>
     </message>
     <message>
-        <location line="+110"/>
+        <location line="+115"/>
         <source>The picture of the AI is on the page; it is also in %1</source>
         <translation>AI的圖片已放到頁面上；它也儲存在 %1</translation>
     </message>
@@ -1658,39 +1798,33 @@ Do you wish to override the security check and continue ?   </source>
         <translation>已下載：%1</translation>
     </message>
     <message>
-        <location line="+34"/>
         <source>Summary</source>
-        <translation>摘要</translation>
+        <translation type="vanished">摘要</translation>
     </message>
     <message>
-        <location line="+2"/>
-        <location line="+36"/>
+        <location line="+71"/>
         <source>Create an image</source>
         <translation>建立圖片</translation>
     </message>
     <message>
-        <location line="-35"/>
         <source>Remove the background</source>
-        <translation>移除背景</translation>
+        <translation type="vanished">移除背景</translation>
     </message>
     <message>
         <location line="+1"/>
-        <location line="+35"/>
         <source>Generative erasing</source>
         <translation>生成式擦除</translation>
     </message>
     <message>
-        <location line="-34"/>
         <source>Transcribe an audio</source>
-        <translation>轉寫音訊</translation>
+        <translation type="vanished">轉寫音訊</translation>
     </message>
     <message>
-        <location line="+11"/>
         <source>Only open the AI</source>
-        <translation>只開啟AI</translation>
+        <translation type="vanished">只開啟AI</translation>
     </message>
     <message>
-        <location line="+22"/>
+        <location line="-1"/>
         <source>Describe the image to create:</source>
         <translation>描述要建立的圖片：</translation>
     </message>
@@ -1745,15 +1879,16 @@ Do you wish to override the security check and continue ?   </source>
         <translation>音訊</translation>
     </message>
     <message>
+        <location line="+35"/>
         <location line="+12"/>
         <location line="+13"/>
         <location line="+17"/>
-        <location line="+106"/>
+        <location line="+109"/>
         <source>AI</source>
         <translation>AI</translation>
     </message>
     <message>
-        <location line="-136"/>
+        <location line="-139"/>
         <source>What should be given to the AI?</source>
         <translation>要交給AI什麼？</translation>
     </message>
@@ -1773,28 +1908,27 @@ Do you wish to override the security check and continue ?   </source>
         <translation>整個PDF或白板</translation>
     </message>
     <message>
-        <location line="+11"/>
+        <location line="-14"/>
+        <location line="+25"/>
         <location line="+17"/>
         <source>The file for the AI could not be made.</source>
         <translation>無法建立給AI的檔案。</translation>
     </message>
     <message>
-        <location line="+28"/>
         <source>Drag a text or a picture of the AI to the page, or copy it and use Paste on the page.</source>
-        <translation>把AI的文字或圖片拖到頁面上，或複製後使用「貼到頁面」。</translation>
+        <translation type="vanished">把AI的文字或圖片拖到頁面上，或複製後使用「貼到頁面」。</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+35"/>
         <source>If the AI did not take the file, drag it from here to the AI</source>
         <translation>如果AI沒有收到檔案，請從這裡把它拖到AI</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>The instruction is written in the AI and also copied: Ctrl+V pastes it. Drag the answer to the page, or use Paste on the page.</source>
-        <translation>指令已寫入AI並已複製：Ctrl+V 可貼上。把回答拖到頁面上，或使用「貼到頁面」。</translation>
+        <translation type="vanished">指令已寫入AI並已複製：Ctrl+V 可貼上。把回答拖到頁面上，或使用「貼到頁面」。</translation>
     </message>
     <message>
-        <location line="+72"/>
+        <location line="+75"/>
         <source>It seems that the free uses of %1 are over for now. Do the same with another AI?</source>
         <translation>%1 的免費次數似乎暫時用完了。用另一個AI做同樣的事？</translation>
     </message>
@@ -1853,7 +1987,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBAttachmentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+772"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+150"/>
         <source>Insert file</source>
         <translation>插入檔案</translation>
     </message>
@@ -1994,7 +2128,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>此頁面的大小。繪圖保持原位；更大的畫布會在周圍留出空間。</translation>
     </message>
     <message>
-        <location line="+406"/>
+        <location line="+403"/>
         <source>The GIF could not be found on its page. Try another one.</source>
         <translation>在其頁面上找不到該GIF。請換一個試試。</translation>
     </message>
@@ -2009,7 +2143,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>全部已支援 (%1)</translation>
     </message>
     <message>
-        <location line="-1327"/>
+        <location line="-1324"/>
         <source>Unknown content type %1</source>
         <translation>未知內容類型 %1</translation>
     </message>
@@ -2139,7 +2273,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBBoardView</name>
     <message>
-        <location filename="../../src/board/UBBoardView.cpp" line="+2241"/>
+        <location filename="../../src/board/UBBoardView.cpp" line="+2242"/>
         <source>That page is not in the document any more.</source>
         <translation>該頁面已不在文件中。</translation>
     </message>
@@ -2232,7 +2366,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>UBCommentOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+741"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+777"/>
         <source>Quick note</source>
         <translation>快速附註</translation>
     </message>
@@ -2950,7 +3084,7 @@ Do you want to continue?</source>
 <context>
     <name>UBEmojiOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-993"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1144"/>
         <source>Emojis and GIFs</source>
         <translation>表情符號和GIF</translation>
     </message>
@@ -4604,7 +4738,7 @@ Do you want to ignore these errors for this host?</source>
 <context>
     <name>UBNoteOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1186"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1337"/>
         <source>Note</source>
         <translation>便箋</translation>
     </message>
@@ -4909,7 +5043,7 @@ It can also be done later with Home &gt; Recognize text.</source>
 <context>
     <name>UBPenOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1349"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1500"/>
         <source>Pen</source>
         <translation>電子筆</translation>
     </message>
@@ -5578,7 +5712,7 @@ Dynamic width</source>
 <context>
     <name>UBSelectorOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1223"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+1374"/>
         <source>Select</source>
         <translation>選取</translation>
     </message>
@@ -5619,7 +5753,7 @@ Dynamic width</source>
 <context>
     <name>UBSettings</name>
     <message>
-        <location filename="../../src/core/UBSettings.cpp" line="+1152"/>
+        <location filename="../../src/core/UBSettings.cpp" line="+1155"/>
         <source>My Movies</source>
         <translation>我的影片</translation>
     </message>
@@ -5631,7 +5765,7 @@ Dynamic width</source>
         <translation type="vanished">矩形</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-621"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-657"/>
         <source>Shapes</source>
         <translation>形狀</translation>
     </message>
@@ -6316,17 +6450,15 @@ Dynamic width</source>
 <context>
     <name>UBStylusPalette</name>
     <message>
-        <location filename="../../src/gui/UBStylusPalette.cpp" line="+87"/>
         <source>AI</source>
-        <translation>AI</translation>
+        <translation type="vanished">AI</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Summary, translation, images and more with an AI on the web</source>
-        <translation>藉助網路上的AI進行摘要、翻譯、產生圖片等</translation>
+        <translation type="vanished">藉助網路上的AI進行摘要、翻譯、產生圖片等</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location filename="../../src/gui/UBStylusPalette.cpp" line="+90"/>
         <source>Save a screenshot</source>
         <translation>儲存螢幕擷取畫面</translation>
     </message>
@@ -6494,7 +6626,7 @@ Dynamic width</source>
 <context>
     <name>UBToolOptionsPanel</name>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1091"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="-1206"/>
         <source>Color</source>
         <translation>顏色</translation>
     </message>
@@ -6502,14 +6634,51 @@ Dynamic width</source>
 <context>
     <name>UBToolbarChoice</name>
     <message>
-        <location filename="../../src/gui/UBToolbarChoice.cpp" line="+164"/>
+        <location filename="../../src/gui/UBToolbarChoice.cpp" line="+283"/>
+        <source>Move items</source>
+        <translation>移動項目</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Drag the tools up or down, or use the buttons. Only the tools shown in the palette are listed.</source>
+        <translation>上下拖曳工具，或使用按鈕。只列出工具列中顯示的工具。</translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <location line="+129"/>
         <source>Desktop</source>
         <translation>桌面</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="-129"/>
+        <location line="+130"/>
         <source>Board / PDF</source>
         <translation>白板 / PDF</translation>
+    </message>
+    <message>
+        <location line="-121"/>
+        <source>Back to the board: always first</source>
+        <translation>返回白板：永遠在最前</translation>
+    </message>
+    <message>
+        <location line="+23"/>
+        <source>Up</source>
+        <translation>上移</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Down</source>
+        <translation>下移</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Original order</source>
+        <translation>原始順序</translation>
+    </message>
+    <message>
+        <location line="+120"/>
+        <source>Move items...</source>
+        <translation>移動項目...</translation>
     </message>
 </context>
 <context>
@@ -6635,7 +6804,7 @@ Please reboot the application to access the updated documents.</source>
         <translation type="vanished">聽寫</translation>
     </message>
     <message>
-        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+505"/>
+        <location filename="../../src/gui/UBToolOptionsPanel.cpp" line="+620"/>
         <source>Read aloud</source>
         <translation>朗讀</translation>
     </message>
