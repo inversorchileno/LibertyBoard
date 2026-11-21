@@ -20,6 +20,9 @@
  */
 
 #include "UBMainMenu.h"
+#include <QVBoxLayout>
+#include <QDialogButtonBox>
+#include <QDialog>
 
 #include <QActionGroup>
 #include <QDesktopServices>
@@ -342,6 +345,12 @@ void UBMainMenu::createMenus()
     shortcutsAction->setObjectName("actionLbShortcuts");
     connect(shortcutsAction, &QAction::triggered, this, [this]() { UBShortcutsDialog::open(mMainWindow); });
     aboutMenu->addAction(shortcutsAction);
+
+    // Who made LibertyBoard, and how.
+    auto creatorAction = new QAction(QIcon(":/images/OpenBoard.png"), tr("Creator"), mMainWindow);
+    creatorAction->setObjectName("actionLbCreator");
+    connect(creatorAction, &QAction::triggered, this, &UBMainMenu::showCreator);
+    aboutMenu->addAction(creatorAction);
     aboutMenu->addSeparator();
 
     auto gitHubAction = new QAction(QIcon(":/images/toolbar/github.svg"), tr("LibertyBoard on GitHub"), mMainWindow);
@@ -364,6 +373,55 @@ void UBMainMenu::createMenus()
         "QMenuBar { background: #323232; color: #f0f0f0; }"
         "QMenuBar::item { padding: 4px 10px 2px 10px; background: transparent; }"
         "QMenuBar::item:selected { background: #4a4a4a; }");
+}
+
+void UBMainMenu::showCreator()
+{
+    QDialog dialog(mMainWindow);
+    dialog.setWindowTitle(tr("Creator"));
+    dialog.setMinimumWidth(560);
+
+    auto logo = new QLabel(&dialog);
+    logo->setPixmap(QIcon(":/images/OpenBoard.png").pixmap(96, 96));
+    logo->setAlignment(Qt::AlignTop | Qt::AlignHCenter);
+
+    const QStringList paragraphs = {
+        tr("LibertyBoard was created by Luis, known on YouTube as «Inversor Chileno»."),
+        tr("It was born from a simple idea: to have in a single program what used to be spread over many different tools. "
+           "Taking OpenBoard, a free digital whiteboard, as a base, I added the reading and annotation of PDFs, templates, "
+           "shapes, stamps, emojis and GIFs, reading aloud and dictation, artificial intelligence and much more."),
+        tr("It is for students, teachers, workers, content creators and, in general, for everyone who wants a multifunctional "
+           "PDF and whiteboard tool."),
+        tr("The curious thing is that I know nothing about writing code. I built LibertyBoard with the help of Claude, an "
+           "artificial intelligence: I brought the ideas and Claude turned them into a program. If your ideas are clear and you "
+           "know how to write them in a good prompt, you too can create what you imagine."),
+        tr("LibertyBoard is free software (GPLv3 license), like OpenBoard."),
+    };
+
+    QString html = "<h2>LibertyBoard</h2>";
+
+    for (const QString& paragraph : paragraphs)
+    {
+        html += "<p>" + paragraph.toHtmlEscaped() + "</p>";
+    }
+
+    auto text = new QLabel(html, &dialog);
+    text->setWordWrap(true);
+    text->setTextFormat(Qt::RichText);
+    text->setMinimumWidth(440);
+
+    auto buttons = new QDialogButtonBox(QDialogButtonBox::Ok, &dialog);
+    connect(buttons, &QDialogButtonBox::accepted, &dialog, &QDialog::accept);
+
+    auto row = new QHBoxLayout();
+    row->addWidget(logo);
+    row->addSpacing(12);
+    row->addWidget(text, 1);
+
+    auto layout = new QVBoxLayout(&dialog);
+    layout->addLayout(row);
+    layout->addWidget(buttons);
+    dialog.exec();
 }
 
 void UBMainMenu::setupDocumentShortcuts()
